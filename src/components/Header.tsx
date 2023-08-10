@@ -31,8 +31,8 @@ const menuList = [
 ];
 
 type Props = {
-  menu;
-  setMenu;
+  menu: any;
+  setMenu: any;
 };
 export default function Header({ menu, setMenu }: Props) {
   return (
