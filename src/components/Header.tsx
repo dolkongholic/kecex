@@ -38,7 +38,7 @@ export default function Header({ menu, setMenu }: Props) {
   return (
     <section className="flex flex-col">
       <div
-        className="w-full h-[80px] flex justify-center item-center border-b border-[#dcdcdc] bg-white z-[80]"
+        className="w-full h-[80px] flex justify-center item-center border-b border-[#dcdcdc] bg-white  z-[80]"
         onMouseOver={() => setMenu(null)}
       >
         <div className="w-[1400px] flex justify-between item-center space-x-[20px]">
@@ -120,15 +120,18 @@ export default function Header({ menu, setMenu }: Props) {
 
       {/* 서브 메뉴 */}
       <div
-        className={`w-full h-[700px] bg-active opacity-0 ${
+        className={`absolute top-[160px] w-full h-[700px] bg-active opacity-0 z-[70] ${
           !menu
             ? "opacity-0 -translate-y-[50px] pointer-events-none"
             : "opacity-100 translate-y-0 pointer-events-auto"
         } transition-all duration-300 flex justify-center items-start`}
-        // onMouseLeave={() => setMenu(null)}
+        onMouseLeave={() => setMenu(null)}
       >
         {menu == "협회소개" && (
-          <div className="w-[1400px] pt-[20px]">
+          <div
+            className="w-[1400px] pt-[20px]"
+            onMouseOver={() => setMenu(menu)}
+          >
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
                 <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
@@ -158,7 +161,10 @@ export default function Header({ menu, setMenu }: Props) {
           </div>
         )}
         {menu == "사업안내" && (
-          <div className="w-[1400px] pt-[20px]">
+          <div
+            className="w-[1400px] pt-[20px]"
+            onMouseOver={() => setMenu(menu)}
+          >
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
                 <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
@@ -198,7 +204,10 @@ export default function Header({ menu, setMenu }: Props) {
           </div>
         )}
         {menu == "알림센터" && (
-          <div className="w-[1400px] pt-[20px]">
+          <div
+            className="w-[1400px] pt-[20px]"
+            onMouseOver={() => setMenu(menu)}
+          >
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
                 <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
@@ -219,7 +228,10 @@ export default function Header({ menu, setMenu }: Props) {
           </div>
         )}
         {menu == "정보공개" && (
-          <div className="w-[1400px] pt-[20px]">
+          <div
+            className="w-[1400px] pt-[20px]"
+            onMouseOver={() => setMenu(menu)}
+          >
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
                 <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
@@ -235,7 +247,10 @@ export default function Header({ menu, setMenu }: Props) {
           </div>
         )}
         {menu == "교육센터" && (
-          <div className="w-[1400px] pt-[20px]">
+          <div
+            className="w-[1400px] pt-[20px]"
+            onMouseOver={() => setMenu(menu)}
+          >
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
                 <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
