@@ -1,6 +1,6 @@
 "use client";
 import Header from "@/components/Header";
-import Content from "@/components/Content";
+import Index from "@/components/Index";
 import Footer from "@/components/Footer";
 import { useState } from "react";
 
@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div>
       <Header menu={menu} setMenu={setMenu} />
-      <Content menu={menu} setMenu={setMenu} />
+      <Index />
       <Footer />
     </div>
   );

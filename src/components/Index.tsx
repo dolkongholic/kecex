@@ -3,12 +3,7 @@ import { Paper, Button } from "@mui/material";
 import { useState } from "react";
 import { ImArrowRight2 } from "react-icons/im";
 
-type Props = {
-  menu: any;
-  setMenu: any;
-};
-
-export default function Content({ menu, setMenu }: Props) {
+export default function Index() {
   const [noticeMenu, setNoticeMenu] = useState<String>("알림");
   const [noticeSubMenu, setNoticeSubMenu] = useState<String>("공지사항");
 
@@ -193,21 +188,39 @@ export default function Content({ menu, setMenu }: Props) {
             </div>
           </div>
           {/* 카드뉴스 */}
-          <div className="w-1/2 h-[250px]">
-            <Carousel indicators={true} cycleNavigation={true}>
-              <Paper className="bg-red-300 w-full h-[230px] opacity-60">
-                카드뉴스
-              </Paper>
-              <Paper className="bg-yellow-300 w-full h-[230px] opacity-60">
-                카드뉴스
-              </Paper>
-              <Paper className="bg-slate-300 w-full h-[230px] opacity-60">
-                카드뉴스
-              </Paper>
-              <Paper className="bg-fuchsia-300 w-full h-[230px] opacity-60">
-                카드뉴스
-              </Paper>
-            </Carousel>
+          <div className="w-1/2 h-[250px] flex space-x-[10px]">
+            <div className="w-1/2 h-[250px]">
+              <Carousel indicators={true} cycleNavigation={true}>
+                <Paper className="bg-red-300 w-full h-[230px] opacity-60">
+                  카드뉴스
+                </Paper>
+                <Paper className="bg-yellow-300 w-full h-[230px] opacity-60">
+                  카드뉴스
+                </Paper>
+                <Paper className="bg-slate-300 w-full h-[230px] opacity-60">
+                  카드뉴스
+                </Paper>
+                <Paper className="bg-fuchsia-300 w-full h-[230px] opacity-60">
+                  카드뉴스
+                </Paper>
+              </Carousel>
+            </div>
+            <div className="w-1/2 h-[250px]">
+              <Carousel indicators={true} cycleNavigation={true}>
+                <Paper className="bg-yellow-300 w-full h-[230px] opacity-60">
+                  카드뉴스
+                </Paper>
+                <Paper className="bg-red-300 w-full h-[230px] opacity-60">
+                  카드뉴스
+                </Paper>
+                <Paper className="bg-slate-300 w-full h-[230px] opacity-60">
+                  카드뉴스
+                </Paper>
+                <Paper className="bg-fuchsia-300 w-full h-[230px] opacity-60">
+                  카드뉴스
+                </Paper>
+              </Carousel>
+            </div>
           </div>
         </div>
       </div>

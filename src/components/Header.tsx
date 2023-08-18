@@ -4,6 +4,7 @@ import { AiOutlineGlobal } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { CgMenuGridO } from "react-icons/cg";
 import { useState } from "react";
+import Link from "next/link";
 
 const snsList = ["youtube", "facebook", "twiiter", "kakao", "blog", "instgram"];
 
@@ -138,9 +139,15 @@ export default function Header({ menu, setMenu }: Props) {
                   일반현황
                 </div>
                 <div className="flex flex-col space-y-[20px] text-white">
-                  <span className="cursor-pointer">- CEO 인사말</span>
-                  <span className="cursor-pointer"> - 비전 및 연혁</span>
-                  <span className="cursor-pointer"> - CI</span>
+                  <Link passHref href={"/introduce/common/ceo/"}>
+                    <span className="cursor-pointer"> - CEO 인사말</span>
+                  </Link>
+                  <Link passHref href={"/introduce/common/vistion/"}>
+                    <span className="cursor-pointer"> - 비전 및 연혁</span>
+                  </Link>
+                  <Link passHref href={"/introduce/common/ci/"}>
+                    <span className="cursor-pointer"> - CI</span>
+                  </Link>
                 </div>
               </div>
               <div className="w-1/4">
