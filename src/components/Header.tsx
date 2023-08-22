@@ -155,14 +155,20 @@ export default function Header({ menu, setMenu }: Props) {
                   조직안내
                 </div>
                 <div className="flex flex-col space-y-[20px] text-white">
-                  <span className="cursor-pointer"> - 조직도</span>
-                  <span className="cursor-pointer"> - 부서소개</span>
+                  <Link passHref href={"/introduce/group/group"}>
+                    <span className="cursor-pointer"> - 조직도</span>
+                  </Link>
+                  <Link passHref href={"/introduce/group/introduce/"}>
+                    <span className="cursor-pointer"> - 부서소개</span>
+                  </Link>
                 </div>
               </div>
               <div className="w-1/4">
-                <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
-                  찾아오시는길
-                </div>
+                <Link passHref href={"/introduce/map/"}>
+                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    찾아오시는길
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -178,9 +184,15 @@ export default function Header({ menu, setMenu }: Props) {
                   회원
                 </div>
                 <div className="flex flex-col space-y-[20px] text-white">
-                  <span className="cursor-pointer"> - 회원가입</span>
-                  <span className="cursor-pointer"> - 경력관리</span>
-                  <span className="cursor-pointer"> - 경력수첩</span>
+                  <Link passHref href={"/business/member/join/"}>
+                    <span className="cursor-pointer"> - 회원가입</span>
+                  </Link>
+                  <Link passHref href={"/business/member/career/"}>
+                    <span className="cursor-pointer"> - 경력관리</span>
+                  </Link>
+                  <Link passHref href={"/business/member/careercard/"}>
+                    <span className="cursor-pointer"> - 경력수첩</span>
+                  </Link>
                 </div>
               </div>
               <div className="w-1/4">
@@ -188,13 +200,24 @@ export default function Header({ menu, setMenu }: Props) {
                   교육
                 </div>
                 <div className="flex flex-col space-y-[20px] text-white">
-                  <span className="cursor-pointer">
-                    {" "}
-                    - 방폭 기초교육 일반/시공
-                  </span>
-                  <span className="cursor-pointer"> - 방폭 인력양성 교육</span>
-                  <span className="cursor-pointer"> - 기업형 교육</span>
-                  <span className="cursor-pointer"> - 교육개발</span>
+                  <Link passHref href={"/business/education/course01/"}>
+                    <span className="cursor-pointer">
+                      {" "}
+                      - 방폭 기초교육 일반/시공
+                    </span>
+                  </Link>
+                  <Link passHref href={"/business/education/course02/"}>
+                    <span className="cursor-pointer">
+                      {" "}
+                      - 방폭 인력양성 교육
+                    </span>
+                  </Link>
+                  <Link passHref href={"/business/education/course03/"}>
+                    <span className="cursor-pointer"> - 기업형 교육</span>
+                  </Link>
+                  <Link passHref href={"/business/education/develop/"}>
+                    <span className="cursor-pointer"> - 교육개발</span>
+                  </Link>
                 </div>
               </div>
               <div className="w-1/4">
@@ -202,9 +225,12 @@ export default function Header({ menu, setMenu }: Props) {
                   컨설팅
                 </div>
                 <div className="flex flex-col space-y-[20px] text-white">
-                  <span className="cursor-pointer"> - 방폭 사전진단</span>
-                  <span className="cursor-pointer"> - 폭발위험장소 구분</span>
-                  <span className="cursor-pointer"> - 방폭기기선정</span>
+                  <Link passHref href={"/business/consulting/inspection/"}>
+                    <span className="cursor-pointer"> - 방폭 사전진단</span>
+                  </Link>
+                  <Link passHref href={"/business/consulting/equipment/"}>
+                    <span className="cursor-pointer"> - 방폭기기선정</span>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -217,19 +243,25 @@ export default function Header({ menu, setMenu }: Props) {
           >
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
-                <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
-                  인재정보
-                </div>
+                <Link passHref href={"/notice/worker/"}>
+                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    인재정보
+                  </div>
+                </Link>
               </div>
               <div className="w-1/4">
-                <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
-                  FAQ
-                </div>
+                <Link passHref href={"/notice/faq/"}>
+                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    FAQ
+                  </div>
+                </Link>
               </div>
               <div className="w-1/4">
-                <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
-                  문의사항
-                </div>
+                <Link passHref href={"/notice/qna/"}>
+                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    문의사항
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -241,14 +273,18 @@ export default function Header({ menu, setMenu }: Props) {
           >
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
-                <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
-                  관련법령
-                </div>
+                <Link passHref href={"/information/raw/"}>
+                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    관련법령
+                  </div>
+                </Link>
               </div>
               <div className="w-1/4">
-                <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
-                  카드뉴스
-                </div>
+                <Link passHref href={"/information/news/"}>
+                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    카드뉴스
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -260,9 +296,11 @@ export default function Header({ menu, setMenu }: Props) {
           >
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
-                <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
-                  교육신청
-                </div>
+                <Link passHref href={"/"}>
+                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    교육신청
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
