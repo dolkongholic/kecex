@@ -150,7 +150,7 @@ export default function Header({ menu, setMenu }: Props) {
                     <span className="cursor-pointer"> - CEO 인사말</span>
                   </Link>
                   <Link passHref href={"/introduce/common/vistion/"}>
-                    <span className="cursor-pointer"> - 비전</span>
+                    <span className="cursor-pointer"> - 비전/미션</span>
                   </Link>
                   <Link passHref href={"/introduce/common/history/"}>
                     <span className="cursor-pointer"> - 연혁</span>
@@ -168,9 +168,9 @@ export default function Header({ menu, setMenu }: Props) {
                   <Link passHref href={"/introduce/group/group"}>
                     <span className="cursor-pointer"> - 조직도</span>
                   </Link>
-                  <Link passHref href={"/introduce/group/introduce/"}>
+                  {/* <Link passHref href={"/introduce/group/introduce/"}>
                     <span className="cursor-pointer"> - 부서소개</span>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               <div className="w-1/4">

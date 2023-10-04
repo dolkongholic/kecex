@@ -2,10 +2,14 @@
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Link from "next/link";
+import SubNav from "@/components/SubNav";
+import ContentTitle from "@/components/content/title";
+
 import { useState } from "react";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import { PiDotBold } from "react-icons/pi";
+import { RiArrowRightSLine } from "react-icons/ri";
+import Image from "next/image";
+
+// Image
 
 const MainList = [
   {
@@ -13,7 +17,8 @@ const MainList = [
     url: "#",
     sub: [
       { title: "CEO 인사말", url: "/introduce/common/ceo" },
-      { title: "비전및연혁", url: "/introduce/common/vistion" },
+      { title: "비전/미션", url: "/introduce/common/vistion" },
+      { title: "연혁", url: "/introduce/common/history" },
       { title: "CI", url: "/introduce/common/ci" },
     ],
   },
@@ -22,7 +27,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "조직도", url: "/introduce/group/group" },
-      { title: "부서소개", url: "/introduce/group/introduce" },
+      // { title: "부서소개", url: "/introduce/group/introduce" },
     ],
   },
   {
@@ -32,93 +37,153 @@ const MainList = [
   },
 ];
 
+const location = "조직도";
+
 export default function GroupPage() {
   const [menu, setMenu] = useState<string>("");
   const [pageMenu, setPageMenu] = useState<any>("조직안내");
-  const [pageSubMenu, setPagSubMenu] = useState<any>("조직도");
-
-  const MainSelect = (title: string) => {
-    console.log(title, menu);
-    if (pageMenu == title) {
-      setPageMenu("");
-    } else {
-      setPageMenu(title);
-    }
-  };
 
   return (
     <section>
       <Header menu={menu} setMenu={setMenu} />
 
-      <section className="flex flex-col justify-start items-center">
-        <div className="h-[150px] w-full bg-blue-500 z-10"></div>
-        <div className="w-[1400px] bg-white z-20 -translate-y-[75px] flex justify-center item-start">
-          <div className="w-full flex justify-between items-start">
-            <div className="w-1/6 flex justify-center items-center flex-col">
-              <div className="w-full h-[170px] bg-gradient-to-tl bg-blue-900  flex justify-center items-center text-center text-white text-[25px] font-bold">
-                협회소개
-              </div>
-
-              <div className="flex flex-col w-full mt-[2px]">
-                {MainList.map((item: any, index: any) => (
-                  <div key={index}>
-                    <Link passHref href={item.url}>
-                      <div
-                        className={`
-                      ${index != 0 && "border-t-0"}
-                      ${
-                        pageMenu == item.title
-                          ? "bg-slate-700 text-white"
-                          : "border border-slate-200 text-slate-700 hover:bg-gray-100"
-                      } h-[60px] flex justify-between items-center  px-[20px] cursor-pointer`}
-                        onClick={() => MainSelect(item.title)}
-                      >
-                        <span>{item.title}</span>
-                        <span>
-                          {item.sub != null ? (
-                            pageMenu == item.title ? (
-                              <AiOutlineMinus />
-                            ) : (
-                              <AiOutlinePlus />
-                            )
-                          ) : (
-                            ""
-                          )}
-                        </span>
-                      </div>
-                    </Link>
-                    {item.sub && item.title == pageMenu && (
-                      <div className="flex flex-col w-full bg-blue-50 py-[10px] pl-[20px] text-sm border-b border-slate-200">
-                        <ul className="space-y-[10px]">
-                          {item.sub.map((sub_item: any, sub_index: any) => (
-                            <li key={sub_index}>
-                              <Link
-                                passHref
-                                href={sub_item.url}
-                                className="h-[60px] w-full"
-                              >
-                                <div className="hover:text-slate-700 hover:underline flex justify-start item-center leading-[20px]">
-                                  <span className="flex justify-start item-center leading-[20px] pt-[5px]">
-                                    <PiDotBold />
-                                  </span>
-                                  <span className="flex justify-start item-center leading-[20px]">
-                                    {sub_item.title}
-                                  </span>
-                                </div>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+      <div id="headerNav">
+        <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
+          <div className="w-[1400px] flex justify-end pr-[20px]">
+            <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
+              Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+            </div>
+            <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
+              협회소개 <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+            </div>
+            <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
+              일반현황 <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+            </div>
+            <div className="leading-[50px] flex space-x-[5px] justify-between items-center underline">
+              {location}
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
+      <main className="w-[1400px] flex justify-between items-start m-auto">
+        <section className="flex flex-col justify-start items-center">
+          <div className=" bg-white flex justify-center item-start">
+            <div className="w-full flex items-start">
+              <div className="w-[240px] flex flex-col">
+                <div className="w-full h-[170px] bg-gradient-to-tl bg-secondary  flex justify-center items-center text-center text-white text-[25px] font-bold">
+                  협회소개
+                </div>
+                <div className="w-[240px] border-b-white border-b-[40px] border-l-[240px] border-l-secondary -translate-y-[40px]"></div>
+                <div className="flex flex-col w-full -translate-y-[20px]">
+                  <SubNav
+                    MainList={MainList}
+                    pageMenu={pageMenu}
+                    setPageMenu={setPageMenu}
+                    location={location}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+          <ContentTitle title={location} />
+          <div className="w-full flex flex-col px-[120px] mt-[20px]">
+            <div className="flex justify-between h-[50px]">
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center border border-secondary text-subtitle">감사</div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-primary text-white text-subtitle">총회</div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-cente text-subtitle">&nbsp;</div>
+            </div>
+
+            <div className="flex h-[70px]">
+              <div className="w-[50%] border-r border-gray">&nbsp;</div>
+              <div className="w-[50%]">&nbsp;</div>
+            </div>
+
+            <div className="flex justify-between h-[50px]">
+            <div className="w-1/5 flex justify-center items-center h-[50px] text-center text-subtitle">&nbsp;</div>
+            <div className="w-1/5 flex justify-center items-center h-[50px] text-center text-subtitle">&nbsp;</div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">회장</div>
+              <div className="w-1/5 h-[50px] text-center text-subtitle">
+                <div className="border-b border-gray h-[25px]">
+                  &nbsp;
+                </div>
+                <div className="h-[25px]">&nbsp;</div>
+              </div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center border border-secondary text-subtitle">이사회</div>
+            </div>
+
+            <div className="flex h-[70px]">
+              <div className="w-[50%] border-r border-gray">&nbsp;</div>
+              <div className="w-[50%]">&nbsp;</div>
+            </div>
+
+            <div className="flex justify-between h-[50px]">
+            <div className="w-1/5 flex justify-center items-center h-[50px] text-center border border-secondary text-subtitle">자문위원회</div>
+            <div className="w-1/5 flex justify-center items-center h-[50px] text-center text-subtitle">&nbsp;</div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">사무국</div>
+              <div className="w-1/5 h-[50px] text-center text-subtitle">
+                <div className="border-b border-gray h-[25px]">
+                  &nbsp;
+                </div>
+                <div className="h-[25px]">&nbsp;</div>
+              </div>
+              <div className="w-1/5 flex flex-col justify-center items-center h-[50px] text-center border border-secondary text-subtitle">
+              <p>지역위원회</p>
+              <p className="text-[13px]">(충남·여수·경기)</p>
+                </div>
+            </div>
+
+            <div className="flex h-[50px]">
+              <div className="w-[50%] border-r border-gray">&nbsp;</div>
+              <div className="w-[50%]">&nbsp;</div>
+            </div>
+
+            <div className="flex h-[50px]">
+              <div className="w-[10%]">&nbsp;</div>
+              <div className="w-[10%] border-t border-l border-gray">&nbsp;</div>
+              <div className="w-[10%] border-t border-gray">&nbsp;</div>
+              <div className="w-[10%] border-t border-gray">&nbsp;</div>
+              <div className="w-[10%] border-t border-r border-gray">&nbsp;</div>
+              <div className="w-[10%] border-t border-gray">&nbsp;</div>
+              <div className="w-[10%] border-t border-gray">&nbsp;</div>
+              <div className="w-[10%] border-t border-gray">&nbsp;</div>
+              <div className="w-[10%] border-t border-r border-gray">&nbsp;</div>
+              <div className="w-[10%]">&nbsp;</div>
+            </div>
+
+            <div className="flex justify-between h-[50px]">
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">경영관리팀</div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">방폭교육팀</div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">방폭컨설팅</div>
+            </div>
+
+            <div className="flex justify-between ">
+              <div className="w-1/5 flex flex-col space-y-[10px] justify-start items-center mt-[10px] text-center text-base">
+                <span>총무·회계·전산</span>
+                <span>인증서 관리</span>
+                <span>경력관리·홍보</span>
+              </div>
+              <div className="w-1/5 flex flex-col space-y-[10px] justify-start items-center mt-[10px] text-center text-base">
+                <span>방폭기초교육</span>
+                <span>방폭입력양성교육</span>
+                <span>기업형교육</span>
+                <span>교육개발</span>
+                <span>표준해석 및 최신화</span>
+              </div>
+              <div className="w-1/5 flex flex-col space-y-[10px] justify-start items-center mt-[10px] text-center text-base">
+                <span>방폭기기인증</span>
+                <span>방폭사전진단</span>
+                <span>방폭인허가</span>
+              </div>
+            </div>
+
+          </div>
+
+        </section>
+      </main>
       <Footer />
     </section>
   );

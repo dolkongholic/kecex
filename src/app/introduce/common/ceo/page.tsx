@@ -18,8 +18,8 @@ const MainList = [
     url: "#",
     sub: [
       { title: "CEO 인사말", url: "/introduce/common/ceo" },
-      { title: "비전", url: "/introduce/common/vistion" },
-      { title: "연혁", url: "/introduce/common/histort" },
+      { title: "비전/미션", url: "/introduce/common/vistion" },
+      { title: "연혁", url: "/introduce/common/history" },
       { title: "CI", url: "/introduce/common/ci" },
     ],
   },
@@ -28,7 +28,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "조직도", url: "/introduce/group/group" },
-      { title: "부서소개", url: "/introduce/group/introduce" },
+      // { title: "부서소개", url: "/introduce/group/introduce" },
     ],
   },
   {
