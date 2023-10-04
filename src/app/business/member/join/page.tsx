@@ -130,7 +130,7 @@ export default function CareerPage() {
             </div>
             <span className="pl-[10px] text-secondary w-[100px]">준회원<br/></span>
             <span>정회원 이외의 자로서 협회의 회원으로 가입하여 방폭기술진흥법에 의한 방폭기술자 경력 관리 회원의 권익을 향유할 수 있는자, <br/>협회의 정회원으로 가입하지않고
-              방폭기술자 경력관리만을 위하여 협회를 이용하는 자 (이하 "경력관리자"라 한다)
+              방폭기술자 경력관리만을 위하여 협회를 이용하는 자 (이하 &quot;경력관리자&quot;라 한다)
             </span>
           </div>
           <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px]">

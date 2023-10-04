@@ -97,7 +97,7 @@ export default function HistoryPage() {
             <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">&nbsp;</div>
             <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">&nbsp;</div>
             <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">&nbsp;</div>
-            <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">2023'</div>
+            <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">2023&apos;</div>
             <div className="w-[10%] flex justify-start items-center mr-[10px]">2023.07</div>
             <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">(사)한국방폭협회 국제안전세미나</div>
           </div>
@@ -128,7 +128,7 @@ export default function HistoryPage() {
           <div className="w-full px-[20px] h-[50px] flex">
             <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">울산테크노파크 협약</div>
             <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">2022.12</div>
-            <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">2022'</div>
+            <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">2022&apos;</div>
             <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold px-[10px]">&nbsp;</div>
             <div className="w-[10%] flex justify-start items-center mr-[10px]">&nbsp;</div>
             <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">&nbsp;</div>
