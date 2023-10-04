@@ -6,6 +6,11 @@ import { CgMenuGridO } from "react-icons/cg";
 import { useState } from "react";
 import Link from "next/link";
 
+// Image
+import PicSlogan from "../../public/img/slogan/slogan_1.png";
+import PicShotLogo from "../../public/img/logo/logo_big_icon__1.png";
+import PicLogo from "../../public/img/logo/logo_default_2.png";
+
 const snsList = ["youtube", "facebook", "twiiter", "kakao", "blog", "instgram"];
 
 const menuList = [
@@ -43,11 +48,13 @@ export default function Header({ menu, setMenu }: Props) {
         onMouseOver={() => setMenu(null)}
       >
         <div className="w-[1400px] flex justify-between item-center space-x-[20px]">
-          <div className="w-[320px] mr-[20px] flex justify-start items-center">
-            slogan
+          <div className="w-[250px] flex justify-start items-center">
+            <Image src={PicSlogan} alt="슬로건" width={250} height={80} />
           </div>
           <div className="flex justify-center items-center">
-            <div className="w-[130px] mr-[10px] flex item-center">logo</div>
+            <div className="w-[120px] mr-[40px] flex item-center">
+              <Image src={PicShotLogo} alt="Logo" width={120} height={80} />
+            </div>
             <input
               type="text"
               className="w-[350px] h-[40px] ring-2 ring-[#e2e2e2] px-[20px] rounded-3xl placeholder:text-sm font-light focus:outline-none focus:ring-2 focus:ring-active transition-all duration-500"
@@ -87,13 +94,13 @@ export default function Header({ menu, setMenu }: Props) {
       </div>
 
       {/* nav start */}
-      <div className="w-full h-[85px] flex justify-center border-b border-[#dcdcdc] bg-white z-[80]">
+      <div className="w-full h-[85px] flex justify-center border-b border-[#dcdcdc] z-[80] bg-white">
         <div className="w-[1400px] flex justify-between items-center">
           <div
-            className="w-[180px] justify-between items-center"
+            className="w-[250px] justify-between items-center"
             onMouseOver={() => setMenu(null)}
           >
-            logo
+            <Image src={PicLogo} alt="Logo" width={250} height={85} />
           </div>
           <div className="w-[900px]">
             <ul className="flex justify-between font-extrabold text-[20px] text-[#4e4e4e] ">
@@ -143,7 +150,10 @@ export default function Header({ menu, setMenu }: Props) {
                     <span className="cursor-pointer"> - CEO 인사말</span>
                   </Link>
                   <Link passHref href={"/introduce/common/vistion/"}>
-                    <span className="cursor-pointer"> - 비전 및 연혁</span>
+                    <span className="cursor-pointer"> - 비전</span>
+                  </Link>
+                  <Link passHref href={"/introduce/common/history/"}>
+                    <span className="cursor-pointer"> - 연혁</span>
                   </Link>
                   <Link passHref href={"/introduce/common/ci/"}>
                     <span className="cursor-pointer"> - CI</span>
