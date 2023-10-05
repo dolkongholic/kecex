@@ -2,10 +2,19 @@
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Link from "next/link";
+import SubNav from "@/components/SubNav";
+import ContentTitle from "@/components/content/title";
+
 import { useState } from "react";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import { PiDotBold } from "react-icons/pi";
+import {
+  RiArrowRightSLine,
+  RiArrowUpSLine,
+  RiArrowDownSLine,
+} from "react-icons/ri";
+
+// Image
+import Picceo from "../../../../public/img/pages/introduce/intro_ceo.png";
+import Image from "next/image";
 
 const MainList = [
   {
@@ -25,93 +34,217 @@ const MainList = [
   },
 ];
 
-export default function FaqPage() {
-  const [menu, setMenu] = useState<string>("");
-  const [pageMenu, setPageMenu] = useState<any>("알림센터");
-  const [pageSubMenu, setPagSubMenu] = useState<any>("FAQ");
+const location = "FAQ";
 
-  const MainSelect = (title: string) => {
-    console.log(title, menu);
-    if (pageMenu == title) {
-      setPageMenu("");
+export default function FaQPage() {
+  const [menu, setMenu] = useState<string>("");
+  const [pageMenu, setPageMenu] = useState<any>("FAQ");
+  const [select, setSelect] = useState<string>("전체");
+  const [Qselect, setQselect] = useState<number>(1);
+
+  function QselectFn(number: number) {
+    if (Qselect == number) {
+      setQselect(0);
     } else {
-      setPageMenu(title);
+      setQselect(number);
     }
-  };
+  }
 
   return (
     <section>
       <Header menu={menu} setMenu={setMenu} />
 
-      <section className="flex flex-col justify-start items-center">
-        <div className="h-[150px] w-full bg-blue-500 z-10"></div>
-        <div className="w-[1400px] bg-white z-20 -translate-y-[75px] flex justify-center item-start">
-          <div className="w-full flex justify-between items-start">
-            <div className="w-1/6 flex justify-center items-center flex-col">
-              <div className="w-full h-[170px] bg-gradient-to-tl bg-blue-900  flex justify-center items-center text-center text-white text-[25px] font-bold">
-                {pageSubMenu}
-              </div>
-
-              <div className="flex flex-col w-full mt-[2px]">
-                {MainList.map((item: any, index: any) => (
-                  <div key={index}>
-                    <Link passHref href={item.url}>
-                      <div
-                        className={`
-                      ${index != 0 && "border-t-0"}
-                      ${
-                        pageMenu == item.title
-                          ? "bg-slate-700 text-white"
-                          : "border border-slate-200 text-slate-700 hover:bg-gray-100"
-                      } h-[60px] flex justify-between items-center  px-[20px] cursor-pointer`}
-                        onClick={() => MainSelect(item.title)}
-                      >
-                        <span>{item.title}</span>
-                        <span>
-                          {item.sub != null ? (
-                            pageMenu == item.title ? (
-                              <AiOutlineMinus />
-                            ) : (
-                              <AiOutlinePlus />
-                            )
-                          ) : (
-                            ""
-                          )}
-                        </span>
-                      </div>
-                    </Link>
-                    {item.sub && item.title == pageMenu && (
-                      <div className="flex flex-col w-full bg-blue-50 py-[10px] pl-[20px] text-sm border-b border-slate-200">
-                        <ul className="space-y-[10px]">
-                          {item.sub.map((sub_item: any, sub_index: any) => (
-                            <li key={sub_index}>
-                              <Link
-                                passHref
-                                href={sub_item.url}
-                                className="h-[60px] w-full"
-                              >
-                                <div className="hover:text-slate-700 hover:underline flex justify-start item-center leading-[20px]">
-                                  <span className="flex justify-start item-center leading-[20px] pt-[5px]">
-                                    <PiDotBold />
-                                  </span>
-                                  <span className="flex justify-start item-center leading-[20px]">
-                                    {sub_item.title}
-                                  </span>
-                                </div>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+      <div id="headerNav">
+        <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
+          <div className="w-[1400px] flex justify-end pr-[20px]">
+            <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
+              Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+            </div>
+            <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
+              알림센터 <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+            </div>
+            <div className="leading-[50px] flex space-x-[5px] justify-between items-center underline">
+              {location}
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
+      <main className="w-[1400px] flex justify-between items-start m-auto">
+        <section className="flex flex-col justify-start items-center">
+          <div className=" bg-white flex justify-center item-start">
+            <div className="w-full flex items-start">
+              <div className="w-[240px] flex flex-col">
+                <div className="w-full h-[170px] bg-gradient-to-tl bg-secondary  flex justify-center items-center text-center text-white text-[25px] font-bold">
+                  알림센터
+                </div>
+                <div className="w-[240px] border-b-white border-b-[40px] border-l-[240px] border-l-secondary -translate-y-[40px]"></div>
+                <div className="flex flex-col w-full -translate-y-[20px]">
+                  <SubNav
+                    MainList={MainList}
+                    pageMenu={pageMenu}
+                    setPageMenu={setPageMenu}
+                    location={location}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+          <div className="w-full py-[40px] px-[120px]">
+            <ContentTitle title="자주묻는 질문" center={true} />
+
+            <div className="w-full flex flex-col mb-[30px]">
+              <div className="w-full h-[50px] flex">
+                <div
+                  className={`w-1/4 border border-gray text-center leading-[50px] cursor-pointer ${
+                    select == "전체" ? "bg-secondary text-white" : ""
+                  } `}
+                  onClick={() => setSelect("전체")}
+                >
+                  전체
+                </div>
+                <div
+                  className={`w-1/4 border border-gray text-center leading-[50px] cursor-pointer ${
+                    select == "사이트이용" ? "bg-secondary text-white" : ""
+                  } `}
+                  onClick={() => setSelect("사이트이용")}
+                >
+                  사이트이용
+                </div>
+                <div
+                  className={`w-1/4 border border-gray text-center leading-[50px] cursor-pointer ${
+                    select == "교육신청" ? "bg-secondary text-white" : ""
+                  } `}
+                  onClick={() => setSelect("교육신청")}
+                >
+                  교육신청
+                </div>
+                <div
+                  className={`w-1/4 border border-gray text-center leading-[50px] cursor-pointer ${
+                    select == "결제" ? "bg-secondary text-white" : ""
+                  } `}
+                  onClick={() => setSelect("결제")}
+                >
+                  결제
+                </div>
+              </div>
+              <div className="w-full h-[50px] flex">
+                <div
+                  className={`w-1/4 border border-gray border-t-0 text-center leading-[50px] cursor-pointer ${
+                    select == "접수취소" ? "bg-secondary text-white" : ""
+                  } `}
+                  onClick={() => setSelect("접수취소")}
+                >
+                  접수취소
+                </div>
+                <div
+                  className={`w-1/4 border border-gray border-t-0 text-center leading-[50px] cursor-pointer ${
+                    select == "시험관련" ? "bg-secondary text-white" : ""
+                  } `}
+                  onClick={() => setSelect("시험관련")}
+                >
+                  시험관련
+                </div>
+                <div
+                  className={`w-1/4 border border-gray border-t-0 text-center leading-[50px] cursor-pointer ${
+                    select == "자격증" ? "bg-secondary text-white" : ""
+                  } `}
+                  onClick={() => setSelect("자격증")}
+                >
+                  자격증
+                </div>
+                <div
+                  className={`w-1/4 border border-gray border-t-0 text-center leading-[50px] cursor-pointer ${
+                    select == "세미나/맨파워" ? "bg-secondary text-white" : ""
+                  } `}
+                  onClick={() => setSelect("세미나/맨파워")}
+                >
+                  세미나/맨파워
+                </div>
+              </div>
+            </div>
+
+            {(select == "전체" || select == "사이트이용") && (
+              <>
+                <div
+                  className={`w-full h-[70px] border-t border-t-secondary flex justify-between px-[20px]  cursor-pointer border-b-2 border-gray ${
+                    Qselect == 1 ? "text-secondary" : "text-black"
+                  }`}
+                  onClick={() => QselectFn(1)}
+                >
+                  <div className="flex ">
+                    <div className="mr-[20px] text-[30px] leading-[70px]">
+                      Q.
+                    </div>
+                    <div className="leading-[70px]">
+                      회원가입 시 본인인증을 해야하나요?
+                    </div>
+                  </div>
+                  <div className="flex justify-center items-center">
+                    {Qselect == 1 ? (
+                      <RiArrowUpSLine className="w-[25px] h-[25px]" />
+                    ) : (
+                      <RiArrowDownSLine className="w-[25px] h-[25px]" />
+                    )}
+                  </div>
+                </div>
+                {Qselect == 1 ? (
+                  <div className="bg-lightgray text-base text-black px-[40px] py-[20px]">
+                    <p>
+                      정부에서는 개인정보보호법에 근거하여 주민등록번호 수집을
+                      엄격하게 규제하고있습니다.
+                      <br />
+                      본인 여부를 확인하기 위해서는 반드시 본인인증 절차를
+                      진행해주셔야 합니다.
+                    </p>
+                  </div>
+                ) : (
+                  ""
+                )}
+
+                <div
+                  className={`w-full h-[70px] border-t border-t-secondary flex justify-between px-[20px]  cursor-pointer border-b-2 border-gray ${
+                    Qselect == 2 ? "text-secondary" : "text-black"
+                  }`}
+                  onClick={() => QselectFn(2)}
+                >
+                  <div className="flex ">
+                    <div className="mr-[20px] text-[30px] leading-[70px]">
+                      Q.
+                    </div>
+                    <div className="leading-[70px]">
+                      아이디 또는 패스워드를 분실 했을 경우 어떻게 해야하나요?
+                    </div>
+                  </div>
+                  <div className="flex justify-center items-center">
+                    {Qselect == 2 ? (
+                      <RiArrowUpSLine className="w-[25px] h-[25px]" />
+                    ) : (
+                      <RiArrowDownSLine className="w-[25px] h-[25px]" />
+                    )}
+                  </div>
+                </div>
+                {Qselect == 2 ? (
+                  <div className="bg-lightgray text-base text-black px-[40px] py-[20px]">
+                    <p>
+                      정부에서는 개인정보보호법에 근거하여 주민등록번호 수집을
+                      엄격하게 규제하고있습니다.
+                      <br />
+                      본인 여부를 확인하기 위해서는 반드시 본인인증 절차를
+                      진행해주셔야 합니다.
+                    </p>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </>
+            )}
+          </div>
+        </section>
+      </main>
       <Footer />
     </section>
   );

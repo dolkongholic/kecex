@@ -2,10 +2,15 @@
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import Link from "next/link";
+import SubNav from "@/components/SubNav";
+import ContentTitle from "@/components/content/title";
+
 import { useState } from "react";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import { PiDotBold } from "react-icons/pi";
+import { RiArrowRightSLine } from "react-icons/ri";
+
+// Image
+import Picceo from "../../../../public/img/pages/introduce/intro_ceo.png";
+import Image from "next/image";
 
 const MainList = [
   {
@@ -25,93 +30,151 @@ const MainList = [
   },
 ];
 
+const location = "문의사항";
+
 export default function QnaPage() {
   const [menu, setMenu] = useState<string>("");
-  const [pageMenu, setPageMenu] = useState<any>("알림센터");
-  const [pageSubMenu, setPagSubMenu] = useState<any>("문의사항");
-
-  const MainSelect = (title: string) => {
-    console.log(title, menu);
-    if (pageMenu == title) {
-      setPageMenu("");
-    } else {
-      setPageMenu(title);
-    }
-  };
+  const [pageMenu, setPageMenu] = useState<any>("문의사항");
 
   return (
     <section>
       <Header menu={menu} setMenu={setMenu} />
 
-      <section className="flex flex-col justify-start items-center">
-        <div className="h-[150px] w-full bg-blue-500 z-10"></div>
-        <div className="w-[1400px] bg-white z-20 -translate-y-[75px] flex justify-center item-start">
-          <div className="w-full flex justify-between items-start">
-            <div className="w-1/6 flex justify-center items-center flex-col">
-              <div className="w-full h-[170px] bg-gradient-to-tl bg-blue-900  flex justify-center items-center text-center text-white text-[25px] font-bold">
-                {pageSubMenu}
-              </div>
-
-              <div className="flex flex-col w-full mt-[2px]">
-                {MainList.map((item: any, index: any) => (
-                  <div key={index}>
-                    <Link passHref href={item.url}>
-                      <div
-                        className={`
-                      ${index != 0 && "border-t-0"}
-                      ${
-                        pageMenu == item.title
-                          ? "bg-slate-700 text-white"
-                          : "border border-slate-200 text-slate-700 hover:bg-gray-100"
-                      } h-[60px] flex justify-between items-center  px-[20px] cursor-pointer`}
-                        onClick={() => MainSelect(item.title)}
-                      >
-                        <span>{item.title}</span>
-                        <span>
-                          {item.sub != null ? (
-                            pageMenu == item.title ? (
-                              <AiOutlineMinus />
-                            ) : (
-                              <AiOutlinePlus />
-                            )
-                          ) : (
-                            ""
-                          )}
-                        </span>
-                      </div>
-                    </Link>
-                    {item.sub && item.title == pageMenu && (
-                      <div className="flex flex-col w-full bg-blue-50 py-[10px] pl-[20px] text-sm border-b border-slate-200">
-                        <ul className="space-y-[10px]">
-                          {item.sub.map((sub_item: any, sub_index: any) => (
-                            <li key={sub_index}>
-                              <Link
-                                passHref
-                                href={sub_item.url}
-                                className="h-[60px] w-full"
-                              >
-                                <div className="hover:text-slate-700 hover:underline flex justify-start item-center leading-[20px]">
-                                  <span className="flex justify-start item-center leading-[20px] pt-[5px]">
-                                    <PiDotBold />
-                                  </span>
-                                  <span className="flex justify-start item-center leading-[20px]">
-                                    {sub_item.title}
-                                  </span>
-                                </div>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+      <div id="headerNav">
+        <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
+          <div className="w-[1400px] flex justify-end pr-[20px]">
+            <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
+              Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+            </div>
+            <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
+              알림센터 <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+            </div>
+            <div className="leading-[50px] flex space-x-[5px] justify-between items-center underline">
+              {location}
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
+      <main className="w-[1400px] flex justify-between items-start m-auto">
+        <section className="flex flex-col justify-start items-center">
+          <div className=" bg-white flex justify-center item-start">
+            <div className="w-full flex items-start">
+              <div className="w-[240px] flex flex-col">
+                <div className="w-full h-[170px] bg-gradient-to-tl bg-secondary  flex justify-center items-center text-center text-white text-[25px] font-bold">
+                  알림센터
+                </div>
+                <div className="w-[240px] border-b-white border-b-[40px] border-l-[240px] border-l-secondary -translate-y-[40px]"></div>
+                <div className="flex flex-col w-full -translate-y-[20px]">
+                  <SubNav
+                    MainList={MainList}
+                    pageMenu={pageMenu}
+                    setPageMenu={setPageMenu}
+                    location={location}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+          <div className="w-full py-[40px] px-[120px]">
+            <ContentTitle title={location} center={true} />
+            <div className="text-subtitle text-black text-center w-full mt-[40px]">
+              1:1 문의
+            </div>
+            <div className="text-base text-black text-center w-full mt-[15px]">
+              궁금한 사항을 문의주시면 성실하게 답변 드리겠습니다.
+            </div>
+
+            <div className="w-full border-t border-t-secondary mt-[40px] flex">
+              <div className="w-[20%] h-[60px] pl-[40px] bg-lightgray flex items-center text-black">
+                이름
+              </div>
+              <div className="w-[80%] h-[60px] pl-[40px] flex items-center">
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="이름을 입력해주세요"
+                  className="border border-gray p-[5px] w-1/2"
+                />
+              </div>
+            </div>
+            <div className="w-full border-t border-t-gray flex">
+              <div className="w-[20%] h-[60px] pl-[40px] bg-lightgray flex items-center text-black">
+                연락처
+              </div>
+              <div className="w-[80%] h-[60px] pl-[40px] flex items-center">
+                <input
+                  id="tel"
+                  type="text"
+                  placeholder="연락처를 입력해주세요"
+                  className="border border-gray p-[5px] w-1/2"
+                />
+              </div>
+            </div>
+            <div className="w-full border-t border-t-gray flex">
+              <div className="w-[20%] h-[60px] pl-[40px] bg-lightgray flex items-center text-black">
+                이메일
+              </div>
+              <div className="w-[80%] h-[60px] pl-[40px] flex items-center">
+                <input
+                  id="email"
+                  type="text"
+                  placeholder="E-mail을 입력해주세요"
+                  className="border border-gray p-[5px] w-1/2"
+                />
+              </div>
+            </div>
+            <div className="w-full border-t border-t-gray flex">
+              <div className="w-[20%] h-[60px] pl-[40px] bg-lightgray flex items-center text-black">
+                제목
+              </div>
+              <div className="w-[80%] h-[60px] pl-[40px] flex items-center">
+                <input
+                  id="title"
+                  type="text"
+                  placeholder="제목을 입력해주세요"
+                  className="border border-gray p-[5px] w-1/2"
+                />
+              </div>
+            </div>
+            <div className="w-full border-t border-t-gray flex">
+              <div className="w-[20%] h-[180px] pl-[40px] bg-lightgray flex items-center text-black">
+                문의내용
+              </div>
+              <div className="w-[80%] h-[180px] pl-[40px] flex items-center">
+                <input
+                  id="tel"
+                  type="text"
+                  placeholder="이름을 입력해주세요"
+                  className="border border-gray p-[5px] w-[90%] h-[150px]"
+                />
+              </div>
+            </div>
+            <div className="w-full border-t border-t-gray border-b border-b-gray flex">
+              <div className="w-[20%] h-[60px] pl-[40px] bg-lightgray flex items-center text-black">
+                파일첨부
+              </div>
+              <div className="w-[80%] h-[60px] pl-[40px] flex items-center">
+                <input id="file" type="file" className="hidden" />
+                <label
+                  htmlFor="file"
+                  className="border border-gray py-[5px] w-1/5 text-center text-black"
+                >
+                  파일첨부 +
+                </label>
+              </div>
+            </div>
+            <div className="w-full flex justify-end items-center mt-[20px]">
+              <div className="w-[150px] h-[40px] text-white bg-secondary flex justify-center items-center">
+                문의하기
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
       <Footer />
     </section>
   );
