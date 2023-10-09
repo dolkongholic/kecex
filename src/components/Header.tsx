@@ -5,6 +5,7 @@ import { FiSearch } from "react-icons/fi";
 import { CgMenuGridO } from "react-icons/cg";
 import { useState } from "react";
 import Link from "next/link";
+import { signIn, signOut, useSession } from 'next-auth/react'
 
 // Image
 import PicSlogan from "../../public/img/slogan/slogan_1.png";
@@ -41,6 +42,9 @@ type Props = {
   setMenu: any;
 };
 export default function Header({ menu, setMenu }: Props) {
+
+  const { data: session } = useSession();
+  console.log(session?.user)
   return (
     <section className="flex flex-col">
       <div
@@ -49,11 +53,15 @@ export default function Header({ menu, setMenu }: Props) {
       >
         <div className="w-[1400px] flex justify-between item-center space-x-[20px]">
           <div className="w-[250px] flex justify-start items-center">
+            <Link passHref href={"/"}>
             <Image src={PicSlogan} alt="슬로건" width={250} height={80} />
+            </Link>
           </div>
           <div className="flex justify-center items-center">
             <div className="w-[120px] mr-[40px] flex item-center">
-              <Image src={PicShotLogo} alt="Logo" width={120} height={80} />
+              <Link passHref href={"/"}>
+                <Image src={PicShotLogo} alt="Logo" width={120} height={80} />
+              </Link>
             </div>
             <input
               type="text"
@@ -67,9 +75,14 @@ export default function Header({ menu, setMenu }: Props) {
           <div className="w-1/3 flex justify-end items-center">
             <div className="w-1/2 flex item-center justify-end mr-[30px] text-[13px] font-bold">
               <ul className="flex items-center space-x-[5px]">
-                <li>로그인</li>
+                { session == null ? 
+                <li onClick={() => signIn()} className="cursor-pointer">로그인</li>
+                :
+                <li className="cursor-pointer">마이페이지</li>
+                }
+                
                 <li>|</li>
-                <li>사이트맵</li>
+                <li onClick={() => signOut()} className="cursor-pointer">사이트맵</li>
                 <li>|</li>
                 <li className="flex items-center space-x-[5px]">
                   <AiOutlineGlobal />{" "}
@@ -100,7 +113,9 @@ export default function Header({ menu, setMenu }: Props) {
             className="w-[250px] justify-between items-center"
             onMouseOver={() => setMenu(null)}
           >
+            <Link passHref href={"/"}>
             <Image src={PicLogo} alt="Logo" width={250} height={85} />
+            </Link>
           </div>
           <div className="w-[900px]">
             <ul className="flex justify-between font-extrabold text-[20px] text-[#4e4e4e] ">
@@ -134,6 +149,7 @@ export default function Header({ menu, setMenu }: Props) {
             : "opacity-100 translate-y-0 pointer-events-auto"
         } transition-all duration-300 flex justify-center items-start`}
         onMouseLeave={() => setMenu(null)}
+        onClick={()=>setMenu(null)}
       >
         {menu == "협회소개" && (
           <div

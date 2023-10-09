@@ -13,7 +13,7 @@ export default function Footer() {
   };
   return (
     <section>
-      <div className="w-full flex justify-center items-center h-[60px] mt-[50px] text-center">
+      {/* <div className="w-full flex justify-center items-center h-[60px] mt-[50px] text-center">
         <div className="w-[1400px] h-[60px] overflow-hidden flex">
           <div className="flex justify-center items-center animate-slider w-[1400px] space-x-[5px] ">
             <div className="w-[850px] h-[60px] border border-[#DCDCDC] flex justify-center items-center bg-slate-300">
@@ -36,9 +36,9 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="w-full h-[200px] bg-[#3e3e3e] mt-[10px] flex flex-col justify-start items-center">
+      <div className="w-full h-[200px] bg-[#3e3e3e] mt-[10px] flex flex-col justify-start items-center mt-[150px]">
         <div className="w-[1400px] h-[60px] flex justify-between item-center leading-[60px] border-b border-[#777]">
           <ul className="flex text-[#DCDCDC] space-x-[20px] font-[400] text-[14px]">
             <li>이용안내</li>

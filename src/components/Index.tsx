@@ -1,7 +1,23 @@
-import Carousel from "react-material-ui-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel as ResposiveCarousel } from "react-responsive-carousel";
+import Carousel from "react-material-ui-carousel"
 import { Paper, Button } from "@mui/material";
 import { useState } from "react";
 import { ImArrowRight2 } from "react-icons/im";
+import Image from "next/image";
+
+const images = [
+  'bg-primary', 
+  'bg-secondary',
+  'bg-primary', 
+  'bg-secondary',
+  'bg-primary', 
+  'bg-secondary',
+  'bg-primary', 
+  'bg-secondary',
+  'bg-primary', 
+  'bg-secondary',
+];
 
 export default function Index() {
   const [noticeMenu, setNoticeMenu] = useState<String>("알림");
@@ -61,18 +77,29 @@ export default function Index() {
 
   return (
     <section>
-      <div className="w-full h-[500px]">
-        <div className="w-full h-[500px] bg-black z-[50]"></div>
-        <Carousel
-          className="absolute top-[165px] w-full h-[500px] z-[40]"
-          indicators={false}
-          cycleNavigation={true}
+      <div className="w-full h-[450px]">
+        <div className="w-full h-[450px] bg-black z-[50] flex justify-center items-center bg-[url('/img/common/main_bg.jpg')] bg-cover bg-center">
+        <ResposiveCarousel
+          className="absolute top-[165px] w-[1400px] h-[450px] z-[40] flex justify-center items-center"
+          showArrows={true}
+          centerMode={true}
+          centerSlidePercentage={31}
+          showThumbs={false}
+          showStatus={false}
+          autoPlay={true}
+          infiniteLoop={true}
+          showIndicators={false}
         >
-          <Paper className="bg-red-300 w-full h-[500px] opacity-60"></Paper>
-          <Paper className="bg-yellow-300 w-full h-[500px] opacity-60"></Paper>
-          <Paper className="bg-slate-300 w-full h-[500px] opacity-60"></Paper>
-          <Paper className="bg-fuchsia-300 w-full h-[500px] opacity-60"></Paper>
-        </Carousel>
+          {images.map((image, index) => (
+          <Paper
+            className={`${image} w-[300px] h-[300px] hover:-translate-x-[25px] hover:-translate-y-[25px] hover:w-[350px] hover:h-[350px] transform duration-150 transition-all`}
+            key={index}
+          >
+            <Image src='/img/banner/img_1.jpg' alt="PopUp" fill />
+          </Paper>
+      ))}
+        </ResposiveCarousel>
+        </div>
       </div>
 
       {/* 게시판 섹션 */}
@@ -190,7 +217,7 @@ export default function Index() {
           {/* 카드뉴스 */}
           <div className="w-1/2 h-[250px] flex space-x-[10px]">
             <div className="w-1/2 h-[250px]">
-              <Carousel indicators={true} cycleNavigation={true}>
+              <Carousel >
                 <Paper className="bg-red-300 w-full h-[230px] opacity-60">
                   카드뉴스
                 </Paper>
@@ -206,7 +233,7 @@ export default function Index() {
               </Carousel>
             </div>
             <div className="w-1/2 h-[250px]">
-              <Carousel indicators={true} cycleNavigation={true}>
+              <Carousel >
                 <Paper className="bg-yellow-300 w-full h-[230px] opacity-60">
                   카드뉴스
                 </Paper>

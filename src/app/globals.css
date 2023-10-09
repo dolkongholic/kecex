@@ -12,3 +12,11 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.slider-wrapper{
+  display: flex;
+  justify-content: center;
+  height:430px;
+  padding-top: 50px;
+}
+
