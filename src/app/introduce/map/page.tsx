@@ -3,6 +3,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import SubNav from "@/components/SubNav";
+import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 
 import { useState } from "react";
@@ -11,7 +12,6 @@ import Image from "next/image";
 
 // Image
 import PicMap from "../../../../public/img/pages/introduce/map.png";
-
 
 const MainList = [
   {
@@ -73,11 +73,8 @@ export default function GroupPage() {
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
-                <div className="w-full h-[170px] bg-gradient-to-tl bg-secondary  flex justify-center items-center text-center text-white text-[25px] font-bold">
-                  협회소개
-                </div>
-                <div className="w-[240px] border-b-white border-b-[40px] border-l-[240px] border-l-secondary -translate-y-[40px]"></div>
-                <div className="flex flex-col w-full -translate-y-[20px]">
+                <SubNavHeader title={"협회소개"} />
+                <div className="flex flex-col w-full">
                   <SubNav
                     MainList={MainList}
                     pageMenu={pageMenu}
@@ -93,7 +90,7 @@ export default function GroupPage() {
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <div className="w-full flex justify-center items-center mt-[20px]">
-          <Image src={PicMap} alt="map" />
+            <Image src={PicMap} alt="map" />
           </div>
         </section>
       </main>

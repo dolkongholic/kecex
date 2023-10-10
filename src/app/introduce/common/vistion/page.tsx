@@ -3,6 +3,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import SubNav from "@/components/SubNav";
+import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import ContentSubTitle from "@/components/content/subtitle";
 
@@ -11,8 +12,8 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
 
 // Image
-import PicCheck from "../../../../../public/img/icon/content_icon_check.png"
-import PicVision from "../../../../../public/img/pages/introduce/vision.png"
+import PicCheck from "../../../../../public/img/icon/content_icon_check.png";
+import PicVision from "../../../../../public/img/pages/introduce/vision.png";
 
 const MainList = [
   {
@@ -74,11 +75,8 @@ export default function VisionPage() {
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
-                <div className="w-full h-[170px] bg-gradient-to-tl bg-secondary  flex justify-center items-center text-center text-white text-[25px] font-bold">
-                  협회소개
-                </div>
-                <div className="w-[240px] border-b-white border-b-[40px] border-l-[240px] border-l-secondary -translate-y-[40px]"></div>
-                <div className="flex flex-col w-full -translate-y-[20px]">
+                <SubNavHeader title={"협회소개"} />
+                <div className="flex flex-col w-full">
                   <SubNav
                     MainList={MainList}
                     pageMenu={pageMenu}
@@ -94,45 +92,66 @@ export default function VisionPage() {
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <ContentSubTitle title="비전" />
-          <p className="px-[30px]">한국방폭협회는 방폭기술에 대한 연구 개발과 산업안전의 기술기반의 확대, 방폭전문인력의 양성, 방폭기술의 글로벌 경쟁력 확보, 일자리 창출을 통해 선진안전 수준을 제고하며 방폭산업의 경제적 발전을 고도화하고 관련기술인의 사회적 지위향상에 기여함을 그 목적으로 한다.</p>
+          <p className="px-[30px]">
+            한국방폭협회는 방폭기술에 대한 연구 개발과 산업안전의 기술기반의
+            확대, 방폭전문인력의 양성, 방폭기술의 글로벌 경쟁력 확보, 일자리
+            창출을 통해 선진안전 수준을 제고하며 방폭산업의 경제적 발전을
+            고도화하고 관련기술인의 사회적 지위향상에 기여함을 그 목적으로 한다.
+          </p>
           <div className="w-full p-[60px] flex justify-between items-center">
             <div className="w-[31%] py-[30px] flex flex-col justify-center items-center border border-gray">
-              <div className="flex justify-center items-center mb-[20px]">VISION 1</div>
+              <div className="flex justify-center items-center mb-[20px]">
+                VISION 1
+              </div>
               <div className="flex justify-center items-center">
                 <Image src={PicCheck} alt="check" width={20} height={20} />
                 <span className="ml-[10px]">안전은 제일의 경영가치</span>
               </div>
             </div>
             <div className="w-[31%] py-[30px] flex flex-col justify-center items-center border border-gray">
-              <div className="flex justify-center items-center mb-[20px]">VISION 2</div>
+              <div className="flex justify-center items-center mb-[20px]">
+                VISION 2
+              </div>
               <div className="flex justify-center items-center">
                 <Image src={PicCheck} alt="check" width={20} height={20} />
-                <span className="ml-[10px]">안전의식 선진화로 안전문화 장착</span>
+                <span className="ml-[10px]">
+                  안전의식 선진화로 안전문화 장착
+                </span>
               </div>
             </div>
             <div className="w-[31%] py-[30px] flex flex-col justify-center items-center border border-gray">
-              <div className="flex justify-center items-center mb-[20px]">VISION 3</div>
+              <div className="flex justify-center items-center mb-[20px]">
+                VISION 3
+              </div>
               <div className="flex justify-center items-center">
                 <Image src={PicCheck} alt="check" width={20} height={20} />
-                <span className="ml-[10px]">가장 중요한것은 당신의 안전입니다</span>
+                <span className="ml-[10px]">
+                  가장 중요한것은 당신의 안전입니다
+                </span>
               </div>
             </div>
           </div>
-          <Image src={PicVision} alt="vision" className="px-[30px]"/>
+          <Image src={PicVision} alt="vision" className="px-[30px]" />
           <ContentSubTitle title="미션" />
           <div className="w-full p-[60px] flex justify-between items-center">
             <div className="w-[31%] py-[30px] flex flex-col justify-center items-center border border-gray">
-              <div className="flex justify-center items-center mb-[20px]">MISSION 1</div>
+              <div className="flex justify-center items-center mb-[20px]">
+                MISSION 1
+              </div>
               <div className="flex justify-center items-center">
                 <Image src={PicCheck} alt="check" width={20} height={20} />
                 <span className="ml-[10px]">안전문화를 선도하는 기관</span>
               </div>
             </div>
             <div className="w-[31%] py-[30px] flex flex-col justify-center items-center border border-gray">
-              <div className="flex justify-center items-center mb-[20px]">MISSION 2</div>
+              <div className="flex justify-center items-center mb-[20px]">
+                MISSION 2
+              </div>
               <div className="flex justify-center items-center">
                 <Image src={PicCheck} alt="check" width={20} height={20} />
-                <span className="ml-[10px]">우리는 안전으로 행복한 세상을 만든다</span>
+                <span className="ml-[10px]">
+                  우리는 안전으로 행복한 세상을 만든다
+                </span>
               </div>
             </div>
             <div className="w-[31%] py-[30px] flex flex-col justify-center items-center ">

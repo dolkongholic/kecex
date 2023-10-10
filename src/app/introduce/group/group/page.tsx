@@ -3,6 +3,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import SubNav from "@/components/SubNav";
+import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 
 import { useState } from "react";
@@ -71,11 +72,8 @@ export default function GroupPage() {
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
-                <div className="w-full h-[170px] bg-gradient-to-tl bg-secondary  flex justify-center items-center text-center text-white text-[25px] font-bold">
-                  협회소개
-                </div>
-                <div className="w-[240px] border-b-white border-b-[40px] border-l-[240px] border-l-secondary -translate-y-[40px]"></div>
-                <div className="flex flex-col w-full -translate-y-[20px]">
+                <SubNavHeader title={"협회소개"} />
+                <div className="flex flex-col w-full">
                   <SubNav
                     MainList={MainList}
                     pageMenu={pageMenu}
@@ -92,9 +90,15 @@ export default function GroupPage() {
           <ContentTitle title={location} />
           <div className="w-full flex flex-col px-[120px] mt-[20px]">
             <div className="flex justify-between h-[50px]">
-              <div className="w-1/5 flex justify-center items-center h-[50px] text-center border border-secondary text-subtitle">감사</div>
-              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-primary text-white text-subtitle">총회</div>
-              <div className="w-1/5 flex justify-center items-center h-[50px] text-cente text-subtitle">&nbsp;</div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center border border-secondary text-subtitle">
+                감사
+              </div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-primary text-white text-subtitle">
+                총회
+              </div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-cente text-subtitle">
+                &nbsp;
+              </div>
             </div>
 
             <div className="flex h-[70px]">
@@ -103,16 +107,22 @@ export default function GroupPage() {
             </div>
 
             <div className="flex justify-between h-[50px]">
-            <div className="w-1/5 flex justify-center items-center h-[50px] text-center text-subtitle">&nbsp;</div>
-            <div className="w-1/5 flex justify-center items-center h-[50px] text-center text-subtitle">&nbsp;</div>
-              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">회장</div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center text-subtitle">
+                &nbsp;
+              </div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center text-subtitle">
+                &nbsp;
+              </div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">
+                회장
+              </div>
               <div className="w-1/5 h-[50px] text-center text-subtitle">
-                <div className="border-b border-gray h-[25px]">
-                  &nbsp;
-                </div>
+                <div className="border-b border-gray h-[25px]">&nbsp;</div>
                 <div className="h-[25px]">&nbsp;</div>
               </div>
-              <div className="w-1/5 flex justify-center items-center h-[50px] text-center border border-secondary text-subtitle">이사회</div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center border border-secondary text-subtitle">
+                이사회
+              </div>
             </div>
 
             <div className="flex h-[70px]">
@@ -121,19 +131,23 @@ export default function GroupPage() {
             </div>
 
             <div className="flex justify-between h-[50px]">
-            <div className="w-1/5 flex justify-center items-center h-[50px] text-center border border-secondary text-subtitle">자문위원회</div>
-            <div className="w-1/5 flex justify-center items-center h-[50px] text-center text-subtitle">&nbsp;</div>
-              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">사무국</div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center border border-secondary text-subtitle">
+                자문위원회
+              </div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center text-subtitle">
+                &nbsp;
+              </div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">
+                사무국
+              </div>
               <div className="w-1/5 h-[50px] text-center text-subtitle">
-                <div className="border-b border-gray h-[25px]">
-                  &nbsp;
-                </div>
+                <div className="border-b border-gray h-[25px]">&nbsp;</div>
                 <div className="h-[25px]">&nbsp;</div>
               </div>
               <div className="w-1/5 flex flex-col justify-center items-center h-[50px] text-center border border-secondary text-subtitle">
-              <p>지역위원회</p>
-              <p className="text-[13px]">(충남·여수·경기)</p>
-                </div>
+                <p>지역위원회</p>
+                <p className="text-[13px]">(충남·여수·경기)</p>
+              </div>
             </div>
 
             <div className="flex h-[50px]">
@@ -143,21 +157,33 @@ export default function GroupPage() {
 
             <div className="flex h-[50px]">
               <div className="w-[10%]">&nbsp;</div>
-              <div className="w-[10%] border-t border-l border-gray">&nbsp;</div>
+              <div className="w-[10%] border-t border-l border-gray">
+                &nbsp;
+              </div>
               <div className="w-[10%] border-t border-gray">&nbsp;</div>
               <div className="w-[10%] border-t border-gray">&nbsp;</div>
-              <div className="w-[10%] border-t border-r border-gray">&nbsp;</div>
+              <div className="w-[10%] border-t border-r border-gray">
+                &nbsp;
+              </div>
               <div className="w-[10%] border-t border-gray">&nbsp;</div>
               <div className="w-[10%] border-t border-gray">&nbsp;</div>
               <div className="w-[10%] border-t border-gray">&nbsp;</div>
-              <div className="w-[10%] border-t border-r border-gray">&nbsp;</div>
+              <div className="w-[10%] border-t border-r border-gray">
+                &nbsp;
+              </div>
               <div className="w-[10%]">&nbsp;</div>
             </div>
 
             <div className="flex justify-between h-[50px]">
-              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">경영관리팀</div>
-              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">방폭교육팀</div>
-              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">방폭컨설팅</div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">
+                경영관리팀
+              </div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">
+                방폭교육팀
+              </div>
+              <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">
+                방폭컨설팅
+              </div>
             </div>
 
             <div className="flex justify-between ">
@@ -179,9 +205,7 @@ export default function GroupPage() {
                 <span>방폭인허가</span>
               </div>
             </div>
-
           </div>
-
         </section>
       </main>
       <Footer />

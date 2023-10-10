@@ -3,6 +3,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import SubNav from "@/components/SubNav";
+import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import ContentSubTitle from "@/components/content/subtitle";
 
@@ -11,9 +12,9 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
 
 // Image
-import PicCareer_1 from "../../../../../public/img/pages/business/careear_1.png"
-import PicCareer_2 from "../../../../../public/img/pages/business/careear_2.png"
-import PicCareer_3 from "../../../../../public/img/pages/business/careear_3.png"
+import PicCareer_1 from "../../../../../public/img/pages/business/careear_1.png";
+import PicCareer_2 from "../../../../../public/img/pages/business/careear_2.png";
+import PicCareer_3 from "../../../../../public/img/pages/business/careear_3.png";
 
 const MainList = [
   {
@@ -79,11 +80,8 @@ export default function CareerPage() {
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
-                <div className="w-full h-[170px] bg-gradient-to-tl bg-secondary  flex justify-center items-center text-center text-white text-[25px] font-bold">
-                  사업안내
-                </div>
-                <div className="w-[240px] border-b-white border-b-[40px] border-l-[240px] border-l-secondary -translate-y-[40px]"></div>
-                <div className="flex flex-col w-full -translate-y-[20px]">
+                <SubNavHeader title={"사업안내"} />
+                <div className="flex flex-col w-full">
                   <SubNav
                     MainList={MainList}
                     pageMenu={pageMenu}

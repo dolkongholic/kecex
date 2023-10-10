@@ -2,6 +2,8 @@
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import SubNavHeader from "@/components/SubNavHeader";
+
 import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
@@ -60,9 +62,8 @@ export default function EquipmentPage() {
         <div className="w-[1400px] bg-white z-20 -translate-y-[75px] flex justify-center item-start">
           <div className="w-full flex justify-between items-start">
             <div className="w-1/6 flex justify-center items-center flex-col">
-              <div className="w-full h-[170px] bg-gradient-to-tl bg-blue-900  flex justify-center items-center text-center text-white text-[25px] font-bold">
-                {pageSubMenu}
-              </div>
+              <SubNavHeader title={pageSubMenu} />
+              <div className="w-full h-[170px] bg-gradient-to-tl bg-blue-900  flex justify-center items-center text-center text-white text-[25px] font-bold"></div>
 
               <div className="flex flex-col w-full mt-[2px]">
                 {MainList.map((item: any, index: any) => (

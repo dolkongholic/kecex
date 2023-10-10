@@ -13,10 +13,13 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-.slider-wrapper{
+.slider-wrapper {
   display: flex;
   justify-content: center;
-  height:430px;
+  height: 430px;
   padding-top: 50px;
 }
 
+.grIcon path {
+  stroke: #fff;
+}

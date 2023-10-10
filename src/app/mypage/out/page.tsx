@@ -3,9 +3,12 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import SubNav from "@/components/SubNav";
-import ContentTitle from "@/components/content/title";
+import SubNavHeader from "@/components/SubNavHeader";
 
-import { useState } from "react";
+import ContentTitle from "@/components/content/title";
+import { useSession } from "next-auth/react";
+
+import { useState, useRef } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 
 // Image
@@ -41,6 +44,9 @@ const MainList = [
 const location = "회원탈퇴";
 
 export default function QnaPage() {
+  const { data: session } = useSession();
+  const passwordRef = useRef(null);
+
   const [menu, setMenu] = useState<string>("");
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
 
@@ -69,11 +75,8 @@ export default function QnaPage() {
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
-                <div className="w-full h-[170px] bg-gradient-to-tl bg-secondary  flex justify-center items-center text-center text-white text-[25px] font-bold">
-                  마이페이지
-                </div>
-                <div className="w-[240px] border-b-white border-b-[40px] border-l-[240px] border-l-secondary -translate-y-[40px]"></div>
-                <div className="flex flex-col w-full -translate-y-[20px]">
+                <SubNavHeader title="마이페이지" />
+                <div className="flex flex-col w-full">
                   <SubNav
                     MainList={MainList}
                     pageMenu={pageMenu}
@@ -88,6 +91,35 @@ export default function QnaPage() {
 
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
+          <div className="w-full flex justify-center mt-[30px]">
+            <div>
+              <div className="py-[10px]">본인확인</div>
+              <div className="mt-3">
+                <input
+                  value={session?.user.email}
+                  onChange={(e: any) => (passwordRef.current = e.target.value)}
+                  placeholder="비밀번호"
+                  className="border border-gray py-[10px] px-[20px] w-full focus:border-secondary outline-none"
+                />
+              </div>
+              <div className="mt-2">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  ref={passwordRef}
+                  onChange={(e: any) => (passwordRef.current = e.target.value)}
+                  placeholder="비밀번호"
+                  className="border border-gray py-[10px] px-[20px] w-full focus:border-secondary outline-none"
+                />
+              </div>
+              <div className="mt-2">
+                <button className="bg-secondary text-white w-full h-[40px]">
+                  회원 탈퇴
+                </button>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
       <Footer />
