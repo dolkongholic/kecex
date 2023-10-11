@@ -221,14 +221,18 @@ export default function Index() {
             <div className="w-1/2 h-[250px] p-[10px]">
               <Carousel>
                 {images.map((image, index) => (
-                  <Image key={index} src={image} alt="image" fill />
+                  <Paper key={index} className="w-full h-[230px]">
+                    <Image src={image} alt="image" fill />
+                  </Paper>
                 ))}
               </Carousel>
             </div>
             <div className="w-1/2 h-[250px] p-[10px]">
               <Carousel>
                 {images.map((image, index) => (
-                  <Image key={index} src={image} alt="image" fill />
+                  <Paper key={index} className="w-full h-[230px]">
+                    <Image src={image} alt="image" fill />
+                  </Paper>
                 ))}
               </Carousel>
             </div>
