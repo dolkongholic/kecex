@@ -23,12 +23,14 @@ function Login() {
 
   return (
     <main className="flex min-h-screen flex-col items-center space-y-10 p-24">
-      <Image
-        src="/img/logo/logo_big_icon__1.png"
-        alt="Logo"
-        width={250}
-        height={50}
-      />
+      <Link passHref href={"/"}>
+        <Image
+          src="/img/logo/logo_big_icon__1.png"
+          alt="Logo"
+          width={250}
+          height={50}
+        />
+      </Link>
       <div className="border border-gray px-[30px] py-[50px] w-[400px]">
         <div>
           <div className="mt-1">

@@ -1,22 +1,24 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel as ResposiveCarousel } from "react-responsive-carousel";
-import Carousel from "react-material-ui-carousel"
+import Carousel from "react-material-ui-carousel";
 import { Paper, Button } from "@mui/material";
 import { useState } from "react";
 import { ImArrowRight2 } from "react-icons/im";
 import Image from "next/image";
 
 const images = [
-  'bg-primary', 
-  'bg-secondary',
-  'bg-primary', 
-  'bg-secondary',
-  'bg-primary', 
-  'bg-secondary',
-  'bg-primary', 
-  'bg-secondary',
-  'bg-primary', 
-  'bg-secondary',
+  "/img/banner/img_1.jpg",
+  "/img/banner/img_2.jpg",
+  "/img/banner/img_3.jpg",
+  "/img/banner/img_1.jpg",
+  "/img/banner/img_2.jpg",
+  "/img/banner/img_3.jpg",
+  "/img/banner/img_1.jpg",
+  "/img/banner/img_2.jpg",
+  "/img/banner/img_3.jpg",
+  "/img/banner/img_1.jpg",
+  "/img/banner/img_2.jpg",
+  "/img/banner/img_3.jpg",
 ];
 
 export default function Index() {
@@ -79,26 +81,26 @@ export default function Index() {
     <section>
       <div className="w-full h-[450px]">
         <div className="w-full h-[450px] bg-black z-[50] flex justify-center items-center bg-[url('/img/common/main_bg.jpg')] bg-cover bg-center">
-        <ResposiveCarousel
-          className="absolute top-[165px] w-[1400px] h-[450px] z-[40] flex justify-center items-center"
-          showArrows={true}
-          centerMode={true}
-          centerSlidePercentage={31}
-          showThumbs={false}
-          showStatus={false}
-          autoPlay={true}
-          infiniteLoop={true}
-          showIndicators={false}
-        >
-          {images.map((image, index) => (
-          <Paper
-            className={`${image} w-[300px] h-[300px] hover:-translate-x-[25px] hover:-translate-y-[25px] hover:w-[350px] hover:h-[350px] transform duration-150 transition-all`}
-            key={index}
+          <ResposiveCarousel
+            className="absolute top-[165px] w-[1400px] h-[450px] z-[40] flex justify-center items-center"
+            showArrows={true}
+            centerMode={true}
+            centerSlidePercentage={31}
+            showThumbs={false}
+            showStatus={false}
+            autoPlay={true}
+            infiniteLoop={true}
+            showIndicators={false}
           >
-            <Image src='/img/banner/img_1.jpg' alt="PopUp" fill />
-          </Paper>
-      ))}
-        </ResposiveCarousel>
+            {images.map((image, index) => (
+              <Paper
+                className={`w-[300px] h-[300px] hover:-translate-x-[25px] hover:-translate-y-[25px] hover:w-[350px] hover:h-[350px] transform duration-150 transition-all`}
+                key={index}
+              >
+                <Image src={image} alt="PopUp" fill />
+              </Paper>
+            ))}
+          </ResposiveCarousel>
         </div>
       </div>
 
@@ -216,36 +218,18 @@ export default function Index() {
           </div>
           {/* 카드뉴스 */}
           <div className="w-1/2 h-[250px] flex space-x-[10px]">
-            <div className="w-1/2 h-[250px]">
-              <Carousel >
-                <Paper className="bg-red-300 w-full h-[230px] opacity-60">
-                  카드뉴스
-                </Paper>
-                <Paper className="bg-yellow-300 w-full h-[230px] opacity-60">
-                  카드뉴스
-                </Paper>
-                <Paper className="bg-slate-300 w-full h-[230px] opacity-60">
-                  카드뉴스
-                </Paper>
-                <Paper className="bg-fuchsia-300 w-full h-[230px] opacity-60">
-                  카드뉴스
-                </Paper>
+            <div className="w-1/2 h-[250px] p-[10px]">
+              <Carousel>
+                {images.map((image, index) => (
+                  <Image key={index} src={image} alt="image" fill />
+                ))}
               </Carousel>
             </div>
-            <div className="w-1/2 h-[250px]">
-              <Carousel >
-                <Paper className="bg-yellow-300 w-full h-[230px] opacity-60">
-                  카드뉴스
-                </Paper>
-                <Paper className="bg-red-300 w-full h-[230px] opacity-60">
-                  카드뉴스
-                </Paper>
-                <Paper className="bg-slate-300 w-full h-[230px] opacity-60">
-                  카드뉴스
-                </Paper>
-                <Paper className="bg-fuchsia-300 w-full h-[230px] opacity-60">
-                  카드뉴스
-                </Paper>
+            <div className="w-1/2 h-[250px] p-[10px]">
+              <Carousel>
+                {images.map((image, index) => (
+                  <Image key={index} src={image} alt="image" fill />
+                ))}
               </Carousel>
             </div>
           </div>

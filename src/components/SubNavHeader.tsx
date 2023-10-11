@@ -8,7 +8,7 @@ type Props = {
 export default function SubNameHeaderTitle({ title }: Props) {
   return (
     <>
-      <div className="w-full h-[170px] bg-[url('/img/common/navHeader.png')] bg-cover flex justify-center items-center text-center text-white text-[25px] font-bold">
+      <div className="w-full h-[170px] bg-[url('/img/common/navHeader.png')] bg-cover flex justify-center items-center text-center text-white text-[25px] font-bold mb-[40px]">
         {title}
       </div>
     </>
