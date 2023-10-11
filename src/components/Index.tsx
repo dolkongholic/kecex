@@ -21,6 +21,32 @@ const images = [
   "/img/banner/img_3.jpg",
 ];
 
+const banners = [
+  "/img/inner/banner/img_1.jpg",
+  "/img/inner/banner/img_2.jpg",
+  "/img/inner/banner/img_3.jpg",
+  "/img/inner/banner/img_1.jpg",
+  "/img/inner/banner/img_2.jpg",
+  "/img/inner/banner/img_3.jpg",
+  "/img/inner/banner/img_1.jpg",
+  "/img/inner/banner/img_2.jpg",
+  "/img/inner/banner/img_3.jpg",
+  "/img/inner/banner/img_1.jpg",
+  "/img/inner/banner/img_2.jpg",
+  "/img/inner/banner/img_3.jpg",
+];
+
+const workers = [
+  "/img/inner/worker/img_1.jpg",
+  "/img/inner/worker/img_2.jpg",
+  "/img/inner/worker/img_1.jpg",
+  "/img/inner/worker/img_2.jpg",
+  "/img/inner/worker/img_1.jpg",
+  "/img/inner/worker/img_2.jpg",
+  "/img/inner/worker/img_1.jpg",
+  "/img/inner/worker/img_2.jpg",
+];
+
 export default function Index() {
   const [noticeMenu, setNoticeMenu] = useState<String>("알림");
   const [noticeSubMenu, setNoticeSubMenu] = useState<String>("공지사항");
@@ -220,7 +246,7 @@ export default function Index() {
           <div className="w-1/2 h-[250px] flex space-x-[10px]">
             <div className="w-1/2 h-[250px] p-[10px]">
               <Carousel>
-                {images.map((image, index) => (
+                {banners.map((image, index) => (
                   <Paper key={index} className="w-full h-[230px]">
                     <Image src={image} alt="image" fill />
                   </Paper>
@@ -229,7 +255,7 @@ export default function Index() {
             </div>
             <div className="w-1/2 h-[250px] p-[10px]">
               <Carousel>
-                {images.map((image, index) => (
+                {workers.map((image, index) => (
                   <Paper key={index} className="w-full h-[230px]">
                     <Image src={image} alt="image" fill />
                   </Paper>

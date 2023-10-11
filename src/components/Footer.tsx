@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { IoIosArrowUp } from "react-icons/io";
 
 export default function Footer() {
@@ -47,7 +48,9 @@ export default function Footer() {
             <li>|</li>
             <li>개인정보처리방침</li>
             <li>|</li>
-            <li>오시는길</li>
+            <Link passHref href={"/introduce/map/"}>
+              <li>오시는길</li>
+            </Link>
             <li>|</li>
             <li>오류 신고 및 확인</li>
           </ul>
