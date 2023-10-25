@@ -13,7 +13,7 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
 
 // Image
-import PicCircle from "../../../../../public/img/icon/content_icon_circle.png";
+import PicCircle from "../../../../../public/img/icon/content_icon_arrow.png";
 import PicConsulting from "../../../../../public/img/pages/business/consulting.png";
 
 const MainList = [
@@ -103,10 +103,6 @@ export default function EquipmentPage() {
                 · 산업안전보건기준에 관한 규칙 제 311조 (폭발위험장소에서
                 사용하는 전기 기계·기구의 선정 등)
               </span>
-              <span>
-                · 산업안전보건기준에 관한 규칙 제 230조 (폭발위험이 있는 장소의
-                설정 및 관리)
-              </span>
             </div>
           </div>
 
@@ -114,9 +110,19 @@ export default function EquipmentPage() {
           <div className="w-full px-[20px] mb-[40px]">
             <div className="flex flex-col justify-center items-start h-[80px] px-[20px] border border-gray w-full">
               <span>
-                진단부터 방폭기기 구매, 시공에 이르기까지 모든 과정을 책임감
-                있게 관리하며, 감독기관의 점검 시 대응 지원 및 지적 사항에 대한
-                신속 조치
+                국가기술표준 KS C IEC 60079-14에 따라 폭발 위험장소에 설치되는
+                전기기기 및 배선의 선정 적합성 검토
+              </span>
+            </div>
+          </div>
+
+          <ContentSubTitle title="컨설팅 대상" />
+          <div className="w-full px-[20px] mb-[40px]">
+            <div className="flex flex-col justify-center items-start h-[80px] px-[20px] border border-gray w-full">
+              <span>
+                산업안전보건기준에 관한 규칙 제 230조 1항 1,2에 따라 인화성
+                액체의 증기나 인화성 가스 등을 제조·취급 또는 사용하는 사업장
+                또는 인화성 고체를 제조·사용하는 사업장
               </span>
             </div>
           </div>
@@ -124,7 +130,8 @@ export default function EquipmentPage() {
           <ContentSubTitle title="컨설팅 범위" />
           <div className="w-full px-[20px] mb-[40px] flex flex-col">
             <span className="text-subtitle mb-[10px] text-black">
-              | 검사 등급별
+              폭발성 분위기에서 사용하는 방폭구조 전기기계·기구 및 부품으로서
+              다음 중 어느 하나에 해당하는것
             </span>
             <div className="w-full flex justify-start items-center">
               <span className="flex text-base justify-start items-start">
