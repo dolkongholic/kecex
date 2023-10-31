@@ -16,7 +16,7 @@ const snsList = ["youtube", "facebook", "twiiter", "kakao", "blog", "instgram"];
 
 const menuList = [
   {
-    title: "협회소개",
+    title: "협회소개a",
     url: "/",
   },
   {
@@ -326,7 +326,7 @@ export default function Header({ menu, setMenu }: Props) {
           >
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
-                <Link passHref href={"/"}>
+                <Link passHref href={"/education/apply"}>
                   <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                     교육신청
                   </div>
