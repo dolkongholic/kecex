@@ -87,7 +87,7 @@ export default function CeoPage() {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <div className="flex flex-col text-title text-black w-full h-[400px] p-[40px] bg-lightgray">
             <p>안녕하십니까?</p>

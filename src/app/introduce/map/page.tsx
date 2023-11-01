@@ -87,7 +87,7 @@ export default function GroupPage() {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <div className="w-full flex justify-center items-center mt-[20px]">
             <Image src={PicMap} alt="map" />

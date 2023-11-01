@@ -8,27 +8,26 @@ import ContentTitle from "@/components/content/title";
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
+import { IoIosArrowForward } from "react-icons/io";
 
-// Image
-import Picceo from "../../../../public/img/pages/introduce/intro_ceo.png";
-import Image from "next/image";
+import Link from "next/link";
 
 const MainList = [
   {
     title: "교육신청",
-    url: "/education/apply",
+    url: "/education/apply/apply",
   },
   {
     title: "나의 학습활동",
-    url: "/education/apply",
+    url: "/education/mystatus/apply",
   },
 ];
 
-const location = "교육신청";
+const location = "나의 학습활동";
 
-export default function CeoPage() {
+export default function MystatusPage() {
   const [menu, setMenu] = useState<string>("");
-  const [pageMenu, setPageMenu] = useState<any>("교육센터");
+  const [pageMenu, setPageMenu] = useState<any>("나의 학습활동");
 
   return (
     <section>
@@ -69,29 +68,17 @@ export default function CeoPage() {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <div className="flex justify-between w-full h-[50px] leading-[50px]">
-            <div className="w-1/5 text-center h-full border border-gray">
-              교육 신청
+
+          <div>
+            <div className="flex-col justify-center items-center border ">
+              <div>&nbsp;</div>
+              <div>수강신청</div>
+              <div>
+                <span>2</span> 건
+              </div>
             </div>
-            <div className="w-1/5 text-center h-full border border-gray">
-              재교육 신청
-            </div>
-            <div className="w-1/5 text-center h-full border border-gray">
-              재시험 신청
-            </div>
-            <div className="w-1/5 text-center h-full border border-gray">
-              세미나 신청
-            </div>
-            <div className="w-1/5 text-center h-full border border-gray">
-              컨설팅 신청
-            </div>
-          </div>
-          <div className="flex flex-col text-title text-black w-full h-[400px] p-[40px] bg-lightgray">
-            <p>안녕하십니까?</p>
-            <p>한국방폭협회 홈페이지를</p>
-            <p>방문해 주신 여러분 반갑습니다.</p>
           </div>
         </section>
       </main>

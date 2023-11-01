@@ -94,7 +94,7 @@ export default function CareerPage() {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <ContentSubTitle title="가입대상" />
           <span className="mb-[40px] px-[20px]">협회 기술자로 가입된 사람</span>

@@ -94,7 +94,7 @@ export default function InspectionPage() {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <ContentSubTitle title="관련법령" />
           <div className="w-full px-[20px] mb-[40px]">

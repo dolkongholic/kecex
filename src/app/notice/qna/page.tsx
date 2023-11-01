@@ -76,7 +76,7 @@ export default function QnaPage() {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <div className="w-full py-[40px] px-[120px]">
             <ContentTitle title={location} center={true} />
             <div className="text-subtitle text-black text-center w-full mt-[40px]">

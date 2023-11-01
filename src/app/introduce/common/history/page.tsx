@@ -89,7 +89,7 @@ export default function HistoryPage() {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <div className="w-full px-[20px] h-[50px] flex mt-[40px]">
             <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">

@@ -93,7 +93,7 @@ export default function CareerPage() {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <ContentSubTitle title="가입대상" />
           <div className="w-full flex justify-between items-center text-subtitle text-center h-[50px] px-[20px]">

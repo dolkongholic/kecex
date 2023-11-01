@@ -16,7 +16,7 @@ const snsList = ["youtube", "facebook", "twiiter", "kakao", "blog", "instgram"];
 
 const menuList = [
   {
-    title: "협회소개a",
+    title: "협회소개",
     url: "/",
   },
   {
@@ -63,7 +63,7 @@ export default function Header({ menu, setMenu }: Props) {
             </div>
             <input
               type="text"
-              className="w-[350px] h-[40px] ring-2 ring-[#e2e2e2] px-[20px] rounded-3xl placeholder:text-sm font-light focus:outline-none focus:ring-2 focus:ring-active transition-all duration-500"
+              className="w-[350px] h-[40px] ring-2 ring-white px-[20px] rounded-3xl placeholder:text-sm font-light focus:outline-none focus:ring-2 focus:ring-active transition-all duration-500"
               placeholder="검색어를 입력하세요"
             />
             <span className="w-[30px] h-[30px] -translate-x-[40px] translate-y-[5px]">
@@ -326,9 +326,16 @@ export default function Header({ menu, setMenu }: Props) {
           >
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
-                <Link passHref href={"/education/apply"}>
+                <Link passHref href={"/education/apply/apply"}>
                   <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                     교육신청
+                  </div>
+                </Link>
+              </div>
+              <div className="w-1/4">
+                <Link passHref href={"/education/mystatus/apply"}>
+                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    나의 학습활동
                   </div>
                 </Link>
               </div>

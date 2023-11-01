@@ -86,7 +86,7 @@ export default function GroupPage() {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <div className="w-full flex flex-col px-[120px] mt-[20px]">
             <div className="flex justify-between h-[50px]">
