@@ -12,6 +12,14 @@ import { FaMedal } from "react-icons/fa6";
 
 import Link from "next/link";
 
+// Image
+import edu_1 from "../../../../../public/img/icon/edu_1.png";
+import edu_2 from "../../../../../public/img/icon/edu_2.png";
+import edu_3 from "../../../../../public/img/icon/edu_3.png";
+import edu_4 from "../../../../../public/img/icon/edu_4.png";
+import edu_5 from "../../../../../public/img/icon/edu_5.png";
+import Image from "next/image";
+
 const MainList = [
   {
     title: "교육신청",
@@ -28,6 +36,7 @@ const location = "나의 학습활동";
 export default function MystatusPage() {
   const [menu, setMenu] = useState<string>("");
   const [pageMenu, setPageMenu] = useState<any>("나의 학습활동");
+  const [select, setSelect] = useState<string>("수강신청");
 
   return (
     <section>
@@ -72,9 +81,18 @@ export default function MystatusPage() {
           <ContentTitle title={location} />
 
           <div className="flex w-full mt-[50px] justify-between">
-            <div className="flex-col justify-center items-center border border-secondary w-[200px] h-[200px] p-[20px] text-darkgray hover:border-secondary cursor-pointer">
+            <div
+              className={`flex-col justify-center items-center border w-[200px] h-[200px] p-[20px] text-darkgray hover:border-secondary cursor-pointer ${
+                select == "수강신청"
+                  ? "border-secondary border-2"
+                  : "border-gary border"
+              } `}
+              onClick={() => setSelect("수강신청")}
+            >
               <div className="w-full flex justify-center  items-center">
-                <div className="w-[100px] h-[100px] bg-gray">&nbsp;</div>
+                <div className="w-[100px] h-[100px]">
+                  <Image src={edu_1} alt="edu_1" />
+                </div>
               </div>
               <div className="w-full flex justify-center  items-center mt-[10px]">
                 수강신청
@@ -83,9 +101,18 @@ export default function MystatusPage() {
                 <span className="font-bold  text-black text-[20px]">2</span> 건
               </div>
             </div>
-            <div className="flex-col justify-center items-center border border-gray w-[200px] h-[200px] p-[20px] text-darkgray hover:border-secondary cursor-pointer">
+            <div
+              className={`flex-col justify-center items-center  w-[200px] h-[200px] p-[20px] text-darkgray hover:border-secondary cursor-pointer ${
+                select == "수강중"
+                  ? "border-secondary border-2"
+                  : "border-gary border"
+              } `}
+              onClick={() => setSelect("수강중")}
+            >
               <div className="w-full flex justify-center  items-center">
-                <div className="w-[100px] h-[100px] bg-gray">&nbsp;</div>
+                <div className="w-[100px] h-[100px]">
+                  <Image src={edu_2} alt="edu_2" />
+                </div>
               </div>
               <div className="w-full flex justify-center  items-center mt-[10px]">
                 수강중
@@ -94,9 +121,18 @@ export default function MystatusPage() {
                 <span className="font-bold  text-black text-[20px]">1</span> 건
               </div>
             </div>
-            <div className="flex-col justify-center items-center border border-gray w-[200px] h-[200px] p-[20px] text-darkgray hover:border-secondary cursor-pointer">
+            <div
+              className={`flex-col justify-center items-center border w-[200px] h-[200px] p-[20px] text-darkgray hover:border-secondary cursor-pointer ${
+                select == "수료"
+                  ? "border-secondary border-2"
+                  : "border-gary border"
+              } `}
+              onClick={() => setSelect("수료")}
+            >
               <div className="w-full flex justify-center  items-center">
-                <div className="w-[100px] h-[100px] bg-gray">&nbsp;</div>
+                <div className="w-[100px] h-[100px]">
+                  <Image src={edu_3} alt="edu_3" />
+                </div>
               </div>
               <div className="w-full flex justify-center  items-center mt-[10px]">
                 수료
@@ -105,9 +141,18 @@ export default function MystatusPage() {
                 <span className="font-bold  text-black text-[20px]">0</span> 건
               </div>
             </div>
-            <div className="flex-col justify-center items-center border border-gray w-[200px] h-[200px] p-[20px] text-darkgray hover:border-secondary cursor-pointer">
+            <div
+              className={`flex-col justify-center items-center border w-[200px] h-[200px] p-[20px] text-darkgray hover:border-secondary cursor-pointer ${
+                select == "미수료"
+                  ? "border-secondary border-2"
+                  : "border-gary border"
+              } `}
+              onClick={() => setSelect("미수료")}
+            >
               <div className="w-full flex justify-center  items-center">
-                <div className="w-[100px] h-[100px] bg-gray">&nbsp;</div>
+                <div className="w-[100px] h-[100px]">
+                  <Image src={edu_4} alt="edu_4" />
+                </div>
               </div>
               <div className="w-full flex justify-center  items-center mt-[10px]">
                 미수료
@@ -116,9 +161,18 @@ export default function MystatusPage() {
                 <span className="font-bold  text-black text-[20px]">0</span> 건
               </div>
             </div>
-            <div className="flex-col justify-center items-center border border-gray w-[200px] h-[200px] p-[20px] text-darkgray hover:border-secondary cursor-pointer">
+            <div
+              className={`flex-col justify-center items-center border w-[200px] h-[200px] p-[20px] text-darkgray hover:border-secondary cursor-pointer ${
+                select == "수강취소"
+                  ? "border-secondary border-2"
+                  : "border-gary border"
+              } `}
+              onClick={() => setSelect("수강취소")}
+            >
               <div className="w-full flex justify-center  items-center">
-                <div className="w-[100px] h-[100px] bg-gray">&nbsp;</div>
+                <div className="w-[100px] h-[100px]">
+                  <Image src={edu_5} alt="edu_5" />
+                </div>
               </div>
               <div className="w-full flex justify-center  items-center mt-[10px]">
                 수강취소
