@@ -10,14 +10,22 @@ function Login() {
   const passwordRef = useRef(null);
 
   const handleSubmit = async () => {
-    // console.log(emailRef.current)
-    // console.log(passwordRef.current)
+    // console.log(emailRef.current);
+    // console.log(passwordRef.current);
 
     const result = await signIn("credentials", {
       username: emailRef.current,
       password: passwordRef.current,
-      redirect: true,
+      redirect: false,
       callbackUrl: "/",
+    }).then((callback) => {
+      if (callback?.ok) {
+        console.log("OK");
+      }
+
+      if (callback?.error) {
+        console.log("FAIKL");
+      }
     });
   };
 
