@@ -14,7 +14,7 @@ function Login() {
     // console.log(passwordRef.current)
 
     const result = await signIn("credentials", {
-      username: emailRef.current,
+      email: emailRef.current,
       password: passwordRef.current,
       redirect: true,
       callbackUrl: "/",
