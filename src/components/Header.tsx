@@ -245,9 +245,9 @@ export default function Header({ menu, setMenu }: Props) {
                   <Link passHref href={"/business/education/course03/"}>
                     <span className="cursor-pointer"> - 기업형 교육</span>
                   </Link>
-                  <Link passHref href={"/business/education/develop/"}>
+                  {/* <Link passHref href={"/business/education/develop/"}>
                     <span className="cursor-pointer"> - 교육개발</span>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               <div className="w-1/4">
@@ -258,9 +258,9 @@ export default function Header({ menu, setMenu }: Props) {
                   <Link passHref href={"/business/consulting/inspection/"}>
                     <span className="cursor-pointer"> - 방폭 사전진단</span>
                   </Link>
-                  <Link passHref href={"/business/consulting/equipment/"}>
+                  {/* <Link passHref href={"/business/consulting/equipment/"}>
                     <span className="cursor-pointer"> - 방폭기기선정</span>
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>

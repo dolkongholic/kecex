@@ -99,8 +99,11 @@ export default function Course03Page() {
           <div className="w-full px-[20px] mb-[40px]">
             <div className="flex flex-col justify-center items-start h-[80px] px-[20px] border border-gray w-full">
               <span>
-                방폭 기술을 세분화하여 산업체가 요구하는 질 높고 다양한 방폭
-                인력을 양성하기 위함
+                Plant 제작 및 개조 공사 시 작업자, 관리자의 맞춤형 교육을 통해
+                국내외 법규 및 표준, 공사 시방서에 맞는 제작현장을 구성함으로써
+                재작업으로 발생 되는 Loss 제거 및 고객(발주사)의 요구조건을
+                충족시키고 나아가 경쟁력을 확보를 통한 국가경제에 이바지하기
+                위함
               </span>
             </div>
           </div>
@@ -116,57 +119,31 @@ export default function Course03Page() {
                   대 상
                 </div>
               </div>
-              <div className="flex justify-between items-start w-full">
-                <div className="w-1/2 flex flex-col justify-start items-center">
-                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    &nbsp;
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+              <div className="flex  justify-between items-start w-full">
+                <div className="w-1/2 flex h-[200px] flex-col justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center ">
                     · 방폭시공기술자
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭검사기술자
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭설계기술자 I (폭발위험장소 구분)
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭설계기술자 II (방폭기기 선정)
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭정비기술자
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭감리기술자(시공/검사/설계 I,II 보유자 응시 가능)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    &nbsp;
                   </span>
                 </div>
                 <div className="w-1/2 flex flex-col justify-start items-center">
-                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center">
-                    &nbsp;
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 방폭 시공 및 관리 업무를 수행하는 자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 방폭 검사 및 관리 업무를 수행하는 자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 폭발위험장소 구분 및 관리 업무를 수행하는 자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 방폭 기기 선정 및 관리 업무를 수행하는 자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 방폭 기기 수리, 정비 및 관리 업무를 수행하는 자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 방폭 감리 업무를 수행하는 자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    &nbsp;
+                  <span className="w-full h-[200px] pl-[20px] flex justify-start items-center">
+                    석유화학, 조선, 해양, 반도체 등 Plant 제작 및 공정 설비의
+                    개조 작업 등 Project 성 공사 수주를 받거나 진행하는 기업체
                   </span>
                 </div>
               </div>
@@ -177,19 +154,13 @@ export default function Course03Page() {
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="자격요건" />
               <div className="flex flex-col justify-start py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
-                <span>
-                  일반전기공사업 5년 경력자 / 관련 학과 학사 학위 소지자 /{" "}
-                  <br />
-                  2년제 전공 및 2년 이상 경력자 / 3년제 전공 및 1년 이상 경력자
-                </span>
+                <span>기업체에서 선정 한 인원</span>
               </div>
             </div>
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="교육내용 및 시간" />
               <div className="flex flex-col justify-start py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
-                <span>
-                  24시간 (추후 내용 추가) <br />
-                </span>
+                <span>기업체의 요구 및 필요에 따라 지정</span>
               </div>
             </div>
           </div>
@@ -198,25 +169,7 @@ export default function Course03Page() {
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="갱신교육기간" />
               <div className="flex flex-col justify-start py-[20px] items-start h-[140px] px-[20px] border border-gray w-full">
-                <span>5년 (표준 갱싱 주기 반영, 실습교육 및 평가 제외)</span>
-              </div>
-            </div>
-            <div className="w-[49%] flex flex-col">
-              <ContentSubTitle title="발급조건" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[140px] px-[20px] border border-gray w-full">
-                <span>
-                  · 초급 : 방폭인력양성교육 이수자, 전문교육기관 60시간 이상
-                  이수자
-                </span>
-                <span>
-                  · 중급 : 경력수첩 초급 취득 후 방폭 관련 업무 5년 경력자
-                </span>
-                <span>
-                  · 고급 : IECEx CoPC 보유 및 방폭 관련 업무 5년 경력자
-                </span>
-                <span>
-                  · 특급 : IECEx CoPC Unit Ex 010 보유자 (방폭감리기술자 발급)
-                </span>
+                <span>공사기간 내 적용</span>
               </div>
             </div>
           </div>
@@ -234,53 +187,11 @@ export default function Course03Page() {
               </div>
               <div className="flex justify-between items-start w-full">
                 <div className="w-1/2 flex flex-col justify-start items-center">
-                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    &nbsp;
-                  </span>
                   <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    · 방폭시공기술자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    · 방폭검사기술자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    · 방폭설계기술자 I (폭발위험장소 구분)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    · 방폭설계기술자 II (방폭기기 선정)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    · 방폭정비기술자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    · 방폭감리기술자(시공/검사/설계 I,II 보유자 응시 가능)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    &nbsp;
+                    기업체의 상황과 필요에 따라 구성
                   </span>
                 </div>
                 <div className="w-1/2 flex flex-col justify-start items-center">
-                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center">
-                    &nbsp;
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 180만원 (IECEx CoPC Unit Ex 001 + 036)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 140만원 (IECEx CoPC Unit Ex 001 + 478)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 100만원 (IECEx CoPC Unit Ex 001 + 002)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 100만원 (IECEx CoPC Unit Ex 001 + 009)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 170만원 (IECEx CoPC Unit Ex 001 + 005)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 200만원 (IECEx CoPC Unit Ex 010)
-                  </span>
                   <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     &nbsp;
                   </span>
@@ -293,13 +204,13 @@ export default function Course03Page() {
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="혜택" />
               <div className="flex flex-col justify-start py-[20px] items-start h-[70px] px-[20px] border border-gray w-full">
-                <span>경력수첩 발급 (추후 전자경력 카드 발급)</span>
+                <span>수료증 및 Project 별 교육 이수 스티커 발급</span>
               </div>
             </div>
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="발급비용" />
               <div className="flex flex-col justify-start py-[20px] items-start h-[70px] px-[20px] border border-gray w-full">
-                <span>경력 수첩 5만원</span>
+                <span>-</span>
               </div>
             </div>
           </div>

@@ -125,7 +125,7 @@ export default function HistoryPage() {
               &nbsp;
             </div>
             <div className="w-[10%] flex justify-start items-center mr-[10px]">
-              2023.06
+              2023.05
             </div>
             <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
               (사)한국방폭협회 설립 인가

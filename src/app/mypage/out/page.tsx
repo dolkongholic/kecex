@@ -26,12 +26,12 @@ const MainList = [
   },
   {
     title: "경력관리",
-    url: "/mypage/career/setting",
+    url: "/mypage/resume",
     sub: null,
   },
   {
     title: "경력수첩 발급",
-    url: "/mypage/career/print",
+    url: "/mypage/print",
     sub: null,
   },
   {

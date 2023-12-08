@@ -96,20 +96,9 @@ export default function CareerPage() {
         <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <ContentSubTitle title="가입대상" />
-          <div className="w-full flex justify-between items-center text-subtitle text-center h-[50px] px-[20px]">
-            <div className="w-[48%] border-b border-secondary py-[10px] flex justify-center items-center">
-              회원사
-            </div>
-            <div className="w-[48%] border-b border-secondary py-[10px] flex justify-center items-center">
-              발주사
-            </div>
-          </div>
           <div className="w-full flex justify-between items-center text-subtitle text-center h-[50px] mb-[50px] px-[20px]">
-            <div className="w-[48%] py-[10px] flex justify-center items-center text-base">
-              방폭기술업을 등록하고자 하는 기업체 (법 시행 이후)
-            </div>
-            <div className="w-[48%] py-[10px] flex justify-center items-center text-base">
-              방폭기술 관련 용역을 발주하고자 하는 기업체 (법 시행 이후)
+            <div className="w-full py-[10px] flex justify-start items-center text-base">
+              방폭기술업을 등록하고자 하는 개인 또는 기업체
             </div>
           </div>
 
@@ -141,10 +130,10 @@ export default function CareerPage() {
           </div>
           <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px]">
             <Image src={PicIconArrow} width={25} height={15} alt="icon" />
-            <span className="pl-[10px] text-secondary w-[100px]">특별회원</span>
+            <span className="pl-[10px] text-secondary w-[100px]">기업회원</span>
             <span>
-              협회가 필요하다고 인정하여 이사회의 승인을 얻어 협회의 회원으로
-              가입한 단체
+              방폭설비의 생산·유통·엔지니어링·설치·시공·진단·안전관리 교육 및
+              방폭과 관련된 소재, 부품기업과 이와 관련한 산업에 종사하는 기업
             </span>
           </div>
           <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px] mb-[40px]">

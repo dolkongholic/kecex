@@ -176,10 +176,10 @@ export default function GroupPage() {
 
             <div className="flex justify-between h-[50px]">
               <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">
-                경영관리팀
+                기술관리
               </div>
               <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">
-                방폭교육팀
+                방폭교육
               </div>
               <div className="w-1/5 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-subtitle">
                 방폭컨설팅
@@ -188,21 +188,18 @@ export default function GroupPage() {
 
             <div className="flex justify-between ">
               <div className="w-1/5 flex flex-col space-y-[10px] justify-start items-center mt-[10px] text-center text-base">
-                <span>총무·회계·전산</span>
                 <span>인증서 관리</span>
                 <span>경력관리·홍보</span>
+                <span>표준해석 및 최신화</span>
               </div>
               <div className="w-1/5 flex flex-col space-y-[10px] justify-start items-center mt-[10px] text-center text-base">
                 <span>방폭기초교육</span>
                 <span>방폭입력양성교육</span>
                 <span>기업형교육</span>
                 <span>교육개발</span>
-                <span>표준해석 및 최신화</span>
               </div>
               <div className="w-1/5 flex flex-col space-y-[10px] justify-start items-center mt-[10px] text-center text-base">
-                <span>방폭기기인증</span>
                 <span>방폭사전진단</span>
-                <span>방폭인허가</span>
               </div>
             </div>
           </div>

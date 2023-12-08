@@ -169,12 +169,12 @@ export default function CareerCardPage() {
               초급
             </div>
             <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
-              <span>방폭관련 자격증 소지자</span>
-              <span>IECEx : 즉시발급</span>
+              <span>한국방폭협회 방폭 기초교육 이수자</span>
+              <span>IECEx CoPC Unit Ex 001 취득자</span>
               <span>그외 자격증 : 양성교육 수료 후 발급</span>
             </div>
             <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
-              <span>방폭관련 자격증 소지자</span>
+              <span>방폭관련 자격증 및 전공 학력 소지자</span>
               <span>학사학위 : 양성 교육</span>
               <span>
                 3년제 전공 : <br />
@@ -186,18 +186,18 @@ export default function CareerCardPage() {
               </span>
             </div>
             <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
-              <span>방폭관련 자격증 소지자</span>
-              <span>경력 8년 이상 및 양성교육</span>
+              <span>전공학력 소지자</span>
+              <span>경력 5년 이상 및 양성교육</span>
             </div>
-            <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base">
+            <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
               <span>비전공 학력 소지자</span>
               <span>
                 3년제 전공 : <br />
-                경력 5년 이상 및 양성교육
+                경력 6년 이상 및 양성교육
               </span>
               <span>
                 2년제 전공 : <br />
-                경력 6년 이상 및 양성교육
+                경력 7년 이상 및 양성교육
               </span>
             </div>
           </div>
@@ -207,74 +207,67 @@ export default function CareerCardPage() {
               중급
             </div>
             <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
-              <span>방폭관련 자격증 소지자</span>
-              <span>IECEx : 즉시발급</span>
-              <span>그외 자격증 : 양성교육 수료 후 발급</span>
+              <span>한국방폭협회 방폭 기초교육 이수자</span>
+              <span>IECEx CoPC Unit Ex 001,036 취득자</span>
+              <span>IECEx CoPC Unit Ex 001,478 취득자</span>
+              <span>IECEx CoPC Unit Ex 001,002 취득자</span>
+              <span>IECEx CoPC Unit Ex 001,009 취득자</span>
             </div>
             <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
-              <span>방폭관련 자격증 소지자</span>
-              <span>학사학위 : 양성 교육</span>
-              <span>
-                3년제 전공 : <br />
-                경력 1년 이상 및 양성교육
-              </span>
-              <span>
-                2년제 전공 : <br />
-                경력 2년 이상 및 양성교육
-              </span>
+              <span>방폭관련 자격증 및 전공 학력 소지자</span>
+              <span>방폭 실무 경력 : 5년 이상</span>
             </div>
             <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
-              <span>방폭관련 자격증 소지자</span>
-              <span>경력 8년 이상 및 양성교육</span>
+              <span>-</span>
             </div>
             <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
               <span>비전공 학력 소지자</span>
-              <span>
-                3년제 전공 : <br />
-                경력 5년 이상 및 양성교육
-              </span>
-              <span>
-                2년제 전공 : <br />
-                경력 6년 이상 및 양성교육
-              </span>
+              <span>방폭 실무 경력 : 8년 이상</span>
             </div>
           </div>
 
-          <div className="px-[20px] flex w-full mb-[20px] ">
+          <div className="px-[20px] flex w-full my-[15px]">
             <div className="w-[70px] text-subtitle bg-gray flex justify-center items-center">
               고급
             </div>
             <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
-              <span>방폭관련 자격증 소지자</span>
-              <span>IECEx : 즉시발급</span>
-              <span>그외 자격증 : 양성교육 수료 후 발급</span>
+              <span>한국방폭협회 방폭 기초교육 이수자</span>
+              <span>IECEx CoPC Unit Ex 001,036 취득자</span>
+              <span>IECEx CoPC Unit Ex 001,478 취득자</span>
+              <span>IECEx CoPC Unit Ex 001,002 취득자</span>
+              <span>IECEx CoPC Unit Ex 001,009 취득자</span>
             </div>
             <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
-              <span>방폭관련 자격증 소지자</span>
-              <span>학사학위 : 양성 교육</span>
-              <span>
-                3년제 전공 : <br />
-                경력 1년 이상 및 양성교육
-              </span>
-              <span>
-                2년제 전공 : <br />
-                경력 2년 이상 및 양성교육
-              </span>
+              <span>방폭관련 자격증 및 전공 학력 소지자</span>
+              <span>방폭 실무 경력 : 8년 이상</span>
             </div>
             <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
-              <span>방폭관련 자격증 소지자</span>
-              <span>경력 8년 이상 및 양성교육</span>
+              <span>-</span>
             </div>
             <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
               <span>비전공 학력 소지자</span>
-              <span>
-                3년제 전공 : <br />
-                경력 5년 이상 및 양성교육
-              </span>
-              <span>
-                2년제 전공 : <br />
-                경력 6년 이상 및 양성교육
-              </span>
+              <span>방폭 실무 경력 : 12년 이상</span>
+            </div>
+          </div>
+
+          <div className="px-[20px] flex w-full my-[15px]">
+            <div className="w-[70px] text-subtitle bg-gray flex justify-center items-center">
+              특급
+            </div>
+            <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
+              <span>한국방폭협회 방폭 기초교육 이수자</span>
+              <span>IECEx CoPC Unit Ex 010 취득자</span>
+            </div>
+            <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
+              <span>방폭관련 자격증 및 전공 학력 소지자</span>
+              <span>방폭 실무 경력 : 12년 이상</span>
+            </div>
+            <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
+              <span>-</span>
+            </div>
+            <div className="w-1/4 pt-[10px] px-[10px] flex flex-col justify-start items-start text-base border-r border-t border-b border-gray">
+              <span>비전공 학력 소지자</span>
+              <span>방폭 실무 경력 : 15년 이상</span>
             </div>
           </div>
         </section>
