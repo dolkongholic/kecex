@@ -21,6 +21,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="kr" className="text-[#757575]">
+      <head>
+        <meta
+          name="naver-site-verification"
+          content="7429e7d93e93ff83dc0e8772f750d750588f7798"
+        />
+      </head>
       <body className={inter.className}>
         <Providers>{children}</Providers>
       </body>
