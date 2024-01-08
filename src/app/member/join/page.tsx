@@ -120,63 +120,100 @@ function Login() {
           <li className="text-secondary"><IoIosArrowForward /></li>
           <li>가입완료</li>
         </ul>
-        <div className="border border-gray px-[30px] py-[50px] w-full">
-          <div>
-            <div className="mt-1">
-              <input
-                ref={emailRef}
-                onChange={(e: any) => {
-                  emailRef.current = e.target.value;
-                }}
-                id="email"
-                name="email"
-                type="email"
-                required
-                autoFocus={true}
-                placeholder="아이디"
-                className="border border-gray py-[10px] px-[20px] w-full focus:border-secondary outline-none"
-              />
-            </div>
-          </div>
-
-          <div className="mt-4">
-            <div className="mt-1">
-              <input
-                type="password"
-                id="password"
-                name="password"
-                ref={passwordRef}
-                onChange={(e: any) => (passwordRef.current = e.target.value)}
-                placeholder="비밀번호"
-                className="border border-gray py-[10px] px-[20px] w-full focus:border-secondary outline-none"
-              />
-            </div>
-          </div>
-          <div className="flex w-full justify-end items-center gap-[10px] leading-[40px] text-[14px]">
-            <input id="remember_id" type="checkbox" className="border-gray" />
-            <label htmlFor="remember_id">아이디 저장</label>
-          </div>
-          <div className="mt-6 flex gap-[10px]">
-            <button
-              onClick={handleSubmit}
-              className="w-full bg-secondary text-white cursor-pointer py-[10px]"
-            >
-              로그인
-            </button>
-            <Link passHref href="./join" className="w-full">
-              <button className="w-full bg-gray text-black cursor-pointer py-[10px]">
-                회원가입
-              </button>
-            </Link>
-          </div>
-          <Link passHref href={"./find/"}>
-            <div className="flex justify-center items-center mt-[10px] text-[12px] text-darkgray leading-[20px] cursor-pointer">
-              <div>아이디/비밀번호 찾기</div>
-              <div>
-                <RiArrowRightSLine className="text-[20px] pt-[3px] text-superdarkgray " />
+        <div className="border border-gray mt-10 border-y-2 border-gray-500 w-full">
+          <ul className="divide-y-2 divide-gray ">
+            <li className="flex items-center">
+              <div className="w-[220px] h-[90px] bg-lightgray text-left pl-20 leading-[90px]">
+                아이디
               </div>
-            </div>
-          </Link>
+              <div className="py-3 pl-9">
+                <input type="text" placeholder="성명" className="w-[700px] h-[60px] border-gray border pl-4"/>
+              </div>
+            </li>
+            <li className="flex items-center">
+              <div className="w-[220px] h-[200px] bg-lightgray text-left pl-20 leading-[90px]">
+                비밀번호
+              </div>
+              <div className="py-3 flex-col flex pl-9">
+                <input type="text" placeholder="비밀번호" className="w-[700px] h-[60px] border-gray border pl-4 mb-4"/>
+                <input type="text" placeholder="비밀번호 재확인" className="w-[700px] h-[60px] border-gray border pl-4"/>
+                <p className="text-secondary mt-3 text-left">* 숫자+영문자+특수문자 조합으로 4~13자 입력해주세요.</p>
+              </div>
+            </li>
+            <li className="flex items-center">
+            <div className="w-[220px] h-[90px] bg-lightgray text-left pl-20 leading-[90px]">
+                이름
+              </div>
+              <div className="py-3 pl-9">
+                <input type="text" placeholder="이름" className="w-[700px] h-[60px] border-gray border pl-4"/>
+              </div>
+            </li>
+            <li className="flex items-center">
+            <div className="w-[220px] h-[90px] bg-lightgray text-left pl-20 leading-[90px]">
+                생년월일
+              </div>
+              <div className="py-3 pl-9">
+                <div className="w-[700px] flex items-center justify-between">
+                    <select id="year" className="block border border-gray w-[220px] h-[60px] px-3">
+                      <option value="연도">연도</option>
+                    </select>
+                    <select id="month" className="block border border-gray w-[220px] h-[60px] px-3" placeholder="월">
+                      <option value="연도">월</option>
+                    </select>
+                    <select id="day" className="block border border-gray w-[220px] h-[60px] px-3" placeholder="일">
+                      <option value="연도">일</option>
+                    </select>
+                </div>
+              </div>
+            </li>
+            <li className="flex items-center">
+            <div className="w-[220px] h-[90px] bg-lightgray text-left pl-20 leading-[90px]">
+                이메일 주소
+              </div>
+              <div className="py-3 flex pl-9 items-center">
+                <input type="text" placeholder="이메일 주소" className="w-[220px] h-[60px] border-gray border pl-4"/>
+                <p className="mx-3">@</p>
+                <select className="block border border-gray w-[220px] h-[60px] px-3">
+                        <option value="">직접 입력</option>
+                        <option value="gmail.com">gmail.com</option>
+                        <option value="naver.com">naver.com</option>
+                        <option value="daum.net">daum.net</option>
+                        <option value="hanmail.net">hanmail.net</option>
+                        <option value="nate.com">nate.com</option>
+                    </select>
+              </div>
+            </li>
+            <li className="flex items-center">
+            <div className="w-[220px] h-[90px] bg-lightgray text-left pl-20 leading-[90px]">
+                휴대폰
+              </div>
+              <div className="py-3 pl-9">
+                <input type="number" placeholder="010 0000 0000" className="w-[700px] h-[60px] border-gray border pl-4"/>
+              </div>
+            </li>
+            <li className="flex items-center">
+            <div className="w-[220px] h-[160px] bg-lightgray text-left pl-20 leading-[90px]">
+                인증방법
+              </div>
+              <div className="py-3 pl-9">
+                <div className="flex justify-between items-center w-[700px]">
+                  <article className="check_number flex items-center ">
+                    <div className="flex"><FaCheckCircle size="1.3em" color="lightgray"/> 휴대폰</div>
+                    <div className="flex"><FaCheckCircle size="1.3em" color="lightgray"/> 이메일</div>
+                  </article>
+                  <button className="w-52 h-14 border-active bg-lightgray">인증</button>
+                </div>
+                <div className="flex justify-between w-[700px] mt-5">
+                  <input type="text" placeholder="인증번호 (숫자 6자리)" className="w-[460px] h-[60px] border-gray border pl-4"/>
+                  <button className="w-52 h-14 border-active bg-lightgray">인증</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div className="second_btn_box flex justify-center mt-10">
+          <button className="w-52 h-14 bg-secondary text-white mr-4">동의</button>
+          <button className="w-52 h-14 bg-lightgray">취소</button>
         </div>
       </section>{/*회원정보 섹션 */}
     </main>
