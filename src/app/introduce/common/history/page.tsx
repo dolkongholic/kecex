@@ -91,7 +91,7 @@ export default function HistoryPage() {
 
         <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <div className="w-full px-[20px] h-[50px] flex mt-[40px]">
+          <div className="w-full px-[20px] h-[30px] flex mt-[40px]">
             <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
               &nbsp;
             </div>
@@ -103,6 +103,86 @@ export default function HistoryPage() {
             </div>
             <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
               2023&apos;
+            </div>
+            <div className="w-[10%] flex justify-start items-center mr-[10px]">
+              2023.12
+            </div>
+            <div className="w-[30%] flex justify-start items-start mr-[10px] text-black pt-1">
+              한국방폭협회 현판식,
+            </div>
+          </div>
+          <div className="w-full px-[20px] h-[40px] flex">
+            <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-start items-center mr-[10px]">
+              &nbsp;
+            </div>
+            <div className="w-[30%] flex justify-start items-start mr-[10px] text-black">
+              (재)울산테크노파크 업무 협약
+            </div>
+          </div>
+          <div className="w-full px-[20px] h-[50px] flex">
+            <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-start items-center mr-[10px]">
+              2023.11
+            </div>
+            <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
+              전남여수공단협의회 업무협약 체결
+            </div>
+          </div>
+          <div className="w-full px-[20px] h-[50px] flex">
+            <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-start items-center mr-[10px]">
+              2023.10
+            </div>
+            <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
+              선진 안전문화 확산 극대화 방안 세미나
+            </div>
+          </div>
+          <div className="w-full px-[20px] h-[50px] flex">
+            <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
+              &nbsp;
+            </div>
+            <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
+              &nbsp;
             </div>
             <div className="w-[10%] flex justify-start items-center mr-[10px]">
               2023.07

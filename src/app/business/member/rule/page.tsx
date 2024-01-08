@@ -46,7 +46,7 @@ const MainList = [
   },
 ];
 
-const location = "회원가입";
+const location = "회원회칙";
 
 export default function CareerPage() {
   const [menu, setMenu] = useState<string>("");
@@ -96,22 +96,36 @@ export default function CareerPage() {
 
         <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <ContentSubTitle title="가입대상" />
-          <div className="w-full flex justify-between items-center text-subtitle text-center h-[50px] mb-[50px] px-[20px]">
-            <div className="w-full py-[10px] flex justify-start items-center text-base">
-              방폭기술업을 등록하고자 하는 개인 또는 기업체
+          <ContentSubTitle title="제 1장 총칙" />
+          <div className="w-full flex justify-between items-center text-subtitle text-center h-[50px] mb-[20px]">
+            <span className="pl-[10px] text-secondary w-[180px]">
+              제1조 (정의)
+            </span>
+            <div className="w-full pt-[2px] flex justify-start items-end text-base">
+              본 규정은 '사단법인 한국방폭협회'(이하 "본 협회"라 한다)의
+              회원관리에 대한 규정을 명확히 하기 위해 총회의 의결로 정한다.
             </div>
           </div>
-
-          <ContentSubTitle title="회원종류" />
-
-          <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px]">
-            <Image src={PicIconArrow} width={25} height={15} alt="icon" />
-            <span className="pl-[10px] text-secondary w-[100px]">정회원</span>
-            <span>
-              방폭설비의 생산·유통·엔지니어링·설치·시공·진단·안전관리 교육 및
-              방폭과 관련된 소재, 부품기업과 이와 관련한 산업에 종사하는자
+          <div className="w-full flex justify-between items-center text-subtitle text-center h-[50px] mb-[20px]">
+            <span className="pl-[10px] text-secondary w-[180px]">
+              제2조 (목적)
             </span>
+            <div className="w-full pt-[18px] flex justify-start items-end text-base text-start">
+              본 규정은 본 협회 정관 제 5조 제3항의 규정에 따라 본 협회 회원
+              (이하 '회원'이라 한다)의 자격, 가입 회비 등에 관한 회원 관련 제반
+              세부 사항을 정하는데 그 목적이 있다.
+            </div>
+          </div>
+          <ContentSubTitle title="회원의 자격 및 종류" />
+
+          <div className="w-full flex px-[20px] pb-[15px] mt-[10px]">
+            <span className="pl-[10px] text-secondary w-[180px]">
+              제1조 (회원의 자격)
+            </span>
+            <div className="w-full pt-[2px] flex justify-start items-end text-base">
+              회원은 본 협회의 목적과 설립 취지에 동의하고, 정해진 가입 절차를
+              마친 자로 한다.
+            </div>
           </div>
           <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px]">
             <div>
@@ -123,26 +137,31 @@ export default function CareerPage() {
               <br />
             </span>
             <span>
-              정회원 이외의 자로서 협회의 회원으로 가입하여 방폭기술진흥법에
-              의한 방폭기술자 경력 관리 회원의 권익을 향유할 수 있는자, <br />
-              협회의 정회원으로 가입하지않고 방폭기술자 경력관리만을 위하여
-              협회를 이용하는 자 (이하 &quot;경력관리자&quot;라 한다)
+              준회원은 회원 가입원서만 제출한 업체·단체 및 개인으로 한다.
             </span>
           </div>
           <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px]">
             <Image src={PicIconArrow} width={25} height={15} alt="icon" />
-            <span className="pl-[10px] text-secondary w-[100px]">기업회원</span>
+            <span className="pl-[10px] text-secondary w-[100px]">일반회원</span>
             <span>
-              방폭설비의 생산·유통·엔지니어링·설치·시공·진단·안전관리 교육 및
-              방폭과 관련된 소재, 부품기업과 이와 관련한 산업에 종사하는 기업
+              일반회원은 정회원이외의 업체·단체 및 개인으로 회원 가입원서와
+              회비를 납부한 자로 한다.
             </span>
           </div>
           <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px] mb-[40px]">
             <Image src={PicIconArrow} width={25} height={15} alt="icon" />
-            <span className="pl-[10px] text-secondary w-[100px]">명예회원</span>
+            <span className="pl-[10px] text-secondary w-[100px]">기업회원</span>
             <span>
-              본회의 취지에 찬동하고, 방폭기술 발전과 본회의 사업에 적극적으로
-              협력하는 자
+              일반회원으로서 이사회의 결의에 의해 회장이 추천하는 업체·단체로
+              한다.
+            </span>
+          </div>
+          <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px] mb-[40px]">
+            <Image src={PicIconArrow} width={25} height={15} alt="icon" />
+            <span className="pl-[10px] text-secondary w-[100px]">특별회원</span>
+            <span>
+              특별회원은 이사회의 결의에 의해 회장이 추천하는 업체·단체 및
+              개인으로 한다.
             </span>
           </div>
 
