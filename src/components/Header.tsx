@@ -217,6 +217,9 @@ export default function Header({ menu, setMenu }: Props) {
                   <Link passHref href={"/business/member/join/"}>
                     <span className="cursor-pointer"> - 회원가입</span>
                   </Link>
+                  <Link passHref href={"/business/member/rule/"}>
+                    <span className="cursor-pointer"> - 회원회칙</span>
+                  </Link>
                   <Link passHref href={"/business/member/career/"}>
                     <span className="cursor-pointer"> - 경력관리</span>
                   </Link>

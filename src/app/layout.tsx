@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
 
 import { SessionProvider } from "next-auth/react";
+import ClientOnly from "./components/ClientOnly";
 const inter = Noto_Sans_KR({
   weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
@@ -35,7 +36,9 @@ export default function RootLayout({
         <meta property="og:url" content="https://www.kecex.or.kr"></meta>
       </head>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <ClientOnly>
+          <Providers>{children}</Providers>
+        </ClientOnly>
       </body>
     </html>
   );
