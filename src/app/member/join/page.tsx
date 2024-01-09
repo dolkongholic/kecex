@@ -154,13 +154,13 @@ function Login() {
               </div>
               <div className="py-3 pl-9">
                 <div className="w-[700px] flex items-center justify-between">
-                    <select id="year" className="block border border-gray w-[220px] h-[60px] px-3">
+                    <select id="year" className="block border border-gray w-[220px] h-[60px] px-3 text-darkgray">
                       <option value="연도">연도</option>
                     </select>
-                    <select id="month" className="block border border-gray w-[220px] h-[60px] px-3" placeholder="월">
+                    <select id="month" className="block border border-gray w-[220px] h-[60px] px-3 text-darkgray" placeholder="월">
                       <option value="연도">월</option>
                     </select>
-                    <select id="day" className="block border border-gray w-[220px] h-[60px] px-3" placeholder="일">
+                    <select id="day" className="block border border-gray w-[220px] h-[60px] px-3 text-darkgray" placeholder="일">
                       <option value="연도">일</option>
                     </select>
                 </div>
@@ -173,8 +173,8 @@ function Login() {
               <div className="py-3 flex pl-9 items-center">
                 <input type="text" placeholder="이메일 주소" className="w-[220px] h-[60px] border-gray border pl-4"/>
                 <p className="mx-3">@</p>
-                <select className="block border border-gray w-[220px] h-[60px] px-3">
-                        <option value="">직접 입력</option>
+                <select className="block border border-gray w-[220px] h-[60px] px-3 text-darkgray">
+                        <option value="" className="text-gray">직접 입력</option>
                         <option value="gmail.com">gmail.com</option>
                         <option value="naver.com">naver.com</option>
                         <option value="daum.net">daum.net</option>
@@ -188,7 +188,7 @@ function Login() {
                 휴대폰
               </div>
               <div className="py-3 pl-9">
-                <input type="number" placeholder="010 0000 0000" className="w-[700px] h-[60px] border-gray border pl-4"/>
+                <input type="text" placeholder="010 0000 0000" className="w-[700px] h-[60px] border-gray border pl-4"/>
               </div>
             </li>
             <li className="flex items-center">
@@ -198,14 +198,14 @@ function Login() {
               <div className="py-3 pl-9">
                 <div className="flex justify-between items-center w-[700px]">
                   <article className="check_number flex items-center ">
-                    <div className="flex"><FaCheckCircle size="1.3em" color="lightgray"/> 휴대폰</div>
-                    <div className="flex"><FaCheckCircle size="1.3em" color="lightgray"/> 이메일</div>
+                    <div className="flex"><FaCheckCircle size="1.3em" color="lightgray"/> <span className="ml-2">휴대폰</span></div>
+                    <div className="flex ml-8"><FaCheckCircle size="1.3em" color="lightgray"/><span className="ml-2">이메일</span></div>
                   </article>
-                  <button className="w-52 h-14 border-active bg-lightgray">인증</button>
+                  <button className="w-52 h-14 border border-secondary text-secondary">인증</button>
                 </div>
                 <div className="flex justify-between w-[700px] mt-5">
                   <input type="text" placeholder="인증번호 (숫자 6자리)" className="w-[460px] h-[60px] border-gray border pl-4"/>
-                  <button className="w-52 h-14 border-active bg-lightgray">인증</button>
+                  <button className="w-52 h-14 border border-secondary text-secondary">확인</button>
                 </div>
               </div>
             </li>
