@@ -21,6 +21,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "회원가입", url: "/business/member/join" },
+      { title: "회원회칙", url: "/business/member/rule" },
       { title: "경력관리", url: "/business/member/career" },
       { title: "경력수첩", url: "/business/member/careercard" },
     ],
@@ -96,7 +97,7 @@ export default function Course01Page() {
         <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <ContentSubTitle title="교육목적" />
-          <div className="w-full px-[20px] mb-[40px]">
+          <div className="w-full mb-[40px]">
             <div className="flex flex-col justify-center items-start h-[80px] px-[20px] border border-gray w-full">
               <span>
                 폭발위험성이 존재하는 각 산업내 종사자들의 방폭안전관리에 관한
@@ -107,7 +108,7 @@ export default function Course01Page() {
           </div>
 
           <ContentSubTitle title="교육대상" />
-          <div className="w-full px-[20px]">
+          <div className="w-full">
             <div className="w-full h-[270px] mb-[40px] border border-lightgray">
               <div className="flex justify-center items-start w-full">
                 <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
@@ -185,7 +186,7 @@ export default function Course01Page() {
               <ContentSubTitle title="교육내용 및 시간" />
               <div className="flex flex-col justify-start py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
                 <span>
-                  5시간
+                  4시간
                   <br />
                 </span>
               </div>
@@ -202,22 +203,22 @@ export default function Course01Page() {
           </div>
 
           <ContentSubTitle title="교육내용 및 시간" />
-          <div className="w-full px-[20px]">
+          <div className="w-full">
             <div className="w-full h-[220px] mb-[40px] border border-lightgray">
               <div className="flex justify-center items-start w-full">
-                <div className="w-1/3 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
+                <div className="w-1/5 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
                   일 정
                 </div>
-                <div className="w-1/3 h-[40px] bg-gray flex justify-center items-center">
+                <div className="w-2/5 h-[40px] bg-gray flex justify-center items-center">
                   교육 내용
                 </div>
-                <div className="w-1/3 h-[40px] bg-gray flex justify-center items-center">
+                <div className="w-2/5 h-[40px] bg-gray flex justify-center items-center">
                   교육시간
                 </div>
               </div>
               <div className="flex justify-between items-start w-full">
                 <div className="w-1/5 flex flex-col justify-start items-center h-[180px]">
-                  <span className="w-full h-full pl-[20px] flex justify-center items-center border-r border-gray">
+                  <span className="w-full h-full flex justify-center items-center border-r border-gray">
                     이론 교육
                   </span>
                 </div>
@@ -240,7 +241,7 @@ export default function Course01Page() {
                 </div>
                 <div className="w-2/5 flex flex-col justify-center items-center h-[180px]">
                   <span className="w-full h-[20px] pl-[20px] flex justify-start items-center">
-                    5시간
+                    4시간
                   </span>
                 </div>
               </div>

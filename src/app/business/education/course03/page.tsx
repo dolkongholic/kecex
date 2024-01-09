@@ -21,6 +21,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "회원가입", url: "/business/member/join" },
+      { title: "회원회칙", url: "/business/member/rule" },
       { title: "경력관리", url: "/business/member/career" },
       { title: "경력수첩", url: "/business/member/careercard" },
     ],
@@ -96,7 +97,7 @@ export default function Course03Page() {
         <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <ContentSubTitle title="교육목적" />
-          <div className="w-full px-[20px] mb-[40px]">
+          <div className="w-full mb-[40px]">
             <div className="flex flex-col justify-center items-start h-[80px] px-[20px] border border-gray w-full">
               <span>
                 Plant 제작 및 개조 공사 시 작업자, 관리자의 맞춤형 교육을 통해
@@ -109,7 +110,7 @@ export default function Course03Page() {
           </div>
 
           <ContentSubTitle title="교육대상" />
-          <div className="w-full px-[20px]">
+          <div className="w-full">
             <div className="w-full h-[270px] mb-[40px] border border-lightgray">
               <div className="flex justify-center items-start w-full">
                 <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
@@ -121,6 +122,9 @@ export default function Course03Page() {
               </div>
               <div className="flex  justify-between items-start w-full">
                 <div className="w-1/2 flex h-[200px] flex-col justify-start items-center border-r border-gray">
+                <span className="w-full h-[20px] pl-[20px] flex justify-start items-center border-r border-gray">
+                    &nbsp;
+                  </span>
                   <span className="w-full h-[30px] pl-[20px] flex justify-start items-center ">
                     · 방폭시공기술자
                   </span>
@@ -141,7 +145,7 @@ export default function Course03Page() {
                   </span>
                 </div>
                 <div className="w-1/2 flex flex-col justify-start items-center">
-                  <span className="w-full h-[200px] pl-[20px] flex justify-start items-center">
+                  <span className="w-full h-[200px] pl-[20px] flex justify-start items-center pr-[20px]">
                     석유화학, 조선, 해양, 반도체 등 Plant 제작 및 공정 설비의
                     개조 작업 등 Project 성 공사 수주를 받거나 진행하는 기업체
                   </span>
@@ -154,7 +158,7 @@ export default function Course03Page() {
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="자격요건" />
               <div className="flex flex-col justify-start py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
-                <span>기업체에서 선정 한 인원</span>
+                <span>기업체에서 선정한 인원</span>
               </div>
             </div>
             <div className="w-[49%] flex flex-col">
@@ -175,7 +179,7 @@ export default function Course03Page() {
           </div>
 
           <ContentSubTitle title="교육내용 및 시간" />
-          <div className="w-full px-[20px]">
+          <div className="w-full">
             <div className="w-full h-[270px] mb-[40px] border border-lightgray">
               <div className="flex justify-center items-start w-full">
                 <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
@@ -187,12 +191,12 @@ export default function Course03Page() {
               </div>
               <div className="flex justify-between items-start w-full">
                 <div className="w-1/2 flex flex-col justify-start items-center">
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[230px] pl-[20px] flex justify-start items-center border-r border-gray">
                     기업체의 상황과 필요에 따라 구성
                   </span>
                 </div>
                 <div className="w-1/2 flex flex-col justify-start items-center">
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
+                  <span className="w-full h-[230px] pl-[20px] flex justify-start items-center">
                     &nbsp;
                   </span>
                 </div>

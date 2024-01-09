@@ -22,6 +22,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "회원가입", url: "/business/member/join" },
+      { title: "회원회칙", url: "/business/member/rule" },
       { title: "경력관리", url: "/business/member/career" },
       { title: "경력수첩", url: "/business/member/careercard" },
     ],

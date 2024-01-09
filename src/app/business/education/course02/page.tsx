@@ -21,6 +21,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "회원가입", url: "/business/member/join" },
+      { title: "회원회칙", url: "/business/member/rule" },
       { title: "경력관리", url: "/business/member/career" },
       { title: "경력수첩", url: "/business/member/careercard" },
     ],
@@ -96,8 +97,8 @@ export default function Course02Page() {
         <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <ContentSubTitle title="교육목적" />
-          <div className="w-full px-[20px] mb-[40px]">
-            <div className="flex flex-col justify-center items-start h-[80px] px-[20px] border border-gray w-full">
+          <div className="w-full mb-[40px]">
+            <div className="flex flex-col justify-center items-start h-[90px] px-[20px] border border-gray w-full">
               <span>
                 국제ㆍ국내 법규 및 관련 표준, 지침에 따라 폭발위험성이 존재하는
                 산업현장에서는 각 공정 별 적격자에 의한 작업 및 관리가 요구된다.
@@ -109,7 +110,7 @@ export default function Course02Page() {
           </div>
 
           <ContentSubTitle title="교육대상" />
-          <div className="w-full px-[20px]">
+          <div className="w-fulls">
             <div className="w-full h-[270px] mb-[40px] border border-lightgray">
               <div className="flex justify-center items-start w-full">
                 <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
@@ -153,7 +154,7 @@ export default function Course02Page() {
                   <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 각 업무에 맞는 IECEx CoPC 국제방폭자격증 취득을 원하는 자
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
+                  <span className="w-full pl-[20px] pr-[20px] flex justify-start items-center">
                     · 산업안전보건공단, 가스안전공사로부터 PSM,SMS 심사를 받는
                     기업체 설계, 공무 및 안전부서 근로자
                   </span>
