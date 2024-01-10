@@ -1,26 +1,53 @@
 "use client";
-import React, { useRef } from "react";
+import axios from "axios";
+import { useRouter } from "next/navigation";
+import { toast } from "react-hot-toast";
+import React, { useRef, useState } from "react";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import { RiArrowRightSLine } from "react-icons/ri";
+
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+
+import Button from "@/app/components/Button";
+import Input from "@/app/components/inputs/Input";
+
 import Link from "next/link";
 
 function Login() {
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
 
-  const handleSubmit = async () => {
-    // console.log(emailRef.current)
-    // console.log(passwordRef.current)
+  const [isLoading, setIsLoading] = useState(false);
 
-    const result = await signIn("credentials", {
-      email: emailRef.current,
-      password: passwordRef.current,
-      redirect: true,
-      callbackUrl: "/",
+  const router = useRouter();
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FieldValues>();
+
+  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    setIsLoading(true);
+
+    signIn("credentials", {
+      ...data,
+      redirect: false,
+    }).then((callback) => {
+      setIsLoading(false);
+
+      if (callback?.ok) {
+        toast.success("로그인 성공");
+        router.push("/");
+      }
+
+      if (callback?.error) {
+        toast.error(callback?.error);
+      }
     });
   };
-
   return (
     <main className="flex min-h-screen flex-col items-center space-y-10 p-24">
       <Link passHref href={"/"}>
@@ -34,32 +61,27 @@ function Login() {
       <div className="border border-gray px-[30px] py-[50px] w-[400px]">
         <div>
           <div className="mt-1">
-            <input
-              ref={emailRef}
-              onChange={(e: any) => {
-                emailRef.current = e.target.value;
-              }}
-              id="email"
-              name="email"
-              type="email"
+            <Input
+              id="name"
+              label="이름"
+              disabled={isLoading}
+              register={register}
+              errors={errors}
               required
-              autoFocus={true}
-              placeholder="아이디"
-              className="border border-gray py-[10px] px-[20px] w-full focus:border-secondary outline-none"
             />
           </div>
         </div>
 
         <div className="mt-4">
           <div className="mt-1">
-            <input
-              type="password"
+            <Input
               id="password"
-              name="password"
-              ref={passwordRef}
-              onChange={(e: any) => (passwordRef.current = e.target.value)}
-              placeholder="비밀번호"
-              className="border border-gray py-[10px] px-[20px] w-full focus:border-secondary outline-none"
+              type="password"
+              label="비밀번호"
+              disabled={isLoading}
+              register={register}
+              errors={errors}
+              required
             />
           </div>
         </div>
@@ -69,7 +91,7 @@ function Login() {
         </div>
         <div className="mt-6 flex gap-[10px]">
           <button
-            onClick={handleSubmit}
+            onClick={handleSubmit(onSubmit)}
             className="w-full bg-secondary text-white cursor-pointer py-[10px]"
           >
             로그인

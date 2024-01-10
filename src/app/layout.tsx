@@ -2,9 +2,9 @@ import Providers from "../components/Providers";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
-
-import { SessionProvider } from "next-auth/react";
+import ToasterProvieder from "./providers/ToasterProvider";
 import ClientOnly from "./components/ClientOnly";
+import InsertMainBanner from "./components/modal/InsertMainBanner";
 const inter = Noto_Sans_KR({
   weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
@@ -37,6 +37,8 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <ClientOnly>
+          <ToasterProvieder />
+          <InsertMainBanner />
           <Providers>{children}</Providers>
         </ClientOnly>
       </body>

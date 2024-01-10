@@ -12,8 +12,35 @@ datasource db {
 
 
 model User {
-  id       Int     @id @default(autoincrement())
-  email    String  @unique
-  name     String?
-  password String
+  id              String @id @default(uuid()) @map("_id") @db.Char(36)
+  name            String?   @unique
+  hashedPassword  String?
+  staff           Boolean @default(false)
+  level           String  @default("일반회원")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  accounts Account[]
+}
+
+model Account {
+  id String @id @default(uuid()) @map("_id") @db.Char(36)
+  userId             String   @db.Char(36)
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.Char(36)
+  access_token       String?  @db.Char(36)
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.Char(36)
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+model mainBanner {
+  id       Int    @id @default(autoincrement())
+  fileUrl  String
 }

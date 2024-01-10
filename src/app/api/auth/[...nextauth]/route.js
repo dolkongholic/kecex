@@ -2,40 +2,41 @@ import bcrypt from "bcrypt";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-import prisma from "@/app/lib/prisma";
+import prisma from "@/app/libs/prisma";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 
-const handler = NextAuth({
+export const handler = NextAuth({
   adapter: PrismaAdapter(prisma),
   providers: [
     CredentialsProvider({
       name: "credentials",
       credentials: {
-        email: { label: "email", type: "text" },
+        name: { label: "name", type: "text" },
         password: { label: "password", type: "password" },
       },
-
       async authorize(credentials) {
-        // if (!credentials?.email || !credentials?.password) {
-        //   throw new Error("Invalid credentials");
-        // }
+        if (!credentials?.name || !credentials?.password) {
+          throw new Error("Invalid credentials");
+        }
 
         const user = await prisma.user.findUnique({
           where: {
-            email: credentials.email,
+            name: credentials.name,
           },
         });
 
-        // if (!user || !user?.password) {
-        //   throw new Error("Invalid credentials");
-        // }
+        if (!user || !user?.hashedPassword) {
+          throw new Error("Invalid credentials");
+        }
 
-        const isCorrectPassword = credentials.password == user.password;
+        const isCorrectPassword = await bcrypt.compare(
+          credentials.password,
+          user.hashedPassword
+        );
 
-        // if (!isCorrectPassword) {
-        //   throw new Error("Invalid credentials");
-        // }
-
+        if (!isCorrectPassword) {
+          throw new Error("Invalid credentials");
+        }
         return user;
       },
     }),
@@ -44,6 +45,19 @@ const handler = NextAuth({
   pages: {
     signIn: "/member/signin",
   },
+
+  callbacks: {
+    async session({ session, user }) {
+      console.log(user);
+      const updatedSession = { ...session };
+
+      updatedSession.user.staff = user.staff;
+      updatedSession.user.level = user.level;
+
+      return updatedSession;
+    },
+  },
+
   debug: process.env.NODE_ENV === "development",
   session: {
     strategy: "jwt",

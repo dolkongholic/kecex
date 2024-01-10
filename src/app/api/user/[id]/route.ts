@@ -1,5 +1,5 @@
-import { verifyJwt } from "@/app/lib/jwt";
-import prisma from "@/app/lib/prisma";
+import { verifyJwt } from "@/app/libs/jwt";
+import prisma from "@/app/libs/prisma";
 
 export async function GET(
   request: Request,
