@@ -6,9 +6,11 @@ import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
+import DaumPostcode from 'react-daum-postcode';
+
 import Link from "next/link";
 
 const MainList = [
@@ -27,7 +29,69 @@ const location = "교육신청";
 export default function ReexamPage() {
   const [menu, setMenu] = useState<string>("");
   const [pageMenu, setPageMenu] = useState<any>("교육신청");
+  const [isPopupOpen, setPopupOpen] = useState<boolean>(false);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
+  //모달창 열기
+  const openModal = () => {
+    setPopupOpen(true);
+    document.body.classList.add('overflow-y-hidden');
+  }
+  //모달창 닫기
+  const closePopup = () => {
+    setPopupOpen(false);
+    document.body.classList.remove('overflow-y-hidden');
+  };
 
+  //첨부파일 업로드
+  const updateLabel = (event) => {
+    const fileInput = event.target;
+    if (fileInput.files.length > 0){
+      const file = fileInput.files[0];
+      setSelectedFile(`[첨부] ${file.name}`);
+      
+      if(file.type.startsWith('image/')){
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          setImagePreview(e.target.result);
+        }
+        reader.readAsDataURL(file);
+      }else{
+        setImagePreview(null);
+      }
+    }else{
+      setSelectedFile(null);
+      setImagePreview(null);
+    }
+  };
+  
+  //주소 검색
+  const [isOpen, setIsOpen] = useState(false);
+  const [clickedInput, setClickedInput] = useState(null);
+  const [addressInput1, setAddressInput1] = useState('');
+  const [addressInput2, setAddressInput2] = useState('');
+
+  const handleComplete = (data) => {
+    // 검색 결과를 받았을 때의 처리
+    if(clickedInput === 'address_input_1'){
+      setAddressInput1(data.address);
+    }else if(clickedInput === 'address_input_2'){
+      setAddressInput2(data.address);
+    }
+
+    setIsOpen(false);
+  };
+
+  const handleInputClick = (inputId) => {
+    setClickedInput(inputId);
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+    // 검색창이 닫힐 때 ref를 통해 값을 설정
+  };
+  
   return (
     <section>
       <Header menu={menu} setMenu={setMenu} />
@@ -140,7 +204,7 @@ export default function ReexamPage() {
                   </div>
                 </div>
                 <div className="flex justify-center  items-center">
-                  <button className="flex justify-center items-center bg-secondary hover:bg-active text-white  w-[150px] h-[50px]">
+                  <button className="flex justify-center items-center bg-secondary hover:bg-active text-white  w-[150px] h-[50px] pop_open_btn" onClick={openModal}>
                     <span className="mr-[10px]">교육신청</span>{" "}
                     <IoIosArrowForward />
                   </button>
@@ -148,9 +212,194 @@ export default function ReexamPage() {
               </div>
             ))}
           </div>
+          {/* 팝업영역 */}
+          {isOpen && (<div style={{
+                            position: 'fixed',
+                            top: '170px',
+                            left: '50%',
+                            marginLeft:'-300px',
+                            zIndex: 1000,
+                            width:'600px', height:'auto',
+                            border:'solid darkgray 1px',
+                            backgroundColor:"white",
+                          }}>
+                        <div className="flex justify-end">
+                        <button style={{
+                            right:0,
+                            width:'40px', height:'40px',
+                            backgroundColor:'lightgray', 
+                          }}
+                          onClick={handleClose}
+                          >X</button>
+                        </div>
+                        <DaumPostcode
+                          onComplete={handleComplete}
+                          autoClose
+                          animation 
+                          style={{
+                          }}
+                        />
+                        </div>
+                      )}
+          <div id="pop_wrap_01" className={`w-[1100px] h-[700px] fixed z-[101] inset-1/2 -mx-[550px] -my-[400px] ${isPopupOpen ? '' : 'hidden'}`}>
+            <div className="w-[1100px] h-auto flex justify-end">
+              <button id="close_btn" className="w-12 h-12 bg-primary text-white" onClick={() => { handleClose(); closePopup(); }}>닫기</button>
+            </div>
+            <div id="pop_frame" className="w-[1100px] h-[750px] bg-white py-24 px-16 rounded-tl-3xl overflow-y-auto">
+              <h4 className="text-subtitle text-secondary">IECEx CoPC 교육신청서</h4>
+              <div className="w-full h-24 border border-gray flex mt-4">
+                <div className="w-1/4 border-r border-gray">신청지사</div>
+                <div className=" w-3/4">신청교육</div>
+              </div>
+              <h3 className="mt-10 text-subtitle pb-7">개인정보 입력</h3>
+              <form action="/examples/media/action_target.php" method="get" className="flex">
+                <div className="w-40 h-60 bg-lightgray">
+                  <div className="w-full h-48">
+                    {imagePreview ? (
+                      <img src={imagePreview} alt="이미지 미리보기" className="h-full w-full"></img>
+                    ) : (
+                      <span>
+                      {/* 내가 선택한 파일 이름 여기에 표시 */}
+                      {selectedFile ? selectedFile : '파일을 선택하세요.'}
+                      </span>
+                    )}
+                  </div>
+                  <input type="file" id="fileInput" name="file" hidden onChange={updateLabel}/>
+                  <label htmlFor="fileInput" className="inline-block py-4 pl-10 w-full h-14 bg-primary text-white">첨부파일</label>
+                </div>{/* 왼쪽 섹션 */}
+                <div className="form_area p-5 w-full">
+                  <p className="text-[14px] text-active">* 개인정보는 필수입니다.</p>
+                  <fieldset className="border border-gray text-center w-full mt-3 text-black">
+                    <legend className="w-32 h-14 float-left pt-4 text-left pl-7">성명(한글)</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
+                      <input type="text" placeholder="성" className="pl-4 h-10 w-40"/>
+                    </div>
+                    <div className="before:border-l before:border-gray w-[300px] h-14 float-left p-2">
+                      <input type="text" placeholder="이름" className="pl-4 h-10"/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center w-full mt-3 text-black">
+                    <legend className="w-32 h-14 float-left pt-4 text-left pl-7">영문명(여권)</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
+                      <input type="text" placeholder="Eng" className="pl-4 h-10 w-40"/>
+                    </div>
+                    <div className="before:border-l before:border-gray w-[300px] h-14 float-left p-2">
+                      <input type="text" placeholder="Name" className="pl-4 h-10"/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center mt-3 text-black w-[49%] float-left">
+                    <legend className="w-32 h-14 float-left pt-4 text-left pl-7">생년월일</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
+                      <input type="text" placeholder="000000" className="pl-4 h-10 w-44"/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center mt-3 text-black w-[49%] float-left ml-[2%]">
+                    <legend className="w-32 h-14 float-left pt-4 text-left pl-7">이메일</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
+                      <input type="text" placeholder="test@test.com" className="pl-4 h-10 w-44"/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center mt-3 text-black w-[49%] float-left mb-3">
+                    <legend className="w-32 h-14 float-left pt-4 text-left pl-7">연락처(HP)</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
+                      <input type="text" placeholder="010-2222-3333" className="pl-4 h-10 w-44"/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center mt-3 text-black w-[49%] float-left ml-[2%]">
+                    <legend className="w-32 h-14 float-left pt-4 text-left pl-7">연락처(T)</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
+                      <input type="text" placeholder="02-000-0000" className="pl-4 h-10 w-44"/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center w-full text-black">
+                    <legend className="w-52 h-14 float-left pt-4 text-left pl-7">자택주소 (우편주소지)</legend>
+                    <div className="before:border-l before:border-gray h-14 float-left pt-2">
+                      <input type="text" placeholder="" className="pl-4 h-10 w-[500px]" id="address_input_1" value={addressInput1}/>
+                      <button type="button" className="w-12 h-10 bg-primary text-white" onClick={() => handleInputClick('address_input_1')} value={addressInput1}>검색</button>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center w-full mt-3 text-black">
+                    <div className="h-14 float-left pt-2 pl-7">
+                      <input type="text" placeholder="나머지 주소" className="h-10 w-[680px]"/>
+                    </div>
+                  </fieldset>
+
+                  <p className="mt-10 text-active text-[14px]">* 재직자가 아닐경우 비워두시면 됩니다.</p>
+                  <fieldset className="border border-gray text-center w-full text-black mt-3">
+                    <legend className="w-32 h-14 float-left pt-4 text-left pl-7">회사명</legend>
+                    <div className="before:border-l before:border-gray :h-14 float-left pt-2">
+                      <input type="text" placeholder="" className="pl-4 h-10 w-[500px]"/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center mt-3 text-black w-[49%] float-left mb-3">
+                    <legend className="w-32 h-14 float-left pt-4 text-left pl-7">소속</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
+                      <input type="text" placeholder="" className="pl-4 h-10 w-44"/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center mt-3 text-black w-[49%] float-left ml-[2%]">
+                    <legend className="w-32 h-14 float-left pt-4 text-left pl-7">직급</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
+                      <input type="text" placeholder="" className="pl-4 h-10 w-44"/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center w-full text-black">
+                    <legend className="w-52 h-14 float-left pt-4 text-left pl-7">자택주소 (우편주소지)</legend>
+                    <div className="before:border-l before:border-gray :h-14 float-left pt-2">
+                      <input type="text" placeholder="" className="pl-4 h-10 w-[500px]" id="address_input_2" value={addressInput2}/>
+                      <button type="button" className="w-12 h-10 bg-primary text-white" onClick={() => handleInputClick('address_input_2')} value={addressInput2}>검색</button>      
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center w-full mt-3 text-black">
+                    <div className="h-14 float-left pt-2 pl-7">
+                      <input type="text" placeholder="나머지 주소" className="h-10 w-[680px]"/>
+                    </div>
+                  </fieldset>
+                  <p className="mt-10 text-active text-[14px]">* 입금계좌정보와 현금영수증 발급여부를 확인하세요.</p>
+                  <p className="mt-7 text-active text-[14px]">* 세금 계산서 별도 문의 바랍니다.</p>
+                  <p className="mt-7 text-active text-[14px]">* 본인 성명으로 입금하여야 확인 가능하며 입금 확인 후 접수 완료됩니다.</p>
+                  <fieldset className="border border-gray text-center w-full text-black mt-3">
+                    <legend className="w-52 h-14 float-left pt-4 text-left pl-7">입금계좌정보 안내</legend>
+                    <div className="before:border-l before:border-gray :w-52 h-14 float-left pt-2">
+                      <input type="text" placeholder="국민은행 763801-00-072091 ㈜엑스텍코리아" className="pl-4 h-10 w-[500px] bg-white placeholder-superdarkgray" disabled/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center w-full text-black mt-3">
+                    <legend className="w-52 h-14 float-left pt-4 text-left pl-7">입금금액</legend>
+                    <div className="before:border-l before:border-gray :w-52 h-14 float-left pt-2">
+                      <input type="text" placeholder="121만원" className="pl-4 h-10 w-40 placeholder:text-primary placeholder:text-[20px] placeholder:font-bold bg-white" disabled/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center w-full text-black mt-3">
+                    <legend className="w-52 h-14 float-left pt-4 text-left pl-7">현금영수증 발급유무</legend>
+                    <div className="before:border-l before:border-gray :w-52 h-14 float-left pt-2">
+                      <input type="checkbox" id="issue_chk_1" className="w-6 h-6 ml-4 mt-2 rounded-full"/> <label htmlFor="issue_chk_1" className="">발급</label>
+                      <input type="checkbox" id="issue_chk_2" className="w-6 h-6 ml-4 mt-2 rounded-full"/> <label htmlFor="issue_chk_2" className="">미발급</label>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center w-full text-black mt-3">
+                    <legend className="w-52 h-20 float-left pt-4 text-left pl-7">발급번호</legend>
+                    <div className="before:border-l before:block before:h-16 before:mt-2 before:absolute before:border-gray :w-52 h-20 float-left relative">
+                    <input type="text" placeholder="입력" className="pl-4 h-10 w-52 mt-2"/>
+                    </div>
+                    <p className="max-h-20 text-active text-[14px] mt-2">① 개인소득공제용 : 휴대폰번호 <br/>
+                      &nbsp;&nbsp;&nbsp; ② 사업자증빙용 : 사업자등록번호
+                      </p>
+                  </fieldset>
+                </div>
+              </form>
+              <div className="form_btn_box flex justify-center mt-5">
+                <a href="#"><button className="w-32 h-12 bg-active text-white">확인
+                  </button></a>
+                  <a href="#"><button className="w-32 h-12 bg-lightgray ml-6" onClick={closePopup}>취소
+                  </button></a>
+              </div>
+            </div>{/* pop_frame */}
+          </div>
         </section>
       </main>
       <Footer />
+      <div id="pop_screen_bg" className={`h-screen w-screen bg-opacity-50 bg-black fixed left-0 top-0 z-[100] ${isPopupOpen ? '' : 'hidden'}`}></div>
     </section>
   );
 }
