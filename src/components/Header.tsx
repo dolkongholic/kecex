@@ -73,12 +73,12 @@ export default function Header({ menu, setMenu }: Props) {
           <div className="w-1/3 flex justify-end items-center">
             <div className="w-1/2 flex item-center justify-end mr-[30px] text-[13px] font-bold">
               <ul className="flex items-center space-x-[5px]">
-                {session == null ? (
+                {session != null ? (
                   <li onClick={() => signIn()} className="cursor-pointer">
                     로그인
                   </li>
                 ) : (
-                  <Link passHref href={"/mypage/profile"}>
+                  <Link passHref href={"/mypage/overall/all01"}>
                     <li className="cursor-pointer">마이페이지</li>
                   </Link>
                 )}
@@ -147,7 +147,7 @@ export default function Header({ menu, setMenu }: Props) {
 
       {/* 서브 메뉴 */}
       <div
-        className={`absolute top-[160px] w-full h-[700px] bg-active opacity-0 z-[70] ${
+        className={`absolute top-[160px] w-full h-[700px] bg-[#003893] opacity-0 z-[70] ${
           !menu
             ? "opacity-0 -translate-y-[50px] pointer-events-none"
             : "opacity-100 translate-y-0 pointer-events-auto"
@@ -162,7 +162,7 @@ export default function Header({ menu, setMenu }: Props) {
           >
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
-                <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px]">
                   일반현황
                 </div>
                 <div className="flex flex-col space-y-[20px] text-white">
@@ -181,7 +181,7 @@ export default function Header({ menu, setMenu }: Props) {
                 </div>
               </div>
               <div className="w-1/4">
-                <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px]">
                   조직안내
                 </div>
                 <div className="flex flex-col space-y-[20px] text-white">
@@ -195,7 +195,7 @@ export default function Header({ menu, setMenu }: Props) {
               </div>
               <div className="w-1/4">
                 <Link passHref href={"/introduce/map/"}>
-                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                  <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                     찾아오시는길
                   </div>
                 </Link>
@@ -210,7 +210,7 @@ export default function Header({ menu, setMenu }: Props) {
           >
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
-                <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px]">
                   회원
                 </div>
                 <div className="flex flex-col space-y-[20px] text-white">
@@ -229,7 +229,7 @@ export default function Header({ menu, setMenu }: Props) {
                 </div>
               </div>
               <div className="w-1/4">
-                <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px]">
                   교육
                 </div>
                 <div className="flex flex-col space-y-[20px] text-white">
@@ -254,7 +254,7 @@ export default function Header({ menu, setMenu }: Props) {
                 </div>
               </div>
               <div className="w-1/4">
-                <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px]">
                   컨설팅
                 </div>
                 <div className="flex flex-col space-y-[20px] text-white">
@@ -277,21 +277,21 @@ export default function Header({ menu, setMenu }: Props) {
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
                 <Link passHref href={"/notice/worker/"}>
-                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                  <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                     인재정보
                   </div>
                 </Link>
               </div>
               <div className="w-1/4">
                 <Link passHref href={"/notice/faq/"}>
-                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                  <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                     FAQ
                   </div>
                 </Link>
               </div>
               <div className="w-1/4">
                 <Link passHref href={"/notice/qna/"}>
-                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                  <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                     문의사항
                   </div>
                 </Link>
@@ -307,14 +307,14 @@ export default function Header({ menu, setMenu }: Props) {
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
                 <Link passHref href={"/information/raw/"}>
-                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                  <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                     관련법령
                   </div>
                 </Link>
               </div>
               <div className="w-1/4">
                 <Link passHref href={"/information/news/"}>
-                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                  <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                     카드뉴스
                   </div>
                 </Link>
@@ -330,14 +330,31 @@ export default function Header({ menu, setMenu }: Props) {
             <div className="w-[1400px] flex justify-start">
               <div className="w-1/4">
                 <Link passHref href={"/education/apply/apply"}>
-                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                  <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                     교육신청
                   </div>
                 </Link>
+                <div className="flex flex-col space-y-[20px] text-white">
+                  <Link passHref href={"/education/apply/apply"}>
+                    <span className="cursor-pointer"> - 교육 신청</span>
+                  </Link>
+                  <Link passHref href={"/education/apply/restudy"}>
+                    <span className="cursor-pointer"> - 재교육 신청</span>
+                  </Link>
+                  <Link passHref href={"/education/apply/reexam"}>
+                    <span className="cursor-pointer"> - 재시험 신청</span>
+                  </Link>
+                  <Link passHref href={"/education/apply/semina"}>
+                    <span className="cursor-pointer"> - 세미나 신청</span>
+                  </Link>
+                  <Link passHref href={"/education/apply/consulting"}>
+                    <span className="cursor-pointer"> - 컨설팅 신청</span>
+                  </Link>
+                </div>
               </div>
               <div className="w-1/4">
                 <Link passHref href={"/education/mystatus/apply"}>
-                  <div className="w-[250px] h-[55px] border border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                  <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                     나의 학습활동
                   </div>
                 </Link>

@@ -15,13 +15,30 @@ import { RiArrowRightSLine } from "react-icons/ri";
 
 const MainList = [
   {
+    title: "전체 현황",
+    url: "#",
+    sub: [
+      { title: "발급/출력 현황", url: "/mypage/overall/all01" },
+      { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
+      { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
+      { title: "경력관리 현황", url: "/mypage/overall/all04" },
+    ]
+  },
+  {
     title: "회원정보 수정",
     url: "/mypage/profile",
     sub: null,
   },
   {
     title: "회원증 출력",
-    url: "/mypage/print",
+    url: "#",
+    sub: [
+      { title: "회원증 출력", url: "/mypage/print/certificate" },
+      { title: "정회원 가입", url: "/mypage/print/regular" }],
+  },
+  {
+    title: "1:1문의 현황",
+    url: "/mypage/overall/all02",
     sub: null,
   },
   {
@@ -31,8 +48,10 @@ const MainList = [
   },
   {
     title: "경력수첩 발급",
-    url: "/mypage/print",
-    sub: null,
+    url: "#",
+    sub: [
+    { title: "경력수첩 발급", url: "/mypage/carrear/print" },
+    { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" }],
   },
   {
     title: "회원탈퇴",

@@ -55,22 +55,18 @@ export default function Footer() {
             <li>오류 신고 및 확인</li>
           </ul>
           <div className="flex space-x-[20px] item-center pt-[10px]">
-            <div className="border border-[#777] w-[200px] h-[40px] text-center leading-[40px] flex justify-between items-center">
-              <div className="text-[#DCDCDC] pl-[20px] text-[12px]">
-                소속기관
-              </div>
+            <select id="related_site" className="border border-[#777] w-[200px] h-[40px] text-center leading-[40px] flex justify-between items-center bg-[#3e3e3e] text-[#DCDCDC]" onChange={(event) => copyrtChgUrl(event.target.value)}>
+              <option value="">관련 기관</option>
+              <option value="https://www.kosha.or.kr/kosha/index.do" className="text-[#DCDCDC]">안전보건공단</option>
+              <option value="https://www.kgs.or.kr/" className="text-[#DCDCDC]">가스안전공사</option>
+              <option value="https://www.moel.go.kr/index.do" className="text-[#DCDCDC]">고용노동부</option>
+              <option value="https://www.hrdkorea.or.kr/" className="text-[#DCDCDC]">산업인력공단</option>
+              <option value="https://www.nts.go.kr/" className="text-[#DCDCDC]">국세청</option>
+              <option value="https://www.acrc.go.kr/" className="text-[#DCDCDC]">권익위원회</option>
               <div className="pr-[10px] text-[#DCDCDC]">
                 <IoIosArrowUp />
               </div>
-            </div>
-            <div className="border border-[#777] w-[200px] h-[40px] text-center leading-[40px] flex justify-between items-center">
-              <div className="text-[#DCDCDC] pl-[20px] text-[12px]">
-                산하기관
-              </div>
-              <div className="pr-[10px] text-[#DCDCDC]">
-                <IoIosArrowUp />
-              </div>
-            </div>
+            </select>
           </div>
         </div>
         <div className="w-[1400px] mt-[20px] text-[#DCDCDC] flex flex-col space-y-[5px]">
@@ -86,4 +82,10 @@ export default function Footer() {
       </div>
     </section>
   );
+}
+
+function copyrtChgUrl(url){
+	if(url){
+		window.open(url);
+	}
 }
