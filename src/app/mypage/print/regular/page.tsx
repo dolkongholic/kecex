@@ -118,7 +118,7 @@ export default function QnaPage() {
             </figure>
 
             <ContentSubTitle title="가입대상" />
-            <ul className="border border-[#ccc] w-full h-36 flex">
+            <ul className="border border-[#ccc] w-full h-36 flex mb-9">
               <li className="flex items-center justify-center w-1/4 border-r border-[#ccc]">안전보건관리책임자</li>
               <li className="flex items-center justify-center w-1/4 border-r border-[#ccc]">관리감독자</li>
               <li className="flex items-center justify-center w-1/4 border-r border-[#ccc]">안전관리자</li>

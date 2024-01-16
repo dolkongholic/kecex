@@ -486,8 +486,8 @@ export default function CeoPage() {
                     </div>
                   </fieldset>
                   <fieldset className="border border-gray text-center mt-3 text-black w-full float-left">
-                    <legend className="w-40 h-14 float-left pt-4 text-left pl-7">교육시간</legend>
-                    <div className="before:border-l before:border-gray :w-40 h-14 float-left">
+                    <legend className="w-40 h-14 float-left pt-4 text-left pl-7">교육제목</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
                       <input type="text" placeholder="" className="pl-4 h-10 w-44"/>
                     </div>
                   </fieldset>
