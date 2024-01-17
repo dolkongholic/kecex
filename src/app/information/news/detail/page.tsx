@@ -40,7 +40,7 @@ const Items = [
   },
 ];
 
-const location = "관계법령";
+const location = "카드뉴스";
 
 export default function NewsDetailPage() {
   const [menu, setMenu] = useState<string>("");
@@ -86,7 +86,7 @@ export default function NewsDetailPage() {
         </section>
 
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
-          <ContentTitle title="관계법령" />
+          <ContentTitle title="카드뉴스" />
           <div className="w-full mt-[20px] leading-[50px] border-b border-gray">
             &nbsp;
           </div>
@@ -99,7 +99,7 @@ export default function NewsDetailPage() {
           <div className="w-full flex justify-between item-center h-[50px] border-t-2 border-b-2 border-gray">
             <div className="flex justify-between items-center px-[20px]">
               <div>등록일</div>
-              <div>2023-10-10</div>
+              <div className="ml-3">2023-10-10</div>
             </div>
             <div className="pr-[40px] flex justify-center items-center">
               조회수 1234
@@ -159,6 +159,9 @@ export default function NewsDetailPage() {
                 <p>폴리텍대학 석유화학공정 기술교육원, 방폭안전교육센터 구축</p>
               </div>
             </div>
+          </Link>
+          <Link passHref href={"../news"} className="w-full flex justify-center">
+            <button className="w-32 h-10 bg-superdarkgray text-white text-[14px] mt-9">목록</button>
           </Link>
         </section>
       </main>

@@ -95,7 +95,7 @@ export default function RawDetailPage() {
           <div className="w-full flex justify-between item-center h-[50px] border-t-2 border-b-2 border-gray">
             <div className="flex justify-between items-center px-[20px]">
               <div>등록일</div>
-              <div>2023-10-10</div>
+              <div className="ml-3">2023-10-10</div>
             </div>
             <div className="pr-[40px] flex justify-center items-center">
               조회수 1234
@@ -118,7 +118,7 @@ export default function RawDetailPage() {
             <p className="leading-[30px]">&nbsp;</p>
           </div>
           <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray border-b-2 border-b-darkgray">
-            <div className="w-[200px] pl-[20px] flex justify-center items-center bg-lightgray h-[66px] text-black">
+            <div className="w-[200px] flex justify-center items-center bg-lightgray h-[66px] text-black">
               첨부파일
             </div>
             <div className="flex justify-start items-center pl-[20px]">
@@ -149,6 +149,9 @@ export default function RawDetailPage() {
                 <p>방폭전기기기의 설계, 선정 및 설치에 관한기준</p>
               </div>
             </div>
+          </Link>
+          <Link passHref href={"../raw"} className="w-full flex justify-center">
+            <button className="w-32 h-10 bg-superdarkgray text-white text-[14px] mt-9">목록</button>
           </Link>
         </section>
       </main>
