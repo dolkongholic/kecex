@@ -124,7 +124,7 @@ export default function RawPage() {
                   <div className="w-[50px] text-center text-darkgray text-subtitle">
                     {item.id}
                   </div>
-                  <div className="">{item.title}</div>
+                  <div className="ml-3">{item.title}</div>
                 </div>
                 <div className="w-[50px] text-darkgray ">
                   <RiArrowRightSLine className="text-[26px]" />
@@ -132,25 +132,31 @@ export default function RawPage() {
               </div>
             </Link>
           ))}
-          <div className="w-full flex justify-center items-center h-[50px]">
-            <div className="flex mr-[20px] cursor-pointer">
-              <RiArrowLeftSLine className="text-[20px] pt-[3px]" />
+          <div className="w-full flex justify-between items-center h-[50px]">
+            <div>&nbsp;</div>
+            <div className="flex">
+              <div className="flex mr-[20px] cursor-pointer">
+                <RiArrowLeftSLine className="text-[20px] pt-[3px]" />
+              </div>
+              <div className="flex space-x-[10px]">
+                {[1, 2, 3, 4, 5].map((item, index) => (
+                  <div
+                    key={index}
+                    className={`${
+                      index == 0 && "text-secondary font-bold"
+                    } hover:text-secondary hover:font-bold cursor-pointer`}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <div className="flex ml-[20px] cursor-pointer">
+                <RiArrowRightSLine className="text-[20px] pt-[3px]" />
+              </div>
             </div>
-            <div className="flex space-x-[10px]">
-              {[1, 2, 3, 4, 5].map((item, index) => (
-                <div
-                  key={index}
-                  className={`${
-                    index == 0 && "text-secondary font-bold"
-                  } hover:text-secondary hover:font-bold cursor-pointer`}
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-            <div className="flex ml-[20px] cursor-pointer">
-              <RiArrowRightSLine className="text-[20px] pt-[3px]" />
-            </div>
+            <Link passHref href={"./raw/post"}>
+                    <button className="cursor-pointer bg-secondary text-white w-24 h-8 text-[14px]">글쓰기</button>
+            </Link>
           </div>
         </section>
       </main>

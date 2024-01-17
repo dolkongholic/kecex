@@ -34,6 +34,7 @@ export default function RootLayout({
         <meta property="og:description" content="사단법인 한국방폭협회"></meta>
         {/* <meta property="og:image" content="http://www.mysite.com/myimage.jpg"></meta> */}
         <meta property="og:url" content="https://www.kecex.or.kr"></meta>
+        <link href="https://webfontworld.github.io/kopus/KoPubWorldBatang.css" rel="stylesheet"></link>
       </head>
       <body className={inter.className}>
         <ClientOnly>

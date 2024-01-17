@@ -29,6 +29,11 @@ const MainList = [
     url: "/notice/qna",
     sub: null,
   },
+  {
+    title: "공지사항",
+    url: "/notice/notice",
+    sub: null,
+  },
 ];
 
 const location = "문의사항";

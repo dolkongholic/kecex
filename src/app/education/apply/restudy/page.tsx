@@ -9,6 +9,9 @@ import ContentTitle from "@/components/content/title";
 import React, { useState, useRef } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
+import { GrSearch } from "react-icons/gr";
+import { GrAddCircle } from "react-icons/gr";
+import { IoMdClose } from "react-icons/io";
 import DaumPostcode from 'react-daum-postcode';
 
 import Link from "next/link";
@@ -32,14 +35,22 @@ export default function RestudyPage() {
   const [isPopupOpen, setPopupOpen] = useState<boolean>(false);
   const [selectedFile, setSelectedFile] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
+  const [activePopup, setActivePopup] = useState<string>(''); 
   //모달창 열기
   const openModal = () => {
     setPopupOpen(true);
+    setActivePopup('pop_wrap_01');
+    document.body.classList.add('overflow-y-hidden');
+  }
+  const openModal2 = () => {
+    setPopupOpen(true);
+    setActivePopup('pop_wrap_register');
     document.body.classList.add('overflow-y-hidden');
   }
   //모달창 닫기
   const closePopup = () => {
     setPopupOpen(false);
+    setActivePopup('');
     document.body.classList.remove('overflow-y-hidden');
   };
 
@@ -161,19 +172,25 @@ export default function RestudyPage() {
             </Link>
           </div>
           <div className="flex text-title justify-center items-center text-black w-full h-[180px] p-[40px] bg-lightgray">
+            <span className="mr-2 text-darkgray"><GrSearch /></span>
             <input
               type="text"
               className="w-[600px] h-[50px] border-2 border-gray px-[10px] leading-[50px] text-[14px] placeholder:text-[14px] placeholder:leading-[50px]"
               placeholder="교육명을 입력해주세요."
             />
-            <button className="text-[14px] w-[150px] border-2  border-l-0 bg-white border-gray h-[50px]">
+            <button className="text-[14px] w-[150px] border-2  bg-white border-gray h-[50px] hover:border-secondary hover:border">
               검색
             </button>
           </div>
 
           <div className="mt-[30px] w-full h-full">
             <div className="w-full text-black text-[14px] border-b border-secondary leading-[50px]">
-              전체 <span className="font-bold">17</span> 건
+              <div className="flex justify-between">
+                <p className="float-left">전체 <span className="font-bold">17</span> 건</p>
+                <button className="float-right border border-secondary text-secondary w-28 h-10 mr-10 mb-2 leading-7 hover:bg-secondary hover:text-white" onClick={openModal2}>
+                  교육 등록 <GrAddCircle className="inline w-5 h-5 ml-1 mb-0.5"/> 
+                  </button>
+              </div>
             </div>
             {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
               <div
@@ -187,7 +204,7 @@ export default function RestudyPage() {
                     </span>
                     <span>교육상세</span>
                   </div>
-                  <div className="text-darkgray -translate-y-[5px]">
+                  <div className="text-darkgray -translate-y-[4px]">
                     Basic Course
                   </div>
                   <div className="text-superdarkgray flex justify-start items-center">
@@ -203,9 +220,13 @@ export default function RestudyPage() {
                     <span className="w-[200px]">ㆍ교육비 : 30 만원</span>
                   </div>
                 </div>
-                <div className="flex justify-center  items-center">
+                <div className="flex flex-col justify-center  items-center">
                   <button className="flex justify-center items-center bg-secondary hover:bg-active text-white  w-[150px] h-[50px] pop_open_btn" onClick={openModal}>
                     <span className="mr-[10px]">교육신청</span>{" "}
+                    <IoIosArrowForward />
+                  </button>
+                  <button className="flex justify-center items-center bg-gray hover:bg-[#ccc]  w-[150px] h-[30px] pop_open_btn mt-3" onClick={openModal}>
+                    <span className="mr-[10px]">삭제</span>{" "}
                     <IoIosArrowForward />
                   </button>
                 </div>
@@ -241,12 +262,14 @@ export default function RestudyPage() {
                         />
                         </div>
                       )}
-          <div id="pop_wrap_01" className={`w-[1100px] h-[700px] fixed z-[101] inset-1/2 -mx-[550px] -my-[400px] ${isPopupOpen ? '' : 'hidden'}`}>
+          <div id="pop_wrap_01" className={`w-[1100px] h-[700px] fixed z-[101] inset-1/2 -mx-[550px] -my-[400px] ${isPopupOpen && activePopup === 'pop_wrap_01' ? '' : 'hidden'}`}>
             <div className="w-[1100px] h-auto flex justify-end">
-              <button id="close_btn" className="w-12 h-12 bg-primary text-white" onClick={() => { handleClose(); closePopup(); }}>닫기</button>
+              <button id="close_btn" className="w-12 h-12 bg-primary text-white rounded-t-md" onClick={() => { handleClose(); closePopup(); }}>
+                <IoMdClose className="w-8 h-8 text-white mx-auto"/>
+              </button>
             </div>
             <div id="pop_frame" className="w-[1100px] h-[750px] bg-white py-24 px-16 rounded-tl-3xl overflow-y-auto">
-              <h4 className="text-subtitle text-secondary">IECEx CoPC 교육신청서</h4>
+              <h4 className="text-subtitle text-secondary pb-5 border-b border-secondary">IECEx CoPC 교육신청서</h4>
               <div className="w-full h-24 border border-gray flex mt-4">
                 <div className="w-1/4 border-r border-gray">신청지사</div>
                 <div className=" w-3/4">신청교육</div>
@@ -258,9 +281,9 @@ export default function RestudyPage() {
                     {imagePreview ? (
                       <img src={imagePreview} alt="이미지 미리보기" className="h-full w-full"></img>
                     ) : (
-                      <span>
+                      <span className="text-[14px] ml-2">
                       {/* 내가 선택한 파일 이름 여기에 표시 */}
-                      {selectedFile ? selectedFile : '파일을 선택하세요.'}
+                      {selectedFile ? selectedFile : '* 파일을 선택하세요.'}
                       </span>
                     )}
                   </div>
@@ -314,8 +337,8 @@ export default function RestudyPage() {
                   <fieldset className="border border-gray text-center w-full text-black">
                     <legend className="w-52 h-14 float-left pt-4 text-left pl-7">자택주소 (우편주소지)</legend>
                     <div className="before:border-l before:border-gray h-14 float-left pt-2">
-                      <input type="text" placeholder="" className="pl-4 h-10 w-[500px]" id="address_input_1" value={addressInput1}/>
-                      <button type="button" className="w-12 h-10 bg-primary text-white" onClick={() => handleInputClick('address_input_1')} value={addressInput1}>검색</button>
+                      <input type="text" placeholder="" className="pl-4 h-10 w-[450px]" id="address_input_1" value={addressInput1}/>
+                      <button type="button" className="w-24 h-10 bg-primary text-white text-[14px]" onClick={() => handleInputClick('address_input_1')} value={addressInput1}>검색</button>
                     </div>
                   </fieldset>
                   <fieldset className="border border-gray text-center w-full mt-3 text-black">
@@ -346,8 +369,8 @@ export default function RestudyPage() {
                   <fieldset className="border border-gray text-center w-full text-black">
                     <legend className="w-52 h-14 float-left pt-4 text-left pl-7">자택주소 (우편주소지)</legend>
                     <div className="before:border-l before:border-gray :h-14 float-left pt-2">
-                      <input type="text" placeholder="" className="pl-4 h-10 w-[500px]" id="address_input_2" value={addressInput2}/>
-                      <button type="button" className="w-12 h-10 bg-primary text-white" onClick={() => handleInputClick('address_input_2')} value={addressInput2}>검색</button>      
+                      <input type="text" placeholder="" className="pl-4 h-10 w-[450px]" id="address_input_2" value={addressInput2}/>
+                      <button type="button" className="w-24 h-10 bg-primary text-white text-[14px]" onClick={() => handleInputClick('address_input_2')} value={addressInput2}>검색</button>      
                     </div>
                   </fieldset>
                   <fieldset className="border border-gray text-center w-full mt-3 text-black">
@@ -356,9 +379,9 @@ export default function RestudyPage() {
                     </div>
                   </fieldset>
                   <p className="mt-10 text-active text-[14px]">* 입금계좌정보와 현금영수증 발급여부를 확인하세요.</p>
-                  <p className="mt-7 text-active text-[14px]">* 세금 계산서 별도 문의 바랍니다.</p>
-                  <p className="mt-7 text-active text-[14px]">* 본인 성명으로 입금하여야 확인 가능하며 입금 확인 후 접수 완료됩니다.</p>
-                  <fieldset className="border border-gray text-center w-full text-black mt-3">
+                  <p className="mt-6 text-active text-[14px]">* 세금 계산서 별도 문의 바랍니다.</p>
+                  <p className="mt-6 text-active text-[14px]">* 본인 성명으로 입금하여야 확인 가능하며 입금 확인 후 접수 완료됩니다.</p>
+                  <fieldset className="border border-gray text-center w-full text-black mt-5">
                     <legend className="w-52 h-14 float-left pt-4 text-left pl-7">입금계좌정보 안내</legend>
                     <div className="before:border-l before:border-gray :w-52 h-14 float-left pt-2">
                       <input type="text" placeholder="국민은행 763801-00-072091 ㈜엑스텍코리아" className="pl-4 h-10 w-[500px] bg-white placeholder-superdarkgray" disabled/>
@@ -372,9 +395,11 @@ export default function RestudyPage() {
                   </fieldset>
                   <fieldset className="border border-gray text-center w-full text-black mt-3">
                     <legend className="w-52 h-14 float-left pt-4 text-left pl-7">현금영수증 발급유무</legend>
-                    <div className="before:border-l before:border-gray :w-52 h-14 float-left pt-2">
-                      <input type="checkbox" id="issue_chk_1" className="w-6 h-6 ml-4 mt-2 rounded-full"/> <label htmlFor="issue_chk_1" className="">발급</label>
-                      <input type="checkbox" id="issue_chk_2" className="w-6 h-6 ml-4 mt-2 rounded-full"/> <label htmlFor="issue_chk_2" className="">미발급</label>
+                    <div className="before:border-l before:border-gray before:h-6 w-52 h-14 float-left pt-2 flex items-center">
+                      <input type="radio" name="issue_chk" className="w-6 h-6 ml-4 mr-2 rounded-full"/>
+                      <label htmlFor="issue_chk_1" className="text-[14px]">발급</label>
+                      <input type="radio" name="issue_chk" className="w-6 h-6 ml-4 mr-2 rounded-full"/>
+                      <label htmlFor="issue_chk_2" className="">미발급</label>
                     </div>
                   </fieldset>
                   <fieldset className="border border-gray text-center w-full text-black mt-3">
@@ -391,11 +416,127 @@ export default function RestudyPage() {
               <div className="form_btn_box flex justify-center mt-5">
                 <a href="#"><button className="w-32 h-12 bg-active text-white">확인
                   </button></a>
-                  <a href="#"><button className="w-32 h-12 bg-lightgray ml-6" onClick={closePopup}>취소
+                  <a href="#"><button className="w-32 h-12 bg-lightgray ml-6 border border-gray text-superdarkgray" onClick={closePopup}>취소
                   </button></a>
               </div>
             </div>{/* pop_frame */}
-          </div>
+          </div>{/*pop_wrap_01 */}
+
+          {/* 교육등록 팝업 시작 */}
+          <div id="pop_wrap_register" className={`w-[1100px] h-[700px] fixed z-[101] inset-1/2 -mx-[550px] -my-[400px] ${isPopupOpen && activePopup === 'pop_wrap_register' ? '' : 'hidden'}`}>
+            <div className="w-[1100px] h-auto flex justify-end">
+              <button id="close_btn" className="w-12 h-12 bg-primary text-white rounded-t-md" onClick={() => { handleClose(); closePopup(); }}>
+                <IoMdClose className="w-8 h-8 text-white mx-auto"/>
+              </button>
+            </div>
+            <div id="pop_frame" className="w-[1100px] h-[750px] bg-white py-24 px-16 rounded-tl-3xl overflow-y-auto">
+              <h4 className="text-subtitle text-secondary pb-5 border-b border-secondary">교육관리</h4>
+                  <fieldset className="border border-gray text-center w-full mt-3 text-black">
+                    <legend className="w-32 h-14 float-left pt-4 text-left pl-7">교육분류</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
+                      <select id="" className="pl-4 h-10 w-40">
+                        <option value="">교육상태</option>
+                        <option value="신규">신규</option>
+                        <option value="재시험">재시험</option>
+                        <option value="재교육">재교육</option>
+                      </select>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center w-full mt-3 text-black">
+                    <legend className="w-32 h-14 float-left pt-4 text-left pl-7">지역</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
+                      <select id="" className="pl-4 h-10 w-40">
+                        <option value="">지역</option>
+                        <option value="서울">서울</option>
+                        <option value="인천">인천</option>
+                        <option value="수원">수원</option>
+                        <option value="대전">대전</option>
+                        <option value="대구">대구</option>
+                        <option value="울산">울산</option>
+                        <option value="부산">부산</option>
+                        <option value="창원">창원</option>
+                        <option value="거제">거제</option>
+                        <option value="광양">광양</option>
+                        <option value="평택">평택</option>
+                        <option value="광주">광주</option>
+                      </select>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center w-full mt-3 text-black">
+                    <legend className="w-32 h-14 float-left pt-4 text-left pl-7">교육명</legend>
+                    <div className="before:border-l before:border-gray :w-full h-14 float-left pt-2">
+                      <select id="" className="pl-4 h-10 w-full">
+                        <option value="">교육을 선택해주세요</option>
+                        <option value="IECEx 000">IECEx 000</option>
+                        <option value="IECEx 001">IECEx 001</option>
+                        <option value="IECEx 002">IECEx 002</option>
+                        <option value="IECEx 003/006">IECEx 003/006</option>
+                        <option value="IECEx 004/007/008">IECEx 004/007/008</option>
+                        <option value="IECEx 005">IECEx 005</option>
+                        <option value="IECEx 002/009">IECEx 002/009</option>
+                        <option value="IECEx 002/008/009/010">IECEx 002/008/009/010</option>
+                        <option value="IECEx 009">IECEx 009</option>
+                        <option value="IECEx 010">IECEx 010</option>
+                        <option value="IECEx 001/004/007/008">IECEx 001/004/007/008</option>
+                        <option value="IECEx 001/003/006">IECEx 001/003/006</option>
+                        <option value="접지의 이해">접지의 이해</option>
+                      </select>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center mt-3 text-black w-full float-left">
+                    <legend className="w-40 h-14 float-left pt-4 text-left pl-7">교육제목</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
+                      <input type="text" placeholder="" className="pl-4 h-10 w-44"/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center mt-3 text-black w-full float-left">
+                    <legend className="w-40 h-14 float-left pt-4 text-left pl-7">교육기간</legend>
+                    <div className="before:border-l before:border-gray before:h-6 w-40 h-14 float-left flex items-center">
+                      <input type="text" placeholder="" className="pl-4 h-10 w-44"/> <p className="px-2">~</p> <input type="text" placeholder="" className="pl-4 h-10 w-44"/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center mt-3 text-black w-full float-left">
+                    <legend className="w-40 h-14 float-left pt-4 text-left pl-7">교육제목</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
+                      <input type="text" placeholder="" className="pl-4 h-10 w-44"/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center mt-3 text-black w-full float-left">
+                    <legend className="w-40 h-14 float-left pt-4 text-left pl-7">접수기간</legend>
+                    <div className="before:border-l before:border-gray before:h-6 w-40 h-14 float-left flex items-center">
+                      <input type="text" placeholder="" className="pl-4 h-10 w-44"/> <p className="px-2">~</p> <input type="text" placeholder="" className="pl-4 h-10 w-44"/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center mt-3 text-black w-full float-left">
+                    <legend className="w-40 h-14 float-left pt-4 text-left pl-7">정원</legend>
+                    <div className="before:border-l before:border-gray before:h-6 h-14 float-left flex items-center">
+                      <input type="text" placeholder="" className="pl-4 h-10 w-44"/>
+                      <p className="text-[#ef250b] ml-8">신청인원 : <span>0</span> <a href="#" className="text-black">[신청자 보기]</a></p>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center mt-3 text-black w-full float-left">
+                    <legend className="w-40 h-14 float-left pt-4 text-left pl-7">교육비</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
+                      <input type="text" placeholder="" className="pl-4 h-10 w-44"/>
+                    </div>
+                  </fieldset>
+                  <fieldset className="border border-gray text-center mt-3 text-black w-full float-left">
+                    <legend className="w-40 h-14 float-left pt-4 text-left pl-7">비밀번호(단체용)</legend>
+                    <div className="before:border-l before:border-gray :w-40 h-14 float-left pt-2">
+                      <input type="text" placeholder="" className="pl-4 h-10 w-44"/>
+                    </div>
+                  </fieldset>
+              <div className="flex w-full justify-between mt-5">
+                <a href="#"><button className="w-32 h-10 bg-superdarkgray text-white mt-5 text-[15px]">리스트</button></a>
+                <div className="form_btn_box flex justify-center mt-5">
+                  <a href="#"><button className="w-32 h-10 bg-active text-white text-[15px]">등록
+                    </button></a>
+                    <a href="#"><button className="w-32 h-10 bg-lightgray ml-6 text-[15px]" onClick={closePopup}>취소
+                    </button></a>
+                </div>
+              </div>        
+            </div>{/* pop_frame */}
+          </div>{/* pop_wrap_register */}
         </section>
       </main>
       <Footer />

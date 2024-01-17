@@ -99,12 +99,19 @@ export default function CareerPage() {
           <ContentSubTitle title="가입대상" />
           <div className="w-full flex justify-between items-center text-subtitle text-center h-[50px] mb-[50px] px-[20px]">
             <div className="w-full py-[10px] flex justify-start items-center text-base">
-              방폭기술업을 등록하고자 하는 개인 또는 기업체
+            방폭기술업을 등록하고자 하는 개인회원 또는 단체회원
             </div>
           </div>
 
           <ContentSubTitle title="회원종류" />
 
+          <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px]">
+            <Image src={PicIconArrow} width={25} height={15} alt="icon" />
+            <span className="pl-[10px] text-secondary w-[100px]">일반회원</span>
+            <span>
+              정회원 이외의 단체 및 개인(수정필요)
+            </span>
+          </div>
           <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px]">
             <Image src={PicIconArrow} width={25} height={15} alt="icon" />
             <span className="pl-[10px] text-secondary w-[100px]">정회원</span>
@@ -139,7 +146,7 @@ export default function CareerPage() {
           </div>
           <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px] mb-[40px]">
             <Image src={PicIconArrow} width={25} height={15} alt="icon" />
-            <span className="pl-[10px] text-secondary w-[100px]">명예회원</span>
+            <span className="pl-[10px] text-secondary w-[100px]">특별회원</span>
             <span>
               본회의 취지에 찬동하고, 방폭기술 발전과 본회의 사업에 적극적으로
               협력하는 자

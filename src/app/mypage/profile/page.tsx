@@ -14,13 +14,30 @@ import { RiArrowRightSLine } from "react-icons/ri";
 
 const MainList = [
   {
+    title: "전체 현황",
+    url: "#",
+    sub: [
+      { title: "발급/출력 현황", url: "/mypage/overall/all01" },
+      { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
+      { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
+      { title: "경력관리 현황", url: "/mypage/overall/all04" },
+    ]
+  },
+  {
     title: "회원정보 수정",
     url: "/mypage/profile",
     sub: null,
   },
   {
     title: "회원증 출력",
-    url: "/mypage/print",
+    url: "#",
+    sub: [
+      { title: "회원증 출력", url: "/mypage/print/certificate" },
+      { title: "정회원 가입", url: "/mypage/print/regular" }],
+  },
+  {
+    title: "1:1문의 현황",
+    url: "/mypage/overall/all02",
     sub: null,
   },
   {
@@ -30,8 +47,10 @@ const MainList = [
   },
   {
     title: "경력수첩 발급",
-    url: "/mypage/print",
-    sub: null,
+    url: "#",
+    sub: [
+    { title: "경력수첩 발급", url: "/mypage/carrear/print" },
+    { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" }],
   },
   {
     title: "회원탈퇴",
@@ -114,17 +133,22 @@ export default function QnaPage() {
               </div>
             </div>
 
-            <div className="h-[120px] w-full flex border-b border-b-gray">
+            <div className="h-[160px] w-full flex border-b border-b-gray">
               <div className="bg-lightgray w-[140px] pl-[20px] flex justify-start items-center ">
                 비밀번호
               </div>
-              <div className="flex flex-col justify-center items-start pl-[20px] ">
+              <div className="flex flex-col justify-center items-start pl-[20px]">
                 <input
                   type="password"
                   placeholder="새비밀번호"
+                  className="border border-gray h-[40px] outline-none focus:border-secondary px-[20px] text-base mb-2"
+                />
+                <input
+                  type="password"
+                  placeholder="새비밀번호 확인"
                   className="border border-gray h-[40px] outline-none focus:border-secondary px-[20px] text-base"
                 />
-                <p className="mt-[20px]">
+                <p className="mt-[14px] text-[12px]">
                   * 숫자+영문자+특수문자 조합으로 4~13자 입력해주세요.
                 </p>
               </div>
@@ -163,6 +187,7 @@ export default function QnaPage() {
                   className="border border-gray w-[250px] h-[40px] ml-[20px] pl-[20px]"
                   ref={mailRef}
                 >
+                  <option>직접 입력</option>
                   <option onChange={(e: any) => console.log(e)}>
                     gmail.com
                   </option>
@@ -173,15 +198,15 @@ export default function QnaPage() {
             </div>
           </div>
           <div className="flex justify-center items-center w-full mt-[20px] space-x-[20px]">
-            <div className="cursor-pointer w-[130px] h-[40px] flex justify-center items-center bg-secondary text-white">
+            <div className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-secondary text-white">
               수정완료
             </div>
-            <div className="cursor-pointer w-[130px] h-[40px] flex justify-center items-center bg-gray">
+            <a href="/mypage/overall"><div className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-gray text-black">
               취소
-            </div>
-            <div className="cursor-pointer w-[130px] h-[40px] flex justify-center items-center bg-superdarkgray text-white">
+            </div></a>
+            <a href="/mypage/out"><div className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-superdarkgray text-white">
               회원탈퇴
-            </div>
+            </div></a>
           </div>
         </section>
       </main>

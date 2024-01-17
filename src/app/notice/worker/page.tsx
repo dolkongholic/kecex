@@ -30,6 +30,12 @@ const MainList = [
     url: "/notice/qna",
     sub: null,
   },
+  {
+    title: "공지사항",
+    url: "/notice/notice",
+    sub: null,
+  },
+  
 ];
 
 const location = "인재정보";
@@ -166,13 +172,34 @@ export default function WorkerPage() {
                 국적
               </div>
               <div className="w-1/4 leading-[40px] text-center border border-gray">
-                작겨증
+                자격증
               </div>
             </div>
-            <div className="leading-[300px] border-b-2 border-gray text-darkgray text-center">
+            <div className="leading-[300px] border-b-2 border-gray text-darkgray text-center hidden">
               검색 결과가 없습니다.
-            </div>
+            </div>{/*검색 결과 없을 때 */}
+            <ul>
+            {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
+              <li className="flex"  key={index}>
+                <div className="w-1/4 leading-[40px] text-center border-x border-b border-gray">
+                  홍길동
+                </div>
+                <div className="w-1/4 leading-[40px] text-center border-b border-gray">
+                  화학
+                </div>
+                <div className="w-1/4 leading-[40px] text-center border-b border-l border-gray">
+                  한국
+                </div>
+                <div className="w-1/4 leading-[40px] text-center border-x border-b border-gray">
+                  IECEx 001
+                </div>
+              </li>))}
+            </ul>
           </div>
+          
+          <button className="w-36 h-12 bg-secondary text-white m-auto">
+            등록하기
+          </button>
         </section>
       </main>
       <Footer />

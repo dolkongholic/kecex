@@ -141,7 +141,7 @@ export default function NewsPage() {
         </section>
 
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
-          <ContentTitle title="관계법령" />
+          <ContentTitle title="카드뉴스" />
           <div className="w-full mt-[20px] leading-[50px] border-b border-gray">
             1/100 페이지 (전체 255건)
           </div>
@@ -171,25 +171,31 @@ export default function NewsPage() {
               </Link>
             ))}
           </div>
-          <div className="w-full flex justify-center items-center h-[50px]">
-            <div className="flex mr-[20px] cursor-pointer">
-              <RiArrowLeftSLine className="text-[20px] pt-[3px]" />
+          <div className="w-full flex justify-between items-center h-[50px]">
+            <div>&nbsp;</div>
+            <div className="flex">
+              <div className="flex mr-[20px] cursor-pointer">
+                <RiArrowLeftSLine className="text-[20px] pt-[3px]" />
+              </div>
+              <div className="flex space-x-[10px]">
+                {[1, 2, 3, 4, 5].map((item, index) => (
+                  <div
+                    key={index}
+                    className={`${
+                      index == 0 && "text-secondary font-bold"
+                    } hover:text-secondary hover:font-bold cursor-pointer`}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <div className="flex ml-[20px] cursor-pointer">
+                <RiArrowRightSLine className="text-[20px] pt-[3px]" />
+              </div>
             </div>
-            <div className="flex space-x-[10px]">
-              {[1, 2, 3, 4, 5].map((item, index) => (
-                <div
-                  key={index}
-                  className={`${
-                    index == 0 && "text-secondary font-bold"
-                  } hover:text-secondary hover:font-bold cursor-pointer`}
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-            <div className="flex ml-[20px] cursor-pointer">
-              <RiArrowRightSLine className="text-[20px] pt-[3px]" />
-            </div>
+            <Link passHref href={"./news/post"}>
+                    <button className="cursor-pointer bg-secondary text-white w-24 h-8 text-[14px]">글쓰기</button>
+            </Link>
           </div>
         </section>
       </main>
