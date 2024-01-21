@@ -1,5 +1,3 @@
-import getCurrentUser from "@/app/actions/getCurrentUser";
-
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel as ResposiveCarousel } from "react-responsive-carousel";
 import Carousel from "react-material-ui-carousel";
@@ -8,7 +6,6 @@ import { useEffect, useState } from "react";
 import { ImArrowRight2 } from "react-icons/im";
 import Image from "next/image";
 import useInsertMainBanner from "@/app/hooks/useInsertMainBanner";
-import { getSession, useSession } from "next-auth/react";
 
 const images = [
   "/img/banner/img_1.jpg",
@@ -57,25 +54,9 @@ export default function Index() {
 
   const InsertMainBannerModal = useInsertMainBanner();
 
-  const [currentUser, setCurrentUser] = useState<any>(null);
-  // ... other state definitions
-
-  const session = getSession();
-  const { user } = session;
-  useEffect(() => {
-    // Define an async function inside the useEffect
-    const fetchUser = async () => {
-      try {
-        const currentUser = await getCurrentUser(session);
-        setCurrentUser(currentUser);
-      } catch (error) {
-        // Handle errors if necessary
-        console.error("Failed to fetch user", error);
-      }
-    };
-    fetchUser();
-  }, []);
-
+  const currentUser = {
+    staff: true,
+  };
   let noticeSubMenuList: any;
   if (noticeMenu == "알림") {
     noticeSubMenuList = ["공지사항", "채용", "인사", "입찰"];
