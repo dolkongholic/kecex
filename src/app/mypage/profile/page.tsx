@@ -21,7 +21,7 @@ const MainList = [
       { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
       { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
       { title: "경력관리 현황", url: "/mypage/overall/all04" },
-    ]
+    ],
   },
   {
     title: "회원정보 수정",
@@ -33,7 +33,8 @@ const MainList = [
     url: "#",
     sub: [
       { title: "회원증 출력", url: "/mypage/print/certificate" },
-      { title: "정회원 가입", url: "/mypage/print/regular" }],
+      { title: "정회원 가입", url: "/mypage/print/regular" },
+    ],
   },
   {
     title: "1:1문의 현황",
@@ -49,8 +50,9 @@ const MainList = [
     title: "경력수첩 발급",
     url: "#",
     sub: [
-    { title: "경력수첩 발급", url: "/mypage/carrear/print" },
-    { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" }],
+      { title: "경력수첩 발급", url: "/mypage/carrear/print" },
+      { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
+    ],
   },
   {
     title: "회원탈퇴",
@@ -129,7 +131,7 @@ export default function QnaPage() {
                 * 아이디
               </div>
               <div className="flex justify-start items-center pl-[20px] ">
-                {session?.user.name}
+                {session?.user?.name || "사용자 이름이 없습니다."}
               </div>
             </div>
 
@@ -174,7 +176,7 @@ export default function QnaPage() {
               <div className="flex justify-start items-center pl-[20px] ">
                 <input
                   type="text"
-                  placeholder={session?.user.name}
+                  placeholder={session?.user?.name || ""}
                   className="border border-gray h-[40px] outline-none focus:border-secondary px-[20px] text-base"
                 />
                 <p className="px-[10px]">@</p>
@@ -201,12 +203,16 @@ export default function QnaPage() {
             <div className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-secondary text-white">
               수정완료
             </div>
-            <a href="/mypage/overall"><div className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-gray text-black">
-              취소
-            </div></a>
-            <a href="/mypage/out"><div className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-superdarkgray text-white">
-              회원탈퇴
-            </div></a>
+            <a href="/mypage/overall">
+              <div className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-gray text-black">
+                취소
+              </div>
+            </a>
+            <a href="/mypage/out">
+              <div className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-superdarkgray text-white">
+                회원탈퇴
+              </div>
+            </a>
           </div>
         </section>
       </main>

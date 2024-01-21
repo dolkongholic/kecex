@@ -41,17 +41,16 @@ const Items = [
 
 const location = "관계법령";
 
-
 export default function RawDetailPage() {
   const [menu, setMenu] = useState<string>("");
   const [pageMenu, setPageMenu] = useState<any>("관계법령");
   const [currentDate, setCurrentDate] = useState<string>(() => {
     const today = new Date();
     const year = today.getFullYear();
-    const month = (today.getMonth()+1).toString().padStart(2, '0');
-    const day = today.getDate().toString().padStart(2, '0');
+    const month = (today.getMonth() + 1).toString().padStart(2, "0");
+    const day = today.getDate().toString().padStart(2, "0");
     return `${year}-${month}-${day}`;
-  })
+  });
 
   const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCurrentDate(event.target.value);
@@ -97,20 +96,33 @@ export default function RawDetailPage() {
         </section>
 
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
-        <ContentTitle title="관계법령 작성" center={true} />
-          <div className="w-full mt-[20px] leading-[50px]">
-            &nbsp;
-          </div>
+          <ContentTitle title="관계법령 작성" center={true} />
+          <div className="w-full mt-[20px] leading-[50px]">&nbsp;</div>
 
           <div className="w-full px-[20px] flex justify-between items-center h-[70px]">
             <div className="flex items-center w-9/12">
-              <input type="text" placeholder="제목을 입력해주세요" className="w-full h-[40px] p-5 border border-gray"/>
+              <input
+                type="text"
+                placeholder="제목을 입력해주세요"
+                className="w-full h-[40px] p-5 border border-gray"
+              />
             </div>
-            <input type="date" value={currentDate} onChange={handleDateChange}  className="w-2/12 h-[40px] border border-gray px-3"/>
+            <input
+              type="date"
+              value={currentDate}
+              onChange={handleDateChange}
+              className="w-2/12 h-[40px] border border-gray px-3"
+            />
           </div>
           <div className="mx-[20px] w-[calc(100%-40px)] border-t border-secondary"></div>
           <div className="w-full my-[30px] flex flex-col px-[20px]">
-            <textarea name="post_text" id="post_text" cols="30" rows="15" className="border border-gray p-6 box-border">
+            <textarea
+              name="post_text"
+              id="post_text"
+              cols={30}
+              rows={15}
+              className="border border-gray p-6 box-border"
+            >
               글 내용을 입력해주세요.
             </textarea>
           </div>
@@ -128,12 +140,16 @@ export default function RawDetailPage() {
             </div>
           </div>
           <div className="w-full pt-3 flex justify-between">
-          <Link passHref href={"../raw"}>
-            <button className="w-24 h-8 border border-gray rounded-sm bg-lightgray text-[14px] hover:bg-darkgray hover:text-white hover:border-darkgray">돌아가기</button>
-          </Link>
-          <Link passHref href={"../raw"}>
-            <button className="w-24 h-8 border border-darkgray rounded-sm bg-darkgray text-[14px] text-white hover:bg-secondary hover:border-secondary">글쓰기</button>
-          </Link>
+            <Link passHref href={"../raw"}>
+              <button className="w-24 h-8 border border-gray rounded-sm bg-lightgray text-[14px] hover:bg-darkgray hover:text-white hover:border-darkgray">
+                돌아가기
+              </button>
+            </Link>
+            <Link passHref href={"../raw"}>
+              <button className="w-24 h-8 border border-darkgray rounded-sm bg-darkgray text-[14px] text-white hover:bg-secondary hover:border-secondary">
+                글쓰기
+              </button>
+            </Link>
           </div>
         </section>
       </main>
