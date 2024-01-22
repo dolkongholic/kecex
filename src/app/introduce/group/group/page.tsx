@@ -89,7 +89,7 @@ export default function GroupPage() {
         <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <div className="w-full flex flex-col px-[120px] mt-[20px]">
-            <div className="h-[120px] items-center">
+            {/* <div className="h-[120px] items-center">
               <ul className="flex justify-between">
                 <li className="w-1/8 flex h-[40px] flex-col justify-between text-center">&nbsp;</li>
                 <li className="w-1/4 flex h-[40px] flex-col justify-between text-center border-b border-gray">심의 및 승인</li>
@@ -97,46 +97,68 @@ export default function GroupPage() {
                 <li className="w-1/4 flex h-[40px] flex-col justify-between text-center border-b border-gray">방폭지부 및 연구센터</li>
                 <li className="w-1/8 flex h-[40px] flex-col justify-between text-center">&nbsp;</li>
               </ul>
+            </div> */}
+            <div className="flex justify-center h-[50px] items-center">
+              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-superdarkgray text-white text-[18px] rounded-full">
+                총회
+              </div>
+            </div>
+            <div className="flex h-[70px]">
+              <div className="w-[50%] border-r border-gray">&nbsp;</div>
+              <div className="w-1/4 h-[50px] text-center text-subtitle">
+                <div className="border-b border-gray h-[25px]">&nbsp;</div>
+                <div className="h-[25px]">&nbsp;</div>
+              </div>
+              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-superdarkgray text-white text-[18px] rounded-full">
+                이사회
+              </div>
             </div>
             <div className="flex justify-between h-[50px] items-center">
-              <div className="w-1/6 flex h-[110px] flex-col justify-between text-center">
-                <div className=" flex justify-center items-center h-[50px] text-center border border-secondary text-[18px]">
-                  고문단
+              <div className="w-1/6 flex justify-center items-center h-[50px] text-cente text-subtitle">
+                &nbsp;
+              </div>
+                <div className="w-1/6 flex justify-center items-center h-[50px] text-center border border-secondary text-[18px]">
+                  고문
                 </div>
-                <div className=" flex justify-center items-center h-[50px] text-center bg-lightgray text-[18px]">
-                  감사
-                </div>
-              </div>
-              <div className="w-[36.6px] h-[50px] text-center text-subtitle">
-
-              </div>
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-center border border-secondary text-[18px]">
-                운영위원
-              </div>
-              <div className="w-[36.6px] h-[50px] text-center text-subtitle">
+              <div className="w-1/4 h-[50px] text-center text-subtitle">
                 <div className="border-b border-gray h-[25px]">&nbsp;</div>
                 <div className="h-[25px]">&nbsp;</div>
               </div>
               <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-primary text-white text-[18px]">
                 회장
               </div>
-              <div className="w-[36.6px] h-[50px] text-center text-subtitle">
+              <div className="w-1/4 h-[50px] text-center text-subtitle">
                 <div className="border-b border-gray h-[25px]">&nbsp;</div>
                 <div className="h-[25px]">&nbsp;</div>
               </div>
-              <div className="w-1/6 flex-col justify-between items-center h-[110px] text-center border border-secondary text-[18px]">
-                <p className="h-[50px] flex items-center justify-center">자문위원</p>
-                <p className="h-[10px] text-base -ml-2 flex items-center justify-center"><span className="leading-9">o</span> 기술자문</p>
-                <p className="h-[50px] text-base -ml-2 flex items-center justify-center"><span className="leading-9">o</span> 정책자문</p>
-              </div>
-              <div className="w-[36.6px] h-[50px] text-center text-subtitle">
-              </div>
+              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-lightgray text-[18px]">
+                  감사
+                </div>        
               <div className="w-1/6 flex justify-center items-center h-[50px] text-cente text-subtitle">
                 &nbsp;
               </div>
             </div>
 
-            <div className="flex h-[70px]">
+            <div className="flex justify-between h-[110px] items-center mt-3">
+              <div className="w-1/4 flex-col justify-between items-center h-[110px] text-center border border-secondary text-[18px]">
+                  <p className="h-[50px] flex items-center justify-center">자문위원</p>
+                  <p className="h-[10px] text-base -ml-2 flex items-center justify-center"><span className="leading-9">o</span> 기술자문</p>
+                  <p className="h-[50px] text-base -ml-2 flex items-center justify-center"><span className="leading-9">o</span> 정책자문</p>
+              </div>
+              <div className="w-1/4 h-[130px] text-center text-subtitle">
+                <div className="border-b border-r border-gray h-[65px]">&nbsp;</div>
+                <div className="h-[65px] border-r border-gray">&nbsp;</div>
+              </div>
+              <div className="w-1/4 h-[130px] text-center text-subtitle">
+                <div className="border-b border-gray h-[65px]">&nbsp;</div>
+                <div className="h-[65px]">&nbsp;</div>
+              </div>
+              <div className="w-1/4 flex justify-center items-center h-[50px] text-center border border-secondary text-[18px]">
+                운영위원
+              </div>
+            </div>
+
+            <div className="flex h-[20px]">
               <div className="w-[50%] border-r border-gray">&nbsp;</div>
               <div className="w-[50%]">&nbsp;</div>
             </div>
@@ -149,7 +171,7 @@ export default function GroupPage() {
                 &nbsp;
               </div>
               <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-[18px]">
-                부회장
+                상임이사
               </div>
               <div className="w-1/4 h-[50px] text-center text-subtitle">
               </div>
@@ -193,69 +215,59 @@ export default function GroupPage() {
               <div className="w-[10%] border-t border-l border-gray">
                 &nbsp;
               </div>
-              <div className="w-[10%] border-t border-gray border-r">&nbsp;</div>
+              <div className="w-[10%] border-t border-gray ">&nbsp;</div>
               <div className="w-[10%] border-t border-gray">&nbsp;</div>
               <div className="w-[10%] border-t border-r border-gray">
                 &nbsp;
               </div>
-              <div className="w-[10%] border-t border-gray">&nbsp;</div>
-              <div className="w-[10%] border-t border-gray border-r">&nbsp;</div>
-              <div className="w-[10%] border-t border-gray">&nbsp;</div>
-              <div className="w-[10%] border-t border-r border-gray">
+              <div className="w-[10%] border-t border-gray border-dashed">&nbsp;</div>
+              <div className="w-[10%] border-t border-gray border-dashed ">&nbsp;</div>
+              <div className="w-[10%] border-t border-gray border-dashed">&nbsp;</div>
+              <div className="w-[10%] border-t border-r border-gray border-dashed">
                 &nbsp;
               </div>
               <div className="w-[10%]">&nbsp;</div>
             </div>
 
             <div className="flex justify-between h-[50px]">
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-[18px]">
-                회원관리
+              <div className="w-1/4 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-[18px]">
+                경영지원본부
               </div>
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-[18px]">
-                기술관리
+              <div className="w-1/4 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-[18px]">
+                방폭사업추진본부
               </div>
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-[18px]">
-                방폭교육
-              </div>
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-[18px]">
-                방폭컨설팅
-              </div>
-              <div className="w-1/6 flex flex-col justify-center items-center h-[50px] text-center border border-secondary text-[18px]">
+              <div className="w-1/4 flex flex-col justify-center items-center h-[50px] text-center border border-secondary text-[18px]">
                 <p>위험성평가 센터</p>
               </div>
             </div>
 
             <div className="flex justify-between ">
-              <div className="w-1/6 flex flex-col space-y-[10px] justify-start items-center mt-[10px] text-center text-base">
-                <span>준회원</span>
-                <span>일반회원</span>
-                <span>정회원</span>
-                <span>기업회원</span>
+              <div className="w-[250px] flex flex-col space-y-[10px] justify-start text-left mt-[10px] border border-gray text-[14px] p-5 -ml-[15px]">
+                <span><b className="text-[8px]">○</b> 기획, 총무, 회계</span>
+                <span><b className="text-[8px]">○</b> 회원사/회원 관리</span>
+                <span><b className="text-[8px]">○</b> 방폭 기술정보 센터 운영</span>
+                <span><b className="text-[8px]">○</b> IECEx/KOSHA Guide/KGS Code</span>
+                <span><b className="text-[8px]">○</b> 방폭 인증 절차</span>
+                <span><b className="text-[8px]">○</b> 정부 R&D 과제</span>
+                <span><b className="text-[8px]">○</b> 방폭 관련 각종 행사 개최</span>
+                <span><b className="text-[8px]">○</b> 방폭 분과위원회 구성/운영</span>
               </div>
-              <div className="w-1/6 flex flex-col space-y-[10px] justify-start items-center mt-[10px] text-center text-base">
-                <span>국내 Guide</span>
-                <span>IECEX Guide</span>
-                <span>방폭 인증 절차</span>
-                <span>방폭기기 제작 Guide 등등</span>
+              <div className="w-[250px] flex flex-col space-y-[10px] justify-start  mt-[10px]  border border-gray text-[14px] p-5">
+                <span><b className="text-[8px]">○</b> 방폭 전문인력양성 교육<span className="text-[12px]">(수료증/수첩)</span></span>
+                <span><b className="text-[8px]">○</b> 방폭 컨설팅 국내외 사업 추진</span>
+                <ul className="text-[13px] leading-5 pl-2">
+                  <li className="-mt-2">- 방폭 설계자료 건전성 점검</li>
+                  <li>- 전문인력양성계장 방폭수준 점검</li>
+                  <li>- 방폭 법규 준수방안</li>
+                  <li>- 방폭기기 정비 및 교체 방안 권고</li>
+                </ul>
+                <span><b className="text-[8px]">○</b> 방폭 기술개발 과제 지원 및 컨설팅</span>
+                <span><b className="text-[8px]">○</b> 방폭 Auditing 지원</span>
+                <span><b className="text-[8px]">○</b> PSM / 중대 재해 처벌법 대응 지원</span>
               </div>
-              <div className="w-1/6 flex flex-col space-y-[10px] justify-start items-center mt-[10px] text-center text-base">
-                <span>방폭 기초/개념</span>
-                <span>방폭구분도</span>
-                <span>방폭기기 정비</span>
-                <span>방폭기기 제작</span>
-                <span>방폭 Auditing</span>
-                <span>자격증 취득<br/><span className="text-[12px]">(수료증/수첩, IECEX)</span></span>
-              </div>
-              <div className="w-1/6 flex flex-col space-y-[10px] justify-start items-center mt-[10px] text-center text-base">
-                <span>방폭설계자료 건전성 점검</span>
-                <span>전계장 방폭수준점검</span>
-                <span>방폭법규 준수방안</span>
-                <span>방폭기기 정비 및 교체 방안 권고</span>
-                <span>PSM/중처법 대비</span>
-              </div>
-              <div className="w-1/6 flex flex-col space-y-[10px] justify-start items-center mt-[10px] text-center text-base">
-                <span>Hazard Analysis</span>
-                <span>Loss Prevention</span>
+              <div className="w-[250px] flex flex-col space-y-[10px] justify-start mt-[10px]  border border-gray text-[14px] p-5 -mr-[15px]">
+                <span><b className="text-[8px]">○</b> Hazard Analysis</span>
+                <span><b className="text-[8px]">○</b> Loss Prevention</span>
               </div>
             </div>
           </div>
