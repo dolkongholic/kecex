@@ -184,7 +184,7 @@ export default function CareerPage() {
             </div>
           </div>
 
-          <ContentSubTitle title="제 3장 회원의 자격 및 종류" />
+          <ContentSubTitle title="제 3장 회원의 가입절차 및 승인" />
           <div className="w-full px-[20px] pb-[15px] mt-[10px] mb-[40px]">
             <div className="flex pb-[15px]">
               <span className="pl-[10px] text-secondary w-[220px]">
