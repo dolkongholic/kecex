@@ -15,6 +15,7 @@ import { IoMdClose } from "react-icons/io";
 import DaumPostcode from 'react-daum-postcode';
 
 import Link from "next/link";
+import Image from "next/image";
 
 const MainList = [
   {
@@ -33,8 +34,8 @@ export default function RestudyPage() {
   const [menu, setMenu] = useState<string>("");
   const [pageMenu, setPageMenu] = useState<any>("교육신청");
   const [isPopupOpen, setPopupOpen] = useState<boolean>(false);
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null);
+  const [selectedFile, setSelectedFile]:any = useState(null);
+  const [imagePreview, setImagePreview]:any = useState(null);
   const [activePopup, setActivePopup] = useState<string>(''); 
   //모달창 열기
   const openModal = () => {
@@ -55,7 +56,7 @@ export default function RestudyPage() {
   };
 
   //첨부파일 업로드
-  const updateLabel = (event) => {
+  const updateLabel = (event:any) => {
     const fileInput = event.target;
     if (fileInput.files.length > 0){
       const file = fileInput.files[0];
@@ -63,7 +64,7 @@ export default function RestudyPage() {
       
       if(file.type.startsWith('image/')){
         const reader = new FileReader();
-        reader.onload = (e) => {
+        reader.onload = (e:any) => {
           setImagePreview(e.target.result);
         }
         reader.readAsDataURL(file);
@@ -82,7 +83,7 @@ export default function RestudyPage() {
   const [addressInput1, setAddressInput1] = useState('');
   const [addressInput2, setAddressInput2] = useState('');
 
-  const handleComplete = (data) => {
+  const handleComplete = (data:any) => {
     // 검색 결과를 받았을 때의 처리
     if(clickedInput === 'address_input_1'){
       setAddressInput1(data.address);
@@ -93,7 +94,7 @@ export default function RestudyPage() {
     setIsOpen(false);
   };
 
-  const handleInputClick = (inputId) => {
+  const handleInputClick = (inputId:any) => {
     setClickedInput(inputId);
     setIsOpen(true);
   };
@@ -279,7 +280,7 @@ export default function RestudyPage() {
                 <div className="w-40 h-60 bg-lightgray">
                   <div className="w-full h-48">
                     {imagePreview ? (
-                      <img src={imagePreview} alt="이미지 미리보기" className="h-full w-full"></img>
+                      <Image src={imagePreview} alt="이미지 미리보기" className="h-full w-full"/>
                     ) : (
                       <span className="text-[14px] ml-2">
                       {/* 내가 선택한 파일 이름 여기에 표시 */}

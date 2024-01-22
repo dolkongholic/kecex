@@ -22,7 +22,7 @@ const MainList = [
       { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
       { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
       { title: "경력관리 현황", url: "/mypage/overall/all04" },
-    ]
+    ],
   },
   {
     title: "회원정보 수정",
@@ -34,7 +34,8 @@ const MainList = [
     url: "#",
     sub: [
       { title: "회원증 출력", url: "/mypage/print/certificate" },
-      { title: "정회원 가입", url: "/mypage/print/regular" }],
+      { title: "정회원 가입", url: "/mypage/print/regular" },
+    ],
   },
   {
     title: "1:1문의 현황",
@@ -50,8 +51,9 @@ const MainList = [
     title: "경력수첩 발급",
     url: "#",
     sub: [
-    { title: "경력수첩 발급", url: "/mypage/carrear/print" },
-    { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" }],
+      { title: "경력수첩 발급", url: "/mypage/carrear/print" },
+      { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
+    ],
   },
   {
     title: "회원탈퇴",
@@ -115,7 +117,7 @@ export default function QnaPage() {
               <div className="py-[10px]">본인확인</div>
               <div className="mt-3">
                 <input
-                  value={session?.user.email}
+                  value={session?.user?.name || ""}
                   onChange={(e: any) => (passwordRef.current = e.target.value)}
                   placeholder="비밀번호"
                   className="border border-gray py-[10px] px-[20px] w-full focus:border-secondary outline-none"

@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
+import Image from "next/image";
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
@@ -20,7 +21,7 @@ const MainList = [
       { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
       { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
       { title: "경력관리 현황", url: "/mypage/overall/all04" },
-    ]
+    ],
   },
   {
     title: "회원정보 수정",
@@ -32,7 +33,8 @@ const MainList = [
     url: "#",
     sub: [
       { title: "회원증 출력", url: "/mypage/print/certificate" },
-      { title: "정회원 가입", url: "/mypage/print/regular" }],
+      { title: "정회원 가입", url: "/mypage/print/regular" },
+    ],
   },
   {
     title: "1:1문의 현황",
@@ -48,8 +50,9 @@ const MainList = [
     title: "경력수첩 발급",
     url: "#",
     sub: [
-    { title: "경력수첩 발급", url: "/mypage/carrear/print" },
-    { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" }],
+      { title: "경력수첩 발급", url: "/mypage/carrear/print" },
+      { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
+    ],
   },
   {
     title: "회원탈퇴",
@@ -60,30 +63,29 @@ const MainList = [
 
 const location = "경력관리";
 
-
 export default function QnaPage() {
   const [menu, setMenu] = useState<string>("");
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
-  const [selectedFile, setSelectedFile] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null);
+  const [selectedFile, setSelectedFile]: any = useState(null);
+  const [imagePreview, setImagePreview]: any = useState(null);
 
   //첨부파일 업로드
-  const updateLabel = (event) => {
+  const updateLabel = (event: any) => {
     const fileInput = event.target;
-    if (fileInput.files.length > 0){
+    if (fileInput.files.length > 0) {
       const file = fileInput.files[0];
       setSelectedFile(`[첨부] ${file.name}`);
-      
-      if(file.type.startsWith('image/')){
+
+      if (file.type.startsWith("image/")) {
         const reader = new FileReader();
-        reader.onload = (e) => {
+        reader.onload = (e: any) => {
           setImagePreview(e.target.result);
-        }
+        };
         reader.readAsDataURL(file);
-      }else{
+      } else {
         setImagePreview(null);
       }
-    }else{
+    } else {
       setSelectedFile(null);
       setImagePreview(null);
     }
@@ -130,44 +132,85 @@ export default function QnaPage() {
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
           <div className="text-black w-full flex flex-col justify-between item-center border-b-secondary border-b-2">
-            <div className="h-[40px]"><span className="text-[#ef250b]">이력서 미작성 시 교육 신청 진행 불가</span>합니다.</div>
+            <div className="h-[40px]">
+              <span className="text-[#ef250b]">
+                이력서 미작성 시 교육 신청 진행 불가
+              </span>
+              합니다.
+            </div>
           </div>
           <div className="w-full">
             <article className="w-full mt-12">
-              <h3 className="text-subtitle font-bold mt-5 text-superdarkgray">여권정보</h3>
+              <h3 className="text-subtitle font-bold mt-5 text-superdarkgray">
+                여권정보
+              </h3>
               <div className="flex pt-4">
                 <div id="pic_area" className="w-[200px] h-[192px]">
-                <div className="w-[160px] h-full">
+                  <div className="w-[160px] h-full">
                     {imagePreview ? (
-                      <img src={imagePreview} alt="이미지 미리보기" className="h-full w-full"></img>
+                      <Image
+                        src={imagePreview}
+                        alt="이미지 미리보기"
+                        className="h-full w-full"
+                      />
                     ) : (
                       <span>
-                      {/* 내가 선택한 파일 이름 여기에 표시 */}
-                      {selectedFile ? selectedFile : '파일을 선택하세요.'}
+                        {/* 내가 선택한 파일 이름 여기에 표시 */}
+                        {selectedFile ? selectedFile : "파일을 선택하세요."}
                       </span>
                     )}
                   </div>
-                  <input type="file" id="fileInput" name="file" hidden onChange={updateLabel}/>
-                  <label htmlFor="fileInput" className="inline-block py-2 mt-1 text-center w-[160px] h-10 bg-primary text-white box-border">첨부파일</label>
+                  <input
+                    type="file"
+                    id="fileInput"
+                    name="file"
+                    hidden
+                    onChange={updateLabel}
+                  />
+                  <label
+                    htmlFor="fileInput"
+                    className="inline-block py-2 mt-1 text-center w-[160px] h-10 bg-primary text-white box-border"
+                  >
+                    첨부파일
+                  </label>
                 </div>
                 <div id="form_area" className="w-full">
-                <fieldset className="border border-gray text-center w-full text-black">
-                    <legend className="w-[155px] h-14 float-left text-left pl-7 pt-4">성명(한글)</legend>
+                  <fieldset className="border border-gray text-center w-full text-black">
+                    <legend className="w-[155px] h-14 float-left text-left pl-7 pt-4">
+                      성명(한글)
+                    </legend>
                     <div className="before:border-l before:border-gray w-1/6 h-14 float-left pt-2 box-border">
-                      <input type="text" placeholder="성" className="pl-4 h-10"/>
+                      <input
+                        type="text"
+                        placeholder="성"
+                        className="pl-4 h-10"
+                      />
                     </div>
                     <div className="before:border-l before:border-gray w-4/6 h-14 float-left p-2 box-border">
-                      <input type="text" placeholder="이름" className="pl-4 h-10 w-8/12"/>
+                      <input
+                        type="text"
+                        placeholder="이름"
+                        className="pl-4 h-10 w-8/12"
+                      />
                     </div>
                   </fieldset>
                   <fieldset className="border border-gray text-center  w-[49%] text-black float-left mt-5">
-                    <legend className="w-[155px] h-14 float-left text-left pl-7 pt-4">생년월일</legend>
+                    <legend className="w-[155px] h-14 float-left text-left pl-7 pt-4">
+                      생년월일
+                    </legend>
                     <div className="before:border-l before:border-gray w-1/6 h-14 float-left pt-2 box-border">
-                      <input type="text" placeholder="990101" className="pl-4 h-10" maxLength={6}/>
+                      <input
+                        type="text"
+                        placeholder="990101"
+                        className="pl-4 h-10"
+                        maxLength={6}
+                      />
                     </div>
                   </fieldset>
                   <fieldset className="border border-gray text-center  w-[49%] text-black float-right my-5">
-                    <legend className="w-[155px] h-14 float-left text-left pl-7 pt-4">국적</legend>
+                    <legend className="w-[155px] h-14 float-left text-left pl-7 pt-4">
+                      국적
+                    </legend>
                     <div className="before:border-l before:border-gray w-1/6 h-14 float-left pt-2 box-border">
                       <select className="pl-4 h-10 w-[200px]">
                         <option value="">국적</option>
@@ -222,27 +265,50 @@ export default function QnaPage() {
                     </div>
                   </fieldset>
                   <fieldset className="border border-gray text-center w-full text-black">
-                    <legend className="w-[155px] h-20 float-left text-left pl-7 pt-6">언어능력</legend>
+                    <legend className="w-[155px] h-20 float-left text-left pl-7 pt-6">
+                      언어능력
+                    </legend>
                     <div className="flex justify-between before:border-l before:border-gray mt-2">
                       <div>
-                        <input type="text" placeholder="ex)일본어" className="w-[150px] h-12 border my-2 border-gray pl-3"/>
-                        <select id="lang_01" className="border border-gray h-12 w-20 pl-3">
+                        <input
+                          type="text"
+                          placeholder="ex)일본어"
+                          className="w-[150px] h-12 border my-2 border-gray pl-3"
+                        />
+                        <select
+                          id="lang_01"
+                          className="border border-gray h-12 w-20 pl-3"
+                        >
                           <option value="상">상</option>
                           <option value="중">중</option>
                           <option value="하">하</option>
                         </select>
                       </div>
                       <div>
-                        <input type="text" placeholder="ex)일본어" className="w-[150px] h-12 border my-2 border-gray pl-3"/>
-                        <select id="lang_01" className="border border-gray h-12 w-20 pl-3">
+                        <input
+                          type="text"
+                          placeholder="ex)일본어"
+                          className="w-[150px] h-12 border my-2 border-gray pl-3"
+                        />
+                        <select
+                          id="lang_01"
+                          className="border border-gray h-12 w-20 pl-3"
+                        >
                           <option value="상">상</option>
                           <option value="중">중</option>
                           <option value="하">하</option>
                         </select>
                       </div>
                       <div>
-                        <input type="text" placeholder="ex)일본어" className="w-[150px] h-12 border my-2 border-gray pl-3"/>
-                        <select id="lang_01" className="border border-gray h-12 w-20 mr-7 pl-3">
+                        <input
+                          type="text"
+                          placeholder="ex)일본어"
+                          className="w-[150px] h-12 border my-2 border-gray pl-3"
+                        />
+                        <select
+                          id="lang_01"
+                          className="border border-gray h-12 w-20 mr-7 pl-3"
+                        >
                           <option value="상">상</option>
                           <option value="중">중</option>
                           <option value="하">하</option>
@@ -253,213 +319,358 @@ export default function QnaPage() {
                 </div>
               </div>
               <div className="w-full p-7 border border-primary mt-1 leading-8">
-                <strong className="text-superdarkgray">잠깐! 사진을 다시 확인해주세요!</strong>
-                <p className="mt-5">이력서에 첨부되는 사진은 추후 IECEx Certificate에 등록되는 사진입니다. 등록사진에 대한 규정이 존재하며 아래와 같습니다.</p>
+                <strong className="text-superdarkgray">
+                  잠깐! 사진을 다시 확인해주세요!
+                </strong>
+                <p className="mt-5">
+                  이력서에 첨부되는 사진은 추후 IECEx Certificate에 등록되는
+                  사진입니다. 등록사진에 대한 규정이 존재하며 아래와 같습니다.
+                </p>
                 <ul className=" list-disc pl-5">
-                  <li><span className="text-active">신분증/여권사진</span> 사진 사용</li>
-                  <li><span className="text-active">얼굴 윤곽</span>이 뚜렷한 사진</li>
-                  <li><span className="text-active">배경이 없는 흰 배경</span> 사진 필수</li>
+                  <li>
+                    <span className="text-active">신분증/여권사진</span> 사진
+                    사용
+                  </li>
+                  <li>
+                    <span className="text-active">얼굴 윤곽</span>이 뚜렷한 사진
+                  </li>
+                  <li>
+                    <span className="text-active">배경이 없는 흰 배경</span>{" "}
+                    사진 필수
+                  </li>
                   <li>JPG(JPEG) 파일 : 200 * 150 pixel</li>
                 </ul>
-                <p className="mt-3">위의 사진 기준에 부적합한 경우 <span className="text-[#ef250b]">원활한 진행이 어려울 수 있습니다.</span></p>
+                <p className="mt-3">
+                  위의 사진 기준에 부적합한 경우{" "}
+                  <span className="text-[#ef250b]">
+                    원활한 진행이 어려울 수 있습니다.
+                  </span>
+                </p>
               </div>
-            </article>{/* 여권 정보 섹션 */}
+            </article>
+            {/* 여권 정보 섹션 */}
 
             <article className="w-full mt-12">
-              <h3 className="text-subtitle font-bold mt-5 text-superdarkgray">학력</h3>
+              <h3 className="text-subtitle font-bold mt-5 text-superdarkgray">
+                학력
+              </h3>
               <div className="flex">
                 <div id="form_area" className="w-[1050px] pt-4">
-                <fieldset className="border border-gray text-center w-full text-black flex">
-                      <div className="w-2/12">
-                        <select id="lang_01" className="w-full border-r border-gray h-14 pl-8">
-                          <option value="">학교구분</option>
-                          <option value="대학교(4년)">대학교(4년)</option>
-                          <option value="대학교(2년)">대학교(2년)</option>
-                          <option value="고등학교">고등학교</option>
-                        </select>
-                      </div>
-                      <legend className="w-1/12 h-14 float-left text-left pt-4 pl-8">학교명</legend>
-                      <div className="before:border-l before:border-gray w-4/12 h-14 float-left pt-2  box-border">
-                      <input type="text" placeholder="학교명" className="pl-4 h-10"/>
-                      </div>
-                    <legend className="w-1/12 h-14 float-left text-left pt-4 border-l border-gray pl-8">전공명</legend>
+                  <fieldset className="border border-gray text-center w-full text-black flex">
+                    <div className="w-2/12">
+                      <select
+                        id="lang_01"
+                        className="w-full border-r border-gray h-14 pl-8"
+                      >
+                        <option value="">학교구분</option>
+                        <option value="대학교(4년)">대학교(4년)</option>
+                        <option value="대학교(2년)">대학교(2년)</option>
+                        <option value="고등학교">고등학교</option>
+                      </select>
+                    </div>
+                    <legend className="w-1/12 h-14 float-left text-left pt-4 pl-8">
+                      학교명
+                    </legend>
+                    <div className="before:border-l before:border-gray w-4/12 h-14 float-left pt-2  box-border">
+                      <input
+                        type="text"
+                        placeholder="학교명"
+                        className="pl-4 h-10"
+                      />
+                    </div>
+                    <legend className="w-1/12 h-14 float-left text-left pt-4 border-l border-gray pl-8">
+                      전공명
+                    </legend>
                     <div className="before:border-l before:border-gray w-4/12 h-14 float-left p-2 box-border">
-                      <input type="text" placeholder="전공명" className="pl-4 h-10"/>
+                      <input
+                        type="text"
+                        placeholder="전공명"
+                        className="pl-4 h-10"
+                      />
                     </div>
                   </fieldset>
                   <fieldset className="border-x border-b border-gray text-center w-full text-black flex">
-                      <div className="w-2/12">
-                        <select id="lang_01" className="w-full border-r border-gray h-14 pl-8">
-                          <option value="">졸업상태</option>
-                          <option value="졸업">졸업</option>
-                          <option value="재학중">재학중</option>
-                          <option value="휴학">휴학</option>
-                          <option value="중퇴">중퇴</option>
-                        </select>
-                      </div>
-                      <legend className="w-1/12 h-14 float-left text-left pt-4 pl-8 whitespace-nowrap">수료학위</legend>
-                      <div className="before:border-l before:border-gray w-4/12 h-14 float-left pt-2  box-border">
-                      <input type="text" placeholder="수료학위" className="pl-4 h-10"/>
-                      </div>
+                    <div className="w-2/12">
+                      <select
+                        id="lang_01"
+                        className="w-full border-r border-gray h-14 pl-8"
+                      >
+                        <option value="">졸업상태</option>
+                        <option value="졸업">졸업</option>
+                        <option value="재학중">재학중</option>
+                        <option value="휴학">휴학</option>
+                        <option value="중퇴">중퇴</option>
+                      </select>
+                    </div>
+                    <legend className="w-1/12 h-14 float-left text-left pt-4 pl-8 whitespace-nowrap">
+                      수료학위
+                    </legend>
+                    <div className="before:border-l before:border-gray w-4/12 h-14 float-left pt-2  box-border">
+                      <input
+                        type="text"
+                        placeholder="수료학위"
+                        className="pl-4 h-10"
+                      />
+                    </div>
                   </fieldset>
                   <button className="w-full h-10 mt-3 bg-lightgray flex justify-center items-center">
-                    단락추가 <div className="w-5 h-5 rounded-full bg-primary text-white flex justify-center items-center ml-1 pb-0.5">+</div>
+                    단락추가{" "}
+                    <div className="w-5 h-5 rounded-full bg-primary text-white flex justify-center items-center ml-1 pb-0.5">
+                      +
+                    </div>
                   </button>
-                </div>    
+                </div>
                 <div className="w-[70px] flex justify-end items-center">
                   <button className="w-10 h-10 bg-gray rounded-full">X</button>
                 </div>
-              </div>    
-            </article>{/* 학력 섹션 */}
+              </div>
+            </article>
+            {/* 학력 섹션 */}
 
             <article className="w-full mt-12">
-              <h3 className="text-subtitle font-bold mt-5 text-superdarkgray">경력</h3>
+              <h3 className="text-subtitle font-bold mt-5 text-superdarkgray">
+                경력
+              </h3>
               <div className="flex">
                 <div id="form_area" className="w-[1050px] pt-4">
-                <fieldset className="border border-gray text-center w-full text-black flex">
-                      <div className="w-2/12">
-                        <select id="lang_01" className="w-full border-r border-gray h-14 pl-8">
-                          <option value="">분야</option>
-                          <option value="화학">화학</option>
-                          <option value="건설">건설</option>
-                          <option value="안전">안전</option>
-                          <option value="기계">기계</option>
-                          <option value="소방">소방</option>
-                          <option value="전기">전기</option>
-                          <option value="가스">가스</option>
-                          <option value="기타">기타</option>
-                        </select>
-                      </div>
-                      <legend className="w-1/12 h-14 float-left text-left pt-4 pl-8">회사명</legend>
-                      <div className="before:border-l before:border-gray w-4/12 h-14 float-left pt-2  box-border">
-                      <input type="text" placeholder="학교명" className="pl-4 h-10"/>
-                      </div>
-                    <legend className="w-1/12 h-14 float-left text-left pt-4 border-l border-gray pl-8">전공명</legend>
+                  <fieldset className="border border-gray text-center w-full text-black flex">
+                    <div className="w-2/12">
+                      <select
+                        id="lang_01"
+                        className="w-full border-r border-gray h-14 pl-8"
+                      >
+                        <option value="">분야</option>
+                        <option value="화학">화학</option>
+                        <option value="건설">건설</option>
+                        <option value="안전">안전</option>
+                        <option value="기계">기계</option>
+                        <option value="소방">소방</option>
+                        <option value="전기">전기</option>
+                        <option value="가스">가스</option>
+                        <option value="기타">기타</option>
+                      </select>
+                    </div>
+                    <legend className="w-1/12 h-14 float-left text-left pt-4 pl-8">
+                      회사명
+                    </legend>
+                    <div className="before:border-l before:border-gray w-4/12 h-14 float-left pt-2  box-border">
+                      <input
+                        type="text"
+                        placeholder="학교명"
+                        className="pl-4 h-10"
+                      />
+                    </div>
+                    <legend className="w-1/12 h-14 float-left text-left pt-4 border-l border-gray pl-8">
+                      전공명
+                    </legend>
                     <div className="before:border-l before:border-gray w-4/12 h-14 float-left p-2 box-border">
-                      <input type="text" placeholder="전공명" className="pl-4 h-10"/>
+                      <input
+                        type="text"
+                        placeholder="전공명"
+                        className="pl-4 h-10"
+                      />
                     </div>
                   </fieldset>
                   <div className="flex">
                     <fieldset className="border-l border-gray text-center w-1/2 text-black flex">
-                        <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">근무기간</legend>
-                        <div className="before:border-l before:border-gray before:mt-2 before:h-6 w-2/3 h-10 float-left pt-2 pr-28 flex box-border">
-                        <input type="text" placeholder="YYYY.MM" className="pl-6 h-10 box-border w-36"/>
+                      <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">
+                        근무기간
+                      </legend>
+                      <div className="before:border-l before:border-gray before:mt-2 before:h-6 w-2/3 h-10 float-left pt-2 pr-28 flex box-border">
+                        <input
+                          type="text"
+                          placeholder="YYYY.MM"
+                          className="pl-6 h-10 box-border w-36"
+                        />
                         <p className="p-3">~</p>
-                        <input type="text" placeholder="YYYY.MM" className="pl-6 h-10 box-border w-36"/>
-                        </div>
+                        <input
+                          type="text"
+                          placeholder="YYYY.MM"
+                          className="pl-6 h-10 box-border w-36"
+                        />
+                      </div>
                     </fieldset>
                     <fieldset className="border-x border-gray text-center w-1/2 text-black flex">
-                        <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">수료학위</legend>
-                        <div className="before:border-l before:border-gray w-2/3 h-14 float-left pt-2 pr-28 box-border">
-                        <input type="text" placeholder="수료학위" className="pl-4 h-10"/>
-                        </div>
+                      <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">
+                        수료학위
+                      </legend>
+                      <div className="before:border-l before:border-gray w-2/3 h-14 float-left pt-2 pr-28 box-border">
+                        <input
+                          type="text"
+                          placeholder="수료학위"
+                          className="pl-4 h-10"
+                        />
+                      </div>
                     </fieldset>
                   </div>
                   <div>
                     <fieldset className="border border-gray text-center w-full text-black flex">
-                    <legend className="w-2/12 h-24 float-left text-left pt-8 pl-8 border-r border-gray">프로젝트</legend>
-                    <input type="text" className="w-10/12 h-24 pl-4 text-wrap"/>
+                      <legend className="w-2/12 h-24 float-left text-left pt-8 pl-8 border-r border-gray">
+                        프로젝트
+                      </legend>
+                      <input
+                        type="text"
+                        className="w-10/12 h-24 pl-4 text-wrap"
+                      />
                     </fieldset>
                   </div>
                   <button className="w-full h-10 mt-3 bg-lightgray flex justify-center items-center">
-                    단락추가 <div className="w-5 h-5 rounded-full bg-primary text-white flex justify-center items-center ml-1 pb-0.5">+</div>
+                    단락추가{" "}
+                    <div className="w-5 h-5 rounded-full bg-primary text-white flex justify-center items-center ml-1 pb-0.5">
+                      +
+                    </div>
                   </button>
-                </div>        
+                </div>
                 <div className="w-[70px] flex justify-end items-center">
                   <button className="w-10 h-10 bg-gray rounded-full">X</button>
                 </div>
               </div>
-            </article>{/* 경력 섹션 */}
+            </article>
+            {/* 경력 섹션 */}
 
             <article className="w-full mt-12">
-              <h3 className="text-subtitle font-bold mt-5 text-superdarkgray">관련훈련 이수 내역</h3>
+              <h3 className="text-subtitle font-bold mt-5 text-superdarkgray">
+                관련훈련 이수 내역
+              </h3>
               <div className="flex">
                 <div id="form_area" className="w-[1050px] pt-4">
                   <div className="flex border border-gray">
                     <fieldset className="border-r border-gray text-center w-1/2 text-black flex">
-                        <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">교육기간</legend>
-                        <div className="before:border-l before:border-gray before:mt-2 before:h-6 w-2/3 h-10 float-left pt-2 pr-28 flex box-border">
-                        <input type="text" placeholder="YYYY.MM" className="pl-6 h-10 box-border w-36"/>
+                      <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">
+                        교육기간
+                      </legend>
+                      <div className="before:border-l before:border-gray before:mt-2 before:h-6 w-2/3 h-10 float-left pt-2 pr-28 flex box-border">
+                        <input
+                          type="text"
+                          placeholder="YYYY.MM"
+                          className="pl-6 h-10 box-border w-36"
+                        />
                         <p className="p-3">~</p>
-                        <input type="text" placeholder="YYYY.MM" className="pl-6 h-10 box-border w-36"/>
-                        </div>
+                        <input
+                          type="text"
+                          placeholder="YYYY.MM"
+                          className="pl-6 h-10 box-border w-36"
+                        />
+                      </div>
                     </fieldset>
                     <fieldset className="text-center w-1/2 text-black flex">
-                        <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">교육기관</legend>
-                        <div className="before:border-l before:border-gray w-2/3 h-14 float-left pt-2 pr-28 box-border">
-                        <input type="text" placeholder="" className="pl-4 h-10"/>
-                        </div>
+                      <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">
+                        교육기관
+                      </legend>
+                      <div className="before:border-l before:border-gray w-2/3 h-14 float-left pt-2 pr-28 box-border">
+                        <input
+                          type="text"
+                          placeholder=""
+                          className="pl-4 h-10"
+                        />
+                      </div>
                     </fieldset>
                   </div>
                   <div>
                     <fieldset className="border-x border-gray text-center w-full text-black flex">
-                    <legend className="w-2/12 h-14 float-left text-left pt-4 pl-8">교육명</legend>
-                    <div className="w-10/12 before:border-l before:border-gray before:h-6 float-left flex justify-start items-center">
-                    <input type="text" className="h-14 pl-4 text-wrap" placeholder="해당 교육명"/>
-                    </div>
+                      <legend className="w-2/12 h-14 float-left text-left pt-4 pl-8">
+                        교육명
+                      </legend>
+                      <div className="w-10/12 before:border-l before:border-gray before:h-6 float-left flex justify-start items-center">
+                        <input
+                          type="text"
+                          className="h-14 pl-4 text-wrap"
+                          placeholder="해당 교육명"
+                        />
+                      </div>
                     </fieldset>
                   </div>
                   <div>
                     <fieldset className="border border-gray text-center w-full text-black flex">
-                    <legend className="w-2/12 h-14 float-left text-left pt-4 pl-8">교육내용</legend>
-                    <div className="w-10/12 before:border-l before:border-gray before:h-6 float-left flex justify-start items-center">
-                    <input type="text" className="h-14 pl-4 text-wrap" placeholder="교육내용"/>
-                    </div>
+                      <legend className="w-2/12 h-14 float-left text-left pt-4 pl-8">
+                        교육내용
+                      </legend>
+                      <div className="w-10/12 before:border-l before:border-gray before:h-6 float-left flex justify-start items-center">
+                        <input
+                          type="text"
+                          className="h-14 pl-4 text-wrap"
+                          placeholder="교육내용"
+                        />
+                      </div>
                     </fieldset>
                   </div>
                   <button className="w-full h-10 mt-3 bg-lightgray flex justify-center items-center">
-                    단락추가 <div className="w-5 h-5 rounded-full bg-primary text-white flex justify-center items-center ml-1 pb-0.5">+</div>
+                    단락추가{" "}
+                    <div className="w-5 h-5 rounded-full bg-primary text-white flex justify-center items-center ml-1 pb-0.5">
+                      +
+                    </div>
                   </button>
-                </div>        
+                </div>
                 <div className="w-[70px] flex justify-end items-center">
                   <button className="w-10 h-10 bg-gray rounded-full">X</button>
                 </div>
               </div>
-            </article>{/* 훈련 이수 섹션 */}
+            </article>
+            {/* 훈련 이수 섹션 */}
 
             <article className="w-full mt-12">
-              <h3 className="text-subtitle font-bold mt-5 text-superdarkgray">관련 자격증</h3>
+              <h3 className="text-subtitle font-bold mt-5 text-superdarkgray">
+                관련 자격증
+              </h3>
               <div className="flex">
                 <div id="form_area" className="w-[1050px] pt-4">
                   <div>
                     <fieldset className="border border-gray text-center w-full text-black flex">
-                    <legend className="w-2/12 h-14 float-left text-left pt-4 pl-8 border-r border-gray">자격증명</legend>
-                    <input type="text" className="w-10/12 h-14 pl-4 text-wrap"/>
+                      <legend className="w-2/12 h-14 float-left text-left pt-4 pl-8 border-r border-gray">
+                        자격증명
+                      </legend>
+                      <input
+                        type="text"
+                        className="w-10/12 h-14 pl-4 text-wrap"
+                      />
                     </fieldset>
                   </div>
                   <div className="flex border-b border-gray">
                     <fieldset className="border-l border-gray text-center w-1/2 text-black flex">
-                        <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">발행처</legend>
-                        <div className="before:border-l before:border-gray before:mt-2 before:h-6 w-2/3 h-10 float-left pt-2 pr-28 flex box-border">
-                        <input type="text" placeholder="발행처" className="pl-6 h-10 box-border w-64"/>
-                        </div>
+                      <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">
+                        발행처
+                      </legend>
+                      <div className="before:border-l before:border-gray before:mt-2 before:h-6 w-2/3 h-10 float-left pt-2 pr-28 flex box-border">
+                        <input
+                          type="text"
+                          placeholder="발행처"
+                          className="pl-6 h-10 box-border w-64"
+                        />
+                      </div>
                     </fieldset>
                     <fieldset className="border-x border-gray text-center w-1/2 text-black flex">
-                        <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">취득일</legend>
-                        <div className="before:border-l before:border-gray before:mt-2 before:h-6 w-2/3 h-10 float-left pt-2 pr-28 flex box-border">
-                        <input type="text" placeholder="YYYY.MM" className="pl-6 h-10 box-border w-64"/>
-                        </div>
+                      <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">
+                        취득일
+                      </legend>
+                      <div className="before:border-l before:border-gray before:mt-2 before:h-6 w-2/3 h-10 float-left pt-2 pr-28 flex box-border">
+                        <input
+                          type="text"
+                          placeholder="YYYY.MM"
+                          className="pl-6 h-10 box-border w-64"
+                        />
+                      </div>
                     </fieldset>
                   </div>
-                  <div>
-                  </div>
+                  <div></div>
                   <button className="w-full h-10 mt-3 bg-lightgray flex justify-center items-center">
-                    단락추가 <div className="w-5 h-5 rounded-full bg-primary text-white flex justify-center items-center ml-1 pb-0.5">+</div>
+                    단락추가{" "}
+                    <div className="w-5 h-5 rounded-full bg-primary text-white flex justify-center items-center ml-1 pb-0.5">
+                      +
+                    </div>
                   </button>
-                </div>        
+                </div>
                 <div className="w-[70px] flex justify-end items-center">
                   <button className="w-10 h-10 bg-gray rounded-full">X</button>
                 </div>
               </div>
-            </article>{/* 자격증 섹션 */}
+            </article>
+            {/* 자격증 섹션 */}
           </div>
           <div className="w-full flex justify-center mt-14">
-                      <button className="w-40 h-14 bg-secondary text-white">
-                        수정완료
-                      </button>
-                      <button className="w-40 h-14 bg-lightgray ml-6">
-                        취소
-                      </button>
+            <button className="w-40 h-14 bg-secondary text-white">
+              수정완료
+            </button>
+            <button className="w-40 h-14 bg-lightgray ml-6">취소</button>
           </div>
         </section>
       </main>

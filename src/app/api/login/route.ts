@@ -12,12 +12,16 @@ export async function POST(request: Request) {
 
   const user = await prisma.user.findFirst({
     where: {
-      email: body.username,
+      name: body.username,
     },
   });
 
-  if (user && (await bcrypt.compare(body.password, user.password))) {
-    const { password, ...userWithoutPass } = user;
+  if (
+    user &&
+    user.hashedPassword &&
+    (await bcrypt.compare(body.password, user.hashedPassword))
+  ) {
+    const { hashedPassword, ...userWithoutPass } = user;
 
     // 추가된 부분
     const accessToken = signJwtAccessToken(userWithoutPass);
