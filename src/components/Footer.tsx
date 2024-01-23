@@ -91,6 +91,12 @@ export default function Footer() {
               >
                 권익위원회
               </option>
+              <option
+                value="https://ksa.or.kr/ksa_kr/index.do"
+                className="text-[#DCDCDC]"
+              >
+                한국표준협회
+              </option>
               <div className="pr-[10px] text-[#DCDCDC]">
                 <IoIosArrowUp />
               </div>

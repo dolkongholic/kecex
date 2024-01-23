@@ -21,6 +21,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "회원가입", url: "/business/member/join" },
+      { title: "회원회칙", url: "/business/member/rule" },
       { title: "경력관리", url: "/business/member/career" },
       { title: "경력수첩", url: "/business/member/careercard" },
     ],
@@ -33,6 +34,7 @@ const MainList = [
       { title: "방폭인력양성 교육", url: "/business/education/course02" },
       { title: "기업형 교육", url: "/business/education/course03" },
       { title: "교육개발", url: "/business/education/develop" },
+      { title: "CoPC 과정", url: "/business/education/copc" },
     ],
   },
   {
@@ -40,7 +42,8 @@ const MainList = [
     url: "#",
     sub: [
       { title: "방폭사전진단", url: "/business/consulting/inspection" },
-      { title: "방폭기기선정", url: "/business/consulting/equipment" },
+      // { title: "방폭기기선정", url: "/business/consulting/equipment" },
+      { title: "산업진단, 컨설팅", url: "/business/consulting/industry" },
     ],
   },
 ];
@@ -106,7 +109,7 @@ export default function DevelopPage() {
           </div>
 
           <ContentSubTitle title="교육대상" />
-          <div className="w-full px-[20px]">
+          <div className="w-full">
             <div className="w-full h-[270px] mb-[40px] border border-lightgray">
               <div className="flex justify-center items-start w-full">
                 <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
@@ -117,29 +120,29 @@ export default function DevelopPage() {
                 </div>
               </div>
               <div className="flex justify-between items-start w-full">
-                <div className="w-1/2 flex flex-col justify-start items-center">
-                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center border-r border-gray">
+                <div className="w-1/2 h-[228px] flex flex-col justify-start items-center border-r border-gray">
+                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center">
                     &nbsp;
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭시공기술자
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭검사기술자
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭설계기술자 I (폭발위험장소 구분)
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭설계기술자 II (방폭기기 선정)
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭정비기술자
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭감리기술자(시공/검사/설계 I,II 보유자 응시 가능)
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center">
                     &nbsp;
                   </span>
                 </div>
@@ -165,7 +168,7 @@ export default function DevelopPage() {
                   <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭 감리 업무를 수행하는 자
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
+                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center">
                     &nbsp;
                   </span>
                 </div>
@@ -186,7 +189,7 @@ export default function DevelopPage() {
             </div>
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="교육내용 및 시간" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
                 <span>
                   24시간 (추후 내용 추가) <br />
                 </span>
@@ -198,7 +201,7 @@ export default function DevelopPage() {
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="갱신교육기간" />
               <div className="flex flex-col justify-start py-[20px] items-start h-[140px] px-[20px] border border-gray w-full">
-                <span>5년 (표준 갱싱 주기 반영, 실습교육 및 평가 제외)</span>
+                <span>5년 (표준 갱신 주기 반영, 실습교육 및 평가 제외)</span>
               </div>
             </div>
             <div className="w-[49%] flex flex-col">
@@ -222,8 +225,8 @@ export default function DevelopPage() {
           </div>
 
           <ContentSubTitle title="교육내용 및 시간" />
-          <div className="w-full px-[20px]">
-            <div className="w-full h-[270px] mb-[40px] border border-lightgray">
+          <div className="w-full">
+            <div className="w-full h-[261px] mb-[40px] border border-lightgray">
               <div className="flex justify-center items-start w-full">
                 <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
                   분 류
@@ -233,29 +236,29 @@ export default function DevelopPage() {
                 </div>
               </div>
               <div className="flex justify-between items-start w-full">
-                <div className="w-1/2 flex flex-col justify-start items-center">
-                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center border-r border-gray">
+                <div className="w-1/2 flex flex-col justify-start items-center border-r border-gray">
+                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center">
                     &nbsp;
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭시공기술자
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭검사기술자
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭설계기술자 I (폭발위험장소 구분)
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭설계기술자 II (방폭기기 선정)
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭정비기술자
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭감리기술자(시공/검사/설계 I,II 보유자 응시 가능)
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center">
                     &nbsp;
                   </span>
                 </div>
@@ -281,7 +284,7 @@ export default function DevelopPage() {
                   <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 200만원 (IECEx CoPC Unit Ex 010)
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
+                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center">
                     &nbsp;
                   </span>
                 </div>
@@ -292,13 +295,13 @@ export default function DevelopPage() {
           <div className="w-full flex justify-between items-center mb-[40px]">
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="혜택" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[70px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[70px] px-[20px] border border-gray w-full">
                 <span>경력수첩 발급 (추후 전자경력 카드 발급)</span>
               </div>
             </div>
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="발급비용" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[70px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[70px] px-[20px] border border-gray w-full">
                 <span>경력 수첩 5만원</span>
               </div>
             </div>

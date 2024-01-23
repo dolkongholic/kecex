@@ -21,6 +21,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "회원가입", url: "/business/member/join" },
+      { title: "회원회칙", url: "/business/member/rule" },
       { title: "경력관리", url: "/business/member/career" },
       { title: "경력수첩", url: "/business/member/careercard" },
     ],
@@ -33,6 +34,7 @@ const MainList = [
       { title: "방폭인력양성 교육", url: "/business/education/course02" },
       { title: "기업형 교육", url: "/business/education/course03" },
       { title: "교육개발", url: "/business/education/develop" },
+      { title: "CoPC 과정", url: "/business/education/copc" },
     ],
   },
   {
@@ -40,7 +42,8 @@ const MainList = [
     url: "#",
     sub: [
       { title: "방폭사전진단", url: "/business/consulting/inspection" },
-      { title: "방폭기기선정", url: "/business/consulting/equipment" },
+      // { title: "방폭기기선정", url: "/business/consulting/equipment" },
+      { title: "산업진단, 컨설팅", url: "/business/consulting/industry" },
     ],
   },
 ];
@@ -99,18 +102,17 @@ export default function Course03Page() {
           <div className="w-full px-[20px] mb-[40px]">
             <div className="flex flex-col justify-center items-start h-[80px] px-[20px] border border-gray w-full">
               <span>
-                Plant 제작 및 개조 공사 시 작업자, 관리자의 맞춤형 교육을 통해
-                국내외 법규 및 표준, 공사 시방서에 맞는 제작현장을 구성함으로써
-                재작업으로 발생 되는 Loss 제거 및 고객(발주사)의 요구조건을
-                충족시키고 나아가 경쟁력을 확보를 통한 국가경제에 이바지하기
-                위함
+                Plant 제작 및 개조 공사 시 작업자 · 관리자 대상의 맞춤형 교육으로
+                국내외 법규 및 표준, 공사 시방서에 맞는 제작 현장을 구성함으로써,
+                재작업으로 발생되는 Loss 제거 및 고객(발주사)의 요구 조건을
+                충족시키고 나아가 경쟁력을 확보하여 국가경제에 이바지하기 위함
               </span>
             </div>
           </div>
 
           <ContentSubTitle title="교육대상" />
-          <div className="w-full px-[20px]">
-            <div className="w-full h-[270px] mb-[40px] border border-lightgray">
+          <div className="w-full">
+            <div className="w-full h-[260px] mb-[40px] border border-lightgray">
               <div className="flex justify-center items-start w-full">
                 <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
                   분 류
@@ -120,7 +122,10 @@ export default function Course03Page() {
                 </div>
               </div>
               <div className="flex  justify-between items-start w-full">
-                <div className="w-1/2 flex h-[200px] flex-col justify-start items-center border-r border-gray">
+                <div className="w-1/2 flex h-[218px] flex-col justify-start items-center border-r border-gray">
+                  <span className="w-full h-[18px] pl-[20px] flex justify-start items-center">
+                    &nbsp;
+                  </span>
                   <span className="w-full h-[30px] pl-[20px] flex justify-start items-center ">
                     · 방폭시공기술자
                   </span>
@@ -141,9 +146,9 @@ export default function Course03Page() {
                   </span>
                 </div>
                 <div className="w-1/2 flex flex-col justify-start items-center">
-                  <span className="w-full h-[200px] pl-[20px] flex justify-start items-center">
-                    석유화학, 조선, 해양, 반도체 등 Plant 제작 및 공정 설비의
-                    개조 작업 등 Project 성 공사 수주를 받거나 진행하는 기업체
+                  <span className="w-full h-[200px] px-[20px] flex justify-start items-center">
+                  · 석유화학, 조선, 해양, 반도체 등 Plant 제작 및 공정 설비의
+                    개조 작업 등 Project성 공사 수주를 받거나 진행하는 기업체
                   </span>
                 </div>
               </div>
@@ -153,13 +158,13 @@ export default function Course03Page() {
           <div className="w-full flex justify-between items-center mb-[40px]">
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="자격요건" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
                 <span>기업체에서 선정 한 인원</span>
               </div>
             </div>
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="교육내용 및 시간" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
                 <span>기업체의 요구 및 필요에 따라 지정</span>
               </div>
             </div>
@@ -168,15 +173,15 @@ export default function Course03Page() {
           <div className="w-full flex justify-between items-center mb-[40px]">
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="갱신교육기간" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[140px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
                 <span>공사기간 내 적용</span>
               </div>
             </div>
           </div>
 
           <ContentSubTitle title="교육내용 및 시간" />
-          <div className="w-full px-[20px]">
-            <div className="w-full h-[270px] mb-[40px] border border-lightgray">
+          <div className="w-full">
+            <div className="w-full h-[110px] mb-[40px] border border-lightgray">
               <div className="flex justify-center items-start w-full">
                 <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
                   분 류
@@ -185,9 +190,9 @@ export default function Course03Page() {
                   대 상
                 </div>
               </div>
-              <div className="flex justify-between items-start w-full">
-                <div className="w-1/2 flex flex-col justify-start items-center">
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
+              <div className="flex justify-between items-start w-full h-[70px]">
+                <div className="w-1/2 h-full flex flex-col justify-start items-center">
+                  <span className="w-full h-full pl-[20px] flex justify-start items-center border-r border-gray">
                     기업체의 상황과 필요에 따라 구성
                   </span>
                 </div>
