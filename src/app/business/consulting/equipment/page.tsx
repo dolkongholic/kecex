@@ -22,6 +22,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "회원가입", url: "/business/member/join" },
+      { title: "회원회칙", url: "/business/member/rule" },
       { title: "경력관리", url: "/business/member/career" },
       { title: "경력수첩", url: "/business/member/careercard" },
     ],
@@ -34,6 +35,7 @@ const MainList = [
       { title: "방폭인력양성 교육", url: "/business/education/course02" },
       { title: "기업형 교육", url: "/business/education/course03" },
       { title: "교육개발", url: "/business/education/develop" },
+      { title: "CoPC 과정", url: "/business/education/copc" },
     ],
   },
   {
@@ -41,7 +43,8 @@ const MainList = [
     url: "#",
     sub: [
       { title: "방폭사전진단", url: "/business/consulting/inspection" },
-      { title: "방폭기기선정", url: "/business/consulting/equipment" },
+      // { title: "방폭기기선정", url: "/business/consulting/equipment" },
+      { title: "산업진단, 컨설팅", url: "/business/consulting/industry" },
     ],
   },
 ];

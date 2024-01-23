@@ -11,16 +11,13 @@ import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
 
-// Image
-import PicCircle from "../../../../../public/img/icon/content_icon_circle.png";
-import PicConsulting from "../../../../../public/img/pages/business/consulting.png";
-
 const MainList = [
   {
     title: "회원",
     url: "#",
     sub: [
       { title: "회원가입", url: "/business/member/join" },
+      { title: "회원회칙", url: "/business/member/rule" },
       { title: "경력관리", url: "/business/member/career" },
       { title: "경력수첩", url: "/business/member/careercard" },
     ],
@@ -33,6 +30,7 @@ const MainList = [
       { title: "방폭인력양성 교육", url: "/business/education/course02" },
       { title: "기업형 교육", url: "/business/education/course03" },
       { title: "교육개발", url: "/business/education/develop" },
+      { title: "CoPC 과정", url: "/business/education/copc" },
     ],
   },
   {
@@ -40,7 +38,8 @@ const MainList = [
     url: "#",
     sub: [
       { title: "방폭사전진단", url: "/business/consulting/inspection" },
-      { title: "방폭기기선정", url: "/business/consulting/equipment" },
+      // { title: "방폭기기선정", url: "/business/consulting/equipment" },
+      { title: "산업진단, 컨설팅", url: "/business/consulting/industry" },
     ],
   },
 ];
@@ -97,19 +96,18 @@ export default function Course02Page() {
           <ContentTitle title={location} />
           <ContentSubTitle title="교육목적" />
           <div className="w-full px-[20px] mb-[40px]">
-            <div className="flex flex-col justify-center items-start h-[80px] px-[20px] border border-gray w-full">
+            <div className="flex flex-col justify-center items-start h-[100px] px-[20px] border border-gray w-full">
               <span>
-                국제ㆍ국내 법규 및 관련 표준, 지침에 따라 폭발위험성이 존재하는
-                산업현장에서는 각 공정 별 적격자에 의한 작업 및 관리가 요구된다.
-                이에따라 해당 교육을 통한 국제적 수준의 방폭전문가 또는 적격자를
-                양성하고 표준과 지침에 맞는 공정 별 작업을 유도함으로서
-                산업현장의 폭발 위험예방 및 안전시스템을 구축하기 위함
+              국제ㆍ국내 법규 및 관련 표준, 지침에 따라 폭발 위험성이 존재하는 산업현장에서는 각 
+              공정 별 적격자에 의한 작업 및 관리가 요구된다.<br /> 이에 따라 해당 교육을 통한 국제적 수준의
+              방폭 전문가 또는 적격자를 양성하고 표준과 지침에 맞는 공정 별 작업을 유도함으로써 산업현장의
+              폭발 위험 예방 및 안전시스템을 구축하기 위함
               </span>
             </div>
           </div>
 
           <ContentSubTitle title="교육대상" />
-          <div className="w-full px-[20px]">
+          <div className="w-full">
             <div className="w-full h-[270px] mb-[40px] border border-lightgray">
               <div className="flex justify-center items-start w-full">
                 <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
@@ -153,7 +151,7 @@ export default function Course02Page() {
                   <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 각 업무에 맞는 IECEx CoPC 국제방폭자격증 취득을 원하는 자
                   </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
+                  <span className="w-full h-[60px] px-[20px] flex justify-start items-center">
                     · 산업안전보건공단, 가스안전공사로부터 PSM,SMS 심사를 받는
                     기업체 설계, 공무 및 안전부서 근로자
                   </span>
@@ -165,13 +163,13 @@ export default function Course02Page() {
           <div className="w-full flex justify-between items-center mb-[40px]">
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="자격요건" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
                 <span>각 IECEx Unit 별 취득 자격 요건 참조</span>
               </div>
             </div>
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="교육내용 및 시간" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
                 <span>각 IECEx Unit 별 교육 시간 참조</span>
               </div>
             </div>
@@ -206,13 +204,13 @@ export default function Course02Page() {
           <div className="w-full flex justify-between items-center mb-[40px]">
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="혜택" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[70px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[70px] px-[20px] border border-gray w-full">
                 <span>수료증</span>
               </div>
             </div>
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="발급비용" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[70px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[70px] px-[20px] border border-gray w-full">
                 <span>IECEx Cert 발급 비용 참조</span>
               </div>
             </div>

@@ -11,9 +11,6 @@ import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
 
-// Image
-import PicCircle from "../../../../../public/img/icon/content_icon_circle.png";
-import PicConsulting from "../../../../../public/img/pages/business/consulting.png";
 
 const MainList = [
   {
@@ -21,6 +18,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "회원가입", url: "/business/member/join" },
+      { title: "회원회칙", url: "/business/member/rule" },
       { title: "경력관리", url: "/business/member/career" },
       { title: "경력수첩", url: "/business/member/careercard" },
     ],
@@ -33,6 +31,7 @@ const MainList = [
       { title: "방폭인력양성 교육", url: "/business/education/course02" },
       { title: "기업형 교육", url: "/business/education/course03" },
       { title: "교육개발", url: "/business/education/develop" },
+      { title: "CoPC 과정", url: "/business/education/copc" },
     ],
   },
   {
@@ -40,7 +39,8 @@ const MainList = [
     url: "#",
     sub: [
       { title: "방폭사전진단", url: "/business/consulting/inspection" },
-      { title: "방폭기기선정", url: "/business/consulting/equipment" },
+      // { title: "방폭기기선정", url: "/business/consulting/equipment" },
+      { title: "산업진단, 컨설팅", url: "/business/consulting/industry" },
     ],
   },
 ];
@@ -107,7 +107,7 @@ export default function Course01Page() {
           </div>
 
           <ContentSubTitle title="교육대상" />
-          <div className="w-full px-[20px]">
+          <div className="w-full">
             <div className="w-full h-[270px] mb-[40px] border border-lightgray">
               <div className="flex justify-center items-start w-full">
                 <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
@@ -177,13 +177,13 @@ export default function Course01Page() {
           <div className="w-full flex justify-between items-center mb-[40px]">
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="자격요건" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
                 <span>없음</span>
               </div>
             </div>
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="교육내용 및 시간" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
                 <span>
                   5시간
                   <br />
@@ -195,33 +195,33 @@ export default function Course01Page() {
           <div className="w-full flex justify-between items-center mb-[40px]">
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="갱신교육기간" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
                 <span>3년(기관 코드 및 가이드 갱신 주기 반영)</span>
               </div>
             </div>
           </div>
 
           <ContentSubTitle title="교육내용 및 시간" />
-          <div className="w-full px-[20px]">
+          <div className="w-full">
             <div className="w-full h-[220px] mb-[40px] border border-lightgray">
               <div className="flex justify-center items-start w-full">
-                <div className="w-1/3 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
+                <div className="w-1/5 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
                   일 정
                 </div>
-                <div className="w-1/3 h-[40px] bg-gray flex justify-center items-center">
+                <div className="w-3/5 h-[40px] bg-gray flex justify-center items-center">
                   교육 내용
                 </div>
-                <div className="w-1/3 h-[40px] bg-gray flex justify-center items-center">
+                <div className="w-1/5 h-[40px] bg-gray flex justify-center items-center">
                   교육시간
                 </div>
               </div>
               <div className="flex justify-between items-start w-full">
                 <div className="w-1/5 flex flex-col justify-start items-center h-[180px]">
-                  <span className="w-full h-full pl-[20px] flex justify-center items-center border-r border-gray">
+                  <span className="w-full h-full flex justify-center items-center border-r border-gray">
                     이론 교육
                   </span>
                 </div>
-                <div className="w-2/5 flex flex-col justify-center items-center h-[180px] border-r border-gray">
+                <div className="w-3/5 flex flex-col justify-center items-center h-[180px] border-r border-gray">
                   <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
                     · 방폭 관련 국내 산업안전 보건법
                   </span>
@@ -235,11 +235,11 @@ export default function Course01Page() {
                     · 방폭 이론(기본) - 정의, 방폭 기술, 방폭 규정 등
                   </span>
                   <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 방폭전기기계,기구 인증 및 표기
+                    · 방폭전기기계, 기구 인증 및 표기
                   </span>
                 </div>
-                <div className="w-2/5 flex flex-col justify-center items-center h-[180px]">
-                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center">
+                <div className="w-1/5 flex flex-col justify-center items-center h-[180px]">
+                  <span className="w-full h-[20px] flex justify-center items-center">
                     5시간
                   </span>
                 </div>
@@ -250,13 +250,13 @@ export default function Course01Page() {
           <div className="w-full flex justify-between items-center mb-[40px]">
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="혜택" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
                 <span>교육 수료증 발급 (추후 전자경력 카드 발급)</span>
               </div>
             </div>
             <div className="w-[49%] flex flex-col">
               <ContentSubTitle title="발급비용" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
                 <span>-</span>
               </div>
             </div>

@@ -104,8 +104,11 @@ export default function QnaPage() {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="p-[20px] w-full flex flex-col justify-start items-start ">
           <ContentTitle title={location} center={true} />
+          <div className="w-full h-20 border border-secondary my-5 flex justify-center items-center text-[20px]">
+            ~ 진행중 ~
+          </div>
           <div className="flex justify-between w-full h-[50px] leading-[50px]">
             <Link passHref href="print" className="w-1/2">
               <div className="w-full text-center h-full border border-secondary cursor-pointer bg-secondary text-white">

@@ -8,6 +8,7 @@ import ContentTitle from "@/components/content/title";
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
+import { MdOutlineArrowDropDown } from "react-icons/md";
 import Image from "next/image";
 
 // Image
@@ -103,90 +104,98 @@ export default function GroupPage() {
                 총회
               </div>
             </div>
-            <div className="flex h-[70px]">
+            <div className="flex h-[130px]">
               <div className="w-[50%] border-r border-gray">&nbsp;</div>
               <div className="w-1/4 h-[50px] text-center text-subtitle">
+                <div className="h-[40px]">&nbsp;</div>
                 <div className="border-b border-gray h-[25px]">&nbsp;</div>
                 <div className="h-[25px]">&nbsp;</div>
+                <div className="h-[25px]">&nbsp;</div>
               </div>
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-superdarkgray text-white text-[18px] rounded-full">
+              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-superdarkgray text-white text-[18px] rounded-full mt-[40px]">
                 이사회
               </div>
             </div>
             <div className="flex justify-between h-[50px] items-center">
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-cente text-subtitle">
+              <div className="w-1/12 flex justify-center items-center h-[50px] text-cente text-subtitle">
                 &nbsp;
               </div>
-                <div className="w-1/6 flex justify-center items-center h-[50px] text-center border border-secondary text-[18px]">
+                <div className="w-2/12 flex justify-center items-center h-[50px] text-center border border-secondary text-[18px]">
                   고문
                 </div>
-              <div className="w-1/4 h-[50px] text-center text-subtitle">
+              <div className="w-2/12 h-[50px] text-center text-subtitle">
                 <div className="border-b border-gray h-[25px]">&nbsp;</div>
                 <div className="h-[25px]">&nbsp;</div>
               </div>
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-primary text-white text-[18px]">
+              <div className="w-2/12 flex justify-center items-center h-[50px] text-center bg-primary text-white text-[18px]">
                 회장
               </div>
-              <div className="w-1/4 h-[50px] text-center text-subtitle">
+              <div className="w-2/12 h-[50px] text-center text-subtitle">
                 <div className="border-b border-gray h-[25px]">&nbsp;</div>
                 <div className="h-[25px]">&nbsp;</div>
               </div>
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-lightgray text-[18px]">
+              <div className="w-2/12 flex justify-center items-center h-[50px] text-center bg-lightgray text-[18px]">
                   감사
                 </div>        
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-cente text-subtitle">
+              <div className="w-1/12 flex justify-center items-center h-[50px] text-cente text-subtitle">
                 &nbsp;
               </div>
             </div>
 
-            <div className="flex justify-between h-[110px] items-center mt-3">
-              <div className="w-1/4 flex-col justify-between items-center h-[110px] text-center border border-secondary text-[18px]">
-                  <p className="h-[50px] flex items-center justify-center">자문위원</p>
+
+
+            <div className="flex h-[70px]">
+              <div className="w-[17%]"></div>
+              <div className="w-[33%] border-r border-gray">
+                <div className="w-full h-[35px]">&nbsp;</div>
+                <div className="w-full h-[35px] border-t border-l border-gray relative">
+                  &nbsp;
+                  <span className="absolute -left-3 -bottom-2 text-[22px] text-darkgray"><MdOutlineArrowDropDown /></span>
+                </div>
+              </div>
+              <div className="w-[33%]">
+                <div className="w-full h-[35px]">&nbsp;</div>
+                <div className="w-full h-[35px] border-t border-r border-gray relative">
+                  &nbsp;
+                  <span className="absolute -right-3 -bottom-2 text-[22px] text-darkgray"><MdOutlineArrowDropDown /></span>
+                  </div>
+              </div>
+              <div className="w-[17%]"></div>
+            </div>
+
+            <div className="flex justify-between h-[50px]">
+              <div className="w-1/12 flex justify-center items-center h-[50px] text-cente text-subtitle">
+                &nbsp;
+              </div>
+              <div className="w-2/12 flex-col justify-between items-center h-[110px] text-center border border-secondary text-[18px]s">
+                  <p className="h-[50px] flex items-center justify-center text-[18px]">자문위원</p>
                   <p className="h-[10px] text-base -ml-2 flex items-center justify-center"><span className="leading-9">o</span> 기술자문</p>
                   <p className="h-[50px] text-base -ml-2 flex items-center justify-center"><span className="leading-9">o</span> 정책자문</p>
               </div>
-              <div className="w-1/4 h-[130px] text-center text-subtitle">
-                <div className="border-b border-r border-gray h-[65px]">&nbsp;</div>
-                <div className="h-[65px] border-r border-gray">&nbsp;</div>
-              </div>
-              <div className="w-1/4 h-[130px] text-center text-subtitle">
-                <div className="border-b border-gray h-[65px]">&nbsp;</div>
-                <div className="h-[65px]">&nbsp;</div>
-              </div>
-              <div className="w-1/4 flex justify-center items-center h-[50px] text-center border border-secondary text-[18px]">
-                운영위원
-              </div>
-            </div>
-
-            <div className="flex h-[20px]">
-              <div className="w-[50%] border-r border-gray">&nbsp;</div>
-              <div className="w-[50%]">&nbsp;</div>
-            </div>
-
-            <div className="flex justify-between h-[50px]">
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-center text-subtitle">
+              <div className="w-2/12 h-[50px] text-center text-subtitle">
                 &nbsp;
               </div>
-              <div className="w-1/4 flex justify-center items-center h-[50px] text-center text-subtitle">
-                &nbsp;
-              </div>
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-[18px]">
+              <div className="w-2/12 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-[18px]">
                 상임이사
               </div>
-              <div className="w-1/4 h-[50px] text-center text-subtitle">
+              <div className="w-2/12 h-[50px] text-center text-subtitle">
+                &nbsp;
               </div>
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-center text-subtitle">
-              &nbsp;
+              <div className="w-2/12 flex justify-center items-center h-[50px] text-center border border-secondary text-[18px]">
+                운영위원
+              </div>
+              <div className="w-1/12 h-[50px] text-center text-subtitle">
+                &nbsp;
               </div>
             </div>
 
-            <div className="flex h-[70px]">
+            <div className="flex h-[40px]">
               <div className="w-[50%] border-r border-gray">&nbsp;</div>
               <div className="w-[50%]">&nbsp;</div>
             </div>
 
             <div className="flex justify-between h-[50px]">
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-cente text-subtitle">
+              <div className="w-1/6 flex justify-center items-center h-[50px] text-center text-subtitle">
                 &nbsp;
               </div>
               <div className="w-1/4 flex justify-center items-center h-[50px] text-center text-subtitle">
@@ -195,46 +204,73 @@ export default function GroupPage() {
               <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-[18px]">
                 사무국장
               </div>
-              <div className="w-1/4 h-[50px] text-center text-subtitle">
-                <div className="border-b border-gray h-[25px]">&nbsp;</div>
+              <div className="w-1/12 h-[50px] text-center text-subtitle">
+                <div className="border-b border-gray h-[25px] relative">
+                  &nbsp;
+                  <span className="absolute -right-2 -bottom-3 text-[22px] text-darkgray -rotate-90"><MdOutlineArrowDropDown /></span>
+                  <span className="absolute -left-2 -bottom-3 text-[22px] text-darkgray rotate-90"><MdOutlineArrowDropDown /></span>
+                  </div>
                 <div className="h-[25px]">&nbsp;</div>
               </div>
-              <div className="w-1/6 flex flex-col justify-center items-center h-[50px] text-center border border-secondary text-[18px]">
+              <div className="w-4/12 flex flex-col justify-center items-center h-[50px] text-center border border-secondary text-[18px]">
                 <p>방폭협회 지부</p>
-                <p className="text-[13px]">(경기·충청·경상·호남)</p>
               </div>
             </div>
 
             <div className="flex h-[50px]">
               <div className="w-[50%] border-r border-gray">&nbsp;</div>
-              <div className="w-[50%]">&nbsp;</div>
+              <div className="w-[50%]">
+                <div className="w-full h-[15px] flex">
+                  <div className="w-5/12 border-r border-gray">&nbsp;</div>
+                  <div className="w-2/12 border-r border-gray mr-2">&nbsp;</div>
+                  <div className="w-2/12 border-r border-gray mr-2">&nbsp;</div>
+                  <div className="w-2/12 border-r border-gray -mr-1">&nbsp;</div>
+                  <div className="w-1/12">&nbsp;</div>
+                </div>
+                <ul className="flex h-[35px] -mr-1">
+                  <li className="w-4/12 flex justify-center items-center h-[50px]">&nbsp;</li>
+                  <li className="w-2/12 flex justify-center items-center h-[35px] text-center bg-lightgray text-[14px] mr-2">경기</li>
+                  <li className="w-2/12 flex justify-center items-center h-[35px] text-center bg-lightgray text-[14px] mr-2">충청</li>
+                  <li className="w-2/12 flex justify-center items-center h-[35px] text-center bg-lightgray text-[14px] mr-2">경상</li>
+                  <li className="w-2/12 flex justify-center items-center h-[35px] text-center bg-lightgray text-[14px]">호남</li>
+                </ul>
+              </div>
             </div>
 
             <div className="flex h-[50px]">
-              <div className="w-[10%]">&nbsp;</div>
-              <div className="w-[10%] border-t border-l border-gray">
+              <div className="w-[12%]">&nbsp;</div>
+              <div className="w-[8%] border-t border-l border-gray relative">
                 &nbsp;
+                <span className="absolute -left-3 -bottom-2 text-[22px] text-darkgray"><MdOutlineArrowDropDown /></span>
               </div>
               <div className="w-[10%] border-t border-gray ">&nbsp;</div>
               <div className="w-[10%] border-t border-gray">&nbsp;</div>
               <div className="w-[10%] border-t border-r border-gray">
                 &nbsp;
               </div>
-              <div className="w-[10%] border-t border-gray border-dashed">&nbsp;</div>
-              <div className="w-[10%] border-t border-gray border-dashed ">&nbsp;</div>
-              <div className="w-[10%] border-t border-gray border-dashed">&nbsp;</div>
-              <div className="w-[10%] border-t border-r border-gray border-dashed">
-                &nbsp;
+              <div className="w-[50%] flex-col">
+                <div className="w-full">
+                  &nbsp;
+                </div>
+                <div className="flex">
+                  <div className="w-[20%] border-t border-gray border-dashed">&nbsp;</div>
+                  <div className="w-[20%] border-t border-gray border-dashed ">&nbsp;</div>
+                  <div className="w-[20%] border-t border-gray border-dashed">&nbsp;</div>
+                  <div className="w-[16%] border-t border-r border-gray border-dashed relative">
+                    &nbsp;
+                    <span className="absolute -right-3 -bottom-2 text-[22px] text-darkgray"><MdOutlineArrowDropDown /></span>
+                  </div>
+                  <div className="w-[24%]">&nbsp;</div>
+                </div>
               </div>
-              <div className="w-[10%]">&nbsp;</div>
             </div>
 
             <div className="flex justify-between h-[50px]">
               <div className="w-1/4 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-[18px]">
-                경영지원본부
+                방폭지원본부
               </div>
               <div className="w-1/4 flex justify-center items-center h-[50px] text-center bg-secondary text-white text-[18px]">
-                방폭사업추진본부
+                방폭기술본부
               </div>
               <div className="w-1/4 flex flex-col justify-center items-center h-[50px] text-center border border-secondary text-[18px]">
                 <p>위험성평가 센터</p>
@@ -242,7 +278,7 @@ export default function GroupPage() {
             </div>
 
             <div className="flex justify-between ">
-              <div className="w-[250px] flex flex-col space-y-[10px] justify-start text-left mt-[10px] border border-gray text-[14px] p-5 -ml-[15px]">
+              <div className="w-[270px] flex flex-col space-y-[10px] justify-start text-left mt-[10px] border border-gray text-[14px] p-5 -ml-[25px]">
                 <span><b className="text-[8px]">○</b> 기획, 총무, 회계</span>
                 <span><b className="text-[8px]">○</b> 회원사/회원 관리</span>
                 <span><b className="text-[8px]">○</b> 방폭 기술정보 센터 운영</span>
@@ -252,20 +288,19 @@ export default function GroupPage() {
                 <span><b className="text-[8px]">○</b> 방폭 관련 각종 행사 개최</span>
                 <span><b className="text-[8px]">○</b> 방폭 분과위원회 구성/운영</span>
               </div>
-              <div className="w-[250px] flex flex-col space-y-[10px] justify-start  mt-[10px]  border border-gray text-[14px] p-5">
+              <div className="w-[270px] flex flex-col space-y-[10px] justify-start  mt-[10px]  border border-gray text-[14px] p-5">
                 <span><b className="text-[8px]">○</b> 방폭 전문인력양성 교육<span className="text-[12px]">(수료증/수첩)</span></span>
                 <span><b className="text-[8px]">○</b> 방폭 컨설팅 국내외 사업 추진</span>
                 <ul className="text-[13px] leading-5 pl-2">
-                  <li className="-mt-2">- 방폭 설계자료 건전성 점검</li>
-                  <li>- 전문인력양성계장 방폭수준 점검</li>
-                  <li>- 방폭 법규 준수방안</li>
-                  <li>- 방폭기기 정비 및 교체 방안 권고</li>
+                  <li className="-mt-2">- 위험지역 구분 점검</li>
+                  <li>- 전기설비 설치 점검</li>
+                  <li>- 방폭 구역 전기 설비 검사</li>
                 </ul>
                 <span><b className="text-[8px]">○</b> 방폭 기술개발 과제 지원 및 컨설팅</span>
                 <span><b className="text-[8px]">○</b> 방폭 Auditing 지원</span>
                 <span><b className="text-[8px]">○</b> PSM / 중대 재해 처벌법 대응 지원</span>
               </div>
-              <div className="w-[250px] flex flex-col space-y-[10px] justify-start mt-[10px]  border border-gray text-[14px] p-5 -mr-[15px]">
+              <div className="w-[270px] flex flex-col space-y-[10px] justify-start mt-[10px]  border border-gray text-[14px] p-5 -mr-[25px]">
                 <span><b className="text-[8px]">○</b> Hazard Analysis</span>
                 <span><b className="text-[8px]">○</b> Loss Prevention</span>
               </div>

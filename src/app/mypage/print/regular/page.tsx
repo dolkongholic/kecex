@@ -10,7 +10,7 @@ import ContentSubTitle from "@/components/content/subtitle";
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
-import download_icon from "../../../../../public/img/icon/아이콘 7.png";
+import download_icon from "public/img/icon/아이콘 7.png";
 
 // Image
 
