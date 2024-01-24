@@ -12,6 +12,9 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
 import download_icon from "public/img/icon/download_icon.png";
 import download_icon_white from "public/img/icon/download_icon_white.png";
+import regular_member_1 from "public/img/icon/regular_member_1.png";
+import regular_member_2 from "public/img/icon/regular_member_2.png";
+import regular_member_3 from "public/img/icon/regular_member_3.png";
 
 // Image
 
@@ -32,12 +35,19 @@ const MainList = [
     sub: null,
   },
   {
+    title: "정회원 가입",
+    url: "/mypage/regular",
+    sub: null,
+  },
+  {
+    title: "회비 납부",
+    url: "/mypage/payment",
+    sub: null,
+  },
+  {
     title: "회원증 출력",
-    url: "#",
-    sub: [
-      { title: "회원증 출력", url: "/mypage/print/certificate" },
-      { title: "정회원 가입", url: "/mypage/print/regular" },
-    ],
+    url: "/mypage/print",
+    sub: null,
   },
   {
     title: "1:1문의 현황",
@@ -233,15 +243,20 @@ export default function QnaPage() {
             <h3 className="text-subtitle text-center mt-5">가입 방법</h3>
             <ul className="flex w-full justify-between mt-8">
               <li className="w-1/4">
-                <div className="h-32 border border-[#ccc] flex flex-col justify-center items-center">
-                  <p>
-                    입회원서 작성
-                    <br />
-                    (홈페이지 다운로드)
-                  </p>
-                  <a href="#" className="text-darkgray text-[12px] underline">
-                    kecex.vercel.app
-                  </a>
+                <div className="h-32 border border-[#ccc] flex justify-between items-center">
+                  <div className="w-5/12 h-full flex justify-center items-center">
+                    <Image src={regular_member_1} alt="원서작성_아이콘" className="w-5/6"></Image>
+                  </div>
+                  <div className="w-7/12">
+                    <p>
+                      입회원서 작성
+                      <br />
+                      (홈페이지 다운로드)
+                    </p>
+                    <a href="#" className="text-darkgray text-[12px] underline">
+                      kecex.vercel.app
+                    </a>
+                  </div>
                 </div>
                 <p className="text-[12px] text-center mt-3">
                   입회원서를 다운로드하여 가입정보를 작성
@@ -249,12 +264,17 @@ export default function QnaPage() {
               </li>
               <li className="pt-12">{`>>`}</li>
               <li className="w-1/4">
-                <div className="h-32 border border-[#ccc] flex flex-col justify-center items-center">
-                  <p>
-                    입회원서 및<br />
-                    사업자등록증 송부
-                  </p>
-                  <p>&nbsp;</p>
+                <div className="h-32 border border-[#ccc] flex justify-between items-center">
+                  <div className="w-5/12 h-full flex justify-center items-center">
+                    <Image src={regular_member_2} alt="원서송부_아이콘" className="w-5/6"></Image>
+                  </div>
+                  <div className="w-7/12">
+                    <p>
+                      입회원서 및
+                      <br />
+                      사업자등록증 송부
+                    </p>
+                  </div>
                 </div>
                 <p className="text-[12px] text-center mt-3">
                   협회 주소록을 참조하여 입회원서 및 <br />
@@ -265,12 +285,17 @@ export default function QnaPage() {
               </li>
               <li className="pt-12">{`>>`}</li>
               <li className="w-1/4">
-                <div className="h-32 border border-[#ccc] flex flex-col justify-center items-center">
-                  <p>
-                    입회처리 및<br />
-                    담당자 배정(회비 청구)
-                  </p>
-                  <p>&nbsp;</p>
+                <div className="h-32 border border-[#ccc] flex justify-between items-center">
+                  <div className="w-5/12 h-full flex justify-center items-center">
+                    <Image src={regular_member_3} alt="입회처리_아이콘" className="w-5/6"></Image>
+                  </div>
+                  <div className="w-7/12">
+                    <p>
+                      입회처리
+                      <br />
+                      담당자 배정(회비 청구)
+                    </p>
+                  </div>
                 </div>
                 <p className="text-[12px] text-center mt-3">
                   입회처리 후 {`'Welcome'`} 문자 전송
