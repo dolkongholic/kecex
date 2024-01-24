@@ -152,7 +152,7 @@ export default function Header({ menu, setMenu }: Props) {
             </ul>
           </div>
           <div
-            className="w-[50px] flex items-center"
+            className="w-[50px] flex items-center cursor-pointer"
             // onMouseOver={() => setMenu(null)}
             onClick={openModal}
           >
