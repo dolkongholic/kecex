@@ -107,7 +107,7 @@ export default function InspectionPage() {
             <li
               className={`w-1/3 h-14 flex justify-between items-center pl-5 
               ${selectedLiIndex === 0 ?
-                'border-2 border-secondary text-black font-medium bg-secondary_light bg-opacity-30'
+                'border border-secondary text-black font-medium bg-secondary_light bg-opacity-10'
               : 'border border-gray border-r-0'} cursor-pointer`}
               onClick={() => handleLiClick(0)}>
               PMS
@@ -116,7 +116,7 @@ export default function InspectionPage() {
             <li
               className={`w-1/3 h-14 flex justify-between items-center pl-5 
               ${selectedLiIndex === 1 ?
-                'border-2 border-secondary text-black font-medium bg-secondary_light bg-opacity-30'
+                'border border-secondary text-black font-medium bg-secondary_light bg-opacity-10'
               : 'border border-gray border-r-0 '} cursor-pointer`}
               onClick={() => handleLiClick(1)}>
               중대재해처벌법
@@ -125,7 +125,7 @@ export default function InspectionPage() {
             <li
               className={`w-1/3 h-14 flex justify-between items-center pl-5
               ${selectedLiIndex === 2 ?
-                'border-2 border-secondary text-black font-medium bg-secondary_light bg-opacity-30'
+                'border border-secondary text-black font-medium bg-secondary_light bg-opacity-10'
               : 'border border-gray'} cursor-pointer`}
               onClick={() => handleLiClick(2)}>
               위험성 평가
@@ -271,27 +271,27 @@ export default function InspectionPage() {
                 <div className="w-1/12 mr-1">
                   <div className="w-full h-full">
                     <div className="flex h-[595px]">
-                      <div className="w-1/4">
+                      <div className="w-2/5">
                         &nbsp;
                       </div>
-                      <div className="w-2/4 bg-primary">
+                      <div className="w-1/5 bg-gradient-to-b from-primary to-[#0f618c]">
                         &nbsp;
                       </div>
-                      <div className="w-1/4">
+                      <div className="w-2/5">
                         &nbsp;
                       </div>
                     </div>
                     <div className="w-full h-[50px] relative">
-                    <IoMdArrowDropdown className="w-48 h-[180px] absolute -bottom-14 -left-[50px] text-primary"/>
+                    <IoMdArrowDropdown className="w-24 h-[180px] absolute -bottom-10 -left-[2.5px] text-[#0f618c]"/>
                     </div>{/* 화살표 삼각형 */}  
                   </div>
                 </div>
-                <ul>
+                <ul className="w-11/12">
                   <li>
-                    <div className="w-full h-16 bg-primary text-white text-[20px] flex items-center pl-8">
+                    <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
                       01. 서류 평가
                     </div>
-                    <div className="border-x border-primary w-full p-6 flex">
+                    <div className="w-full p-6 flex">
                       <div className="w-1/2">
                         <strong className="text-[18px] font-medium">
                           <Image src={content_icon} className="w-5 inline-block" alt="텍스트 강조"/>
@@ -311,10 +311,10 @@ export default function InspectionPage() {
                     </div>
                   </li>
                   <li>
-                    <div className="w-full h-16 bg-primary text-white text-[20px] flex items-center pl-8">
+                    <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
                       02. 현장 평가
                     </div>
-                    <div className="border-x border-primary w-full p-6 flex">
+                    <div className="w-full p-6 flex">
                       <div className="w-1/2">
                         <strong className="text-[18px] font-medium">
                           <Image src={content_icon} className="w-5 inline-block" alt="텍스트 강조"/>
@@ -334,10 +334,10 @@ export default function InspectionPage() {
                     </div>
                   </li>
                   <li>
-                    <div className="w-full h-16 bg-primary text-white text-[20px] flex items-center pl-8">
+                    <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
                       03. 개선안 도출 및 보고서 작성
                     </div>
-                    <div className="border border-t-0 border-primary w-full p-6 flex">
+                    <div className="border-b border-primary w-full p-6 flex">
                       <div className="w-1/2">
                       <strong className="text-[18px] font-medium">
                         <Image src={content_icon} className="w-5 inline-block" alt="텍스트 강조"/>
@@ -408,19 +408,19 @@ export default function InspectionPage() {
               <div className="w-full flex">
                 <div className="w-1/12 mr-1">
                   <div className="w-full h-full">
-                    <div className="flex h-[560px]">
-                      <div className="w-1/4">
+                    <div className="flex h-[595px]">
+                      <div className="w-2/5">
                         &nbsp;
                       </div>
-                      <div className="w-2/4 bg-primary">
+                      <div className="w-1/5 bg-gradient-to-b from-primary to-[#0f618c] ">
                         &nbsp;
                       </div>
-                      <div className="w-1/4">
+                      <div className="w-2/5">
                         &nbsp;
                       </div>
                     </div>
                     <div className="w-full h-[50px] relative">
-                    <IoMdArrowDropdown className="w-48 h-[180px] absolute -bottom-14 -left-[50px] text-primary"/>
+                    <IoMdArrowDropdown className="w-24 h-[180px] absolute -bottom-10 -left-[2.5px] text-[#0f618c]"/>
                     </div>{/* 화살표 삼각형 */}  
                   </div>
                 </div>
@@ -429,9 +429,9 @@ export default function InspectionPage() {
                     <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8 ">
                       01. 사전준비
                     </div>
-                    <div className="border-x border-primary w-full p-6 flex">
+                    <div className="w-full p-6 flex">
                       <div className="w-1/2">
-                        <strong className="text-[18px] font-medium">
+                        <strong className="text-[18px] font-medium text-superdarkgray">
                           <Image src={content_icon} className="w-5 inline-block" alt="텍스트 강조"/>
                           컨설팅 범위 및 세부일정 협의
                         </strong>
@@ -448,7 +448,7 @@ export default function InspectionPage() {
                     <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
                       02. 서류검토
                     </div>
-                    <div className="border-x border-primary w-full p-6 flex">
+                    <div className="w-full p-6 flex">
                       <div className="w-1/2">
                         <strong className="text-[18px] font-medium">
                           <Image src={content_icon} className="w-5 inline-block" alt="텍스트 강조"/>
@@ -468,7 +468,7 @@ export default function InspectionPage() {
                     <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
                       03. 현장안전점검
                     </div>
-                    <div className="border border-t-0 border-primary w-full p-6 flex">
+                    <div className="border-primary w-full p-6 flex">
                       <div className="w-1/2">
                       <strong className="text-[18px] font-medium">
                         <Image src={content_icon} className="w-5 inline-block" alt="텍스트 강조"/>
@@ -483,7 +483,7 @@ export default function InspectionPage() {
                     <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
                       04. 보고서 작성·제출
                     </div>
-                    <div className="border border-t-0 border-primary w-full p-6 flex">
+                    <div className="border-b border-primary w-full p-6 flex">
                       <div className="w-1/2">
                       <strong className="text-[18px] font-medium">
                         <Image src={content_icon} className="w-5 inline-block" alt="텍스트 강조"/>

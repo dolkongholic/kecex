@@ -8,6 +8,7 @@ import ContentTitle from "@/components/content/title";
 import ContentSubTitle from "@/components/content/subtitle";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
 import content_icon from "public/img/icon/content_icon_circle.png"
@@ -105,7 +106,7 @@ export default function Course01Page() {
             <li
               className={`w-1/4 h-14 flex justify-between items-center pl-5 
               ${selectedLiIndex === 0 ?
-                'border-2 border-secondary text-black font-medium bg-secondary_light bg-opacity-30'
+                'border border-secondary text-black font-medium bg-secondary_light bg-opacity-10'
               : 'border border-gray  border-b-0 border-r-0'} cursor-pointer`}
               onClick={() => handleLiClick(0)}>
               IECEx 000
@@ -114,7 +115,7 @@ export default function Course01Page() {
             <li
               className={`w-1/4 h-14 flex justify-between items-center pl-5 
               ${selectedLiIndex === 1 ?
-                'border-2 border-secondary text-black font-medium bg-secondary_light bg-opacity-30'
+                'border border-secondary text-black font-medium bg-secondary_light bg-opacity-10'
               : 'border border-gray  border-b-0 border-r-0 '} cursor-pointer`}
               onClick={() => handleLiClick(1)}>
               IECEx 001
@@ -123,7 +124,7 @@ export default function Course01Page() {
             <li
               className={`w-1/4 h-14 flex justify-between items-center pl-5
               ${selectedLiIndex === 2 ?
-                'border-2 border-secondary text-black font-medium bg-secondary_light bg-opacity-30'
+                'border border-secondary text-black font-medium bg-secondary_light bg-opacity-10'
               : 'border border-gray  border-b-0 border-r-0 '} cursor-pointer`}
               onClick={() => handleLiClick(2)}>
               IECEx 002
@@ -132,7 +133,7 @@ export default function Course01Page() {
             <li
               className={`w-1/4 h-14 flex justify-between items-center pl-5
               ${selectedLiIndex === 3 ?
-                'border-2 border-secondary text-black font-medium bg-secondary_light bg-opacity-30'
+                'border border-secondary text-black font-medium bg-secondary_light bg-opacity-10'
               : 'border border-gray  border-b-0'} cursor-pointer`}
               onClick={() => handleLiClick(3)}>
               IECEx 009
@@ -141,7 +142,7 @@ export default function Course01Page() {
             <li
               className={`w-1/4 h-14 flex justify-between items-center pl-5
               ${selectedLiIndex === 4 ?
-                'border-2 border-secondary text-black font-medium bg-secondary_light bg-opacity-30'
+                'border border-secondary text-black font-medium bg-secondary_light bg-opacity-10'
               : 'border border-gray  border-b-0 border-r-0 '} cursor-pointer`}
               onClick={() => handleLiClick(4)}>
               IECEx 003/006
@@ -150,7 +151,7 @@ export default function Course01Page() {
             <li
               className={`w-1/4 h-14 flex justify-between items-center pl-5
               ${selectedLiIndex === 5 ?
-                'border-2 border-secondary text-black font-medium bg-secondary_light bg-opacity-30'
+                'border border-secondary text-black font-medium bg-secondary_light bg-opacity-10'
               : 'border border-gray border-r-0 '} cursor-pointer`}
               onClick={() => handleLiClick(5)}>
               IECEx 004/007/008
@@ -159,7 +160,7 @@ export default function Course01Page() {
             <li
               className={`w-1/4 h-14 flex justify-between items-center pl-5
               ${selectedLiIndex === 6 ?
-                'border-2 border-secondary text-black font-medium bg-secondary_light bg-opacity-30'
+                'border border-secondary text-black font-medium bg-secondary_light bg-opacity-10'
               : 'border border-gray border-r-0 '} cursor-pointer`}
               onClick={() => handleLiClick(6)}>
               IECEx 005
@@ -168,7 +169,7 @@ export default function Course01Page() {
             <li
               className={`w-1/4 h-14 flex justify-between items-center pl-5
               ${selectedLiIndex === 7 ?
-                'border-2 border-secondary text-black font-medium bg-secondary_light bg-opacity-30'
+                'border border-secondary text-black font-medium bg-secondary_light bg-opacity-10'
               : 'border border-gray'} cursor-pointer`}
               onClick={() => handleLiClick(7)}>
               IECEx 002/009
@@ -177,7 +178,7 @@ export default function Course01Page() {
             <li
               className={`w-1/4 h-14 flex justify-between items-center pl-5
               ${selectedLiIndex === 8 ?
-                'border-2 border-secondary text-black font-medium bg-secondary_light bg-opacity-30'
+                'border border-secondary text-black font-medium bg-secondary_light bg-opacity-10'
               : 'border border-gray '} cursor-pointer`}
               onClick={() => handleLiClick(8)}>
               IECEx 002/008/009/010
@@ -186,7 +187,7 @@ export default function Course01Page() {
           </ul>
           <ul className="w-full mt-10">
             <li className={`${selectedLiIndex === 0 ? 'block' : 'hidden'}`}>{/*첫번째 li */}
-              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-black font-medium mb-7">
+              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-superdarkgray font-medium mb-7">
                 IECEx CoPC 000  Ex Awareness
               </div>
               <ContentSubTitle title="교육 개요" />
@@ -229,7 +230,7 @@ export default function Course01Page() {
               </div>
             </li>
             <li className={`${selectedLiIndex === 1 ? 'block' : 'hidden'}`}>{/*두번째 li */}
-              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-black font-medium mb-7">
+              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-superdarkgray font-medium mb-7">
                 IECEx CoPC 001 Ex Foundation
               </div>
               <ContentSubTitle title="교육 개요" />
@@ -245,7 +246,7 @@ export default function Course01Page() {
               <div className="w-full h-[150px] border border-gray flex flex-col justify-center px-5 leading-8 mb-7">
                 <p className="leading-6">· 방폭분야에서의 개인의 역량을 입증하고 실제 현장 작업에 투입되기 위한 자격을 심사하는
                   국제 방폭 전문인력 자격인증 과정으로서 폭발 환경 내에서의 가장 기본이 &nbsp;&nbsp; 되는 방폭 이론을 교육</p>
-                <p>· <b>IECEx CoPC Unit Ex 001</b> 위험 지역에서의 방폭 기본 원리</p>
+                <p>· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 001</b> 위험 지역에서의 방폭 기본 원리</p>
                     <p className="leading-3">&nbsp;&nbsp;&nbsp;(Apply basic principles of protection in explosive atmosphere)</p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -258,7 +259,7 @@ export default function Course01Page() {
                 <p>· 75점 이상 합격</p>
               </div>
               <ContentSubTitle title="교육 프로그램"/>
-              <div className="w-full h-68 border-t-2 border-superdarkgray flex flex-wrap">
+              <div className="w-full border-t-2 border-superdarkgray flex flex-wrap">
                 <div className="w-1/6 h-56 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   1일차
                 </div>
@@ -279,7 +280,7 @@ export default function Course01Page() {
               </div>
             </li>
             <li className={`${selectedLiIndex === 2 ? 'block' : 'hidden'}`}>{/*세번째 li */}
-              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-black font-medium mb-7">
+              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-superdarkgray font-medium mb-7">
                 IECEx CoPC 002 Ex Classification of Hazardous Area
               </div>
               <ContentSubTitle title="교육 개요" />
@@ -294,7 +295,7 @@ export default function Course01Page() {
               <ContentSubTitle title="교육 내용" />
               <div className="w-full h-[120px] border border-gray flex flex-col justify-center px-5 leading-8 mb-7">
                 <p className="leading-6">· 방폭 구역에서 전기설비의 안전한 작업을 위한 기본적인 지식과 방폭 구역 정의, 검사에 대한 교육</p>
-                <p>· <b>IECEx CoPC Unit Ex 002</b> 위험지역 구분</p>
+                <p>· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 002</b> 위험지역 구분</p>
                 <p className="leading-3">&nbsp;&nbsp;&nbsp;(Perform classification of hazardous areas)</p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -307,18 +308,18 @@ export default function Course01Page() {
                 <p>· 이론 평가는 객관식과 주관식으로 이루어지며 오픈 북 (Open Book) 시험으로 키워드 (Keyword) 미작성 시 감점 요인이 됨</p>
                 <p>· 75점 이상 합격</p>
               </div>
-              <ContentSubTitle title="교육 프로그램"/>
-              <div className="w-full h-68 border-t-2 border-superdarkgray flex flex-wrap">
+              <ContentSubTitle title="교육 세부일정"/>
+              <div className="w-full border-t-2 border-superdarkgray flex flex-wrap">
                 <div className="w-1/6 h-56 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   1일차
                 </div>
                 <div className="w-5/6 h-56 border-b border-l border-gray flex flex-col justify-center pl-5 leading-8">
                   <p>· 방폭 이론 (기본/심화)</p>
-                  <p>- 정의, 방폭기술, 방폭규정 등</p>
-                  <p>· IEC Standards 및 국내 관련 법안</p>
+                  <p className="leading-5 pl-3">- 정의, 방폭기술, 방폭규정 등</p>
+                  <p className="mt-1">· IEC Standards 및 국내 관련 법안</p>
                   <p>· 위험 지역 구분 이론/실습 (Hazardous Area Classification)</p>
-                  <p>- Zone Classification</p>
-                  <p>· 위험지역 구분 평가 (IECEx CoPC 유형)</p>
+                  <p className="leading-5 pl-3">- Zone Classification</p>
+                  <p className="mt-1">· 위험지역 구분 평가 (IECEx CoPC 유형)</p>
                 </div>
                 <div className="w-1/6 flex h-16 justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   2일차
@@ -329,7 +330,7 @@ export default function Course01Page() {
               </div>
             </li>
             <li className={`${selectedLiIndex === 3 ? 'block' : 'hidden'}`}>{/*네번째 li */}
-              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-black font-medium mb-7">
+              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-superdarkgray font-medium mb-7">
                 IECEx CoPC 009 Ex Design Electrical Installations
               </div>
               <ContentSubTitle title="교육 개요" />
@@ -344,7 +345,7 @@ export default function Course01Page() {
               <ContentSubTitle title="교육 내용" />
               <div className="w-full h-[120px] border border-gray flex flex-col justify-center px-5 leading-8 mb-7">
                 <p className="leading-6">· 방폭구역에서 전기설비의 설계를 하기 위해 필요한 기본적인 지식과 실습에 대한 교육</p>
-                <p>· <b>IECEx CoPC Unit Ex 009</b> 위험 지역 내 혹은 연관 구역에서의 전기설비 설계</p>
+                <p>· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 009</b> 위험 지역 내 혹은 연관 구역에서의 전기설비 설계</p>
                     <p className="leading-3">&nbsp;&nbsp;&nbsp;(Design electrical installations in or associated with explosive atmospheres)</p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -357,8 +358,8 @@ export default function Course01Page() {
                 <p>· 이론 평가는 객관식과 주관식으로 이루어지며 오픈 북 (Open Book) 시험으로 키워드 (Keyword) 미작성 시 감점 요인이 됨</p>
                 <p>· 75점 이상 합격</p>
               </div>
-              <ContentSubTitle title="교육 프로그램"/>
-              <div className="w-full h-72 border-t-2 border-superdarkgray flex flex-wrap">
+              <ContentSubTitle title="교육 세부일정"/>
+              <div className="w-full border-t-2 border-superdarkgray flex flex-wrap">
                 <div className="w-1/6 h-60 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   1일차
                 </div>
@@ -380,7 +381,7 @@ export default function Course01Page() {
               </div>
             </li>
             <li className={`${selectedLiIndex === 4 ? 'block' : 'hidden'}`}>{/*다섯번째 li */}
-              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-black font-medium mb-7">
+              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-superdarkgray font-medium mb-7">
                 IECEx CoPC 003,006 Ex Technician
               </div>
               <ContentSubTitle title="교육 개요" />
@@ -395,9 +396,9 @@ export default function Course01Page() {
               <ContentSubTitle title="교육 내용" />
               <div className="w-full h-[170px] border border-gray flex flex-col justify-center px-5 leading-8 mb-7">
                 <p className="leading-6">· 방폭 구역에서의 전기설비 설치와 테스트를 하기 위해 필요한 기본적인 지식과 실습에 대한 교육</p>
-                <p>· <b>IECEx CoPC Unit Ex 003</b> 방폭 장비 및 배선 시스템 설치</p>
+                <p>· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 003</b> 방폭 장비 및 배선 시스템 설치</p>
                 <p className="leading-3">&nbsp;&nbsp;&nbsp;(Install explosion-protected equipment and wiring systems)</p>
-                <p className="mt-2">· <b>IECEx CoPC Unit Ex 006</b> 위험 지역 내 혹은 연관 구역에서의 전기 설비 테스트</p>
+                <p className="mt-2">· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 006</b> 위험 지역 내 혹은 연관 구역에서의 전기 설비 테스트</p>
                 <p className="leading-3">&nbsp;&nbsp;&nbsp;(Test electrical installations in or associated with explosive atmospheres)</p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -410,7 +411,7 @@ export default function Course01Page() {
                 <p>· 이론 평가는 객관식과 주관식으로 이루어지며 오픈 북 (Open Book) 시험으로 키워드 (Keyword) 미작성 시 감점 요인이 됨</p>
                 <p>· 75점 이상 합격</p>
               </div>
-              <ContentSubTitle title="교육 프로그램"/>
+              <ContentSubTitle title="교육 세부일정"/>
               <div className="w-full border-t-2 border-superdarkgray flex flex-wrap">
                 <div className="w-1/6 h-40 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   1일차
@@ -438,7 +439,7 @@ export default function Course01Page() {
               </div>
             </li>
             <li className={`${selectedLiIndex === 5 ? 'block' : 'hidden'}`}>{/*여섯번째 li */}
-              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-black font-medium mb-7">
+              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-superdarkgray font-medium mb-7">
                 IECEx CoPC 004,007,008 Ex Inspector
               </div>
               <ContentSubTitle title="교육 개요" />
@@ -453,11 +454,11 @@ export default function Course01Page() {
               <ContentSubTitle title="교육 내용" />
               <div className="w-full h-[220px] border border-gray flex flex-col justify-center px-5 leading-8 mb-7">
                 <p className="leading-6">· 방폭 구역에서 전기 설비의 검사와 유지보수를 하기 위해 필요한 지식과 실습에 대한 교육</p>
-                <p>· <b>IECEx CoPC Unit Ex 004</b> 위험 지역에서의 장비 유지 보수</p>
+                <p>· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 004</b> 위험 지역에서의 장비 유지 보수</p>
                 <p className="leading-3">&nbsp;&nbsp;&nbsp;(Maintain equipment in explosive atmospheres)</p>
-                <p className="mt-2">· <b>IECEx CoPC Unit Ex 007</b> 위험 지역 내 혹은 연관 구역에서의 육안 검사 및 정밀 검사</p>
+                <p className="mt-2">· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 007</b> 위험 지역 내 혹은 연관 구역에서의 육안 검사 및 정밀 검사</p>
                 <p className="leading-3">&nbsp;&nbsp;&nbsp;(Perform visual and close inspection of electrical installations in or associated with explosive atmospheres)</p>
-                <p className="mt-2">· <b>IECEx CoPC Unit Ex 008</b> 위험 지역 내 혹은 연관 구역에서의 세부 검사</p>
+                <p className="mt-2">· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 008</b> 위험 지역 내 혹은 연관 구역에서의 세부 검사</p>
                 <p className="leading-3">&nbsp;&nbsp;&nbsp;(Perform detailed inspection of electrical installations in or associated with explosive atmospheres)</p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -492,7 +493,7 @@ export default function Course01Page() {
               </div>
             </li>
             <li className={`${selectedLiIndex === 6 ? 'block' : 'hidden'}`}>{/*일곱번째 li */}
-              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-black font-medium mb-7">
+              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-superdarkgray font-medium mb-7">
                 IECEx CoPC 005 Ex Overhaul and Repair
               </div>
               <ContentSubTitle title="교육 개요" />
@@ -507,7 +508,7 @@ export default function Course01Page() {
               <ContentSubTitle title="교육 내용" />
               <div className="w-full h-[120px] border border-gray flex flex-col justify-center px-5 leading-8 mb-7">
                 <p className="leading-6">· 방폭 구역 내에서 방폭 장비의 수리, 보수, 재생을 수행하는 방폭 전문 인력 양성에 대한 교육</p>
-                <p>· <b>IECEx CoPC Unit Ex 005</b> 방폭 장비 점검 및 수리</p>
+                <p>· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 005</b> 방폭 장비 점검 및 수리</p>
                 <p className="leading-3">&nbsp;&nbsp;&nbsp;(Overhaul and repair of explosion-protected equipment)</p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -564,7 +565,7 @@ export default function Course01Page() {
               </div>
             </li>
             <li className={`${selectedLiIndex === 7 ? 'block' : 'hidden'}`}>{/*여덟번째 li */}
-              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-black font-medium mb-7">
+              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-superdarkgray font-medium mb-7">
                 IECEx CoPC 002,009 Ex Classification of Hazardous Area / Design
               </div>
               <ContentSubTitle title="교육 개요" />
@@ -579,9 +580,9 @@ export default function Course01Page() {
               <ContentSubTitle title="교육 내용" />
               <div className="w-full h-[170px] border border-gray flex flex-col justify-center px-5 leading-8 mb-7">
                 <p className="leading-6">· 폭발위험지역 내 방폭전기기기 점검 및 유지보수 전문 인력 양성 및 방폭 개념 확립에 대한 교육</p>
-                <p className="mt-2">· <b>IECEx CoPC Unit Ex 002</b> 위험지역 구분</p>
+                <p className="mt-2">· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 002</b> 위험지역 구분</p>
                 <p className="leading-3">&nbsp;&nbsp;&nbsp;(Perform classification of hazardous areas)</p>
-                <p className="mt-2">· <b>IECEx CoPC Unit Ex 009</b> 위험 지역 내 혹은 연관 구역에서의 전기 설비 설계</p>
+                <p className="mt-2">· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 009</b> 위험 지역 내 혹은 연관 구역에서의 전기 설비 설계</p>
                 <p className="leading-3">&nbsp;&nbsp;&nbsp;(Design electrical installation in or associated with explosive atmospheres)</p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -626,7 +627,7 @@ export default function Course01Page() {
               </div>
             </li>
             <li className={`${selectedLiIndex === 8 ? 'block' : 'hidden'}`}>{/*아홉번째 li */}
-              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-black font-medium mb-7">
+              <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-superdarkgray font-medium mb-7">
                 IECEx CoPC 002,008,009,010 Ex Supervisor
               </div>
               <ContentSubTitle title="교육 개요" />
@@ -641,13 +642,13 @@ export default function Course01Page() {
               <ContentSubTitle title="교육 내용" />
               <div className="w-full h-[280px] border border-gray flex flex-col justify-center px-5 leading-8 mb-7">
                 <p className="leading-6">· 폭발위험지역 내 방폭전기기기 점검 및 유지보수 전문 인력 양성 및 방폭 개념 확립에 대한 교육</p>
-                <p>· <b>IECEx CoPC Unit Ex 002</b> 위험지역 구분</p>
+                <p>· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 002</b> 위험지역 구분</p>
                 <p className="leading-3">&nbsp;&nbsp;&nbsp;(Perform classification of hazardous areas)</p>
-                <p className="mt-2">· <b>IECEx CoPC Unit Ex 008</b> 위험 지역 내 혹은 연관 구역에서의 세부 검사</p>
+                <p className="mt-2">· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 008</b> 위험 지역 내 혹은 연관 구역에서의 세부 검사</p>
                 <p className="leading-3">&nbsp;&nbsp;&nbsp;(Perform detailed inspection of electrical installations in or associated with explosive atmospheres)</p>
-                <p className="mt-2">· <b>IECEx CoPC Unit Ex 009</b> 위험 지역 내 혹은 연관 구역에서의 전기 설비 설계</p>
+                <p className="mt-2">· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 009</b> 위험 지역 내 혹은 연관 구역에서의 전기 설비 설계</p>
                 <p className="leading-3">&nbsp;&nbsp;&nbsp;(Design electrical installation in or associated with explosive atmospheres)</p>
-                <p className="mt-2">· <b>IECEx CoPC Unit Ex 010</b> 위험 지역 내 혹은 연관 구역에서의 전기 설비 감사 수행</p>
+                <p className="mt-2">· <b className="font-medium text-superdarkgray">IECEx CoPC Unit Ex 010</b> 위험 지역 내 혹은 연관 구역에서의 전기 설비 감사 수행</p>
                 <p className="leading-3">&nbsp;&nbsp;&nbsp;(Perform audit inspection of electrical installations in or associated with explosive atmospheres)</p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -703,8 +704,12 @@ export default function Course01Page() {
                 </div>
               </div>
             </li>
-
           </ul>
+          <button className="w-44 h-14 bg-secondary text-white m-auto mt-10">
+            <Link passHref href={"/education/apply/apply"}>
+              온라인 신청 바로가기
+            </Link>
+          </button>
         </section>
       </main>
       <Footer />

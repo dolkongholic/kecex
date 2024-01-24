@@ -10,7 +10,8 @@ import ContentSubTitle from "@/components/content/subtitle";
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
-import download_icon from "public/img/icon/아이콘 7.png";
+import download_icon from "public/img/icon/download_icon.png";
+import download_icon_white from "public/img/icon/download_icon_white.png";
 
 // Image
 
@@ -110,17 +111,14 @@ export default function QnaPage() {
 
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
-          <div className="text-black w-full flex flex-col justify-between item-center">
-            <figure className="flex h-48 mb-5">
-              <div className="w-2/3 pr-5">
+          <div className="text-black w-full flex flex-col justify-center item-center">
+              <div className="w-2/3 h-24 border border-secondary rounded-lg flex justify-center items-center px-10 m-auto my-10">
                 <p className="text-[14px]">
                   회원의 권익보호와 회원 상호간의 기술·정보 교류의 장을
                   마련하고, 최신 안전기술정보 제공 및 상담 등 다양한 활동을 통해
                   회원의 직무능력 향상에 기여하고 있습니다.
                 </p>
               </div>
-              <div className="w-1/3 bg-secondary">그림 영역</div>
-            </figure>
 
             <ContentSubTitle title="가입대상" />
             <ul className="border border-[#ccc] w-full h-36 flex mb-9">
@@ -292,7 +290,7 @@ export default function QnaPage() {
             <div className="btn_box flex m-auto mt-20">
               <button className="w-44 h-14 bg-secondary text-white flex justify-center items-center">
                 입회원서 다운로드{" "}
-                <Image src={download_icon} className="w-4 h-4 ml-2" alt="img" />{" "}
+                <Image src={download_icon_white} className="w-4 h-4 ml-2 text-white" alt="img" />{" "}
               </button>
               <button className="w-44 h-14 border border-gray text-superdarkgray flex justify-center items-center ml-4">
                 회원서비스 안내{" "}
