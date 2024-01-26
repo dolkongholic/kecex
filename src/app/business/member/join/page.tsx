@@ -285,7 +285,7 @@ export default function CareerPage() {
             </div>
             <div className="flex justify-center items-center w-[48%] bg-gray text-center">
               <div className="w-[50%] h-[100px] py-[30px] flex justify-center items-start border-r">
-                회비남부 및 가입완료
+                회비납부 및 가입완료
               </div>
               <div className="w-[50%] h-[100px] py-[30px] flex justify-center items-start">
                 &nbsp;
@@ -301,12 +301,14 @@ export default function CareerPage() {
           </span>
 
           <ContentSubTitle title="정회원 권한" />
-          <span className="px-[20px]">· 협회의 운영과 발전에 대한 건의</span>
+          <span className="px-[20px]">
+            · 협회의 운영과 발전에 대한 건의
+          </span>
           <span className="px-[20px]">
             · 협회가 시행하는 각종 방폭관련 사업에 참여
           </span>
           <span className="px-[20px]">
-            · 본회의 인적 및 물적 설비를 이요할 권리
+            · 본회의 인적 및 물적 설비를 이용할 권리
           </span>
           <span className="px-[20px]">
             · 협회가 주관하는 각종 세미나 및 교육 등의 우선 참여

@@ -30,12 +30,19 @@ const MainList = [
     sub: null,
   },
   {
+    title: "정회원 가입",
+    url: "/mypage/regular",
+    sub: null,
+  },
+  {
+    title: "회비 납부",
+    url: "/mypage/payment",
+    sub: null,
+  },
+  {
     title: "회원증 출력",
-    url: "#",
-    sub: [
-      { title: "회원증 출력", url: "/mypage/print/certificate" },
-      { title: "정회원 가입", url: "/mypage/print/regular" },
-    ],
+    url: "/mypage/print",
+    sub: null,
   },
   {
     title: "1:1문의 현황",

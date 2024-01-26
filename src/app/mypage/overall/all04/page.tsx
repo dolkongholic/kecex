@@ -29,11 +29,19 @@ const MainList = [
     sub: null,
   },
   {
+    title: "정회원 가입",
+    url: "/mypage/regular",
+    sub: null,
+  },
+  {
+    title: "회비 납부",
+    url: "/mypage/payment",
+    sub: null,
+  },
+  {
     title: "회원증 출력",
-    url: "#",
-    sub: [
-      { title: "회원증 출력", url: "/mypage/print/certificate" },
-      { title: "정회원 가입", url: "/mypage/print/regular" }],
+    url: "/mypage/print",
+    sub: null,
   },
   {
     title: "1:1문의 현황",
@@ -93,7 +101,7 @@ export default function QnaPage() {
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
-                <SubNavHeader title={"알림센터"} />
+                <SubNavHeader title={"마이페이지"} />
                 <div className="flex flex-col w-full">
                   <SubNav
                     MainList={MainList}
