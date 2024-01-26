@@ -102,7 +102,7 @@ export default function QnaPage() {
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
-                <SubNavHeader title={"알림센터"} />
+                <SubNavHeader title={"마이페이지"} />
                 <div className="flex flex-col w-full">
                   <SubNav
                     MainList={MainList}
