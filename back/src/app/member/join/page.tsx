@@ -7,7 +7,7 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { FaCheckCircle } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
-import Button from "@/app/components/Button";
+import Button from "@/components/Button";
 import Input from "@/app/components/inputs/Input";
 
 function Join() {

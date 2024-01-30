@@ -56,7 +56,7 @@ function Join() {
       if (request) {
         toast.success("입력 성공");
         setIsLoading(false);
-        router.refresh();
+        router.push("/");
       }
     } catch (error: any) {
       setIsLoading(false);
@@ -75,8 +75,8 @@ function Join() {
         <h3 className="text-[24px] font-semibold mt-12 mb-8">약관동의</h3>
         <p>회원가입 전 약관을 확인해주세요.</p>
         <ul className="w-full flex px-52 h-12 bg-lightgray items-center justify-between mt-12 text-darkgray">
-          <li className="text-secondary">약관동의</li>
-          <li className="text-secondary">
+          <li className="text-blue-500">약관동의</li>
+          <li className="text-blue-500">
             <IoIosArrowForward />
           </li>
           <li>회원정보 입력</li>
@@ -160,7 +160,7 @@ function Join() {
           </ul>
         </article>
         <div className="first_btn_box flex justify-center mt-10">
-          <button className="w-52 h-14 bg-secondary text-white mr-4">
+          <button className="w-52 h-14 bg-blue-500 text-white mr-4">
             동의
           </button>
           <button className="w-52 h-14 bg-lightgray">취소</button>
@@ -170,12 +170,12 @@ function Join() {
       <section className="w-full">
         <h3 className="text-[24px] font-semibold mt-12 mb-8">회원정보 입력</h3>
         <ul className="w-full flex px-52 h-12 bg-lightgray items-center justify-between mt-1 text-darkgray">
-          <li className="text-secondary">약관동의</li>
-          <li className="text-secondary">
+          <li className="text-blue-500">약관동의</li>
+          <li className="text-blue-500">
             <IoIosArrowForward />
           </li>
-          <li className="text-secondary">회원정보 입력</li>
-          <li className="text-secondary">
+          <li className="text-blue-500">회원정보 입력</li>
+          <li className="text-blue-500">
             <IoIosArrowForward />
           </li>
           <li>가입완료</li>
@@ -201,6 +201,20 @@ function Join() {
                 id="password"
                 label="비밀번호"
                 type="password"
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+              />
+            </div>
+          </div>
+
+          <div className="mt-4">
+            <div className="mt-1">
+              <Input
+                id="email"
+                label="Email"
+                type="email"
                 disabled={isLoading}
                 register={register}
                 errors={errors}

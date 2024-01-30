@@ -6,12 +6,12 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 import useInsertMainBanner from "@/app/hooks/useInsertMainBanner";
 
-import Heading from "../Heading";
-import Input from "../inputs/Input";
+import Modal from "@/components/modal/Modal";
+import Heading from "@/components/Heading";
+import Input from "@/components/inputs/Input";
 
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import Modal from "@/components/modal/Modal";
 
 const InsertMainBanner = () => {
   const router = useRouter();

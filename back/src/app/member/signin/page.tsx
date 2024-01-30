@@ -9,7 +9,7 @@ import { RiArrowRightSLine } from "react-icons/ri";
 
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
-import Button from "@/app/components/Button";
+import Button from "@/components/Button";
 import Input from "@/app/components/inputs/Input";
 
 import Link from "next/link";

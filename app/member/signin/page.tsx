@@ -10,7 +10,7 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 import Button from "@/components/Button";
-import Input from "@/app/components/inputs/Input";
+import Input from "@/components/inputs/Input";
 
 import Link from "next/link";
 
@@ -58,7 +58,7 @@ function Login() {
           height={50}
         />
       </Link>
-      <div className="border border-gray px-[30px] py-[50px] w-[500px]">
+      <div className="border border-gray px-[30px] py-[50px] w-[550px]">
         <div>
           <div className="mt-1">
             <Input
@@ -92,7 +92,7 @@ function Login() {
         <div className="mt-6 flex gap-[10px]">
           <button
             onClick={handleSubmit(onSubmit)}
-            className="w-full bg-secondary text-white cursor-pointer py-[10px]"
+            className="w-full bg-blue-500 text-white cursor-pointer py-[10px]"
           >
             로그인
           </button>
