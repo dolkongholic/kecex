@@ -8,7 +8,7 @@ import { FaCheckCircle } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import Button from "@/components/Button";
-import Input from "@/app/components/inputs/Input";
+import Input from "@/components/inputs/Input";
 
 function Join() {
   const router = useRouter();
@@ -159,12 +159,12 @@ function Join() {
             )}
           </ul>
         </article>
-        <div className="first_btn_box flex justify-center mt-10">
+        {/* <div className="first_btn_box flex justify-center mt-10">
           <button className="w-52 h-14 bg-blue-500 text-white mr-4">
             동의
           </button>
           <button className="w-52 h-14 bg-lightgray">취소</button>
-        </div>
+        </div> */}
       </section>{" "}
       {/*약관동의 섹션*/}
       <section className="w-full">

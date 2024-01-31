@@ -9,7 +9,6 @@ import { RiArrowRightSLine } from "react-icons/ri";
 
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
-import Button from "@/components/Button";
 import Input from "@/components/inputs/Input";
 
 import Link from "next/link";
@@ -96,8 +95,8 @@ function Login() {
           >
             로그인
           </button>
-          <Link passHref href="./join" className="w-full">
-            <button className="w-full bg-gray text-black cursor-pointer py-[10px]">
+          <Link passHref href="/member/join" className="w-full">
+            <button className="w-full bg-gray-100 text-black cursor-pointer py-[10px]">
               회원가입
             </button>
           </Link>

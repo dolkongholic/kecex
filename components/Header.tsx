@@ -12,6 +12,7 @@ import { IoMdClose } from "react-icons/io";
 import PicSlogan from "public/img/slogan/slogan_1.png";
 import PicShotLogo from "public/img/logo/logo_big_icon__1.png";
 import PicLogo from "public/img/logo/logo_default_2.png";
+import { SafeUser } from "@/types";
 
 const snsList = ["youtube", "facebook", "twiiter", "kakao", "blog", "instgram"];
 
@@ -47,8 +48,8 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
   const [isPopupOpen, setPopupOpen] = useState<boolean>(false);
   const [activePopup, setActivePopup] = useState<string>("");
 
-  const [menu, setMenu] = useState<string>(null);
-  const [subMenu, setSubMenu] = useState<string>(null);
+  const [menu, setMenu] = useState<string>("");
+  const [subMenu, setSubMenu] = useState<string>("");
 
   const openModal = () => {
     setPopupOpen(true);
@@ -66,7 +67,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
       <section className="flex flex-col">
         <div
           className="w-full h-[80px] flex justify-center item-center border-b border-[#dcdcdc] bg-white z-[80]"
-          onMouseOver={() => setMenu(null)}
+          onMouseOver={() => setMenu("")}
         >
           <div className="w-[1400px] flex justify-between item-center space-x-[20px]">
             <div className="w-[250px] flex justify-start items-center">
@@ -140,7 +141,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           <div className="w-[1400px] flex justify-between items-center">
             <div
               className="w-[250px] justify-between items-center"
-              onMouseOver={() => setMenu(null)}
+              onMouseOver={() => setMenu("")}
             >
               <Link passHref href={"/"}>
                 <Image src={PicLogo} alt="Logo" width={250} height={85} />
@@ -178,8 +179,8 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               ? "opacity-0 -translate-y-[50px] pointer-events-none"
               : "opacity-100 translate-y-0 pointer-events-auto"
           } transition-all duration-300 flex justify-center items-start`}
-          onMouseLeave={() => setMenu(null)}
-          onClick={() => setMenu(null)}
+          onMouseLeave={() => setMenu("")}
+          onClick={() => setMenu("")}
         >
           {menu == "협회소개" && (
             <div
