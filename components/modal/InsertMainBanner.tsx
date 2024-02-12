@@ -8,10 +8,10 @@ import useInsertMainBanner from "@/app/hooks/useInsertMainBanner";
 
 import Modal from "@/components/modal/Modal";
 import Heading from "@/components/Heading";
-import Input from "@/components/inputs/Input";
 
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import ImageUpload from "../inputs/ImageUpload";
 
 const InsertMainBanner = () => {
   const router = useRouter();
@@ -19,12 +19,21 @@ const InsertMainBanner = () => {
   const { banner } = useInsertMainBanner();
   const [isLoading, setIsLoading] = useState(false);
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FieldValues>();
+  const { handleSubmit, setValue, watch, reset } = useForm<FieldValues>({
+    defaultValues: {
+      imageSrc: "",
+    },
+  });
+
+  const imageSrc = watch("imageSrc");
+
+  const setCustomValue = (id: string, value: any) => {
+    setValue(id, value, {
+      shouldDirty: true,
+      shouldTouch: true,
+      shouldValidate: true,
+    });
+  };
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setIsLoading(true);
@@ -49,14 +58,9 @@ const InsertMainBanner = () => {
   const bodyContent = (
     <div className="flex flex-col gap-4">
       <Heading title="" subtitle="" />
-      <Input
-        id="banner"
-        label=""
-        type="file"
-        disabled={isLoading}
-        register={register}
-        errors={errors}
-        required
+      <ImageUpload
+        onChange={(value) => setCustomValue("imageSrc", value)}
+        value={imageSrc}
       />
     </div>
   );

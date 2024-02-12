@@ -4,11 +4,12 @@ import prisma from "@/app/libs/prisma";
 
 export async function POST(request: Request) {
   const body = await request.json();
-  const { data } = body;
+
+  const { imageSrc } = body.data;
 
   const result = await prisma.mainBanner.create({
     data: {
-      fileUrl: data.banner,
+      fileUrl: imageSrc,
     },
   });
 

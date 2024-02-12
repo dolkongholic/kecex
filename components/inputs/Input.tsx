@@ -14,6 +14,7 @@ interface InputProps {
   errors: FieldErrors;
   value?: string;
   step?: number;
+  small?: boolean;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -27,6 +28,7 @@ const Input: React.FC<InputProps> = ({
   errors,
   value,
   step,
+  small,
 }) => {
   return (
     <div className="w-full relative">
@@ -45,8 +47,6 @@ const Input: React.FC<InputProps> = ({
         className={`
             peer
             w-full
-            p-4
-            pt-6
             font-light
             bg-white
             border-2
@@ -57,6 +57,7 @@ const Input: React.FC<InputProps> = ({
             ${formatPrice ? "pl-9" : "pl-4"}
             ${errors[id] ? "border-primary" : "border-primary"}
             ${errors[id] ? "focus:border-primary" : "focus:border-primary"}
+            ${small ? "p-2 pt-4" : "p-4 pt-6"}
         `}
         value={value}
         step={step}
@@ -68,7 +69,7 @@ const Input: React.FC<InputProps> = ({
             duration-150
             transform
             -translate-y-3
-            top-5
+            
             z-10
             origin-[0]
             ${formatPrice ? "left-9" : "left-4"}
@@ -77,6 +78,7 @@ const Input: React.FC<InputProps> = ({
             peer-focus:scale-75
             peer-focus:-translate-y-4
             ${errors[id] ? "text-primary" : "text-superdarkgray"}
+            ${small ? "top-4" : "top-5"}
         `}
       >
         {label}

@@ -2,8 +2,8 @@
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { toast } from "react-hot-toast";
-import React, { useRef, useState } from "react";
-import { signIn } from "next-auth/react";
+import React, { useEffect, useRef, useState } from "react";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import { RiArrowRightSLine } from "react-icons/ri";
 
@@ -28,18 +28,29 @@ function Login() {
     formState: { errors },
   } = useForm<FieldValues>();
 
+  const { data: session } = useSession();
+
+  useEffect(() => {
+    // 사용자가 로그인되어 있으면 메인 페이지로 이동
+    console.log(session);
+    if (session) {
+      router.push("/");
+    }
+  }, [session, router]);
+
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
     setIsLoading(true);
 
     signIn("credentials", {
       ...data,
       redirect: false,
-    }).then((callback) => {
+    }).then((callback: any) => {
       setIsLoading(false);
 
       if (callback?.ok) {
-        toast.success("로그인 성공");
-        router.push("/");
+        // toast.success("로그인 성공");
+        router.refresh();
+        // router.push("/");
       }
 
       if (callback?.error) {

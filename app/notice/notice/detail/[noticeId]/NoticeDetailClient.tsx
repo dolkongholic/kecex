@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useEffect } from "react";
 import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
@@ -10,7 +11,8 @@ import {
   RiArrowRightSLine,
   RiArrowUpSLine,
 } from "react-icons/ri";
-import { GrDownload } from "react-icons/gr";
+import getCurrentNotice from "@/app/action/getCurrentNotice";
+import axios from "axios";
 
 const MainList = [
   {
@@ -37,9 +39,27 @@ const MainList = [
 
 const location = "공지사항";
 
-const NoticeDetailClient = () => {
-  const [pageMenu, setPageMenu] = useState<any>("공지사항");
+interface NoticeClientProps {
+  currentNotice: any;
+}
 
+const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice }) => {
+  const [pageMenu, setPageMenu] = useState<any>("공지사항");
+  const [preNotice, setPreNotice] = useState<any>(null);
+
+  useEffect(() => {
+    const fetchPreNotice = async () => {
+      try {
+        const response = await axios.post("/api/notice", currentNotice.id - 1);
+        setPreNotice(response); // 예상되는 데이터 형식에 따라 수정
+        console.log(preNotice);
+      } catch (error) {
+        console.error("Error fetching pre notice:", error);
+      }
+    };
+
+    fetchPreNotice();
+  }, [currentNotice, preNotice]);
   return (
     <section>
       <div id="headerNav">
@@ -83,34 +103,24 @@ const NoticeDetailClient = () => {
             &nbsp;
           </div>
           <div className="w-full pl-[20px] flex justify-start items-center h-[70px] bg-gray-100 border-t-2 border-gray-500">
-            방폭 협회 사이트 출범
+            {currentNotice?.title}
           </div>
           <div className="w-full flex justify-between item-center h-[50px] border-t-2 border-b-2 border-gray-100">
             <div className="flex justify-between items-center px-[20px]">
               <div>등록일</div>
-              <div>2023-10-10</div>
+              <div className="pl-4">{currentNotice?.date}</div>
             </div>
-            <div className="pr-[40px] flex justify-center items-center">
-              조회수 1234
-            </div>
+            <div className="pr-[40px] flex justify-center items-center"></div>
           </div>
           <div className="w-full mt-[30px] flex flex-col px-[20px]">
-            <p className="leading-[30px]">
-              한국방폭협회가 공식적으로 운영되고 있습니다.
-            </p>
-            <p className="leading-[30px]">
-              Design, Selection and Installation Code for Explosion Proof
-              Electrical Equipment
-            </p>
-            <p className="leading-[30px]">&nbsp;</p>
-            <p className="leading-[30px]">종목코드번호 : KGS CG102 201B</p>
-            <p className="leading-[30px]">&nbsp;</p>
-            <p className="leading-[30px]">&nbsp;</p>
-            <p className="leading-[30px]">출처 : 가스안전공사</p>
-            <p className="leading-[30px]">&nbsp;</p>
-            <p className="leading-[30px]">&nbsp;</p>
+            {currentNotice.content.split("\n").map((line: any, index: any) => (
+              <React.Fragment key={index}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
           </div>
-          <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray-100 border-b-2 border-b-gray-500">
+          {/* <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray-100 border-b-2 border-b-gray-500">
             <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
               첨부파일
             </div>
@@ -120,7 +130,7 @@ const NoticeDetailClient = () => {
                 다운로드 <GrDownload className="grIcon" />
               </button>
             </div>
-          </div>
+          </div> */}
           <Link passHref href={"./detail/"} className="w-full">
             <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
               <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">

@@ -44,12 +44,10 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ currentUser }) => {
-  const { data: session } = useSession();
   const [isPopupOpen, setPopupOpen] = useState<boolean>(false);
   const [activePopup, setActivePopup] = useState<string>("");
 
   const [menu, setMenu] = useState<string>("");
-  const [subMenu, setSubMenu] = useState<string>("");
 
   const openModal = () => {
     setPopupOpen(true);
@@ -71,9 +69,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         >
           <div className="w-[1400px] flex justify-between item-center space-x-[20px]">
             <div className="w-[250px] flex justify-start items-center">
-              <Link passHref href={"/"}>
+              {/* <Link passHref href={"/"}>
                 <Image src={PicSlogan} alt="슬로건" width={250} height={80} />
-              </Link>
+              </Link> */}
             </div>
             <div className="flex justify-center items-center">
               <div className="w-[120px] mr-[40px] flex item-center">
@@ -110,14 +108,22 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   )}
 
                   <li>|</li>
-                  <li onClick={() => signOut()} className="cursor-pointer">
+                  <li onClick={openModal} className="cursor-pointer">
                     사이트맵
                   </li>
-                  <li>|</li>
-                  <li className="flex items-center space-x-[5px]">
-                    <AiOutlineGlobal />{" "}
-                    <span className="cursor-pointer">ENG</span>
-                  </li>
+                  {currentUser != null && (
+                    <>
+                      <li>|</li>
+                      <li className="flex items-center space-x-[5px]">
+                        <span
+                          className="cursor-pointer"
+                          onClick={() => signOut()}
+                        >
+                          로그아웃
+                        </span>
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
               <ul className="w-1/2 flex justify-between">

@@ -9,8 +9,8 @@ datasource db {
 
 model User {
   id             String    @id @default(uuid()) @map("_id") @db.Char(36)
-  name           String   @unique
-  email          String   @unique
+  name           String    @unique
+  email          String    @unique
   hashedPassword String
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
@@ -41,4 +41,21 @@ model Account {
 model mainBanner {
   id      Int    @id @default(autoincrement())
   fileUrl String
+}
+
+model qna {
+  id      String @id @default(uuid()) @map("_id") @db.Char(36)
+  name    String
+  tel     String
+  email   String
+  title   String
+  content String @db.Text
+}
+
+model notice {
+  id      Int    @id @default(autoincrement())
+  title   String
+  content String  @db.Text
+  file    String
+  date    String
 }

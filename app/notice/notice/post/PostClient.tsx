@@ -8,6 +8,11 @@ import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { GrUpload } from "react-icons/gr";
 
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import toast from "react-hot-toast";
+
 const MainList = [
   {
     title: "인재정보",
@@ -43,10 +48,41 @@ const PostClient = () => {
     return `${year}-${month}-${day}`;
   });
 
-  const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCurrentDate(event.target.value);
+  const router = useRouter();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FieldValues>({
+    defaultValues: {},
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (event: any) => {
+    setSelectedFile(event.target.files[0]);
   };
 
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    setIsLoading(true);
+
+    axios
+      .post("/api/insert/notice/", data)
+      .then(() => {
+        toast.success("입력 되었습니다.");
+        router.push("/notice/notice");
+      })
+      .catch(() => {
+        toast.error("오류가 발생했습니다.");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
   return (
     <section>
       <div id="headerNav">
@@ -86,7 +122,7 @@ const PostClient = () => {
 
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title="공지사항 작성" center={true} />
-          <div className="w-full mt-[20px] leading-[50px]">&nbsp;</div>
+          <div className="w-full mt-[20px] leading-[10px]">&nbsp;</div>
 
           <div className="w-full px-[20px] flex justify-between items-center h-[70px]">
             <div className="flex items-center w-9/12">
@@ -94,26 +130,26 @@ const PostClient = () => {
                 type="text"
                 placeholder="제목을 입력해주세요"
                 className="w-full h-[40px] p-5 border border-gray"
+                {...register("text", { required: true })}
               />
             </div>
             <input
               type="date"
               value={currentDate}
-              onChange={handleDateChange}
               className="w-2/12 h-[40px] border border-gray px-3"
+              {...register("date", { required: true })}
             />
           </div>
           <div className="mx-[20px] w-[calc(100%-40px)] border-t border-secondary"></div>
           <div className="w-full my-[30px] flex flex-col px-[20px]">
             <textarea
-              name="post_text"
               id="post_text"
               cols={30}
               rows={15}
               className="border border-gray p-6 box-border"
-            >
-              글 내용을 입력해주세요.
-            </textarea>
+              placeholder="글 내용을 입력해주세요."
+              {...register("post_text", { required: true })}
+            ></textarea>
           </div>
           <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray border-b-2 border-b-darkgray">
             <div className="w-[200px] px-[20px] flex justify-center items-center bg-lightgray h-[66px] text-black">
@@ -121,7 +157,7 @@ const PostClient = () => {
             </div>
             <div className="flex justify-start items-center pl-[20px]">
               <p className="cursor-pointer">
-                <input type="file" />
+                <input type="file" onChange={handleFileChange} />
               </p>
               <button className="cursor-pointer flex justify-center items-center gap-[20px] ml-[40px] bg-darkgray text-white w-[120px] h-[35px]">
                 업로드 <GrUpload className="grIcon" />
@@ -130,12 +166,15 @@ const PostClient = () => {
           </div>
           <div className="w-full pt-3 flex justify-between">
             <Link passHref href={"../notice"}>
-              <button className="w-24 h-8 border border-gray rounded-sm bg-lightgray text-[14px] hover:bg-darkgray hover:text-white hover:border-darkgray">
+              <button className="w-24 h-8 border border-gray-500 rounded-sm bg-gray-100 text-[14px] hover:bg-gray-900 hover:text-white hover:border-gray-900">
                 돌아가기
               </button>
             </Link>
             <Link passHref href={"../notice"}>
-              <button className="w-24 h-8 border border-darkgray rounded-sm bg-darkgray text-[14px] text-white hover:bg-secondary hover:border-secondary">
+              <button
+                className="w-24 h-8 border border-gray-700 rounded-sm bg-gray-700 text-[14px] text-white hover:bg-gray-900 hover:border-gray-900"
+                onClick={handleSubmit(onSubmit)}
+              >
                 글쓰기
               </button>
             </Link>

@@ -1,11 +1,14 @@
 "use client";
 
+import { usePathname, useSearchParams } from "next/navigation";
 import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import Link from "next/link";
 import { useState } from "react";
 import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
+
+import Pages from "@/components/pages";
 
 const MainList = [
   {
@@ -30,44 +33,31 @@ const MainList = [
   },
 ];
 
-const Items = [
-  {
-    id: 1,
-    title: "방폭전기기기의 설계, 선정 및 설치에 관한 기준",
-  },
-  {
-    id: 2,
-    title: "2번",
-  },
-  {
-    id: 3,
-    title: "방폭전기기기의 설계, 선정 및 설치에 관한 기준",
-  },
-  {
-    id: 4,
-    title: "방폭전기기기의 설계, 선정 및 설치에 관한 기준",
-  },
-  {
-    id: 5,
-    title: "방폭전기기기의 설계, 선정 및 설치에 관한 기준",
-  },
-  {
-    id: 6,
-    title: "방폭전기기기의 설계, 선정 및 설치에 관한 기준",
-  },
-  {
-    id: 7,
-    title: "방폭전기기기의 설계, 선정 및 설치에 관한 기준",
-  },
-  {
-    id: 8,
-    title: "방폭전기기기의 설계, 선정 및 설치에 관한 기준",
-  },
-];
 const location = "공지사항";
 
-const NoticeClient = () => {
+interface IndexProps {
+  noticeList?: any;
+}
+
+const NoticeClient: React.FC<IndexProps> = ({ noticeList }) => {
   const [pageMenu, setPageMenu] = useState<any>("공지사항");
+  const params = useSearchParams();
+  const page = params?.get("page");
+  const pathname = usePathname();
+  const isMainPage = pathname === "/notice/notice";
+
+  if (!isMainPage) {
+    return null;
+  }
+
+  const totalItems = noticeList.length;
+  const totalPages = Math.ceil(totalItems / 10); // list의 길이를 10으로 나눈 후 올림하여 페이지 수 계산
+
+  // totalPages만큼 페이지를 생성
+  const pages = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pages.push(i);
+  }
 
   return (
     <section>
@@ -110,10 +100,10 @@ const NoticeClient = () => {
           <div className="w-full py-[40px] px-[40px]">
             <ContentTitle title={location} center={true} />
             <div className="w-full mt-[20px] leading-[50px] border-b border-blue-500">
-              1/100 페이지 (전체 155건)
+              1/100 페이지 (총 {noticeList.length} 건)
             </div>
 
-            {Items.map((item, index) => (
+            {noticeList.map((item: any, index: any) => (
               <Link
                 key={index}
                 passHref
@@ -142,26 +132,23 @@ const NoticeClient = () => {
             <div className="w-full flex justify-between items-center h-[50px]">
               <div>&nbsp;</div>
               <div className="flex">
-                <div className="flex mr-[20px] cursor-pointer">
+                {/* <div className="flex mr-[20px] cursor-pointer">
                   <RiArrowLeftSLine className="text-[20px] pt-[3px]" />
-                </div>
+                </div> */}
                 <div className="flex space-x-[10px]">
-                  {[1, 2, 3, 4, 5].map((item, index) => (
-                    <div
-                      key={index}
-                      className={`${
-                        index == 0 && "text-blue-500 font-bold"
-                      } hover:text-blue-500 hover:font-bold cursor-pointer`}
-                    >
-                      {item}
-                    </div>
+                  {pages.map((item, index) => (
+                    <Pages
+                      key={item}
+                      label={item.toString()}
+                      selected={page === item.toString()}
+                    />
                   ))}
                 </div>
-                <div className="flex ml-[20px] cursor-pointer">
+                {/* <div className="flex ml-[20px] cursor-pointer">
                   <RiArrowRightSLine className="text-[20px] pt-[3px]" />
-                </div>
+                </div> */}
               </div>
-              <Link passHref href={"./notice/post"}>
+              <Link passHref href={"/notice/notice/post"}>
                 <button className="cursor-pointer bg-blue-500 text-white w-24 h-8 text-[14px]">
                   글쓰기
                 </button>

@@ -95,7 +95,7 @@ export default function Notice() {
             <div
               className={`w-full flex justify-between items-center text-start px-[20px] font-bold text-[18px] border-b border-[#dddddd] transition-all duration-300 ease-in-out cursor-pointer ${
                 noticeMenu == "알림" &&
-                "-translate-x-[30px] bg-active text-white rounded-r-2xl w-[120%]"
+                "-translate-x-[30px] bg-blue-900 text-white rounded-r-2xl w-[120%]"
               }`}
               onClick={() => {
                 setNoticeMenu("알림");
@@ -112,7 +112,7 @@ export default function Notice() {
             <div
               className={`w-full flex justify-between items-center text-start px-[20px] font-bold text-[18px] border-b border-[#dddddd] transition-all duration-300 ease-in-out cursor-pointer ${
                 noticeMenu == "보도자료" &&
-                "-translate-x-[30px] bg-active text-white rounded-r-2xl w-[120%]"
+                "-translate-x-[30px] bg-blue-900 text-white rounded-r-2xl w-[120%]"
               }`}
               onClick={() => {
                 setNoticeMenu("보도자료");
@@ -129,7 +129,7 @@ export default function Notice() {
             <div
               className={`w-full flex justify-between items-center text-start px-[20px] font-bold text-[18px] border-b border-[#dddddd] transition-all duration-300 ease-in-out cursor-pointer ${
                 noticeMenu == "교육센터" &&
-                "-translate-x-[30px] bg-active text-white rounded-r-2xl w-[120%]"
+                "-translate-x-[30px] bg-blue-900 text-white rounded-r-2xl w-[120%]"
               }`}
               onClick={() => {
                 setNoticeMenu("교육센터");

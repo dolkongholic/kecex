@@ -78,7 +78,7 @@ const WorkerClient = () => {
         <section className="py-[20px] pl-[40px] w-full flex flex-col justify-start items-start">
           <div className="w-full py-[40px] px-[40px]">
             <ContentTitle title={location} center={true} />
-            <div className="flex w-full mt-[50px]">
+            {/* <div className="flex w-full mt-[50px]">
               <div className="flex-col w-full">
                 <div>
                   <input
@@ -145,12 +145,12 @@ const WorkerClient = () => {
                   검색
                 </button>
               </div>
-            </div>
+            </div> */}
 
             <div className="w-full h-[50px] leading-[50px] border-b-2 border-blue-500 mt-[50px]">
-              <div>
+              {/* <div>
                 검색결과 <span className="font-bold">000</span> 개
-              </div>
+              </div> */}
             </div>
             <div className="w-full h-[40px] text-black bg-lightgray  flex">
               <div className="w-1/4 leading-[40px] text-center border border-gray-200">

@@ -7,6 +7,12 @@ import ContentTitle from "@/components/content/title";
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import Input from "@/components/inputs/Input";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
+
 const MainList = [
   {
     title: "인재정보",
@@ -33,7 +39,35 @@ const MainList = [
 const location = "문의사항";
 
 const QnaClient = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [pageMenu, setPageMenu] = useState<any>("문의사항");
+
+  const router = useRouter();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FieldValues>({
+    defaultValues: {},
+  });
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    axios
+      .post("/api/insert/qnaInsert", data)
+      .then(() => {
+        toast.success("문의를 남겼습니다.");
+        router.refresh();
+        setIsLoading(true);
+      })
+      .catch(() => {
+        toast.error("오류가 발생했습니다.");
+      })
+      .finally(() => {
+        // setIsLoading(false);
+        reset();
+      });
+  };
 
   return (
     <section>
@@ -87,11 +121,14 @@ const QnaClient = () => {
                 이름
               </div>
               <div className="w-[80%] h-[60px] pl-[40px] flex items-center">
-                <input
+                <Input
                   id="name"
-                  type="text"
-                  placeholder="이름을 입력해주세요"
-                  className="border border-gray p-[5px] w-1/2"
+                  label="이름을 입력하세요."
+                  disabled={isLoading}
+                  register={register}
+                  errors={errors}
+                  required
+                  small
                 />
               </div>
             </div>
@@ -100,11 +137,14 @@ const QnaClient = () => {
                 연락처
               </div>
               <div className="w-[80%] h-[60px] pl-[40px] flex items-center">
-                <input
+                <Input
                   id="tel"
-                  type="text"
-                  placeholder="연락처를 입력해주세요"
-                  className="border border-gray p-[5px] w-1/2"
+                  label="연락처를 입력하세요."
+                  disabled={isLoading}
+                  register={register}
+                  errors={errors}
+                  required
+                  small
                 />
               </div>
             </div>
@@ -113,11 +153,14 @@ const QnaClient = () => {
                 이메일
               </div>
               <div className="w-[80%] h-[60px] pl-[40px] flex items-center">
-                <input
+                <Input
                   id="email"
-                  type="text"
-                  placeholder="E-mail을 입력해주세요"
-                  className="border border-gray p-[5px] w-1/2"
+                  label="이메일을 입력하세요."
+                  disabled={isLoading}
+                  register={register}
+                  errors={errors}
+                  required
+                  small
                 />
               </div>
             </div>
@@ -126,28 +169,36 @@ const QnaClient = () => {
                 제목
               </div>
               <div className="w-[80%] h-[60px] pl-[40px] flex items-center">
-                <input
+                <Input
                   id="title"
-                  type="text"
-                  placeholder="제목을 입력해주세요"
-                  className="border border-gray p-[5px] w-1/2"
-                />
-              </div>
-            </div>
-            <div className="w-full border-t border-t-gray flex">
-              <div className="w-[20%] h-[180px] pl-[40px] bg-gray-200 flex items-center text-black">
-                문의내용
-              </div>
-              <div className="w-[80%] h-[180px] pl-[40px] flex items-center">
-                <input
-                  id="tel"
-                  type="text"
-                  placeholder="이름을 입력해주세요"
-                  className="border border-gray p-[5px] w-[90%] h-[150px]"
+                  label="제목을 입력하세요."
+                  disabled={isLoading}
+                  register={register}
+                  errors={errors}
+                  required
+                  small
                 />
               </div>
             </div>
             <div className="w-full border-t border-t-gray border-b border-b-gray flex">
+              <div className="w-[20%] h-[180px] pl-[40px] bg-gray-200 flex items-center text-black">
+                문의내용
+              </div>
+              <div className="w-[80%] h-[180px] pl-[40px] flex items-center">
+                <textarea
+                  id="content"
+                  cols={80}
+                  rows={5}
+                  className={`border border-gray p-6 box-border ${
+                    isLoading && "cursor-not-allowed"
+                  }`}
+                  {...register("content", { required: true })}
+                  placeholder="글 내용을 입력해주세요."
+                  disabled={isLoading}
+                ></textarea>
+              </div>
+            </div>
+            {/* <div className="w-full border-t border-t-gray border-b border-b-gray flex">
               <div className="w-[20%] h-[60px] pl-[40px] bg-gray-200 flex items-center text-black">
                 파일첨부
               </div>
@@ -160,11 +211,20 @@ const QnaClient = () => {
                   파일첨부 +
                 </label>
               </div>
-            </div>
+            </div> */}
             <div className="w-full flex justify-end items-center mt-[20px]">
-              <div className="w-[150px] h-[40px] text-white bg-blue-500 flex justify-center items-center">
-                문의하기
-              </div>
+              {!isLoading ? (
+                <div
+                  className="w-[150px] h-[40px] text-white bg-blue-500 flex justify-center items-center cursor-pointer"
+                  onClick={handleSubmit(onSubmit)}
+                >
+                  문의하기
+                </div>
+              ) : (
+                <div className="w-[150px] h-[40px] text-white bg-red-500 flex justify-center items-center cursor-not-allowed">
+                  문의 완료
+                </div>
+              )}
             </div>
           </div>
         </section>
