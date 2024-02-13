@@ -9,7 +9,7 @@ const PrintPage = async () => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <PrintClient />
+      <PrintClient currentUser={currentUser} />
       <Footer />
     </div>
   );

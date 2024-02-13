@@ -180,6 +180,17 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
               </span>{" "}
               건
             </div>
+            {qnaList.length == 0 && (
+              <div className="border-b border-gray-300 px-[40px] py-[25px] flex justify-between items-center hover:shadow-md">
+                <div className="flex-col">
+                  <div>
+                    <span className="text-[20px] font-bold text-black mr-[20px] text-center w-full">
+                      문의 내역이 없습니다.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            )}
             {qnaList?.map((item: any, index: any) => (
               <div
                 key={index}

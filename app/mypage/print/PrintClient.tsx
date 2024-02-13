@@ -4,7 +4,7 @@ import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
 import download_icon from "public/img/icon/download_icon.png";
@@ -19,8 +19,8 @@ const MainList = [
     sub: [
       { title: "발급/출력 현황", url: "/mypage/overall/all01" },
       { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-      { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-      { title: "경력관리 현황", url: "/mypage/overall/all04" },
+      // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
+      // { title: "경력관리 현황", url: "/mypage/overall/all04" },
     ],
   },
   {
@@ -58,7 +58,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "경력수첩 발급", url: "/mypage/carrear/print" },
-      { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
+      // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
     ],
   },
   {
@@ -70,9 +70,15 @@ const MainList = [
 
 const location = "회원증 출력";
 
-const PrintClient = () => {
+interface MyCertProps {
+  currentUser: any;
+}
+const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
-
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = (today.getMonth() + 1).toString().padStart(2, "0");
+  const day = today.getDate().toString().padStart(2, "0");
   return (
     <section>
       <div id="headerNav">
@@ -126,25 +132,25 @@ const PrintClient = () => {
               />{" "}
               <ul className="absolute left-[172px] top-[265px] z-40 font-[KoPubWorldBatang] text-black">
                 <li className="text-[19px] font-bold">
-                  <p className=" tracking-widest">홍&nbsp;길&nbsp;동</p>
+                  <p className=" tracking-widest">{currentUser.koname}</p>
                 </li>
                 <li className="text-[19px] font-bold mt-[9px]">
                   <p className="">부산광역시 해운대구 센텀동로35 센텀SH밸리</p>
                 </li>
                 <li className="text-[19px] font-bold mt-[9px]">
-                  <p className="tracking-relaxed">3333 - 4444</p>
+                  <p className="tracking-relaxed">{currentUser.id}</p>
                 </li>
               </ul>
               <p className="absolute left-[173px] top-[539px] z-40 text-[12px] font-[KoPubWorldBatang] text-[#898989]">
-                2023.03.06
+                {year}.{month}.{day}
               </p>
               <p className="absolute left-[348px] top-[539px] z-40 text-[12px] font-[KoPubWorldBatang] text-[#898989]">
                 2024.03.06
               </p>
               <div className="absolute left-[220px] top-[600px] z-40 text-[22px] font-[KoPubWorldBatang] text-black flex font-bold">
-                <p>2023</p>
-                <p className="ml-[30px]">12</p>
-                <p className="ml-[29px]">30</p>
+                <p>{year}</p>
+                <p className="ml-[30px]">{month}</p>
+                <p className="ml-[29px]">{day}</p>
               </div>
             </div>
           </figure>

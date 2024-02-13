@@ -6,7 +6,7 @@ import prisma from "@/app/libs/prisma";
 export async function POST(request: Request) {
   const body = await request.json();
   const { data } = body;
-  const { username, password, email } = data;
+  const { username, password, email, koname, tel } = data;
   const hashedPassword = await bcrypt.hash(password, 12);
 
   const already = await prisma.user.findUnique({
@@ -21,10 +21,24 @@ export async function POST(request: Request) {
     });
   }
 
+  const already_1 = await prisma.user.findUnique({
+    where: {
+      tel: tel,
+    },
+  });
+
+  if (already_1) {
+    return new NextResponse(null, {
+      status: 409,
+    });
+  }
+
   const user = await prisma.user.create({
     data: {
       name: username,
       email: email,
+      koname: koname,
+      tel: tel,
       hashedPassword: hashedPassword,
       level: "일반회원",
       staff: false,

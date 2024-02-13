@@ -9,7 +9,7 @@ const ProfilePage = async () => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <ProfileClient />
+      <ProfileClient currentUser={currentUser} />
       <Footer />
     </div>
   );

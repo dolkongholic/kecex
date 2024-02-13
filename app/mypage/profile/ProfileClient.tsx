@@ -3,11 +3,13 @@
 import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
-import { useSession } from "next-auth/react";
-
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import axios from "axios";
+import { toast } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 // Image
 
 const MainList = [
@@ -68,12 +70,38 @@ const MainList = [
 
 const location = "회원정보 수정";
 
-const ProfileClient = () => {
+interface ProfileProps {
+  currentUser: any;
+}
+const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FieldValues>({
+    defaultValues: {},
+  });
 
-  const mailRef = useRef(null);
-
-  const { data: session } = useSession();
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    setIsLoading(true);
+    data.id = currentUser.id;
+    axios
+      .post("/api/register/modifi/", data)
+      .then(() => {
+        toast.success("수정 되었습니다.");
+        router.refresh();
+      })
+      .catch(() => {
+        toast.error("오류가 발생했습니다.");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
   return (
     <section>
       <div id="headerNav">
@@ -121,9 +149,12 @@ const ProfileClient = () => {
               </div>
               <div className="flex justify-start items-center pl-[20px] ">
                 <input
+                  id="koname"
                   type="text"
                   placeholder="성명"
                   className="border border-gray-200 h-[40px] outline-none focus:border-blue-500 px-[20px] text-base"
+                  defaultValue={currentUser.koname}
+                  {...register("koname", { required: true })}
                 />
               </div>
             </div>
@@ -133,7 +164,7 @@ const ProfileClient = () => {
                 * 아이디
               </div>
               <div className="flex justify-start items-center pl-[20px] ">
-                {session?.user?.name || "사용자 이름이 없습니다."}
+                {currentUser.name}
               </div>
             </div>
 
@@ -143,18 +174,20 @@ const ProfileClient = () => {
               </div>
               <div className="flex flex-col justify-center items-start pl-[20px]">
                 <input
+                  id="password"
                   type="password"
                   placeholder="새비밀번호"
+                  {...register("password", { required: true })}
                   className="border border-gray-200 h-[40px] outline-none focus:border-blue-500 px-[20px] text-base mb-2"
                 />
                 <input
-                  type="password"
+                  type="password_1"
                   placeholder="새비밀번호 확인"
                   className="border border-gray-200 h-[40px] outline-none focus:border-blue-500 px-[20px] text-base"
                 />
-                <p className="mt-[14px] text-[12px]">
+                {/* <p className="mt-[14px] text-[12px]">
                   * 숫자+영문자+특수문자 조합으로 4~13자 입력해주세요.
-                </p>
+                </p> */}
               </div>
             </div>
 
@@ -164,9 +197,12 @@ const ProfileClient = () => {
               </div>
               <div className="flex justify-start items-center pl-[20px] ">
                 <input
+                  id="tel"
                   type="text"
                   placeholder="010 0000 0000"
                   className="border border-gray-200 h-[40px] outline-none focus:border-blue-500 px-[20px] text-base"
+                  defaultValue={currentUser.tel}
+                  {...register("tel", { required: true })}
                 />
               </div>
             </div>
@@ -177,39 +213,23 @@ const ProfileClient = () => {
               </div>
               <div className="flex justify-start items-center pl-[20px] ">
                 <input
+                  id="email"
                   type="text"
-                  placeholder={session?.user?.name || ""}
+                  placeholder="email"
                   className="border border-gray-200 h-[40px] outline-none focus:border-blue-500 px-[20px] text-base"
+                  defaultValue={currentUser.email}
+                  {...register("email", { required: true })}
                 />
-                <p className="px-[10px]">@</p>
-                <input
-                  type="text"
-                  placeholder=""
-                  className="border border-gray-200 h-[40px] outline-none focus:border-blue-500 px-[20px] text-base"
-                />
-                <select
-                  className="border border-gray-200 w-[250px] h-[40px] ml-[20px] pl-[20px]"
-                  ref={mailRef}
-                >
-                  <option>직접 입력</option>
-                  <option onChange={(e: any) => console.log(e)}>
-                    gmail.com
-                  </option>
-                  <option>naver.com</option>
-                  <option>kakao.com</option>
-                </select>
               </div>
             </div>
           </div>
           <div className="flex justify-center items-center w-full mt-[20px] space-x-[20px]">
-            <div className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-blue-500 text-white">
+            <div
+              className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-blue-500 text-white"
+              onClick={handleSubmit(onSubmit)}
+            >
               수정완료
             </div>
-            <a href="/mypage/overall">
-              <div className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-gray-200 text-black">
-                취소
-              </div>
-            </a>
             <a href="/mypage/out">
               <div className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-gray-800 text-white">
                 회원탈퇴

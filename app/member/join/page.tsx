@@ -47,6 +47,11 @@ function Join() {
   } = useForm<FieldValues>();
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    if (data.password != data.password_1) {
+      alert("비밀번호가 틀립니다.");
+      return;
+    }
+
     setIsLoading(true);
 
     try {
@@ -61,7 +66,7 @@ function Join() {
     } catch (error: any) {
       setIsLoading(false);
       if (error.response.status == 409) {
-        toast.error(`이미 존재하는 아이디 입니다.`);
+        toast.error(`이미 존재하는 아이디 혹은 연락처 입니다.`);
       }
     }
   };
@@ -212,6 +217,20 @@ function Join() {
           <div className="mt-4">
             <div className="mt-1">
               <Input
+                id="password_1"
+                label="비밀번호 확인"
+                type="password"
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+              />
+            </div>
+          </div>
+
+          <div className="mt-4">
+            <div className="mt-1">
+              <Input
                 id="email"
                 label="Email"
                 type="email"
@@ -222,10 +241,35 @@ function Join() {
               />
             </div>
           </div>
-          <div
-            className="mt-6 flex gap-[10px]"
-            onClick={handleSubmit(onSubmit)}
-          >
+
+          <div className="mt-4">
+            <div className="mt-1">
+              <Input
+                id="koname"
+                label="이름"
+                type="text"
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+              />
+            </div>
+          </div>
+
+          <div className="mt-4">
+            <div className="mt-1">
+              <Input
+                id="tel"
+                label="연락처"
+                type="text"
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+              />
+            </div>
+          </div>
+          <div className="mt-6 flex gap-[10px]">
             <Button
               disabled={isLoading}
               label="가입완료"
