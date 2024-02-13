@@ -28,18 +28,18 @@ const MainList = [
   },
   {
     title: "공지사항",
-    url: "/notice/notice",
+    url: "/notice/notice?page=1",
     sub: null,
   },
 ];
 
 const location = "공지사항";
 
-interface IndexProps {
+interface NoticeProps {
   noticeList?: any;
 }
 
-const NoticeClient: React.FC<IndexProps> = ({ noticeList }) => {
+const NoticeClient: React.FC<NoticeProps> = ({ noticeList }) => {
   const [pageMenu, setPageMenu] = useState<any>("공지사항");
   const params = useSearchParams();
   const page = params?.get("page");
@@ -100,7 +100,7 @@ const NoticeClient: React.FC<IndexProps> = ({ noticeList }) => {
           <div className="w-full py-[40px] px-[40px]">
             <ContentTitle title={location} center={true} />
             <div className="w-full mt-[20px] leading-[50px] border-b border-blue-500">
-              1/100 페이지 (총 {noticeList.length} 건)
+              {page}/{totalPages} 페이지 (총 {noticeList.length} 건)
             </div>
 
             {noticeList.map((item: any, index: any) => (
@@ -136,7 +136,7 @@ const NoticeClient: React.FC<IndexProps> = ({ noticeList }) => {
                   <RiArrowLeftSLine className="text-[20px] pt-[3px]" />
                 </div> */}
                 <div className="flex space-x-[10px]">
-                  {pages.map((item, index) => (
+                  {pages.map((item) => (
                     <Pages
                       key={item}
                       label={item.toString()}

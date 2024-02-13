@@ -7,7 +7,7 @@ export async function POST(request: Request) {
 
   const { text, date, post_text } = body;
 
-  const result = await prisma.notice.create({
+  const result = await prisma.raw.create({
     data: {
       title: text,
       content: post_text,

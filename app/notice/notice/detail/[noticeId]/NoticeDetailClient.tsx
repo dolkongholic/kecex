@@ -11,8 +11,9 @@ import {
   RiArrowRightSLine,
   RiArrowUpSLine,
 } from "react-icons/ri";
-import getCurrentNotice from "@/app/action/getCurrentNotice";
+
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const MainList = [
   {
@@ -46,20 +47,31 @@ interface NoticeClientProps {
 const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice }) => {
   const [pageMenu, setPageMenu] = useState<any>("공지사항");
   const [preNotice, setPreNotice] = useState<any>(null);
+  const [nextNotice, setNextNotice] = useState<any>(null);
+
+  const router = useRouter();
+  const preId = {
+    id: currentNotice.id - 1,
+  };
+
+  const nextId = {
+    id: currentNotice.id + 1,
+  };
 
   useEffect(() => {
     const fetchPreNotice = async () => {
       try {
-        const response = await axios.post("/api/notice", currentNotice.id - 1);
-        setPreNotice(response); // 예상되는 데이터 형식에 따라 수정
-        console.log(preNotice);
+        const preNoticeResponse = await axios.post("/api/notice", preId);
+        setPreNotice(preNoticeResponse.data);
+        const nextNoticeResponse = await axios.post("/api/notice", nextId);
+        setNextNotice(nextNoticeResponse.data);
       } catch (error) {
         console.error("Error fetching pre notice:", error);
       }
     };
 
     fetchPreNotice();
-  }, [currentNotice, preNotice]);
+  }, []);
   return (
     <section>
       <div id="headerNav">
@@ -112,7 +124,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice }) => {
             </div>
             <div className="pr-[40px] flex justify-center items-center"></div>
           </div>
-          <div className="w-full mt-[30px] flex flex-col px-[20px]">
+          <div className="w-full mt-[30px] flex flex-col px-[20px] pb-10">
             {currentNotice.content.split("\n").map((line: any, index: any) => (
               <React.Fragment key={index}>
                 {line}
@@ -131,37 +143,67 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice }) => {
               </button>
             </div>
           </div> */}
-          <Link passHref href={"./detail/"} className="w-full">
+          {preNotice ? (
+            <Link
+              passHref
+              href={`/notice/notice/detail/${preId.id}`}
+              className="w-full"
+            >
+              <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
+                <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+                  <p>이전글</p>
+                  <RiArrowUpSLine className="text-[24px] pt-[3px]" />
+                </div>
+                <div className="flex justify-start items-center pl-[20px]">
+                  {preNotice.title}
+                </div>
+              </div>
+            </Link>
+          ) : (
             <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
               <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                 <p>이전글</p>
                 <RiArrowUpSLine className="text-[24px] pt-[3px]" />
               </div>
               <div className="flex justify-start items-center pl-[20px]">
-                방폭전기기기의 설계, 선정 및 설치에 관한기준
+                이전글이 없습니다.
               </div>
             </div>
-          </Link>
-          <Link passHref href={"./detail/"} className="w-full">
+          )}
+
+          {nextNotice ? (
+            <Link
+              passHref
+              href={`/notice/notice/detail/${nextId.id}`}
+              className="w-full"
+            >
+              <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">
+                <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+                  <p>다음글</p>
+                  <RiArrowDownSLine className="text-[24px] pt-[3px]" />
+                </div>
+                <div className="flex justify-start items-center pl-[20px]">
+                  {nextNotice.title}
+                </div>
+              </div>
+            </Link>
+          ) : (
             <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">
               <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                 <p>다음글</p>
                 <RiArrowDownSLine className="text-[24px] pt-[3px]" />
               </div>
               <div className="flex justify-start items-center pl-[20px]">
-                <p>방폭전기기기의 설계, 선정 및 설치에 관한기준</p>
+                <p>다음글이 없습니다.</p>
               </div>
             </div>
-          </Link>
-          <Link
-            passHref
-            href={"../notice"}
-            className="w-full flex justify-center"
+          )}
+          <button
+            className="w-32 h-10 bg-gray-500 text-white text-[14px] mt-9 m-auto"
+            onClick={() => router.back()}
           >
-            <button className="w-32 h-10 bg-superdarkgray text-white text-[14px] mt-9">
-              목록
-            </button>
-          </Link>
+            목록
+          </button>
         </section>
       </main>
     </section>

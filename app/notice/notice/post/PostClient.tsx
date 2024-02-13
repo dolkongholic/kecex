@@ -31,7 +31,7 @@ const MainList = [
   },
   {
     title: "공지사항",
-    url: "/notice/notice",
+    url: "/notice/notice?page=1",
     sub: null,
   },
 ];
@@ -130,12 +130,14 @@ const PostClient = () => {
                 type="text"
                 placeholder="제목을 입력해주세요"
                 className="w-full h-[40px] p-5 border border-gray"
+                disabled={isLoading}
                 {...register("text", { required: true })}
               />
             </div>
             <input
               type="date"
               value={currentDate}
+              disabled={isLoading}
               className="w-2/12 h-[40px] border border-gray px-3"
               {...register("date", { required: true })}
             />
@@ -147,6 +149,7 @@ const PostClient = () => {
               cols={30}
               rows={15}
               className="border border-gray p-6 box-border"
+              disabled={isLoading}
               placeholder="글 내용을 입력해주세요."
               {...register("post_text", { required: true })}
             ></textarea>
@@ -159,17 +162,21 @@ const PostClient = () => {
               <p className="cursor-pointer">
                 <input type="file" onChange={handleFileChange} />
               </p>
-              <button className="cursor-pointer flex justify-center items-center gap-[20px] ml-[40px] bg-darkgray text-white w-[120px] h-[35px]">
+              <button
+                className="cursor-pointer flex justify-center items-center gap-[20px] ml-[40px] bg-darkgray text-white w-[120px] h-[35px]"
+                disabled={isLoading}
+              >
                 업로드 <GrUpload className="grIcon" />
               </button>
             </div>
           </div>
           <div className="w-full pt-3 flex justify-between">
-            <Link passHref href={"../notice"}>
-              <button className="w-24 h-8 border border-gray-500 rounded-sm bg-gray-100 text-[14px] hover:bg-gray-900 hover:text-white hover:border-gray-900">
-                돌아가기
-              </button>
-            </Link>
+            <button
+              className="w-24 h-8 border border-gray-500 rounded-sm bg-gray-100 text-[14px] hover:bg-gray-900 hover:text-white hover:border-gray-900"
+              onClick={() => router.back()}
+            >
+              돌아가기
+            </button>
             <Link passHref href={"../notice"}>
               <button
                 className="w-24 h-8 border border-gray-700 rounded-sm bg-gray-700 text-[14px] text-white hover:bg-gray-900 hover:border-gray-900"

@@ -4,13 +4,15 @@ import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import Link from "next/link";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   RiArrowDownSLine,
   RiArrowRightSLine,
   RiArrowUpSLine,
 } from "react-icons/ri";
 import { GrDownload } from "react-icons/gr";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 
 const MainList = [
   {
@@ -27,8 +29,38 @@ const MainList = [
 
 const location = "관계법령";
 
-const RawDetailClient = () => {
+interface RawClientProps {
+  currentRaw: any;
+}
+
+const RawDetailClient: React.FC<RawClientProps> = ({ currentRaw }) => {
   const [pageMenu, setPageMenu] = useState<any>("관계법령");
+
+  const [preRaw, setPreRaw] = useState<any>(null);
+  const [nextRaw, setNextRaw] = useState<any>(null);
+
+  const router = useRouter();
+  const preId = {
+    id: currentRaw.id - 1,
+  };
+
+  const nextId = {
+    id: currentRaw.id + 1,
+  };
+
+  useEffect(() => {
+    const fetchPreRaw = async () => {
+      try {
+        const preRawResponse = await axios.post("/api/Raw", preId);
+        setPreRaw(preRawResponse.data);
+        const nextRawResponse = await axios.post("/api/Raw", nextId);
+        setNextRaw(nextRawResponse.data);
+      } catch (error) {
+        console.error("Error fetching pre Raw:", error);
+      }
+    };
+    fetchPreRaw();
+  }, []);
 
   return (
     <section>
@@ -73,34 +105,24 @@ const RawDetailClient = () => {
             &nbsp;
           </div>
           <div className="w-full pl-[20px] flex justify-start items-center h-[70px] bg-gray-100 border-t-2 border-darkgray">
-            방폭전기기기의 설계, 선정 및 설치에 관한 기준
+            {currentRaw?.title}
           </div>
           <div className="w-full flex justify-between item-center h-[50px] border-t-2 border-b-2 border-gray-100">
             <div className="flex justify-between items-center px-[20px]">
               <div>등록일</div>
-              <div className="ml-3">2023-10-10</div>
+              <div className="ml-3">{currentRaw?.date}</div>
             </div>
-            <div className="pr-[40px] flex justify-center items-center">
-              조회수 1234
-            </div>
+            <div className="pr-[40px] flex justify-center items-center"></div>
           </div>
-          <div className="w-full mt-[30px] flex flex-col px-[20px]">
-            <p className="leading-[30px]">
-              방폭전기기기의 설계, 선정 및 설치에 관한 기준
-            </p>
-            <p className="leading-[30px]">
-              Design, Selection and Installation Code for Explosion Proof
-              Electrical Equipment
-            </p>
-            <p className="leading-[30px]">&nbsp;</p>
-            <p className="leading-[30px]">종목코드번호 : KGS CG102 201B</p>
-            <p className="leading-[30px]">&nbsp;</p>
-            <p className="leading-[30px]">&nbsp;</p>
-            <p className="leading-[30px]">출처 : 가스안전공사</p>
-            <p className="leading-[30px]">&nbsp;</p>
-            <p className="leading-[30px]">&nbsp;</p>
+          <div className="w-full mt-[30px] flex flex-col px-[20px] pb-10">
+            {currentRaw.content.split("\n").map((line: any, index: any) => (
+              <React.Fragment key={index}>
+                {line}
+                <br />
+              </React.Fragment>
+            ))}
           </div>
-          <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray-100 border-b-2 border-b-darkgray">
+          {/* <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray-100 border-b-2 border-b-darkgray">
             <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
               첨부파일
             </div>
@@ -110,34 +132,68 @@ const RawDetailClient = () => {
                 다운로드 <GrDownload className="grIcon" />
               </button>
             </div>
-          </div>
-          <Link passHref href={"./detail/"} className="w-full">
+          </div> */}
+          {preRaw ? (
+            <Link
+              passHref
+              href={`/notice/notice/detail/${preId.id}`}
+              className="w-full"
+            >
+              <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
+                <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+                  <p>이전글</p>
+                  <RiArrowUpSLine className="text-[24px] pt-[3px]" />
+                </div>
+                <div className="flex justify-start items-center pl-[20px]">
+                  {preRaw.title}
+                </div>
+              </div>
+            </Link>
+          ) : (
             <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
               <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                 <p>이전글</p>
                 <RiArrowUpSLine className="text-[24px] pt-[3px]" />
               </div>
               <div className="flex justify-start items-center pl-[20px]">
-                방폭전기기기의 설계, 선정 및 설치에 관한기준
+                이전글이 없습니다.
               </div>
             </div>
-          </Link>
-          <Link passHref href={"./detail/"} className="w-full">
+          )}
+
+          {nextRaw ? (
+            <Link
+              passHref
+              href={`/notice/notice/detail/${nextId.id}`}
+              className="w-full"
+            >
+              <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">
+                <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+                  <p>다음글</p>
+                  <RiArrowDownSLine className="text-[24px] pt-[3px]" />
+                </div>
+                <div className="flex justify-start items-center pl-[20px]">
+                  {nextRaw.title}
+                </div>
+              </div>
+            </Link>
+          ) : (
             <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">
               <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                 <p>다음글</p>
                 <RiArrowDownSLine className="text-[24px] pt-[3px]" />
               </div>
               <div className="flex justify-start items-center pl-[20px]">
-                <p>방폭전기기기의 설계, 선정 및 설치에 관한기준</p>
+                <p>다음글이 없습니다.</p>
               </div>
             </div>
-          </Link>
-          <Link passHref href={"../raw"} className="w-full flex justify-center">
-            <button className="w-32 h-10 bg-gray-100-100 text-white text-[14px] mt-9">
-              목록
-            </button>
-          </Link>
+          )}
+          <button
+            className="w-32 h-10 bg-gray-500 text-white text-[14px] mt-9 m-auto"
+            onClick={() => router.back()}
+          >
+            목록
+          </button>
         </section>
       </main>
     </section>

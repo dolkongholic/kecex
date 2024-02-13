@@ -27,7 +27,7 @@ const MainList = [
   },
   {
     title: "공지사항",
-    url: "/notice/notice",
+    url: "/notice/notice?page=1",
     sub: null,
   },
 ];

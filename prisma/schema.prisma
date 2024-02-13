@@ -59,3 +59,11 @@ model notice {
   file    String
   date    String
 }
+
+model raw {
+  id      Int    @id @default(autoincrement())
+  title   String
+  content String  @db.Text
+  file    String
+  date    String
+}

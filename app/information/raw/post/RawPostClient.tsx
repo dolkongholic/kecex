@@ -7,15 +7,20 @@ import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { GrUpload } from "react-icons/gr";
 
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import toast from "react-hot-toast";
+
 const MainList = [
   {
     title: "관계법령",
-    url: "/information/raw",
+    url: "/information/raw?page=1",
     sub: null,
   },
   {
     title: "카드뉴스",
-    url: "/information/news",
+    url: "/information/news?page=1",
     sub: null,
   },
 ];
@@ -32,10 +37,41 @@ const RawPostClient = () => {
     return `${year}-${month}-${day}`;
   });
 
-  const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCurrentDate(event.target.value);
+  const router = useRouter();
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FieldValues>({
+    defaultValues: {},
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const handleFileChange = (event: any) => {
+    setSelectedFile(event.target.files[0]);
   };
 
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    setIsLoading(true);
+
+    axios
+      .post("/api/insert/raw/", data)
+      .then(() => {
+        toast.success("입력 되었습니다.");
+        router.push("/information/raw?page=1");
+      })
+      .catch(() => {
+        toast.error("오류가 발생했습니다.");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
   return (
     <section>
       <div id="headerNav">
@@ -83,23 +119,27 @@ const RawPostClient = () => {
                 type="text"
                 placeholder="제목을 입력해주세요"
                 className="w-full h-[40px] p-5 border border-gray"
+                disabled={isLoading}
+                {...register("text", { required: true })}
               />
             </div>
             <input
               type="date"
               value={currentDate}
-              onChange={handleDateChange}
+              {...register("date", { required: true })}
+              disabled={isLoading}
               className="w-2/12 h-[40px] border border-gray px-3"
             />
           </div>
           <div className="mx-[20px] w-[calc(100%-40px)] border-t border-blue-500"></div>
           <div className="w-full my-[30px] flex flex-col px-[20px]">
             <textarea
-              name="post_text"
               id="post_text"
               cols={30}
               rows={15}
               className="border border-gray p-6 box-border"
+              disabled={isLoading}
+              {...register("post_text", { required: true })}
             >
               글 내용을 입력해주세요.
             </textarea>
@@ -112,19 +152,26 @@ const RawPostClient = () => {
               <p className="cursor-pointer">
                 <input type="file" />
               </p>
-              <button className="cursor-pointer flex justify-center items-center gap-[20px] ml-[40px] bg-gray-500 text-white w-[120px] h-[35px]">
+              <button
+                className="cursor-pointer flex justify-center items-center gap-[20px] ml-[40px] bg-gray-500 text-white w-[120px] h-[35px]"
+                disabled={isLoading}
+              >
                 업로드 <GrUpload className="grIcon" />
               </button>
             </div>
           </div>
           <div className="w-full pt-3 flex justify-between">
+            <button
+              className="w-24 h-8 border border-gray rounded-sm bg-gray-200 text-[14px] hover:bg-gray-500 hover:text-white hover:border-gray-500"
+              onClick={() => router.back()}
+            >
+              돌아가기
+            </button>
             <Link passHref href={"../raw"}>
-              <button className="w-24 h-8 border border-gray rounded-sm bg-gray-200 text-[14px] hover:bg-gray-500 hover:text-white hover:border-gray-500">
-                돌아가기
-              </button>
-            </Link>
-            <Link passHref href={"../raw"}>
-              <button className="w-24 h-8 border border-gray-500 rounded-sm bg-gray-500 text-[14px] text-white hover:bg-blue-500 hover:border-blue-500">
+              <button
+                className="w-24 h-8 border border-gray-500 rounded-sm bg-gray-500 text-[14px] text-white hover:bg-blue-500 hover:border-blue-500"
+                onClick={handleSubmit(onSubmit)}
+              >
                 글쓰기
               </button>
             </Link>

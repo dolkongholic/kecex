@@ -336,7 +336,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </Link>
                 </div>
                 <div className="w-1/4">
-                  <Link passHref href={"/notice/notice/"}>
+                  <Link passHref href={"/notice/notice?page=1"}>
                     <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       공지사항
                     </div>
@@ -352,7 +352,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             >
               <div className="w-[1400px] flex justify-start">
                 <div className="w-1/4">
-                  <Link passHref href={"/information/raw/"}>
+                  <Link passHref href={"/information/raw?page=1"}>
                     <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       관련법령
                     </div>
@@ -582,7 +582,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 </Link>
               </li>
               <li>
-                <Link passHref href={"/notice/notice/"}>
+                <Link passHref href={"/notice/notice?page=1"}>
                   <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-active text-[18px] font-medium text-start leading-[55px] pl-[10px] cursor-pointer">
                     공지사항
                   </div>
@@ -598,7 +598,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 </span>
               </div>
               <li>
-                <Link passHref href={"/information/raw/"}>
+                <Link passHref href={"/information/raw?page=1"}>
                   <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-active text-[18px] font-medium text-start leading-[55px] pl-[10px] cursor-pointer">
                     관련법령
                   </div>

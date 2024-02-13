@@ -4,9 +4,9 @@ import { NextResponse } from "next/server";
 export async function POST(request: Request) {
   const body = await request.json();
 
-  const preNotice = await prisma.user.findFirst({
+  const preNotice = await prisma.notice.findFirst({
     where: {
-      id: body,
+      id: Number(body.id),
     },
   });
 
