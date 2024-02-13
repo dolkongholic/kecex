@@ -15,7 +15,10 @@ const NoticeDetailPage = async ({ params }: { params: IParams }) => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <NoticeDetailClient currentNotice={currentNotice} />
+      <NoticeDetailClient
+        currentNotice={currentNotice}
+        currentUser={currentUser}
+      />
       <Footer />
     </div>
   );

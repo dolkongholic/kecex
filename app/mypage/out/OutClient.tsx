@@ -57,7 +57,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "경력수첩 발급", url: "/mypage/carrear/print" },
-      { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
+      // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
     ],
   },
   {
@@ -75,6 +75,12 @@ const OutClient = () => {
 
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
 
+  const out = () => {
+    if (confirm("탈퇴 하시겠습니까?")) {
+      alert("탈퇴 신청이 접수 되었습니다.");
+    } else {
+    }
+  };
   return (
     <section>
       <div id="headerNav">
@@ -122,7 +128,7 @@ const OutClient = () => {
                   value={session?.user?.name || ""}
                   onChange={(e: any) => (passwordRef.current = e.target.value)}
                   placeholder="비밀번호"
-                  className="border border-gray py-[10px] px-[20px] w-full focus:border-secondary outline-none"
+                  className="border border-gray py-[10px] px-[20px] w-full focus:border-blue-500 outline-none"
                 />
               </div>
               <div className="mt-2">
@@ -133,11 +139,14 @@ const OutClient = () => {
                   ref={passwordRef}
                   onChange={(e: any) => (passwordRef.current = e.target.value)}
                   placeholder="비밀번호"
-                  className="border border-gray py-[10px] px-[20px] w-full focus:border-secondary outline-none"
+                  className="border border-gray py-[10px] px-[20px] w-full focus:border-blue-500 outline-none"
                 />
               </div>
               <div className="mt-2">
-                <button className="bg-secondary text-white w-full h-[40px]">
+                <button
+                  className="bg-blue-500 text-white w-full h-[40px]"
+                  onClick={() => out()}
+                >
                   회원 탈퇴
                 </button>
               </div>

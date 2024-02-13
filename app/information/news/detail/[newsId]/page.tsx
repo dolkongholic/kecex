@@ -1,24 +1,25 @@
 import Header from "@/components/Header";
-import RawDetailClient from "./RawDetailClient";
+import NewsDetailClient from "./NewsDetailClient";
 import Footer from "@/components/Footer";
 import getCurrentUser from "@/app/action/getCurrentUser";
-import getCurrentRaw from "@/app/action/getCurrentRaw";
+import getCurrentNews from "@/app/action/getCurrentNews";
 
 interface IParams {
-  rawId?: string;
+  newsId?: string;
 }
 
-const RawDetailPage = async ({ params }: { params: IParams }) => {
+const NewsDetailPage = async ({ params }: { params: IParams }) => {
   // const [menu, setMenu] = useState<string | null>(null);
   const currentUser = await getCurrentUser();
-  const currentRaw = await getCurrentRaw(params);
+  const currentNews = await getCurrentNews(params);
+
   return (
     <div>
       <Header currentUser={currentUser} />
-      <RawDetailClient currentRaw={currentRaw} currentUser={currentUser} />
+      <NewsDetailClient currentNews={currentNews} currentUser={currentUser} />
       <Footer />
     </div>
   );
 };
 
-export default RawDetailPage;
+export default NewsDetailPage;

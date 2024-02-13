@@ -15,8 +15,8 @@ const MainList = [
     sub: [
       { title: "발급/출력 현황", url: "/mypage/overall/all01" },
       { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-      { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-      { title: "경력관리 현황", url: "/mypage/overall/all04" },
+      // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
+      // { title: "경력관리 현황", url: "/mypage/overall/all04" },
     ],
   },
   {
@@ -54,7 +54,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "경력수첩 발급", url: "/mypage/carrear/print" },
-      { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
+      // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
     ],
   },
   {
@@ -123,7 +123,7 @@ const OverAll04Client = () => {
               </div>
               <ul className="w-[520px] flex">
                 <a href="/mypage/overall/all01">
-                  <li className="w-[130px] h-[130px] border border-gray-100 flex flex-col justify-center items-center">
+                  <li className="w-[130px] h-[130px] b flex flex-col justify-center items-center">
                     <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center m-2">
                       <p className="text-[20px] font-bold text-darkgray">0</p>
                     </div>
@@ -131,15 +131,15 @@ const OverAll04Client = () => {
                   </li>
                 </a>
                 <a href="/mypage/overall/all02">
-                  <li className="w-[130px] h-[130px] border border-gray-100 flex flex-col justify-center items-center">
+                  <li className="w-[130px] h-[130px] b flex flex-col justify-center items-center">
                     <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center m-2">
                       <p className="text-[20px] font-bold text-darkgray">0</p>
                     </div>
                     <p className="text-[13px] h-[40px]">1:1 문의 현황</p>
                   </li>
                 </a>
-                <a href="/mypage/overall/all03">
-                  <li className="w-[130px] h-[130px] border border-gray-100 flex flex-col justify-center items-center">
+                {/* <a href="/mypage/overall/all03">
+                  <li className="w-[130px] h-[130px] b flex flex-col justify-center items-center">
                     <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center m-2">
                       <p className="text-[20px] font-bold text-darkgray">0</p>
                     </div>
@@ -149,8 +149,8 @@ const OverAll04Client = () => {
                       신청 현황
                     </p>
                   </li>
-                </a>
-                <a href="/mypage/overall/all04">
+                </a> */}
+                {/* <a href="/mypage/overall/all04">
                   <li className="w-[130px] h-[130px] border border-blue-500 bg-white flex flex-col justify-center items-center">
                     <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center m-2">
                       <p className="text-[20px] font-bold text-blue-500">0</p>
@@ -159,7 +159,7 @@ const OverAll04Client = () => {
                       경력관리 현황
                     </p>
                   </li>
-                </a>
+                </a> */}
               </ul>
             </div>
             {/*조회 메뉴 선택*/}

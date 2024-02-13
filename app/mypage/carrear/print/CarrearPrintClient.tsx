@@ -56,7 +56,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "경력수첩 발급", url: "/mypage/carrear/print" },
-      { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
+      // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
     ],
   },
   {
@@ -110,22 +110,18 @@ const CareerPrintClient = () => {
 
         <section className="p-[20px] w-full flex flex-col justify-start items-start ">
           <ContentTitle title={location} center={true} />
-          <div className="w-full h-20 border border-secondary my-5 flex justify-center items-center text-[20px]">
-            ~ 진행중 ~
+          <div className="w-full bg-blue-500 text-white font-bold text-lg text-center p-4 mb-5">
+            경력 수첩 준비 중
           </div>
           <div className="flex justify-between w-full h-[50px] leading-[50px]">
-            <Link passHref href="print" className="w-1/2">
-              <div className="w-full text-center h-full border border-secondary cursor-pointer bg-secondary text-white">
-                경력수첩 발급
-              </div>
-            </Link>
-            <Link passHref href="sheet" className="w-1/2">
-              <div className="w-full text-center h-full border border-gray cursor-pointer">
-                경력수첩 발급현황
-              </div>
-            </Link>
+            <div className="w-full text-center h-full border border-blue-500 cursor-pointer bg-blue-500 text-white">
+              경력수첩 발급
+            </div>
+            <div className="w-full text-center h-full border border-gray cursor-pointer">
+              경력수첩 발급현황
+            </div>
           </div>
-          <div className="h-[60px] w-full flex border-t-2 border-t-secondary border-b border-b-gray mt-7 text-black">
+          <div className="h-[60px] w-full flex border-t-2 border-t-blue-500 border-b border-b-gray mt-7 text-black">
             <div className="bg-lightgray w-[180px] pl-[20px] flex justify-start items-center ">
               신청서
             </div>
@@ -133,7 +129,7 @@ const CareerPrintClient = () => {
               <input
                 type="file"
                 placeholder=""
-                className="h-[40px] underline focus:border-secondary px-[20px] text-base text-black"
+                className="h-[40px] underline focus:border-blue-500 px-[20px] text-base text-black"
               />
             </div>
           </div>
@@ -161,7 +157,7 @@ const CareerPrintClient = () => {
               <button className="w-36 h-10 bg-superdarkgray text-white mr-7">
                 Outlook 보내기
               </button>
-              E-MAIL : iecex@ex-techkorea.com
+              E-MAIL : kecex@kecex.or.kr
             </div>
           </div>
 
@@ -170,7 +166,7 @@ const CareerPrintClient = () => {
               경력수첩 발급비용
             </div>
             <div className="flex justify-start items-center pl-[20px] text-black text-[14px]">
-              55&nbsp;만원(VAT 포함)
+              만원(VAT 포함)
             </div>
           </div>
 
@@ -196,7 +192,7 @@ const CareerPrintClient = () => {
               </label>
               <input
                 type="checkbox"
-                className="border border-gray h-[40px] outline-none focus:border-secondary px-[20px] text-base w-7 mr-7"
+                className="border border-gray h-[40px] outline-none focus:border-blue-500 px-[20px] text-base w-7 mr-7"
                 id="ok_cash_receipt"
               />
               <label htmlFor="no_cash_receipt" className="mr-2">
@@ -204,7 +200,7 @@ const CareerPrintClient = () => {
               </label>
               <input
                 type="checkbox"
-                className="border border-gray h-[40px] outline-none focus:border-secondary px-[20px] text-base w-7"
+                className="border border-gray h-[40px] outline-none focus:border-blue-500 px-[20px] text-base w-7"
                 id="no_cash_receipt"
               />
             </div>
@@ -218,16 +214,16 @@ const CareerPrintClient = () => {
               <input
                 type="text"
                 placeholder="010 0000 0000"
-                className="border border-gray h-[40px] outline-none focus:border-secondary px-[20px] text-base"
+                className="border border-gray h-[40px] outline-none focus:border-blue-500 px-[20px] text-base"
               />{" "}
-              <span className="text-secondary text-[13px] ml-7">
+              <span className="text-blue-500 text-[13px] ml-7">
                 *현금영수증을 발급할 핸드폰 번호를 기입해주세요.
               </span>
             </div>
           </div>
           <div className="w-full flex justify-end mt-5">
-            <div className="cursor-pointer w-[180px] h-[50px] flex justify-center items-center bg-secondary text-white m-">
-              발급하기
+            <div className="w-[180px] h-[50px] flex justify-center items-center bg-blue-500 text-white">
+              준비 중
             </div>
           </div>
         </section>

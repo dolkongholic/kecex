@@ -16,8 +16,8 @@ const MainList = [
     sub: [
       { title: "발급/출력 현황", url: "/mypage/overall/all01" },
       { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-      { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-      { title: "경력관리 현황", url: "/mypage/overall/all04" },
+      // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
+      // { title: "경력관리 현황", url: "/mypage/overall/all04" },
     ],
   },
   {
@@ -55,7 +55,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "경력수첩 발급", url: "/mypage/carrear/print" },
-      { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
+      // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
     ],
   },
   {
@@ -67,7 +67,11 @@ const MainList = [
 
 const location = "전체 현황";
 
-const OverAll01Client = () => {
+interface OverAll02ClientProps {
+  currentUser: any;
+}
+
+const OverAll01Client: React.FC<OverAll02ClientProps> = ({ currentUser }) => {
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
 
   return (
@@ -115,7 +119,7 @@ const OverAll01Client = () => {
                 <strong className="font-normal text-[18px]">
                   반갑습니다.{" "}
                   <span className="text-blue-500 underline">
-                    <b className="font-normal">한국방폭협회</b>님
+                    <b className="font-normal">{currentUser.name}</b>님
                   </span>{" "}
                 </strong>
                 <p className="mt-5 text-[14px]">
@@ -134,14 +138,14 @@ const OverAll01Client = () => {
                   </li>
                 </a>
                 <a href="/mypage/overall/all02">
-                  <li className="w-[130px] h-[130px] border border-gray-300 flex flex-col justify-center items-center">
+                  <li className="w-[130px] h-[130px] flex flex-col justify-center items-center">
                     <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center m-2">
                       <p className="text-[20px] font-bold text-darkgray">0</p>
                     </div>
                     <p className="text-[13px] h-[40px]">1:1 문의 현황</p>
                   </li>
                 </a>
-                <a href="/mypage/overall/all03">
+                {/* <a href="/mypage/overall/all03">
                   <li className="w-[130px] h-[130px] border border-gray-300 flex flex-col justify-center items-center">
                     <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center m-2">
                       <p className="text-[20px] font-bold text-darkgray">0</p>
@@ -152,50 +156,31 @@ const OverAll01Client = () => {
                       신청 현황
                     </p>
                   </li>
-                </a>
-                <a href="/mypage/overall/all04">
-                  <li className="w-[130px] h-[130px] border border-gray-300 flex flex-col justify-center items-center">
+                </a> */}
+                {/* <a href="/mypage/overall/all04">
+                  <li className="w-[130px] h-[130px] flex flex-col justify-center items-center">
                     <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center m-2">
                       <p className="text-[20px] font-bold text-darkgray">0</p>
                     </div>
                     <p className="text-[13px] h-[40px]">경력관리 현황</p>
                   </li>
-                </a>
+                </a> */}
               </ul>
             </div>
             {/*조회 메뉴 선택*/}
             <div className="w-full text-black text-[14px] border-b border-blue-500">
               <h3 className="font-bold mt-16 text-[16px]">발급/출력 현황</h3>
-              전체 <span className="font-bold leading-9">17</span> 건
+              전체 <span className="font-bold leading-9">0</span> 건
             </div>
-            {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
-              <div
-                key={index}
-                className="border-b border-gray-300 px-[40px] py-[25px] flex justify-between items-center hover:shadow-md"
-              >
-                <div className="flex-col">
-                  <div>
-                    <span className="text-[20px] font-bold text-black mr-[20px]">
-                      IECEx 004/007/008
-                    </span>
-                  </div>
-                  <div className="text-gray-800 flex justify-start items-center">
-                    <p>
-                      교육기간: <span>2023.11.15</span>~<span>2023.11.6</span> |
-                      교육장소 : <span>울산</span> | 교육비 <b>143</b> 만원
-                    </p>
-                  </div>
-                </div>
-                <div className="flex justify-center  items-center">
-                  <div className="flex justify-center items-center border border-blue-500 w-[150px] h-[50px]">
-                    <span>승인-입금완료</span>{" "}
-                  </div>
-                  <button className="flex justify-center items-center bg-gray-200  w-[150px] h-[50px] ml-6">
-                    <span>시험결과 보기</span>{" "}
-                  </button>
+            <div className="border-b border-gray-300 px-[40px] py-[25px] flex justify-between items-center hover:shadow-md">
+              <div className="flex-col">
+                <div>
+                  <span className="text-[20px] font-bold text-black mr-[20px] text-center w-full">
+                    발급 내역이 없습니다.
+                  </span>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </section>
       </main>

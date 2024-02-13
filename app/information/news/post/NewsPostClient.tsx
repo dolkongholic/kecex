@@ -159,21 +159,22 @@ const NewsPostClient = () => {
               글 내용을 입력해주세요.
             </textarea>
           </div>
-          <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray-100 border-b-2 border-b-gray-500">
-            <div className="w-[200px] px-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+          <div className="w-full flex justify-start items-center py-10 border-t-2 border-t-gray-100 border-b-2 border-b-gray-500">
+            <div className="w-full px-[20px] flex justify-center items-center  text-black">
               <ImageUpload
                 onChange={(value) => setCustomValue("imageSrc", value)}
                 value={imageSrc}
+                wide
               />
             </div>
-            <div className="flex justify-start items-center pl-[20px]">
+            {/* <div className="flex justify-start items-center pl-[20px]">
               <p className="cursor-pointer">
                 <input type="file" />
               </p>
               <button className="cursor-pointer flex justify-center items-center gap-[20px] ml-[40px] bg-gray-500 text-white w-[120px] h-[35px]">
                 업로드 <GrUpload className="grIcon" />
               </button>
-            </div>
+            </div> */}
           </div>
           <div className="w-full pt-3 flex justify-between">
             <button

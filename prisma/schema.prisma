@@ -10,6 +10,7 @@ datasource db {
 model User {
   id             String    @id @default(uuid()) @map("_id") @db.Char(36)
   name           String    @unique
+  koname         String
   email          String    @unique
   hashedPassword String
   createdAt      DateTime  @default(now())

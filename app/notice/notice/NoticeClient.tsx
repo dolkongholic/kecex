@@ -108,7 +108,7 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
               <Link
                 key={index}
                 passHref
-                href={`notice/notice/detail/${item.id}`}
+                href={`notice/notice/detail/${item.id}?page=${page}`}
                 className="w-full"
               >
                 <div

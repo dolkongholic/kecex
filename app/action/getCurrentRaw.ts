@@ -4,7 +4,7 @@ interface IParams {
   rawId?: string;
 }
 
-export default async function getCurrentNotice(params: IParams) {
+export default async function getCurrentRaw(params: IParams) {
   try {
     const { rawId } = params;
 

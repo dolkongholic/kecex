@@ -14,9 +14,10 @@ const uploadPreset = "vu5gqfe9";
 interface ImageUploadProps {
   onChange: (value: string) => void;
   value: string;
+  wide?: boolean;
 }
 
-const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
+const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value, wide }) => {
   const handleUpload = useCallback(
     (result: any) => {
       onChange(result.info.secure_url);
@@ -36,13 +37,11 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
         return (
           <div
             onClick={() => open?.()}
-            className="
+            className={`
               relative
               cursor-pointer
               hover:opacity-70
               transition
-              w-[300px]
-              h-[300px]
               m-auto
               border-dashed 
               border-2 
@@ -54,10 +53,11 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
               items-center
               gap-4
               text-neutral-600
-            "
+              ${wide ? "w-full h-[50px]" : "w-[300px] h-[300px]"}
+            `}
           >
             <TbPhotoPlus size={50} />
-            <div className="font-semibold text-lg">업로드</div>
+            <div className="font-semibold text-lg">이미지 업로드</div>
             {value && (
               <div
                 className="

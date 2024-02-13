@@ -4,6 +4,7 @@ import { useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Button } from "@mui/material";
 import { ImArrowRight2 } from "react-icons/im";
+import { useRouter } from "next/navigation";
 
 const banners = [
   "/img/inner/banner/img_1.jpg",
@@ -31,18 +32,26 @@ const workers = [
   "/img/inner/worker/img_2.jpg",
 ];
 
-export default function Notice() {
+interface MainNoticeProps {
+  newsList?: any;
+  noticeList?: any;
+}
+
+const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
   const [noticeMenu, setNoticeMenu] = useState<String>("알림");
   const [noticeSubMenu, setNoticeSubMenu] = useState<String>("공지사항");
 
+  const router = useRouter();
+
   let noticeSubMenuList: any;
   if (noticeMenu == "알림") {
-    noticeSubMenuList = ["공지사항", "채용", "인사", "입찰"];
+    noticeSubMenuList = ["공지사항"];
   } else if (noticeMenu == "보도자료") {
-    noticeSubMenuList = ["보도자료", "설명자료"];
-  } else if (noticeMenu == "교육센터") {
-    noticeSubMenuList = ["교육일정"];
+    noticeSubMenuList = ["보도자료"];
   }
+  //  else if (noticeMenu == "교육센터") {
+  //   noticeSubMenuList = ["교육일정"];
+  // }
 
   // 임시 뉴스
   let notice: any;
@@ -126,6 +135,7 @@ export default function Notice() {
                 </div>
               )}
             </div>
+
             <div
               className={`w-full flex justify-between items-center text-start px-[20px] font-bold text-[18px] border-b border-[#dddddd] transition-all duration-300 ease-in-out cursor-pointer ${
                 noticeMenu == "교육센터" &&
@@ -147,7 +157,7 @@ export default function Notice() {
           <div className="flex flex-col w-3/4">
             <div className="w-full h-[60px] flex justify-between items-center px-[30px] font-bold text-[#a9a9a9]">
               <ul className="flex space-x-[10px]">
-                {noticeSubMenuList.map((item: any, index: any) => (
+                {noticeSubMenuList?.map((item: any, index: any) => (
                   <>
                     {index != 0 && <li>/</li>}
                     <li
@@ -163,45 +173,189 @@ export default function Notice() {
                   </>
                 ))}
               </ul>
-              <div className="text-[12px] cursor-pointer">더보기 +</div>
-            </div>
-            <div className="w-full h-[110px] flex justify-between items-center cursor-pointer">
-              <div className="flex flex-col w-[200px] border-r border-[#dddddd] justify-center items-center text-[#484848] ">
-                <span className="h-[45px] leading-[45px] text-[35px] font-extrabold">
-                  {notice[0][0]}
-                </span>
-                <span className="h-[20px] leading-[20px]">{notice[0][1]}</span>
-              </div>
-              <div className="flex flex-col flex-grow justify-center items-start pl-[20px]">
-                <span className="h-[45px] leading-[45px] text-[20px] font-extrabold">
-                  {notice[0][2]}
-                </span>
-                <span className="h-[20px] leading-[20px]">{notice[0][3]}</span>
+              <div
+                className="text-[12px] cursor-pointer"
+                onClick={() => {
+                  if (noticeMenu == "알림") {
+                    router.push("/notice/notice?page=1");
+                  } else if (noticeMenu == "보도자료") {
+                    router.push("/information/news?page=1");
+                  }
+                }}
+              >
+                더보기 +
               </div>
             </div>
-            <div className="flex flex-col w-full px-[30px] cursor-pointer">
-              <div className="flex w-full justify-between item-center leading-[40px] border-b border-[#d7d7d7f2] text-[13px] font-bold">
-                <span>{notice[1][2]}</span>
-                <span>
-                  {notice[1][1]}-{notice[1][0]}
-                </span>
-              </div>
-              <div className="flex w-full justify-between item-center leading-[40px] text-[13px] font-bold">
-                <span>{notice[2][2]}</span>
-                <span>
-                  {notice[2][1]}-{notice[2][0]}
-                </span>
-              </div>
-            </div>
+            {noticeMenu == "알림" && (
+              <>
+                <div className="w-full h-[110px] flex justify-between items-center cursor-pointer">
+                  <div className="flex flex-col w-[200px] border-r border-[#dddddd] justify-center items-center text-[#484848] ">
+                    <span className="h-[45px] leading-[45px] text-[35px] font-extrabold">
+                      {noticeList[noticeList.length - 1]
+                        ? String(noticeList[noticeList.length - 1].date).slice(
+                            8,
+                            10
+                          )
+                        : ""}
+                    </span>
+                    <span className="h-[20px] leading-[20px]">
+                      {noticeList[noticeList.length - 1]
+                        ? String(noticeList[noticeList.length - 1].date).slice(
+                            0,
+                            7
+                          )
+                        : ""}
+                    </span>
+                  </div>
+                  <div className="flex flex-col flex-grow justify-center items-start pl-[20px]">
+                    <span className="h-[45px] leading-[45px] text-[20px] font-extrabold">
+                      {noticeList[noticeList.length - 1]
+                        ? String(noticeList[noticeList.length - 1].title).slice(
+                            0,
+                            13
+                          )
+                        : "공지가 없습니다."}
+                    </span>
+                    <span className="h-[20px] leading-[20px]">
+                      {noticeList[noticeList.length - 1]
+                        ? String(
+                            noticeList[noticeList.length - 1].content
+                          ).slice(0, 20)
+                        : ""}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex flex-col w-full px-[30px] cursor-pointer">
+                  <div className="flex w-full justify-between item-center leading-[40px] border-b border-[#d7d7d7f2] text-[13px] font-bold">
+                    <span>
+                      {noticeList[noticeList.length - 2]
+                        ? String(noticeList[noticeList.length - 2].title).slice(
+                            0,
+                            15
+                          )
+                        : "공지가 없습니다."}
+                    </span>
+                    <span>
+                      {noticeList[noticeList.length - 2]
+                        ? String(noticeList[noticeList.length - 2].date).slice(
+                            0,
+                            7
+                          )
+                        : ""}
+                    </span>
+                  </div>
+                  <div className="flex w-full justify-between item-center leading-[40px] text-[13px] font-bold">
+                    <span>
+                      {noticeList[noticeList.length - 3]
+                        ? String(noticeList[noticeList.length - 3].title).slice(
+                            0,
+                            15
+                          )
+                        : "공지가 없습니다."}
+                    </span>
+                    <span>
+                      {noticeList[noticeList.length - 3]
+                        ? String(noticeList[noticeList.length - 3].date).slice(
+                            0,
+                            7
+                          )
+                        : ""}
+                    </span>
+                  </div>
+                </div>
+              </>
+            )}
+
+            {noticeMenu == "보도자료" && (
+              <>
+                <div className="w-full h-[110px] flex justify-between items-center cursor-pointer">
+                  <div className="flex flex-col w-[200px] border-r border-[#dddddd] justify-center items-center text-[#484848] ">
+                    <span className="h-[45px] leading-[45px] text-[35px] font-extrabold">
+                      {newsList[newsList.length - 1]
+                        ? String(newsList[newsList.length - 1].date).slice(
+                            8,
+                            10
+                          )
+                        : ""}
+                    </span>
+                    <span className="h-[20px] leading-[20px]">
+                      {newsList[newsList.length - 1]
+                        ? String(newsList[newsList.length - 1].date).slice(0, 7)
+                        : ""}
+                    </span>
+                  </div>
+                  <div className="flex flex-col flex-grow justify-center items-start pl-[20px]">
+                    <span className="h-[45px] leading-[45px] text-[20px] font-extrabold">
+                      {newsList[newsList.length - 1]
+                        ? String(newsList[newsList.length - 1].title).slice(
+                            0,
+                            13
+                          )
+                        : "공지가 없습니다."}
+                    </span>
+                    <span className="h-[20px] leading-[20px]">
+                      {newsList[newsList.length - 1]
+                        ? String(newsList[newsList.length - 1].content).slice(
+                            0,
+                            20
+                          )
+                        : ""}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex flex-col w-full px-[30px] cursor-pointer">
+                  <div className="flex w-full justify-between item-center leading-[40px] border-b border-[#d7d7d7f2] text-[13px] font-bold">
+                    <span>
+                      {newsList[newsList.length - 2]
+                        ? String(newsList[newsList.length - 2].title).slice(
+                            0,
+                            15
+                          )
+                        : "뉴스가 없습니다."}
+                    </span>
+                    <span>
+                      {newsList[newsList.length - 2]
+                        ? String(newsList[newsList.length - 2].date).slice(0, 7)
+                        : ""}
+                    </span>
+                  </div>
+                  <div className="flex w-full justify-between item-center leading-[40px] text-[13px] font-bold">
+                    <span>
+                      {newsList[newsList.length - 3]
+                        ? String(newsList[newsList.length - 3].title).slice(
+                            0,
+                            15
+                          )
+                        : "뉴스가 없습니다."}
+                    </span>
+                    <span>
+                      {newsList[newsList.length - 3]
+                        ? String(newsList[newsList.length - 3].date).slice(0, 7)
+                        : ""}
+                    </span>
+                  </div>
+                </div>
+              </>
+            )}
+
+            {noticeMenu == "교육센터" && (
+              <>
+                <div className="w-full h-[110px] flex justify-between items-center cursor-pointer">
+                  <div className="flex flex-col w-full justify-center items-center text-[#484848] ">
+                    준비 중입니다.
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
         {/* 카드뉴스 */}
         <div className="w-1/2 h-[250px] flex space-x-[10px]">
           <div className="w-1/2 h-[250px] p-[10px]">
             <Carousel>
-              {banners.map((image, index) => (
+              {newsList?.map((item: any, index: any) => (
                 <Paper key={index} className="w-full h-[230px]">
-                  <Image src={image} alt="image" fill />
+                  <Image src={item.img} alt="image" fill />
                 </Paper>
               ))}
             </Carousel>
@@ -219,4 +373,6 @@ export default function Notice() {
       </div>
     </div>
   );
-}
+};
+
+export default Notice;

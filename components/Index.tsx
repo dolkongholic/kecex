@@ -17,9 +17,16 @@ import toast from "react-hot-toast";
 interface IndexProps {
   currentUser?: SafeUser | null;
   mainBanner?: any;
+  newsList?: any;
+  noticeList?: any;
 }
 
-const Index: React.FC<IndexProps> = ({ currentUser, mainBanner }) => {
+const Index: React.FC<IndexProps> = ({
+  currentUser,
+  mainBanner,
+  newsList,
+  noticeList,
+}) => {
   const router = useRouter();
   const InsertMainBannerModal = useInsertMainBanner();
 
@@ -92,7 +99,7 @@ const Index: React.FC<IndexProps> = ({ currentUser, mainBanner }) => {
           </ResposiveCarousel>
         </div>
       </div>
-      <Notice />
+      <Notice newsList={newsList} noticeList={noticeList} />
     </section>
   );
 };

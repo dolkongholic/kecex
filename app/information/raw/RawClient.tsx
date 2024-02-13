@@ -97,7 +97,7 @@ const RawClient: React.FC<RawProps> = ({ rawList, currentUser }) => {
             <Link
               key={index}
               passHref
-              href={`information/raw/detail/${item.id}`}
+              href={`information/raw/detail/${item.id}?page=${page}`}
               className="w-full"
             >
               <div

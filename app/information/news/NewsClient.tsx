@@ -99,7 +99,7 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
               <Link
                 key={index}
                 passHref
-                href={`/information/news/detail/${item.id}`}
+                href={`/information/news/detail/${item.id}?page=${page}`}
               >
                 <div className="border border-gray text-darkgray ease-linear transition-colors duration-300 hover:bg-blue-500 hover:text-white">
                   <div className="flex flex-col">

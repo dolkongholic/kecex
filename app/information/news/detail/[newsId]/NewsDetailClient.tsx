@@ -1,93 +1,81 @@
 "use client";
-
-import React, { useEffect } from "react";
 import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import Link from "next/link";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   RiArrowDownSLine,
   RiArrowRightSLine,
   RiArrowUpSLine,
 } from "react-icons/ri";
-
-import axios from "axios";
+import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
+import axios from "axios";
 import toast from "react-hot-toast";
 
 const MainList = [
   {
-    title: "인재정보",
-    url: "/notice/worker",
+    title: "관계법령",
+    url: "/information/raw?page=1",
     sub: null,
   },
   {
-    title: "FAQ",
-    url: "/notice/faq",
-    sub: null,
-  },
-  {
-    title: "문의사항",
-    url: "/notice/qna",
-    sub: null,
-  },
-  {
-    title: "공지사항",
-    url: "/notice/notice?page=1",
+    title: "카드뉴스",
+    url: "/information/news?page=1",
     sub: null,
   },
 ];
 
-const location = "공지사항";
+const location = "카드뉴스";
 
-interface NoticeClientProps {
-  currentNotice: any;
+interface NewsClientProps {
+  currentNews: any;
   currentUser?: any;
 }
 
-const NoticeDetailClient: React.FC<NoticeClientProps> = ({
-  currentNotice,
+const NewsDetailClient: React.FC<NewsClientProps> = ({
+  currentNews,
   currentUser,
 }) => {
-  const [pageMenu, setPageMenu] = useState<any>("공지사항");
-  const [preNotice, setPreNotice] = useState<any>(null);
-  const [nextNotice, setNextNotice] = useState<any>(null);
+  const [pageMenu, setPageMenu] = useState<any>("카드뉴스");
+
+  const [preNews, setPreNews] = useState<any>(null);
+  const [nextNews, setNextNews] = useState<any>(null);
 
   const router = useRouter();
   const preId = {
-    id: currentNotice.id - 1,
+    id: currentNews.id - 1,
   };
 
   const nextId = {
-    id: currentNotice.id + 1,
+    id: currentNews.id + 1,
   };
-
-  useEffect(() => {
-    const fetchPreNotice = async () => {
-      try {
-        const preNoticeResponse = await axios.post("/api/notice", preId);
-        setPreNotice(preNoticeResponse.data);
-        const nextNoticeResponse = await axios.post("/api/notice", nextId);
-        setNextNotice(nextNoticeResponse.data);
-      } catch (error) {
-        console.error("Error fetching pre notice:", error);
-      }
-    };
-
-    fetchPreNotice();
-  }, []);
 
   const params = useSearchParams();
   const page = params?.get("page");
 
+  useEffect(() => {
+    const fetchPreNews = async () => {
+      try {
+        const preNewsResponse = await axios.post("/api/news", preId);
+        setPreNews(preNewsResponse.data);
+        const nextNewsResponse = await axios.post("/api/news", nextId);
+        setNextNews(nextNewsResponse.data);
+      } catch (error) {
+        console.error("Error fetching News:", error);
+      }
+    };
+    fetchPreNews();
+  }, []);
+
   const del = () => {
     if (confirm("삭제하시겠습니까?")) {
       axios
-        .post("/api/notice/del", currentNotice)
+        .post("/api/news/del", currentNews)
         .then(() => {
           toast.success("삭제 되었습니다.");
-          router.push(`/notice/notice?page=${page}`);
+          router.push(`/information/news?page=${page}`);
         })
         .catch(() => {
           toast.error("오류가 있습니다.");
@@ -105,7 +93,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              알림센터 <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+              정보공개 <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center underline">
               {location}
@@ -119,7 +107,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
-                <SubNavHeader title={"알림센터"} />
+                <SubNavHeader title={"정보공개"} />
                 <div className="flex flex-col w-full">
                   <SubNav
                     MainList={MainList}
@@ -134,43 +122,41 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
         </section>
 
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
-          <ContentTitle title="공지사항" center={true} />
-          <div className="w-full mt-[20px] leading-[50px] border-b border-gray-100">
-            &nbsp;
+          <ContentTitle title="카드뉴스" />
+          <div className="w-full  border-b border-gray-100">&nbsp;</div>
+          <div className="w-full pl-[20px] flex justify-start items-center h-[70px] bg-gray-100 border-t-2 border-gray-200">
+            <div className="px-[10px] p-[5px] bg-gray-500 text-white mr-[20px]">
+              협회소식
+            </div>
+            <div>{currentNews?.title}</div>
           </div>
-          <div className="w-full pl-[20px] flex justify-start items-center h-[70px] bg-gray-100 border-t-2 border-gray-500">
-            {currentNotice?.title}
-          </div>
-          <div className="w-full flex justify-between item-center h-[50px] border-t-2 border-b-2 border-gray-100">
+          <div className="w-full flex justify-between item-center h-[50px] border-t-2 border-b-2 border-gray">
             <div className="flex justify-between items-center px-[20px]">
               <div>등록일</div>
-              <div className="pl-4">{currentNotice?.date}</div>
+              <div className="ml-3">{currentNews?.date}</div>
             </div>
             <div className="pr-[40px] flex justify-center items-center"></div>
           </div>
-          <div className="w-full mt-[30px] flex flex-col px-[20px] pb-10">
-            {currentNotice.content.split("\n").map((line: any, index: any) => (
+          <div className="w-full mt-[30px] flex flex-col px-[20px] text-[13px] text-base">
+            <Image
+              src={currentNews.img}
+              width={300}
+              height={100}
+              alt="img"
+              className="mb-[20px]"
+            />
+            {currentNews.content.split("\n").map((line: any, index: any) => (
               <React.Fragment key={index}>
                 {line}
                 <br />
               </React.Fragment>
             ))}
           </div>
-          {/* <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray-100 border-b-2 border-b-gray-500">
-            <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
-              첨부파일
-            </div>
-            <div className="flex justify-start items-center pl-[20px]">
-              <p className="cursor-pointer">방폭전기기기의 설계.hwp</p>
-              <button className="cursor-pointer flex justify-center items-center gap-[20px] ml-[40px] bg-gray-500 text-white w-[120px] h-[35px]">
-                다운로드 <GrDownload className="grIcon" />
-              </button>
-            </div>
-          </div> */}
-          {preNotice ? (
+
+          {preNews ? (
             <Link
               passHref
-              href={`/notice/notice/detail/${preId.id}?page=${page}`}
+              href={`/information/news/detail/${preId.id}?page=${page}`}
               className="w-full"
             >
               <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
@@ -179,7 +165,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
                   <RiArrowUpSLine className="text-[24px] pt-[3px]" />
                 </div>
                 <div className="flex justify-start items-center pl-[20px]">
-                  {preNotice.title}
+                  {preNews.title}
                 </div>
               </div>
             </Link>
@@ -195,10 +181,10 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
             </div>
           )}
 
-          {nextNotice ? (
+          {nextNews ? (
             <Link
               passHref
-              href={`/notice/notice/detail/${nextId.id}?page=${page}`}
+              href={`/information/news/detail/${nextId.id}?page=${page}`}
               className="w-full"
             >
               <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">
@@ -207,7 +193,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
                   <RiArrowDownSLine className="text-[24px] pt-[3px]" />
                 </div>
                 <div className="flex justify-start items-center pl-[20px]">
-                  {nextNotice.title}
+                  {nextNews.title}
                 </div>
               </div>
             </Link>
@@ -244,4 +230,4 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
   );
 };
 
-export default NoticeDetailClient;
+export default NewsDetailClient;

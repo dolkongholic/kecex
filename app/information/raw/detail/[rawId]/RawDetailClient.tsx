@@ -11,18 +11,19 @@ import {
   RiArrowUpSLine,
 } from "react-icons/ri";
 import { GrDownload } from "react-icons/gr";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 const MainList = [
   {
     title: "관계법령",
-    url: "/information/raw",
+    url: "/information/raw?page=1",
     sub: null,
   },
   {
     title: "카드뉴스",
-    url: "/information/news",
+    url: "/information/news?page=1",
     sub: null,
   },
 ];
@@ -31,9 +32,13 @@ const location = "관계법령";
 
 interface RawClientProps {
   currentRaw: any;
+  currentUser?: any;
 }
 
-const RawDetailClient: React.FC<RawClientProps> = ({ currentRaw }) => {
+const RawDetailClient: React.FC<RawClientProps> = ({
+  currentRaw,
+  currentUser,
+}) => {
   const [pageMenu, setPageMenu] = useState<any>("관계법령");
 
   const [preRaw, setPreRaw] = useState<any>(null);
@@ -51,9 +56,9 @@ const RawDetailClient: React.FC<RawClientProps> = ({ currentRaw }) => {
   useEffect(() => {
     const fetchPreRaw = async () => {
       try {
-        const preRawResponse = await axios.post("/api/Raw", preId);
+        const preRawResponse = await axios.post("/api/raw", preId);
         setPreRaw(preRawResponse.data);
-        const nextRawResponse = await axios.post("/api/Raw", nextId);
+        const nextRawResponse = await axios.post("/api/raw", nextId);
         setNextRaw(nextRawResponse.data);
       } catch (error) {
         console.error("Error fetching pre Raw:", error);
@@ -61,6 +66,24 @@ const RawDetailClient: React.FC<RawClientProps> = ({ currentRaw }) => {
     };
     fetchPreRaw();
   }, []);
+
+  const params = useSearchParams();
+  const page = params?.get("page");
+
+  const del = () => {
+    if (confirm("삭제하시겠습니까?")) {
+      axios
+        .post("/api/raw/del", currentRaw)
+        .then(() => {
+          toast.success("삭제 되었습니다.");
+          router.push(`/information/raw?page=${page}`);
+        })
+        .catch(() => {
+          toast.error("오류가 있습니다.");
+        });
+    } else {
+    }
+  };
 
   return (
     <section>
@@ -101,9 +124,7 @@ const RawDetailClient: React.FC<RawClientProps> = ({ currentRaw }) => {
 
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title="관계법령" />
-          <div className="w-full mt-[20px] leading-[50px] border-b border-gray-100">
-            &nbsp;
-          </div>
+          <div className="w-full border-b border-gray-100">&nbsp;</div>
           <div className="w-full pl-[20px] flex justify-start items-center h-[70px] bg-gray-100 border-t-2 border-darkgray">
             {currentRaw?.title}
           </div>
@@ -136,7 +157,7 @@ const RawDetailClient: React.FC<RawClientProps> = ({ currentRaw }) => {
           {preRaw ? (
             <Link
               passHref
-              href={`/notice/notice/detail/${preId.id}`}
+              href={`/information/raw/detail/${preId.id}?page=${page}`}
               className="w-full"
             >
               <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
@@ -164,7 +185,7 @@ const RawDetailClient: React.FC<RawClientProps> = ({ currentRaw }) => {
           {nextRaw ? (
             <Link
               passHref
-              href={`/notice/notice/detail/${nextId.id}`}
+              href={`/information/raw/detail/${nextId.id}?page=${page}`}
               className="w-full"
             >
               <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">
@@ -188,12 +209,22 @@ const RawDetailClient: React.FC<RawClientProps> = ({ currentRaw }) => {
               </div>
             </div>
           )}
-          <button
-            className="w-32 h-10 bg-gray-500 text-white text-[14px] mt-9 m-auto"
-            onClick={() => router.back()}
-          >
-            목록
-          </button>
+          <div className="flex gap-4 m-auto">
+            <button
+              className="w-32 h-10 bg-gray-500 text-white text-[14px] mt-9 m-auto"
+              onClick={() => router.back()}
+            >
+              목록
+            </button>
+            {currentUser && (
+              <button
+                className="w-32 h-10 bg-red-500 text-white text-[14px] mt-9 m-auto"
+                onClick={() => del()}
+              >
+                삭제
+              </button>
+            )}
+          </div>
         </section>
       </main>
     </section>

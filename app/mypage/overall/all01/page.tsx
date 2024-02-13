@@ -9,7 +9,7 @@ const OverAll01Page = async () => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <OverAll01Client />
+      <OverAll01Client currentUser={currentUser} />
       <Footer />
     </div>
   );

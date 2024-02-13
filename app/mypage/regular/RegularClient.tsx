@@ -23,8 +23,8 @@ const MainList = [
     sub: [
       { title: "발급/출력 현황", url: "/mypage/overall/all01" },
       { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-      { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-      { title: "경력관리 현황", url: "/mypage/overall/all04" },
+      // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
+      // { title: "경력관리 현황", url: "/mypage/overall/all04" },
     ],
   },
   {
@@ -62,7 +62,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "경력수첩 발급", url: "/mypage/carrear/print" },
-      { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
+      // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
     ],
   },
   {
@@ -331,10 +331,10 @@ const RegularClient = () => {
                   alt="img"
                 />{" "}
               </button>
-              <button className="w-44 h-14 border border-gray-200 text-gray-800 flex justify-center items-center ml-4">
+              {/* <button className="w-44 h-14 border border-gray-200 text-gray-800 flex justify-center items-center ml-4">
                 회원서비스 안내{" "}
                 <Image src={download_icon} className="w-4 h-4 ml-2" alt="img" />{" "}
-              </button>
+              </button> */}
               <button className="w-44 h-14  border border-gray-200 text-gray-800 flex justify-center items-center ml-4">
                 접수처
               </button>
