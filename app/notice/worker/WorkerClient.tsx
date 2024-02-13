@@ -34,10 +34,17 @@ const MainList = [
 
 const location = "인재정보";
 
-const WorkerClient = () => {
+interface workerProps {
+  currentUser?: any;
+}
+
+const WorkerClient: React.FC<workerProps> = ({ currentUser }) => {
   const [pageMenu, setPageMenu] = useState<any>("인재정보");
   const [select, setSelect] = useState<string>("분야");
 
+  const temp = () => {
+    alert("이력서를 작성하셔야합니다.");
+  };
   return (
     <section>
       <div id="headerNav">
@@ -171,7 +178,7 @@ const WorkerClient = () => {
             </div>
             {/*검색 결과 없을 때 */}
             <ul>
-              {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
+              {/* {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
                 <li className="flex" key={index}>
                   <div className="w-1/4 leading-[40px] text-center border-x border-b border-gray-200">
                     홍길동
@@ -186,13 +193,17 @@ const WorkerClient = () => {
                     IECEx 001
                   </div>
                 </li>
-              ))}
+              ))} */}
             </ul>
           </div>
-
-          <button className="w-36 h-12 bg-blue-500 text-white m-auto">
-            등록하기
-          </button>
+          {currentUser && (
+            <button
+              className="w-36 h-12 bg-blue-500 text-white m-auto"
+              onClick={() => temp()}
+            >
+              등록하기
+            </button>
+          )}
         </section>
       </main>
     </section>

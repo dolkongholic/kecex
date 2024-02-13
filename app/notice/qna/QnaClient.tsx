@@ -38,7 +38,11 @@ const MainList = [
 
 const location = "문의사항";
 
-const QnaClient = () => {
+interface QnAProps {
+  currentUser?: any;
+}
+
+const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [pageMenu, setPageMenu] = useState<any>("문의사항");
 
@@ -212,20 +216,22 @@ const QnaClient = () => {
                 </label>
               </div>
             </div> */}
-            <div className="w-full flex justify-end items-center mt-[20px]">
-              {!isLoading ? (
-                <div
-                  className="w-[150px] h-[40px] text-white bg-blue-500 flex justify-center items-center cursor-pointer"
-                  onClick={handleSubmit(onSubmit)}
-                >
-                  문의하기
-                </div>
-              ) : (
-                <div className="w-[150px] h-[40px] text-white bg-red-500 flex justify-center items-center cursor-not-allowed">
-                  문의 완료
-                </div>
-              )}
-            </div>
+            {currentUser && (
+              <div className="w-full flex justify-end items-center mt-[20px]">
+                {!isLoading ? (
+                  <div
+                    className="w-[150px] h-[40px] text-white bg-blue-500 flex justify-center items-center cursor-pointer"
+                    onClick={handleSubmit(onSubmit)}
+                  >
+                    문의하기
+                  </div>
+                ) : (
+                  <div className="w-[150px] h-[40px] text-white bg-red-500 flex justify-center items-center cursor-not-allowed">
+                    문의 완료
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </section>
       </main>

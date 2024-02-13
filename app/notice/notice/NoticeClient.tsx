@@ -37,9 +37,10 @@ const location = "공지사항";
 
 interface NoticeProps {
   noticeList?: any;
+  currentUser?: any;
 }
 
-const NoticeClient: React.FC<NoticeProps> = ({ noticeList }) => {
+const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
   const [pageMenu, setPageMenu] = useState<any>("공지사항");
   const params = useSearchParams();
   const page = params?.get("page");
@@ -148,11 +149,13 @@ const NoticeClient: React.FC<NoticeProps> = ({ noticeList }) => {
                   <RiArrowRightSLine className="text-[20px] pt-[3px]" />
                 </div> */}
               </div>
-              <Link passHref href={"/notice/notice/post"}>
-                <button className="cursor-pointer bg-blue-500 text-white w-24 h-8 text-[14px]">
-                  글쓰기
-                </button>
-              </Link>
+              {currentUser && (
+                <Link passHref href={"/notice/notice/post"}>
+                  <button className="cursor-pointer bg-blue-500 text-white w-24 h-8 text-[14px]">
+                    글쓰기
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
         </section>

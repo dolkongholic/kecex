@@ -3,93 +3,53 @@
 import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
+import Pages from "@/components/pages";
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 
 const MainList = [
   {
     title: "관계법령",
-    url: "/information/raw",
+    url: "/information/raw?page=1",
     sub: null,
   },
   {
     title: "카드뉴스",
-    url: "/information/news",
+    url: "/information/news?page=1",
     sub: null,
-  },
-];
-
-const Items = [
-  {
-    id: 1,
-    title: "폴리텍대학 석유화학공정 기술교육원, 방폭안전 교육센터 구축",
-    img: "/img/banner/img_1.jpg",
-    type: "협회소식",
-    date: "2023.10.01",
-  },
-  {
-    id: 2,
-    title: "폴리텍대학 석유화학공정 기술교육원, 방폭안전 교육센터 구축",
-    img: "/img/banner/img_2.jpg",
-    type: "협회소식",
-    date: "2023.10.01",
-  },
-  {
-    id: 3,
-    title: "폴리텍대학 석유화학공정 기술교육원, 방폭안전 교육센터 구축",
-    img: "/img/banner/img_3.jpg",
-    type: "협회소식",
-    date: "2023.10.01",
-  },
-  {
-    id: 1,
-    title: "폴리텍대학 석유화학공정 기술교육원, 방폭안전 교육센터 구축",
-    img: "/img/banner/img_1.jpg",
-    type: "보도자료",
-    date: "2023.10.01",
-  },
-  {
-    id: 2,
-    title: "폴리텍대학 석유화학공정 기술교육원, 방폭안전 교육센터 구축",
-    img: "/img/banner/img_2.jpg",
-    type: "보도자료",
-    date: "2023.10.01",
-  },
-  {
-    id: 3,
-    title: "폴리텍대학 석유화학공정 기술교육원, 방폭안전 교육센터 구축",
-    img: "/img/banner/img_3.jpg",
-    type: "보도자료",
-    date: "2023.10.01",
-  },
-  {
-    id: 1,
-    title: "폴리텍대학 석유화학공정 기술교육원, 방폭안전 교육센터 구축",
-    img: "/img/banner/img_1.jpg",
-    type: "협회소식",
-    date: "2023.10.01",
-  },
-  {
-    id: 2,
-    title: "폴리텍대학 석유화학공정 기술교육원, 방폭안전 교육센터 구축",
-    img: "/img/banner/img_2.jpg",
-    type: "협회소식",
-    date: "2023.10.01",
-  },
-  {
-    id: 3,
-    title: "폴리텍대학 석유화학공정 기술교육원, 방폭안전 교육센터 구축",
-    img: "/img/banner/img_3.jpg",
-    type: "협회소식",
-    date: "2023.10.01",
   },
 ];
 
 const location = "카드뉴스";
 
-const NewsClient = () => {
+interface NewsProps {
+  newsList?: any;
+  currentUser?: any;
+}
+
+const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
   const [pageMenu, setPageMenu] = useState<any>("카드뉴스");
+
+  const params = useSearchParams();
+  const page = params?.get("page");
+  const pathname = usePathname();
+  const isMainPage = pathname === "/information/news";
+
+  if (!isMainPage) {
+    return null;
+  }
+
+  const totalItems = newsList.length;
+  const totalPages = Math.ceil(totalItems / 10); // list의 길이를 10으로 나눈 후 올림하여 페이지 수 계산
+
+  // totalPages만큼 페이지를 생성
+  const pages = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pages.push(i);
+  }
 
   return (
     <section>
@@ -131,22 +91,31 @@ const NewsClient = () => {
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title="카드뉴스" />
           <div className="w-full mt-[20px] leading-[50px] border-b border-gray">
-            1/100 페이지 (전체 255건)
+            {page}/{totalPages} 페이지 (총 {newsList.length} 건)
           </div>
 
           <div className="grid grid-cols-3 gap-4 pt-[30px]">
-            {Items.map((item, index) => (
-              <Link key={index} passHref href={"/information/news/detail/"}>
+            {newsList.map((item: any, index: any) => (
+              <Link
+                key={index}
+                passHref
+                href={`/information/news/detail/${item.id}`}
+              >
                 <div className="border border-gray text-darkgray ease-linear transition-colors duration-300 hover:bg-blue-500 hover:text-white">
                   <div className="flex flex-col">
-                    <div
-                      className={`bg-[url('/img/banner/img_1.jpg')] bg-cover`}
-                    >
-                      <div className="w-full h-[200px] flex justify-start items-end">
-                        <p className="px-[10px] p-[5px] bg-superdarkgray text-white">
-                          {item.type}
-                        </p>
-                      </div>
+                    <div className="w-full m-auto">
+                      <Image
+                        src={item.img}
+                        width={350}
+                        height={150}
+                        alt="item.title"
+                        className="m-auto"
+                      />
+                    </div>
+                    <div className="w-full flex justify-start items-end">
+                      <p className="px-[10px] p-[5px] bg-superdarkgray text-white">
+                        {item.type}
+                      </p>
                     </div>
                     <div className="text-[14px] leading-[30px] px-[10px]">
                       {item.title}
@@ -163,29 +132,28 @@ const NewsClient = () => {
             <div>&nbsp;</div>
             <div className="flex">
               <div className="flex mr-[20px] cursor-pointer">
-                <RiArrowLeftSLine className="text-[20px] pt-[3px]" />
+                {/* <RiArrowLeftSLine className="text-[20px] pt-[3px]" /> */}
               </div>
               <div className="flex space-x-[10px]">
-                {[1, 2, 3, 4, 5].map((item, index) => (
-                  <div
-                    key={index}
-                    className={`${
-                      index == 0 && "text-blue-500 font-bold"
-                    } hover:text-blue-500 hover:font-bold cursor-pointer`}
-                  >
-                    {item}
-                  </div>
+                {pages.map((item) => (
+                  <Pages
+                    key={item}
+                    label={item.toString()}
+                    selected={page === item.toString()}
+                  />
                 ))}
               </div>
               <div className="flex ml-[20px] cursor-pointer">
-                <RiArrowRightSLine className="text-[20px] pt-[3px]" />
+                {/* <RiArrowRightSLine className="text-[20px] pt-[3px]" /> */}
               </div>
             </div>
-            <Link passHref href={"information/news/post"}>
-              <button className="cursor-pointer bg-blue-500 text-white w-24 h-8 text-[14px]">
-                글쓰기
-              </button>
-            </Link>
+            {currentUser && (
+              <Link passHref href={"information/news/post"}>
+                <button className="cursor-pointer bg-blue-500 text-white w-24 h-8 text-[14px]">
+                  글쓰기
+                </button>
+              </Link>
+            )}
           </div>
         </section>
       </main>

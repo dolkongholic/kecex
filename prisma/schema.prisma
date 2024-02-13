@@ -67,3 +67,11 @@ model raw {
   file    String
   date    String
 }
+
+model news {
+  id      Int    @id @default(autoincrement())
+  title   String
+  content String  @db.Text
+  img     String
+  date    String
+}

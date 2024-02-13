@@ -105,7 +105,7 @@ const JoinPage = () => {
           <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px]">
             <Image src={PicIconArrow} width={25} height={15} alt="icon" />
             <span className="pl-[10px] text-secondary w-[100px]">일반회원</span>
-            <span>정회원 이외의 단체 및 개인(수정필요)</span>
+            <span>정회원 이외의 단체 및 개인</span>
           </div>
           <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px]">
             <Image src={PicIconArrow} width={25} height={15} alt="icon" />
@@ -115,7 +115,7 @@ const JoinPage = () => {
               방폭과 관련된 소재, 부품기업과 이와 관련한 산업에 종사하는자
             </span>
           </div>
-          <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px]">
+          {/* <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px]">
             <div>
               <Image src={PicIconArrow} width={25} height={15} alt="icon" />
               <br />
@@ -130,7 +130,7 @@ const JoinPage = () => {
               협회의 정회원으로 가입하지않고 방폭기술자 경력관리만을 위하여
               협회를 이용하는 자 (이하 &quot;경력관리자&quot;라 한다)
             </span>
-          </div>
+          </div> */}
           <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px]">
             <Image src={PicIconArrow} width={25} height={15} alt="icon" />
             <span className="pl-[10px] text-secondary w-[100px]">기업회원</span>

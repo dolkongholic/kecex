@@ -144,7 +144,7 @@ const RawPostClient = () => {
               글 내용을 입력해주세요.
             </textarea>
           </div>
-          <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray border-b-2 border-b-gray-500">
+          {/* <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray border-b-2 border-b-gray-500">
             <div className="w-[200px] px-[20px] flex justify-center items-center bg-gray-200 h-[66px] text-black">
               첨부파일
             </div>
@@ -159,7 +159,7 @@ const RawPostClient = () => {
                 업로드 <GrUpload className="grIcon" />
               </button>
             </div>
-          </div>
+          </div> */}
           <div className="w-full pt-3 flex justify-between">
             <button
               className="w-24 h-8 border border-gray rounded-sm bg-gray-200 text-[14px] hover:bg-gray-500 hover:text-white hover:border-gray-500"
@@ -167,14 +167,12 @@ const RawPostClient = () => {
             >
               돌아가기
             </button>
-            <Link passHref href={"../raw"}>
-              <button
-                className="w-24 h-8 border border-gray-500 rounded-sm bg-gray-500 text-[14px] text-white hover:bg-blue-500 hover:border-blue-500"
-                onClick={handleSubmit(onSubmit)}
-              >
-                글쓰기
-              </button>
-            </Link>
+            <button
+              className="w-24 h-8 border border-gray-500 rounded-sm bg-gray-500 text-[14px] text-white hover:bg-blue-500 hover:border-blue-500"
+              onClick={handleSubmit(onSubmit)}
+            >
+              글쓰기
+            </button>
           </div>
         </section>
       </main>

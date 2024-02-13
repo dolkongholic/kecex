@@ -9,7 +9,7 @@ const QnaPage = async () => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <QnaClient />
+      <QnaClient currentUser={currentUser} />
       <Footer />
     </div>
   );

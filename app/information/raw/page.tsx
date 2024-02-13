@@ -11,7 +11,7 @@ const RawPage = async () => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <RawClient rawList={rawList} />
+      <RawClient rawList={rawList} currentUser={currentUser} />
       <Footer />
     </div>
   );

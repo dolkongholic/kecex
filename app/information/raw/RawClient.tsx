@@ -17,7 +17,7 @@ const MainList = [
   },
   {
     title: "카드뉴스",
-    url: "/information/news",
+    url: "/information/news?page=1",
     sub: null,
   },
 ];
@@ -26,9 +26,10 @@ const location = "관계법령";
 
 interface RawProps {
   rawList?: any;
+  currentUser?: any;
 }
 
-const RawClient: React.FC<RawProps> = ({ rawList }) => {
+const RawClient: React.FC<RawProps> = ({ rawList, currentUser }) => {
   const [pageMenu, setPageMenu] = useState<any>("관계법령");
 
   const params = useSearchParams();
@@ -135,11 +136,13 @@ const RawClient: React.FC<RawProps> = ({ rawList }) => {
                 {/* <RiArrowRightSLine className="text-[20px] pt-[3px]" /> */}
               </div>
             </div>
-            <Link passHref href={"/information/raw/post"}>
-              <button className="cursor-pointer bg-blue-500 text-white w-24 h-8 text-[14px]">
-                글쓰기
-              </button>
-            </Link>
+            {currentUser && (
+              <Link passHref href={"/information/raw/post"}>
+                <button className="cursor-pointer bg-blue-500 text-white w-24 h-8 text-[14px]">
+                  글쓰기
+                </button>
+              </Link>
+            )}
           </div>
         </section>
       </main>

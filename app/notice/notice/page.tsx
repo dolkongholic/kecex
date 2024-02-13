@@ -11,7 +11,7 @@ const NoticePage = async () => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <NoticeClient noticeList={noticeList} />
+      <NoticeClient currentUser={currentUser} noticeList={noticeList} />
       <Footer />
     </div>
   );

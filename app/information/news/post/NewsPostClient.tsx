@@ -8,15 +8,21 @@ import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { GrUpload } from "react-icons/gr";
 
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
+import axios from "axios";
+import toast from "react-hot-toast";
+import ImageUpload from "@/components/inputs/ImageUpload";
+
 const MainList = [
   {
     title: "관계법령",
-    url: "/information/raw",
+    url: "/information/raw?page=1",
     sub: null,
   },
   {
     title: "카드뉴스",
-    url: "/information/news",
+    url: "/information/news?page=1",
     sub: null,
   },
 ];
@@ -33,8 +39,52 @@ const NewsPostClient = () => {
     return `${year}-${month}-${day}`;
   });
 
-  const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setCurrentDate(event.target.value);
+  const router = useRouter();
+
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    formState: { errors },
+    reset,
+  } = useForm<FieldValues>({
+    defaultValues: {},
+  });
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  const imageSrc = watch("imageSrc");
+
+  const setCustomValue = (id: string, value: any) => {
+    setValue(id, value, {
+      shouldDirty: true,
+      shouldTouch: true,
+      shouldValidate: true,
+    });
+  };
+
+  const handleFileChange = (event: any) => {
+    setSelectedFile(event.target.files[0]);
+  };
+
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    setIsLoading(true);
+
+    axios
+      .post("/api/insert/news/", data)
+      .then(() => {
+        toast.success("입력 되었습니다.");
+        router.push("/information/news?page=1");
+      })
+      .catch(() => {
+        toast.error("오류가 발생했습니다.");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   return (
@@ -84,30 +134,37 @@ const NewsPostClient = () => {
                 type="text"
                 placeholder="제목을 입력해주세요"
                 className="w-full h-[40px] p-5 border border-gray-100"
+                disabled={isLoading}
+                {...register("text", { required: true })}
               />
             </div>
             <input
               type="date"
               value={currentDate}
-              onChange={handleDateChange}
+              disabled={isLoading}
+              {...register("date", { required: true })}
               className="w-2/12 h-[40px] border border-gray-100 px-3"
             />
           </div>
           <div className="mx-[20px] w-[calc(100%-40px)] border-t border-blue-500"></div>
           <div className="w-full my-[30px] flex flex-col px-[20px]">
             <textarea
-              name="post_text"
               id="post_text"
               cols={30}
               rows={15}
               className="border border-gray-100 p-6 box-border"
+              disabled={isLoading}
+              {...register("post_text", { required: true })}
             >
               글 내용을 입력해주세요.
             </textarea>
           </div>
           <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray-100 border-b-2 border-b-gray-500">
             <div className="w-[200px] px-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
-              첨부파일
+              <ImageUpload
+                onChange={(value) => setCustomValue("imageSrc", value)}
+                value={imageSrc}
+              />
             </div>
             <div className="flex justify-start items-center pl-[20px]">
               <p className="cursor-pointer">
@@ -119,16 +176,18 @@ const NewsPostClient = () => {
             </div>
           </div>
           <div className="w-full pt-3 flex justify-between">
-            <Link passHref href={"../news"}>
-              <button className="w-24 h-8 border border-gray-100 rounded-sm bg-gray-100 text-[14px] hover:bg-gray-500 hover:text-white hover:border-gray-500">
-                돌아가기
-              </button>
-            </Link>
-            <Link passHref href={"../news"}>
-              <button className="w-24 h-8 border border-gray-500 rounded-sm bg-gray-500 text-[14px] text-white hover:bg-blue-500 hover:border-blue-500">
-                글쓰기
-              </button>
-            </Link>
+            <button
+              className="w-24 h-8 border border-gray-100 rounded-sm bg-gray-100 text-[14px] hover:bg-gray-500 hover:text-white hover:border-gray-500"
+              onClick={() => router.back()}
+            >
+              돌아가기
+            </button>
+            <button
+              className="w-24 h-8 border border-gray-500 rounded-sm bg-gray-500 text-[14px] text-white hover:bg-blue-500 hover:border-blue-500"
+              onClick={handleSubmit(onSubmit)}
+            >
+              글쓰기
+            </button>
           </div>
         </section>
       </main>

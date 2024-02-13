@@ -369,44 +369,49 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             </div>
           )}
           {menu == "교육센터" && (
-            <div
-              className="w-[1400px] pt-[20px]"
-              onMouseOver={() => setMenu(menu)}
-            >
-              <div className="w-[1400px] flex justify-start">
-                <div className="w-1/4">
-                  <Link passHref href={"/education/apply/apply"}>
-                    <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
-                      교육신청
-                    </div>
-                  </Link>
-                  <div className="flex flex-col space-y-[20px] text-white">
-                    <Link passHref href={"/education/apply/apply"}>
-                      <span className="cursor-pointer"> - 교육 신청</span>
-                    </Link>
-                    <Link passHref href={"/education/apply/restudy"}>
-                      <span className="cursor-pointer"> - 재교육 신청</span>
-                    </Link>
-                    <Link passHref href={"/education/apply/reexam"}>
-                      <span className="cursor-pointer"> - 재시험 신청</span>
-                    </Link>
-                    <Link passHref href={"/education/apply/semina"}>
-                      <span className="cursor-pointer"> - 세미나 신청</span>
-                    </Link>
-                    <Link passHref href={"/education/apply/consulting"}>
-                      <span className="cursor-pointer"> - 컨설팅 신청</span>
-                    </Link>
-                  </div>
-                </div>
-                <div className="w-1/4">
-                  <Link passHref href={"/education/mystatus/apply"}>
-                    <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
-                      나의 학습활동
-                    </div>
-                  </Link>
-                </div>
+            <div className="w-[1400px] pt-[60px] mx-auto text-white text-xl">
+              <div className="w-[1400px] text-center">
+                교육 센터 운영 준비 중
               </div>
             </div>
+            // <div
+            //   className="w-[1400px] pt-[20px]"
+            //   onMouseOver={() => setMenu(menu)}
+            // >
+            //   <div className="w-[1400px] flex justify-start">
+            //     <div className="w-1/4">
+            //       <Link passHref href={"/education/apply/apply"}>
+            //         <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+            //           교육신청
+            //         </div>
+            //       </Link>
+            //       <div className="flex flex-col space-y-[20px] text-white">
+            //         <Link passHref href={"/education/apply/apply"}>
+            //           <span className="cursor-pointer"> - 교육 신청</span>
+            //         </Link>
+            //         <Link passHref href={"/education/apply/restudy"}>
+            //           <span className="cursor-pointer"> - 재교육 신청</span>
+            //         </Link>
+            //         <Link passHref href={"/education/apply/reexam"}>
+            //           <span className="cursor-pointer"> - 재시험 신청</span>
+            //         </Link>
+            //         <Link passHref href={"/education/apply/semina"}>
+            //           <span className="cursor-pointer"> - 세미나 신청</span>
+            //         </Link>
+            //         <Link passHref href={"/education/apply/consulting"}>
+            //           <span className="cursor-pointer"> - 컨설팅 신청</span>
+            //         </Link>
+            //       </div>
+            //     </div>
+            //     <div className="w-1/4">
+            //       <Link passHref href={"/education/mystatus/apply"}>
+            //         <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+            //           나의 학습활동
+            //         </div>
+            //       </Link>
+            //     </div>
+            //   </div>
+            // </div>
           )}
         </div>
       </section>
@@ -621,9 +626,10 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 </span>
               </div>
               <div className="w-[250px] h-[40px] text-active text-[18px] font-medium text-start leading-[55px] pl-[10px] mb-[20px]">
-                교육신청
+                {/* 교육신청 */}
+                교육센터 운영 준비 중
               </div>
-              <div className="flex flex-col space-y-[20px] border-b border-[#cbcbcb] pb-5">
+              {/* <div className="flex flex-col space-y-[20px] border-b border-[#cbcbcb] pb-5">
                 <Link passHref href={"/education/apply/apply"}>
                   <span className="cursor-pointer"> - 교육 신청</span>
                 </Link>
@@ -644,7 +650,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-active text-[18px] font-medium text-start leading-[55px] pl-[10px] cursor-pointer">
                   나의 학습활동
                 </div>
-              </Link>
+              </Link> */}
             </li>
           </ul>
         </div>

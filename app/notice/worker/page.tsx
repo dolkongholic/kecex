@@ -9,7 +9,7 @@ const WorkerPage = async () => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <WorkerClient />
+      <WorkerClient currentUser={currentUser} />
       <Footer />
     </div>
   );
