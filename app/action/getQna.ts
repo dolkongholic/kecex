@@ -1,7 +1,7 @@
 import prisma from "@/app/libs/prisma";
 
 interface IParams {
-  email: string;
+  email?: string;
 }
 
 export default async function getQna(params: IParams) {
