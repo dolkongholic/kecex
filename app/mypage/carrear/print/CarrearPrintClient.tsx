@@ -33,8 +33,12 @@ const MainList = [
   },
   {
     title: "회비 납부",
-    url: "/mypage/payment",
-    sub: null,
+    url: "#",
+    sub: [
+      { title: "회비 납부", url: "/mypage/payment/payment" },
+      { title: "회비 납부내역", url: "/mypage/payment/detail" },
+      { title: "회비 관리", url: "/mypage/payment/management" },
+    ],
   },
   {
     title: "회원증 출력",
