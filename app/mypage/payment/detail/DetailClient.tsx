@@ -33,8 +33,12 @@ const MainList = [
   },
   {
     title: "회비 납부",
-    url: "/mypage/payment",
-    sub: null,
+    url: "#",
+    sub: [
+      { title: "회비 납부", url: "/mypage/payment/payment" },
+      { title: "회비 납부내역", url: "/mypage/payment/detail" },
+      { title: "회비 관리", url: "/mypage/payment/management" },
+    ],
   },
   {
     title: "회원증 출력",
@@ -66,9 +70,9 @@ const MainList = [
   },
 ];
 
-const location = "회비 납부";
+const location = "회비 납부내역";
 
-const PaymentClient = () => {
+const DetailClient = () => {
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
 
   return (
@@ -111,9 +115,67 @@ const PaymentClient = () => {
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
           <div className="text-black w-full flex flex-col justify-center item-center">
-            <div className="w-2/3 h-24 border border-secondary rounded-lg flex justify-center items-center px-10 m-auto my-10">
-              <p className="text-[14px]">회비를 납부하세요</p>
+            <div className="w-3/4 flex justify-center mx-auto mt-5">
+              <p>
+                <span>회원</span>님의 납부내역입니다.<br/>
+              </p>
             </div>
+            <ul className="w-3/4 mx-auto border-t-2 border-gray-700 mt-10">
+              <div className="w-full h-11 bg-gray-100 text-blue-500 flex text-center items-center font-medium border-b border-blue-900">
+                <div className="w-1/4 border-r border-gray-200">
+                  금액
+                </div>
+                <div className="w-1/4 border-r border-gray-200">
+                  납부상태
+                </div>
+                <div className="w-2/4">
+                  일자
+                </div>
+              </div>
+              <li className="w-full h-11 flex text-center items-center border-b border-gray-400">
+                <div className="w-1/4 h-full border-r border-gray-200 flex pl-10 items-center">
+                  ￦&nbsp;
+                  <span>
+                    30,000
+                  </span>
+                </div>
+                <div className="w-1/4 h-full border-r border-gray-200 flex pl-10 items-center">
+                  <span className="text-blue-600">
+                    접수 대기
+                  </span>
+                </div>
+                <div className="w-2/4 h-full border-r border-gray-200 flex pl-10 items-center">
+                  <span>
+                    2023.12.15 17:51:01
+                  </span>
+                </div>
+              </li>
+              <li className="w-full h-11 flex text-center items-center border-b border-gray-400">
+                <div className="w-1/4 h-full border-r border-gray-200 flex pl-10 items-center">
+                  ￦&nbsp;
+                  <span>
+                    500,000
+                  </span>
+                </div>
+                <div className="w-1/4 h-full border-r border-gray-200 flex pl-10 items-center">
+                  <span className="text-red-600">
+                    승인-입금완료
+                  </span>
+                </div>
+                <div className="w-2/4 h-full border-r border-gray-200 flex pl-10 items-center">
+                  <span>
+                    2024.10.25 07:54:01
+                  </span>
+                </div>
+              </li>
+              <li className="w-full h-2 flex text-center items-center border-b-2 border-gray-700">
+                &nbsp;
+              </li>
+            </ul>
+            <div className="mx-auto mt-10">
+              1 2 3 4 5 page
+            </div>
+            
           </div>
         </section>
       </main>
@@ -121,4 +183,4 @@ const PaymentClient = () => {
   );
 };
 
-export default PaymentClient;
+export default DetailClient;

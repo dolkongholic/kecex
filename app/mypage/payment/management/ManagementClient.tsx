@@ -3,7 +3,7 @@
 import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
-import Link from "next/link";
+import ContentSubTitle from "@/components/content/subtitle";
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
@@ -70,9 +70,9 @@ const MainList = [
   },
 ];
 
-const location = "경력수첩 발급";
+const location = "회비 관리";
 
-const CareerSheetClient = () => {
+const ManagementClient = () => {
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
 
   return (
@@ -114,51 +114,83 @@ const CareerSheetClient = () => {
 
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
-          <div className="flex justify-between w-full h-[50px] leading-[50px]">
-            <Link passHref href="print" className="w-1/2">
-              <div className="w-full text-center h-full border border-gray cursor-pointer">
-                경력수첩 발급
-              </div>
-            </Link>
-            <Link passHref href="sheet" className="w-1/2">
-              <div className="w-full text-center h-full border border-secondary cursor-pointer bg-secondary text-white">
-                경력수첩 발급현황
-              </div>
-            </Link>
-          </div>
-          <div className="text-black w-full flex flex-col justify-between item-center -translate-y-[19px]">
-            <div className="w-full text-black text-[14px] border-b border-secondary">
-              <h3 className="font-bold mt-16 text-[16px]">발급/출력 현황</h3>
-              전체 <span className="font-bold leading-9">17</span> 건
+          <div className="text-black w-full flex flex-col justify-center item-center">
+          <div className="text-black w-full flex flex-col justify-center item-center">
+            <div className="w-3/4 flex justify-end mx-auto mt-5">
+              <p>
+                <span>회원</span>님의 관리페이지<br/>
+              </p>
             </div>
-            {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
-              <div
-                key={index}
-                className="border-b border-gray px-[40px] py-[25px] flex justify-between items-center hover:shadow-md"
-              >
-                <div className="flex-col">
-                  <div>
-                    <span className="text-[20px] font-bold text-black mr-[20px]">
-                      IECEx 004/007/008
-                    </span>
-                  </div>
-                  <div className="text-superdarkgray flex justify-start items-center">
-                    <p>
-                      교육기간: <span>2023.11.15</span>~<span>2023.11.6</span> |
-                      교육장소 : <span>울산</span> | 교육비 <b>143</b> 만원
-                    </p>
-                  </div>
+            <ul className="w-5/6 mx-auto border-t-2 border-gray-700 mt-10">
+              <div className="w-full h-11 bg-gray-100 text-blue-500 flex text-center items-center font-medium border-b border-blue-900">
+                <div className="w-1/5 border-r border-gray-200 ">
+                  금액
                 </div>
-                <div className="flex justify-center  items-center">
-                  <div className="flex justify-center items-center border border-secondary w-[150px] h-[50px]">
-                    <span>승인-입금완료</span>{" "}
-                  </div>
-                  <button className="flex justify-center items-center bg-lightgray  w-[150px] h-[50px] ml-6">
-                    <span>시험결과 보기</span>{" "}
+                <div className="w-1/5 border-r border-gray-200 ">
+                  납부상태
+                </div>
+                <div className="w-2/5 border-r border-gray-200 ">
+                  일자
+                </div>
+                <div className="w-1/5">
+                  납부확인
+                </div>
+              </div>
+              <li className="w-full h-11 flex text-center items-center border-b border-gray-400">
+                <div className="w-1/5 h-full border-r border-gray-200 flex pl-10 items-center">
+                  ￦&nbsp;
+                  <span>
+                    30,000
+                  </span>
+                </div>
+                <div className="w-1/5 h-full border-r border-gray-200 flex pl-10 items-center">
+                  <span className="text-blue-600">
+                    접수 대기
+                  </span>
+                </div>
+                <div className="w-2/5 h-full border-r border-gray-200 flex pl-10 items-center">
+                  <span>
+                    2023.12.15 17:51:01
+                  </span>
+                </div>
+                <div className="w-1/5 h-full border-r border-gray-200 flex items-center">
+                  <button className="w-20 h-8 bg-gray-500 text-white mx-auto">
+                    확인
                   </button>
                 </div>
-              </div>
-            ))}
+              </li>
+              <li className="w-full h-11 flex text-center items-center border-b border-gray-400">
+                <div className="w-1/5 h-full border-r border-gray-200 flex pl-10 items-center">
+                  ￦&nbsp;
+                  <span>
+                    500,000
+                  </span>
+                </div>
+                <div className="w-1/5 h-full border-r border-gray-200 flex pl-10 items-center">
+                  <span className="text-red-600">
+                    승인-입금완료
+                  </span>
+                </div>
+                <div className="w-2/5 h-full border-r border-gray-200 flex pl-10 items-center">
+                  <span>
+                    2024.10.25 07:54:01
+                  </span>
+                </div>
+                <div className="w-1/5 h-full border-r border-gray-200 flex items-center">
+                  <button className="w-20 h-8 bg-gray-500 text-white mx-auto">
+                    확인
+                  </button>
+                </div>
+              </li>
+              <li className="w-full h-2 flex text-center items-center border-b-2 border-gray-700">
+                &nbsp;
+              </li>
+            </ul>
+            <div className="mx-auto mt-10">
+              1 2 3 4 5 page
+            </div>
+            
+          </div>
           </div>
         </section>
       </main>
@@ -166,4 +198,4 @@ const CareerSheetClient = () => {
   );
 };
 
-export default CareerSheetClient;
+export default ManagementClient;
