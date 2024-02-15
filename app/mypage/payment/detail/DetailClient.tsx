@@ -121,7 +121,7 @@ const DetailClient = () => {
               </p>
             </div>
             <ul className="w-3/4 mx-auto border-t-2 border-gray-700 mt-10">
-              <div className="w-full h-11 bg-gray-100 text-blue-500 flex text-center items-center font-medium border-b border-blue-900">
+              <div className="w-full h-11 bg-gray-100 font-semibold flex text-center items-center font-medium border-b border-blue-900">
                 <div className="w-1/4 border-r border-gray-200">
                   금액
                 </div>
