@@ -252,12 +252,6 @@ const RegularClient = () => {
                       <br />
                       (홈페이지 다운로드)
                     </p>
-                    <a
-                      href="#"
-                      className="text-darkgray-200 text-[12px] underline"
-                    >
-                      kecex.vercel.app
-                    </a>
                   </div>
                 </div>
                 <p className="text-[12px] text-center mt-3">
@@ -313,9 +307,9 @@ const RegularClient = () => {
                 </p>
               </li>
             </ul>
-            <div className="w-full h-20 bg-gray-100 flex justify-center items-center my-10">
+            {/* <div className="w-full h-20 bg-gray-100 flex justify-center items-center my-10">
               *가입비용 : 연 360,000원(월 30,000원)
-            </div>
+            </div> */}
             <ContentSubTitle title="정회원의 권한" />
             <p>
               총회에서 선거권, 피선거권 및 의결권 부여 (일반회원은 선거권,
