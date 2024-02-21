@@ -8,11 +8,11 @@ import ContentSubTitle from "@/components/content/subtitle";
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
-import download_icon from "public/img/icon/download_icon.png";
-import download_icon_white from "public/img/icon/download_icon_white.png";
-import regular_member_1 from "public/img/icon/regular_member_1.png";
-import regular_member_2 from "public/img/icon/regular_member_2.png";
-import regular_member_3 from "public/img/icon/regular_member_3.png";
+import download_icon from "@/public/img/icon/download_icon.png";
+import download_icon_white from "@/public/img/icon/download_icon_white.png";
+import regular_member_1 from "@/public/img/icon/regular_member_1.png";
+import regular_member_2 from "@/public/img/icon/regular_member_2.png";
+import regular_member_3 from "@/public/img/icon/regular_member_3.png";
 
 // Image
 

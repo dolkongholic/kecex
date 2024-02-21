@@ -222,7 +222,7 @@ const CareerPrintClient = () => {
               />{" "}
               <br className="md:hidden"/>
               <span className="text-blue-500 text-[13px] md:ml-7">
-                *현금영수증을 발급할 핸드폰 번호를 띄어쓰기, '-' 없이 기입해주세요.
+                *현금영수증을 발급할 핸드폰 번호를 띄어쓰기, - 없이 기입해주세요.
               </span>
             </div>
           </div>

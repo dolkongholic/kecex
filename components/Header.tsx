@@ -62,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
 
   const [activeMenu, setActiveMenu] = useState('협회소개');
 
-  const handleMenuToggle = (menuTitle) => {
+  const handleMenuToggle = (menuTitle : any) => {
     setActiveMenu(menuTitle);
   };
   

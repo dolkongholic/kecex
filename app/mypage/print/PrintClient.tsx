@@ -7,8 +7,8 @@ import ContentTitle from "@/components/content/title";
 import React, { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
-import download_icon from "public/img/icon/download_icon.png";
-import certificate_bg from "public/img/pages/print/certificate_background.jpg";
+import download_icon from "@/public/img/icon/download_icon.png";
+import certificate_bg from "@/public/img/pages/print/certificate_background.jpg";
 
 // Image
 
