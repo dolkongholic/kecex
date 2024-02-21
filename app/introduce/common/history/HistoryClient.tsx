@@ -413,11 +413,9 @@ const HistoryClient = () => {
               </Link>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/"}>
                 <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                     <span> 연혁</span>
                 </div>
-              </Link>
             </li>
             <li className="w-1/2">
               <Link passHref href={"/introduce/common/ci/"}>

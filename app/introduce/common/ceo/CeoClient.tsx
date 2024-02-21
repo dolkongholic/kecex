@@ -86,11 +86,9 @@ const CeoClient = () => {
           <ContentTitle title={location}/>
           <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
             <li className="w-1/2 cursor-default">
-              <Link passHref href={"/"}>
                 <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                   <span> CEO 인사말</span>
                 </div>
-              </Link>
             </li>
             <li className="w-1/2">
               <Link passHref href={"/introduce/common/vistion/"}>

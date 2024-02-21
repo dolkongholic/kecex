@@ -125,11 +125,9 @@ const CopcClient = () => {
               </Link>
             </li>
             <li className="w-full">
-              <Link passHref href={"/"}>
                 <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                     <span> CoPC 과정</span>
                 </div>
-              </Link>
             </li>
           </ul>
           <ul className="w-full flex flex-wrap text-[13px] md:text-base mt-10 md:mt-0">

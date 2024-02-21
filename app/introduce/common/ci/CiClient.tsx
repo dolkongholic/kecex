@@ -109,11 +109,9 @@ const CiClient = () => {
               </Link>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/"}>
                 <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                     <span> CI</span>
                 </div>
-              </Link>
             </li>
           </ul>
           <Image src={PicCi_1} alt="Ci" className="my-[40px] w-full" />

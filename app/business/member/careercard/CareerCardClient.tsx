@@ -112,11 +112,9 @@ const CareerCardClient = () => {
               </Link>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/"}>
                 <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                     <span> 경력수첩</span>
                 </div>
-              </Link>
             </li>
           </ul>
           <ContentSubTitle title="운영계획" />

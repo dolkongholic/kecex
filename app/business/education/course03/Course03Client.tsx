@@ -105,11 +105,9 @@ const Course03Client = () => {
               </Link>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/"}>
                 <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                     <span> 기업형 교육</span>
                 </div>
-              </Link>
             </li>
             <li className="w-1/2">
               <Link passHref href={"/business/education/develop/"}>
