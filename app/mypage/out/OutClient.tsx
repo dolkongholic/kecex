@@ -18,8 +18,8 @@ const MainList = [
     sub: [
       { title: "발급/출력 현황", url: "/mypage/overall/all01" },
       { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-      { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-      { title: "경력관리 현황", url: "/mypage/overall/all04" },
+      // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
+      // { title: "경력관리 현황", url: "/mypage/overall/all04" },
     ],
   },
   {
@@ -89,7 +89,7 @@ const OutClient = () => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -103,8 +103,8 @@ const OutClient = () => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -124,15 +124,15 @@ const OutClient = () => {
 
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
-          <div className="w-full flex justify-center mt-[30px]">
-            <div>
+          <div className="flex justify-center mt-[30px] md:mt-[90px] mx-auto">
+            <div className="md:w-[350px] mx-auto">
               <div className="py-[10px]">본인확인</div>
               <div className="mt-3">
                 <input
                   value={session?.user?.name || ""}
                   onChange={(e: any) => (passwordRef.current = e.target.value)}
                   placeholder="비밀번호"
-                  className="border border-gray py-[10px] px-[20px] w-full focus:border-blue-500 outline-none"
+                  className="border border-gray py-[10px] px-[20px] w-full focus:border-secondary outline-none"
                 />
               </div>
               <div className="mt-2">
@@ -143,12 +143,12 @@ const OutClient = () => {
                   ref={passwordRef}
                   onChange={(e: any) => (passwordRef.current = e.target.value)}
                   placeholder="비밀번호"
-                  className="border border-gray py-[10px] px-[20px] w-full focus:border-blue-500 outline-none"
+                  className="border border-gray py-[10px] px-[20px] w-full focus:border-secondary outline-none"
                 />
               </div>
               <div className="mt-2">
                 <button
-                  className="bg-blue-500 text-white w-full h-[40px]"
+                  className="bg-secondary text-white w-full h-[40px]"
                   onClick={() => out()}
                 >
                   회원 탈퇴

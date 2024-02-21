@@ -59,7 +59,7 @@ function Login() {
     });
   };
   return (
-    <main className="flex min-h-screen flex-col items-center space-y-10 p-24">
+    <main className="flex min-h-screen flex-col items-center space-y-10 p-[20px] md:p-24">
       <Link passHref href={"/"}>
         <Image
           src="/img/logo/logo_big_icon__1.png"
@@ -68,7 +68,7 @@ function Login() {
           height={50}
         />
       </Link>
-      <div className="border border-gray px-[30px] py-[50px] w-[550px]">
+      <div className="border border-gray px-[30px] py-[50px] w-full md:w-[550px]">
         <div>
           <div className="mt-1">
             <Input
@@ -102,21 +102,21 @@ function Login() {
         <div className="mt-6 flex gap-[10px]">
           <button
             onClick={handleSubmit(onSubmit)}
-            className="w-full bg-blue-500 text-white cursor-pointer py-[10px]"
+            className="w-full bg-primary text-white cursor-pointer py-[10px]"
           >
             로그인
           </button>
           <Link passHref href="/member/join" className="w-full">
-            <button className="w-full bg-gray-100 text-black cursor-pointer py-[10px]">
+            <button className="w-full bg-lightgray border border-gray text-black cursor-pointer py-[10px]">
               회원가입
             </button>
           </Link>
         </div>
-        <Link passHref href={"./find/"}>
-          <div className="flex justify-center items-center mt-[10px] text-[12px] text-darkgray leading-[20px] cursor-pointer">
+        <Link passHref href={"/member/find/"}>
+          <div className="flex justify-center items-center mt-[10px] text-[12px] text-neutral-800 leading-[20px] cursor-pointer">
             <div>아이디/비밀번호 찾기</div>
             <div>
-              <RiArrowRightSLine className="text-[20px] pt-[3px] text-superdarkgray " />
+              <RiArrowRightSLine className="text-[20px] pt-[3px] text-neutral-700 " />
             </div>
           </div>
         </Link>

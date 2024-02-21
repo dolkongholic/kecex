@@ -87,7 +87,7 @@ const PostClient = () => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -101,8 +101,8 @@ const PostClient = () => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -124,8 +124,8 @@ const PostClient = () => {
           <ContentTitle title="공지사항 작성" center={true} />
           <div className="w-full mt-[20px] leading-[10px]">&nbsp;</div>
 
-          <div className="w-full px-[20px] flex justify-between items-center h-[70px]">
-            <div className="flex items-center w-9/12">
+          <div className="w-full md:px-[20px] flex flex-col md:flex-row justify-between items-end md:items-center md:h-[70px]">
+            <div className="flex items-center w-full md:w-9/12">
               <input
                 type="text"
                 placeholder="제목을 입력해주세요"
@@ -138,12 +138,12 @@ const PostClient = () => {
               type="date"
               value={currentDate}
               disabled={isLoading}
-              className="w-2/12 h-[40px] border border-gray px-3"
+              className="w-1/2 md:w-2/12 h-[40px] border border-gray px-3 my-2 md:my-0"
               {...register("date", { required: true })}
             />
           </div>
-          <div className="mx-[20px] w-[calc(100%-40px)] border-t border-secondary"></div>
-          <div className="w-full my-[30px] flex flex-col px-[20px]">
+          <div className="md:mx-[20px] w-full md:w-[calc(100%-40px)] border-t border-secondary"></div>
+          <div className="w-full my-[30px] flex flex-col md:px-[20px]">
             <textarea
               id="post_text"
               cols={30}
@@ -154,32 +154,33 @@ const PostClient = () => {
               {...register("post_text", { required: true })}
             ></textarea>
           </div>
-          <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray border-b-2 border-b-darkgray">
-            <div className="w-[200px] px-[20px] flex justify-center items-center bg-lightgray h-[66px] text-black">
-              첨부파일
+          <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray border-b-2 border-b-darkgray text-[15px] md:text-base">
+            <div className="w-1/5 md:w-[200px] px-[20px] flex justify-center items-center bg-lightgray h-[66px] text-black">
+              첨부<br className="md:hidden"/>
+              파일
             </div>
-            <div className="flex justify-start items-center pl-[20px]">
-              <p className="cursor-pointer">
-                <input type="file" onChange={handleFileChange} />
+            <div className="w-4/5 flex justify-start items-center pl-3 md:pl-[20px]">
+              <p className="cursor-pointer w-8/12">
+                <input type="file" onChange={handleFileChange} className="w-"/>
               </p>
               <button
-                className="cursor-pointer flex justify-center items-center gap-[20px] ml-[40px] bg-darkgray text-white w-[120px] h-[35px]"
+                className="cursor-pointer flex justify-center items-center gap-2 md:gap-[20px] md:ml-[40px] bg-neutral-800 text-white w-5/12 md:w-[120px] h-[35px]"
                 disabled={isLoading}
               >
-                업로드 <GrUpload className="grIcon" />
+                업로드 <GrUpload className="grIcon"/>
               </button>
             </div>
           </div>
-          <div className="w-full pt-3 flex justify-between">
+          <div className="w-full pt-3 flex justify-between md:px-[20px]">
             <button
-              className="w-24 h-8 border border-gray-500 rounded-sm bg-gray-100 text-[14px] hover:bg-gray-900 hover:text-white hover:border-gray-900"
+              className="w-24 h-8 border border-gray-500 rounded-sm bg-lightgray text-[14px] hover:bg-neutral-800 hover:text-white hover:border-neutral-800"
               onClick={() => router.back()}
             >
               돌아가기
             </button>
             <Link passHref href={"../notice"}>
               <button
-                className="w-24 h-8 border border-gray-700 rounded-sm bg-gray-700 text-[14px] text-white hover:bg-gray-900 hover:border-gray-900"
+                className="w-24 h-8 border border-primary rounded-sm bg-white text-[14px] text-primary hover:bg-primary hover:border-primary hover:text-white"
                 onClick={handleSubmit(onSubmit)}
               >
                 글쓰기

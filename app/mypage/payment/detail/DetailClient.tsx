@@ -17,8 +17,8 @@ const MainList = [
     sub: [
       { title: "발급/출력 현황", url: "/mypage/overall/all01" },
       { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-      { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-      { title: "경력관리 현황", url: "/mypage/overall/all04" },
+      // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
+      // { title: "경력관리 현황", url: "/mypage/overall/all04" },
     ],
   },
   {
@@ -79,7 +79,7 @@ const DetailClient = () => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -93,8 +93,8 @@ const DetailClient = () => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -115,13 +115,13 @@ const DetailClient = () => {
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
           <div className="text-black w-full flex flex-col justify-center item-center">
-            <div className="w-3/4 flex justify-center mx-auto mt-5">
+            <div className="w-full md:w-3/4 flex justify-center mx-auto mt-5">
               <p>
                 <span>회원</span>님의 납부내역입니다.<br/>
               </p>
             </div>
-            <ul className="w-3/4 mx-auto border-t-2 border-gray-700 mt-10">
-              <div className="w-full h-11 bg-gray-100 font-semibold flex text-center items-center font-medium border-b border-blue-900">
+            <ul className="w-full md:w-3/4 mx-auto border-t-2 border-neutral-700 mt-10 text-[14px] md:text-base">
+              <div className="w-full h-11 bg-lightgray flex text-center items-center font-medium border-b border-primary">
                 <div className="w-1/4 border-r border-gray-200">
                   금액
                 </div>
@@ -133,36 +133,36 @@ const DetailClient = () => {
                 </div>
               </div>
               <li className="w-full h-11 flex text-center items-center border-b border-gray-400">
-                <div className="w-1/4 h-full border-r border-gray-200 flex pl-10 items-center">
+                <div className="w-1/4 h-full border-r border-gray-200 flex pl-2 md:pl-10 items-center">
                   ￦&nbsp;
                   <span>
                     30,000
                   </span>
                 </div>
-                <div className="w-1/4 h-full border-r border-gray-200 flex pl-10 items-center">
+                <div className="w-1/4 h-full border-r border-gray-200 flex pl-2 md:pl-10 items-center">
                   <span className="text-blue-600">
                     접수 대기
                   </span>
                 </div>
-                <div className="w-2/4 h-full border-r border-gray-200 flex pl-10 items-center">
+                <div className="w-2/4 h-full border-r border-gray-200 flex pl-2 md:pl-10 items-center">
                   <span>
                     2023.12.15 17:51:01
                   </span>
                 </div>
               </li>
               <li className="w-full h-11 flex text-center items-center border-b border-gray-400">
-                <div className="w-1/4 h-full border-r border-gray-200 flex pl-10 items-center">
+                <div className="w-1/4 h-full border-r border-gray-200 flex pl-2 md:pl-10 items-center">
                   ￦&nbsp;
                   <span>
                     500,000
                   </span>
                 </div>
-                <div className="w-1/4 h-full border-r border-gray-200 flex pl-10 items-center">
+                <div className="w-1/4 h-full border-r border-gray-200 flex pl-2 md:pl-10 items-center">
                   <span className="text-red-600">
                     승인-입금완료
                   </span>
                 </div>
-                <div className="w-2/4 h-full border-r border-gray-200 flex pl-10 items-center">
+                <div className="w-2/4 h-full border-r border-gray-200 flex pl-2 md:pl-10 items-center">
                   <span>
                     2024.10.25 07:54:01
                   </span>

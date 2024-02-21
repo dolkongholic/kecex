@@ -77,7 +77,7 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-gray-200 flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -91,8 +91,8 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -110,21 +110,22 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
           </div>
         </section>
 
-        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
-          <div className="w-full py-[40px] px-[120px]">
+        <section className="py-[20px] md:pl-[40px] px-[20px] md:px-0 w-full flex flex-col justify-start items-start">
+          <div className="w-full py-[40px] md:px-[120px]">
             <ContentTitle title={location} center={true} />
             <div className="text-subtitle text-black text-center w-full mt-[40px]">
               1:1 문의
             </div>
             <div className="text-base text-black text-center w-full mt-[15px]">
-              궁금한 사항을 문의주시면 성실하게 답변 드리겠습니다.
+              궁금한 사항을 문의주시면<br className="md:hidden"/>
+              성실하게 답변 드리겠습니다.
             </div>
 
-            <div className="w-full border-t border-t-blue-500 mt-[40px] flex">
-              <div className="w-[20%] h-[60px] pl-[40px] bg-gray-200 flex items-center text-black">
+            <div className="w-full border-t border-t-secondary mt-[40px] flex">
+              <div className="w-[20%] h-[60px] md:pl-[40px] bg-lightgray flex justify-center md:justify-start items-center text-black">
                 이름
               </div>
-              <div className="w-[80%] h-[60px] pl-[40px] flex items-center">
+              <div className="w-[80%] h-[60px] px-3 md:px-0 md:pl-[40px] flex items-center">
                 <Input
                   id="name"
                   label="이름을 입력하세요."
@@ -137,10 +138,10 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
               </div>
             </div>
             <div className="w-full border-t border-t-gray flex">
-              <div className="w-[20%] h-[60px] pl-[40px] bg-gray-200 flex items-center text-black">
+              <div className="w-[20%] h-[60px] md:pl-[40px] bg-lightgray flex justify-center md:justify-start items-center text-black">
                 연락처
               </div>
-              <div className="w-[80%] h-[60px] pl-[40px] flex items-center">
+              <div className="w-[80%] h-[60px] px-3 md:px-0 md:pl-[40px] flex items-center">
                 <Input
                   id="tel"
                   label="연락처를 입력하세요."
@@ -153,10 +154,10 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
               </div>
             </div>
             <div className="w-full border-t border-t-gray flex">
-              <div className="w-[20%] h-[60px] pl-[40px] bg-gray-200 flex items-center text-black">
+              <div className="w-[20%] h-[60px] md:pl-[40px] bg-lightgray flex justify-center md:justify-start items-center text-black">
                 이메일
               </div>
-              <div className="w-[80%] h-[60px] pl-[40px] flex items-center">
+              <div className="w-[80%] h-[60px] px-3 md:px-0 md:pl-[40px] flex items-center">
                 <Input
                   id="email"
                   label="이메일을 입력하세요."
@@ -169,10 +170,10 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
               </div>
             </div>
             <div className="w-full border-t border-t-gray flex">
-              <div className="w-[20%] h-[60px] pl-[40px] bg-gray-200 flex items-center text-black">
+              <div className="w-[20%] h-[60px] md:pl-[40px] bg-lightgray flex justify-center md:justify-start items-center text-black">
                 제목
               </div>
-              <div className="w-[80%] h-[60px] pl-[40px] flex items-center">
+              <div className="w-[80%] h-[60px] px-3 md:px-0 md:pl-[40px] flex items-center">
                 <Input
                   id="title"
                   label="제목을 입력하세요."
@@ -185,10 +186,10 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
               </div>
             </div>
             <div className="w-full border-t border-t-gray border-b border-b-gray flex">
-              <div className="w-[20%] h-[180px] pl-[40px] bg-gray-200 flex items-center text-black">
+              <div className="w-[20%] h-[180px] md:pl-[40px] bg-lightgray flex justify-center md:justify-start items-center text-black">
                 문의내용
               </div>
-              <div className="w-[80%] h-[180px] pl-[40px] flex items-center">
+              <div className="w-[80%] h-[180px] px-3 md:px-0 md:pl-[40px] flex items-center">
                 <textarea
                   id="content"
                   cols={80}
@@ -220,13 +221,13 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
               <div className="w-full flex justify-end items-center mt-[20px]">
                 {!isLoading ? (
                   <div
-                    className="w-[150px] h-[40px] text-white bg-blue-500 flex justify-center items-center cursor-pointer"
+                    className="w-[150px] h-[40px] text-white bg-secondary flex justify-center items-center cursor-pointer"
                     onClick={handleSubmit(onSubmit)}
                   >
                     문의하기
                   </div>
                 ) : (
-                  <div className="w-[150px] h-[40px] text-white bg-red-500 flex justify-center items-center cursor-not-allowed">
+                  <div className="w-[150px] h-[40px] text-neutral-800 border border-red-500 flex justify-center items-center cursor-not-allowed">
                     문의 완료
                   </div>
                 )}

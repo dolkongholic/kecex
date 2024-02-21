@@ -25,7 +25,7 @@ function Login() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center p-24">
+    <main className="flex min-h-screen flex-col items-center p-[20px] md:p-24">
       <Link passHref href={"/"}>
         <Image
           src="/img/logo/logo_big_icon__1.png"
@@ -35,11 +35,11 @@ function Login() {
         />
       </Link>
       <div
-        className="cursor-pointer flex items-center w-[450px] mt-[40px] h-[40px] text-base border border-gray border-b-0 border-t-2
+        className="cursor-pointer flex items-center w-full md:w-[450px] mt-[40px] h-[60px] text-base border border-gray border-b-0 border-t-2
       "
       >
         <div
-          className={`w-full text-center h-full leading-[40px] text-black ${
+          className={`w-full text-center h-full leading-[60px] text-black ${
             findType == "id" ? "bg-gray" : "bg-lightgray"
           }`}
           onClick={() => setFindType("id")}
@@ -47,7 +47,7 @@ function Login() {
           아이디 찾기
         </div>
         <div
-          className={`w-full text-center h-full leading-[40px] text-black ${
+          className={`w-full text-center h-full leading-[60px] text-black ${
             findType == "email" ? "bg-gray" : "bg-lightgray"
           }`}
           onClick={() => setFindType("email")}
@@ -55,7 +55,7 @@ function Login() {
           비밀번호 찾기
         </div>
       </div>
-      <div className="border border-t-0 border-gray px-[30px] py-[30px] w-[450px]">
+      <div className="border border-t-0 border-gray px-[30px] py-[30px] w-full md:w-[450px]">
         <div className="text-subtitle text-black">
           {findType == "id" ? <p>아이디 찾기</p> : <p>비밀번호 찾기</p>}
         </div>
@@ -110,13 +110,13 @@ function Login() {
           </div>
         </div>
         <div className="mt-6 flex gap-[10px]">
-          <Link passHref href="./signin" className="w-full">
-            <button className="w-full bg-secondary text-white cursor-pointer py-[10px]">
+          <Link passHref href="/member/signin" className="w-full">
+            <button className="w-full bg-primary text-white cursor-pointer py-[10px]">
               로그인
             </button>
           </Link>
-          <Link passHref href="./signin" className="w-full">
-            <button className="w-full bg-gray text-black cursor-pointer py-[10px]">
+          <Link passHref href="/member/signin" className="w-full">
+            <button className="w-full bg-lightgray border border-gray text-black cursor-pointer py-[10px]">
               취소
             </button>
           </Link>

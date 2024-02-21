@@ -85,7 +85,7 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-gray-200 flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -99,8 +99,8 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -120,12 +120,12 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
 
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <div className="text-black w-full flex flex-col justify-between item-center -translate-y-[19px]">
-            <div className="h-[200px] bg-gray-200 p-[30px] flex justify-between">
-              <div>
+          <div className="text-neutral-800 w-full flex flex-col justify-between item-center -translate-y-[19px]">
+            <div className="md:h-[200px] bg-lightgray py-[30px] md:p-[30px] flex flex-col md:flex-row justify-center md:justify-between">
+              <div className="text-center md:text-start">
                 <strong className="font-normal text-[18px]">
                   반갑습니다.{" "}
-                  <span className="text-blue-500 underline">
+                  <span className="text-secondary underline">
                     <b className="font-normal">{currentUser.name}</b>님
                   </span>{" "}
                 </strong>
@@ -133,23 +133,23 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
                   신청, 발급현황 및 한국방폭협회 관련 서비스를 확인하세요.
                 </p>
               </div>
-              <ul className="w-[520px] flex">
-                <a href="/mypage/overall/all01">
-                  <li className="w-[130px] h-[130px] border border-gray-200 flex flex-col justify-center items-center">
+              <ul className="w-full md:w-[320px] flex mt-5 md:mt-0 px-7 md:px-0 space-x-4">
+                <a href="/mypage/overall/all01" className="w-1/2">
+                  <li className="w-full md:w-[130px] h-[130px] flex flex-col justify-center items-center hover:border border-neutral-700">
                     <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center m-2">
-                      <p className="text-[20px] font-bold text-darkgray">0</p>
+                      <p className="text-[20px] font-bold text-neutral-600">0</p>
                     </div>
                     <p className="text-[13px] h-[40px] text-center">
                       발급/출력 현황
                     </p>
                   </li>
                 </a>
-                <a href="/mypage/overall/all02">
-                  <li className="w-[130px] h-[130px] border border-blue-500 bg-white flex flex-col justify-center items-center">
+                <a href="#" className="w-1/2 cursor-default">
+                  <li className="w-full md:w-[130px] h-[130px] border border-secondary bg-white flex flex-col justify-center items-center">
                     <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center m-2">
-                      <p className="text-[20px] font-bold text-blue-500">0</p>
+                      <p className="text-[20px] font-bold text-secondary">0</p>
                     </div>
-                    <p className="text-[13px] h-[40px] text-blue-500 font-semibold">
+                    <p className="text-[13px] h-[40px] text-secondary font-semibold">
                       1:1 문의 현황
                     </p>
                   </li>
@@ -177,7 +177,7 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
               </ul>
             </div>
             {/*조회 메뉴 선택*/}
-            <div className="w-full text-black text-[14px] border-b border-blue-500">
+            <div className="w-full text-neutral-800 text-[14px] border-b border-secondary">
               <h3 className="font-bold mt-16 text-[16px]">1:1 문의 현황</h3>
               전체 <span className="font-bold leading-9">
                 {qnaList.length}
@@ -188,7 +188,7 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
               <div className="border-b border-gray-300 px-[40px] py-[25px] flex justify-between items-center hover:shadow-md">
                 <div className="flex-col">
                   <div>
-                    <span className="text-[20px] font-bold text-black mr-[20px] text-center w-full">
+                    <span className="text-[20px] font-bold text-neutral-800 mr-[20px] text-center w-full">
                       문의 내역이 없습니다.
                     </span>
                   </div>
@@ -202,7 +202,7 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
               >
                 <div className="flex-col">
                   <div>
-                    <span className="text-[20px] font-bold text-black mr-[20px]">
+                    <span className="text-[20px] font-bold text-neutral-800 mr-[20px]">
                       {item.title}
                     </span>
                   </div>

@@ -64,7 +64,7 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -78,8 +78,8 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -97,10 +97,10 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
           </div>
         </section>
 
-        <section className="py-[20px] pl-[40px] w-full flex flex-col justify-start items-start">
-          <div className="w-full py-[40px] px-[40px]">
+        <section className="py-[20px] md:pl-[40px] px-[20px] md:px-0 w-full flex flex-col justify-start items-start">
+          <div className="w-full py-[40px] md:px-[40px]">
             <ContentTitle title={location} center={true} />
-            <div className="w-full mt-[20px] leading-[50px] border-b border-blue-500">
+            <div className="w-full mt-[20px] leading-[50px] border-b border-secondary">
               {page}/{totalPages} 페이지 (총 {noticeList.length} 건)
             </div>
 
@@ -112,7 +112,7 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
                 className="w-full"
               >
                 <div
-                  className={`cursor-pointer flex justify-between items-center w-full h-[80px] border-b  leading-[80px] text-black text-base hover:text-blue-500 ${
+                  className={`cursor-pointer flex justify-between items-center w-full h-[80px] border-b  leading-[80px] text-neutral-800 text-base hover:text-secondary ${
                     index % 7 == 0 && index != 0
                       ? "border-black"
                       : "border-gray-100"
@@ -151,7 +151,7 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
               </div>
               {currentUser && (
                 <Link passHref href={"/notice/notice/post"}>
-                  <button className="cursor-pointer bg-blue-500 text-white w-24 h-8 text-[14px]">
+                  <button className="cursor-pointer bg-secondary text-white w-24 h-8 text-[14px]">
                     글쓰기
                   </button>
                 </Link>

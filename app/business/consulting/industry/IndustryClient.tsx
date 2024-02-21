@@ -5,13 +5,15 @@ import SubNavHeader from "@/components/SubNavHeader";
 
 import ContentTitle from "@/components/content/title";
 import ContentSubTitle from "@/components/content/subtitle";
+import Link from "next/link";
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { IoMdArrowDropdown } from "react-icons/io";
 import Image from "next/image";
-import content_icon from "public/img/icon/content_icon_circle.png";
-import consulting_industry from "public/img/pages/business/consulting_industry.png";
+import content_icon from "@/public/img/icon/content_icon_circle.png";
+import PicIndustry from "@/public/img/pages/business/consulting_industry.png";
+import PicIndustry_M from "@/public/img/pages/business/consulting_industry_m.png";
 
 const MainList = [
   {
@@ -59,7 +61,7 @@ const InspectionClient = () => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -76,8 +78,8 @@ const InspectionClient = () => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -95,22 +97,36 @@ const InspectionClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px] md:pl-[40px] px-[20px] md:px-0 w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <ul className="w-full flex flex-wrap">
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
+            <li className="w-1/2 cursor-default">
+              <Link passHref href={"/business/consulting/inspection/"}>
+                <div className="h-12 border border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                  <span> 방폭사전진단</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
+                  <span> 산업진단, 컨설팅</span>
+                </div>
+            </li>
+          </ul>
+          <ul className="w-full flex flex-wrap text-[13px] md:text-base mt-10 md:mt-0">
             <li
-              className={`w-1/3 h-14 flex justify-between items-center pl-5 
+              className={`w-1/3 h-14 flex justify-between items-center pl-2 md:pl-5 
               ${
                 selectedLiIndex === 0
-                  ? "border border-secondary text-black font-medium bg-secondary_light bg-opacity-10"
+                  ? "border border-secondary text-black font-medium bg-lightgray bg-opacity-50"
                   : "border border-gray border-r-0"
               } cursor-pointer`}
               onClick={() => handleLiClick(0)}
             >
-              PMS
+              PSM
               <Image
                 src={content_icon}
-                className={`w-6 mr-5 ${
+                className={`w-4 md:w-6 mr-1 md:mr-5 ${
                   selectedLiIndex === 0 ? "inline-block" : "hidden"
                 }`}
                 alt="선택 아이콘"
@@ -118,18 +134,19 @@ const InspectionClient = () => {
               {""}
             </li>
             <li
-              className={`w-1/3 h-14 flex justify-between items-center pl-5 
+              className={`w-1/3 h-14 flex justify-between items-center pl-2 md:pl-5 
               ${
                 selectedLiIndex === 1
-                  ? "border border-secondary text-black font-medium bg-secondary_light bg-opacity-10"
-                  : "border border-gray border-r-0 "
+                  ? "border border-secondary text-black font-medium bg-lightgray bg-opacity-50"
+                  : "border border-gray md:border-r-0 "
               } cursor-pointer`}
               onClick={() => handleLiClick(1)}
             >
-              중대재해처벌법
+              중대재해
+              처벌법
               <Image
                 src={content_icon}
-                className={`w-6 mr-5 ${
+                className={`w-4 md:w-6 mr-1 md:mr-5 ${
                   selectedLiIndex === 1 ? "inline-block" : "hidden"
                 }`}
                 alt="선택 아이콘"
@@ -137,10 +154,10 @@ const InspectionClient = () => {
               {""}
             </li>
             <li
-              className={`w-1/3 h-14 flex justify-between items-center pl-5
+              className={`w-1/3 h-14 flex justify-between items-center pl-2 md:pl-5
               ${
                 selectedLiIndex === 2
-                  ? "border border-secondary text-black font-medium bg-secondary_light bg-opacity-10"
+                  ? "border border-secondary text-black font-medium bg-lightgray bg-opacity-50"
                   : "border border-gray"
               } cursor-pointer`}
               onClick={() => handleLiClick(2)}
@@ -148,7 +165,7 @@ const InspectionClient = () => {
               위험성 평가
               <Image
                 src={content_icon}
-                className={`w-6 mr-5 ${
+                className={`w-4 md:w-6 mr-1 md:mr-5 ${
                   selectedLiIndex === 2 ? "inline-block" : "hidden"
                 }`}
                 alt="선택 아이콘"
@@ -164,63 +181,67 @@ const InspectionClient = () => {
               </div>
               <ContentSubTitle title="PSM 컨설팅 세부 내용" />
               <ul className="-translate-y-[20px] text-[15px] leading-6 mb-5">
-                <li className="w-full border-b border-gray flex">
-                  <div className="w-1/2 h-32 flex items-center">
+                <li className="w-full border-b border-gray md:flex">
+                  <div className="md:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       1
                     </div>
                     <p className="ml-3">공정안전보고서(PSM) 작성</p>
                   </div>
-                  <div className="w-1/2 h-32 flex items-center">
+                  <div className="md:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       2
                     </div>
                     <p className="ml-3">PSM 운영 및 이행상태평가 컨설팅</p>
                   </div>
                 </li>
-                <li className="w-full border-b border-gray flex">
-                  <div className="w-1/2 h-32 flex items-center">
+                <li className="w-full border-b border-gray md:flex">
+                  <div className="md:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       3
                     </div>
                     <p className="ml-3">PSM 변경관리 컨설팅</p>
                   </div>
-                  <div className="w-1/2 h-32 flex items-center">
+                  <div className="md:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       4
                     </div>
                     <p className="ml-3">
-                      PSM 자체감사 컨설팅(점검 면제용 포함)
+                      PSM 자체감사 컨설팅<br className="md:hidden"/>
+                      (점검 면제용 포함)
                     </p>
                   </div>
                 </li>
-                <li className="w-full border-b border-gray flex">
-                  <div className="w-1/2 h-32 flex items-center">
+                <li className="w-full border-b border-gray md:flex">
+                  <div className="md:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       5
                     </div>
                     <p className="ml-3">
-                      공정위험성평가 컨설팅(HAZOP, K-PSR, LOPA, What-If,
+                      공정위험성평가 컨설팅<br className="md:hidden"/>
+                      (HAZOP, K-PSR, LOPA, What-If,
                       <br />
                       FMEA, PHAST, ALOHA, E-CA)
                     </p>
                   </div>
-                  <div className="w-1/2 h-32 flex items-center">
+                  <div className="md:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       6
                     </div>
                     <p className="ml-3">
-                      PSM 운영 System 구축(Web 전산 프로그램)
+                      PSM 운영 System 구축<br className="md:hidden"/>
+                      (Web 전산 프로그램)
                     </p>
                   </div>
                 </li>
-                <li className="w-full border-b border-gray flex">
-                  <div className="w-1/2 h-32 flex items-center">
+                <li className="w-full border-b border-gray md:flex">
+                  <div className="mb:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       7
                     </div>
                     <p className="ml-3">
-                      폭발위험장소 산정(2D or 3D Scan) 컨설팅
+                      폭발위험장소 산정(2D or 3D Scan) <br className="md:hidden"/>
+                      컨설팅
                     </p>
                   </div>
                 </li>
@@ -233,50 +254,53 @@ const InspectionClient = () => {
               </div>
               <ContentSubTitle title="중대재해처벌법 컨설팅 대상" />
               <ul className="-translate-y-[20px] text-[15px] leading-6 mb-5">
-                <li className="w-full border-b border-gray flex">
-                  <div className="w-1/2 h-32 flex items-center">
+                <li className="w-full border-b border-gray mb:flex">
+                  <div className="mb:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       1
                     </div>
                     <p className="ml-3">
-                      중대재해처벌에 관한 법률에 대응하기 위한 사업장
+                      중대재해처벌에 관한 법률에 <br className="md:hidden"/>
+                      대응하기 위한 사업장
                     </p>
                   </div>
-                  <div className="w-1/2 h-32 flex items-center">
+                  <div className="mb:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       2
                     </div>
                     <p className="ml-3">
-                      중대재해처벌법 및 산업안전보건법을 적절하게 이행하고
-                      있는지
+                      중대재해처벌법 및 산업안전보건법을 <br className="md:hidden"/>
+                      적절하게 이행하고 있는지
                       <br />
                       확인하고자 하는 사업장
                     </p>
                   </div>
                 </li>
-                <li className="w-full border-b border-gray flex">
-                  <div className="w-1/2 h-32 flex items-center">
+                <li className="w-full border-b border-gray mb:flex">
+                  <div className="mb:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       3
                     </div>
                     <p className="ml-3">
-                      안전한 작업환경을 조성하여 중대재해를 예방하고자 하는
+                      안전한 작업환경을 조성하여 <br className="md:hidden"/>
+                      중대재해를 예방하고자 하는
                       사업장
                     </p>
                   </div>
-                  <div className="w-1/2 h-32 flex items-center">
+                  <div className="mb:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       4
                     </div>
                     <p className="ml-3">
-                      자체적으로 안전관리 및 법이행실태를 점검하고자 하는 사업장
+                      자체적으로 안전관리 및 법이행실태를 <br className="md:hidden"/>
+                      점검하고자 하는 사업장
                     </p>
                   </div>
                 </li>
               </ul>
               <ContentSubTitle title="중대재해처벌법 컨설팅 내용" />
-              <div className="flex justify-between text-[14px] text-primary mb-10">
-                <div className="w-1/3 h-56 border border-secondary rounded-md text-center py-10">
+              <div className="md:flex justify-between text-[14px] text-primary mb-10">
+                <div className="md:w-1/3 md:h-56 border border-secondary rounded-md text-center py-10 mb-5 md:mb-0 px-3 md:px-0">
                   <strong className="text-secendary text-[26px]">
                     안전보건관리체계
                   </strong>
@@ -289,7 +313,7 @@ const InspectionClient = () => {
                     적합한 안전보건관리체계 구축 방안 제시
                   </p>
                 </div>
-                <div className="w-1/3 h-56 border border-secondary rounded-md text-center py-10 mx-5">
+                <div className="md:w-1/3 md:h-56 border border-secondary rounded-md text-center py-10 md:mx-5 mb-5 md:mb-0">
                   <strong className="text-secendary text-[26px]">
                     안전관리시스템(PDCA)
                   </strong>
@@ -302,7 +326,7 @@ const InspectionClient = () => {
                     보다 효율적인 안전관리시스템 구축 및 운영방안 제시
                   </p>
                 </div>
-                <div className="w-1/3 h-56 border border-secondary rounded-md text-center py-10">
+                <div className="md:w-1/3 md:h-56 border border-secondary rounded-md text-center py-10 mb-5 md:mb-0">
                   <strong className="text-secendary text-[26px]">
                     안전한 작업환경
                   </strong>
@@ -318,7 +342,7 @@ const InspectionClient = () => {
               </div>
               <ContentSubTitle title="중대재해처벌법 컨설팅 절차" />
               <div className="w-full flex">
-                <div className="w-1/12 mr-1">
+                <div className="hidden md:block w-1/12 mr-1">
                   <div className="w-full h-full">
                     <div className="flex h-[595px]">
                       <div className="w-2/5">&nbsp;</div>
@@ -333,14 +357,14 @@ const InspectionClient = () => {
                     {/* 화살표 삼각형 */}
                   </div>
                 </div>
-                <ul className="w-11/12">
+                <ul className="w-full md:w-11/12">
                   <li>
                     <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
                       01. 서류 평가
                     </div>
-                    <div className="w-full p-6 flex">
-                      <div className="w-1/2">
-                        <strong className="text-[18px] font-medium">
+                    <div className="w-full px-0 md:px-6 py-6 md:flex">
+                      <div className="md:w-1/2">
+                        <strong className="text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -356,8 +380,8 @@ const InspectionClient = () => {
                           · 산안법/연안법 위반 여부
                         </p>
                       </div>
-                      <div className="w-1/2">
-                        <strong className="text-[18px] font-medium">
+                      <div className="md:w-1/2">
+                        <strong className="text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -376,9 +400,9 @@ const InspectionClient = () => {
                     <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
                       02. 현장 평가
                     </div>
-                    <div className="w-full p-6 flex">
-                      <div className="w-1/2">
-                        <strong className="text-[18px] font-medium">
+                    <div className="w-full px-0 md:px-6 py-6 md:flex">
+                      <div className="md:w-1/2">
+                        <strong className="text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -390,8 +414,8 @@ const InspectionClient = () => {
                           · 산업안전보건법, 시행령, 시행규칙 이행여부
                         </p>
                       </div>
-                      <div className="w-1/2">
-                        <strong className="text-[18px] font-medium">
+                      <div className="md:w-1/2">
+                        <strong className="text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -415,9 +439,9 @@ const InspectionClient = () => {
                     <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
                       03. 개선안 도출 및 보고서 작성
                     </div>
-                    <div className="border-b border-primary w-full p-6 flex">
-                      <div className="w-1/2">
-                        <strong className="text-[18px] font-medium">
+                    <div className="border-b border-primary w-full px-0 md:px-6 py-6 md:flex">
+                      <div className="md:w-1/2">
+                        <strong className="text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -432,8 +456,8 @@ const InspectionClient = () => {
                           · 위험성평가, 작업 시작 전 점검 등 서류 보완사항 제시
                         </p>
                       </div>
-                      <div className="w-1/2">
-                        <strong className="text-[18px] font-medium">
+                      <div className="md:w-1/2 mt-2 md:mt-0">
+                        <strong className="text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -460,21 +484,21 @@ const InspectionClient = () => {
               </div>
               <ContentSubTitle title="위험성평가 개요" />
               <div className="flex justify-between text-[15px] text-primary mb-10">
-                <div className="w-full h-64 border border-secondary rounded-md text-center py-10">
+                <div className="w-full md:h-64 border border-secondary rounded-md text-center py-10">
                   <strong className="text-secendary text-[26px]">
                     위험성평가 실시
                   </strong>
-                  <p className="py-7 px-12 text-left">
+                  <p className="py-7 px-6 md:px-12 text-left">
                     <span className="block w-48 h-0 border-t border-primary m-auto mb-7">
                       {""}
                     </span>
                     산업안전보건법 제36조에 의거 사업주는 건설물,
                     기계·기구·설비, 원재료, 가스, 증기, 분진, 근로자의 작업행동
                     또는 그 밖의 업무로 인한 유해·위험 요인을 찾아내어 부상 및
-                    질병으로 이어질 수 있는 위험성의 크기가 허용 가능한
-                    범위인지를 평가하여야 하고, 그 결과에 따라 관계법령에 의한
+                    질병으로 이어질 수 있는 <b>위험성의 크기가 허용 가능한
+                    범위인지</b>를 평가하여야 하고, 그 결과에 따라 관계법령에 의한
                     조치와 더불어 근로자에 대한 위험 또는 건강장해를 방지하기
-                    위하여 필요한 경우 추가적인 조치를 하여야 하며, 위험성평가를
+                    위하여 필요한 경우 <b>추가적인 조치</b>를 하여야 하며, 위험성평가를
                     실시한 경우에는 평가의 결과와 조치사항을 기록·보존하도록
                     되어 있습니다.
                   </p>
@@ -482,24 +506,31 @@ const InspectionClient = () => {
               </div>
               <ContentSubTitle title="위험성평가 절차" />
               <div className="w-full flex justify-center mb-10">
-                <Image src={consulting_industry} alt="위험성평가 절차 이미지" />
+                <Image src={PicIndustry} alt="위험성평가 절차 이미지" className="hidden md:block"/>
+                <Image src={PicIndustry_M} alt="위험성평가 절차 이미지" className="md:hidden"/>
               </div>
               <ContentSubTitle title="위험성평가 실시 시기" />
               <div className="w-full mb-10">
                 <table className="w-full text-center border-t-2 border-secondary">
                   <tr className="w-full h-14 border-b-2 border-gray bg-lightgray">
-                    <th className="w-1/5 border-r border-gray">구분</th>
-                    <th className="w-4/5">실시 시기</th>
+                    <th className="w-1/6 md:w-1/5 border-r border-gray">구분</th>
+                    <th className="">실시 시기</th>
                   </tr>
                   <tr className="h-16 border-b border-gray">
-                    <td className="w-1/5 border-r border-gray">정기평가</td>
-                    <td className="text-left pl-6">
+                    <td className="w-1/6 md:w-1/5 border-r border-gray">
+                      정기<br className="md:hidden"/>
+                      평가
+                    </td>
+                    <td className="text-left pl-6 text-[15px] md:text-base">
                       최초평가 후 매년 정기적으로 실시
                     </td>
                   </tr>
                   <tr className="border-b-2 border-gray">
-                    <td className="w-1/5 border-r border-gray">수시평가</td>
-                    <td className="text-left p-6 leading-7">
+                    <td className="w-1/6 md:w-1/5 border-r border-gray">
+                      수시<br className="md:hidden"/>
+                      평가
+                    </td>
+                    <td className="text-left p-6 leading-7 text-[15px] md:text-base">
                       <p>· 사업장 건설물의 설치·이전·변경 또는 해체</p>
                       <p>· 기계·기구, 설비, 원재료 등의 신규 도입 또는 변경</p>
                       <p>· 건설물, 기계·기구, 설비 등의 정비 또는 보수</p>
@@ -518,7 +549,7 @@ const InspectionClient = () => {
               </div>
               <ContentSubTitle title="위험성평가 컨설팅 절차" />
               <div className="w-full flex">
-                <div className="w-1/12 mr-1">
+                <div className="hidden md:block md:w-1/12 mr-1">
                   <div className="w-full h-full">
                     <div className="flex h-[595px]">
                       <div className="w-2/5">&nbsp;</div>
@@ -533,14 +564,14 @@ const InspectionClient = () => {
                     {/* 화살표 삼각형 */}
                   </div>
                 </div>
-                <ul className="mb-10 w-11/12">
+                <ul className="mb-10 w-full md:w-11/12">
                   <li>
                     <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8 ">
                       01. 사전준비
                     </div>
-                    <div className="w-full p-6 flex">
-                      <div className="w-1/2">
-                        <strong className="text-[18px] font-medium text-superdarkgray">
+                    <div className="w-full px-0 md:px-6 py-6 md:flex">
+                      <div className="md:w-1/2">
+                        <strong className="text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -549,8 +580,8 @@ const InspectionClient = () => {
                           컨설팅 범위 및 세부일정 협의
                         </strong>
                       </div>
-                      <div className="w-1/2">
-                        <strong className="text-[18px] font-medium">
+                      <div className="md:w-1/2 mt-3 md:mt-0">
+                        <strong className="text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -565,9 +596,9 @@ const InspectionClient = () => {
                     <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
                       02. 서류검토
                     </div>
-                    <div className="w-full p-6 flex">
-                      <div className="w-1/2">
-                        <strong className="text-[18px] font-medium">
+                    <div className="w-full px-0 md:px-6 py-6 md:flex">
+                      <div className="md:w-1/2">
+                        <strong className="text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -576,8 +607,8 @@ const InspectionClient = () => {
                           위험성평가 컨설팅팀 구성
                         </strong>
                       </div>
-                      <div className="w-1/2">
-                        <strong className="text-[18px] font-medium">
+                      <div className="md:w-1/2 mt-3 md:mt-0">
+                        <strong className="text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -595,9 +626,9 @@ const InspectionClient = () => {
                     <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
                       03. 현장안전점검
                     </div>
-                    <div className="border-primary w-full p-6 flex">
-                      <div className="w-1/2">
-                        <strong className="text-[18px] font-medium">
+                    <div className="border-primary w-full px-0 md:px-6 py-6 md:flex">
+                      <div className="md:w-1/2">
+                        <strong className="text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -618,9 +649,9 @@ const InspectionClient = () => {
                     <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
                       04. 보고서 작성·제출
                     </div>
-                    <div className="border-b border-primary w-full p-6 flex">
-                      <div className="w-1/2">
-                        <strong className="text-[18px] font-medium">
+                    <div className="border-b border-primary w-full px-0 md:px-6 py-6 md:flex">
+                      <div className="md:w-1/2">
+                        <strong className="text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -629,8 +660,8 @@ const InspectionClient = () => {
                           현장에 적용 가능한 개선대책 제시
                         </strong>
                       </div>
-                      <div className="w-1/2">
-                        <strong className="text-[18px] font-medium">
+                      <div className="md:w-1/2 mt-3 md:mt-0">
+                        <strong className="text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -645,22 +676,22 @@ const InspectionClient = () => {
               </div>
               <ContentSubTitle title="위험성평가 컨설팅 수행 업무" />
               <ul className="-translate-y-[20px] text-[15px] leading-6 mb-5">
-                <li className="w-full border-b border-gray flex">
-                  <div className="w-1/2 h-32 flex items-center">
+                <li className="w-full border-b border-gray md:flex">
+                  <div className="w-md:1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       1
                     </div>
-                    <p className="ml-3">위험성평가의 실시방법•절차 지원</p>
+                    <p className="ml-3">위험성평가의 실시방법·절차 지원</p>
                   </div>
-                  <div className="w-1/2 h-32 flex items-center">
+                  <div className="md:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       2
                     </div>
                     <p className="ml-3">신청방법 및 심사방법 지원</p>
                   </div>
                 </li>
-                <li className="w-full border-b border-gray flex">
-                  <div className="w-1/2 h-32 flex items-center">
+                <li className="w-full border-b border-gray md:flex">
+                  <div className="md:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       3
                     </div>

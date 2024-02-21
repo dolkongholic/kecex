@@ -76,7 +76,7 @@ const RawPostClient = () => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-gray-200 flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -90,8 +90,8 @@ const RawPostClient = () => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -113,8 +113,8 @@ const RawPostClient = () => {
           <ContentTitle title="관계법령 작성" center={true} />
           <div className="w-full mt-[20px] leading-[50px]">&nbsp;</div>
 
-          <div className="w-full px-[20px] flex justify-between items-center h-[70px]">
-            <div className="flex items-center w-9/12">
+          <div className="w-full md:px-[20px] flex flex-col md:flex-row justify-between items-end md:items-center md:h-[70px]">
+            <div className="flex items-center w-full md:w-9/12">
               <input
                 type="text"
                 placeholder="제목을 입력해주세요"
@@ -128,11 +128,11 @@ const RawPostClient = () => {
               value={currentDate}
               {...register("date", { required: true })}
               disabled={isLoading}
-              className="w-2/12 h-[40px] border border-gray px-3"
+              className="w-1/2 md:w-2/12 h-[40px] border border-gray px-3 my-2 md:my-0"
             />
           </div>
-          <div className="mx-[20px] w-[calc(100%-40px)] border-t border-blue-500"></div>
-          <div className="w-full my-[30px] flex flex-col px-[20px]">
+          <div className="md:mx-[20px] w-full md:w-[calc(100%-40px)] border-t border-secondary"></div>
+          <div className="w-full my-[30px] flex flex-col md:px-[20px]">
             <textarea
               id="post_text"
               cols={30}
@@ -160,15 +160,15 @@ const RawPostClient = () => {
               </button>
             </div>
           </div> */}
-          <div className="w-full pt-3 flex justify-between">
+          <div className="w-full pt-3 flex justify-between md:px-[20px]">
             <button
-              className="w-24 h-8 border border-gray rounded-sm bg-gray-200 text-[14px] hover:bg-gray-500 hover:text-white hover:border-gray-500"
+              className="w-24 h-8 border border-gray-500 rounded-sm bg-lightgray text-[14px] hover:bg-neutral-800 hover:text-white hover:border-neutral-800"
               onClick={() => router.back()}
             >
               돌아가기
             </button>
             <button
-              className="w-24 h-8 border border-gray-500 rounded-sm bg-gray-500 text-[14px] text-white hover:bg-blue-500 hover:border-blue-500"
+              className="w-24 h-8 border border-primary rounded-sm bg-white text-[14px] text-primary hover:bg-primary hover:border-primary hover:text-white"
               onClick={handleSubmit(onSubmit)}
             >
               글쓰기

@@ -49,13 +49,13 @@ const Input: React.FC<InputProps> = ({
             w-full
             font-light
             bg-white
-            border-2
+            border
             rounded-md
             transition
             disabled:opacity-70
             disabled:cursor-not-allowed
             ${formatPrice ? "pl-9" : "pl-4"}
-            ${errors[id] ? "border-primary" : "border-primary"}
+            ${errors[id] ? "border-primary" : "border-neutral-700"}
             ${errors[id] ? "focus:border-primary" : "focus:border-primary"}
             ${small ? "p-2 pt-4" : "p-4 pt-6"}
         `}
@@ -77,7 +77,7 @@ const Input: React.FC<InputProps> = ({
             peer-placeholder-shown:translate-y-0
             peer-focus:scale-75
             peer-focus:-translate-y-4
-            ${errors[id] ? "text-primary" : "text-superdarkgray"}
+            ${errors[id] ? "text-primary" : "text-neutral-800"}
             ${small ? "top-4" : "top-5"}
         `}
       >

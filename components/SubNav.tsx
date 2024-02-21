@@ -33,13 +33,13 @@ export default function SubNav({
                       ${index != 0 && "border-t-0"}
                       ${
                         pageMenu == item.title
-                          ? "bg-blue-500 text-white border-b-2 border-gray"
-                          : "border-b-2 border-gray text-blue-500 hover:bg-blue-500 hover:text-white"
+                          ? "text-secondary border-b-2 border-gray font-medium"
+                          : "border-b-2 border-gray text-black hover:bg-secondary hover:text-white"
                       } h-[60px] flex justify-between items-center  px-[20px] cursor-pointer`}
               onClick={() => MainSelect(item.title)}
             >
               <span>{item.title}</span>
-              <span>
+              <span className="text-secondary">
                 {item.sub != null ? (
                   pageMenu == item.title ? (
                     <AiOutlineMinus />
@@ -58,8 +58,8 @@ export default function SubNav({
                     ${index != 0 && "border-t-0"}
                     ${
                       pageMenu == item.title
-                        ? "bg-blue-500 text-white border-b-2 border-gray"
-                        : "border-b-2 border-gray text-blue-500 hover:bg-blue-500 hover:text-white"
+                        ? "text-secondary border-b-2 border-gray font-medium"
+                        : "border-b-2 border-gray text-black hover:bg-secondary hover:text-white"
                     } h-[60px] flex justify-between items-center  px-[20px] cursor-pointer`}
                 onClick={() => MainSelect(item.title)}
               >

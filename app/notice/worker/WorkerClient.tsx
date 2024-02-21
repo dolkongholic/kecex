@@ -49,7 +49,7 @@ const WorkerClient: React.FC<workerProps> = ({ currentUser }) => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -63,8 +63,8 @@ const WorkerClient: React.FC<workerProps> = ({ currentUser }) => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -82,7 +82,7 @@ const WorkerClient: React.FC<workerProps> = ({ currentUser }) => {
           </div>
         </section>
 
-        <section className="py-[20px] pl-[40px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px] md:pl-[40px] px-[20px] md:px-0 w-full flex flex-col justify-start items-start">
           <div className="w-full py-[40px] px-[40px]">
             <ContentTitle title={location} center={true} />
             {/* <div className="flex w-full mt-[50px]">

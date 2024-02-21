@@ -72,16 +72,16 @@ function Join() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center space-y-10 w-[1200px] p-24 m-auto text-center text-black">
+    <main className="flex min-h-screen flex-col items-center space-y-10 w-full md:w-[1200px] p-[20px] md:p-24 m-auto text-center text-black">
       <section className="w-full">
         <h2 className=" font-semibold text-[30px] border-b-2 border-darkgray w-full py-5">
           회원가입
         </h2>
         <h3 className="text-[24px] font-semibold mt-12 mb-8">약관동의</h3>
         <p>회원가입 전 약관을 확인해주세요.</p>
-        <ul className="w-full flex px-52 h-12 bg-lightgray items-center justify-between mt-12 text-darkgray">
-          <li className="text-blue-500">약관동의</li>
-          <li className="text-blue-500">
+        <ul className="w-full flex px-5 md:px-52 h-12 bg-lightgray items-center justify-between mt-12 text-neutral-400 text-[14px] md:text-base">
+          <li className="text-secondary">약관동의</li>
+          <li className="text-secondary">
             <IoIosArrowForward />
           </li>
           <li>회원정보 입력</li>
@@ -93,7 +93,7 @@ function Join() {
         <article>
           <ul className="w-full border-lightgray border-2 mt-10 divide-y-2 divide-lightgray">
             <li
-              className="flex justify-between h-14 items-center pl-52 pr-24"
+              className="flex justify-between h-14 items-center px-[20px] md:px-0 md:pl-52 md:pr-24"
               onClick={toggleAllIcons}
             >
               <div className="flex items-center cursor-pointer">
@@ -106,14 +106,14 @@ function Join() {
             </li>
             {/*1번째 li*/}
             <li
-              className="flex justify-between h-14 items-center pl-52 pr-24"
+              className="flex justify-between h-14 items-center px-[20px] md:px-0 md:pl-52 md:pr-24"
               onClick={() => toggleIcon(1)}
             >
               <div className="flex items-center cursor-pointer">
                 <FaCheckCircle size="1.3em" color={iconColors[1]} />{" "}
                 <p className="ml-6 text-[14px]">
                   한국방폭협회 회원 이용약관 동의{" "}
-                  <span className="text-[#EF4444]">(필수)</span>
+                  <span className="text-red-500">(필수)</span>
                 </p>
               </div>
               <div>
@@ -125,14 +125,14 @@ function Join() {
               <div className="h-52 flex items-center pl-52">텍스트 상자</div>
             )}
             <li
-              className="flex justify-between h-14 items-center pl-52 pr-24"
+              className="flex justify-between h-14 items-center px-[20px] md:px-0s md:pl-52 md:pr-24"
               onClick={() => toggleIcon(2)}
             >
               <div className="flex items-center cursor-pointer">
                 <FaCheckCircle size="1.3em" color={iconColors[2]} />{" "}
                 <p className="ml-6 text-[14px]">
                   한국방폭협회 이용약관 동의{" "}
-                  <span className="text-[#EF4444]">(필수)</span>
+                  <span className="text-red-500">(필수)</span>
                 </p>
               </div>
               <div>
@@ -144,14 +144,14 @@ function Join() {
               <div className="h-52 flex items-center pl-52">텍스트 상자</div>
             )}
             <li
-              className="flex justify-between h-14 items-center pl-52 pr-24"
+              className="flex justify-between h-14 items-center px-[20px] md:px-0s md:pl-52 md:pr-24"
               onClick={() => toggleIcon(3)}
             >
               <div className="flex items-center cursor-pointer">
                 <FaCheckCircle size="1.3em" color={iconColors[3]} />{" "}
                 <p className="ml-6 text-[14px]">
                   개인정보 수집 및 이용 동의{" "}
-                  <span className="text-[#EF4444]">(필수)</span>
+                  <span className="text-red-500">(필수)</span>
                 </p>
               </div>
               <div>
@@ -171,16 +171,16 @@ function Join() {
           <button className="w-52 h-14 bg-lightgray">취소</button>
         </div> */}
       </section>{" "}
-      {/*약관동의 섹션*/}
+      {/*약관동의 섹션 끝*/}
       <section className="w-full">
         <h3 className="text-[24px] font-semibold mt-12 mb-8">회원정보 입력</h3>
-        <ul className="w-full flex px-52 h-12 bg-lightgray items-center justify-between mt-1 text-darkgray">
-          <li className="text-blue-500">약관동의</li>
-          <li className="text-blue-500">
+        <ul className="w-full flex px-5 md:px-52 h-12 bg-lightgray items-center justify-between mt-1 text-neutral-400 text-[14px] md:text-base">
+          <li className="text-secondary">약관동의</li>
+          <li className="text-secondary">
             <IoIosArrowForward />
           </li>
-          <li className="text-blue-500">회원정보 입력</li>
-          <li className="text-blue-500">
+          <li className="text-secondary">회원정보 입력</li>
+          <li className="text-secondary">
             <IoIosArrowForward />
           </li>
           <li>가입완료</li>

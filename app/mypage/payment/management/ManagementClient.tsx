@@ -17,8 +17,8 @@ const MainList = [
     sub: [
       { title: "발급/출력 현황", url: "/mypage/overall/all01" },
       { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-      { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-      { title: "경력관리 현황", url: "/mypage/overall/all04" },
+      // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
+      // { title: "경력관리 현황", url: "/mypage/overall/all04" },
     ],
   },
   {
@@ -60,7 +60,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "경력수첩 발급", url: "/mypage/carrear/print" },
-      { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
+      // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
     ],
   },
   {
@@ -79,7 +79,7 @@ const ManagementClient = () => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -93,8 +93,8 @@ const ManagementClient = () => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -116,68 +116,82 @@ const ManagementClient = () => {
           <ContentTitle title={location} center={true} />
           <div className="text-black w-full flex flex-col justify-center item-center">
           <div className="text-black w-full flex flex-col justify-center item-center">
-            <div className="w-3/4 flex justify-end mx-auto mt-5">
-              <p>
-                <span>회원</span>님의 관리페이지<br/>
-              </p>
-            </div>
-            <ul className="w-5/6 mx-auto border-t-2 border-gray-700 mt-10">
-              <div className="w-full h-11 bg-gray-100 font-semibold flex text-center items-center font-medium border-b border-blue-900">
-                <div className="w-1/5 border-r border-gray-200 ">
+            <ContentSubTitle title="회비 관리 현황" />
+            <ul className="w-full mx-auto border-t-2 border-gray-700 mt-10 hidden md:block">
+              <div className="w-full h-11 bg-gray-100 flex text-center items-center font-medium border-b border-blue-900">
+                <div className="w-2/12 border-r border-gray-200 ">
+                  성명
+                </div>
+                <div className="w-1/12 border-r border-gray-200 ">
+                  회원 구분
+                </div>
+                <div className="w-2/12 border-r border-gray-200 ">
                   금액
                 </div>
-                <div className="w-1/5 border-r border-gray-200 ">
+                <div className="w-2/12 border-r border-gray-200 ">
                   납부상태
                 </div>
-                <div className="w-2/5 border-r border-gray-200 ">
+                <div className="w-4/12 border-r border-gray-200 ">
                   일자
                 </div>
-                <div className="w-1/5">
+                <div className="w-1/12">
                   납부확인
                 </div>
               </div>
               <li className="w-full h-11 flex text-center items-center border-b border-gray-400">
-                <div className="w-1/5 h-full border-r border-gray-200 flex pl-10 items-center">
+                <div className="w-2/12 border-r border-gray-200 ">
+                  홍길동
+                </div>
+                <div className="w-1/12 border-r border-gray-200 ">
+                  정회원
+                </div>
+                <div className="w-2/12 h-full border-r border-gray-200 flex pl-10 items-center">
                   ￦&nbsp;
                   <span>
                     30,000
                   </span>
                 </div>
-                <div className="w-1/5 h-full border-r border-gray-200 flex pl-10 items-center">
+                <div className="w-2/12 h-full border-r border-gray-200 flex pl-10 items-center">
                   <span className="text-blue-600">
                     접수 대기
                   </span>
                 </div>
-                <div className="w-2/5 h-full border-r border-gray-200 flex pl-10 items-center">
+                <div className="w-4/12 h-full border-r border-gray-200 flex pl-10 items-center">
                   <span>
                     2023.12.15 17:51:01
                   </span>
                 </div>
-                <div className="w-1/5 h-full border-r border-gray-200 flex items-center">
-                  <button className="w-20 h-8 bg-gray-500 text-white mx-auto">
+                <div className="w-1/12 h-full border-r border-gray-200 flex items-center">
+                  <button className="w-16 h-8 bg-gray-500 text-white mx-auto">
                     확인
                   </button>
                 </div>
               </li>
               <li className="w-full h-11 flex text-center items-center border-b border-gray-400">
-                <div className="w-1/5 h-full border-r border-gray-200 flex pl-10 items-center">
+                <div className="w-2/12 border-r border-gray-200 ">
+                  홍길동
+                </div>
+                <div className="w-1/12 border-r border-gray-200 ">
+                  기업회원
+                </div>
+                <div className="w-2/12 h-full border-r border-gray-200 flex pl-10 items-center">
                   ￦&nbsp;
                   <span>
                     500,000
                   </span>
                 </div>
-                <div className="w-1/5 h-full border-r border-gray-200 flex pl-10 items-center">
+                <div className="w-2/12 h-full border-r border-gray-200 flex pl-10 items-center">
                   <span className="text-red-600">
                     승인-입금완료
                   </span>
                 </div>
-                <div className="w-2/5 h-full border-r border-gray-200 flex pl-10 items-center">
+                <div className="w-4/12 h-full border-r border-gray-200 flex pl-10 items-center">
                   <span>
                     2024.10.25 07:54:01
                   </span>
                 </div>
-                <div className="w-1/5 h-full border-r border-gray-200 flex items-center">
-                  <button className="w-20 h-8 bg-gray-500 text-white mx-auto">
+                <div className="w-1/12 h-full border-r border-gray-200 flex items-center">
+                  <button className="w-16 h-8 bg-gray-500 text-white mx-auto">
                     확인
                   </button>
                 </div>
@@ -186,10 +200,12 @@ const ManagementClient = () => {
                 &nbsp;
               </li>
             </ul>
-            <div className="mx-auto mt-10">
+            <div className="mx-auto mt-10 hidden md:block">
               1 2 3 4 5 page
             </div>
-            
+            <div className="w-full mx-auto flex justify-center items-center h-32">
+              큰 화면으로 확인해주세요.
+            </div>
           </div>
           </div>
         </section>

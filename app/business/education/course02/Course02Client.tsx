@@ -4,6 +4,7 @@ import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import ContentSubTitle from "@/components/content/subtitle";
+import Link from "next/link";
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
@@ -50,7 +51,7 @@ const Course02Client = () => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -67,8 +68,8 @@ const Course02Client = () => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -86,11 +87,46 @@ const Course02Client = () => {
           </div>
         </section>
 
-        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px] md:pl-[40px] px-[20px] md:px-0 w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
+            <li className="w-1/2 cursor-default">
+              <Link passHref href={"/business/education/course01/"}>
+                <div className="h-12 border border-gray-200 border-b-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                  <span> 방폭기초교육</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
+                  <span> 방폭인력양성 교육</span>
+                </div>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/business/education/course03/"}>
+                <div className="h-12 border border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                    <span> 기업형 교육</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/business/education/develop/"}>
+                <div className="h-12 border border-l-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                    <span> 교육개발</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-full">
+              <Link passHref href={"/business/education/copc/"}>
+                <div className="h-12 border border-t-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                    <span> CoPC 과정</span>
+                </div>
+              </Link>
+            </li>
+          </ul>
           <ContentSubTitle title="교육목적" />
-          <div className="w-full px-[20px] mb-[40px]">
-            <div className="flex flex-col justify-center items-start h-[100px] px-[20px] border border-gray w-full">
+          <div className="w-full md:px-[20px] mb-[40px]">
+            <div className="flex flex-col justify-center items-start h-[100px] md:px-[20px] md:border border-gray w-full">
               <span>
                 국제ㆍ국내 법규 및 관련 표준, 지침에 따라 폭발 위험성이 존재하는
                 산업현장에서는 각 공정 별 적격자에 의한 작업 및 관리가 요구된다.
@@ -103,8 +139,8 @@ const Course02Client = () => {
 
           <ContentSubTitle title="교육대상" />
           <div className="w-full">
-            <div className="w-full h-[270px] mb-[40px] border border-lightgray">
-              <div className="flex justify-center items-start w-full">
+            <div className="w-full md:h-[270px] mb-[40px] border border-gray">
+              <div className="hidden md:flex justify-center items-start w-full">
                 <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
                   분 류
                 </div>
@@ -112,8 +148,11 @@ const Course02Client = () => {
                   대 상
                 </div>
               </div>
-              <div className="flex justify-between items-start w-full">
-                <div className="w-1/2 flex flex-col justify-start items-center">
+              <div className="flex flex-col md:flex-row justify-between items-start w-full">
+                <div className="w-full md:w-1/2 flex flex-col justify-start items-center">
+                  <div className="w-full h-11 bg-darkgray flex md:hidden justify-center items-center">
+                    분류
+                  </div>
                   <span className="w-full h-[20px] pl-[20px] flex justify-start items-center border-r border-gray">
                     &nbsp;
                   </span>
@@ -139,7 +178,10 @@ const Course02Client = () => {
                     &nbsp;
                   </span>
                 </div>
-                <div className="w-1/2 flex flex-col justify-start items-center">
+                <div className="w-full md:w-1/2 flex flex-col justify-start items-center">
+                  <div className="w-full h-11 bg-darkgray flex md:hidden justify-center items-center">
+                    대상
+                  </div>
                   <span className="w-full h-[20px] pl-[20px] flex justify-start items-center">
                     &nbsp;
                   </span>
@@ -150,19 +192,22 @@ const Course02Client = () => {
                     · 산업안전보건공단, 가스안전공사로부터 PSM,SMS 심사를 받는
                     기업체 설계, 공무 및 안전부서 근로자
                   </span>
+                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
+                    &nbsp;
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="w-full flex justify-between items-center mb-[40px]">
-            <div className="w-[49%] flex flex-col">
+          <div className="w-full flex flex-col md:flex-row justify-between items-center mb-[40px]">
+            <div className="w-full md:w-[49%] flex flex-col">
               <ContentSubTitle title="자격요건" />
               <div className="flex flex-col justify-center py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
                 <span>각 IECEx Unit 별 취득 자격 요건 참조</span>
               </div>
             </div>
-            <div className="w-[49%] flex flex-col">
+            <div className="w-full md:w-[49%] flex flex-col">
               <ContentSubTitle title="교육내용 및 시간" />
               <div className="flex flex-col justify-center py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
                 <span>각 IECEx Unit 별 교육 시간 참조</span>
@@ -170,25 +215,26 @@ const Course02Client = () => {
             </div>
           </div>
 
-          <div className="w-full flex justify-between items-center mb-[40px]">
-            <div className="w-[49%] flex flex-col">
+          <div className="w-full flex-col md:flex-row justify-center flex md:justify-between items-center mb-[40px]">
+            <div className="w-full md:w-[49%] flex flex-col">
               <ContentSubTitle title="갱신교육기간" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[180px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-start py-[20px] items-start md:h-[180px] px-[20px] border border-gray w-full">
                 <span>5년 (IEC 규정)</span>
               </div>
             </div>
-            <div className="w-[49%] flex flex-col">
+            <div className="w-full md:w-[49%] flex flex-col">
               <ContentSubTitle title="CoPC Unit 별 교육과정" />
-              <div className="flex flex-col justify-start py-[20px] items-start h-[180px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-start py-[20px] items-start md:h-[180px] px-[20px] border border-gray w-full">
                 <span>· 방폭시공기술자(IECEx CoPC Unit Ex 001 + 036)</span>
                 <span>· 방폭검사기술자(IECEx CoPC Unit Ex 001 + 478)</span>
                 <span>
-                  · 방폭설계기술자 I - 폭발위험장소 구분 (IECEx CoPC Unit Ex 001
+                  · 방폭설계기술자 I - 폭발위험장소 구분 <br className="inline md:hidden"/>
+                  &nbsp;&nbsp;&nbsp;(IECEx CoPC Unit Ex 001
                   + 002)
                 </span>
                 <span>
-                  · 방폭설계기술자 II - 방폭기기 선정 (IECEx CoPC Unit Ex 001 +
-                  009)
+                  · 방폭설계기술자 II - 방폭기기 선정 <br className="inline md:hidden"/>
+                  &nbsp;&nbsp;&nbsp;(IECEx CoPC Unit Ex 001 + 009)
                 </span>
                 <span>· 방폭정비기술자 (IECEx CoPC Unit Ex 001 + 005)</span>
                 <span>· 방폭감리기술자 (IECEx CoPC Unit Ex 001 + 010)</span>
@@ -196,14 +242,14 @@ const Course02Client = () => {
             </div>
           </div>
 
-          <div className="w-full flex justify-between items-center mb-[40px]">
-            <div className="w-[49%] flex flex-col">
+          <div className="w-full flex-col md:flex-row justify-center flex md:justify-between items-center mb-[40px]">
+            <div className="w-full md:w-[49%] flex flex-col">
               <ContentSubTitle title="혜택" />
               <div className="flex flex-col justify-center py-[20px] items-start h-[70px] px-[20px] border border-gray w-full">
                 <span>수료증</span>
               </div>
             </div>
-            <div className="w-[49%] flex flex-col">
+            <div className="w-full md:w-[49%] flex flex-col">
               <ContentSubTitle title="발급비용" />
               <div className="flex flex-col justify-center py-[20px] items-start h-[70px] px-[20px] border border-gray w-full">
                 <span>IECEx Cert 발급 비용 참조</span>

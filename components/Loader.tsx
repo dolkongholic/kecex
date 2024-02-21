@@ -13,7 +13,7 @@ const Loader = () => {
       items-center 
     "
     >
-      <PuffLoader size={100} color="blue" />
+      <PuffLoader size={100} color="#003893" />
     </div>
   );
 };
