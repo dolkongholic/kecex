@@ -45,8 +45,8 @@ const GroupClient = () => {
   return (
     <section>
       <div id="headerNav">
-        <div className="h-[40px] w-full bg-gray-300 flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+        <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -63,8 +63,8 @@ const GroupClient = () => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full nd:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -82,9 +82,9 @@ const GroupClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px]  md:pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <div className="w-full flex flex-col px-[120px] mt-[20px]">
+          <div className="w-full flex flex-col px-[10px] md:px-[120px] mt-[20px]">
             {/* <div className="h-[120px] items-center">
               <ul className="flex justify-between">
                 <li className="w-1/8 flex h-[40px] flex-col justify-between text-center">&nbsp;</li>
@@ -95,7 +95,7 @@ const GroupClient = () => {
               </ul>
             </div> */}
             <div className="flex justify-center h-[50px] items-center">
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-gray-400 text-white text-[18px] rounded-full">
+              <div className="w-1/4 md:w-1/6 flex justify-center items-center h-[50px] text-center bg-neutral-700 text-white md:text-[18px] rounded-full">
                 총회
               </div>
             </div>
@@ -107,32 +107,32 @@ const GroupClient = () => {
                 <div className="h-[25px]">&nbsp;</div>
                 <div className="h-[25px]">&nbsp;</div>
               </div>
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-gray-400 text-white text-[18px] rounded-full mt-[40px]">
+              <div className="w-1/4 md:w-1/6 flex justify-center items-center h-[50px] text-center bg-neutral-700 text-white md:text-[18px] rounded-full mt-[40px]">
                 이사회
               </div>
             </div>
             <div className="flex justify-between h-[50px] items-center">
-              <div className="w-1/12 flex justify-center items-center h-[50px] text-cente text-subtitle">
+              <div className="md:w-1/12 flex justify-center items-center h-[50px] text-cente text-subtitle">
                 &nbsp;
               </div>
-              <div className="w-2/12 flex justify-center items-center h-[50px] text-center border border-blue-500 text-[18px]">
+              <div className="w-1/4 md:w-2/12 flex justify-center items-center h-[50px] text-center border border-secondary md:text-[18px]">
                 고문
               </div>
               <div className="w-2/12 h-[50px] text-center text-subtitle">
                 <div className="border-b border-gray h-[25px]">&nbsp;</div>
                 <div className="h-[25px]">&nbsp;</div>
               </div>
-              <div className="w-2/12 flex justify-center items-center h-[50px] text-center bg-blue-900 text-white text-[18px]">
+              <div className="w-1/4 md:w-2/12 flex justify-center items-center h-[50px] text-center bg-blue-900 text-white md:text-[18px]">
                 회장
               </div>
               <div className="w-2/12 h-[50px] text-center text-subtitle">
                 <div className="border-b border-gray h-[25px]">&nbsp;</div>
                 <div className="h-[25px]">&nbsp;</div>
               </div>
-              <div className="w-2/12 flex justify-center items-center h-[50px] text-center bg-gray-300 text-[18px]">
+              <div className="w-1/4 md:w-2/12 flex justify-center items-center h-[50px] text-center bg-lightgray md:text-[18px]">
                 감사
               </div>
-              <div className="w-1/12 flex justify-center items-center h-[50px] text-cente text-subtitle">
+              <div className="md:w-1/12 flex justify-center items-center h-[50px] text-cente text-subtitle">
                 &nbsp;
               </div>
             </div>
@@ -161,33 +161,33 @@ const GroupClient = () => {
             </div>
 
             <div className="flex justify-between h-[50px]">
-              <div className="w-1/12 flex justify-center items-center h-[50px] text-cente text-subtitle">
+              <div className="md:w-1/12 flex justify-center items-center h-[50px] text-cente text-subtitle">
                 &nbsp;
               </div>
-              <div className="w-2/12 flex-col justify-between items-center h-[110px] text-center border border-blue-500 text-[18px]s">
-                <p className="h-[50px] flex items-center justify-center text-[18px]">
+              <div className="w-1/4 md:w-2/12 flex-col justify-between items-center h-[110px] text-center border border-secondary md:text-[18px]">
+                <p className="h-[50px] flex items-center justify-center md:text-[18px]">
                   자문위원
                 </p>
-                <p className="h-[10px] text-base -ml-2 flex items-center justify-center">
+                <p className="h-[10px] -ml-2 flex items-center justify-center text-[13px] md:text-[16px]">
                   <span className="leading-9">o</span> 기술자문
                 </p>
-                <p className="h-[50px] text-base -ml-2 flex items-center justify-center">
+                <p className="h-[50px] -ml-2 flex items-center justify-center text-[13px] md:text-[16px]">
                   <span className="leading-9">o</span> 정책자문
                 </p>
               </div>
               <div className="w-2/12 h-[50px] text-center text-subtitle">
                 &nbsp;
               </div>
-              <div className="w-2/12 flex justify-center items-center h-[50px] text-center bg-blue-500 text-white text-[18px]">
+              <div className="w-1/4 md:w-2/12 flex justify-center items-center h-[50px] text-center bg-secondary text-white md:text-[18px]">
                 상임이사
               </div>
               <div className="w-2/12 h-[50px] text-center text-subtitle">
                 &nbsp;
               </div>
-              <div className="w-2/12 flex justify-center items-center h-[50px] text-center border border-blue-500 text-[18px]">
+              <div className="w-1/4 md:w-2/12 flex justify-center items-center h-[50px] text-center border border-secondary md:text-[18px]">
                 운영위원
               </div>
-              <div className="w-1/12 h-[50px] text-center text-subtitle">
+              <div className="md:w-1/12 h-[50px] text-center text-subtitle">
                 &nbsp;
               </div>
             </div>
@@ -204,7 +204,7 @@ const GroupClient = () => {
               <div className="w-1/4 flex justify-center items-center h-[50px] text-center text-subtitle">
                 &nbsp;
               </div>
-              <div className="w-1/6 flex justify-center items-center h-[50px] text-center bg-blue-500 text-white text-[18px]">
+              <div className="w-1/4 md:w-1/6 flex justify-center items-center h-[50px] text-center bg-secondary text-white md:text-[18px]">
                 사무국장
               </div>
               <div className="w-1/12 h-[50px] text-center text-subtitle">
@@ -219,7 +219,7 @@ const GroupClient = () => {
                 </div>
                 <div className="h-[25px]">&nbsp;</div>
               </div>
-              <div className="w-4/12 flex flex-col justify-center items-center h-[50px] text-center border border-blue-500 text-[18px]">
+              <div className="w-4/12 flex flex-col justify-center items-center h-[50px] text-center border border-secondary md:text-[18px]">
                 <p>방폭협회 지부</p>
               </div>
             </div>
@@ -240,23 +240,23 @@ const GroupClient = () => {
                   <li className="w-4/12 flex justify-center items-center h-[50px]">
                     &nbsp;
                   </li>
-                  <li className="w-2/12 flex justify-center items-center h-[35px] text-center bg-gray-300 text-[14px] mr-2">
+                  <li className="w-2/12 flex justify-center items-center h-[35px] text-center bg-lightgray text-[14px] mr-2">
                     경기
                   </li>
-                  <li className="w-2/12 flex justify-center items-center h-[35px] text-center bg-gray-300 text-[14px] mr-2">
+                  <li className="w-2/12 flex justify-center items-center h-[35px] text-center bg-lightgray text-[14px] mr-2">
                     충청
                   </li>
-                  <li className="w-2/12 flex justify-center items-center h-[35px] text-center bg-gray-300 text-[14px] mr-2">
+                  <li className="w-2/12 flex justify-center items-center h-[35px] text-center bg-lightgray text-[14px] mr-2">
                     경상
                   </li>
-                  <li className="w-2/12 flex justify-center items-center h-[35px] text-center bg-gray-300 text-[14px]">
+                  <li className="w-2/12 flex justify-center items-center h-[35px] text-center bg-lightgray text-[14px]">
                     호남
                   </li>
                 </ul>
               </div>
             </div>
 
-            <div className="flex h-[50px]">
+            <div className="hidden md:flex h-[50px]">
               <div className="w-[12%]">&nbsp;</div>
               <div className="w-[8%] border-t border-l border-gray relative">
                 &nbsp;
@@ -292,20 +292,23 @@ const GroupClient = () => {
               </div>
             </div>
 
-            <div className="flex justify-between h-[50px]">
-              <div className="w-1/4 flex justify-center items-center h-[50px] text-center bg-blue-500 text-white text-[18px]">
+            <div className="hidden md:flex justify-between h-[50px]">
+              <div className="w-1/4 flex justify-center items-center h-[50px] text-center bg-secondary text-white md:text-[18px]">
                 방폭지원본부
               </div>
-              <div className="w-1/4 flex justify-center items-center h-[50px] text-center bg-blue-500 text-white text-[18px]">
+              <div className="w-1/4 flex justify-center items-center h-[50px] text-center bg-secondary text-white md:text-[18px]">
                 방폭기술본부
               </div>
-              <div className="w-1/4 flex flex-col justify-center items-center h-[50px] text-center border border-blue-500 text-[18px]">
+              <div className="w-1/4 flex flex-col justify-center items-center h-[50px] text-center border border-secondary md:text-[18px]">
                 <p>위험성평가 센터</p>
               </div>
             </div>
 
-            <div className="flex justify-between ">
-              <div className="w-[270px] flex flex-col space-y-[10px] justify-start text-left mt-[10px] border border-gray text-[14px] p-5 -ml-[25px]">
+            <div className="md:flex justify-between ">
+              <div className="w-full md:w-[270px] flex flex-col space-y-[10px] justify-start text-left mt-[10px] border border-gray text-[14px] p-5 md:-ml-[25px]">
+                <div className="w-full h-[40px] bg-darkgray flex md:hidden flex-col items-center justify-center text-[18px]">
+                  방폭지원본부
+                </div>
                 <span>
                   <b className="text-[8px]">○</b> 기획, 총무, 회계
                 </span>
@@ -331,7 +334,10 @@ const GroupClient = () => {
                   <b className="text-[8px]">○</b> 방폭 분과위원회 구성/운영
                 </span>
               </div>
-              <div className="w-[270px] flex flex-col space-y-[10px] justify-start  mt-[10px]  border border-gray text-[14px] p-5">
+              <div className="w-full md:w-[270px] flex flex-col space-y-[10px] justify-start  mt-[10px]  border border-gray text-[14px] p-5">
+                <div className="w-full h-[40px] bg-darkgray flex md:hidden flex-col items-center justify-center text-[18px]">
+                  방폭기술본부
+                </div>
                 <span>
                   <b className="text-[8px]">○</b> 방폭 전문인력양성 교육
                   <span className="text-[12px]">(수료증/수첩)</span>
@@ -356,7 +362,10 @@ const GroupClient = () => {
                   지원
                 </span>
               </div>
-              <div className="w-[270px] flex flex-col space-y-[10px] justify-start mt-[10px]  border border-gray text-[14px] p-5 -mr-[25px]">
+              <div className="w-full md:w-[270px] flex flex-col space-y-[10px] justify-start mt-[10px]  border border-gray text-[14px] p-5 md:-mr-[25px]">
+                <div className="w-full h-[40px] bg-darkgray flex md:hidden flex-col items-center justify-center text-[18px]">
+                  위험성평가 센터
+                </div>
                 <span>
                   <b className="text-[8px]">○</b> Hazard Analysis
                 </span>

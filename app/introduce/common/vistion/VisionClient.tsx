@@ -4,6 +4,7 @@ import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import ContentSubTitle from "@/components/content/subtitle";
+import Link from "next/link";
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
@@ -48,7 +49,7 @@ const VisionClient = () => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -65,8 +66,8 @@ const VisionClient = () => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -84,26 +85,56 @@ const VisionClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
+        <section className="px-[20px] md:px-0 md:py-[20px] md:pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
+          <ul className="flex md:hidden flex-wrap w-full p-[20px] text-[15px]">
+            <li className="w-1/2 cursor-default">
+              <Link passHref href={"/introduce/common/ceo/"}>
+                <div className="h-12 border border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                  <span> CEO 인사말</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/"}>
+                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
+                  <span> 비전/미션</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/introduce/common/history/"}>
+                <div className="h-12 border border-r-0 border-t-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                    <span> 연혁</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/introduce/common/ci/"}>
+                <div className="h-12 border border-t-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                    <span> CI</span>
+                </div>
+              </Link>
+            </li>
+          </ul>
           <ContentSubTitle title="비전" />
-          <p className="px-[30px]">
+          <p className="md:px-[30px]">
             한국방폭협회는 방폭기술에 대한 연구 개발과 산업안전의 기술기반의
             확대, 방폭전문인력의 양성, 방폭기술의 글로벌 경쟁력 확보, 일자리
             창출을 통해 선진안전 수준을 제고하며 방폭산업의 경제적 발전을
             고도화하고 관련기술인의 사회적 지위향상에 기여함을 그 목적으로 한다.
           </p>
-          <div className="w-full p-[60px] flex justify-between items-center gap-2">
-            <div className="w-1/4 py-[30px] flex flex-col justify-center items-center border border-gray">
+          <div className="w-full space-y-4 md:space-y-0 md:p-[60px] md:flex justify-between items-center gap-2 mb-[40px] md:mb-0">
+            <div className="md:w-1/4 py-[30px] flex flex-col justify-center items-center border border-gray mt-[30px] md:mt-0">
               <div className="flex justify-center items-center mb-[20px]">
                 VISION 1
               </div>
               <div className="flex justify-center items-center">
                 <Image src={PicCheck} alt="check" width={20} height={20} />
-                <span className="ml-[10px]">산업아전 기술기반의 확대</span>
+                <span className="ml-[10px]">산업안전 기술기반의 확대</span>
               </div>
             </div>
-            <div className="w-1/4 py-[30px] flex flex-col justify-center items-center border border-gray">
+            <div className="md:w-1/4 py-[30px] flex flex-col justify-center items-center border border-gray">
               <div className="flex justify-center items-center mb-[20px]">
                 VISION 2
               </div>
@@ -112,7 +143,7 @@ const VisionClient = () => {
                 <span className="ml-[10px]">방폭전문인력 양성</span>
               </div>
             </div>
-            <div className="w-1/4 py-[30px] flex flex-col justify-center items-center border border-gray">
+            <div className="md:w-1/4 py-[30px] flex flex-col justify-center items-center border border-gray">
               <div className="flex justify-center items-center mb-[20px]">
                 VISION 3
               </div>
@@ -121,9 +152,9 @@ const VisionClient = () => {
                 <span className="ml-[10px]">방폭기술 글로벌 경쟁력 확보</span>
               </div>
             </div>
-            <div className="w-1/4 py-[30px] flex flex-col justify-center items-center border border-gray">
+            <div className="md:w-1/4 py-[30px] flex flex-col justify-center items-center border border-gray">
               <div className="flex justify-center items-center mb-[20px]">
-                VISION 3
+                VISION 4
               </div>
               <div className="flex justify-center items-center">
                 <Image src={PicCheck} alt="check" width={20} height={20} />
@@ -131,10 +162,10 @@ const VisionClient = () => {
               </div>
             </div>
           </div>
-          <Image src={PicVision} alt="vision" className="px-[30px]" />
+          <Image src={PicVision} alt="vision" className="px-[30px] hidden md:block" />
           <ContentSubTitle title="미션" />
-          <div className="w-full p-[60px] flex justify-between items-center">
-            <div className="w-[90%] py-[30px] flex flex-col justify-center items-center border border-gray">
+          <div className="w-full md:p-[60px] flex justify-center items-center">
+            <div className="w-full md:w-[90%] py-[30px] flex flex-col justify-center items-center border border-gray">
               <div className="flex justify-center items-center mb-[20px]">
                 MISSION
               </div>

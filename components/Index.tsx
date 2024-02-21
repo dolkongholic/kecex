@@ -7,6 +7,7 @@ import useInsertMainBanner from "@/app/hooks/useInsertMainBanner";
 import Notice from "@/components/inputs/Notice";
 
 import { IoMdClose } from "react-icons/io";
+import { FiSearch } from "react-icons/fi";
 
 import { SafeUser } from "@/types";
 import { useCallback } from "react";
@@ -53,7 +54,7 @@ const Index: React.FC<IndexProps> = ({
 
   return (
     <section>
-      <div className="w-full h-[450px]">
+      <div className="w-full h-[700px] md:h-[450px]">
         {currentUser && currentUser.staff && (
           <div
             className="lg:block hidden absolute right-0 mr-2 mt-2 w-32 py-2 bg-blue-900 z-[55] text-white text-center rounded-md cursor-pointer"
@@ -62,8 +63,21 @@ const Index: React.FC<IndexProps> = ({
             추가하기
           </div>
         )}
-
-        <div className="w-full h-[450px] bg-black z-[50] flex justify-center items-center bg-[url('/img/common/main_bg.jpg')] bg-cover bg-center">
+        <div className="w-full h-[700px] md:h-[450px] bg-black z-[50] md:flex justify-center items-center bg-[url('/img/common/main_bg.jpg')] bg-cover bg-center">
+          <p className="text-[28px] text-center text-white font-semibold py-10 md:hidden">
+            <span className="text-primary">안전</span>은 제일의<br/>
+            경영가치입니다
+          </p>
+          <div className="w-full flex justify-center items-center md:hidden relative">
+            <input
+              type="text"
+              className="w-11/12 h-[40px] ring-2 ring-white px-[20px] rounded-sm placeholder:text-sm font-light focus:outline-none focus:ring-2 focus:ring-active transition-all duration-500 mx-auto"
+              placeholder="검색어를 입력하세요"
+            />
+            <span className="w-[30px] h-[30px] absolute right-0 top-0 -translate-x-[20px] translate-y-[10px]">
+              <FiSearch style={{ width: "22", height: "22" }} />
+            </span> 
+          </div>
           <ResposiveCarousel
             className="absolute top-[165px] w-[1400px] h-[450px] z-[40] flex justify-center items-center"
             showArrows={true}

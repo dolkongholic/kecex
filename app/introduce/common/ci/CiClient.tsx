@@ -2,6 +2,7 @@
 import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
+import Link from "next/link";
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
@@ -64,8 +65,8 @@ const CiClient = () => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -83,9 +84,39 @@ const CiClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
+        <section className="md:py-[20px] md:pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <Image src={PicCi_1} alt="Ci" className="my-[40px]" />
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
+            <li className="w-1/2 cursor-default">
+              <Link passHref href={"/introduce/common/ceo/"}>
+                <div className="h-12 border border-gray-200 border-b-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                  <span> CEO 인사말</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/introduce/common/vistion/"}>
+                <div className="h-12 border border-gray-200 border-l-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                  <span> 비전/미션</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/introduce/common/history/"}>
+                <div className="h-12 border border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                    <span> 연혁</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/"}>
+                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
+                    <span> CI</span>
+                </div>
+              </Link>
+            </li>
+          </ul>
+          <Image src={PicCi_1} alt="Ci" className="my-[40px] w-full" />
           <Image src={PicCi_2} alt="Ci" className="mb-[40px]" />
           <Image src={PicCi_3} alt="Ci" />
         </section>

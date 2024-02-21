@@ -97,14 +97,20 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
   }
 
   return (
-    <div className="w-full flex justify-center item-start mt-[40px]">
-      <div className="w-[1400px] flex justify-start items-start space-x-[30px]">
-        <div className="border border-[#dddddd] w-1/2 h-[250px] flex justify-between item-start py-[10px]">
-          <div className="w-[200px] h-[150px] flex flex-col justify-between items-center leading-[50px] px-[20px] font-bold text-[16px]">
+    <div className="w-full md:flex justify-center item-start mt-[40px]">
+      <div className="md:w-[1400px] md:flex justify-start items-start space-x-[30px]">
+        <div className="md:border border-[#dddddd] w-full md:w-1/2 h-[250px] md:flex justify-between item-start py-[10px]">
+          <p className="text-center md:hidden">
+            KECEx
+          </p>
+          <h2 className="text-center md:hidden text-[30px] text-black font-bold leading-7 mb-8">
+            Notice
+          </h2>
+          <div className="w-11/12 md:w-[200px] md:h-[150px] flex md:flex-col justify-between items-center leading-8 md:leading-[50px] px-[20px] font-bold text-[16px] border-b-2 md:border-0 border-primary mx-auto">
             <div
-              className={`w-full flex justify-between items-center text-start px-[20px] font-bold text-[18px] border-b border-[#dddddd] transition-all duration-300 ease-in-out cursor-pointer ${
+              className={`md:w-full md:flex justify-between items-center text-start px-[20px] md:font-bold text-[14px] md:text-[18px] md:border-b border-[#dddddd] transition-all duration-300 ease-in-out cursor-pointer ${
                 noticeMenu == "알림" &&
-                "-translate-x-[30px] bg-blue-900 text-white rounded-r-2xl w-[120%]"
+                "md:-translate-x-[30px] md:bg-primary text-primary md:text-white rounded-r-2xl md:w-[120%]"
               }`}
               onClick={() => {
                 setNoticeMenu("알림");
@@ -113,15 +119,15 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
             >
               알림
               {noticeMenu == "알림" && (
-                <div className="w-[30px] h-[30px] bg-[#2c90d7] rounded-full flex justify-center items-center">
+                <div className="w-[30px] h-[30px] bg-secondary rounded-full hidden md:flex justify-center items-center">
                   <ImArrowRight2 />
                 </div>
               )}
             </div>
             <div
-              className={`w-full flex justify-between items-center text-start px-[20px] font-bold text-[18px] border-b border-[#dddddd] transition-all duration-300 ease-in-out cursor-pointer ${
+              className={`md:w-full flex justify-between items-center text-start md:px-[20px] md:font-bold text-[14px] md:text-[18px] border-b border-[#dddddd] transition-all duration-300 ease-in-out cursor-pointer ${
                 noticeMenu == "보도자료" &&
-                "-translate-x-[30px] bg-blue-900 text-white rounded-r-2xl w-[120%]"
+                "md:-translate-x-[30px] md:bg-primary text-primary md:text-white rounded-r-2xl md:w-[120%]"
               }`}
               onClick={() => {
                 setNoticeMenu("보도자료");
@@ -130,16 +136,16 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
             >
               보도자료
               {noticeMenu == "보도자료" && (
-                <div className="w-[30px] h-[30px] bg-[#2c90d7] rounded-full flex justify-center items-center">
+                <div className="w-[30px] h-[30px] bg-secondary rounded-full hidden md:flex justify-center items-center">
                   <ImArrowRight2 />
                 </div>
               )}
             </div>
 
             <div
-              className={`w-full flex justify-between items-center text-start px-[20px] font-bold text-[18px] border-b border-[#dddddd] transition-all duration-300 ease-in-out cursor-pointer ${
+              className={`md:w-full flex justify-between items-center text-start md:px-[20px] md:font-bold text-[14px] md:text-[18px] border-b border-[#dddddd] transition-all duration-300 ease-in-out cursor-pointer ${
                 noticeMenu == "교육센터" &&
-                "-translate-x-[30px] bg-blue-900 text-white rounded-r-2xl w-[120%]"
+                "md:-translate-x-[30px] md:bg-primary text-primary md:text-white rounded-r-2xl md:w-[120%]"
               }`}
               onClick={() => {
                 setNoticeMenu("교육센터");
@@ -148,13 +154,13 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
             >
               교육센터
               {noticeMenu == "교육센터" && (
-                <div className="w-[30px] h-[30px] bg-[#2c90d7] rounded-full flex justify-center items-center">
+                <div className="w-[30px] h-[30px] bg-secondary rounded-full hidden md:flex justify-center items-center">
                   <ImArrowRight2 />
                 </div>
               )}
             </div>
           </div>
-          <div className="flex flex-col w-3/4">
+          <div className="flex flex-col w-full md:w-3/4">
             <div className="w-full h-[60px] flex justify-between items-center px-[30px] font-bold text-[#a9a9a9]">
               <ul className="flex space-x-[10px]">
                 {noticeSubMenuList?.map((item: any, index: any) => (
@@ -189,7 +195,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
             {noticeMenu == "알림" && (
               <>
                 <div className="w-full h-[110px] flex justify-between items-center cursor-pointer">
-                  <div className="flex flex-col w-[200px] border-r border-[#dddddd] justify-center items-center text-[#484848] ">
+                  <div className="flex flex-col w-1/2 md:w-[200px] border-r border-[#dddddd] justify-center items-center text-[#484848] ">
                     <span className="h-[45px] leading-[45px] text-[35px] font-extrabold">
                       {noticeList[noticeList.length - 1]
                         ? String(noticeList[noticeList.length - 1].date).slice(
@@ -208,7 +214,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     </span>
                   </div>
                   <div className="flex flex-col flex-grow justify-center items-start pl-[20px]">
-                    <span className="h-[45px] leading-[45px] text-[20px] font-extrabold">
+                    <span className="h-[45px] leading-[45px] text-[16px] md:text-[20px] font-extrabold">
                       {noticeList[noticeList.length - 1]
                         ? String(noticeList[noticeList.length - 1].title).slice(
                             0,
@@ -244,7 +250,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         : ""}
                     </span>
                   </div>
-                  <div className="flex w-full justify-between item-center leading-[40px] text-[13px] font-bold">
+                  <div className="flex w-full justify-between item-center leading-[40px] md:border-0 border-b border-[#d7d7d7f2] text-[13px] font-bold">
                     <span>
                       {noticeList[noticeList.length - 3]
                         ? String(noticeList[noticeList.length - 3].title).slice(
@@ -269,7 +275,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
             {noticeMenu == "보도자료" && (
               <>
                 <div className="w-full h-[110px] flex justify-between items-center cursor-pointer">
-                  <div className="flex flex-col w-[200px] border-r border-[#dddddd] justify-center items-center text-[#484848] ">
+                  <div className="flex flex-col w-1/2 md:w-[200px] border-r border-[#dddddd] justify-center items-center text-[#484848] ">
                     <span className="h-[45px] leading-[45px] text-[35px] font-extrabold">
                       {newsList[newsList.length - 1]
                         ? String(newsList[newsList.length - 1].date).slice(
@@ -285,7 +291,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     </span>
                   </div>
                   <div className="flex flex-col flex-grow justify-center items-start pl-[20px]">
-                    <span className="h-[45px] leading-[45px] text-[20px] font-extrabold">
+                    <span className="h-[45px] leading-[45px] text-[16px] md:text-[20px] font-extrabold">
                       {newsList[newsList.length - 1]
                         ? String(newsList[newsList.length - 1].title).slice(
                             0,
@@ -319,7 +325,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         : ""}
                     </span>
                   </div>
-                  <div className="flex w-full justify-between item-center leading-[40px] text-[13px] font-bold">
+                  <div className="flex w-full justify-between item-center leading-[40px] md:border-0 border-b border-[#d7d7d7f2] text-[13px] font-bold">
                     <span>
                       {newsList[newsList.length - 3]
                         ? String(newsList[newsList.length - 3].title).slice(
@@ -350,8 +356,8 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
           </div>
         </div>
         {/* 카드뉴스 */}
-        <div className="w-1/2 h-[250px] flex space-x-[10px]">
-          <div className="w-1/2 h-[250px] p-[10px]">
+        <div className="w-full md:w-1/2 md:h-[250px] md:flex md:space-x-[10px] ml-0">
+          <div className="w-full md:w-1/2 h-[250px] md:p-[10px] ml-0">
             <Carousel>
               {newsList?.map((item: any, index: any) => (
                 <Paper key={index} className="w-full h-[230px]">
@@ -360,10 +366,10 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
               ))}
             </Carousel>
           </div>
-          <div className="w-1/2 h-[250px] p-[10px]">
+          <div className="w-full md:w-1/2 h-[250px] md:p-[10px]">
             <Carousel>
               {workers.map((image, index) => (
-                <Paper key={index} className="w-full h-[230px]">
+                <Paper key={index} className="w-[300px] md:w-full h-[200px] md:h-[230px]">
                   <Image src={image} alt="image" fill />
                 </Paper>
               ))}

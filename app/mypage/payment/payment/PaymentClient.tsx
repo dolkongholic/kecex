@@ -17,8 +17,8 @@ const MainList = [
     sub: [
       { title: "발급/출력 현황", url: "/mypage/overall/all01" },
       { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-      { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-      { title: "경력관리 현황", url: "/mypage/overall/all04" },
+      // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
+      // { title: "경력관리 현황", url: "/mypage/overall/all04" },
     ],
   },
   {
@@ -79,7 +79,7 @@ const PaymentClient = () => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -93,8 +93,8 @@ const PaymentClient = () => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -115,19 +115,19 @@ const PaymentClient = () => {
         <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
           <ContentSubTitle title="회비" />
-          <div className="text-black w-full flex flex-col justify-center item-center">
-            <div className="w-4/5 flex justify-end mx-auto pt-10">
+          <div className="text-neutral-800 w-full flex flex-col justify-center item-center">
+            <div className="w-full md:w-4/5 flex justify-end mx-auto pt-10">
               <p className="text-[13px]">단위 : 만원</p>
             </div>
-            <table className="w-4/5 border-y-2 border-gray-700 m-auto text-center">
-              <tr className="border-b border-blue-500 h-14 bg-gray-100">
-                <th className="border-r border-gray-400 w-48">
+            <table className="w-full md:w-4/5 border-y-2 border-neutral-700 m-auto text-center">
+              <tr className="border-b border-secondary h-14 bg-lightgray">
+                <th className="border-r border-gray-400 w-1/4 md:w-48">
                   구분
                 </th>
-                <td className="border-r border-gray-400 w-48 font-semibold">
+                <td className="border-r border-gray-400 w-1/4 md:w-48 font-semibold">
                   가입비
                 </td>
-                <td className="border-r border-gray-400 w-48 font-semibold">
+                <td className="border-r border-gray-400 w-1/4 md:w-48 font-semibold">
                   연회비
                 </td>
                 <td className="font-semibold">
@@ -138,10 +138,10 @@ const PaymentClient = () => {
                 <th className="border-r border-gray-400 font-medium">
                   일반회원
                 </th>
-                <td className="border-r border-gray-400 w-48">
+                <td className="border-r border-gray-400 w-1/4 md:w-48">
                   2
                 </td>
-                <td className="border-r border-gray-400 w-48">
+                <td className="border-r border-gray-400 w-1/4 md:w-48">
                   3
                 </td>
               </tr>
@@ -149,10 +149,10 @@ const PaymentClient = () => {
                 <th className="border-r border-gray-400 font-medium">
                   정회원
                 </th>
-                <td className="border-r border-gray-400 w-48">
+                <td className="border-r border-gray-400 w-1/4 md:w-48">
                   10
                 </td>
-                <td className="border-r border-gray-400 w-48">
+                <td className="border-r border-gray-400 w-1/4 md:w-48">
                   12
                 </td>
               </tr>
@@ -160,10 +160,10 @@ const PaymentClient = () => {
                 <th className="border-r border-gray-400 font-medium">
                   운영위원
                 </th>
-                <td className="border-r border-gray-400 w-48">
+                <td className="border-r border-gray-400 w-1/4 md:w-48">
                   10
                 </td>
-                <td className="border-r border-gray-400 w-48">
+                <td className="border-r border-gray-400 w-1/4 md:w-48">
                   20
                 </td>
               </tr>
@@ -171,10 +171,10 @@ const PaymentClient = () => {
                 <th className="border-r border-gray-400 font-medium">
                   임원
                 </th>
-                <td className="border-r border-gray-400 w-48">
+                <td className="border-r border-gray-400 w-1/4 md:w-48">
                   10
                 </td>
-                <td className="border-r border-gray-400 w-48">
+                <td className="border-r border-gray-400 w-1/4 md:w-48">
                   30
                 </td>
               </tr>
@@ -182,10 +182,10 @@ const PaymentClient = () => {
                 <th className="border-r border-gray-400 font-medium">
                   기업회원
                 </th>
-                <td className="border-r border-gray-400 w-48">
+                <td className="border-r border-gray-400 w-1/4 md:w-48">
                   100
                 </td>
-                <td className="border-r border-gray-400 w-48">
+                <td className="border-r border-gray-400 w-1/4 md:w-48">
                   50
                 </td>
                 <td className="text-[13px]">
@@ -195,10 +195,10 @@ const PaymentClient = () => {
               </tr>
             </table>
             <div className="mx-auto flex">
-              <button className="mt-16 w-32 h-12 bg-blue-500 text-white">
+              <button className="mt-16 w-32 h-12 bg-secondary text-white">
                 납부하기
               </button>
-              <button className="mt-16 w-44 h-12 border border-blue-500 ml-12">
+              <button className="mt-16 w-44 h-12 border border-secondary ml-12">
                 입금확인 요청하기
               </button>
             </div>

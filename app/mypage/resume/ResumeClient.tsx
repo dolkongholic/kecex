@@ -17,8 +17,8 @@ const MainList = [
     sub: [
       { title: "발급/출력 현황", url: "/mypage/overall/all01" },
       { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-      { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-      { title: "경력관리 현황", url: "/mypage/overall/all04" },
+      // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
+      // { title: "경력관리 현황", url: "/mypage/overall/all04" },
     ],
   },
   {
@@ -60,7 +60,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "경력수첩 발급", url: "/mypage/carrear/print" },
-      { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
+      // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
     ],
   },
   {
@@ -103,7 +103,7 @@ const ResumeClient = () => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-gray-200 flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -117,8 +117,8 @@ const ResumeClient = () => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -135,11 +135,11 @@ const ResumeClient = () => {
             </div>
           </div>
         </section>
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="p-[7px] md:p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
-          <div className="text-black w-full flex flex-col justify-between item-center border-b-blue-500 border-b-2">
+          <div className="text-black w-full flex flex-col justify-between item-center border-b-secondary border-b-2">
             <div className="h-[40px]">
-              <span className="text-[#ef250b]">
+              <span className="text-red-500">
                 이력서 미작성 시 교육 신청 진행 불가
               </span>
               합니다.
@@ -147,20 +147,20 @@ const ResumeClient = () => {
           </div>
           <div className="w-full">
             <article className="w-full mt-12">
-              <h3 className="text-subtitle font-bold mt-5 text-gray-800">
+              <h3 className="text-subtitle font-bold mt-5 text-neutral-800">
                 여권정보
               </h3>
-              <div className="flex pt-4">
-                <div id="pic_area" className="w-[200px] h-[192px]">
-                  <div className="w-[160px] h-full">
+              <div className="md:flex pt-4">
+                <div id="pic_area" className="w-[120px] md:w-[200px] h-[192px] mx-auto md:mx-0 mb-7 md:mb-0">
+                  <div className="w-[120px] h-[160px] md:w-[160px] md:h-[192px] relative border border-gray p-2">
                     {imagePreview ? (
                       <Image
                         src={imagePreview}
                         alt="이미지 미리보기"
-                        className="h-full w-full"
+                        fill
                       />
                     ) : (
-                      <span>
+                      <span className="text-[13px]">
                         {/* 내가 선택한 파일 이름 여기에 표시 */}
                         {selectedFile ? selectedFile : "파일을 선택하세요."}
                       </span>
@@ -175,24 +175,26 @@ const ResumeClient = () => {
                   />
                   <label
                     htmlFor="fileInput"
-                    className="inline-block py-2 mt-1 text-center w-[160px] h-10 bg-blue-900 text-white box-border"
+                    className="inline-block py-2 mt-1 text-center w-[120px] md:w-[160px] h-10 bg-primary text-white box-border"
                   >
                     첨부파일
                   </label>
                 </div>
-                <div id="form_area" className="w-full">
+                <div id="form_area" className="w-full text-[13px] md:text-base translate-y-[340px] md:translate-y-0
+                ">
                   <fieldset className="border border-gray-200 text-center w-full text-black">
-                    <legend className="w-[155px] h-14 float-left text-left pl-7 pt-4">
-                      성명(한글)
+                    <legend className="w-1/6 md:w-[155px] h-12 md:h-14 float-left md:pl-7 pt-1 md:pt-4 text-center md:text-left">
+                      성명<br className="md:hidden"/>
+                      (한글)
                     </legend>
-                    <div className="before:border-l before:border-gray-200 w-1/6 h-14 float-left pt-2 box-border">
+                    <div className="before:border-l before:border-gray-200 w-1/6 h-12 md:h-14 float-left pt-1 md:pt-2 box-border">
                       <input
                         type="text"
                         placeholder="성"
                         className="pl-4 h-10"
                       />
                     </div>
-                    <div className="before:border-l before:border-gray-200 w-4/6 h-14 float-left p-2 box-border">
+                    <div className="before:border-l before:border-gray-200 w-4/6 h-12 md:h-14 float-left pt-1 md:p-2 box-border">
                       <input
                         type="text"
                         placeholder="이름"
@@ -200,11 +202,11 @@ const ResumeClient = () => {
                       />
                     </div>
                   </fieldset>
-                  <fieldset className="border border-gray-200 text-center  w-[49%] text-black float-left mt-5">
-                    <legend className="w-[155px] h-14 float-left text-left pl-7 pt-4">
+                  <fieldset className="border border-gray-200 text-center w-full md:w-[49%] text-black float-left mt-2 md:mt-5">
+                    <legend className="w-1/4 md:w-[155px] h-12 md:h-14 float-left text-left pl-4 md:pl-7 pt-[14px] md:pt-4">
                       생년월일
                     </legend>
-                    <div className="before:border-l before:border-gray-200 w-1/6 h-14 float-left pt-2 box-border">
+                    <div className="before:border-l before:border-gray-200 w-1/6 h-12 md:h-14 float-left pt-1 md:pt-2 box-border">
                       <input
                         type="text"
                         placeholder="990101"
@@ -213,11 +215,11 @@ const ResumeClient = () => {
                       />
                     </div>
                   </fieldset>
-                  <fieldset className="border border-gray-200 text-center  w-[49%] text-black float-right my-5">
-                    <legend className="w-[155px] h-14 float-left text-left pl-7 pt-4">
+                  <fieldset className="border border-gray-200 text-center w-full md:w-[49%] text-black float-right my-2 md:my-5">
+                    <legend className="w-1/4 md:w-[155px] h-12 md:h-14 float-left text-left pl-4 md:pl-7 pt-[14px] md:pt-4">
                       국적
                     </legend>
-                    <div className="before:border-l before:border-gray-200 w-1/6 h-14 float-left pt-2 box-border">
+                    <div className="before:border-l before:border-gray-200 w-1/6 h-12 md:h-14 float-left pt-1 md:pt-2 box-border">
                       <select className="pl-4 h-10 w-[200px]">
                         <option value="">국적</option>
                         <option value="남아프리카">남아프리카</option>
@@ -271,15 +273,15 @@ const ResumeClient = () => {
                     </div>
                   </fieldset>
                   <fieldset className="border border-gray-200 text-center w-full text-black">
-                    <legend className="w-[155px] h-20 float-left text-left pl-7 pt-6">
+                    <legend className="w-1/4 md:w-[155px] h-52 md:h-20 float-left text-left pl-4 md:pl-7 pt-6 border-r border-gray-200 md:border-0">
                       언어능력
                     </legend>
-                    <div className="flex justify-between before:border-l before:border-gray-200 mt-2">
+                    <div className="md:flex justify-between md:before:border-l before:border-gray-200 mt-2 float-right w-3/4 md:w-5/6">
                       <div>
                         <input
                           type="text"
                           placeholder="ex)일본어"
-                          className="w-[150px] h-12 border my-2 border-gray-200 pl-3"
+                          className="w-3/5 md:w-[150px] h-12 border my-2 border-gray-200 pl-3"
                         />
                         <select
                           id="lang_01"
@@ -294,7 +296,7 @@ const ResumeClient = () => {
                         <input
                           type="text"
                           placeholder="ex)일본어"
-                          className="w-[150px] h-12 border my-2 border-gray-200 pl-3"
+                          className="w-3/5 md:w-[150px] h-12 border my-2 border-gray-200 pl-3"
                         />
                         <select
                           id="lang_01"
@@ -309,11 +311,11 @@ const ResumeClient = () => {
                         <input
                           type="text"
                           placeholder="ex)일본어"
-                          className="w-[150px] h-12 border my-2 border-gray-200 pl-3"
+                          className="w-3/5 md:w-[150px] h-12 border my-2 border-gray-200 pl-3"
                         />
                         <select
                           id="lang_01"
-                          className="border border-gray-200 h-12 w-20 mr-7 pl-3"
+                          className="border border-gray-200 h-12 w-20 md:mr-7 pl-3"
                         >
                           <option value="상">상</option>
                           <option value="중">중</option>
@@ -324,7 +326,7 @@ const ResumeClient = () => {
                   </fieldset>
                 </div>
               </div>
-              <div className="w-full p-7 border border-blue-900 mt-1 leading-8">
+              <div className="w-full h-[320px] md:h-auto p-7 border border-primary mt-1 leading-6 md:leading-8 text-[14px] md:text-base -translate-y-96 md:-translate-y-0">
                 <strong className="text-gray-800">
                   잠깐! 사진을 다시 확인해주세요!
                 </strong>
@@ -354,19 +356,19 @@ const ResumeClient = () => {
                 </p>
               </div>
             </article>
-            {/* 여권 정보 섹션 */}
+            {/* 여권 정보 섹션 끝*/}
 
-            <article className="w-full mt-12">
+            <article className="w-full mt-16 md:mt-12 text-[13px] md:text-base">
               <h3 className="text-subtitle font-bold mt-5 text-gray-800">
                 학력
               </h3>
               <div className="flex">
-                <div id="form_area" className="w-[1050px] pt-4">
-                  <fieldset className="border border-gray-200 text-center w-full text-black flex">
-                    <div className="w-2/12">
+                <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
+                  <fieldset className="border border-gray-200 text-center w-full text-black md:flex">
+                    <div className="w-full md:w-2/12">
                       <select
                         id="lang_01"
-                        className="w-full border-r border-gray-200 h-14 pl-8"
+                        className="w-full md:border-r md:border-gray-200 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary"
                       >
                         <option value="">학교구분</option>
                         <option value="대학교(4년)">대학교(4년)</option>
@@ -374,20 +376,20 @@ const ResumeClient = () => {
                         <option value="고등학교">고등학교</option>
                       </select>
                     </div>
-                    <legend className="w-1/12 h-14 float-left text-left pt-4 pl-8">
+                    <legend className="w-1/4 md:w-1/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
                       학교명
                     </legend>
-                    <div className="before:border-l before:border-gray-200 w-4/12 h-14 float-left pt-2  box-border">
+                    <div className="before:border-l before:border-gray-200 w-3/4 md:w-4/12 h-12 md:h-14 float-left pt-2 box-border">
                       <input
                         type="text"
                         placeholder="학교명"
                         className="pl-4 h-10"
                       />
                     </div>
-                    <legend className="w-1/12 h-14 float-left text-left pt-4 border-l border-gray-200 pl-8">
+                    <legend className="w-1/4 md:w-1/12 h-12 md:h-14 float-left text-left pt-4 md:border-l border-gray-200 pl-4 md:pl-8">
                       전공명
                     </legend>
-                    <div className="before:border-l before:border-gray-200 w-4/12 h-14 float-left p-2 box-border">
+                    <div className="before:border-l before:border-gray-200 w-3/4 md:w-4/12 h-12 md:h-14 float-left p-2 box-border">
                       <input
                         type="text"
                         placeholder="전공명"
@@ -395,11 +397,11 @@ const ResumeClient = () => {
                       />
                     </div>
                   </fieldset>
-                  <fieldset className="border-x border-b border-gray-200 text-center w-full text-black flex">
-                    <div className="w-2/12">
+                  <fieldset className="border-x border-b border-gray-200 text-center w-full text-black md:flex">
+                    <div className="w-full md:w-2/12">
                       <select
                         id="lang_01"
-                        className="w-full border-r border-gray-200 h-14 pl-8"
+                        className="w-full md:border-r md:border-gray-200 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary"
                       >
                         <option value="">졸업상태</option>
                         <option value="졸업">졸업</option>
@@ -408,10 +410,10 @@ const ResumeClient = () => {
                         <option value="중퇴">중퇴</option>
                       </select>
                     </div>
-                    <legend className="w-1/12 h-14 float-left text-left pt-4 pl-8 whitespace-nowrap">
+                    <legend className="w-1/4 md:w-1/12 h-12 md:h-14 float-left text-left pt-4 md:border-l border-gray-200 pl-4 md:pl-8">
                       수료학위
                     </legend>
-                    <div className="before:border-l before:border-gray-200 w-4/12 h-14 float-left pt-2  box-border">
+                    <div className="before:border-l before:border-gray-200 w-3/4 md:w-4/12 h-12 md:h-14 float-left p-2 box-border">
                       <input
                         type="text"
                         placeholder="수료학위"
@@ -421,13 +423,13 @@ const ResumeClient = () => {
                   </fieldset>
                   <button className="w-full h-10 mt-3 bg-gray-200 flex justify-center items-center">
                     단락추가{" "}
-                    <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex justify-center items-center ml-1 pb-0.5">
+                    <div className="w-5 h-5 rounded-full bg-primary text-white flex justify-center items-center ml-1">
                       +
                     </div>
                   </button>
                 </div>
-                <div className="w-[70px] flex justify-end items-center">
-                  <button className="w-10 h-10 bg-gray-200 rounded-full">
+                <div className="w-1/12 md:w-[70px] flex justify-end items-center">
+                  <button className="w-7 h-7 md:w-10 md:h-10 bg-gray-200 rounded-full">
                     X
                   </button>
                 </div>
@@ -435,17 +437,17 @@ const ResumeClient = () => {
             </article>
             {/* 학력 섹션 */}
 
-            <article className="w-full mt-12">
+            <article className="w-full mt-12 text-[13px] md:text-base">
               <h3 className="text-subtitle font-bold mt-5 text-gray-800">
                 경력
               </h3>
               <div className="flex">
-                <div id="form_area" className="w-[1050px] pt-4">
-                  <fieldset className="border border-gray-200 text-center w-full text-black flex">
-                    <div className="w-2/12">
+                <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
+                  <fieldset className="border border-gray-200 text-center w-full text-black md:flex">
+                    <div className="w-full md:w-2/12">
                       <select
                         id="lang_01"
-                        className="w-full border-r border-gray-200 h-14 pl-8"
+                        className="w-full md:border-r md:border-gray-200 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary"
                       >
                         <option value="">분야</option>
                         <option value="화학">화학</option>
@@ -458,20 +460,20 @@ const ResumeClient = () => {
                         <option value="기타">기타</option>
                       </select>
                     </div>
-                    <legend className="w-1/12 h-14 float-left text-left pt-4 pl-8">
+                    <legend className="w-1/4 md:w-1/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
                       회사명
                     </legend>
-                    <div className="before:border-l before:border-gray-200 w-4/12 h-14 float-left pt-2  box-border">
+                    <div className="before:border-l before:border-gray-200 w-3/4 md:w-4/12 h-12 md:h-14 float-left pt-2 box-border">
                       <input
                         type="text"
-                        placeholder="학교명"
+                        placeholder="회사명"
                         className="pl-4 h-10"
                       />
                     </div>
-                    <legend className="w-1/12 h-14 float-left text-left pt-4 border-l border-gray-200 pl-8">
+                    <legend className="w-1/4 md:w-1/12 h-12 md:h-14 float-left text-left pt-4 md:border-l border-gray-200 pl-4 md:pl-8">
                       전공명
                     </legend>
-                    <div className="before:border-l before:border-gray-200 w-4/12 h-14 float-left p-2 box-border">
+                    <div className="before:border-l before:border-gray-200 w-3/4 md:w-4/12 h-12 md:h-14 float-left p-2 box-border">
                       <input
                         type="text"
                         placeholder="전공명"
@@ -479,30 +481,30 @@ const ResumeClient = () => {
                       />
                     </div>
                   </fieldset>
-                  <div className="flex">
-                    <fieldset className="border-l border-gray-200 text-center w-1/2 text-black flex">
-                      <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">
+                  <div className="md:flex">
+                    <fieldset className="border-l border-r md:border-r-0 border-gray-200 text-center w-full md:w-1/2 text-black md:flex">
+                      <legend className="w-full md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         근무기간
                       </legend>
-                      <div className="before:border-l before:border-gray-200 before:mt-2 before:h-6 w-2/3 h-10 float-left pt-2 pr-28 flex box-border">
+                      <div className="md:before:border-l border-gray-200 before:mt-2 before:h-6 w-full md:w-2/3 h-10 float-left pt-1 md:pt-2 mb-2 md:mb-0 md:pr-28 flex box-border">
                         <input
                           type="text"
                           placeholder="YYYY.MM"
-                          className="pl-6 h-10 box-border w-36"
+                          className="pl-4 md:pl-6 h-10 box-border w-1/2 md:w-36"
                         />
                         <p className="p-3">~</p>
                         <input
                           type="text"
                           placeholder="YYYY.MM"
-                          className="pl-6 h-10 box-border w-36"
+                          className="pl-4 md:pl-6 h-10 box-border w-1/2 md:w-36"
                         />
                       </div>
                     </fieldset>
-                    <fieldset className="border-x border-gray-200 text-center w-1/2 text-black flex">
-                      <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">
+                    <fieldset className="border-x border-t md:border-t-0 border-gray-200 text-center w-full md:w-1/2 text-black flex">
+                      <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
                         수료학위
                       </legend>
-                      <div className="before:border-l before:border-gray-200 w-2/3 h-14 float-left pt-2 pr-28 box-border">
+                      <div className="before:border-l before:border-gray-200 w-3/4 md:w-2/3 h-12 md:h-14 float-left pt-1 md:pt-2 md:pr-28 box-border">
                         <input
                           type="text"
                           placeholder="수료학위"
@@ -512,25 +514,25 @@ const ResumeClient = () => {
                     </fieldset>
                   </div>
                   <div>
-                    <fieldset className="border border-gray-200 text-center w-full text-black flex">
-                      <legend className="w-2/12 h-24 float-left text-left pt-8 pl-8 border-r border-gray-200">
+                    <fieldset className="border border-gray-200 text-center w-full text-black md:flex">
+                      <legend className="w-full md:w-2/12 h-12 md:h-24 float-left text-left pt-4 md:pt-8 pl-4 md:pl-8 md:border-r md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         프로젝트
                       </legend>
                       <input
                         type="text"
-                        className="w-10/12 h-24 pl-4 text-wrap"
+                        className="w-full md:w-10/12 h-32 md:h-24 pl-4 text-wrap mt-1 md:mt-0"
                       />
                     </fieldset>
                   </div>
                   <button className="w-full h-10 mt-3 bg-gray-200 flex justify-center items-center">
                     단락추가{" "}
-                    <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex justify-center items-center ml-1 pb-0.5">
+                    <div className="w-5 h-5 rounded-full bg-primary text-white flex justify-center items-center ml-1 pb-0.5">
                       +
                     </div>
                   </button>
                 </div>
-                <div className="w-[70px] flex justify-end items-center">
-                  <button className="w-10 h-10 bg-gray-200 rounded-full">
+                <div className="w-1/12 md:w-[70px] flex justify-end items-center">
+                  <button className="w-7 h-7 md:w-10 md:h-10 bg-gray-200 rounded-full">
                     X
                   </button>
                 </div>
@@ -538,36 +540,36 @@ const ResumeClient = () => {
             </article>
             {/* 경력 섹션 */}
 
-            <article className="w-full mt-12">
+            <article className="w-full mt-12 text-[13px] md:text-base">
               <h3 className="text-subtitle font-bold mt-5 text-gray-800">
                 관련훈련 이수 내역
               </h3>
               <div className="flex">
-                <div id="form_area" className="w-[1050px] pt-4">
-                  <div className="flex border border-gray-200">
-                    <fieldset className="border-r border-gray-200 text-center w-1/2 text-black flex">
-                      <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">
+                <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
+                  <div className="md:flex border border-gray-200">
+                    <fieldset className="border-r border-gray-200 text-center w-full md:w-1/2 text-black md:flex">
+                      <legend className="w-full md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         교육기간
                       </legend>
-                      <div className="before:border-l before:border-gray-200 before:mt-2 before:h-6 w-2/3 h-10 float-left pt-2 pr-28 flex box-border">
+                      <div className="before:border-l before:border-gray-200 before:mt-2 before:h-6 w-full md:w-2/3 h-10 float-left pt-1 md:pt-2 mb-2 md:mb-0 md:pr-28 flex box-border">
                         <input
                           type="text"
                           placeholder="YYYY.MM"
-                          className="pl-6 h-10 box-border w-36"
+                          className="pl-4 md:pl-6 h-10 box-border w-1/2 md:w-36"
                         />
                         <p className="p-3">~</p>
                         <input
                           type="text"
                           placeholder="YYYY.MM"
-                          className="pl-6 h-10 box-border w-36"
+                          className="pl-4 md:pl-6 h-10 box-border w-1/2 md:w-36"
                         />
                       </div>
                     </fieldset>
-                    <fieldset className="text-center w-1/2 text-black flex">
-                      <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">
+                    <fieldset className="text-center w-full md:w-1/2 text-black flex border-t md:border-t-0 border-gray-200 ">
+                      <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
                         교육기관
                       </legend>
-                      <div className="before:border-l before:border-gray-200 w-2/3 h-14 float-left pt-2 pr-28 box-border">
+                      <div className="before:border-l before:border-gray-200 w-3/4 md:w-2/3 h-12 md:h-14 float-left pt-1 md:pt-2 md:pr-28 box-border">
                         <input
                           type="text"
                           placeholder=""
@@ -578,13 +580,13 @@ const ResumeClient = () => {
                   </div>
                   <div>
                     <fieldset className="border-x border-gray-200 text-center w-full text-black flex">
-                      <legend className="w-2/12 h-14 float-left text-left pt-4 pl-8">
+                      <legend className="w-1/4 md:w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
                         교육명
                       </legend>
-                      <div className="w-10/12 before:border-l before:border-gray-200 before:h-6 float-left flex justify-start items-center">
+                      <div className="w-3/4 md:w-10/12 before:border-l before:border-gray-200 before:h-6 float-left flex justify-start items-center">
                         <input
                           type="text"
-                          className="h-14 pl-4 text-wrap"
+                          className="h-12 md:h-14 pl-4 text-wrap"
                           placeholder="해당 교육명"
                         />
                       </div>
@@ -592,13 +594,13 @@ const ResumeClient = () => {
                   </div>
                   <div>
                     <fieldset className="border border-gray-200 text-center w-full text-black flex">
-                      <legend className="w-2/12 h-14 float-left text-left pt-4 pl-8">
+                      <legend className="w-1/4 md:w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
                         교육내용
                       </legend>
-                      <div className="w-10/12 before:border-l before:border-gray-200 before:h-6 float-left flex justify-start items-center">
+                      <div className="w-3/4 md:w-10/12 before:border-l before:border-gray-200 before:h-6 float-left flex justify-start items-center">
                         <input
                           type="text"
-                          className="h-14 pl-4 text-wrap"
+                          className="h-12 md:h-14 pl-4 text-wrap"
                           placeholder="교육내용"
                         />
                       </div>
@@ -606,13 +608,13 @@ const ResumeClient = () => {
                   </div>
                   <button className="w-full h-10 mt-3 bg-gray-200 flex justify-center items-center">
                     단락추가{" "}
-                    <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex justify-center items-center ml-1 pb-0.5">
+                    <div className="w-5 h-5 rounded-full bg-primary text-white flex justify-center items-center ml-1 pb-0.5">
                       +
                     </div>
                   </button>
                 </div>
-                <div className="w-[70px] flex justify-end items-center">
-                  <button className="w-10 h-10 bg-gray-200 rounded-full">
+                <div className="w-1/12 md:w-[70px] flex justify-end items-center">
+                  <button className="w-7 h-7 md:w-10 md:h-10 bg-gray-200 rounded-full">
                     X
                   </button>
                 </div>
@@ -620,45 +622,46 @@ const ResumeClient = () => {
             </article>
             {/* 훈련 이수 섹션 */}
 
-            <article className="w-full mt-12">
+            <article className="w-full mt-12 text-[13px] md:text-base">
               <h3 className="text-subtitle font-bold mt-5 text-gray-800">
                 관련 자격증
               </h3>
               <div className="flex">
-                <div id="form_area" className="w-[1050px] pt-4">
+                <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
                   <div>
-                    <fieldset className="border border-gray-200 text-center w-full text-black flex">
-                      <legend className="w-2/12 h-14 float-left text-left pt-4 pl-8 border-r border-gray-200">
+                    <fieldset className="border border-gray-200 text-center w-full text-black md:flex">
+                      <legend className="w-full md:w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8 md:border-r md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         자격증명
                       </legend>
                       <input
                         type="text"
-                        className="w-10/12 h-14 pl-4 text-wrap"
+                        placeholder="관련 자격증명"
+                        className="w-full md:w-10/12 h-12 md:h-14 pl-4 text-wrap"
                       />
                     </fieldset>
                   </div>
-                  <div className="flex border-b border-gray-200">
-                    <fieldset className="border-l border-gray-200 text-center w-1/2 text-black flex">
-                      <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">
+                  <div className="md:flex border-b border-gray-200">
+                    <fieldset className="border-l border-r md:border-r-0 border-gray-200 text-center w-full md:w-1/2 text-black md:flex pb-2 md:pb-0">
+                      <legend className="w-full md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8 md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         발행처
                       </legend>
-                      <div className="before:border-l before:border-gray-200 before:mt-2 before:h-6 w-2/3 h-10 float-left pt-2 pr-28 flex box-border">
+                      <div className="md:before:border-l border-gray-200 before:mt-2 before:h-6 w-full md:w-2/3 h-10 float-left md:pt-2 md:pr-28 flex box-border">
                         <input
                           type="text"
                           placeholder="발행처"
-                          className="pl-6 h-10 box-border w-64"
+                          className="pl-4 md:pl-6 h-12 md:h-10 box-border w-full md:w-64"
                         />
                       </div>
                     </fieldset>
-                    <fieldset className="border-x border-gray-200 text-center w-1/2 text-black flex">
-                      <legend className="w-1/3 h-14 float-left text-left pt-4 pl-8">
+                    <fieldset className="border-x border-gray-200 text-center w-full md:w-1/2 text-black flex border-t md:border-t-0">
+                      <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
                         취득일
                       </legend>
-                      <div className="before:border-l before:border-gray-200 before:mt-2 before:h-6 w-2/3 h-10 float-left pt-2 pr-28 flex box-border">
+                      <div className="before:border-l before:border-gray-200 before:mt-2 before:h-6 w-full md:w-3/4 h-12 md:h-10 float-left md:pt-2 md:pr-28 flex box-border">
                         <input
                           type="text"
                           placeholder="YYYY.MM"
-                          className="pl-6 h-10 box-border w-64"
+                          className="pl-4 md:pl-6 h-12 md:h-10 box-border w-full md:w-64"
                         />
                       </div>
                     </fieldset>
@@ -666,13 +669,13 @@ const ResumeClient = () => {
                   <div></div>
                   <button className="w-full h-10 mt-3 bg-gray-200 flex justify-center items-center">
                     단락추가{" "}
-                    <div className="w-5 h-5 rounded-full bg-blue-900 text-white flex justify-center items-center ml-1 pb-0.5">
+                    <div className="w-5 h-5 rounded-full bg-primary text-white flex justify-center items-center ml-1 pb-0.5">
                       +
                     </div>
                   </button>
                 </div>
-                <div className="w-[70px] flex justify-end items-center">
-                  <button className="w-10 h-10 bg-gray-200 rounded-full">
+                <div className="w-1/12 md:w-[70px] flex justify-end items-center">
+                  <button className="w-7 h-7 md:w-10 md:h-10 bg-gray-200 rounded-full">
                     X
                   </button>
                 </div>
@@ -681,7 +684,7 @@ const ResumeClient = () => {
             {/* 자격증 섹션 */}
           </div>
           <div className="w-full flex justify-center mt-14">
-            <button className="w-40 h-14 bg-blue-500 text-white">
+            <button className="w-40 h-14 bg-secondary text-white">
               수정완료
             </button>
             <button className="w-40 h-14 bg-gray-200 ml-6">취소</button>

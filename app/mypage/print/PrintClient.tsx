@@ -87,7 +87,7 @@ const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -101,8 +101,8 @@ const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -128,43 +128,43 @@ const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
             </div>
           </div>
           <figure className="w-full flex justify-center my-10">
-            <div className="w-[620px] h-[877px] border border-gray relative">
+            <div className="w-[315px] h-[439px] md:w-[620px] md:h-[877px] border border-gray relative">
               <Image
                 src={certificate_bg}
                 className="absolute left-0 top-0"
                 alt="img"
               />{" "}
-              <ul className="absolute left-[172px] top-[265px] z-40 font-[KoPubWorldBatang] text-black">
-                <li className="text-[19px] font-bold">
+              <ul className="absolute left-[90px] top-[134px] md:left-[172px] md:top-[265px] z-40 font-[KoPubWorldBatang] text-black">
+                <li className="text-[10px] md:text-[19px] font-bold">
                   <p className=" tracking-widest">{currentUser.koname}</p>
                 </li>
-                <li className="text-[19px] font-bold mt-[9px]">
+                <li className="text-[10px] md:text-[19px] font-bold leading-4 md:leading-7 mt-[3px] md:mt-[9px]">
                   <p className="">부산광역시 해운대구 센텀동로35 센텀SH밸리</p>
                 </li>
-                <li className="text-[19px] font-bold mt-[9px]">
+                <li className="text-[10px] md:text-[19px] font-bold mt-[3px] md:mt-[9px]">
                   <p className="tracking-relaxed">{currentUser.id}</p>
                 </li>
               </ul>
-              <p className="absolute left-[173px] top-[539px] z-40 text-[12px] font-[KoPubWorldBatang] text-[#898989]">
+              <p className="absolute left-[88px] md:left-[173px] top-[273px] md:top-[539px] z-40 text-[6px] md:text-[12px] font-[KoPubWorldBatang] text-[#898989]">
                 {year}.{month}.{day}
               </p>
-              <p className="absolute left-[348px] top-[539px] z-40 text-[12px] font-[KoPubWorldBatang] text-[#898989]">
+              <p className="absolute left-[176px] md:left-[348px] top-[273px] md:top-[539px] z-40 text-[6px] md:text-[12px] font-[KoPubWorldBatang] text-[#898989]">
                 2024.03.06
               </p>
-              <div className="absolute left-[220px] top-[600px] z-40 text-[22px] font-[KoPubWorldBatang] text-black flex font-bold">
+              <div className="absolute left-[108px] md:left-[220px] top-[304px] md:top-[600px] z-40 text-[12px] md:text-[22px] font-[KoPubWorldBatang] text-black flex font-bold">
                 <p>{year}</p>
-                <p className="ml-[30px]">{month}</p>
-                <p className="ml-[29px]">{day}</p>
+                <p className="ml-[15px] md:ml-[30px]">{month}</p>
+                <p className="ml-[14px] md:ml-[29px]">{day}</p>
               </div>
             </div>
           </figure>
 
           <div className="btn_box flex m-auto mt-20">
-            <button className="w-40 h-14 border border-gray text-superdarkgray flex justify-center items-center">
+            <button className="w-40 h-14 border border-darkgray text-superdarkgray flex justify-center items-center">
               다운로드{" "}
               <Image src={download_icon} className="w-4 h-4 ml-2" alt="img" />{" "}
             </button>
-            <button className="w-40 h-14 border bg-secondary text-white flex justify-center items-center ml-7">
+            <button className="w-40 h-14 border border-secondary bg-secondary text-white flex justify-center items-center ml-7">
               출력
             </button>
           </div>

@@ -110,7 +110,7 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
     <section>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-gray-100 flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -124,8 +124,8 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -147,16 +147,16 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
           <ContentTitle title={location} />
           <div className="text-black w-full flex flex-col justify-between item-center">
             <div className="h-[40px]">* 표시는 필수 입력 사항입니다.</div>
-            <div className="h-[60px] w-full flex border-t-2 border-t-blue-500 border-b border-b-gray-200">
-              <div className="bg-gray-100 w-[140px] pl-[20px] flex justify-start items-center ">
+            <div className="h-[60px] w-full flex border-t-2 border-t-secondary border-b border-b-gray-200">
+              <div className="bg-gray-100 w-2/6 md:w-[140px] pl-[20px] flex justify-start items-center ">
                 * 성명
               </div>
-              <div className="flex justify-start items-center pl-[20px] ">
+              <div className="flex justify-start items-center pl-[20px] w-4/6">
                 <input
                   id="koname"
                   type="text"
                   placeholder="성명"
-                  className="border border-gray-200 h-[40px] outline-none focus:border-blue-500 px-[20px] text-base"
+                  className="border border-gray-200 h-[40px] outline-none focus:border-secondary px-[20px] text-base w-full"
                   defaultValue={currentUser.koname}
                   {...register("koname", { required: true })}
                 />
@@ -164,30 +164,30 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
             </div>
 
             <div className="h-[60px] w-full flex border-b border-b-gray-200">
-              <div className="bg-gray-100 w-[140px] pl-[20px] flex justify-start items-center ">
+              <div className="bg-gray-100 w-2/6 md:w-[140px] pl-[20px] flex justify-start items-center ">
                 * 아이디
               </div>
-              <div className="flex justify-start items-center pl-[20px] ">
+              <div className="flex justify-start items-center pl-[40px] w-4/6 ">
                 {currentUser.name}
               </div>
             </div>
 
-            <div className="h-[160px] w-full flex border-b border-b-gray-200">
-              <div className="bg-gray-100 w-[140px] pl-[20px] flex justify-start items-center ">
+            <div className="h-[120px] w-full flex border-b border-b-gray-200">
+              <div className="bg-gray-100 w-2/6 md:w-[140px] pl-[20px] flex justify-start items-center ">
                 비밀번호
               </div>
-              <div className="flex flex-col justify-center items-start pl-[20px]">
+              <div className="flex flex-col justify-center items-start pl-[20px] w-4/6">
                 <input
                   id="password"
                   type="password"
                   placeholder="새비밀번호"
                   {...register("password", { required: true })}
-                  className="border border-gray-200 h-[40px] outline-none focus:border-blue-500 px-[20px] text-base mb-2"
+                  className="border border-gray-200 h-[40px] outline-none focus:border-secondary px-[20px] text-base mb-2 w-full"
                 />
                 <input
                   type="password_1"
                   placeholder="새비밀번호 확인"
-                  className="border border-gray-200 h-[40px] outline-none focus:border-blue-500 px-[20px] text-base"
+                  className="border border-gray-200 h-[40px] outline-none focus:border-secondary px-[20px] text-base w-full"
                 />
                 {/* <p className="mt-[14px] text-[12px]">
                   * 숫자+영문자+특수문자 조합으로 4~13자 입력해주세요.
@@ -196,15 +196,15 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
             </div>
 
             <div className="h-[60px] w-full flex border-b border-b-gray-200">
-              <div className="bg-gray-100 w-[140px] pl-[20px] flex justify-start items-center ">
+              <div className="bg-gray-100 w-2/6 md:w-[140px] pl-[20px] flex justify-start items-center ">
                 * 휴대폰
               </div>
-              <div className="flex justify-start items-center pl-[20px] ">
+              <div className="flex justify-start items-center pl-[20px] w-4/6 ">
                 <input
                   id="tel"
                   type="text"
                   placeholder="010 0000 0000"
-                  className="border border-gray-200 h-[40px] outline-none focus:border-blue-500 px-[20px] text-base"
+                  className="border border-gray-200 h-[40px] outline-none focus:border-secondary px-[20px] text-base w-full"
                   defaultValue={currentUser.tel}
                   {...register("tel", { required: true })}
                 />
@@ -212,15 +212,15 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
             </div>
 
             <div className="h-[60px] w-full flex border-b border-b-gray-200">
-              <div className="bg-gray-100 w-[140px] pl-[20px] flex justify-start items-center ">
+              <div className="bg-gray-100 w-2/6 md:w-[140px] pl-[20px] flex justify-start items-center ">
                 * 이메일주소
               </div>
-              <div className="flex justify-start items-center pl-[20px] ">
+              <div className="flex justify-start items-center pl-[20px] w-4/6 ">
                 <input
                   id="email"
                   type="text"
                   placeholder="email"
-                  className="border border-gray-200 h-[40px] outline-none focus:border-blue-500 px-[20px] text-base"
+                  className="border border-gray-200 h-[40px] outline-none focus:border-secondary px-[20px] text-base w-full"
                   defaultValue={currentUser.email}
                   {...register("email", { required: true })}
                 />
@@ -229,13 +229,13 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
           </div>
           <div className="flex justify-center items-center w-full mt-[20px] space-x-[20px]">
             <div
-              className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-blue-500 text-white"
+              className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-secondary text-white"
               onClick={handleSubmit(onSubmit)}
             >
               수정완료
             </div>
             <a href="/mypage/out">
-              <div className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-gray-800 text-white">
+              <div className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-neutral-700 text-white">
                 회원탈퇴
               </div>
             </a>
