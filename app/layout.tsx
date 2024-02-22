@@ -28,16 +28,12 @@ export default function RootLayout({
           content="7429e7d93e93ff83dc0e8772f750d750588f7798"
         />
         <title>한국방폭협회</title>
-        <meta name="description" content="사단법인 한국방폭협회"></meta>
-        <meta property="og:type" content="website"></meta>
-        <meta property="og:title" content="한국방폭협회"></meta>
-        <meta property="og:description" content="사단법인 한국방폭협회"></meta>
-        {/* <meta property="og:image" content="http://www.mysite.com/myimage.jpg"></meta> */}
-        <meta property="og:url" content="https://www.kecex.or.kr"></meta>
-        <link
-          href="https://webfontworld.github.io/kopus/KoPubWorldBatang.css"
-          rel="stylesheet"
-        ></link>
+        <meta name="description" content="사단법인 한국방폭협회"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="한국방폭협회"/>
+        <meta property="og:description" content="사단법인 한국방폭협회"/>
+        {/* <meta property="og:image" content="http://www.mysite.com/myimage.jpg"/> */}
+        <meta property="og:url" content="https://www.kecex.or.kr"/>
       </head>
       <body className={`${inter.className} `}>
         <ClientOnly>
