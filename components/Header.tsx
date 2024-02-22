@@ -186,7 +186,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
 
         {/* 서브 메뉴 */}
         <div
-          className={`absolute top-[160px] w-full h-[700px] bg-[#003893] opacity-0 z-[70] ${
+          className={`absolute top-[160px] w-full h-[700px] bg-primary opacity-0 z-[70] ${
             !menu
               ? "opacity-0 -translate-y-[50px] pointer-events-none"
               : "opacity-100 translate-y-0 pointer-events-auto"

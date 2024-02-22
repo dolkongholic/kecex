@@ -301,7 +301,7 @@ const InspectionClient = () => {
               <ContentSubTitle title="중대재해처벌법 컨설팅 내용" />
               <div className="md:flex justify-between text-[14px] text-primary mb-10">
                 <div className="md:w-1/3 md:h-56 border border-secondary rounded-md text-center py-10 mb-5 md:mb-0 px-3 md:px-0">
-                  <strong className="text-secendary text-[26px]">
+                  <strong className="text-neutral-800 text-[26px]">
                     안전보건관리체계
                   </strong>
                   <p className="mt-7">
@@ -314,7 +314,7 @@ const InspectionClient = () => {
                   </p>
                 </div>
                 <div className="md:w-1/3 md:h-56 border border-secondary rounded-md text-center py-10 md:mx-5 mb-5 md:mb-0">
-                  <strong className="text-secendary text-[26px]">
+                  <strong className="text-neutral-800 text-[26px]">
                     안전관리시스템(PDCA)
                   </strong>
                   <p className="mt-7">
@@ -327,7 +327,7 @@ const InspectionClient = () => {
                   </p>
                 </div>
                 <div className="md:w-1/3 md:h-56 border border-secondary rounded-md text-center py-10 mb-5 md:mb-0">
-                  <strong className="text-secendary text-[26px]">
+                  <strong className="text-neutral-800 text-[26px]">
                     안전한 작업환경
                   </strong>
                   <p className="mt-7">
@@ -485,7 +485,7 @@ const InspectionClient = () => {
               <ContentSubTitle title="위험성평가 개요" />
               <div className="flex justify-between text-[15px] text-primary mb-10">
                 <div className="w-full md:h-64 border border-secondary rounded-md text-center py-10">
-                  <strong className="text-secendary text-[26px]">
+                  <strong className="text-neutral-800 text-[26px]">
                     위험성평가 실시
                   </strong>
                   <p className="py-7 px-6 md:px-12 text-left">
@@ -676,7 +676,7 @@ const InspectionClient = () => {
               </div>
               <ContentSubTitle title="위험성평가 컨설팅 수행 업무" />
               <ul className="-translate-y-[20px] text-[15px] leading-6 mb-5">
-                <li className="w-full border-b border-gray md:flex">
+                <li className="w-full border-b border-gray md:flex  justify-between">
                   <div className="w-md:1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       1
