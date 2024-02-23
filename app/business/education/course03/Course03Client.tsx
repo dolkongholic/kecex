@@ -125,7 +125,7 @@ const Course03Client = () => {
             </li>
           </ul>
           <ContentSubTitle title="교육목적" />
-          <div className="w-full md:px-[20px] mb-[40px]">
+          <div className="w-full mb-[40px]">
             <div className="flex flex-col justify-center items-start h-[80px] md:px-[20px] md:border border-gray w-full">
               <span>
                 Plant 제작 및 개조 공사 시 작업자 · 관리자 대상의 맞춤형

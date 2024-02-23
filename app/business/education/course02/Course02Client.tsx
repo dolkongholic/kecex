@@ -125,14 +125,14 @@ const Course02Client = () => {
             </li>
           </ul>
           <ContentSubTitle title="교육목적" />
-          <div className="w-full md:px-[20px] mb-[40px]">
+          <div className="w-full mb-[40px]">
             <div className="flex flex-col justify-center items-start h-[100px] md:px-[20px] md:border border-gray w-full">
               <span>
                 국제ㆍ국내 법규 및 관련 표준, 지침에 따라 폭발 위험성이 존재하는
-                산업현장에서는 각 공정 별 적격자에 의한 작업 및 관리가 요구된다.
+                산업현장에서는 각 공정별 적격자에 의한 작업 및 관리가 요구된다.
                 <br /> 이에 따라 해당 교육을 통한 국제적 수준의 방폭 전문가 또는
-                적격자를 양성하고 표준과 지침에 맞는 공정 별 작업을 유도함으로써
-                산업현장의 폭발 위험 예방 및 안전시스템을 구축하기 위함
+                적격자를 양성하고 표준과 지침에 맞는 공정별 작업을 유도함으로써
+                산업현장의 폭발 위험 예방 및 안전 시스템을 구축하기 위함
               </span>
             </div>
           </div>

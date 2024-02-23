@@ -356,8 +356,8 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
           </div>
         </div>
         {/* 카드뉴스 */}
-        <div className="w-full md:w-1/2 md:h-[250px] md:flex md:space-x-[10px] ml-0">
-          <div className="w-full md:w-1/2 h-[250px] md:p-[10px] ml-0">
+        <div className="w-full md:w-1/2 md:h-[250px] md:flex md:space-x-[10px]">
+          <div className="w-full md:w-1/2 h-[250px] md:p-[10px]">
             <Carousel>
               {newsList?.map((item: any, index: any) => (
                 <Paper key={index} className="w-full h-[230px]">
@@ -366,11 +366,11 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
               ))}
             </Carousel>
           </div>
-          <div className="w-full md:w-1/2 h-[250px] md:p-[10px]">
+          <div className="w-full md:w-1/2 h-[250px] md:p-[10px] mx-auto">
             <Carousel>
               {workers.map((image, index) => (
-                <Paper key={index} className="w-[300px] md:w-full h-[200px] md:h-[230px]">
-                  <Image src={image} alt="image" fill />
+                <Paper key={index} className="md:w-full md:h-[250px]">
+                  <Image src={image} alt="image" width={350} height={250} />
                 </Paper>
               ))}
             </Carousel>

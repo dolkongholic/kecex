@@ -57,7 +57,7 @@ const Index: React.FC<IndexProps> = ({
       <div className="w-full h-[700px] md:h-[450px]">
         {currentUser && currentUser.staff && (
           <div
-            className="lg:block hidden absolute right-0 mr-2 mt-2 w-32 py-2 bg-blue-900 z-[55] text-white text-center rounded-md cursor-pointer"
+            className="lg:block hidden absolute right-0 mr-2 mt-2 w-32 py-2 bg-primary z-[55] text-white text-center rounded-md cursor-pointer"
             onClick={() => InsertMainBanner()}
           >
             추가하기

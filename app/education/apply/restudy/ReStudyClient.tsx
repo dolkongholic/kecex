@@ -148,7 +148,7 @@ const RestudyClient = () => {
               </div>
             </Link>
             <Link passHref href="/education/apply/restudy" className="w-1/5">
-              <div className="w-full text-center h-full border border-gray-200 cursor-pointer bg-blue-500 text-white">
+              <div className="w-full text-center h-full border border-secondary cursor-pointer bg-secondary text-white">
                 재교육 신청
               </div>
             </Link>
@@ -168,28 +168,28 @@ const RestudyClient = () => {
               </div>
             </Link>
           </div>
-          <div className="flex text-title justify-center items-center text-black w-full h-[180px] p-[40px] bg-gray-100">
-            <span className="mr-2 text-darkgray">
+          <div className="flex text-title justify-center items-center text-black w-full h-[180px] p-[40px] bg-lightgray">
+            <span className="mr-2 text-neutral-700 translate-x-10">
               <GrSearch />
             </span>
             <input
               type="text"
-              className="w-[600px] h-[50px] border-2 border-gray-200 border-r-0 px-[10px] leading-[50px] text-[14px] placeholder:text-[14px] placeholder:leading-[50px]"
+              className="w-[600px] h-[50px] border-2 border-neutral-300 rounded-l-md border-r-0 pl-[40px] pr-[10px] leading-[50px] text-[14px] placeholder:text-[14px] placeholder:leading-[50px]"
               placeholder="교육명을 입력해주세요."
             />
-            <button className="text-[14px] w-[150px] border-2  bg-white border-gray-200 h-[50px] hover:border-blue-500 hover:border">
+            <button className="w-[150px] border rounded-r-md bg-white border-secondary h-[50px] hover:border-secondary hover:bg-secondary hover:text-white">
               검색
             </button>
           </div>
 
           <div className="mt-[30px] w-full h-full">
-            <div className="w-full text-black text-[14px] border-b border-blue-500 leading-[50px]">
+            <div className="w-full text-black text-[14px] border-b border-secondary leading-[50px]">
               <div className="flex justify-between">
                 <p className="float-left">
                   전체 <span className="font-bold">17</span> 건
                 </p>
                 <button
-                  className="float-right border border-blue-500 text-blue-500 w-28 h-10 mr-10 mb-2 leading-7 hover:bg-blue-500 hover:text-white"
+                  className="float-right border border-secondary text-secondary w-28 h-10 mr-10 mb-2 leading-7 hover:bg-secondary hover:text-white"
                   onClick={openModal2}
                 >
                   교육 등록{" "}
@@ -209,16 +209,16 @@ const RestudyClient = () => {
                     </span>
                     <span>교육상세</span>
                   </div>
-                  <div className="text-darkgray -translate-y-[4px]">
+                  <div className="text-neutral-400 -translate-y-[4px]">
                     Basic Course
                   </div>
-                  <div className="text-superdarkgray flex justify-start items-center">
+                  <div className="text-neutral-700 flex justify-start items-center">
                     <span className="w-[400px]">
                       ㆍ교육일시 : 2023.11.15 ~ 2023.11.16, 09:00 ~ 18:00
                     </span>
                     <span className="w-[200px]">ㆍ교육인원 : 10명</span>
                   </div>
-                  <div className="text-superdarkgray flex justify-start items-center">
+                  <div className="text-neutral-700 flex justify-start items-center">
                     <span className="w-[400px]">
                       ㆍ신청기간 : 2023.10.23 ~ 2023.11.10
                     </span>
@@ -227,7 +227,7 @@ const RestudyClient = () => {
                 </div>
                 <div className="flex flex-col justify-center  items-center">
                   <button
-                    className="flex justify-center items-center bg-blue-500 hover:bg-active text-white  w-[150px] h-[50px] pop_open_btn"
+                    className="flex justify-center items-center bg-secondary hover:bg-[#2175c1] text-white  w-[150px] h-[50px] pop_open_btn"
                     onClick={openModal}
                   >
                     <span className="mr-[10px]">교육신청</span>{" "}
@@ -302,14 +302,14 @@ const RestudyClient = () => {
               id="pop_frame"
               className="w-[1100px] h-[750px] bg-white py-24 px-16 rounded-tl-3xl overflow-y-auto"
             >
-              <h4 className="text-subtitle text-blue-500 pb-5 border-b border-blue-500">
+              <h4 className="text-subtitle text-secondary pb-2 border-b border-secondary">
                 IECEx CoPC 교육신청서
               </h4>
               <div className="w-full h-24 border border-gray-200 flex mt-4">
                 <div className="w-1/4 border-r border-gray-200">신청지사</div>
                 <div className=" w-3/4">신청교육</div>
               </div>
-              <h3 className="mt-10 text-subtitle pb-7">개인정보 입력</h3>
+              <h3 className="mt-10 pb-7 text-neutral-800 font-medium">개인정보 입력</h3>
               <form
                 action="/examples/media/action_target.php"
                 method="get"
@@ -339,7 +339,7 @@ const RestudyClient = () => {
                   />
                   <label
                     htmlFor="fileInput"
-                    className="inline-block py-4 pl-10 w-full h-14 bg-primary text-white"
+                    className="inline-block py-4 pl-10 w-full h-14 bg-primary text-whit cursor-pointer"
                   >
                     첨부파일
                   </label>
@@ -555,7 +555,7 @@ const RestudyClient = () => {
                       <input
                         type="text"
                         placeholder="국민은행 763801-00-072091 ㈜엑스텍코리아"
-                        className="pl-4 h-10 w-[500px] bg-white placeholder-superdarkgray"
+                        className="pl-4 h-10 w-[500px] bg-white placeholder-neutral-500"
                         disabled
                       />
                     </div>
@@ -581,7 +581,7 @@ const RestudyClient = () => {
                       <input
                         type="radio"
                         name="issue_chk"
-                        className="w-6 h-6 ml-4 mr-2 rounded-full"
+                        className="w-6 h-6 ml-4 mr-2 rounded-full accent-primary"
                       />
                       <label htmlFor="issue_chk_1" className="text-[14px]">
                         발급
@@ -589,7 +589,7 @@ const RestudyClient = () => {
                       <input
                         type="radio"
                         name="issue_chk"
-                        className="w-6 h-6 ml-4 mr-2 rounded-full"
+                        className="w-6 h-6 ml-4 mr-2 rounded-full accent-primary"
                       />
                       <label htmlFor="issue_chk_2" className="">
                         미발급
@@ -622,7 +622,7 @@ const RestudyClient = () => {
                 </a>
                 <a href="#">
                   <button
-                    className="w-32 h-12 bg-gray-100 ml-6 border border-gray-200 text-superdarkgray"
+                    className="w-32 h-12 bg-gray-100 ml-6 border border-gray-200 text-neutral-700"
                     onClick={closePopup}
                   >
                     취소
@@ -657,7 +657,7 @@ const RestudyClient = () => {
               id="pop_frame"
               className="w-[1100px] h-[750px] bg-white py-24 px-16 rounded-tl-3xl overflow-y-auto"
             >
-              <h4 className="text-subtitle text-blue-500 pb-5 border-b border-blue-500">
+              <h4 className="text-subtitle text-secondary pb-5 border-b border-secondary">
                 교육관리
               </h4>
               <fieldset className="border border-gray-200 text-center w-full mt-3 text-black">
@@ -792,7 +792,7 @@ const RestudyClient = () => {
                     placeholder=""
                     className="pl-4 h-10 w-44"
                   />
-                  <p className="text-[#ef250b] ml-8">
+                  <p className="text-red-500 ml-8">
                     신청인원 : <span>0</span>{" "}
                     <a href="#" className="text-black">
                       [신청자 보기]
@@ -826,13 +826,13 @@ const RestudyClient = () => {
               </fieldset>
               <div className="flex w-full justify-between mt-5">
                 <a href="#">
-                  <button className="w-32 h-10 bg-superdarkgray text-white mt-5 text-[15px]">
+                  <button className="w-32 h-10 bg-neutral-700 text-white mt-5 text-[15px]">
                     리스트
                   </button>
                 </a>
                 <div className="form_btn_box flex justify-center mt-5">
                   <a href="#">
-                    <button className="w-32 h-10 bg-active text-white text-[15px]">
+                    <button className="w-32 h-10 bg-secondary text-white text-[15px]">
                       등록
                     </button>
                   </a>
