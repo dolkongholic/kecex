@@ -125,7 +125,7 @@ const DevelopClient = () => {
             </li>
           </ul>
           <ContentSubTitle title="교육목적" />
-          <div className="w-full md:px-[20px] mb-[40px]">
+          <div className="w-full mb-[40px]">
             <div className="flex flex-col justify-center items-start h-[80px] md:px-[20px] md:border border-gray w-full">
               <span>
                 방폭 기술을 세분화하여 산업체가 요구하는 질 높고 다양한 방폭

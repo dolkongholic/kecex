@@ -59,7 +59,7 @@ function Login() {
         <div className="text-subtitle text-black">
           {findType == "id" ? <p>아이디 찾기</p> : <p>비밀번호 찾기</p>}
         </div>
-        {findType != "" && (
+        {findType != "id" && (
           <div>
             <div className="mt-4">
               <input
@@ -112,7 +112,7 @@ function Login() {
         <div className="mt-6 flex gap-[10px]">
           <Link passHref href="/member/signin" className="w-full">
             <button className="w-full bg-primary text-white cursor-pointer py-[10px]">
-              로그인
+              다음
             </button>
           </Link>
           <Link passHref href="/member/signin" className="w-full">

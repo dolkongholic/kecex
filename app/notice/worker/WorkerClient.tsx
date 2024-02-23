@@ -154,7 +154,7 @@ const WorkerClient: React.FC<workerProps> = ({ currentUser }) => {
               </div>
             </div> */}
 
-            <div className="w-full h-[50px] leading-[50px] border-b-2 border-blue-500 mt-[50px]">
+            <div className="w-full h-[50px] leading-[50px] border-b-2 border-secondary mt-[50px]">
               {/* <div>
                 검색결과 <span className="font-bold">000</span> 개
               </div> */}
@@ -198,7 +198,7 @@ const WorkerClient: React.FC<workerProps> = ({ currentUser }) => {
           </div>
           {currentUser && (
             <button
-              className="w-36 h-12 bg-blue-500 text-white m-auto"
+              className="w-36 h-12 bg-secondary text-white m-auto"
               onClick={() => temp()}
             >
               등록하기

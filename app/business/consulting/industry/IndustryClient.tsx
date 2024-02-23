@@ -235,7 +235,7 @@ const InspectionClient = () => {
                   </div>
                 </li>
                 <li className="w-full border-b border-gray md:flex">
-                  <div className="mb:w-1/2 h-32 flex items-center">
+                  <div className="md:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       7
                     </div>
@@ -254,8 +254,8 @@ const InspectionClient = () => {
               </div>
               <ContentSubTitle title="중대재해처벌법 컨설팅 대상" />
               <ul className="-translate-y-[20px] text-[15px] leading-6 mb-5">
-                <li className="w-full border-b border-gray mb:flex">
-                  <div className="mb:w-1/2 h-32 flex items-center">
+                <li className="w-full border-b border-gray md:flex">
+                  <div className="md:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       1
                     </div>
@@ -264,7 +264,7 @@ const InspectionClient = () => {
                       대응하기 위한 사업장
                     </p>
                   </div>
-                  <div className="mb:w-1/2 h-32 flex items-center">
+                  <div className="md:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       2
                     </div>
@@ -276,8 +276,8 @@ const InspectionClient = () => {
                     </p>
                   </div>
                 </li>
-                <li className="w-full border-b border-gray mb:flex">
-                  <div className="mb:w-1/2 h-32 flex items-center">
+                <li className="w-full border-b border-gray md:flex">
+                  <div className="md:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       3
                     </div>
@@ -287,7 +287,7 @@ const InspectionClient = () => {
                       사업장
                     </p>
                   </div>
-                  <div className="mb:w-1/2 h-32 flex items-center">
+                  <div className="md:w-1/2 h-32 flex items-center">
                     <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
                       4
                     </div>

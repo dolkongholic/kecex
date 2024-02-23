@@ -117,7 +117,7 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
               1:1 문의
             </div>
             <div className="text-base text-black text-center w-full mt-[15px]">
-              궁금한 사항을 문의주시면<br className="md:hidden"/>
+              궁금한 사항을 문의주시면 <br className="md:hidden"/>
               성실하게 답변 드리겠습니다.
             </div>
 
@@ -194,7 +194,7 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
                   id="content"
                   cols={80}
                   rows={5}
-                  className={`border border-gray p-6 box-border ${
+                  className={`border border-neutral-300 p-6 box-border rounded-md ${
                     isLoading && "cursor-not-allowed"
                   }`}
                   {...register("content", { required: true })}

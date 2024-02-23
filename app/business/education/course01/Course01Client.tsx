@@ -125,7 +125,7 @@ const Course01Client = () => {
             </li>
           </ul>
           <ContentSubTitle title="교육목적" />
-          <div className="w-full md:px-[20px] mb-[40px]">
+          <div className="w-full mb-[40px]">
             <div className="flex flex-col justify-center items-start h-[80px] md:px-[20px] md:border border-gray w-full">
               <span>
                 폭발위험성이 존재하는 각 산업내 종사자들의 방폭안전관리에 관한

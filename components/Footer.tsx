@@ -19,12 +19,12 @@ export default function Footer() {
           </Link>
         </div>
         <div className="w-full md:w-[1400px] md:h-[60px] md:flex justify-between item-center leading-[30px] md:leading-[60px] md:border-b border-[#777]">
-          <ul className="flex flex-wrap md:flex-nowrap justify-between md:justify-start text-[#DCDCDC] md:space-x-[20px] md:font-bold text-[14px] px-10 md:px-0 text-center">
-            <li className="w-1/4 md:w-auto">이용안내</li>
+          <ul className="flex flex-wrap md:flex-nowrap justify-between md:justify-start text-[#DCDCDC] md:space-x-[20px] md:font-bold text-[14px] px-[18%] md:px-0 text-center">
+            <li className="w-auto">이용안내</li>
             <li className="hidden md:block">|</li>
-            <li className="w-1/4 md:w-auto">저작권정책</li>
+            <li className="w-auto">저작권정책</li>
             <li className="hidden md:block">|</li>
-            <li className="w-1/2 md:w-auto">개인정보처리방침</li>
+            <li className="w-auto">개인정보처리방침</li>
             <li className="hidden md:block">|</li>
             <Link passHref href={"/introduce/map/"} className="w-2/5 md:w-auto text-center pl-8 md:pl-0">
               <li className="w-full md:w-auto">오시는길</li>
