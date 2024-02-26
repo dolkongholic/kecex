@@ -63,7 +63,7 @@ const GroupClient = () => {
         </div>
       </div>
 
-      <main className="w-full nd:w-[1400px] flex justify-between items-start m-auto">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
         <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
@@ -82,7 +82,7 @@ const GroupClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px]  md:pl-[40px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px] md:pl-[40px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <div className="w-full flex flex-col px-[10px] md:px-[120px] mt-[20px]">
             {/* <div className="h-[120px] items-center">
