@@ -12,6 +12,7 @@ import { IoMdClose } from "react-icons/io";
 import PicSlogan from "@/public/img/slogan/slogan_1.png";
 import PicShotLogo from "@/public/img/logo/logo_big_icon__1.png";
 import PicLogo from "@/public/img/logo/logo_default_2.png";
+import HeaderDeco from "@/public/img/common/header_deco.png";
 import { SafeUser } from "@/types";
 
 const snsList = ["youtube", "facebook", "twiiter", "kakao", "blog", "instgram"];
@@ -186,7 +187,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
 
         {/* 서브 메뉴 */}
         <div
-          className={`absolute top-[160px] w-full h-[700px] bg-primary opacity-0 z-[70] ${
+          className={`absolute top-[160px] w-full h-[450px] bg-lightgray opacity-0 z-[70] ${
             !menu
               ? "opacity-0 -translate-y-[50px] pointer-events-none"
               : "opacity-100 translate-y-0 pointer-events-auto"
@@ -194,6 +195,17 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           onMouseLeave={() => setMenu("")}
           onClick={() => setMenu("")}
         >
+          <div 
+            className="absolute top-[0px] w-[400px] bg-primary h-[450px] left-1/2 -translate-x-[1130px]"
+          >
+            <div className="w-full h-full relative">
+            <Image
+                  src={HeaderDeco}
+                  className=" w-[150px] h-auto absolute right-0 bottom-0"
+                  alt="Image"
+                />
+            </div>
+          </div>
           {menu == "협회소개" && (
             <div
               className="w-[1400px] pt-[20px]"
@@ -201,10 +213,10 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             >
               <div className="w-[1400px] flex justify-start">
                 <div className="w-1/4">
-                  <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px]">
+                  <div className="w-[250px] h-[55px] border-b-2 border-primary text-primary font-medium text-[20px] text-start leading-[55px] pl-[10px] mb-[20px]">
                     일반현황
                   </div>
-                  <div className="flex flex-col space-y-[20px] text-white">
+                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
                     <Link passHref href={"/introduce/common/ceo/"}>
                       <span className="cursor-pointer"> - CEO 인사말</span>
                     </Link>
@@ -220,10 +232,10 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                 </div>
                 <div className="w-1/4">
-                  <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px]">
+                  <div className="w-[250px] h-[55px] border-b-2 border-primary text-primary font-medium text-lg text-start leading-[55px] pl-[10px] mb-[20px] text-[20px]">
                     조직안내
                   </div>
-                  <div className="flex flex-col space-y-[20px] text-white">
+                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
                     <Link passHref href={"/introduce/group/group"}>
                       <span className="cursor-pointer"> - 조직도</span>
                     </Link>
@@ -234,7 +246,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 </div>
                 <div className="w-1/4">
                   <Link passHref href={"/introduce/map/"}>
-                    <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    <div className="w-[250px] h-[55px] border-b-2 border-primary text-primary font-medium text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer text-[20px]">
                       찾아오시는길
                     </div>
                   </Link>
@@ -249,10 +261,10 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             >
               <div className="w-[1400px] flex justify-start">
                 <div className="w-1/4">
-                  <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px]">
+                  <div className="w-[250px] h-[55px] border-b-2 border-primary text-primary font-medium text-lg text-start leading-[55px] pl-[10px] mb-[20px] text-[20px]">
                     회원
                   </div>
-                  <div className="flex flex-col space-y-[20px] text-white">
+                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
                     <Link passHref href={"/business/member/join/"}>
                       <span className="cursor-pointer"> - 회원가입</span>
                     </Link>
@@ -268,10 +280,10 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                 </div>
                 <div className="w-1/4">
-                  <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px]">
+                  <div className="w-[250px] h-[55px] border-b-2 border-primary text-primary font-medium text-lg text-start leading-[55px] pl-[10px] mb-[20px] text-[20px]">
                     교육
                   </div>
-                  <div className="flex flex-col space-y-[20px] text-white">
+                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
                     <Link passHref href={"/business/education/course01/"}>
                       <span className="cursor-pointer"> - 방폭기초교육</span>
                     </Link>
@@ -293,10 +305,10 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                 </div>
                 <div className="w-1/4">
-                  <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px]">
+                  <div className="w-[250px] h-[55px] border-b-2 border-primary text-primary font-medium text-lg text-start leading-[55px] pl-[10px] mb-[20px] text-[20px]">
                     컨설팅
                   </div>
-                  <div className="flex flex-col space-y-[20px] text-white">
+                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
                     <Link passHref href={"/business/consulting/inspection/"}>
                       <span className="cursor-pointer"> - 방폭사전진단</span>
                     </Link>
@@ -320,30 +332,30 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               onMouseOver={() => setMenu(menu)}
             >
               <div className="w-[1400px] flex justify-start">
-                <div className="w-1/4">
+                <div className="w-1/4 text-[20px]">
                   <Link passHref href={"/notice/worker/"}>
-                    <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    <div className="w-[250px] h-[55px] border-b-2 border-primary text-primary font-medium text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       인재정보
                     </div>
                   </Link>
                 </div>
                 <div className="w-1/4">
                   <Link passHref href={"/notice/faq/"}>
-                    <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    <div className="w-[250px] h-[55px] border-b-2 border-primary text-primary font-medium text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       FAQ
                     </div>
                   </Link>
                 </div>
                 <div className="w-1/4">
                   <Link passHref href={"/notice/qna/"}>
-                    <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    <div className="w-[250px] h-[55px] border-b-2 border-primary text-primary font-medium text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       문의사항
                     </div>
                   </Link>
                 </div>
                 <div className="w-1/4">
                   <Link passHref href={"/notice/notice?page=1"}>
-                    <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    <div className="w-[250px] h-[55px] border-b-2 border-primary text-primary font-medium text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       공지사항
                     </div>
                   </Link>
@@ -357,16 +369,16 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               onMouseOver={() => setMenu(menu)}
             >
               <div className="w-[1400px] flex justify-start">
-                <div className="w-1/4">
+                <div className="w-1/4 text-[20px]">
                   <Link passHref href={"/information/raw?page=1"}>
-                    <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    <div className="w-[250px] h-[55px] border-b-2 border-primary text-primary font-medium text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       관련법령
                     </div>
                   </Link>
                 </div>
                 <div className="w-1/4">
                   <Link passHref href={"/information/news?page=1"}>
-                    <div className="w-[250px] h-[55px] border-b border-[#cbcbcb] text-white text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    <div className="w-[250px] h-[55px] border-b-2 border-primary text-primary font-medium text-lg text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       카드뉴스
                     </div>
                   </Link>
@@ -375,7 +387,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             </div>
           )}
           {menu == "교육센터" && (
-            <div className="w-[1400px] pt-[60px] mx-auto text-white text-xl">
+            <div className="w-[1400px] pt-[180px] mx-auto text-neutral-600 font-medium text-[24px]">
               <div className="w-[1400px] text-center">
                 교육 센터 운영 준비 중
               </div>
@@ -453,7 +465,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
       </section>
       {/* -----------전체화면 시작----------------------- */}
       <div
-        className={`w-screen h-full fixed z-[800] bg-lightgray top-0 left-0 overflow-y-auto scrollbar-hide transition-opacity duration-100 ease-in-out ${
+        className={`w-screen h-full fixed z-[800] bg-lightgray top-0 left-0 overflow-y-auto scrollbar-hide transition-opacity duration-100 ease-in-out overflow-x-hidden ${
           isPopupOpen && activePopup === "all_menu_open"
             ? "opacity-100 visible"
             : "opacity-0 invisible"
@@ -461,7 +473,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         id="all_menu_open"
       >
         <div className="w-screen h-[80px] md:h-[105px] bg-white flex justify-center items-center">
-          <div className="w-screen md:w-[1400px] flex justify-between items-center m-auto pl-1 md:pl-0 pr-5">
+          <div className="w-screen md:w-[1400px] flex justify-between items-center m-auto pl-1 md:pl-0 pr-5 box-border">
             <div className="w-[250px] justify-between items-center hidden md:block">
               <Link passHref href={"/"}>
                 <Image src={PicLogo} alt="Logo" width={250} height={85} />
@@ -478,8 +490,8 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           </div>
         </div>
 
-        <div className="w-full h-screen bg-white md:bg-lightgray">
-          <div className="w-full h-[135px] border-y border-lightgray md:hidden item-center mr-[30px] text-[13px] text-gray-700 font-medium px-[20px]">
+        <div className="w-screen h-screen bg-white md:bg-lightgray">
+          <div className="w-full h-[135px] border-y border-lightgray md:hidden item-center md:mr-[30px] text-[13px] text-gray-700 font-medium px-[20px] box-border">
             {currentUser == null ? (
                     <>
                       <p className="text-[15px] pt-7">로그인 해주세요.</p>

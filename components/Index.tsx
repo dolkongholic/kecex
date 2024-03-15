@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 
+
 interface IndexProps {
   currentUser?: SafeUser | null;
   mainBanner?: any;
@@ -54,7 +55,7 @@ const Index: React.FC<IndexProps> = ({
 
   return (
     <section>
-      <div className="w-full h-[700px] md:h-[450px]">
+      <div className="w-full h-[700px] md:h-[550px] overflow-x-hidden">
         {currentUser && currentUser.staff && (
           <div
             className="lg:block hidden absolute right-0 mr-2 mt-2 w-32 py-2 bg-primary z-[55] text-white text-center rounded-md cursor-pointer"
@@ -63,7 +64,7 @@ const Index: React.FC<IndexProps> = ({
             추가하기
           </div>
         )}
-        <div className="w-full h-[700px] md:h-[450px] bg-black z-[50] md:flex justify-center items-center bg-[url('/img/common/main_bg.jpg')] bg-cover bg-center">
+        <div className="w-full h-[700px] md:h-[550px] bg-black z-[50] md:flex justify-center items-center bg-white bg-cover bg-center">
           <p className="text-[28px] text-center text-white font-semibold py-10 md:hidden">
             <span className="text-primary">안전</span>은 제일의<br/>
             경영가치입니다
@@ -79,25 +80,25 @@ const Index: React.FC<IndexProps> = ({
             </span> 
           </div>
           <ResposiveCarousel
-            className="absolute top-[165px] w-[1400px] h-[450px] z-[40] flex justify-center items-center"
+            className="absolute top-[205px] w-[1400px] h-[480px] z-[40] flex justify-center items-center"
             showArrows={true}
             centerMode={true}
             centerSlidePercentage={31}
             showThumbs={false}
             showStatus={false}
             autoPlay={true}
-            infiniteLoop={false}
+            infiniteLoop={true}
             showIndicators={false}
           >
             {mainBanner?.map((image: any, index: any) => (
               <Paper
-                className={`w-[300px] h-[300px] hover:-translate-x-[25px] hover:-translate-y-[25px] hover:w-[350px] hover:h-[350px] transform duration-150 transition-all cursor-pointer`}
+                className={`w-[400px] h-[400px] bg-transparent  hover:w-[415px] hover:h-[415px] transform duration-150 transition-all cursor-pointer pb-10 -translate-y-12`}
                 key={index}
               >
                 <Image
                   src={image.fileUrl}
                   fill
-                  className="object-fill w-full"
+                  className="object-fill w-full h-full rounded-xl hover:rounded-xl"
                   alt="Image"
                 />
                 {currentUser?.staff && (
