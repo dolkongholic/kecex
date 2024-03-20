@@ -29,7 +29,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
       <div className="md:w-[1400px] md:flex justify-start items-start space-x-[30px]">
         <div className="w-full h-[400px] md:h-[320px] md:flex justify-between item-start py-[10px]">      
           <div className="w-full md:w-1/3 lg:w-1/4 h-[50px] md:h-[280px] flex md:flex-col items-start leading-8 md:leading-[55px] px-[20px] font-bold text-[16px] text-[#CECECE] border-b-2 md:border-0 border-primary mx-auto">
-            <h2 className="w-1/4 text-start text-[16px] md:text-[20px] text-[#3A3A3A] font-bold leading-8 md:leading-7 mb-8">
+            <h2 className="w-1/4 md:w-full text-start text-[16px] md:text-[20px] text-[#3A3A3A] font-bold leading-8 md:leading-7 mb-8">
               KECEx 소식
             </h2>
             <div className="w-3/4 md:w-full flex md:flex-col">
@@ -166,22 +166,26 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
 
             {noticeMenu == "보도자료" && (
               <>
-                              <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3">
+                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3">
                   <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pr-[50px] md:pl-0 text-[#3A3A3A]">
-                    <span className="h-[45px] leading-[20px] text-[16px] md:text-[18px] font-medium">
+                    <div className="w-full h-[250px] relative">
+                      {newsList?.map((item: any, index: any) => (
+                          <Image src={item.img}
+                          alt="news_image" 
+                          layout="fill"
+                          objectFit="cover"
+                          className="rounded-lg"
+                          key={index}
+                          />
+                      ))}
+                    </div>
+                    <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
                       {newsList[newsList.length - 1]
                         ? String(newsList[newsList.length - 1].title).slice(
                             0,
                             45
                           )
                         : "뉴스가 없습니다."}
-                    </span>
-                    <span className="h-[200px] leading-[24px] font-light pt-2">
-                      {newsList[newsList.length - 1]
-                        ? String(
-                          newsList[newsList.length - 1].content
-                          ).slice(0, 170)
-                        : ""}
                     </span>
                     <span className="h-[25px] leading-[35px] text-[16px] font-light">
                       {newsList[newsList.length - 1]
@@ -192,7 +196,18 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                 </div>
                 <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3 text-[#3A3A3A]">
                   <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:px-[25px]">
-                    <span className="h-[45px] leading-[20px] text-[16px] md:text-[18px] font-medium">
+                  <div className="w-full h-[250px] relative">
+                      {newsList?.map((item: any, index: any) => (
+                          <Image src={item.img}
+                          alt="news_image" 
+                          layout="fill"
+                          objectFit="cover"
+                          className="rounded-lg"
+                          key={index}
+                          />
+                      ))}
+                    </div>
+                    <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
                       {newsList[newsList.length - 2]
                         ? String(newsList[newsList.length - 2].title).slice(
                             0,
@@ -200,14 +215,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                           )
                         : "뉴스가 없습니다."}
                     </span>
-                    <span className="h-[200px] leading-[24px] font-light pt-2">
-                      {newsList[newsList.length - 2]
-                        ? String(
-                          newsList[newsList.length - 2].content
-                          ).slice(0, 170)
-                        : ""}
-                    </span>
-                    <span className="h-[25px] leading-[25px] text-[16px] font-light">
+                    <span className="h-[25px] leading-[35px] text-[16px] font-light">
                       {newsList[newsList.length - 2]
                         ? String(newsList[newsList.length - 2].date)
                         : ""}
@@ -216,7 +224,18 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                 </div>
                 <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3">
                   <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pl-[50px] text-[#3A3A3A]">
-                    <span className="h-[45px] leading-[20px] text-[16px] md:text-[18px] font-medium">
+                  <div className="w-full h-[250px] relative">
+                      {newsList?.map((item: any, index: any) => (
+                          <Image src={item.img}
+                          alt="news_image" 
+                          layout="fill"
+                          objectFit="cover"
+                          className="rounded-lg"
+                          key={index}
+                          />
+                      ))}
+                    </div>
+                    <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
                       {newsList[newsList.length - 3]
                         ? String(newsList[newsList.length - 3].title).slice(
                             0,
@@ -224,14 +243,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                           )
                         : "뉴스가 없습니다."}
                     </span>
-                    <span className="h-[200px] leading-[24px] font-light pt-2">
-                      {newsList[newsList.length - 3]
-                        ? String(
-                          newsList[newsList.length - 3].content
-                          ).slice(0, 170)
-                        : ""}
-                    </span>
-                    <span className="h-[25px] leading-[25px]] text-[16px] font-light">
+                    <span className="h-[25px] leading-[35px] text-[16px] font-light">
                       {newsList[newsList.length - 3]
                         ? String(newsList[newsList.length - 3].date)
                         : ""}

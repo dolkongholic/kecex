@@ -101,27 +101,27 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
                 passHref
                 href={`/information/news/detail/${item.id}?page=${page}`}
               >
-                <div className="border border-gray text-darkgray ease-linear transition-colors duration-300 hover:bg-secondary hover:text-white">
-                  <div className="flex flex-col">
-                    <div className="w-full m-auto">
+                <div className="border border-gray text-[#3A3A3A] ease-linear transition-colors duration-300 hover:bg-secondary hover:text-white w-[350px] h-[310px]">
+                  <div className="flex flex-col relative">
+                    <div className="w-[350px] h-[220px] m-auto object-cover  overflow-hidden relative"> {/* 350*220 사이즈 */}
                       <Image
                         src={item.img}
-                        width={350}
-                        height={150}
+                        layout="fill"
+                        objectFit="cover"
                         alt="item.title"
-                        className="m-auto"
+                        className="object-cover"
                       />
                     </div>
-                    <div className="w-full flex justify-start items-end">
-                      <p className="px-[10px] p-[5px] bg-superdarkgray text-white">
-                        {item.type}
+                    <div className="w-full flex justify-start items-end absolute left-0 top-[190px]">
+                      <p className="px-[16px] p-[5px] bg-[#3A3A3A] text-white opacity-90 text-[13px]">
+                        {item.type} 협회소식
                       </p>
                     </div>
-                    <div className="text-[14px] leading-[30px] px-[10px]">
+                    <div className="text-[15px] leading-[17px] px-[10px] pt-3 h-[56px] overflow-hidden text-ellipsis">
                       {item.title}
                     </div>
                   </div>
-                  <div className="w-full text-[13px] leading-[30px] px-[10px]">
+                  <div className="w-full text-[13px] leading-[20px] px-[10px]">
                     {item.date}
                   </div>
                 </div>
