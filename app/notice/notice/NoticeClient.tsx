@@ -103,16 +103,15 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
             <div className="w-full mt-[20px] leading-[50px] border-b border-secondary">
               {page}/{totalPages} 페이지 (총 {noticeList.length} 건)
             </div>
-
             {noticeList.map((item: any, index: any) => (
               <Link
                 key={index}
                 passHref
-                href={`notice/notice/detail/${item.id}?page=${page}`}
+                href={`notice/detail/${item.id}?page=${page}`}
                 className="w-full"
               >
                 <div
-                  className={`cursor-pointer flex justify-between items-center w-full h-[80px] border-b  leading-[80px] text-neutral-800 text-base hover:text-secondary ${
+                  className={`cursor-pointer flex justify-between items-center w-full h-[80px] border-b leading-[80px] text-neutral-800 text-base hover:text-secondary ${
                     index % 7 == 0 && index != 0
                       ? "border-black"
                       : "border-gray-100"
@@ -150,7 +149,7 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
                 </div> */}
               </div>
               {currentUser && (
-                <Link passHref href={"/notice/notice/post"}>
+                <Link passHref href={"notice/post"}>
                   <button className="cursor-pointer bg-secondary text-white w-24 h-8 text-[14px]">
                     글쓰기
                   </button>
