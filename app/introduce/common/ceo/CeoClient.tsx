@@ -10,6 +10,7 @@ import { RiArrowRightSLine } from "react-icons/ri";
 // Image
 import Picceo from "@/public/img/pages/introduce/intro_ceo.png";
 import Image from "next/image";
+import PicCeo from "@/public/img/page_top/ceo_top.jpg"
 
 const MainList = [
   {
@@ -44,6 +45,20 @@ const CeoClient = () => {
 
   return (
     <section>
+      <figure className="w-full h-[200px]">
+        <div className="w-full h-full mx-auto relative">
+          <Image
+            src={PicCeo}
+            layout="fill"
+            objectFit="cover"
+            alt="item.title"
+            className="object-cover"
+          />
+          <div className="bg-neutral-900/50 absolute w-full h-full left-0 top-0 z-20 text-center text-white font-medium text-[36px] leading-[200px]">
+            {location}
+          </div>
+        </div>
+      </figure>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
@@ -82,7 +97,7 @@ const CeoClient = () => {
           </div>
         </section>
 
-        <section className="md:py-[20px] md:pl-[40px] w-full flex flex-col justify-start items-start relative">
+        <section className="md:py-[20px] md:pl-[40px] w-full flex flex-col justify-start items-start relative ">
           <ContentTitle title={location}/>
           <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
             <li className="w-1/2 cursor-default">

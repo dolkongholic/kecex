@@ -8,6 +8,8 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
+import Image from "next/image";
+import PicCeo from "@/public/img/page_top/ceo_top.jpg"
 
 const MainList = [
   {
