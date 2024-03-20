@@ -14,6 +14,8 @@ import { GrDownload } from "react-icons/gr";
 import { useRouter, useSearchParams } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
+import Image from "next/image";
+import PicCeo from "@/public/img/page_top/ceo_top.jpg"
 
 const MainList = [
   {

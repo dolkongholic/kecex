@@ -5,8 +5,10 @@ import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { RiArrowRightSLine } from "react-icons/ri";
+import PicCeo from "@/public/img/page_top/ceo_top.jpg"
 
 const MainList = [
   {
@@ -41,6 +43,20 @@ const HistoryClient = () => {
 
   return (
     <section>
+      <figure className="w-full h-[200px]">
+        <div className="w-full h-full mx-auto relative">
+          <Image
+            src={PicCeo}
+            layout="fill"
+            objectFit="cover"
+            alt="item.title"
+            className="object-cover"
+          />
+          <div className="bg-neutral-900/50 absolute w-full h-full left-0 top-0 z-20 text-center text-white font-medium text-[36px] leading-[200px]">
+            {location}
+          </div>
+        </div>
+      </figure>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">

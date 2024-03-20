@@ -16,6 +16,7 @@ import PicCareer_2 from "@/public/img/pages/business/careear_2.png";
 import PicCareer_3 from "@/public/img/pages/business/careear_3.png";
 import PicCareer_1_M from "@/public/img/pages/business/career_1_m.png";
 import PicCareer_2_M from "@/public/img/pages/business/career_2_m.png";
+import PicCeo from "@/public/img/page_top/ceo_top.jpg"
 
 const MainList = [
   {
@@ -57,6 +58,20 @@ const CareerClient = () => {
 
   return (
     <section>
+      <figure className="w-full h-[200px]">
+        <div className="w-full h-full mx-auto relative">
+          <Image
+            src={PicCeo}
+            layout="fill"
+            objectFit="cover"
+            alt="item.title"
+            className="object-cover"
+          />
+          <div className="bg-neutral-900/50 absolute w-full h-full left-0 top-0 z-20 text-center text-white font-medium text-[36px] leading-[200px]">
+            {location}
+          </div>
+        </div>
+      </figure>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
