@@ -247,11 +247,11 @@ const Index: React.FC<IndexProps> = ({
         <ul className="w-[1440px] h-full mx-auto text-[#3A3A3A] flex justify-between">
           <li className="w-1/4 h-full border-t border-[#3A3A3A] pt-16 mr-5">
             <div className="w-full h-full border-b border-[#ccc]">
-                <div className="w-[42px] h-[42px]">
+                <div className="w-[42px] h-[42px] relative">
                   <Image 
                     src={PicBsn_01} 
                     alt="main_business_icon"
-                    Fill={true}
+                    fill={true}
                     className=""
                   />
                 </div>
@@ -271,11 +271,11 @@ const Index: React.FC<IndexProps> = ({
             </li>
             <li className="w-1/4 h-full border-t border-[#3A3A3A] pt-16 mx-5">
               <div className="w-full h-full border-b border-[#ccc]">
-                <div className="w-12 h-12">
+                <div className="w-[42px] h-[42px] relative">
                   <Image 
                     src={PicBsn_02} 
                     alt="main_business_icon"
-                    Fill={true}
+                    fill={true}
                     className=""
                   />
                 </div>
@@ -296,11 +296,11 @@ const Index: React.FC<IndexProps> = ({
           </li>
           <li className="w-1/4 h-full border-t border-[#3A3A3A] pt-16 mx-5">
             <div className="w-full h-full border-b border-[#ccc]">
-              <div className="w-12 h-12">
+              <div className="w-[42px] h-[42px] relative">
                 <Image 
                     src={PicBsn_03} 
                     alt="main_business_icon"
-                    Fill={true}
+                    fill={true}
                     className=""
                   />
               </div>
@@ -321,11 +321,11 @@ const Index: React.FC<IndexProps> = ({
           </li>
           <li className="w-1/4 h-full border-t border-[#3A3A3A] pt-16 ml-5">
             <div className="w-full h-full border-b border-[#ccc]">
-              <div className="w-12 h-12">
+              <div className="w-[42px] h-[42px] relative">
                 <Image 
                     src={PicBsn_04} 
                     alt="main_business_icon"
-                    Fill={true}
+                    fill={true}
                     className=""
                   />
               </div>
