@@ -196,7 +196,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           onClick={() => setMenu("")}
         >
           <div 
-            className="absolute top-[0px] w-[400px] bg-primary h-[450px] left-1/2 -translate-x-[1130px]"
+            className="absolute top-[0px] w-[1200px] bg-primary h-[450px] left-1/2 -translate-x-[1920px]"
           >
             <div className="w-full h-full relative">
             <Image
