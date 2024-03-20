@@ -4,68 +4,11 @@ import { IoIosArrowUp } from "react-icons/io";
 
 //image
 import WhiteLogo from "@/public/img/logo/logo_big_white.png";
-import Picacrc from "@/public/img/related_site/acrc.png";
-import Pichrdkorea from "@/public/img/related_site/hrdkorea.png";
-import Pickogas from "@/public/img/related_site/kogas.png";
-import Pickosha from "@/public/img/related_site/kosha.png";
-import Picksa from "@/public/img/related_site/ksa.png";
-import Picmoel from "@/public/img/related_site/moel.png";
-import Picnts from "@/public/img/related_site/nts.png";
 
 export default function Footer() {
   return (
     <section>
-      <div className="w-full h-[100px] md:h-[50px] hidden md:flex flex-col justify-start items-center mt-[150px] py-[7px]">
-        <div className="w-full md:w-[1400px] h-[70px] md:h-[36px] md:flex justify-between item-center leading-[30px] md:leading-[60px]">
-          <div className="w-full md:w-1/2 flex">
-            <Image 
-              src={Picacrc} 
-              alt="arcr_logo" 
-              className="mx-auto ml-0 h-[24px] md:h-[36px] px-3 md:px-0"
-              height={36}
-            />
-                    <Image 
-              src={Pichrdkorea} 
-              alt="arcr_logo" 
-              className="mx-auto h-[24px] md:h-[36px]"
-              height={36}
-            />
-                    <Image 
-              src={Pickogas} 
-              alt="arcr_logo" 
-              className="mx-auto h-[24px] md:h-[36px]"
-              height={36}
-            />
-          </div>
-          <div className="w-full md:w-1/2 flex px-3 md:px-0 mt-2 md:mt-0 h-[20px] md:h-auto">
-                  <Image 
-            src={Pickosha} 
-            alt="arcr_logo" 
-            className="mx-auto h-[20px] md:h-[36px]"
-            height={36}
-          />
-                  <Image 
-            src={Picksa} 
-            alt="arcr_logo" 
-            className="mx-auto h-[20px] md:h-[36px]"
-            height={36}
-          />
-                  <Image 
-            src={Picmoel} 
-            alt="arcr_logo" 
-            className="mx-auto h-[20px] md:h-[36px]"
-            height={36}
-          />
-                  <Image 
-            src={Picnts} 
-            alt="arcr_logo" 
-            className="mx-auto mr-0 h-[20px] md:h-[36px]"
-            height={36}
-          />
-          </div>
-        </div>
-      </div>
-      <div className="w-full h-[520px] md:h-[200px] bg-[#3e3e3e] flex flex-col justify-start items-center">
+      <div className="w-full h-[520px] md:h-[350px] bg-[#3e3e3e] flex flex-col justify-start items-center mt-[150px]">
         <div className="md:hidden my-6">
           <Link passHref href={"/"}>
             <Image
