@@ -83,9 +83,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
       if (scrollY >= 70){
         setScrollA('fixed');
         setScrollB('pt-[20px]');
-        setScrollC('mt-0');
-        console.log('scrollA',scrollA);
-        console.log('scrollB',scrollB);
+        setScrollC('!mt-0');
       }else{
         setScrollA('')
         setScrollB('')
@@ -256,7 +254,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             <div className="w-full h-full relative">
               <Image
                   src={PicHeader}
-                  className=" w-[1200px] h-auto absolute right-0 bottom-0"
+                  className=" w-[1200px] h-full absolute right-0 bottom-0 rotate-180"
                   alt="Image"
                 />
             </div>
@@ -327,7 +325,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <div className="w-1/4 text-[19px] pl-[2%] relative
                   before:content[''] before:block before:absolute before:w-[2px] before:h-[380px] before:right-0 before:top-5 before:bg-lightgray
                 ">
-                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] text-[20px]">
+                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
                     회원
                   </div>
                   <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
@@ -348,7 +346,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <div className="w-1/4 text-[19px] pl-[2%] relative
                   before:content[''] before:block before:absolute before:w-[2px] before:h-[380px] before:right-0 before:top-5 before:bg-lightgray
                 ">
-                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] text-[20px]">
+                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
                     교육
                   </div>
                   <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
@@ -373,7 +371,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                 </div>
                 <div className="w-1/4 pl-[2%]">
-                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] text-[20px]">
+                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
                     컨설팅
                   </div>
                   <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
@@ -463,7 +461,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             </div>
           )}
           {menu == "교육센터" && (
-            <div className="w-[1400px] pt-[180px] pl-[250px] mx-auto text-neutral-600 font-medium text-[24px]">
+            <div className="w-[1400px] pt-[200px] pl-[250px] mx-auto text-neutral-600 font-medium text-[24px]">
               <div className="w-[1400px] text-center">
                 교육 센터 운영 준비 중
               </div>
