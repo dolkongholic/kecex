@@ -3,7 +3,7 @@ import Image from "next/image";
 import { AiOutlineGlobal } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { CgMenuGridO } from "react-icons/cg";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { IoMdClose } from "react-icons/io";
@@ -40,6 +40,8 @@ const menuList = [
   },
 ];
 
+
+
 interface HeaderProps {
   currentUser?: SafeUser | null;
 }
@@ -66,6 +68,27 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
   const handleMenuToggle = (menuTitle : any) => {
     setActiveMenu(menuTitle);
   };
+
+  const [scroll, setScroll] = useState('');
+  useEffect(() => {
+    //윈도우에 eventlistener 추가
+    window.addEventListener('scroll', onScroll, {passive: true});
+    //event를 제거해줌
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  });
+
+  const onScroll = useCallback((event:any) => {
+    const {scrollY} = window
+    console.log('scrollY', scrollY);
+    if (scrollY >= 70){
+      setScroll('fixed');
+    }else{
+      setScroll('')
+    };
+  }, []);
+
   
   return (
     <>
@@ -150,7 +173,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         </div>
 
         {/* nav start */}
-        <div className="w-full h-[85px] flex justify-center border-b border-[#dcdcdc] z-[80] bg-white">
+        <div className={`w-full h-[85px] flex justify-center border-b border-[#dcdcdc] z-[80] bg-white ${scroll}`}>
           <div className="w-[1400px] flex justify-between items-center">
             <div
               className="w-[250px] justify-between items-center"
@@ -161,14 +184,18 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               </Link>
             </div>
             <div className="w-[900px]">
-              <ul className="flex justify-between font-extrabold text-[20px] text-[#4e4e4e] ">
+              <ul className="flex justify-between font-medium text-[21px] text-[#4e4e4e] ">
                 {menuList.map(({ title, url }, index) => (
                   <li
                     key={index}
-                    className={`w-[110px] h-[85px] flex items-center justify-center hover:text-primary transition-all duration-300 cursor-pointer ${
-                      title == menu ? "text-primary" : ""
+                    className={`w-[110px] h-[85px] flex items-center justify-center transition-all duration-300 cursor-pointer relative 
+                      before:content-[''] before:transition-all before:duration-300 before:block  before:absolute before:left-0 before:bottom-0 
+                      before:h-[5px] before:bg-primary ${
+                      title == menu ? "text-primary before:w-[110px]" : "before:w-[0px] "
                     }`}
-                    onMouseOver={() => setMenu(title)}
+                    onMouseOver={() => 
+                      setMenu(title)
+                    }
                   >
                     {title}
                   </li>
@@ -191,7 +218,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             !menu
               ? "opacity-0 -translate-y-[50px] pointer-events-none"
               : "opacity-100 translate-y-0 pointer-events-auto"
-          } transition-all duration-300 flex justify-center items-start`}
+          } transition-all duration-300 flex justify-center items-start ${scroll}`}
           onMouseLeave={() => setMenu("")}
           onClick={() => setMenu("")}
         >
@@ -218,16 +245,16 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                   <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
                     <Link passHref href={"/introduce/common/ceo/"}>
-                      <span className="cursor-pointer"> - CEO 인사말</span>
+                      <span className="cursor-pointer"> · CEO 인사말</span>
                     </Link>
                     <Link passHref href={"/introduce/common/vistion/"}>
-                      <span className="cursor-pointer"> - 비전/미션</span>
+                      <span className="cursor-pointer"> · 비전/미션</span>
                     </Link>
                     <Link passHref href={"/introduce/common/history/"}>
-                      <span className="cursor-pointer"> - 연혁</span>
+                      <span className="cursor-pointer"> · 연혁</span>
                     </Link>
                     <Link passHref href={"/introduce/common/ci/"}>
-                      <span className="cursor-pointer"> - CI</span>
+                      <span className="cursor-pointer"> · CI</span>
                     </Link>
                   </div>
                 </div>
@@ -237,7 +264,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                   <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
                     <Link passHref href={"/introduce/group/group"}>
-                      <span className="cursor-pointer"> - 조직도</span>
+                      <span className="cursor-pointer"> · 조직도</span>
                     </Link>
                     {/* <Link passHref href={"/introduce/group/introduce/"}>
                     <span className="cursor-pointer"> - 부서소개</span>
@@ -266,16 +293,16 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                   <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
                     <Link passHref href={"/business/member/join/"}>
-                      <span className="cursor-pointer"> - 회원가입</span>
+                      <span className="cursor-pointer"> · 회원가입</span>
                     </Link>
                     <Link passHref href={"/business/member/rule/"}>
-                      <span className="cursor-pointer"> - 회원회칙</span>
+                      <span className="cursor-pointer"> · 회원회칙</span>
                     </Link>
                     <Link passHref href={"/business/member/career/"}>
-                      <span className="cursor-pointer"> - 경력관리</span>
+                      <span className="cursor-pointer"> · 경력관리</span>
                     </Link>
                     <Link passHref href={"/business/member/careercard/"}>
-                      <span className="cursor-pointer"> - 경력수첩</span>
+                      <span className="cursor-pointer"> · 경력수첩</span>
                     </Link>
                   </div>
                 </div>
@@ -285,22 +312,22 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                   <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
                     <Link passHref href={"/business/education/course01/"}>
-                      <span className="cursor-pointer"> - 방폭기초교육</span>
+                      <span className="cursor-pointer"> · 방폭기초교육</span>
                     </Link>
                     <Link passHref href={"/business/education/course02/"}>
                       <span className="cursor-pointer">
                         {" "}
-                        - 방폭인력양성 교육
+                        · 방폭인력양성 교육
                       </span>
                     </Link>
                     <Link passHref href={"/business/education/course03/"}>
-                      <span className="cursor-pointer"> - 기업형 교육</span>
+                      <span className="cursor-pointer"> · 기업형 교육</span>
                     </Link>
                     <Link passHref href={"/business/education/develop/"}>
-                      <span className="cursor-pointer"> - 교육개발</span>
+                      <span className="cursor-pointer"> · 교육개발</span>
                     </Link>
                     <Link passHref href={"/business/education/copc/"}>
-                      <span className="cursor-pointer"> - CoPC 과정</span>
+                      <span className="cursor-pointer"> · CoPC 과정</span>
                     </Link>
                   </div>
                 </div>
@@ -310,7 +337,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                   <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
                     <Link passHref href={"/business/consulting/inspection/"}>
-                      <span className="cursor-pointer"> - 방폭사전진단</span>
+                      <span className="cursor-pointer"> · 방폭사전진단</span>
                     </Link>
                     {/* <Link passHref href={"/business/consulting/equipment/"}>
                     <span className="cursor-pointer"> - 방폭기기선정</span>
@@ -318,7 +345,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     <Link passHref href={"/business/consulting/industry/"}>
                       <span className="cursor-pointer">
                         {" "}
-                        - 산업진단, 컨설팅
+                        · 산업진단, 컨설팅
                       </span>
                     </Link>
                   </div>
@@ -544,16 +571,16 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                   <div className="flex flex-col space-y-[25px] border-b-2 border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/introduce/common/ceo/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> - CEO 인사말</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · CEO 인사말</span>
                     </Link>
                     <Link passHref href={"/introduce/common/vistion/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> - 비전/미션</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 비전/미션</span>
                     </Link>
                     <Link passHref href={"/introduce/common/history/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> - 연혁</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 연혁</span>
                     </Link>
                     <Link passHref href={"/introduce/common/ci/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> - CI</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · CI</span>
                     </Link>
                   </div>
                 </li>
@@ -563,7 +590,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                   <div className="flex flex-col space-y-[25px] border-b-2 border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/introduce/group/group"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> - 조직도</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 조직도</span>
                     </Link>
                   </div> 
                 </li>
@@ -599,16 +626,16 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                   <div className="flex flex-col space-y-[25px] border-b-2 border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/business/member/join/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> - 회원가입</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 회원가입</span>
                     </Link>
                     <Link passHref href={"/business/member/rule/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> - 회원회칙</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 회원회칙</span>
                     </Link>
                     <Link passHref href={"/business/member/career/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> - 경력관리</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 경력관리</span>
                     </Link>
                     <Link passHref href={"/business/member/careercard/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> - 경력수첩</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 경력수첩</span>
                     </Link>
                   </div>
                 </li>
@@ -618,7 +645,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                   <div className="flex flex-col space-y-[25px] border-b-2 border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/business/education/course01/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> - 방폭기초교육</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 방폭기초교육</span>
                     </Link>
                     <Link passHref href={"/business/education/course02/"}>
                       <span className="cursor-pointer hover:text-primary hover:font-medium">
@@ -627,13 +654,13 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                       </span>
                     </Link>
                     <Link passHref href={"/business/education/course03/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> - 기업형 교육</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 기업형 교육</span>
                     </Link>
                     <Link passHref href={"/business/education/develop/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> - 교육개발</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 교육개발</span>
                     </Link>
                     <Link passHref href={"/business/education/copc/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> - CoPC 과정</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · CoPC 과정</span>
                     </Link>
                   </div>
                 </li>
@@ -643,7 +670,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                   <div className="flex flex-col space-y-[25px] md:border-b-2 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/business/consulting/inspection/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> - 방폭사전진단</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 방폭사전진단</span>
                     </Link>
                     <Link passHref href={"/business/consulting/industry/"}>
                       <span className="cursor-pointer hover:text-primary hover:font-medium">
@@ -786,10 +813,10 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                   <div className="flex flex-col space-y-[25px] border-b-2 border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/mypage/overall/all01"}>
-                      <span className="cursor-pointer hover:text-primary"> - 발급/출력 현황</span>
+                      <span className="cursor-pointer hover:text-primary"> · 발급/출력 현황</span>
                     </Link>
                     <Link passHref href={"/mypage/overall/all02"}>
-                      <span className="cursor-pointer hover:text-primary"> - 1:1 문의 현황</span>
+                      <span className="cursor-pointer hover:text-primary"> · 1:1 문의 현황</span>
                     </Link>
                   </div>
                 </li>
@@ -813,7 +840,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                   <div className="flex flex-col space-y-[25px] border-b-2 border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/mypage/payment/payment"}>
-                      <span className="cursor-pointer hover:text-primary"> - 회비 납부</span>
+                      <span className="cursor-pointer hover:text-primary"> · 회비 납부</span>
                     </Link>
                     <Link passHref href={"/mypage/payment/detail"}>
                       <span className="cursor-pointer hover:text-primary">
@@ -822,7 +849,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                       </span>
                     </Link>
                     <Link passHref href={"/mypage/payment/management"}>
-                      <span className="cursor-pointer hover:text-primary"> - 회비 관리</span>
+                      <span className="cursor-pointer hover:text-primary"> · 회비 관리</span>
                     </Link>
                   </div>
                 </li>
@@ -853,7 +880,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                   <div className="flex flex-col space-y-[25px] md:border-b-2 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/mypage/carrear/print"}>
-                      <span className="cursor-pointer hover:text-primary"> - 경력수첩 발급</span>
+                      <span className="cursor-pointer hover:text-primary"> · 경력수첩 발급</span>
                     </Link>
                   </div>
                 </li>

@@ -211,7 +211,7 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
                   id="content"
                   cols={80}
                   rows={5}
-                  className={`border border-neutral-300 p-6 box-border rounded-md ${
+                  className={`border h-[180px] border-neutral-300 p-6 box-border rounded-md ${
                     isLoading && "cursor-not-allowed"
                   }`}
                   {...register("content", { required: true })}

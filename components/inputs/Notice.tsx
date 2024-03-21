@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Button } from "@mui/material";
 import { FaPlus } from "react-icons/fa";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 interface MainNoticeProps {
   newsList?: any;
@@ -17,12 +18,22 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
 
   const router = useRouter();
 
-  let noticeSubMenuList: any;
-  if (noticeMenu == "협회공지") {
-    noticeSubMenuList = ["공지사항"];
-  } else if (noticeMenu == "보도자료") {
-    noticeSubMenuList = ["보도자료"];
-  }
+/* 메인화면 KECEx소식 자동으로 넘어가기 */
+  // const menulist = ["협회공지", "보도자료", "교육센터"]
+
+  // var i = -1
+  // useEffect(()=>{
+  //   i = i + 1
+  //   if(i == 3){
+  //     i = -1
+  //   }
+  //   const timer_main = setInterval(()=>{
+  //     setNoticeMenu(menulist[i]);
+  //     console.log(i);
+  //     // clearInterval(timer_main);
+  //   }, 2000);
+  // },[noticeMenu])
+  
 
   return (
     <div className="w-full md:flex justify-center item-start mt-[40px]">
@@ -34,7 +45,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
             </h2>
             <div className="w-3/4 md:w-full flex md:flex-col">
               <div
-                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-medium text-[14px] md:text-[36px] transition-all duration-300 ease-in-out cursor-pointer ${
+                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-medium text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
                   noticeMenu == "협회공지" &&
                   " text-primary"
                 }`}
@@ -50,7 +61,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                 )}
               </div>
               <div
-                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-medium text-[14px] md:text-[36px] transition-all duration-300 ease-in-out cursor-pointer ${
+                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-medium text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
                   noticeMenu == "보도자료" &&
                   "text-primary"
                 }`}
@@ -68,7 +79,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
               </div>
 
               <div
-                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-medium text-[14px] md:text-[36px] transition-all duration-300 ease-in-out cursor-pointer ${
+                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-medium text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
                   noticeMenu == "교육센터" &&
                   "text-primary"
                 }`}
@@ -90,28 +101,30 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
             {noticeMenu == "협회공지" && (
               <>
                 <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 lg:w-1/3">
-                  <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pr-[50px] md:pl-0 text-[#3A3A3A]">
-                    <span className="h-[45px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px] font-medium">
-                      {noticeList[noticeList.length - 1]
-                        ? String(noticeList[noticeList.length - 1].title).slice(
-                            0,
-                            30
-                          )
-                        : "공지가 없습니다."}
-                    </span>
-                    <span className="h-[200px] leading-[24px] font-light pt-2 text-[14px] md:text-[15px]">
-                      {noticeList[noticeList.length - 1]
-                        ? String(
-                            noticeList[noticeList.length - 1].content
-                          ).slice(0, 140)
-                        : ""}
-                    </span>
-                    <span className="h-[25px] leading-[35px] text-[12px] md:text-[16px] font-light"> {/* 첫번째 공지 날짜 */}
-                      {noticeList[noticeList.length - 1]
-                        ? String(noticeList[noticeList.length - 1].date)
-                        : ""}
-                    </span>
-                  </div>
+                  <Link passHref href={"/notice/notice?page=1"}>
+                    <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pr-[50px] md:pl-0 text-[#3A3A3A]">
+                      <span className="h-[45px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px] font-medium">
+                        {noticeList[noticeList.length - 1]
+                          ? String(noticeList[noticeList.length - 1].title).slice(
+                              0,
+                              30
+                            )
+                          : "공지가 없습니다."}
+                      </span>
+                      <span className="h-[200px] leading-[24px] font-light pt-2 text-[14px] md:text-[15px]">
+                        {noticeList[noticeList.length - 1]
+                          ? String(
+                              noticeList[noticeList.length - 1].content
+                            ).slice(0, 140)
+                          : ""}
+                      </span>
+                      <span className="h-[25px] leading-[35px] text-[12px] md:text-[16px] font-light"> {/* 첫번째 공지 날짜 */}
+                        {noticeList[noticeList.length - 1]
+                          ? String(noticeList[noticeList.length - 1].date)
+                          : ""}
+                      </span>
+                    </div>
+                  </Link>
                 </div>
                 <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 lg:w-1/3 text-[#3A3A3A]">
                   <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:px-[25px]">
@@ -169,15 +182,15 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                 <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3">
                   <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pr-[50px] md:pl-0 text-[#3A3A3A]">
                     <div className="w-full h-[250px] relative">
-                      {newsList?.map((item: any, index: any) => (
-                          <Image src={item.img}
+                      {newsList[newsList.length - 1]?.img && (
+                          <Image src={newsList[newsList.length - 1].img}
                           alt="news_image" 
                           layout="fill"
                           objectFit="cover"
                           className="rounded-lg"
-                          key={index}
+                          key={newsList[newsList.length - 1].id}
                           />
-                      ))}
+                      )}
                     </div>
                     <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
                       {newsList[newsList.length - 1]
@@ -197,15 +210,15 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                 <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3 text-[#3A3A3A]">
                   <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:px-[25px]">
                   <div className="w-full h-[250px] relative">
-                      {newsList?.map((item: any, index: any) => (
-                          <Image src={item.img}
+                      {newsList[newsList.length - 1]?.img && (
+                          <Image src={newsList[newsList.length - 2].img}
                           alt="news_image" 
                           layout="fill"
                           objectFit="cover"
                           className="rounded-lg"
-                          key={index}
+                          key={newsList[newsList.length - 2].id}
                           />
-                      ))}
+                      )}
                     </div>
                     <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
                       {newsList[newsList.length - 2]
@@ -225,15 +238,15 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                 <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3">
                   <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pl-[50px] text-[#3A3A3A]">
                   <div className="w-full h-[250px] relative">
-                      {newsList?.map((item: any, index: any) => (
-                          <Image src={item.img}
+                    {newsList[newsList.length - 1]?.img && (
+                          <Image src={newsList[newsList.length - 3].img}
                           alt="news_image" 
                           layout="fill"
                           objectFit="cover"
                           className="rounded-lg"
-                          key={index}
+                          key={newsList[newsList.length - 3].id}
                           />
-                      ))}
+                      )}
                     </div>
                     <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
                       {newsList[newsList.length - 3]
