@@ -326,7 +326,12 @@ const Index: React.FC<IndexProps> = ({
                 어떻게 하나요?
               </p>
               <Link passHref href={"/business/member/rule"}>
-                <button className="mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]">
+                <button className="
+                  mt-20 border border-[#ccc] hover:border-primary hover:bg-[#003893] hover:text-white w-[120px] h-[50px]
+                  relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-primary 
+                  after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] 
+                  after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 
+                ">
                     회원회칙
                 </button>
               </Link>
@@ -365,7 +370,7 @@ const Index: React.FC<IndexProps> = ({
       </div>
       <div className="w-full h-[600px] md:h-[400px] hidden md:flex flex-col justify-start items-center mt-[150px] py-[7px]">
         <div className="w-full md:w-[1300px] h-[570px] md:h-[400px] justify-between item-center leading-[30px] md:leading-[60px]"> {/* 관련기관 리스트 */}
-          <h3 className="text-center font-bold text-[26px] text-[#3A3A3A] leading-[34px] mb-16">
+          <h3 className="text-center font-bold text-[30px] text-[#3A3A3A] leading-[44px] mb-16">
             한국방폭협회는<br/>
             다음 기관들과 함께 합니다.
           </h3> 
