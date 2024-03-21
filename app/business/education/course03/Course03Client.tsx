@@ -51,7 +51,7 @@ const Course03Client = () => {
 
   return (
     <section>
-            <figure className="w-full h-[200px]">
+      <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
             src={PicCeo}

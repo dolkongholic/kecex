@@ -240,12 +240,13 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
             </div>
           )}
           <div className="flex gap-4 m-auto">
-            <button
-              className="w-32 h-10 bg-gray-500 text-white text-[14px] mt-9 m-auto"
-              onClick={() => router.back()}
-            >
-              목록
-            </button>
+            <Link passHref href={"/notice/notice?page=1"}>
+              <button
+                className="w-32 h-10 bg-gray-500 text-white text-[14px] mt-9 m-auto"
+              >
+                목록
+              </button>
+            </Link>
             {currentUser && (
               <button
                 className="w-32 h-10 bg-red-500 text-white text-[14px] mt-9 m-auto"
