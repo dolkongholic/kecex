@@ -122,7 +122,7 @@ const Index: React.FC<IndexProps> = ({
           </div>
           <div className="w-full justify-center slider-container">
             <Slider {...settings}>
-              <div className="h-[380px]">
+              <div className="h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#FFC743] h-full mx-auto rounded-xl relative text-white overflow-hidden">
                   <strong className="absolute text-[30px] lg:text-[45px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     한국방폭협회 공식사이트<br/>
@@ -142,7 +142,7 @@ const Index: React.FC<IndexProps> = ({
                   />
                 </div>
               </div>
-              <div className=" h-[380px]">
+              <div className=" h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#36609F] h-full mx-auto rounded-xl relative text-white overflow-hidden">
                   <strong className="absolute text-[30px] lg:text-[45px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     수소시스템 안전 기본원리<br/>
@@ -162,7 +162,7 @@ const Index: React.FC<IndexProps> = ({
                   />
                 </div>
               </div>
-              <div className=" h-[380px]">
+              <div className=" h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#424C5B] h-full mx-auto rounded-xl relative text-white overflow-hidden">
                   <strong className="absolute text-[30px] lg:text-[45px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     한국방폭협회 기업회원<br/>
@@ -183,7 +183,7 @@ const Index: React.FC<IndexProps> = ({
                   />
                 </div>
               </div>
-              <div className=" h-[380px]">
+              <div className=" h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#64BCFF] h-full mx-auto rounded-xl relative text-white overflow-hidden">
                   <strong className="absolute text-[30px] lg:text-[45px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     한국방폭협회 정회원<br/>
@@ -204,7 +204,7 @@ const Index: React.FC<IndexProps> = ({
                   />
                 </div>
               </div>
-              <div className=" h-[380px]">
+              <div className=" h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#FFA448] h-full mx-auto rounded-xl relative text-white overflow-hidden">
                 <strong className="absolute text-[30px] lg:text-[45px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     방폭교육 전과정<br/>
