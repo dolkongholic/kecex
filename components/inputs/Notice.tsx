@@ -19,7 +19,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
   const router = useRouter();
 
 /* 메인화면 KECEx소식 자동으로 넘어가기 */
-  // const menulist = ["협회공지", "보도자료", "교육센터"]
+  const menulist = ["협회공지", "보도자료", "교육센터"]
 
   // var i = -1
   // useEffect(()=>{
@@ -33,6 +33,22 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
   //     // clearInterval(timer_main);
   //   }, 2000);
   // },[noticeMenu])
+
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer_main = setInterval(() => {
+      setIndex(prevIndex => (prevIndex + 1) % menulist.length);
+    }, 5000);
+
+    return () => {
+      clearInterval(timer_main);
+    };
+  }, []);
+
+  useEffect(() => {
+    setNoticeMenu(menulist[index]);
+  }, [index]);
   
 
   return (
@@ -101,7 +117,12 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
             {noticeMenu == "협회공지" && (
               <>
                 <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 lg:w-1/3">
-                  <Link passHref href={"/notice/notice?page=1"}>
+                  <Link
+                    key={noticeList[noticeList.length - 1].id}
+                    passHref
+                    href={`notice/notice/detail/${noticeList[noticeList.length - 1].id}?page=1`}
+                    className="w-full"
+                  >
                     <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pr-[50px] md:pl-0 text-[#3A3A3A]">
                       <span className="h-[45px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px] font-medium">
                         {noticeList[noticeList.length - 1]
@@ -127,52 +148,66 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                   </Link>
                 </div>
                 <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 lg:w-1/3 text-[#3A3A3A]">
-                  <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:px-[25px]">
-                    <span className="h-[45px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px] font-medium">
-                      {noticeList[noticeList.length - 2]
-                        ? String(noticeList[noticeList.length - 2].title).slice(
-                            0,
-                            30
-                          )
-                        : "공지가 없습니다."}
-                    </span>
-                    <span className="h-[200px] leading-[24px] font-light pt-2 text-[14px] md:text-[15px]">
-                      {noticeList[noticeList.length - 2]
-                        ? String(
-                            noticeList[noticeList.length - 2].content
-                          ).slice(0, 140)
-                        : ""}
-                    </span>
-                    <span className="h-[25px] leading-[25px] text-[12px] md:text-[16px] font-light"> {/* 두번째 공지 날짜 */}
-                      {noticeList[noticeList.length - 2]
-                        ? String(noticeList[noticeList.length - 2].date)
-                        : ""}
-                    </span>
-                  </div>
+                  <Link
+                    key={noticeList[noticeList.length - 2].id}
+                    passHref
+                    href={`notice/notice/detail/${noticeList[noticeList.length - 2].id}?page=1`}
+                    className="w-full"
+                  >
+                    <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:px-[25px]">
+                      <span className="h-[45px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px] font-medium">
+                        {noticeList[noticeList.length - 2]
+                          ? String(noticeList[noticeList.length - 2].title).slice(
+                              0,
+                              30
+                            )
+                          : "공지가 없습니다."}
+                      </span>
+                      <span className="h-[200px] leading-[24px] font-light pt-2 text-[14px] md:text-[15px]">
+                        {noticeList[noticeList.length - 2]
+                          ? String(
+                              noticeList[noticeList.length - 2].content
+                            ).slice(0, 140)
+                          : ""}
+                      </span>
+                      <span className="h-[25px] leading-[25px] text-[12px] md:text-[16px] font-light"> {/* 두번째 공지 날짜 */}
+                        {noticeList[noticeList.length - 2]
+                          ? String(noticeList[noticeList.length - 2].date)
+                          : ""}
+                      </span>
+                    </div>
+                  </Link>
                 </div>
                 <div className="h-[280px] hidden md:flex flex-col justify-between items-start cursor-pointer w-1/3">
-                  <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pl-[50px] text-[#3A3A3A]">
-                    <span className="h-[45px] leading-[20px] text-[16px] md:text-[18px] font-medium">
-                      {noticeList[noticeList.length - 3]
-                        ? String(noticeList[noticeList.length - 3].title).slice(
-                            0,
-                            30
-                          )
-                        : "공지가 없습니다."}
-                    </span>
-                    <span className="h-[200px] leading-[24px] font-light pt-2 text-[14px] md:text-[15px]">
-                      {noticeList[noticeList.length - 3]
-                        ? String(
-                            noticeList[noticeList.length - 3].content
-                          ).slice(0, 140)
-                        : ""}
-                    </span>
-                    <span className="h-[25px] leading-[25px]] text-[16px] font-light"> {/* 세번째 공지 날짜 */}
-                      {noticeList[noticeList.length - 3]
-                        ? String(noticeList[noticeList.length - 3].date)
-                        : ""}
-                    </span>
-                  </div>
+                  <Link
+                    key={noticeList[noticeList.length - 3].id}
+                    passHref
+                    href={`notice/notice/detail/${noticeList[noticeList.length - 3].id}?page=1`}
+                    className="w-full"
+                  >
+                    <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pl-[50px] text-[#3A3A3A]">
+                      <span className="h-[45px] leading-[20px] text-[16px] md:text-[18px] font-medium">
+                        {noticeList[noticeList.length - 3]
+                          ? String(noticeList[noticeList.length - 3].title).slice(
+                              0,
+                              30
+                            )
+                          : "공지가 없습니다."}
+                      </span>
+                      <span className="h-[200px] leading-[24px] font-light pt-2 text-[14px] md:text-[15px]">
+                        {noticeList[noticeList.length - 3]
+                          ? String(
+                              noticeList[noticeList.length - 3].content
+                            ).slice(0, 140)
+                          : ""}
+                      </span>
+                      <span className="h-[25px] leading-[25px]] text-[16px] font-light"> {/* 세번째 공지 날짜 */}
+                        {noticeList[noticeList.length - 3]
+                          ? String(noticeList[noticeList.length - 3].date)
+                          : ""}
+                      </span>
+                    </div>
+                  </Link>
                 </div>
               </>
             )}
@@ -180,88 +215,109 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
             {noticeMenu == "보도자료" && (
               <>
                 <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3">
-                  <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pr-[50px] md:pl-0 text-[#3A3A3A]">
-                    <div className="w-full h-[250px] relative">
-                      {newsList[newsList.length - 1]?.img && (
-                          <Image src={newsList[newsList.length - 1].img}
-                          alt="news_image" 
-                          layout="fill"
-                          objectFit="cover"
-                          className="rounded-lg"
-                          key={newsList[newsList.length - 1].id}
-                          />
-                      )}
+                  <Link
+                    key={newsList[newsList.length - 1].id}
+                    passHref
+                    href={`information/news/detail/${newsList[newsList.length - 1].id}?page=1`}
+                    className="w-full"
+                  >
+                    <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pr-[50px] md:pl-0 text-[#3A3A3A]">
+                      <div className="w-full h-[250px] relative">
+                        {newsList[newsList.length - 1]?.img && (
+                            <Image src={newsList[newsList.length - 1].img}
+                            alt="news_image" 
+                            layout="fill"
+                            objectFit="cover"
+                            className="rounded-lg"
+                            key={newsList[newsList.length - 1].id}
+                            />
+                        )}
+                      </div>
+                      <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
+                        {newsList[newsList.length - 1]
+                          ? String(newsList[newsList.length - 1].title).slice(
+                              0,
+                              45
+                            )
+                          : "뉴스가 없습니다."}
+                      </span>
+                      <span className="h-[25px] leading-[35px] text-[16px] font-light">
+                        {newsList[newsList.length - 1]
+                          ? String(newsList[newsList.length - 1].date)
+                          : ""}
+                      </span>
                     </div>
-                    <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
-                      {newsList[newsList.length - 1]
-                        ? String(newsList[newsList.length - 1].title).slice(
-                            0,
-                            45
-                          )
-                        : "뉴스가 없습니다."}
-                    </span>
-                    <span className="h-[25px] leading-[35px] text-[16px] font-light">
-                      {newsList[newsList.length - 1]
-                        ? String(newsList[newsList.length - 1].date)
-                        : ""}
-                    </span>
-                  </div>
+                  </Link>
                 </div>
                 <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3 text-[#3A3A3A]">
-                  <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:px-[25px]">
-                  <div className="w-full h-[250px] relative">
-                      {newsList[newsList.length - 1]?.img && (
-                          <Image src={newsList[newsList.length - 2].img}
-                          alt="news_image" 
-                          layout="fill"
-                          objectFit="cover"
-                          className="rounded-lg"
-                          key={newsList[newsList.length - 2].id}
-                          />
-                      )}
+                  <Link
+                    key={newsList[newsList.length - 2].id}
+                    passHref
+                    href={`information/news/detail/${newsList[newsList.length - 2].id}?page=1`}
+                    className="w-full"
+                  >
+                    <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:px-[25px]">
+                    <div className="w-full h-[250px] relative">
+                        {newsList[newsList.length - 1]?.img && (
+                            <Image src={newsList[newsList.length - 2].img}
+                            alt="news_image" 
+                            layout="fill"
+                            objectFit="cover"
+                            className="rounded-lg"
+                            key={newsList[newsList.length - 2].id}
+                            />
+                        )}
+                      </div>
+                      <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
+                        {newsList[newsList.length - 2]
+                          ? String(newsList[newsList.length - 2].title).slice(
+                              0,
+                              45
+                            )
+                          : "뉴스가 없습니다."}
+                      </span>
+                      <span className="h-[25px] leading-[35px] text-[16px] font-light">
+                        {newsList[newsList.length - 2]
+                          ? String(newsList[newsList.length - 2].date)
+                          : ""}
+                      </span>
                     </div>
-                    <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
-                      {newsList[newsList.length - 2]
-                        ? String(newsList[newsList.length - 2].title).slice(
-                            0,
-                            45
-                          )
-                        : "뉴스가 없습니다."}
-                    </span>
-                    <span className="h-[25px] leading-[35px] text-[16px] font-light">
-                      {newsList[newsList.length - 2]
-                        ? String(newsList[newsList.length - 2].date)
-                        : ""}
-                    </span>
-                  </div>
+                  </Link>
                 </div>
                 <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3">
-                  <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pl-[50px] text-[#3A3A3A]">
-                  <div className="w-full h-[250px] relative">
-                    {newsList[newsList.length - 1]?.img && (
-                          <Image src={newsList[newsList.length - 3].img}
-                          alt="news_image" 
-                          layout="fill"
-                          objectFit="cover"
-                          className="rounded-lg"
-                          key={newsList[newsList.length - 3].id}
-                          />
-                      )}
+                  <Link
+                    key={newsList[newsList.length - 3].id}
+                    passHref
+                    href={`information/news/detail/${newsList[newsList.length - 3].id}?page=1`}
+                    className="w-full"
+                  >
+                    <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pl-[50px] text-[#3A3A3A]">
+                    <div className="w-full h-[250px] relative">
+                      {newsList[newsList.length - 1]?.img && (
+                            <Image src={newsList[newsList.length - 3].img}
+                            alt="news_image" 
+                            layout="fill"
+                            objectFit="cover"
+                            className="rounded-lg"
+                            key={newsList[newsList.length - 3].id}
+                            />
+                        )}
+                      </div>
+                      <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
+                        {newsList[newsList.length - 3]
+                          ? String(newsList[newsList.length - 3].title).slice(
+                              0,
+                              45
+                            )
+                          : "뉴스가 없습니다."}
+                      </span>
+                      <span className="h-[25px] leading-[35px] text-[16px] font-light">
+                        {newsList[newsList.length - 3]
+                          ? String(newsList[newsList.length - 3].date)
+                          : ""}
+                      </span>
                     </div>
-                    <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
-                      {newsList[newsList.length - 3]
-                        ? String(newsList[newsList.length - 3].title).slice(
-                            0,
-                            45
-                          )
-                        : "뉴스가 없습니다."}
-                    </span>
-                    <span className="h-[25px] leading-[35px] text-[16px] font-light">
-                      {newsList[newsList.length - 3]
-                        ? String(newsList[newsList.length - 3].date)
-                        : ""}
-                    </span>
-                  </div>
+                  </Link>
                 </div>
               </>
             )}

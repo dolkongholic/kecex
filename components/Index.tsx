@@ -1,9 +1,9 @@
 "use client";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
+import "@/node_modules/slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
-import useInsertMainBanner from "@/app/hooks/useInsertMainBanner";
+// import useInsertMainBanner from "@/app/hooks/useInsertMainBanner";
 import Notice from "@/components/inputs/Notice";
 
 import { IoMdClose } from "react-icons/io";
@@ -275,7 +275,12 @@ const Index: React.FC<IndexProps> = ({
                   <span className="text-primary">어떤 일</span>을 하나요?
                 </p>
                 <Link passHref href={"/introduce/common/ceo"}>
-                  <button className="mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]">
+                  <button className="
+                    mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
+                    relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-[#003893] 
+                    after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] 
+                    after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 
+                  ">
                       협회소개
                   </button>
                 </Link>
@@ -298,13 +303,24 @@ const Index: React.FC<IndexProps> = ({
                   협회가입시 어떤<br/>
                   <span className="text-primary">혜택</span>이 있나요?
                 </p>
-                <button className="mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]">
+                <button className="
+                  mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
+                  relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-[#003893] 
+                  after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] 
+                  after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700
+                  mr-[20px]
+                ">
                     혜택안내
                 </button>
                 <Link passHref href={"/business/member/career"}>
-                <button className="mt-20 ml-4 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]">
-                    경력관리
-                </button>
+                  <button className="
+                    mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
+                    relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-[#003893] 
+                    after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] 
+                    after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 
+                  ">
+                      경력관리
+                  </button>
                 </Link>
               </div>
           </li>
@@ -327,16 +343,22 @@ const Index: React.FC<IndexProps> = ({
               </p>
               <Link passHref href={"/business/member/rule"}>
                 <button className="
-                  mt-20 border border-[#ccc] hover:border-primary hover:bg-[#003893] hover:text-white w-[120px] h-[50px]
-                  relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-primary 
+                  mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
+                  relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-[#003893] 
                   after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] 
                   after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 
+                  mr-[20px]
                 ">
                     회원회칙
                 </button>
               </Link>
               <Link passHref href={"/business/member/join"}>
-                <button className="mt-20 ml-4 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]">
+                <button className="
+                  mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
+                  relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-[#003893] 
+                  after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] 
+                  after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 
+                ">
                     가입안내
                 </button>
               </Link>
@@ -360,7 +382,12 @@ const Index: React.FC<IndexProps> = ({
                 어떻게 되나요?
               </p>
               <Link passHref href={"/introduce/group/group"}>
-              <button className="mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[240px] h-[50px]">
+              <button className="
+                  mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
+                  relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-[#003893] 
+                  after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] 
+                  after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 
+              ">
                   총회 조직도
               </button>
               </Link>

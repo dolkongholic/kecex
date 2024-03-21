@@ -191,7 +191,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               className="w-[250px] justify-between items-center"
               onMouseOver={() => setMenu("")}
             >
-              <Link passHref href={"/"}>
+              <Link passHref href={"/"} onMouseLeave={() => {
+                setMenubg("");
+              }}>
                 <Image src={PicLogo} alt="Logo" width={250} height={85} />
               </Link>
             </div>
@@ -518,8 +520,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               className="w-[250px] justify-between items-center pl-1 pt-1"
               onMouseOver={() => setMenu("")}
             >
-              <Link passHref href={"/"} className="hidden md:block">
-                <Image src={PicLogo} alt="Logo" width={250} height={85} />
+              <Link passHref href={"/"} className="hidden md:block"
+              >
+                <Image src={PicLogo} alt="Logo" width={250} height={85}               />
               </Link>
               <Link passHref href={"/"} className="md:hidden">
                 <Image src={PicLogo} alt="Logo" width={200} height={85} />

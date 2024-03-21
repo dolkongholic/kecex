@@ -138,25 +138,25 @@ const JoinPage = () => {
             </li>
           </ul>
           <ContentSubTitle title="가입대상" />
-          <div className="w-full flex justify-between items-center text-subtitle text-center h-[50px] mb-[50px] md:px-[20px]">
-            <div className="w-full py-[10px] flex justify-start items-center text-base">
+          <div className="w-full flex justify-between items-center text-subtitle text-center h-[10px]">
+            <div className="w-full flex justify-start items-center text-base">
               방폭기술업을 등록하고자 하는 개인회원 또는 단체회원
             </div>
           </div>
 
           <ContentSubTitle title="회원종류" />
 
-          <div className="w-full border-b-2 border-gray md:flex md:px-[20px] pb-[15px] md:mt-[10px]">
-            <div className="flex">
-              <Image src={PicIconArrow} width={25} height={15} alt="icon" />
-              <span className="pl-[10px] text-secondary w-[100px]">일반회원</span>
+          <div className="w-full border-b-2 border-gray md:flex pb-[15px] md:mt-[10px]">
+            <div className="flex border-t-[2px] border-neutral-500 w-full pt-[15px]">
+              <div className="flex">
+                <span className="text-secondary w-[100px]">일반회원</span>
+              </div>
+              <span className="text-[15px]">정회원 이외의 단체 및 개인</span>
             </div>
-            <span className="text-[15px]">정회원 이외의 단체 및 개인</span>
           </div>
-          <div className="w-full border-b-2 border-gray md:flex md:px-[20px] pb-[15px] mt-[10px]">
+          <div className="w-full border-b-2 border-gray md:flex pb-[15px] mt-[15px]">
             <div className="flex">
-              <Image src={PicIconArrow} width={25} height={15} alt="icon" />
-              <span className="pl-[10px] text-secondary w-[100px]">정회원</span>
+              <span className="text-secondary w-[100px]">정회원</span>
             </div>
               <span className="text-[15px]">
                 방폭설비의 생산·유통·엔지니어링·설치·시공·진단·안전관리 교육 및
@@ -179,20 +179,18 @@ const JoinPage = () => {
               협회를 이용하는 자 (이하 &quot;경력관리자&quot;라 한다)
             </span>
           </div> */}
-          <div className="w-full border-b-2 border-gray md:flex md:px-[20px] pb-[15px] mt-[10px]">
+          <div className="w-full border-b-2 border-gray md:flex pb-[15px] mt-[15px]">
             <div className="flex">
-              <Image src={PicIconArrow} width={25} height={15} alt="icon"/>
-              <span className="pl-[10px] text-secondary w-[100px]">기업회원</span>
+              <span className="text-secondary w-[100px]">기업회원</span>
             </div>  
               <span className="text-[15px]">
                 방폭설비의 생산·유통·엔지니어링·설치·시공·진단·안전관리 교육 및
                 방폭과 관련된 소재, 부품기업과 이와 관련한 산업에 종사하는 기업
               </span>
           </div>
-          <div className="w-full border-b-2 border-gray md:flex md:px-[20px] pb-[15px] mt-[10px] mb-[40px]">
+          <div className="w-full border-b-2 border-gray md:flex pb-[15px] mt-[15px] mb-[40px]">
             <div className="flex">
-              <Image src={PicIconArrow} width={25} height={15} alt="icon" />
-              <span className="pl-[10px] text-secondary w-[100px]">특별회원</span>
+              <span className=" text-secondary w-[100px]">특별회원</span>
             </div>  
               <span className="text-[15px]">
                 본회의 취지에 찬동하고, 방폭기술 발전과 본회의 사업에 적극적으로
@@ -498,28 +496,28 @@ const JoinPage = () => {
           </div>
 
           <ContentSubTitle title="정회원 혜택" />
-          <span className="mb-[40px] md:px-[20px] text-[15px] md:text-base">
+          <span className="text-[15px] md:text-base">
             협회에서 보유하고 있는 자료의 열람과 협회가 발행하는 각종 자료 및
             간행물 등을 받을 수 있으며, 세미나 강연 및 기타 협회에서 행하는 각종
             행사와 활동에 참여
           </span>
 
           <ContentSubTitle title="정회원 권한" />
-          <span className="md:px-[20px] text-[15px] md:text-base">· 협회의 운영과 발전에 대한 건의</span>
-          <span className="md:px-[20px] text-[15px] md:text-base">
+          <span className="text-[15px] md:text-base">· 협회의 운영과 발전에 대한 건의</span>
+          <span className="text-[15px] md:text-base">
             · 협회가 시행하는 각종 방폭관련 사업에 참여
           </span>
-          <span className="md:px-[20px] text-[15px] md:text-base">
+          <span className="text-[15px] md:text-base">
             · 본회의 인적 및 물적 설비를 이용할 권리
           </span>
-          <span className="md:px-[20px] text-[15px] md:text-base">
+          <span className="text-[15px] md:text-base">
             · 협회가 주관하는 각종 세미나 및 교육 등의 우선 참여
           </span>
-          <span className="md:px-[20px] text-[15px] md:text-base tracking-tight">
+          <span className="text-[15px] md:text-base tracking-tight">
             · 협회의 임원, 대의원, 위원 기타 이 정관의 규정에<br className="md:hidden"/> 
             &nbsp;&nbsp;&nbsp;의하여 선임되는 자의 선거권 및 피선거권을 취득
           </span>
-          <span className="md:px-[20px] text-[15px] md:text-base">
+          <span className="text-[15px] md:text-base">
             &nbsp;&nbsp;&nbsp; 다만, 명예회원은 선거권과 피선거권을 제한
           </span>
         </section>

@@ -30,7 +30,7 @@ const MainList = [
       { title: "방폭기초교육", url: "/business/education/course01" },
       { title: "방폭인력양성 교육", url: "/business/education/course02" },
       { title: "기업형 교육", url: "/business/education/course03" },
-      { title: "교육개발", url: "/business/education/develop" },
+      // { title: "교육개발", url: "/business/education/develop" },
       { title: "CoPC 과정", url: "/business/education/copc" },
     ],
   },
@@ -1169,11 +1169,11 @@ const CopcClient = () => {
               </div>
             </li>
           </ul>
-          <button className="w-44 h-14 bg-secondary text-white m-auto mt-10">
+          {/* <button className="w-44 h-14 bg-secondary text-white m-auto mt-10">
             <Link passHref href={"/education/apply/apply"}>
               온라인 신청 바로가기
             </Link>
-          </button>
+          </button> */}
         </section>
       </main>
     </section>
