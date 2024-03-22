@@ -325,7 +325,7 @@ const JoinPage = () => {
               <div className="w-[50%] h-[100px] py-[30px] flex justify-center items-start">
                 회비 납부
                 <br />
-                (신용카드,계좌이체,가상계좌)
+                (신용카드, 계좌이체, 가상계좌)
               </div>
             </div>
             <div className="flex justify-center items-center w-[48%] bg-gray text-center">
@@ -340,7 +340,7 @@ const JoinPage = () => {
           </div>
 
           {/* -------모바일 가입절차--------- */}
-          <div className="w-full text-[15px] flex flex-col justify-center items-center">
+          <div className="w-full text-[15px] flex flex-col justify-center items-center md:hidden">
             <ContentSubTitle title="가입절차" />
             <div className="w-full flex justify-between items-center">
               <div className="w-full h-[50px] flex justify-center items-center bg-secondary text-white text-center">
@@ -417,7 +417,7 @@ const JoinPage = () => {
                 <div className="w-[50%] h-[100px] py-[30px] flex justify-center items-start">
                   회비 납부
                   <br />
-                  (신용카드,계좌이체,<br/>
+                  (신용카드, 계좌이체, <br/>
                   가상계좌)
                 </div>
               </div>
@@ -516,11 +516,12 @@ const JoinPage = () => {
             · 협회가 주관하는 각종 세미나 및 교육 등의 우선 참여
           </span>
           <span className="text-[15px] md:text-base tracking-tight">
-            · 협회의 임원, 대의원, 위원 기타 이 정관의 규정에<br className="md:hidden"/> 
-            &nbsp;&nbsp;&nbsp;의하여 선임되는 자의 선거권 및 피선거권을 취득
+            · 협회의 임원, 대의원, 위원 기타 이 정관의 규정에 <br className="md:hidden"/> 
+            <span className="md:hidden">&nbsp;&nbsp;&nbsp;</span>
+            의하여 선임되는 자의 선거권 및 피선거권을 취득
           </span>
           <span className="text-[15px] md:text-base">
-            &nbsp;&nbsp;&nbsp; 다만, 명예회원은 선거권과 피선거권을 제한
+            &nbsp; 다만, 명예회원은 선거권과 피선거권을 제한
           </span>
         </section>
       </main>

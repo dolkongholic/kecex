@@ -143,18 +143,18 @@ const CareerClient = () => {
             </li>
           </ul>
           <ContentSubTitle title="가입대상" />
-          <span className="mb-[40px] md:px-[20px]">협회 기술자로 가입된 사람</span>
+          <span className="mb-[40px]">협회회원으로 가입된 사람</span>
           <ContentSubTitle title="경력신고 절차" />
-          <Image src={PicCareer_1} alt="Picture" className="hidden md:block"/>
+          <Image src={PicCareer_1} alt="Picture" className="hidden md:block mt-8"/>
           <Image src={PicCareer_1_M} alt="Picture" className="md:hidden mx-auto"/>
           <ContentSubTitle title="경력 증명서 발급절차" />
-          <Image src={PicCareer_2} alt="Picture" className="hidden md:block"/>
+          <Image src={PicCareer_2} alt="Picture" className="hidden md:block w-full mt-8"/>
           <Image src={PicCareer_2_M} alt="Picture" className="md:hidden mx-auto mb-7 md:mb-0"/>
           <ContentSubTitle title="경력신고 및 제출 서류, 비용" />
           {/* <Image src={PicCareer_3} alt="Picture" className="px-[20px]" /> */}
-          <div className="w-full md:px-[20px] pb-[15px] mt-[10px] mb-[40px]">
+          <div className="w-full pb-[15px] mt-[30px] mb-[40px]">
             <div className="md:flex md:justify-between">
-              <div className="flex flex-col md:items-center md:w-[48%]">
+              <div className="flex flex-col md:items-center md:w-[48%] mt-8">
                 <span className=" text-primary text-base md:text-black md:mb-4">
                   최초 경력신고
                 </span>
@@ -162,7 +162,7 @@ const CareerClient = () => {
                   안전관리자 자격 및 경력사항 등 안전관리 경력에 필요한 사항을 최초로 신고하는 것
                 </div>
               </div>
-              <div className="flex flex-col md:items-center md:w-[48%] mt-8 md:mt-0">
+              <div className="flex flex-col md:items-center md:w-[48%] mt-8">
                 <span className="text-primary text-base md:text-black md:mb-4">
                   경력변경 신고
                 </span>

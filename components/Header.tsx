@@ -282,7 +282,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             >
               <div className="w-[1400px] flex pl-[250px] pr-[80px]">
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
                 ">
                   <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                     일반현황
@@ -303,7 +303,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                 </div>
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
                 ">
                   <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
                     조직안내
@@ -334,7 +334,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             >
               <div className="w-[1400px] flex justify-start pl-[250px] pr-[80px]">
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
                 ">
                   <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
                     회원
@@ -355,7 +355,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                 </div>
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
                 ">
                   <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
                     교육
@@ -422,7 +422,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             >
               <div className="w-[1400px] flex justify-start pl-[250px] pr-[80px] h-[350px]">
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
                 ">
                   <Link passHref href={"/notice/worker/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
@@ -431,7 +431,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </Link>
                 </div>
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
                 ">
                   <Link passHref href={"/notice/faq/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
@@ -440,7 +440,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </Link>
                 </div>
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
                 ">
                   <Link passHref href={"/notice/qna/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
@@ -465,7 +465,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             >
               <div className="w-[1400px] flex justify-start pl-[250px] pr-[80px]">
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
                 ">
                   <Link passHref href={"/information/raw?page=1"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">

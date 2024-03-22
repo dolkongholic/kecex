@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="kr" className="text-[#757575]">
+    <html lang="kr" className="text-[#3A3A3A]">
       <head>
         <meta
           name="naver-site-verification"

@@ -141,8 +141,8 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
           <div className="w-full mt-[30px] flex flex-col px-[20px] text-[13px] text-base">
             <Image
               src={currentNews.img}
-              width={300}
-              height={100}
+              width={700}
+              height={300}
               alt="img"
               className="mb-[20px]"
             />
