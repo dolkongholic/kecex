@@ -10,7 +10,7 @@ import Image from "next/image";
 
 // Image
 import PicMap from "@/public/img/pages/introduce/map.png";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicIntroduce_03 from "@/public/img/page_top/introduce_03.jpg"
 
 const MainList = [
   {
@@ -48,7 +48,7 @@ const MapClient = () => {
       <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
-            src={PicCeo}
+            src={PicIntroduce_03}
             layout="fill"
             objectFit="cover"
             alt="item.title"

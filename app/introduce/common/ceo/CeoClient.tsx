@@ -10,7 +10,7 @@ import { RiArrowRightSLine } from "react-icons/ri";
 // Image
 import Picceo from "@/public/img/pages/introduce/intro_ceo.png";
 import Image from "next/image";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicIntroduce_01 from "@/public/img/page_top/introduce_01.jpg"
 
 const MainList = [
   {
@@ -48,7 +48,7 @@ const CeoClient = () => {
       <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
-            src={PicCeo}
+            src={PicIntroduce_01}
             layout="fill"
             objectFit="cover"
             alt="item.title"

@@ -8,7 +8,9 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { RiArrowRightSLine } from "react-icons/ri";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicIntroduce_01 from "@/public/img/page_top/introduce_01.jpg"
+import PicHistory_01 from "@/public/img/inner/history/history_01.jpg"
+import PicHistory_02 from "@/public/img/inner/history/history_02.jpg"
 
 const MainList = [
   {
@@ -46,7 +48,7 @@ const HistoryClient = () => {
       <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
-            src={PicCeo}
+            src={PicIntroduce_01}
             layout="fill"
             objectFit="cover"
             alt="item.title"
@@ -95,9 +97,103 @@ const HistoryClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px] pl-[40px] w-full hidden md:flex flex-col justify-start items-start">
+        <section className="py-[20px] pl-[40px] w-full hidden md:flex flex-col justify-start items-start relative">
           <ContentTitle title={location} />
+            <div className="w-[420px] absolute top-[510px] left-32">
+              <Image 
+                src={PicHistory_02} 
+                alt="history_image" 
+                className="mx-auto w-[420px] h-auto"
+              />
+            </div>
+            <div className="w-[420px] absolute top-[150px] right-32">
+              <Image 
+                src={PicHistory_01} 
+                alt="history_image" 
+                className="mx-auto w-[420px] h-auto"
+              />
+            </div>
             <div className="w-full px-[20px] h-[30px] flex mt-[40px]">
+              <div className="w-[30%] flex justify-end text-left items-center mr-[10px] text-black">
+                (사)한국방폭협회 정기 총회 개최
+              </div>
+              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
+                2024.02
+              </div>
+              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
+                2024&apos;
+              </div>
+              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold px-[10px]">
+                &nbsp;
+              </div>
+              <div className="w-[10%] flex justify-start items-center mr-[10px]">
+                &nbsp;
+              </div>
+              <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
+                &nbsp;
+              </div>
+            </div>
+            <div className="w-full px-[20px] h-[20px] flex">
+              <div className="w-[30%] flex justify-end text-left items-center mr-[10px] text-black">
+              - 2023년 지출예산 및 
+              </div>
+              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
+                &nbsp;
+              </div>
+              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
+                &nbsp;
+              </div>
+              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold px-[10px]">
+                &nbsp;
+              </div>
+              <div className="w-[10%] flex justify-start items-center mr-[10px]">
+                &nbsp;
+              </div>
+              <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
+                &nbsp;
+              </div>
+            </div>
+            <div className="w-full px-[20px] h-[30px] flex">
+              <div className="w-[30%] flex justify-end text-left items-center mr-[10px] text-black">
+                2024년 사업계획 및 예산(안) 승인
+              </div>
+              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
+                &nbsp;
+              </div>
+              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
+                &nbsp;
+              </div>
+              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold px-[10px]">
+                &nbsp;
+              </div>
+              <div className="w-[10%] flex justify-start items-center mr-[10px]">
+                &nbsp;
+              </div>
+              <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
+                &nbsp;
+              </div>
+            </div>
+            <div className="w-full px-[20px] h-[120px] flex">
+              <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
+                &nbsp;
+              </div>
+              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
+                &nbsp;
+              </div>
+              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
+                &nbsp;
+              </div>
+              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
+                &nbsp;
+              </div>
+              <div className="w-[10%] flex justify-start items-center mr-[10px]">
+                &nbsp;
+              </div>
+              <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
+                &nbsp;
+              </div>
+            </div>
+            <div className="w-full px-[20px] h-[30px] flex">
               <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
                 &nbsp;
               </div>
@@ -113,7 +209,7 @@ const HistoryClient = () => {
               <div className="w-[10%] flex justify-start items-center mr-[10px]">
                 2023.12
               </div>
-              <div className="w-[30%] flex justify-start items-start mr-[10px] text-black pt-1">
+              <div className="w-[30%] flex justify-start items-start mr-[10px] text-black pt-[1px]">
                 한국방폭협회 현판식,
               </div>
             </div>
@@ -237,7 +333,7 @@ const HistoryClient = () => {
                 고용노동부 산하 협회 인가 추진
               </div>
             </div>
-            <div className="w-full px-[20px] h-[150px] flex">
+            <div className="w-full px-[20px] h-[120px] flex">
               <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
                 &nbsp;
               </div>
@@ -318,7 +414,7 @@ const HistoryClient = () => {
             </div>
           </div>
           <div className="w-full px-[20px] h-[50px] flex">
-            <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
+            <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black tracking-tighter">
               한국방폭산업안전연구회 준비위원 간담회 개최
             </div>
             <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
@@ -337,8 +433,8 @@ const HistoryClient = () => {
               &nbsp;
             </div>
           </div>
-          <div className="w-full px-[20px] h-[100px] flex">
-            <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
+          <div className="w-full px-[20px] h-[80px] flex">
+            <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black tracking-normal mt-6">
               헥사곤, 화학네트워크포럼 산업안전 및<br />
               방폭산업 발전 모색 세미나 개최
             </div>
@@ -360,7 +456,7 @@ const HistoryClient = () => {
             </div>
           </div>
           <div className="w-full px-[20px] h-[150px] flex">
-            <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
+            <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black tracking-tight">
               울산과학대학교, 한국가스안전공사 울산본부,
               <br />
               한국산업인력공단 울산지사, <br />
@@ -441,6 +537,20 @@ const HistoryClient = () => {
               </Link>
             </li>
           </ul>
+          <div className="w-full px-[47px] h-[10px] flex justify-start items-center text-[16px] text-title text-secondary font-bold mt-[40px]">
+              2022&apos;
+          </div>
+            <div className="w-full px-[20px] h-[50px] flex border-l border-lightgray">
+              <div className="w-[5%] flex justify-start items-center mr-[10px] text-black">
+                &nbsp;
+              </div>
+              <div className="w-[15%] flex justify-start text-left items-center mr-[10px]">
+                2022.12
+              </div>
+              <div className="w-[80%] flex justify-start text-left items-center mr-[10px] text-black">
+                울산테크노파크 협약
+              </div>
+            </div>
           <div className="w-full px-[47px] h-[10px] flex justify-start items-center text-[16px] text-title text-secondary font-bold mt-[50px]">
               2023&apos;
           </div>

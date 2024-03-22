@@ -14,7 +14,7 @@ import Image from "next/image";
 
 // Image
 import content_icon from "@/public/img/icon/content_icon_circle.png";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicBusiness_03 from "@/public/img/page_top/business_03.jpg"
 
 const MainList = [
   {
@@ -61,7 +61,7 @@ const SapaClient = () => {
       <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
-            src={PicCeo}
+            src={PicBusiness_03}
             layout="fill"
             objectFit="cover"
             alt="item.title"

@@ -12,7 +12,7 @@ import Image from "next/image";
 import PicCi_1 from "@/public/img/pages/introduce/ci_1.png";
 import PicCi_2 from "@/public/img/pages/introduce/ci_2.png";
 import PicCi_3 from "@/public/img/pages/introduce/ci_3.png";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicIntroduce_01 from "@/public/img/page_top/introduce_01.jpg"
 
 const MainList = [
   {
@@ -50,7 +50,7 @@ const CiClient = () => {
       <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
-            src={PicCeo}
+            src={PicIntroduce_01}
             layout="fill"
             objectFit="cover"
             alt="item.title"

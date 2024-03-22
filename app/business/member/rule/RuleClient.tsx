@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicBusiness_01 from "@/public/img/page_top/business_01.jpg"
 
 const MainList = [
   {
@@ -57,7 +57,7 @@ const RuleClient = () => {
       <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
-            src={PicCeo}
+            src={PicBusiness_01}
             layout="fill"
             objectFit="cover"
             alt="item.title"

@@ -10,7 +10,7 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
 
 import Image from "next/image";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicNotice_01 from "@/public/img/page_top/notice_01.jpg"
 import Picworker from "@/public/img/inner/worker/worker_group.png"
 
 const MainList = [
@@ -54,7 +54,7 @@ const WorkerClient: React.FC<workerProps> = ({ currentUser }) => {
       <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
-            src={PicCeo}
+            src={PicNotice_01}
             layout="fill"
             objectFit="cover"
             alt="item.title"
