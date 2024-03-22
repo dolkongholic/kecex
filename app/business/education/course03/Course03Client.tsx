@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicBusiness_02 from "@/public/img/page_top/business_02.jpg"
 
 const MainList = [
   {
@@ -56,7 +56,7 @@ const Course03Client = () => {
       <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
-            src={PicCeo}
+            src={PicBusiness_02}
             layout="fill"
             objectFit="cover"
             alt="item.title"

@@ -16,7 +16,7 @@ import PicCareer_2 from "@/public/img/pages/business/careear_2.png";
 import PicCareer_3 from "@/public/img/pages/business/careear_3.png";
 import PicCareer_1_M from "@/public/img/pages/business/career_1_m.png";
 import PicCareer_2_M from "@/public/img/pages/business/career_2_m.png";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicBusiness_01 from "@/public/img/page_top/business_01.jpg"
 
 const MainList = [
   {
@@ -63,7 +63,7 @@ const CareerClient = () => {
       <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
-            src={PicCeo}
+            src={PicBusiness_01}
             layout="fill"
             objectFit="cover"
             alt="item.title"

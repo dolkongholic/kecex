@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicIntroduce_01 from "@/public/img/page_top/introduce_01.jpg"
 
 // Image
 import PicCheck from "@/public/img/icon/content_icon_check.png";
@@ -51,7 +51,7 @@ const VisionClient = () => {
       <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
-            src={PicCeo}
+            src={PicIntroduce_01}
             layout="fill"
             objectFit="cover"
             alt="item.title"
@@ -131,13 +131,13 @@ const VisionClient = () => {
             </li>
           </ul>
           <ContentSubTitle title="비전" />
-          <p className="md:px-[30px]">
+          <p className="">
             한국방폭협회는 방폭기술에 대한 연구 개발과 산업안전의 기술기반의
             확대, 방폭전문인력의 양성, 방폭기술의 글로벌 경쟁력 확보, 일자리
             창출을 통해 선진안전 수준을 제고하며 방폭산업의 경제적 발전을
             고도화하고 관련기술인의 사회적 지위향상에 기여함을 그 목적으로 한다.
           </p>
-          <div className="w-full space-y-4 md:space-y-0 md:p-[60px] md:flex justify-between items-center gap-2 mb-[40px] md:mb-0">
+          <div className="w-full space-y-4 md:space-y-0 md:py-[60px] md:flex justify-between items-center gap-2 mb-[40px] md:mb-0">
             <div className="md:w-1/4 py-[30px] flex flex-col justify-center items-center border border-gray mt-[30px] md:mt-0">
               <div className="flex justify-center items-center mb-[20px]">
                 VISION 1
@@ -175,9 +175,9 @@ const VisionClient = () => {
               </div>
             </div>
           </div>
-          <Image src={PicVision} alt="vision" className="px-[30px] hidden md:block" />
+          <Image src={PicVision} alt="vision" className="hidden md:block" />
           <ContentSubTitle title="미션" />
-          <div className="w-full md:p-[60px] flex justify-center items-center">
+          <div className="w-full md:py-[60px] flex justify-center items-center">
             <div className="w-full md:w-[90%] py-[30px] flex flex-col justify-center items-center border border-gray">
               <div className="flex justify-center items-center mb-[20px]">
                 MISSION

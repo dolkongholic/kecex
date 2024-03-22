@@ -119,7 +119,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               </Link>
             </div>
             <div className="flex justify-center items-center">
-              <div className="w-[120px] mr-[40px] flex item-center">
+              <div className="w-[120px] mr-[40px] ml-[30px] flex item-center">
                 <Link passHref href={"/"}>
                   <Image
                     src={PicShotLogo}
@@ -132,14 +132,14 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               </div>
               <input
                 type="text"
-                className="w-[260px] lg:w-[350px] h-[40px] ring-2 ring-white px-[20px] rounded-3xl placeholder:text-sm font-light focus:outline-none focus:ring-2 focus:ring-active transition-all duration-500"
+                className="w-[260px] lg:w-[350px] h-[40px] ring-2 ring-white px-[20px] ml-[80px] rounded-3xl placeholder:text-sm font-light focus:outline-none focus:ring-2 focus:ring-active transition-all duration-500"
                 placeholder="검색어를 입력하세요"
               />
               <span className="w-[30px] h-[30px] -translate-x-[40px] translate-y-[5px]">
                 <FiSearch style={{ width: "22", height: "22" }} />
               </span>
             </div>
-            <div className="w-1/2 lg:w-1/3 flex justify-end items-center">
+            <div className="w-1/2 lg:w-[350px] flex justify-end items-center">
               <div className="w-2/3 flex item-center justify-end mr-[30px] text-[13px] font-bold">
                 <ul className="flex items-center space-x-[5px]">
                   {currentUser == null ? (
@@ -171,7 +171,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   )}
                 </ul>
               </div>
-              <ul className="w-1/3 flex justify-between">
+              <ul className="w-[100px] flex justify-between">
                 {snsList.map((item, index) => (
                   <li key={index}>
                     <Image
@@ -284,9 +284,11 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <div className="w-1/4 text-[19px] pl-[2%] relative
                   before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
                 ">
-                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
-                    일반현황
-                  </div>
+                  <Link passHref href={"/introduce/common/ceo/"}>
+                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
+                      일반현황
+                    </div>
+                  </Link>
                   <div className="flex flex-col space-y-[20px] text-neutral-600 text-[17px] pl-3">
                     <Link passHref href={"/introduce/common/ceo/"}>
                       <span className="cursor-pointer hover:underline underline-offset-4"> CEO 인사말</span>
@@ -305,9 +307,11 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <div className="w-1/4 text-[19px] pl-[2%] relative
                   before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
                 ">
-                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
-                    조직안내
-                  </div>
+                  <Link passHref href={"/introduce/group/group"}>
+                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
+                      조직안내
+                    </div>
+                  </Link>
                   <div className="flex flex-col space-y-[20px] text-neutral-600 text-[17px] pl-3">
                     <Link passHref href={"/introduce/group/group"}>
                       <span className="cursor-pointer hover:underline underline-offset-4"> 조직도</span>
@@ -336,9 +340,11 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <div className="w-1/4 text-[19px] pl-[2%] relative
                   before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
                 ">
-                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
-                    회원
-                  </div>
+                  <Link passHref href={"/business/member/join/"}>
+                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
+                      회원
+                    </div>
+                  </Link>
                   <div className="flex flex-col space-y-[20px] text-neutral-600 text-[17px] pl-3">
                     <Link passHref href={"/business/member/join/"}>
                       <span className="cursor-pointer hover:underline underline-offset-4"> 회원가입</span>
@@ -357,9 +363,11 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <div className="w-1/4 text-[19px] pl-[2%] relative
                   before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
                 ">
-                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
-                    교육
-                  </div>
+                  <Link passHref href={"/business/education/course01/"}>
+                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
+                      교육
+                    </div>
+                  </Link>
                   <div className="flex flex-col space-y-[20px] text-neutral-600 text-[17px] pl-3">
                     <Link passHref href={"/business/education/course01/"}>
                       <span className="cursor-pointer hover:underline underline-offset-4"> 방폭기초교육</span>
@@ -382,9 +390,11 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                 </div>
                 <div className="w-1/4 pl-[2%]">
-                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
-                    컨설팅
-                  </div>
+                  <Link passHref href={"/business/consulting/inspection/"}>
+                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
+                      컨설팅
+                    </div>
+                  </Link>
                   <div className="flex flex-col space-y-[20px] text-neutral-600 text-[17px] pl-3">
                     <Link passHref href={"/business/consulting/inspection/"}>
                       <span className="cursor-pointer hover:underline underline-offset-4"> 방폭사전진단</span>

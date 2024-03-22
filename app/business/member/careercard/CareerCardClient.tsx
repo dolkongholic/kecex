@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicBusiness_01 from "@/public/img/page_top/business_01.jpg"
 
 const MainList = [
   {
@@ -56,7 +56,7 @@ const CareerCardClient = () => {
       <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
-            src={PicCeo}
+            src={PicBusiness_01}
             layout="fill"
             objectFit="cover"
             alt="item.title"
@@ -136,110 +136,115 @@ const CareerCardClient = () => {
             </li>
           </ul>
           <ContentSubTitle title="운영계획" />
-          <div className="flex flex-col text-[#003893] md:px-[20px]">
-            <div className="text-[18px] flex">
-              <p className="font-bold pr-[10px]">1.</p> 디지털 플랫폼 생성
+          <div className="w-full p-[20px] border mb-[10px] leading-9">
+            <div className="flex flex-col text-[#003893]">
+              <div className="text-[18px] flex">
+                <p className="font-bold pr-[10px]">1.</p> 디지털 플랫폼 생성
+              </div>
+              <div className="text-base text-black">
+                자신의 경력을 손쉽게 기록하고, 업데이트가 가능하도록 디지털 경력
+                수첩 플랫폼을 개발
+              </div>
             </div>
-            <div className="text-base text-black">
-              자신의 경력을 손쉽게 기록하고, 업데이트가 가능하도록 디지털 경력
-              수첩 플랫폼을 개발
+            <div className="flex flex-col text-[#003893] mt-[24px]">
+              <div className="text-[18px] flex">
+                <p className="font-bold pr-[10px]">2.</p> 표준화된 형식
+              </div>
+              <div className="text-base text-black">
+                경력이 일관되게 기록될 수 있도록 표준화된 형식을 제공
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col text-[#003893] md:px-[20px] mt-[10px]">
-            <div className="text-[18px] flex">
-              <p className="font-bold pr-[10px]">2.</p> 표준화된 형식
+            <div className="flex flex-col text-[#003893] mt-[24px]">
+              <div className="text-[18px] flex">
+                <p className="font-bold pr-[10px]">3.</p> 검증 절차 도입
+              </div>
+              <div className="text-base text-black">
+                제출된 경력에 대한 검증 절차를 도입하여, 기록의 정확성과 신뢰성을
+                보장
+              </div>
             </div>
-            <div className="text-base text-black">
-              경력이 일관되게 기록될 수 있도록 표준화된 형식을 제공
-            </div>
-          </div>
-          <div className="flex flex-col text-[#003893] md:px-[20px] mt-[10px]">
-            <div className="text-[18px] flex">
-              <p className="font-bold pr-[10px]">3.</p> 검증 절차 도입
-            </div>
-            <div className="text-base text-black">
-              제출된 경력에 대한 검증 절차를 도입하여, 기록의 정확성과 신뢰성을
-              보장
-            </div>
-          </div>
-          <div className="flex flex-col text-[#003893] md:px-[20px] mt-[10px] mb-[40px]">
-            <div className="text-[18px] flex">
-              <p className="font-bold pr-[10px]">4.</p> 지속적인 교육 및 지원
-            </div>
-            <div className="text-base text-black">
-              경력 수첩을 유지 및 관리 할 수 있도록 교육
+            <div className="flex flex-col text-[#003893] mt-[24px]">
+              <div className="text-[18px] flex">
+                <p className="font-bold pr-[10px]">4.</p> 지속적인 교육 및 지원
+              </div>
+              <div className="text-base text-black">
+                경력 수첩을 유지 및 관리 할 수 있도록 교육
+              </div>
             </div>
           </div>
 
           <ContentSubTitle title="운영목표" />
-          <div className="md:px-[20px] md:flex w-full justify-between items-center text-black mb-[40px]">
-            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray  flex justify-center items-center md:items-start md:pt-[30px] my-2 md:my-0">
-              1.
-              <br />
+          <div className="md:flex w-full justify-between items-center text-black mb-[40px] text-[18px]">
+            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray flex justify-center items-center my-2 md:my-0">
               전문성 인증
             </div>
-            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray  flex justify-center items-center md:items-start md:pt-[30px] my-2 md:my-0">
-              2.
-              <br />
+            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray flex justify-center items-center my-2 md:my-0">
               연속적인 학습과 
               <br className="hidden md:inline"/>
               &nbsp;개발 촉진
             </div>
-            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray  flex justify-center items-center md:items-start md:pt-[30px] my-2 md:my-0">
-              3.
-              <br />
-              투명성과 공정성 확보
+            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray flex justify-center items-center my-2 md:my-0">
+              투명성과
+              <br className="hidden md:inline"/>
+              공정성 확보
             </div>
-            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray  flex justify-center items-center md:items-start md:pt-[30px] my-2 md:my-0">
-              4.
-              <br />
+            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray flex justify-center items-center my-2 md:my-0">
               산업표준설정
             </div>
-            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray  flex justify-center items-center md:items-start md:pt-[30px] my-2 md:my-0">
-              5.
-              <br />
-              회원간 네트워킹 촉진
+            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray flex justify-center items-center my-2 md:my-0">
+              회원간
+              <br className="hidden md:inline"/>
+              네트워킹 촉진
             </div>
           </div>
 
           <ContentSubTitle title="발급조건" />
-          <div className="md:px-[20px] md:flex w-full text-[15px]">
-            <div className="md:w-[90px] text-subtitle bg-darkgray md:bg-lightgray flex justify-center items-center h-[35px] md:h-auto">
-              초급
+          <article className="w-full text-[15px]">
+            <div className="flex w-full justify-between h-14 border-b-2 border-[#3A3A3A]">
+              <div className="md:w-[90px] flex justify-center items-center md:h-auto text-[18px] text-black font-medium">
+              · 초급
+              </div>
+              <p className=" flex justify-center items-center ">
+              ※ 등급별 1개 조건에 부합할 시 발급조건에 충족함.
+              </p>
             </div>
-            <div className="md:w-[30%] py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t md:border-b border-gray">
-              <span>한국방폭협회 방폭 기초교육 이수자</span>
-              <span>IECEx CoPC Unit Ex 001 취득자</span>
-              <span className="mt-1">그외 자격증 : 양성교육 수료 후 발급</span>
+            <div className="flex w-full border-b">
+              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r">
+                <span>한국방폭협회 방폭 기초교육 이수자</span>
+                <span className="mt-1">IECEx CoPC Unit Ex 001 취득자</span>
+                <span className="mt-1">그외 자격증 : 양성교육 수료 후 발급</span>
+              </div>
+              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+                <span>방폭관련 자격증 및 전공 학력 소지자</span>
+                <span className="mt-1">학사학위 : 양성 교육</span>
+                <span className="mt-1">
+                  3년제 전공 : <br className="hidden"/>
+                  경력 1년 이상 및 양성교육
+                </span>
+                <span className="mt-1">
+                  2년제 전공 : <br className="hidden"/>
+                  경력 2년 이상 및 양성교육
+                </span>
+              </div>
             </div>
-            <div className="md:w-[25%]  py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0  border-r border-t md:border-b border-gray pb-[10px]">
-              <span>방폭관련 자격증 및 전공 학력 소지자</span>
-              <span className="mt-1">학사학위 : 양성 교육</span>
-              <span className="mt-1">
-                3년제 전공 : <br className="hidden md:inline"/>
-                경력 1년 이상 및 양성교육
-              </span>
-              <span className="mt-1">
-                2년제 전공 : <br className="hidden md:inline"/>
-                경력 2년 이상 및 양성교육
-              </span>
+            <div className="flex w-full border-b-2">
+              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r border-gray">
+                <span>전공학력 소지자</span>
+                <span className="mt-1">경력 5년 이상 및 양성교육</span>
+              </div>
+              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+                <span>비전공 학력 소지자</span>
+                <span className="mt-1">
+                  3년제 전공 : <br className="hidden"/>
+                  경력 6년 이상 및 양성교육
+                </span>
+                <span className="mt-1">
+                  2년제 전공 : <br className="hidden"/>
+                  경력 7년 이상 및 양성교육
+                </span>
+              </div>
             </div>
-            <div className="md:w-[20%]  py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t md:border-b border-gray">
-              <span>전공학력 소지자</span>
-              <span className="mt-1">경력 5년 이상 및 양성교육</span>
-            </div>
-            <div className="md:w-[25%]  py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t border-b border-gray">
-              <span>비전공 학력 소지자</span>
-              <span className="mt-1">
-                3년제 전공 : <br className="hidden md:inline"/>
-                경력 6년 이상 및 양성교육
-              </span>
-              <span className="mt-1">
-                2년제 전공 : <br className="hidden md:inline"/>
-                경력 7년 이상 및 양성교육
-              </span>
-            </div>
-          </div>
+          </article>
 
           <div className="md:px-[20px] md:flex w-full text-[15px] mt-8 bd:mt-0">
             <div className="md:w-[90px] text-subtitle bg-darkgray md:bg-lightgray flex justify-center items-center h-[35px] md:h-auto">

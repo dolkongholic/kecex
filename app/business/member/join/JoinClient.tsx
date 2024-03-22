@@ -13,7 +13,7 @@ import Image from "next/image";
 
 // Image
 import PicIconArrow from "@/public/img/icon/content_icon_arrow.png";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicBusiness_01 from "@/public/img/page_top/business_01.jpg"
 
 const MainList = [
   {
@@ -60,7 +60,7 @@ const JoinPage = () => {
       <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
-            src={PicCeo}
+            src={PicBusiness_01}
             layout="fill"
             objectFit="cover"
             alt="item.title"
