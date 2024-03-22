@@ -30,7 +30,7 @@ import PicBsn_04 from "@/public/img/icon/main_bsn_04.png"
 import Picacrc from "@/public/img/related_site/acrc.png";
 import Pichrdkorea from "@/public/img/related_site/hrdkorea.png";
 import Pickogas from "@/public/img/related_site/kogas.png";
-import Pickosha from "@/public/img/related_site/kosha.jpg";
+import Pickosha from "@/public/img/related_site/kosha.png";
 import Picksa from "@/public/img/related_site/ksa.png";
 import Picmoel from "@/public/img/related_site/moel.png";
 import Picnts from "@/public/img/related_site/nts.png";
