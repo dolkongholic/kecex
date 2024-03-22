@@ -33,7 +33,7 @@ const MainList = [
       { title: "방폭기초교육", url: "/business/education/course01" },
       { title: "방폭인력양성 교육", url: "/business/education/course02" },
       { title: "기업형 교육", url: "/business/education/course03" },
-      { title: "교육개발", url: "/business/education/develop" },
+      // { title: "교육개발", url: "/business/education/develop" },
       { title: "CoPC 과정", url: "/business/education/copc" },
     ],
   },

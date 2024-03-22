@@ -132,7 +132,7 @@ const Index: React.FC<IndexProps> = ({
                     사단법인 한국방폭협회는 방폭산업의 건전한 발전을<br/>
                     위해 설립되었습니다.
                   </p>
-                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-medium hover:bg-white hover:text-[#FFC743]">
+                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#FFC743]">
                     자세히 보기
                   </button>
                   <Image 
@@ -152,7 +152,7 @@ const Index: React.FC<IndexProps> = ({
                     신규 개설된 IECEx CoPC Unit 011<br/>
                     과정에 대해 알아보세요.
                   </p>
-                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-medium hover:bg-white hover:text-[#36609F]">
+                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#36609F]">
                     자세히 보기
                   </button>
                   <Image 
@@ -172,7 +172,7 @@ const Index: React.FC<IndexProps> = ({
                     가입비 100만원&nbsp;&nbsp;|&nbsp;&nbsp;연회비 50만원
                   </p>
                   <Link passHref href={"/business/member/join"}>
-                    <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-medium hover:bg-white hover:text-[#424C5B]">
+                    <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#424C5B]">
                       자세히 보기
                     </button>
                   </Link>
@@ -193,7 +193,7 @@ const Index: React.FC<IndexProps> = ({
                     가입비 5만원&nbsp;&nbsp;|&nbsp;&nbsp;연회비 10만원
                   </p>
                   <Link passHref href={"/business/member/join"}>
-                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-medium hover:bg-white hover:text-[#64BCFF]">
+                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#64BCFF]">
                     자세히 보기
                   </button>
                   </Link>
@@ -213,7 +213,7 @@ const Index: React.FC<IndexProps> = ({
                   <p className="absolute lg:text-[18px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-10">
                     초급교육 | 중급교육 | 고급교육
                   </p>
-                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-medium hover:bg-white hover:text-[#FFA448]">
+                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#FFA448]">
                     자세히 보기
                   </button>
                   <Image 
@@ -233,14 +233,14 @@ const Index: React.FC<IndexProps> = ({
       {/* 띠배너 */}
       <div className="w-full h-[250px] bg-[#D9ECFF] mt-40">
         <div className="w-[1440px] h-full mx-auto text-[#3A3A3A] pt-12 relative">
-          <h3 className="text-[28px] font-medium">
+          <h3 className="text-[28px] font-semibold">
             KECEx 한국방폭협회 회원 안내
           </h3>
           <p className="pt-4 font-light">
             전국에 4개의 지부와 방폭지원·기술본부를 운영하고 있습니다.
           </p>
           <button 
-            className="border border-[#3A3A3A] rounded-full w-[200px] h-[50px] mt-8 font-medium hover:bg-[#3A3A3A] hover:text-white"
+            className="border border-[#3A3A3A] rounded-full w-[200px] h-[50px] mt-8 font-semibold hover:bg-[#3A3A3A] hover:text-white"
           >
             자세히 보기
           </button>
@@ -270,7 +270,7 @@ const Index: React.FC<IndexProps> = ({
                 <h5 className="mt-8">
                   협회설립안내
                 </h5>
-                <p className="text-[28px] pt-4 font-medium">
+                <p className="text-[28px] pt-4 font-semibold">
                   한국방폭협회는<br/>
                   <span className="text-primary">어떤 일</span>을 하나요?
                 </p>
@@ -299,7 +299,7 @@ const Index: React.FC<IndexProps> = ({
                 <h5 className="mt-8">
                   협회가입혜택
                 </h5>
-                <p className="text-[28px] pt-4 font-medium">
+                <p className="text-[28px] pt-4 font-semibold">
                   협회가입시 어떤<br/>
                   <span className="text-primary">혜택</span>이 있나요?
                 </p>
@@ -337,7 +337,7 @@ const Index: React.FC<IndexProps> = ({
               <h5 className="mt-8">
                 협회가입안내
               </h5>
-              <p className="text-[28px] pt-4 font-medium">
+              <p className="text-[28px] pt-4 font-semibold">
                 협회<span className="text-primary">가입</span>은<br/>
                 어떻게 하나요?
               </p>
@@ -377,7 +377,7 @@ const Index: React.FC<IndexProps> = ({
               <h5 className="mt-8">
                 협회운영안내
               </h5>
-              <p className="text-[28px] pt-4 font-medium">
+              <p className="text-[28px] pt-4 font-semibold">
                 협회<span className="text-primary">운영</span>은<br/>
                 어떻게 되나요?
               </p>

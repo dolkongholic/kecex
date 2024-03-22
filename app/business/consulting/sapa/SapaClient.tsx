@@ -5,14 +5,16 @@ import SubNavHeader from "@/components/SubNavHeader";
 
 import ContentTitle from "@/components/content/title";
 import ContentSubTitle from "@/components/content/subtitle";
+import Link from "next/link";
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
 
 // Image
-import PicCircle from "@/public/img/icon/content_icon_arrow.png";
+import PicCircle from "@/public/img/icon/content_icon_circle.png";
 import PicConsulting from "@/public/img/pages/business/consulting.png";
+import PicConsulting_M from "@/public/img/pages/business/consulting_m.png";
 import PicCeo from "@/public/img/page_top/ceo_top.jpg"
 
 const MainList = [
@@ -48,9 +50,9 @@ const MainList = [
   },
 ];
 
-const location = "방폭기기선정";
+const location = "중대재해처벌법";
 
-const EquipmentClient = () => {
+const InspectionClient = () => {
   const [pageMenu, setPageMenu] = useState<any>("컨설팅");
 
   return (
@@ -71,7 +73,7 @@ const EquipmentClient = () => {
       </figure>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
-          <div className="w-[1400px] flex justify-end pr-[20px]">
+          <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
             </div>
@@ -88,8 +90,8 @@ const EquipmentClient = () => {
         </div>
       </div>
 
-      <main className="w-[1400px] flex justify-between items-start m-auto">
-        <section className="flex flex-col justify-start items-center">
+      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+        <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
               <div className="w-[240px] flex flex-col">
@@ -107,44 +109,51 @@ const EquipmentClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px]  pl-[40px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px] md:pl-[40px] px-[20px] md:px-0 w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
+            <li className="w-1/2 cursor-default">
+                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
+                  <span> 방폭사전진단</span>
+                </div>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/business/consulting/industry/"}>
+                <div className="h-12 border border-gray-200 border-l-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                  <span> 산업진단, 컨설팅</span>
+                </div>
+              </Link>
+            </li>
+          </ul>
           <ContentSubTitle title="관련법령" />
-          <div className="w-full px-[20px] mb-[40px]">
-            <div className="flex flex-col justify-center items-start h-[80px] px-[20px] border border-gray w-full">
+          <div className="w-full md:px-[20px] mb-[40px]">
+            <div className="flex flex-col justify-center items-start md:h-[80px] px-[20px] py-4 md:py-0 border border-gray w-full">
               <span>
                 · 산업안전보건기준에 관한 규칙 제 311조 (폭발위험장소에서
                 사용하는 전기 기계·기구의 선정 등)
+              </span>
+              <span>
+                · 산업안전보건기준에 관한 규칙 제 230조 (폭발위험이 있는 장소의
+                설정 및 관리)
               </span>
             </div>
           </div>
 
           <ContentSubTitle title="컨설팅 목적" />
-          <div className="w-full px-[20px] mb-[40px]">
-            <div className="flex flex-col justify-center items-start h-[80px] px-[20px] border border-gray w-full">
+          <div className="w-full md:px-[20px] mb-[40px]">
+            <div className="flex flex-col justify-center items-start md:h-[80px] px-[20px] py-4 md:py-0 border border-gray w-full">
               <span>
-                국가기술표준 KS C IEC 60079-14에 따라 폭발 위험장소에 설치되는
-                전기기기 및 배선의 선정 적합성 검토
-              </span>
-            </div>
-          </div>
-
-          <ContentSubTitle title="컨설팅 대상" />
-          <div className="w-full px-[20px] mb-[40px]">
-            <div className="flex flex-col justify-center items-start h-[80px] px-[20px] border border-gray w-full">
-              <span>
-                산업안전보건기준에 관한 규칙 제 230조 1항 1,2에 따라 인화성
-                액체의 증기나 인화성 가스 등을 제조·취급 또는 사용하는 사업장
-                또는 인화성 고체를 제조·사용하는 사업장
+                진단부터 방폭기기 구매, 시공에 이르기까지 모든 과정을 책임감
+                있게 관리하며, 감독기관의 점검 시 대응 지원 및 지적 사항에 대한
+                신속 조치
               </span>
             </div>
           </div>
 
           <ContentSubTitle title="컨설팅 범위" />
-          <div className="w-full px-[20px] mb-[40px] flex flex-col">
+          <div className="w-full md:px-[20px] mb-[40px] flex flex-col">
             <span className="text-subtitle mb-[10px] text-black">
-              폭발성 분위기에서 사용하는 방폭구조 전기기계·기구 및 부품으로서
-              다음 중 어느 하나에 해당하는것
+              | 검사 등급별
             </span>
             <div className="w-full flex justify-start items-center">
               <span className="flex text-base justify-start items-start">
@@ -188,7 +197,7 @@ const EquipmentClient = () => {
             </div>
           </div>
 
-          <div className="w-full px-[20px] mb-[40px] flex flex-col">
+          <div className="w-full md:px-[20px] mb-[40px] flex flex-col">
             <span className="text-subtitle mb-[10px] text-black">
               | 검사 유형별
             </span>
@@ -234,11 +243,14 @@ const EquipmentClient = () => {
           </div>
 
           <ContentSubTitle title="컨설팅 절차" />
-          <Image src={PicConsulting} alt="Pic" />
+          <div className="w-full flex flex-col justify-center">
+            <Image src={PicConsulting} alt="Pic" className="hidden md:block" />
+            <Image src={PicConsulting_M} alt="Pic" className="md:hidden w-full px-[20px]"/>
+          </div>
         </section>
       </main>
     </section>
   );
 };
 
-export default EquipmentClient;
+export default InspectionClient;
