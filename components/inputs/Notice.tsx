@@ -61,7 +61,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
             </h2>
             <div className="w-3/4 md:w-full flex md:flex-col">
               <div
-                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-medium text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
+                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-semibold text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
                   noticeMenu == "협회공지" &&
                   " text-primary"
                 }`}
@@ -77,7 +77,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                 )}
               </div>
               <div
-                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-medium text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
+                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-semibold text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
                   noticeMenu == "보도자료" &&
                   "text-primary"
                 }`}
@@ -95,7 +95,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
               </div>
 
               <div
-                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-medium text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
+                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-semibold text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
                   noticeMenu == "교육센터" &&
                   "text-primary"
                 }`}
@@ -124,7 +124,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     className="w-full"
                   >
                     <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pr-[50px] md:pl-0 text-[#3A3A3A]">
-                      <span className="h-[45px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px] font-medium">
+                      <span className="h-[45px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold">
                         {noticeList[noticeList.length - 1]
                           ? String(noticeList[noticeList.length - 1].title).slice(
                               0,
@@ -155,7 +155,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     className="w-full"
                   >
                     <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:px-[25px]">
-                      <span className="h-[45px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px] font-medium">
+                      <span className="h-[45px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold">
                         {noticeList[noticeList.length - 2]
                           ? String(noticeList[noticeList.length - 2].title).slice(
                               0,
@@ -186,7 +186,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     className="w-full"
                   >
                     <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pl-[50px] text-[#3A3A3A]">
-                      <span className="h-[45px] leading-[20px] text-[16px] md:text-[18px] font-medium">
+                      <span className="h-[45px] leading-[20px] text-[16px] md:text-[18px] font-semibold">
                         {noticeList[noticeList.length - 3]
                           ? String(noticeList[noticeList.length - 3].title).slice(
                               0,
@@ -233,7 +233,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             />
                         )}
                       </div>
-                      <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
+                      <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-semibold pt-3">
                         {newsList[newsList.length - 1]
                           ? String(newsList[newsList.length - 1].title).slice(
                               0,
@@ -268,7 +268,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             />
                         )}
                       </div>
-                      <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
+                      <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-semibold pt-3">
                         {newsList[newsList.length - 2]
                           ? String(newsList[newsList.length - 2].title).slice(
                               0,
@@ -303,7 +303,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             />
                         )}
                       </div>
-                      <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-medium pt-3">
+                      <span className="h-[45px] leading-[18px] text-[16px] md:text-[18px] font-semibold pt-3">
                         {newsList[newsList.length - 3]
                           ? String(newsList[newsList.length - 3].title).slice(
                               0,

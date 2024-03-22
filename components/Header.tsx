@@ -13,6 +13,7 @@ import PicSlogan from "@/public/img/slogan/slogan_1.png";
 import PicShotLogo from "@/public/img/logo/logo_big_icon__1.png";
 import PicLogo from "@/public/img/logo/logo_default_2.png";
 import PicHeader from "@/public/img/common/header_menu.png";
+import PicSlogan4 from "@/public/img/slogan/slogan_4.png";
 import { SafeUser } from "@/types";
 
 // const snsList = ["youtube", "facebook", "twiiter", "kakao", "blog", "instgram"];
@@ -108,12 +109,14 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         <div
           className="w-full h-[80px] flex justify-center item-center border-b border-[#dcdcdc] bg-white z-[80]"
           onMouseOver={() => setMenu("")}
+          onMouseLeave={() => {
+            setMenubg("");}}
         >
           <div className="w-[1400px] flex justify-between item-center space-x-[20px]">
             <div className="w-[250px] hidden xl:flex justify-start items-center">
-              {/* <Link passHref href={"/"}>
-                <Image src={PicSlogan} alt="슬로건" width={250} height={80} />
-              </Link> */}
+              <Link passHref href={"/"}>
+                <Image src={PicSlogan4} alt="슬로건" width={250} height={80} />
+              </Link>
             </div>
             <div className="flex justify-center items-center">
               <div className="w-[120px] mr-[40px] flex item-center">
@@ -198,7 +201,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               </Link>
             </div>
             <div className="w-[900px]">
-              <ul className="flex justify-between font-medium text-[21px] text-[#4e4e4e] ">
+              <ul className="flex justify-between font-bold text-[21px] text-[#4e4e4e] ">
                 {menuList.map(({ title, url }, index) => (
                   <li
                     key={index}
@@ -238,7 +241,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         </div>
         {/* 서브 메뉴 */}
         <div
-          className={`fixed top-[85px] w-full h-[525px] bg-white opacity-0 z-[70] ${
+          className={`fixed top-[85px] w-full h-[450px] bg-white opacity-0 z-[70] ${
             !menu
               ? "opacity-0 -translate-y-[50px] pointer-events-none"
               : "opacity-100 translate-y-0 pointer-events-auto"
@@ -251,14 +254,20 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         >
           {/* 서브메뉴 배경 */}
           <div 
-            className={`absolute top-[0px] w-[1200px] bg-[#003893] h-[525px] left-1/2 -translate-x-[1650px]`}
+            className={`absolute top-[0px] w-[1200px] bg-[#003893] h-[450px] left-1/2 -translate-x-[1650px]`}
           >
             <div className="w-full h-full relative">
               <Image
                   src={PicHeader}
-                  className=" w-[1200px] h-full absolute right-0 bottom-0 rotate-180"
+                  className=" w-[1200px] h-[450.5px] absolute right-0 rotate-180 z-0"
                   alt="Image"
                 />
+            <div className="w-[450px] h-full absolute right-0">
+              <p className="text-white absolute right-[75px] top-[100px] text-[36px] font-semibold">
+                {menu}
+              </p>
+            </div>
+              
             </div>
           </div>
           {/* 서브메뉴 배경끝 */}
@@ -273,35 +282,35 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             >
               <div className="w-[1400px] flex pl-[250px] pr-[80px]">
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[380px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
                 ">
-                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                     일반현황
                   </div>
-                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
+                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[17px] pl-3">
                     <Link passHref href={"/introduce/common/ceo/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> · CEO 인사말</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> CEO 인사말</span>
                     </Link>
                     <Link passHref href={"/introduce/common/vistion/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> · 비전/미션</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> 비전/미션</span>
                     </Link>
                     <Link passHref href={"/introduce/common/history/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> · 연혁</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> 연혁</span>
                     </Link>
                     <Link passHref href={"/introduce/common/ci/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> · CI</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> CI</span>
                     </Link>
                   </div>
                 </div>
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[380px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
                 ">
-                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] text-[20px]">
+                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
                     조직안내
                   </div>
-                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
+                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[17px] pl-3">
                     <Link passHref href={"/introduce/group/group"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> · 조직도</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> 조직도</span>
                     </Link>
                     {/* <Link passHref href={"/introduce/group/introduce/"}>
                     <span className="cursor-pointer"> - 부서소개</span>
@@ -310,7 +319,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 </div>
                 <div className="w-1/4 pl-[2%]">
                   <Link passHref href={"/introduce/map/"}>
-                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer text-[20px]">
+                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       찾아오시는길
                     </div>
                   </Link>
@@ -325,60 +334,60 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             >
               <div className="w-[1400px] flex justify-start pl-[250px] pr-[80px]">
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[380px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
                 ">
-                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
+                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
                     회원
                   </div>
-                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
+                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[17px] pl-3">
                     <Link passHref href={"/business/member/join/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> · 회원가입</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> 회원가입</span>
                     </Link>
                     <Link passHref href={"/business/member/rule/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> · 회원회칙</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> 회원회칙</span>
                     </Link>
                     <Link passHref href={"/business/member/career/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> · 경력관리</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> 경력관리</span>
                     </Link>
                     <Link passHref href={"/business/member/careercard/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> · 경력수첩</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> 경력수첩</span>
                     </Link>
                   </div>
                 </div>
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[380px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
                 ">
-                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
+                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
                     교육
                   </div>
-                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
+                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[17px] pl-3">
                     <Link passHref href={"/business/education/course01/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> · 방폭기초교육</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> 방폭기초교육</span>
                     </Link>
                     <Link passHref href={"/business/education/course02/"}>
                       <span className="cursor-pointer hover:underline underline-offset-4">
                         {" "}
-                        · 방폭인력양성 교육
+                        방폭인력양성 교육
                       </span>
                     </Link>
                     <Link passHref href={"/business/education/course03/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> · 기업형 교육</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> 기업형 교육</span>
                     </Link>
                     {/* <Link passHref href={"/business/education/develop/"}>
                       <span className="cursor-pointer"> · 교육개발</span>
                     </Link> */}
                     <Link passHref href={"/business/education/copc/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> · CoPC 과정</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> CoPC 과정</span>
                     </Link>
                   </div>
                 </div>
                 <div className="w-1/4 pl-[2%]">
-                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
+                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
                     컨설팅
                   </div>
-                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[18px]">
+                  <div className="flex flex-col space-y-[20px] text-neutral-600 text-[17px] pl-3">
                     <Link passHref href={"/business/consulting/inspection/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> · 방폭사전진단</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> 방폭사전진단</span>
                     </Link>
                     {/* <Link passHref href={"/business/consulting/equipment/"}>
                     <span className="cursor-pointer"> - 방폭기기선정</span>
@@ -386,7 +395,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     <Link passHref href={"/business/consulting/industry/"}>
                       <span className="cursor-pointer hover:underline underline-offset-4">
                         {" "}
-                        · 산업진단, 컨설팅
+                        산업진단, 컨설팅
                       </span>
                     </Link>
                   </div>
@@ -401,35 +410,35 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             >
               <div className="w-[1400px] flex justify-start pl-[250px] pr-[80px] h-[350px]">
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[380px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
                 ">
                   <Link passHref href={"/notice/worker/"}>
-                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       인재정보
                     </div>
                   </Link>
                 </div>
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[380px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
                 ">
                   <Link passHref href={"/notice/faq/"}>
-                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       FAQ
                     </div>
                   </Link>
                 </div>
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[380px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
                 ">
                   <Link passHref href={"/notice/qna/"}>
-                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       문의사항
                     </div>
                   </Link>
                 </div>
                 <div className="w-1/4 text-[19px] pl-[2%]">
                   <Link passHref href={"/notice/notice?page=1"}>
-                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       공지사항
                     </div>
                   </Link>
@@ -444,17 +453,17 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             >
               <div className="w-[1400px] flex justify-start pl-[250px] pr-[80px]">
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[380px] before:right-0 before:top-5 before:bg-lightgray
+                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-lightgray
                 ">
                   <Link passHref href={"/information/raw?page=1"}>
-                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       관련법령
                     </div>
                   </Link>
                 </div>
                 <div className="w-1/4 pl-[2%]">
                   <Link passHref href={"/information/news?page=1"}>
-                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-medium text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
+                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       카드뉴스
                     </div>
                   </Link>
@@ -463,7 +472,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             </div>
           )}
           {menu == "교육센터" && (
-            <div className="w-[1400px] pt-[200px] pl-[250px] mx-auto text-neutral-600 font-medium text-[24px]">
+            <div className="w-[1400px] pt-[200px] pl-[250px] mx-auto text-neutral-600 font-semibold text-[24px]">
               <div className="w-[1400px] text-center">
                 교육 센터 운영 준비 중
               </div>
@@ -568,7 +577,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         </div>
 
         <div className="w-screen h-screen bg-white md:bg-lightgray">
-          <div className="w-full h-[135px] border-y border-lightgray md:hidden item-center md:mr-[30px] text-[13px] text-gray-700 font-medium px-[20px] box-border">
+          <div className="w-full h-[135px] border-y border-lightgray md:hidden item-center md:mr-[30px] text-[13px] text-gray-700 font-semibold px-[20px] box-border">
             {currentUser == null ? (
                     <>
                       <p className="text-[15px] pt-7">로그인 해주세요.</p>
@@ -616,37 +625,37 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               <ul className="w-3/4 md:w-full absolute md:static right-0 top-[215px] h-[808px] bg-white md:bg-lightgray z-[500] text-[15px] md:text-auto"
               >
                 <li>
-                  <div className="w-[250px] h-12 md:h-10 md:text-[18px] font-medium text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
+                  <div className="w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
                     일반현황
                   </div>
                   <div className="flex flex-col space-y-[25px] border-b-2 border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/introduce/common/ceo/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · CEO 인사말</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · CEO 인사말</span>
                     </Link>
                     <Link passHref href={"/introduce/common/vistion/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 비전/미션</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 비전/미션</span>
                     </Link>
                     <Link passHref href={"/introduce/common/history/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 연혁</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 연혁</span>
                     </Link>
                     <Link passHref href={"/introduce/common/ci/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · CI</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · CI</span>
                     </Link>
                   </div>
                 </li>
                 <li>
-                  <div className="w-[250px] h-12 md:h-10 md:text-[18px] font-medium text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
+                  <div className="w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
                     조직안내
                   </div>
                   <div className="flex flex-col space-y-[25px] border-b-2 border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/introduce/group/group"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 조직도</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 조직도</span>
                     </Link>
                   </div> 
                 </li>
                 <li>
                   <Link passHref href={"/introduce/map/"}>
-                    <div className="w-[250px] h-12 md:h-14 md:border-b-2 md:border-gray-300 md:text-[18px] font-medium text-start text-gray-600 leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                    <div className="w-[250px] h-12 md:h-14 md:border-b-2 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
                       찾아오시는길
                     </div>
                   </Link>
@@ -671,59 +680,59 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                             }`}
               >
                 <li>
-                  <div className="w-[250px] h-12 md:h-10 md:text-[18px] font-medium text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
+                  <div className="w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
                     회원
                   </div>
                   <div className="flex flex-col space-y-[25px] border-b-2 border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/business/member/join/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 회원가입</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 회원가입</span>
                     </Link>
                     <Link passHref href={"/business/member/rule/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 회원회칙</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 회원회칙</span>
                     </Link>
                     <Link passHref href={"/business/member/career/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 경력관리</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 경력관리</span>
                     </Link>
                     <Link passHref href={"/business/member/careercard/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 경력수첩</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 경력수첩</span>
                     </Link>
                   </div>
                 </li>
                 <li>
-                  <div className="w-[250px] h-12 md:h-10 md:text-[18px] font-medium text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
+                  <div className="w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
                     교육
                   </div>
                   <div className="flex flex-col space-y-[25px] border-b-2 border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/business/education/course01/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 방폭기초교육</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 방폭기초교육</span>
                     </Link>
                     <Link passHref href={"/business/education/course02/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium">
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold">
                         {" "}
                         - 방폭인력양성 교육
                       </span>
                     </Link>
                     <Link passHref href={"/business/education/course03/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 기업형 교육</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 기업형 교육</span>
                     </Link>
                     <Link passHref href={"/business/education/develop/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 교육개발</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 교육개발</span>
                     </Link>
                     <Link passHref href={"/business/education/copc/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · CoPC 과정</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · CoPC 과정</span>
                     </Link>
                   </div>
                 </li>
                 <li>
-                  <div className="w-[250px] h-12 md:h-10 md:text-[18px] font-medium text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
+                  <div className="w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
                     컨설팅
                   </div>
                   <div className="flex flex-col space-y-[25px] md:border-b-2 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/business/consulting/inspection/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium"> · 방폭사전진단</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 방폭사전진단</span>
                     </Link>
                     <Link passHref href={"/business/consulting/industry/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-medium">
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold">
                         {" "}
                         - 산업진단, 컨설팅
                       </span>
@@ -751,28 +760,28 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               >
                 <li>
                   <Link passHref href={"/notice/worker/"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-medium text-start text-gray-600  leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600  leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
                       인재정보
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link passHref href={"/notice/faq/"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-medium text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
                       FAQ
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link passHref href={"/notice/qna/"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-medium text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
                       문의사항
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link passHref href={"/notice/notice?page=1"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  md:border-b md:border-gray-300 md:text-[18px] font-medium text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                    <div className="w-full md:w-[250px] h-12 md:h-14  md:border-b md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
                       공지사항
                     </div>
                   </Link>
@@ -798,14 +807,14 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               >
                 <li>
                   <Link passHref href={"/information/raw?page=1"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14 border-b border-gray-200 md:border-gray-300 md:text-[18px] font-medium text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                    <div className="w-full md:w-[250px] h-12 md:h-14 border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
                       관련법령
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link passHref href={"/information/news?page=1"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14 md:border-b border-gray-200 md:border-gray-300 md:text-[18px] font-medium text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                    <div className="w-full md:w-[250px] h-12 md:h-14 md:border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
                       카드뉴스
                     </div>
                   </Link>
@@ -830,7 +839,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                             }`}
               >
                 {/* 교육신청 */}
-                <div className="w-full md:w-[250px] h-12 md:h-14 md:text-[18px] font-medium text-start text-gray-600 leading-[55px] pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
+                <div className="w-full md:w-[250px] h-12 md:h-14 md:text-[18px] font-semibold text-start text-gray-600 leading-[55px] pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                   교육센터 운영 준비 중 
                 </div>
               </div>
@@ -858,7 +867,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                             }`}
               >
                 <li>
-                  <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-medium text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
+                  <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
                     전체 현황
                   </div>
                   <div className="flex flex-col space-y-[25px] border-b-2 border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
@@ -872,20 +881,20 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 </li>
                 <li>
                   <Link passHref href={"/mypage/profile"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-medium text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
                       회원정보 수정
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link passHref href={"/mypage/regular"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-medium text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
                       정회원 가입
                     </div>
                   </Link>
                 </li>
                 <li>
-                  <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-medium text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
+                  <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
                     회비 납부
                   </div>
                   <div className="flex flex-col space-y-[25px] border-b-2 border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
@@ -905,27 +914,27 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 </li>
                 <li>
                   <Link passHref href={"/mypage/print"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-medium text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
                       회원증 출력
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link passHref href={"/mypage/overall/all02"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-medium text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
                       1:1문의 현황
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link passHref href={"/mypage/resume"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-medium text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
                       경력관리
                     </div>
                   </Link>
                 </li>
                 <li>
-                  <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-medium text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
+                  <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
                     경력수첩 발급
                   </div>
                   <div className="flex flex-col space-y-[25px] md:border-b-2 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
@@ -936,7 +945,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 </li>
                 <li>
                   <Link passHref href={"/mypage/out"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  md:border-b md:border-gray-300 md:text-[18px] font-medium text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                    <div className="w-full md:w-[250px] h-12 md:h-14  md:border-b md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
                       회원탈퇴
                     </div>
                   </Link>

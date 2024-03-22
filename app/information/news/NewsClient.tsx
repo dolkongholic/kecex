@@ -104,7 +104,7 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
               >
                 <div className="border border-gray text-[#3A3A3A] ease-linear transition-colors duration-300 hover:bg-secondary hover:text-white w-[350px] h-[310px]">
                   <div className="flex flex-col relative">
-                    <div className="w-[350px] h-[220px] m-auto object-cover  overflow-hidden relative"> {/* 350*220 사이즈 */}
+                    <div className="w-[350px] h-[220px] m-auto object-cover  overflow-hidden relative box-border -ml-[1px]"> {/* 350*220 사이즈 */}
                       <Image
                         src={item.img}
                         layout="fill"
@@ -113,7 +113,7 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
                         className="object-cover"
                       />
                     </div>
-                    <div className="w-full flex justify-start items-end absolute left-0 top-[190px]">
+                    <div className="w-full flex justify-start items-end absolute left-[-1px] top-[190.5px]">
                       <p className="px-[16px] p-[5px] bg-[#3A3A3A] text-white opacity-90 text-[13px]">
                         {item.type} 협회소식
                       </p>

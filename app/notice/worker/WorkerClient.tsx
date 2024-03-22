@@ -11,6 +11,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 import Image from "next/image";
 import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import Picworker from "@/public/img/inner/worker/worker_group.png"
 
 const MainList = [
   {
@@ -170,57 +171,18 @@ const WorkerClient: React.FC<workerProps> = ({ currentUser }) => {
                 </button>
               </div>
             </div> */}
-
-            <div className="w-full h-[50px] leading-[50px] border-b-2 border-secondary mt-[50px]">
-              {/* <div>
-                검색결과 <span className="font-bold">000</span> 개
-              </div> */}
+            <div className="w-[1200px] h-[472px] relative flex justify-center">
+              <Image
+                src={Picworker}
+                // fill={true}
+                // layout="fill"
+                // objectFit="cover"
+                alt="worker_img"
+                className="object-cover"
+              />
             </div>
-            <div className="w-full h-[40px] text-black bg-lightgray  flex">
-              <div className="w-1/4 leading-[40px] text-center border border-gray-200">
-                성명
-              </div>
-              <div className="w-1/4 leading-[40px] text-center border border-r-0 border-l-0 border-gray-200">
-                분야
-              </div>
-              <div className="w-1/4 leading-[40px] text-center border border-r-0 border-gray-200">
-                국적
-              </div>
-              <div className="w-1/4 leading-[40px] text-center border border-gray-200">
-                자격증
-              </div>
-            </div>
-            <div className="leading-[300px] border-b-2 border-gray-200 text-gray-400 text-center hidden">
-              검색 결과가 없습니다.
-            </div>
-            {/*검색 결과 없을 때 */}
-            <ul>
-              {/* {[1, 2, 3, 4, 5, 6, 7].map((item, index) => (
-                <li className="flex" key={index}>
-                  <div className="w-1/4 leading-[40px] text-center border-x border-b border-gray-200">
-                    홍길동
-                  </div>
-                  <div className="w-1/4 leading-[40px] text-center border-b border-gray-200">
-                    화학
-                  </div>
-                  <div className="w-1/4 leading-[40px] text-center border-b border-l border-gray-200">
-                    한국
-                  </div>
-                  <div className="w-1/4 leading-[40px] text-center border-x border-b border-gray-200">
-                    IECEx 001
-                  </div>
-                </li>
-              ))} */}
-            </ul>
           </div>
-          {currentUser && (
-            <button
-              className="w-36 h-12 bg-secondary text-white m-auto"
-              onClick={() => temp()}
-            >
-              등록하기
-            </button>
-          )}
+          
         </section>
       </main>
     </section>
