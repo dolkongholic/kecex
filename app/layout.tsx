@@ -2,12 +2,12 @@ import Providers from "../components/Providers";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Noto_Sans_KR } from "next/font/google";
-import { Titillium_Web } from "next/font/google";
+import { Gothic_A1 } from "next/font/google";
 import ToasterProvieder from "./providers/ToasterProvider";
 import ClientOnly from "@/components/ClientOnly";
 import InsertMainBanner from "../components/modal/InsertMainBanner";
-const inter = Titillium_Web({
-  weight: ["200", "300", "400", "600", "700", "900"],
+const inter = Gothic_A1({
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
 
