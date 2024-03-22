@@ -177,22 +177,13 @@ const RuleClient = () => {
                 (회원의 종류)
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                회원은 준회원, 일반회원, 정회원, 기업회원, 명예회원등으로
+                회원은 일반회원, 정회원, 기업회원, 명예회원등으로
                 구분한다.
               </div>
             </div>
             <div className="md:flex">
               <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start mt-2 md:mt-1">
                 제2조 1항
-                [준회원]
-              </span>
-              <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                준회원은 회원 가입원서만 제출한 업체·단체 및 개인으로 한다.
-              </div>
-            </div>
-            <div className="md:flex">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start mt-2 md:mt-1">
-                제2조 2항
                 [일반회원]
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
@@ -201,7 +192,7 @@ const RuleClient = () => {
             </div>
             <div className="md:flex">
               <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start mt-2 md:mt-1">
-                제2조 3항 
+                제2조 2항 
                 [정회원]
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
@@ -211,7 +202,7 @@ const RuleClient = () => {
             </div>
             <div className="md:flex">
               <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start mt-2 md:mt-1">
-                제2조 4항 
+                제2조 3항 
                 [기업회원]
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
@@ -221,11 +212,11 @@ const RuleClient = () => {
             </div>
             <div className="md:flex">
               <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start mt-2 md:mt-1">
-                제2조 5항
-                [특별회원]
+                제2조 4항
+                [명예회원]
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                특별회원은 이사회의 결의에 의해 회장이 추천하는 업체·단체 및
+                명예회원은 이사회의 결의에 의해 회장이 추천하는 업체·단체 및
                 개인으로 한다.
               </div>
             </div>
@@ -247,17 +238,9 @@ const RuleClient = () => {
                 제6조 (회원의 승인)
               </span>
             </div>
-            <div className="md:flex mt-2 md:mt-1">
+            <div className="md:flex mt-2">
               <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base">
                 제6조 1항
-              </span>
-              <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                준회원은 정해진 회원가입 신고서를 제출한 자로 한다.
-              </div>
-            </div>
-            <div className="md:flex">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base">
-                제6조 2항
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
                 일반회원은 정해진 회원가입 신고서 제출 및 회비를 납부한 자로
@@ -266,7 +249,7 @@ const RuleClient = () => {
             </div>
             <div className="md:flex">
               <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base">
-                제6조 3항
+                제6조 2항
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
                 정회원, 기업회원, 명예회원은 정해진 회원가입 신고서를 제출한 자

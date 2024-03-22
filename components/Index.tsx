@@ -21,6 +21,8 @@ import PicMdbn from "@/public/img/banner/md_banner_01.png"
 import PicOpen from "@/public/img/banner/site_open.png"
 import PicCormem from "@/public/img/banner/corporate_member.png";
 import PicRemem from "@/public/img/banner/regular_member.png"
+import PicPromotion from "@/public/img/banner/promotion.png"
+import PicInspection from "@/public/img/banner/inspection.png"
 import PicBsn_01 from "@/public/img/icon/main_bsn_01.png"
 import PicBsn_02 from "@/public/img/icon/main_bsn_02.png"
 import PicBsn_03 from "@/public/img/icon/main_bsn_03.png"
@@ -28,7 +30,7 @@ import PicBsn_04 from "@/public/img/icon/main_bsn_04.png"
 import Picacrc from "@/public/img/related_site/acrc.png";
 import Pichrdkorea from "@/public/img/related_site/hrdkorea.png";
 import Pickogas from "@/public/img/related_site/kogas.png";
-import Pickosha from "@/public/img/related_site/kosha.png";
+import Pickosha from "@/public/img/related_site/kosha.jpg";
 import Picksa from "@/public/img/related_site/ksa.png";
 import Picmoel from "@/public/img/related_site/moel.png";
 import Picnts from "@/public/img/related_site/nts.png";
@@ -41,6 +43,7 @@ import Picutp from "@/public/img/related_site/UTP_logo.jpg"
 import Picuoufic from "@/public/img/related_site/UOUFIC.png"
 import Picpolytech from "@/public/img/related_site/uoc_polytech.png"
 import Pickrict from "@/public/img/related_site/krict.png"
+import Pichankyung from "@/public/img/related_site/hankyung.png"
 
 
 interface IndexProps {
@@ -65,7 +68,7 @@ const Index: React.FC<IndexProps> = ({
       slidesToScroll: 1,// 스크롤 시 넘어가는 컨텐츠 수
       centerPadding: '440px',// 중앙 컨텐츠 padding 값
       autoplay: true, // 자동 캐러셀
-      autoplaySpeed: 2000, // 자동 캐러셀 속도
+      autoplaySpeed: 4000, // 자동 캐러셀 속도
       centerMode: true, // 현재 컨텐츠 가운데 정렬
       initialSlide: 1, // 첫 컨텐츠 번호
       arrows: true, // 좌,우 버튼
@@ -217,9 +220,30 @@ const Index: React.FC<IndexProps> = ({
                     자세히 보기
                   </button>
                   <Image 
-                    src={PicRemem} 
+                    src={PicPromotion} 
                     alt="open_banner" 
                     className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto right-0 lg:right-[1%] bottom-0 z-0"
+                  />
+                </div>
+              </div>
+              <div className=" h-[380px] max-w-[1200px]">
+                <div className="w-11/12 bg-[#60B86F] h-full mx-auto rounded-xl relative text-white overflow-hidden">
+                <strong className="absolute text-[30px] lg:text-[45px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
+                    2024<br/>
+                    산업안전 대진단
+                  </strong>
+                  <p className="absolute lg:text-[18px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-10">
+                    중대재해 예방, 대진단으로 시작하세요
+                  </p>
+                  <Link passHref href={"/business/consulting/inspection/"}>
+                    <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#60B86F]">
+                      자세히 보기
+                    </button>
+                  </Link>
+                  <Image 
+                    src={PicInspection} 
+                    alt="open_banner" 
+                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto right-0 bottom-0 z-0"
                   />
                 </div>
               </div>
@@ -232,7 +256,7 @@ const Index: React.FC<IndexProps> = ({
 
       {/* 띠배너 */}
       <div className="w-full h-[250px] bg-[#D9ECFF] mt-40">
-        <div className="w-[1440px] h-full mx-auto text-[#3A3A3A] pt-12 relative">
+        <div className="w-full max-w-[1440px] min-w-[600px] h-full mx-auto text-[#3A3A3A] pt-12 relative">
           <h3 className="text-[28px] font-semibold">
             KECEx 한국방폭협회 회원 안내
           </h3>
@@ -244,7 +268,7 @@ const Index: React.FC<IndexProps> = ({
           >
             자세히 보기
           </button>
-          <div className="absolute right-[3%] bottom-12">
+          <div className="absolute right-[3%] bottom-16">
             <Image 
               src={PicMdbn} 
               alt="open_banner" 
@@ -400,20 +424,43 @@ const Index: React.FC<IndexProps> = ({
           <h3 className="text-center font-bold text-[30px] text-[#3A3A3A] leading-[44px] mb-16">
             한국방폭협회는<br/>
             다음 기관들과 함께 합니다.
-          </h3> 
-          <div className="w-full flex">
-            <div className="w-1/4 h-[36px]">
-            <Image 
-              src={Picksa} 
+          </h3>
+          <div className="w-full flex px-3 md:px-0 mt-2 h-[20px] md:h-auto">
+            <div className="w-1/4">
+              <Image 
+              src={Picmoel} 
               alt="arcr_logo" 
-              className="mx-auto h-[24px] md:h-[30px] w-auto translate-y-1"
+              className="mx-auto h-[20px] md:h-[40px] w-auto"
+              />
+            </div>
+            <div className="w-1/4">
+                  <Image 
+            src={Picnts} 
+            alt="arcr_logo" 
+            className="mx-auto h-[20px] md:h-[34px] w-auto"
+            />
+            </div >
+            <div className="w-1/4">
+                    <Image 
+              src={Picacrc} 
+              alt="arcr_logo" 
+              className="mx-auto h-[20px] md:h-[40px] w-auto"
             />
             </div>
             <div className="w-1/4">
+              <Image 
+                src={PicmoelUl} 
+                alt="arcr_logo" 
+                className="mx-auto h-[20px] md:h-[36px] w-auto"
+              />
+            </div>
+          </div>
+          <div className="w-full flex md:mt-8">
+            <div className="w-1/4 h-[36px]">
                     <Image 
-              src={Pichrdkorea} 
+              src={PicUl} 
               alt="arcr_logo" 
-              className="mx-auto h-[24px] md:h-[34px] w-auto"
+              className="mx-auto h-[20px] md:h-[30px] w-auto"
             />
             </div>
             <div className="w-1/4">
@@ -430,44 +477,51 @@ const Index: React.FC<IndexProps> = ({
             className="mx-auto h-[20px] md:h-[54px] w-auto -translate-y-4"
             />
             </div>
-          </div>
-          <div className="w-full flex px-3 md:px-0 mt-2 md:mt-8 h-[20px] md:h-auto">
-            <div className="w-1/4">
-                    <Image 
-              src={Picacrc} 
-              alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[40px] w-auto"
-            />
-            </div>
             <div className="w-1/4">
                   <Image 
-            src={Picnts} 
+            src={Pickomeri} 
             alt="arcr_logo" 
-            className="mx-auto h-[20px] md:h-[34px] w-auto"
+            className="mx-auto h-[20px] md:h-[36px] w-auto -translate-y-2"
             />
             </div >
+          </div>
+          <div className="w-full flex px-3 md:px-0 mt-2 md:mt-8 h-[20px] md:h-auto">
             <div className="w-1/4">
-              <Image 
-              src={Picmoel} 
+                    <Image 
+              src={Pichrdkorea} 
               alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[40px] w-auto"
-              />
+              className="mx-auto h-[24px] md:h-[34px] w-auto"
+            />
+            </div>
+            <div className="w-1/4">
+                    <Image 
+              src={Picutp} 
+              alt="arcr_logo" 
+              className="mx-auto h-[20px] md:h-[36px] w-auto"
+            />
+            </div>
+            <div className="w-1/4 h-[36px]">
+            <Image 
+              src={Picksa} 
+              alt="arcr_logo" 
+              className="mx-auto h-[24px] md:h-[30px] w-auto translate-y-1"
+            />
             </div>
             <div className="w-1/4">
               <Image 
-                src={PicmoelUl} 
-                alt="arcr_logo" 
-                className="mx-auto h-[20px] md:h-[36px] w-auto"
+              src={Pickrict} 
+              alt="arcr_logo" 
+              className="mx-auto h-[20px] md:h-[30px] w-auto"
               />
             </div>
           </div>
-          <div className="w-full flex px-3 md:px-0 mt-2 md:mt-8 h-[20px] md:h-auto">
+          <div className="w-full flex px-3 md:px-0 mt-2 md:mt-9 h-[20px] md:h-auto">
             <div className="w-1/4 h-[36px]">
-                    <Image 
-              src={PicUl} 
+              <Image 
+              src={Picpolytech} 
               alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[30px] w-auto"
-            />
+              className="mx-auto h-[20px] md:h-[52px] w-auto -translate-y-[12px]"
+              />
             </div>
             <div className="w-1/4">
                   <Image 
@@ -476,48 +530,18 @@ const Index: React.FC<IndexProps> = ({
             className="mx-auto h-[20px] md:h-[30px] w-auto"
             />
             </div >
-            <div className="w-1/4 h-[36px]">
-              <Image 
-              src={Picpolytech} 
-              alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[46px] w-auto -translate-y-2"
-              />
-            </div>
             <div className="w-1/4">
               <Image 
                 src={PicUc} 
                 alt="arcr_logo" 
-                className="mx-auto h-[20px] md:h-[36px] w-auto"
-              />
-            </div>
-          </div>
-          <div className="w-full flex px-3 md:px-0 mt-2 md:mt-8 h-[20px] md:h-auto">
-            <div className="w-1/4">
-                    <Image 
-              src={Picutp} 
-              alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[36px] w-auto"
-            />
-            </div>
-            <div className="w-1/4">
-                  <Image 
-            src={Pickomeri} 
-            alt="arcr_logo" 
-            className="mx-auto h-[20px] md:h-[36px] w-auto"
-            />
-            </div >
-            <div className="w-1/4">
-              <Image 
-              src={Pickrict} 
-              alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[30px] w-auto"
+                className="mx-auto h-[20px] md:h-[36px] w-auto -translate-y-1"
               />
             </div>
             <div className="w-1/4">
               <Image 
-                src={Picpolytech} 
+                src={Pichankyung} 
                 alt="arcr_logo" 
-                className="mx-auto h-[20px] md:h-[36px] w-auto"
+                className="mx-auto h-[20px] md:h-[24px] w-auto  translate-y-[4px]"
               />
             </div>
           </div>

@@ -128,7 +128,7 @@ const InspectionClient = () => {
             </li>
           </ul>
           <ContentSubTitle title="관련법령" />
-          <div className="w-full md:px-[20px] mb-[40px]">
+          <div className="w-full mb-[40px]">
             <div className="flex flex-col justify-center items-start md:h-[80px] px-[20px] py-4 md:py-0 border border-gray w-full">
               <span>
                 · 산업안전보건기준에 관한 규칙 제 311조 (폭발위험장소에서
@@ -142,7 +142,7 @@ const InspectionClient = () => {
           </div>
 
           <ContentSubTitle title="컨설팅 목적" />
-          <div className="w-full md:px-[20px] mb-[40px]">
+          <div className="w-full mb-[40px]">
             <div className="flex flex-col justify-center items-start md:h-[80px] px-[20px] py-4 md:py-0 border border-gray w-full">
               <span>
                 진단부터 방폭기기 구매, 시공에 이르기까지 모든 과정을 책임감
@@ -153,7 +153,7 @@ const InspectionClient = () => {
           </div>
 
           <ContentSubTitle title="컨설팅 범위" />
-          <div className="w-full md:px-[20px] mb-[40px] flex flex-col">
+          <div className="w-full mb-[40px] flex flex-col">
             <span className="text-subtitle mb-[10px] text-black">
               | 검사 등급별
             </span>
