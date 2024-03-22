@@ -392,10 +392,22 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     {/* <Link passHref href={"/business/consulting/equipment/"}>
                     <span className="cursor-pointer"> - 방폭기기선정</span>
                   </Link> */}
-                    <Link passHref href={"/business/consulting/industry/"}>
+                    <Link passHref href={"/business/consulting/psm/"}>
                       <span className="cursor-pointer hover:underline underline-offset-4">
                         {" "}
-                        산업진단, 컨설팅
+                        PSM
+                      </span>
+                    </Link>
+                    <Link passHref href={"/business/consulting/sapa/"}>
+                      <span className="cursor-pointer hover:underline underline-offset-4">
+                        {" "}
+                        중대재해처벌법
+                      </span>
+                    </Link>
+                    <Link passHref href={"/business/consulting/danger/"}>
+                      <span className="cursor-pointer hover:underline underline-offset-4">
+                        {" "}
+                        위험성 평가
                       </span>
                     </Link>
                   </div>
@@ -731,10 +743,22 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     <Link passHref href={"/business/consulting/inspection/"}>
                       <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 방폭사전진단</span>
                     </Link>
-                    <Link passHref href={"/business/consulting/industry/"}>
+                    <Link passHref href={"/business/consulting/psm"}>
                       <span className="cursor-pointer hover:text-primary hover:font-semibold">
                         {" "}
-                        - 산업진단, 컨설팅
+                        · PSM
+                      </span>
+                    </Link>
+                    <Link passHref href={"/business/consulting/sapa"}>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold">
+                        {" "}
+                        · 중대재해처벌법
+                      </span>
+                    </Link>
+                    <Link passHref href={"/business/consulting/danger"}>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold">
+                        {" "}
+                        · 위험성 평가
                       </span>
                     </Link>
                   </div>
@@ -755,8 +779,8 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 </span>
               </div>
               <ul className={`w-3/4 md:w-full absolute md:static right-0 top-[215px] h-full bg-white md:bg-lightgray z-[501] text-[15px] md:text-auto ${
-                              activeMenu === '알림센터' ? 'block' : 'hidden md:block'
-                            }`}
+                activeMenu === '알림센터' ? 'block' : 'hidden md:block'
+                }`}
               >
                 <li>
                   <Link passHref href={"/notice/worker/"}>

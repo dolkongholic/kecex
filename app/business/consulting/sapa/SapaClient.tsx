@@ -9,12 +9,11 @@ import Link from "next/link";
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
+import { IoMdArrowDropdown } from "react-icons/io";
 import Image from "next/image";
 
 // Image
-import PicCircle from "@/public/img/icon/content_icon_circle.png";
-import PicConsulting from "@/public/img/pages/business/consulting.png";
-import PicConsulting_M from "@/public/img/pages/business/consulting_m.png";
+import content_icon from "@/public/img/icon/content_icon_circle.png";
 import PicCeo from "@/public/img/page_top/ceo_top.jpg"
 
 const MainList = [
@@ -45,14 +44,16 @@ const MainList = [
     sub: [
       { title: "방폭사전진단", url: "/business/consulting/inspection" },
       // { title: "방폭기기선정", url: "/business/consulting/equipment" },
-      { title: "산업진단, 컨설팅", url: "/business/consulting/industry" },
+      { title: "PSM", url: "/business/consulting/psm" },
+      { title: "중대재해처벌법", url: "/business/consulting/sapa" },
+      { title: "위험성 평가", url: "/business/consulting/danger" },
     ],
   },
 ];
 
 const location = "중대재해처벌법";
 
-const InspectionClient = () => {
+const SapaClient = () => {
   const [pageMenu, setPageMenu] = useState<any>("컨설팅");
 
   return (
@@ -111,146 +112,238 @@ const InspectionClient = () => {
 
         <section className="py-[20px] md:pl-[40px] px-[20px] md:px-0 w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
-            <li className="w-1/2 cursor-default">
-                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
-                  <span> 방폭사전진단</span>
+            {/*중대재해처벌법 컨설팅 */}
+            <div className="w-full h-24 border-t-4 border-secondary flex justify-start items-center pl-10 text-black font-medium mb-7 text-[26px]">
+                중대재해처벌법 컨설팅
+              </div>
+              <ContentSubTitle title="중대재해처벌법 컨설팅 대상" />
+              <ul className="-translate-y-[20px] text-[15px] leading-6 mb-5">
+                <li className="w-full border-b border-gray md:flex">
+                  <div className="md:w-1/2 h-32 flex items-center">
+                    <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
+                      1
+                    </div>
+                    <p className="ml-3">
+                      중대재해처벌에 관한 법률에 <br className="md:hidden"/>
+                      대응하기 위한 사업장
+                    </p>
+                  </div>
+                  <div className="md:w-1/2 h-32 flex items-center">
+                    <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
+                      2
+                    </div>
+                    <p className="ml-3">
+                      중대재해처벌법 및 산업안전보건법을 <br className="md:hidden"/>
+                      적절하게 이행하고 있는지
+                      <br />
+                      확인하고자 하는 사업장
+                    </p>
+                  </div>
+                </li>
+                <li className="w-full border-b border-gray md:flex">
+                  <div className="md:w-1/2 h-32 flex items-center">
+                    <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
+                      3
+                    </div>
+                    <p className="ml-3">
+                      안전한 작업환경을 조성하여 <br className="md:hidden"/>
+                      중대재해를 예방하고자 하는
+                      사업장
+                    </p>
+                  </div>
+                  <div className="md:w-1/2 h-32 flex items-center">
+                    <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
+                      4
+                    </div>
+                    <p className="ml-3">
+                      자체적으로 안전관리 및 법이행실태를 <br className="md:hidden"/>
+                      점검하고자 하는 사업장
+                    </p>
+                  </div>
+                </li>
+              </ul>
+              <ContentSubTitle title="중대재해처벌법 컨설팅 내용" />
+              <div className="md:flex justify-between text-[14px] text-primary mb-10">
+                <div className="md:w-1/3 md:h-56 border border-secondary rounded-md text-center py-10 mb-5 md:mb-0 px-3 md:px-0">
+                  <strong className="text-neutral-800 text-[26px]">
+                    안전보건관리체계
+                  </strong>
+                  <p className="mt-7">
+                    <span className="block w-24 h-0 border-t border-primary m-auto mb-7">
+                      {""}
+                    </span>
+                    안전관리조직 구성 및 운영실태를 파악 및 분석하여,
+                    <br />
+                    적합한 안전보건관리체계 구축 방안 제시
+                  </p>
                 </div>
-            </li>
-            <li className="w-1/2">
-              <Link passHref href={"/business/consulting/industry/"}>
-                <div className="h-12 border border-gray-200 border-l-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
-                  <span> 산업진단, 컨설팅</span>
+                <div className="md:w-1/3 md:h-56 border border-secondary rounded-md text-center py-10 md:mx-5 mb-5 md:mb-0">
+                  <strong className="text-neutral-800 text-[26px]">
+                    안전관리시스템(PDCA)
+                  </strong>
+                  <p className="mt-7">
+                    <span className="block w-24 h-0 border-t border-primary m-auto mb-7">
+                      {""}
+                    </span>
+                    안전관리시스템 구축현황 및 운영실태를 점검하여,
+                    <br />
+                    보다 효율적인 안전관리시스템 구축 및 운영방안 제시
+                  </p>
                 </div>
-              </Link>
-            </li>
-          </ul>
-          <ContentSubTitle title="관련법령" />
-          <div className="w-full md:px-[20px] mb-[40px]">
-            <div className="flex flex-col justify-center items-start md:h-[80px] px-[20px] py-4 md:py-0 border border-gray w-full">
-              <span>
-                · 산업안전보건기준에 관한 규칙 제 311조 (폭발위험장소에서
-                사용하는 전기 기계·기구의 선정 등)
-              </span>
-              <span>
-                · 산업안전보건기준에 관한 규칙 제 230조 (폭발위험이 있는 장소의
-                설정 및 관리)
-              </span>
-            </div>
-          </div>
-
-          <ContentSubTitle title="컨설팅 목적" />
-          <div className="w-full md:px-[20px] mb-[40px]">
-            <div className="flex flex-col justify-center items-start md:h-[80px] px-[20px] py-4 md:py-0 border border-gray w-full">
-              <span>
-                진단부터 방폭기기 구매, 시공에 이르기까지 모든 과정을 책임감
-                있게 관리하며, 감독기관의 점검 시 대응 지원 및 지적 사항에 대한
-                신속 조치
-              </span>
-            </div>
-          </div>
-
-          <ContentSubTitle title="컨설팅 범위" />
-          <div className="w-full md:px-[20px] mb-[40px] flex flex-col">
-            <span className="text-subtitle mb-[10px] text-black">
-              | 검사 등급별
-            </span>
-            <div className="w-full flex justify-start items-center">
-              <span className="flex text-base justify-start items-start">
-                <Image
-                  src={PicCircle}
-                  width={20}
-                  height={10}
-                  alt="icon"
-                  className="pt-[4px] mr-[5px]"
-                />{" "}
-                육안 : 접근 기기 또는 도구를 사용하지 않고 육안으로 명백히 알 수
-                있는, 볼트 분실과 같은 결함을 식별 하는 검사
-              </span>
-            </div>
-            <div className="w-full flex justify-start items-center my-[10px]">
-              <span className="flex text-base justify-start items-start">
-                <Image
-                  src={PicCircle}
-                  width={20}
-                  height={20}
-                  alt="icon"
-                  className="pt-[4px] mr-[5px]"
-                />{" "}
-                근접 : 육안 검사의 대상 요소를 포함하며, 추가적으로 적합한
-                도구를 사용하여 볼트 풀림과 같은 결함을 파악하는 검사
-              </span>
-            </div>
-            <div className="w-full flex justify-start items-center">
-              <span className="flex text-base justify-start items-start">
-                <Image
-                  src={PicCircle}
-                  width={20}
-                  height={20}
-                  alt="icon"
-                  className="pt-[4px] mr-[5px]"
-                />{" "}
-                정밀 : 근접 검사의 대상 요소를 포함하며, 추가적으로 용기 개방
-                또는 필요할 경우 도구 및 시험 기기를 사용해야 명확하게 파악할 수
-                있는 단자 풀림과 같은 결함을 식별하는 검사
-              </span>
-            </div>
-          </div>
-
-          <div className="w-full md:px-[20px] mb-[40px] flex flex-col">
-            <span className="text-subtitle mb-[10px] text-black">
-              | 검사 유형별
-            </span>
-            <div className="w-full flex justify-start items-center">
-              <span className="flex text-base justify-start items-start">
-                <Image
-                  src={PicCircle}
-                  width={20}
-                  height={10}
-                  alt="icon"
-                  className="pt-[4px] mr-[5px]"
-                />{" "}
-                최초 : 전기설비를 사용하기 전에 해당 기기, 시스템 및 설치에 대해
-                실시하는 검사
-              </span>
-            </div>
-            <div className="w-full flex justify-start items-center my-[10px]">
-              <span className="flex text-base justify-start items-start">
-                <Image
-                  src={PicCircle}
-                  width={20}
-                  height={20}
-                  alt="icon"
-                  className="pt-[4px] mr-[5px]"
-                />{" "}
-                표본 : 전기기기, 시스템 및 설치를 대표할 수 있는 비율을 정해
-                실시하는 검사
-              </span>
-            </div>
-            <div className="w-full flex justify-start items-center">
-              <span className="flex text-base justify-start items-start">
-                <Image
-                  src={PicCircle}
-                  width={20}
-                  height={20}
-                  alt="icon"
-                  className="pt-[4px] mr-[5px]"
-                />{" "}
-                정기 : 일상적으로 수행하는 모든 전기기기, 시스템 및 설치에 대한
-                검사
-              </span>
-            </div>
-          </div>
-
-          <ContentSubTitle title="컨설팅 절차" />
-          <div className="w-full flex flex-col justify-center">
-            <Image src={PicConsulting} alt="Pic" className="hidden md:block" />
-            <Image src={PicConsulting_M} alt="Pic" className="md:hidden w-full px-[20px]"/>
-          </div>
+                <div className="md:w-1/3 md:h-56 border border-secondary rounded-md text-center py-10 mb-5 md:mb-0">
+                  <strong className="text-neutral-800 text-[26px]">
+                    안전한 작업환경
+                  </strong>
+                  <p className="mt-7">
+                    <span className="block w-24 h-0 border-t border-primary m-auto mb-7">
+                      {""}
+                    </span>
+                    현장진단을 통한
+                    <br />
+                    잠재유해위험요인 발굴 및 개선방안 제시
+                  </p>
+                </div>
+              </div>
+              <ContentSubTitle title="중대재해처벌법 컨설팅 절차" />
+              <div className="w-full flex">
+                <div className="hidden md:block w-1/12 mr-1">
+                  <div className="w-full h-full">
+                    <div className="flex h-[595px]">
+                      <div className="w-2/5">&nbsp;</div>
+                      <div className="w-1/5 bg-gradient-to-b from-primary to-[#0f618c]">
+                        &nbsp;
+                      </div>
+                      <div className="w-2/5">&nbsp;</div>
+                    </div>
+                    <div className="w-full h-[50px] relative">
+                      <IoMdArrowDropdown className="w-24 h-[180px] absolute -bottom-10 -left-[2.5px] text-[#0f618c]" />
+                    </div>
+                    {/* 화살표 삼각형 */}
+                  </div>
+                </div>
+                <ul className="w-full md:w-11/12">
+                  <li>
+                    <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
+                      01. 서류 평가
+                    </div>
+                    <div className="w-full px-0 md:px-6 py-6 md:flex">
+                      <div className="md:w-1/2">
+                        <strong className="text-[18px] font-medium text-neutral-800">
+                          <Image
+                            src={content_icon}
+                            className="w-5 inline-block"
+                            alt="텍스트 강조"
+                          />
+                          사업장 안전보건관리시스템 문서 점검
+                        </strong>
+                        <p className="text pl-2 mt-1">
+                          · 안전관리책임자 선임 등 문서관리 상태 파악
+                        </p>
+                        <p className="text pl-2">· 운영상태 및 이행여부</p>
+                        <p className="text pl-2 mb-3">
+                          · 산안법/연안법 위반 여부
+                        </p>
+                      </div>
+                      <div className="md:w-1/2">
+                        <strong className="text-[18px] font-medium text-neutral-800">
+                          <Image
+                            src={content_icon}
+                            className="w-5 inline-block"
+                            alt="텍스트 강조"
+                          />
+                          안전관리 문서
+                        </strong>
+                        <p className="text pl-2 mt-1">
+                          · 위험성평가, 작업 시작 전 점검, 비상조치계획 등에
+                          대한 서류 점검 진행
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
+                      02. 현장 평가
+                    </div>
+                    <div className="w-full px-0 md:px-6 py-6 md:flex">
+                      <div className="md:w-1/2">
+                        <strong className="text-[18px] font-medium text-neutral-800">
+                          <Image
+                            src={content_icon}
+                            className="w-5 inline-block"
+                            alt="텍스트 강조"
+                          />
+                          안전관리현황 및 이행 상태 파악
+                        </strong>
+                        <p className="text pl-2 mb-3 mt-1">
+                          · 산업안전보건법, 시행령, 시행규칙 이행여부
+                        </p>
+                      </div>
+                      <div className="md:w-1/2">
+                        <strong className="text-[18px] font-medium text-neutral-800">
+                          <Image
+                            src={content_icon}
+                            className="w-5 inline-block"
+                            alt="텍스트 강조"
+                          />
+                          현장 안전 수준 파악
+                        </strong>
+                        <p className="text pl-2 mt-1">
+                          · 산업안전보건기준 규칙 준수여부
+                        </p>
+                        <p className="text pl-2">
+                          · 위험요인 및 법규 위반·지적 사항
+                        </p>
+                        <p className="text pl-2">
+                          · 기계, 전기, 화공 분야 심층분석
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="w-full h-14 bg-primary text-white text-[20px] flex items-center pl-8">
+                      03. 개선안 도출 및 보고서 작성
+                    </div>
+                    <div className="border-b border-primary w-full px-0 md:px-6 py-6 md:flex">
+                      <div className="md:w-1/2">
+                        <strong className="text-[18px] font-medium text-neutral-800">
+                          <Image
+                            src={content_icon}
+                            className="w-5 inline-block"
+                            alt="텍스트 강조"
+                          />
+                          안전보건관리시스템 개선안 제시
+                        </strong>
+                        <p className="text pl-2 mt-1">
+                          · 문서관리 및 운영상태 개선안 제시
+                        </p>
+                        <p className="text pl-2">
+                          · 위험성평가, 작업 시작 전 점검 등 서류 보완사항 제시
+                        </p>
+                      </div>
+                      <div className="md:w-1/2 mt-2 md:mt-0">
+                        <strong className="text-[18px] font-medium text-neutral-800">
+                          <Image
+                            src={content_icon}
+                            className="w-5 inline-block"
+                            alt="텍스트 강조"
+                          />
+                          현장 안전관리 현황에 따른 개선안 제시
+                        </strong>
+                        <p className="text pl-2 mt-1">
+                          · 산업안전보건법 및 하위법령에 따른 개선안
+                        </p>
+                        <p className="text pl-2">
+                          · 기계, 전기, 화공 분야 심층적 개선안
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
         </section>
       </main>
     </section>
   );
 };
 
-export default InspectionClient;
+export default SapaClient;
