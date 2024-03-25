@@ -113,36 +113,32 @@ const PSMClient = () => {
 
         <section className="py-[20px] md:pl-[40px] px-[20px] md:px-0 w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-              {/*PSM 컨설팅 */}
-              <div className="w-full h-24 border-t-4 border-secondary flex justify-start items-center pl-10 text-black font-medium mb-7 text-[26px]">
-                PSM 컨설팅
-              </div>
-              <ContentSubTitle title="PSM 컨설팅 세부 내용" />
-              <ul className="-translate-y-[20px] text-[15px] leading-6 mb-5">
-                <li className="w-full border-b border-gray md:flex">
-                  <div className="md:w-1/2 h-32 flex items-center">
-                    <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
-                      1
+              <ContentSubTitle title="PSM 컨설팅" />
+              <ul className="-translate-y-[20px] text-[15px] mb-5 w-full">
+                <li className="w-full md:flex justify-between my-5">
+                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
+                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                      01
                     </div>
                     <p className="ml-3">공정안전보고서(PSM) 작성</p>
                   </div>
-                  <div className="md:w-1/2 h-32 flex items-center">
-                    <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
-                      2
+                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center">
+                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                      02
                     </div>
                     <p className="ml-3">PSM 운영 및 이행상태평가 컨설팅</p>
                   </div>
                 </li>
-                <li className="w-full border-b border-gray md:flex">
-                  <div className="md:w-1/2 h-32 flex items-center">
-                    <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
-                      3
+                <li className="w-full md:flex justify-between my-5">
+                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
+                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                      03
                     </div>
                     <p className="ml-3">PSM 변경관리 컨설팅</p>
                   </div>
-                  <div className="md:w-1/2 h-32 flex items-center">
-                    <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
-                      4
+                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center">
+                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                      04
                     </div>
                     <p className="ml-3">
                       PSM 자체감사 컨설팅<br className="md:hidden"/>
@@ -150,10 +146,10 @@ const PSMClient = () => {
                     </p>
                   </div>
                 </li>
-                <li className="w-full border-b border-gray md:flex">
-                  <div className="md:w-1/2 h-32 flex items-center">
-                    <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
-                      5
+                <li className="w-full md:flex justify-between my-5">
+                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
+                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                      05
                     </div>
                     <p className="ml-3">
                       공정위험성평가 컨설팅<br className="md:hidden"/>
@@ -162,9 +158,9 @@ const PSMClient = () => {
                       FMEA, PHAST, ALOHA, E-CA)
                     </p>
                   </div>
-                  <div className="md:w-1/2 h-32 flex items-center">
-                    <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
-                      6
+                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center">
+                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                      06
                     </div>
                     <p className="ml-3">
                       PSM 운영 System 구축<br className="md:hidden"/>
@@ -172,15 +168,18 @@ const PSMClient = () => {
                     </p>
                   </div>
                 </li>
-                <li className="w-full border-b border-gray md:flex">
-                  <div className="md:w-1/2 h-32 flex items-center">
-                    <div className="w-16 h-16 border border-[#ccc] rounded-full flex justify-center items-center text-[30px] text-[#ccc]">
-                      7
+                <li className="w-full md:flex justify-between my-5">
+                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
+                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                      07
                     </div>
                     <p className="ml-3">
                       폭발위험장소 산정(2D or 3D Scan) <br className="md:hidden"/>
                       컨설팅
                     </p>
+                  </div>
+                  <div className="md:w-1/2 h-24 flex items-center">
+                        &nbsp;
                   </div>
                 </li>
               </ul>
