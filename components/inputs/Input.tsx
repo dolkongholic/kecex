@@ -69,7 +69,6 @@ const Input: React.FC<InputProps> = ({
             duration-150
             transform
             -translate-y-3
-            
             z-10
             origin-[0]
             ${formatPrice ? "left-9" : "left-4"}

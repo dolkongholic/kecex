@@ -59,7 +59,7 @@ const MainList = [
     title: "경력수첩 발급",
     url: "#",
     sub: [
-      { title: "경력수첩 발급", url: "/mypage/carrear/print" },
+      { title: "경력수첩 발급", url: "/mypage/career/print" },
       // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
     ],
   },

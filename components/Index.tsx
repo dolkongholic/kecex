@@ -126,16 +126,16 @@ const Index: React.FC<IndexProps> = ({
           <div className="w-full justify-center slider-container">
             <Slider {...settings}>
               <div className="h-[380px] max-w-[1200px]">
-                <div className="w-11/12 bg-[#FFC743] h-full mx-auto rounded-xl relative text-white overflow-hidden">
+                <div className="w-11/12 bg-[#FFC743] h-full mx-auto rounded-xl relative text-[#3A3A3A] overflow-hidden">
                   <strong className="absolute text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     한국방폭협회 공식사이트<br/>
                     정식오픈 안내
                   </strong>
-                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-10">
+                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
                     사단법인 한국방폭협회는 방폭산업의 건전한 발전을<br/>
                     위해 설립되었습니다.
                   </p>
-                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#FFC743]">
+                  <button className="absolute border border-[#3A3A3A] w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-[#3A3A3A] hover:text-[#FFC743] z-20">
                     자세히 보기
                   </button>
                   <Image 
@@ -151,11 +151,11 @@ const Index: React.FC<IndexProps> = ({
                     수소시스템 안전 기본원리<br/>
                     과정 개설
                   </strong>
-                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-10">
+                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
                     신규 개설된 IECEx CoPC Unit 011<br/>
                     과정에 대해 알아보세요.
                   </p>
-                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#36609F]">
+                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#36609F] z-20">
                     자세히 보기
                   </button>
                   <Image 
@@ -171,11 +171,11 @@ const Index: React.FC<IndexProps> = ({
                     한국방폭협회 기업회원<br/>
                     가입 안내
                   </strong>
-                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-10">
+                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
                     가입비 100만원&nbsp;&nbsp;|&nbsp;&nbsp;연회비 50만원
                   </p>
                   <Link passHref href={"/business/member/join"}>
-                    <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#424C5B]">
+                    <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#424C5B] z-20">
                       자세히 보기
                     </button>
                   </Link>
@@ -187,16 +187,16 @@ const Index: React.FC<IndexProps> = ({
                 </div>
               </div>
               <div className=" h-[380px] max-w-[1200px]">
-                <div className="w-11/12 bg-[#64BCFF] h-full mx-auto rounded-xl relative text-white overflow-hidden">
+                <div className="w-11/12 bg-[#85c7fa] h-full mx-auto rounded-xl relative text-[#3A3A3A] overflow-hidden">
                   <strong className="absolute text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     한국방폭협회 정회원<br/>
                     가입 안내
                   </strong>
-                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-10">
+                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
                     가입비 5만원&nbsp;&nbsp;|&nbsp;&nbsp;연회비 10만원
                   </p>
                   <Link passHref href={"/business/member/join"}>
-                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#64BCFF]">
+                  <button className="absolute border border-[#3A3A3A] w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-[#3A3A3A] hover:text-[#85c7fa] z-20">
                     자세히 보기
                   </button>
                   </Link>
@@ -213,10 +213,10 @@ const Index: React.FC<IndexProps> = ({
                     방폭교육 전과정<br/>
                     교육비할인 이벤트
                   </strong>
-                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-10">
+                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
                     초급교육 | 중급교육 | 고급교육
                   </p>
-                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#FFA448]">
+                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#FFA448] z-20">
                     자세히 보기
                   </button>
                   <Image 
@@ -232,11 +232,11 @@ const Index: React.FC<IndexProps> = ({
                     2024<br/>
                     산업안전 대진단
                   </strong>
-                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-10">
+                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
                     중대재해 예방, 대진단으로 시작하세요
                   </p>
                   <Link passHref href={"/business/consulting/inspection/"}>
-                    <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#60B86F]">
+                    <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#60B86F] z-20">
                       자세히 보기
                     </button>
                   </Link>

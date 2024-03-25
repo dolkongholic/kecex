@@ -8,13 +8,13 @@ export default async function getCurrentRaw(params: IParams) {
   try {
     const { rawId } = params;
 
-    const currentNotice = await prisma.notice.findUnique({
+    const currentRaw = await prisma.raw.findUnique({
       where: {
         id: Number(rawId),
       },
     });
 
-    return currentNotice;
+    return currentRaw;
   } catch (error: any) {
     return null;
   }

@@ -76,6 +76,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
   const [scrollA, setScrollA] = useState('');
   const [scrollB, setScrollB] = useState('');
   const [scrollC, setScrollC] = useState('');
+  const [scrollD, setScrollD] = useState('');
 
   useEffect(() => {
     const onScroll = () => {
@@ -85,10 +86,12 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         setScrollA('fixed');
         setScrollB('pt-[20px]');
         setScrollC('!mt-0');
+        setScrollD('before:!-top-[20px]')
       }else{
         setScrollA('')
         setScrollB('')
         setScrollC('')
+        setScrollD('')
       };
     };
 
@@ -231,7 +234,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           </div>
         </div>
         <div 
-          className={`w-screen h-screen fixed bg-black bg-opacity-40 z-30 transition-all duration-300 ${
+          className={`w-screen h-screen fixed bg-black bg-opacity-40 z-30 transition-opacity duration-300 ${
             menubg === 'openbg'
               ? "opacity-100"
               : "opacity-0 hidden"
@@ -281,9 +284,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               }
             >
               <div className="w-[1400px] flex pl-[250px] pr-[80px]">
-                <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
-                ">
+                <div className={`w-1/4 text-[19px] pl-[2%] relative
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                `}>
                   <Link passHref href={"/introduce/common/ceo/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
                       일반현황
@@ -293,7 +296,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     <Link passHref href={"/introduce/common/ceo/"}>
                       <span className="cursor-pointer hover:underline underline-offset-4"> CEO 인사말</span>
                     </Link>
-                    <Link passHref href={"/introduce/common/vistion/"}>
+                    <Link passHref href={"/introduce/common/vision/"}>
                       <span className="cursor-pointer hover:underline underline-offset-4"> 비전/미션</span>
                     </Link>
                     <Link passHref href={"/introduce/common/history/"}>
@@ -304,9 +307,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     </Link>
                   </div>
                 </div>
-                <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
-                ">
+                <div className={`w-1/4 text-[19px] pl-[2%] relative
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                `}>
                   <Link passHref href={"/introduce/group/group"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
                       조직안내
@@ -337,9 +340,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               onMouseOver={() => setMenu(menu)}
             >
               <div className="w-[1400px] flex justify-start pl-[250px] pr-[80px]">
-                <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
-                ">
+                <div className={`w-1/4 text-[19px] pl-[2%] relative
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                `}>
                   <Link passHref href={"/business/member/join/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
                       회원
@@ -360,9 +363,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     </Link>
                   </div>
                 </div>
-                <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
-                ">
+                <div className={`w-1/4 text-[19px] pl-[2%] relative
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                `}>
                   <Link passHref href={"/business/education/course01/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
                       교육
@@ -431,27 +434,27 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               onMouseOver={() => setMenu(menu)}
             >
               <div className="w-[1400px] flex justify-start pl-[250px] pr-[80px] h-[350px]">
-                <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
-                ">
+                <div className={`w-1/4 text-[19px] pl-[2%] relative
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                `}>
                   <Link passHref href={"/notice/worker/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       인재정보
                     </div>
                   </Link>
                 </div>
-                <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
-                ">
+                <div className={`w-1/4 text-[19px] pl-[2%] relative
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                `}>
                   <Link passHref href={"/notice/faq/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       FAQ
                     </div>
                   </Link>
                 </div>
-                <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
-                ">
+                <div className={`w-1/4 text-[19px] pl-[2%] relative
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                `}>
                   <Link passHref href={"/notice/qna/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       문의사항
@@ -474,9 +477,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               onMouseOver={() => setMenu(menu)}
             >
               <div className="w-[1400px] flex justify-start pl-[250px] pr-[80px]">
-                <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[1px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
-                ">
+                <div className={`w-1/4 text-[19px] pl-[2%] relative
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                `}>
                   <Link passHref href={"/information/raw?page=1"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
                       관련법령
@@ -654,7 +657,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     <Link passHref href={"/introduce/common/ceo/"}>
                       <span className="cursor-pointer hover:text-primary hover:font-semibold"> · CEO 인사말</span>
                     </Link>
-                    <Link passHref href={"/introduce/common/vistion/"}>
+                    <Link passHref href={"/introduce/common/vision/"}>
                       <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 비전/미션</span>
                     </Link>
                     <Link passHref href={"/introduce/common/history/"}>
