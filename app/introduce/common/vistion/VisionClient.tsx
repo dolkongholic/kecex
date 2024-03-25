@@ -138,7 +138,7 @@ const VisionClient = () => {
             고도화하고 관련기술인의 사회적 지위향상에 기여함을 그 목적으로 한다.
           </p>
           <div className="w-full space-y-4 md:space-y-0 md:py-[60px] md:flex justify-between items-center gap-2 mb-[40px] md:mb-0">
-            <div className="md:w-1/4 py-[30px] flex flex-col justify-center items-center border border-gray mt-[30px] md:mt-0">
+            <div className="md:w-1/4 py-[30px] flex flex-col justify-center items-center border border-[#3A3A3A] mt-[30px] md:mt-0">
               <div className="flex justify-center items-center mb-[20px]">
                 VISION 1
               </div>
@@ -147,7 +147,7 @@ const VisionClient = () => {
                 <span className="ml-[10px]">산업안전 기술기반의 확대</span>
               </div>
             </div>
-            <div className="md:w-1/4 py-[30px] flex flex-col justify-center items-center border border-gray">
+            <div className="md:w-1/4 py-[30px] flex flex-col justify-center items-center border border-[#3A3A3A]">
               <div className="flex justify-center items-center mb-[20px]">
                 VISION 2
               </div>
@@ -156,7 +156,7 @@ const VisionClient = () => {
                 <span className="ml-[10px]">방폭전문인력 양성</span>
               </div>
             </div>
-            <div className="md:w-1/4 py-[30px] flex flex-col justify-center items-center border border-gray">
+            <div className="md:w-1/4 py-[30px] flex flex-col justify-center items-center border border-[#3A3A3A]">
               <div className="flex justify-center items-center mb-[20px]">
                 VISION 3
               </div>
@@ -165,7 +165,7 @@ const VisionClient = () => {
                 <span className="ml-[10px]">방폭기술 글로벌 경쟁력 확보</span>
               </div>
             </div>
-            <div className="md:w-1/4 py-[30px] flex flex-col justify-center items-center border border-gray">
+            <div className="md:w-1/4 py-[30px] flex flex-col justify-center items-center border border-[#3A3A3A]">
               <div className="flex justify-center items-center mb-[20px]">
                 VISION 4
               </div>
@@ -178,7 +178,7 @@ const VisionClient = () => {
           <Image src={PicVision} alt="vision" className="hidden md:block" />
           <ContentSubTitle title="미션" />
           <div className="w-full md:py-[60px] flex justify-center items-center">
-            <div className="w-full md:w-[90%] py-[30px] flex flex-col justify-center items-center border border-gray">
+            <div className="w-full py-[30px] flex flex-col justify-center items-center border border-[#3A3A3A]">
               <div className="flex justify-center items-center mb-[20px]">
                 MISSION
               </div>

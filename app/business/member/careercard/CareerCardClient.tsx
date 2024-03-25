@@ -138,8 +138,8 @@ const CareerCardClient = () => {
           <ContentSubTitle title="운영계획" />
           <div className="w-full p-[20px] border mb-[10px] leading-9">
             <div className="flex flex-col text-[#003893]">
-              <div className="text-[18px] flex">
-                <p className="font-bold pr-[10px]">1.</p> 디지털 플랫폼 생성
+              <div className="text-[18px] flex font-semibold">
+                <p className="pr-[5px]">1.</p> 디지털 플랫폼 생성
               </div>
               <div className="text-base text-black">
                 자신의 경력을 손쉽게 기록하고, 업데이트가 가능하도록 디지털 경력
@@ -147,16 +147,16 @@ const CareerCardClient = () => {
               </div>
             </div>
             <div className="flex flex-col text-[#003893] mt-[24px]">
-              <div className="text-[18px] flex">
-                <p className="font-bold pr-[10px]">2.</p> 표준화된 형식
+              <div className="text-[18px] flex font-semibold">
+                <p className="pr-[5px]">2.</p> 표준화된 형식
               </div>
               <div className="text-base text-black">
                 경력이 일관되게 기록될 수 있도록 표준화된 형식을 제공
               </div>
             </div>
             <div className="flex flex-col text-[#003893] mt-[24px]">
-              <div className="text-[18px] flex">
-                <p className="font-bold pr-[10px]">3.</p> 검증 절차 도입
+              <div className="text-[18px] flex font-semibold">
+                <p className="pr-[5px]">3.</p> 검증 절차 도입
               </div>
               <div className="text-base text-black">
                 제출된 경력에 대한 검증 절차를 도입하여, 기록의 정확성과 신뢰성을
@@ -164,8 +164,8 @@ const CareerCardClient = () => {
               </div>
             </div>
             <div className="flex flex-col text-[#003893] mt-[24px]">
-              <div className="text-[18px] flex">
-                <p className="font-bold pr-[10px]">4.</p> 지속적인 교육 및 지원
+              <div className="text-[18px] flex font-semibold">
+                <p className="pr-[5px]">4.</p> 지속적인 교육 및 지원
               </div>
               <div className="text-base text-black">
                 경력 수첩을 유지 및 관리 할 수 있도록 교육
@@ -174,24 +174,24 @@ const CareerCardClient = () => {
           </div>
 
           <ContentSubTitle title="운영목표" />
-          <div className="md:flex w-full justify-between items-center text-black mb-[40px] text-[18px]">
-            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray flex justify-center items-center my-2 md:my-0">
+          <div className="md:flex w-full justify-between items-center text-black mb-[40px] text-[18px] font-medium">
+            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-[#3A3A3A] flex justify-center items-center my-2 md:my-0">
               전문성 인증
             </div>
-            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray flex justify-center items-center my-2 md:my-0">
+            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-[#3A3A3A] flex justify-center items-center my-2 md:my-0">
               연속적인 학습과 
               <br className="hidden md:inline"/>
               &nbsp;개발 촉진
             </div>
-            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray flex justify-center items-center my-2 md:my-0">
+            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-[#3A3A3A] flex justify-center items-center my-2 md:my-0">
               투명성과
               <br className="hidden md:inline"/>
               공정성 확보
             </div>
-            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray flex justify-center items-center my-2 md:my-0">
+            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-[#3A3A3A] flex justify-center items-center my-2 md:my-0">
               산업표준설정
             </div>
-            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-gray flex justify-center items-center my-2 md:my-0">
+            <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-[#3A3A3A] flex justify-center items-center my-2 md:my-0">
               회원간
               <br className="hidden md:inline"/>
               네트워킹 촉진
@@ -201,7 +201,7 @@ const CareerCardClient = () => {
           <ContentSubTitle title="발급조건" />
           <article className="w-full text-[15px]">
             <div className="flex w-full justify-between h-14 border-b-2 border-[#3A3A3A]">
-              <div className="md:w-[90px] flex justify-center items-center md:h-auto text-[18px] text-black font-medium">
+              <div className="flex justify-center items-center md:h-auto text-[18px] text-black font-medium">
               · 초급
               </div>
               <p className=" flex justify-center items-center ">
@@ -246,74 +246,92 @@ const CareerCardClient = () => {
             </div>
           </article>
 
-          <div className="md:px-[20px] md:flex w-full text-[15px] mt-8 bd:mt-0">
-            <div className="md:w-[90px] text-subtitle bg-darkgray md:bg-lightgray flex justify-center items-center h-[35px] md:h-auto">
-              중급
+          <article className="w-full text-[15px] mt-8">
+            <div className="flex w-full justify-between h-14 border-b-2 border-[#3A3A3A]">
+              <div className="flex justify-center items-center md:h-auto text-[18px] text-black font-medium">
+                · 중급
+              </div>
             </div>
-            <div className="md:w-[30%] py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t md:border-b border-gray pb-[15px]">
-              <span>한국방폭협회 방폭 기초교육 이수자</span>
-              <span>IECEx CoPC Unit Ex 001,036 취득자</span>
-              <span>IECEx CoPC Unit Ex 001,478 취득자</span>
-              <span>IECEx CoPC Unit Ex 001,002 취득자</span>
-              <span>IECEx CoPC Unit Ex 001,009 취득자</span>
+            <div className="flex w-full border-b">
+              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r">
+                <span>한국방폭협회 방폭 기초교육 이수자</span>
+                <span>IECEx CoPC Unit Ex 001,036 취득자</span>
+                <span>IECEx CoPC Unit Ex 001,478 취득자</span>
+                <span>IECEx CoPC Unit Ex 001,002 취득자</span>
+                <span>IECEx CoPC Unit Ex 001,009 취득자</span>
+              </div>
+              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+                <span>방폭관련 자격증 및 전공 학력 소지자</span>
+                <span className="mt-1">방폭 실무 경력 : 5년 이상</span>
+              </div>
             </div>
-            <div className="md:w-[25%] py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t md:border-b border-gray">
-              <span>방폭관련 자격증 및 전공 학력 소지자</span>
-              <span className="mt-1">방폭 실무 경력 : 5년 이상</span>
+            <div className="flex w-full border-b-2">
+              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r border-gray">
+                <span>-</span>
+              </div>
+              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+                <span>비전공 학력 소지자</span>
+                <span className="mt-1">방폭 실무 경력 : 8년 이상</span>
+              </div>
             </div>
-            <div className="md:w-[20%] py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t md:border-b border-gray">
-              <span>-</span>
-            </div>
-            <div className="md:w-[25%] py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t border-b border-gray">
-              <span>비전공 학력 소지자</span>
-              <span className="mt-1">방폭 실무 경력 : 8년 이상</span>
-            </div>
-          </div>
+          </article>
 
-          <div className="md:px-[20px] md:flex w-full text-[15px] mt-8 bd:mt-0">
-            <div className="md:w-[90px] text-subtitle bg-darkgray md:bg-lightgray flex justify-center items-center h-[35px] md:h-auto">
-              고급
+          <article className="w-full text-[15px] mt-8">
+            <div className="flex w-full justify-between h-14 border-b-2 border-[#3A3A3A]">
+              <div className="flex justify-center items-center md:h-auto text-[18px] text-black font-medium">
+                · 고급
+              </div>
             </div>
-            <div className="md:w-[30%]  py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t md:border-b border-gray pb-[15px]">
-              <span>한국방폭협회 방폭 기초교육 이수자</span>
-              <span>IECEx CoPC Unit Ex 001,036 취득자</span>
-              <span>IECEx CoPC Unit Ex 001,478 취득자</span>
-              <span>IECEx CoPC Unit Ex 001,002 취득자</span>
-              <span>IECEx CoPC Unit Ex 001,009 취득자</span>
+            <div className="flex w-full border-b">
+              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r">
+                <span>한국방폭협회 방폭 기초교육 이수자</span>
+                <span>IECEx CoPC Unit Ex 001,036 취득자</span>
+                <span>IECEx CoPC Unit Ex 001,478 취득자</span>
+                <span>IECEx CoPC Unit Ex 001,002 취득자</span>
+                <span>IECEx CoPC Unit Ex 001,009 취득자</span>
+              </div>
+              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+                <span>방폭관련 자격증 및 전공 학력 소지자</span>
+                <span className="mt-1">방폭 실무 경력 : 8년 이상</span>
+              </div>
             </div>
-            <div className="md:w-[25%] py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t md:border-b border-gray">
-              <span>방폭관련 자격증 및 전공 학력 소지자</span>
-              <span className="mt-1">방폭 실무 경력 : 8년 이상</span>
+            <div className="flex w-full border-b-2">
+              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r border-gray">
+                <span>-</span>
+              </div>
+              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+                <span>비전공 학력 소지자</span>
+                <span className="mt-1">방폭 실무 경력 : 12년 이상</span>
+              </div>
             </div>
-            <div className="md:w-[20%] py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t md:border-b border-gray">
-              <span>-</span>
-            </div>
-            <div className="md:w-[25%] py-[15px] md:py-0 md:pt-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t border-b border-gray">
-              <span>비전공 학력 소지자</span>
-              <span className="mt-1">방폭 실무 경력 : 12년 이상</span>
-            </div>
-          </div>
+          </article>
 
-          <div className="md:px-[20px] md:flex w-full text-[15px] mt-8 bd:mt-0">
-            <div className="md:w-[90px] text-subtitle bg-darkgray md:bg-lightgray flex justify-center items-center h-[35px] md:h-auto">
-              특급
+          <article className="w-full text-[15px] mt-8">
+            <div className="flex w-full justify-between h-14 border-b-2 border-[#3A3A3A]">
+              <div className="flex justify-center items-center md:h-auto text-[18px] text-black font-medium">
+                · 특급
+              </div>
             </div>
-            <div className="md:w-[30%]  py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t md:border-b border-gray pb-[15px]">
-              <span>한국방폭협회 방폭 기초교육 이수자</span>
-              <span>IECEx CoPC Unit Ex 010 취득자</span>
+            <div className="flex w-full border-b">
+              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r">
+                <span>한국방폭협회 방폭 기초교육 이수자</span>
+                <span>IECEx CoPC Unit Ex 010 취득자</span>
+              </div>
+              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+                <span>방폭관련 자격증 및 전공 학력 소지자</span>
+                <span className="mt-1">방폭 실무 경력 : 12년 이상</span>
+              </div>
             </div>
-            <div className="md:w-[25%] py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t md:border-b border-gray pb-[15px]">
-              <span>방폭관련 자격증 및 전공 학력 소지자</span>
-              <span className="mt-1">방폭 실무 경력 : 12년 이상</span>
+            <div className="flex w-full border-b-2">
+              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r border-gray">
+                <span>-</span>
+              </div>
+              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+                <span>비전공 학력 소지자</span>
+                <span className="mt-1">방폭 실무 경력 : 15년 이상</span>
+              </div>
             </div>
-            <div className="md:w-[20%] py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t md:border-b border-gray pb-[15px]">
-              <span>-</span>
-            </div>
-            <div className="md:w-[25%]  py-[15px] px-[10px] flex flex-col justify-start items-start border-l md:border-l-0 border-r border-t border-b border-gray pb-[15px]">
-              <span>비전공 학력 소지자</span>
-              <span className="mt-1">방폭 실무 경력 : 15년 이상</span>
-            </div>
-          </div>
+          </article>
         </section>
       </main>
     </section>

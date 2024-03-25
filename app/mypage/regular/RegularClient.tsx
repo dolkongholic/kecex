@@ -260,9 +260,9 @@ const RegularClient = () => {
                     </p>
                   </div>
                 </div>
-                <p className="text-[12px] text-center mt-3">
+                {/* <p className="text-[12px] text-center mt-3">
                   입회원서를 다운로드하여 가입정보를 작성
-                </p>
+                </p> */}
               </li>
               <li className="pt-12 hidden md:inline-block">{`>>`}</li>
               <li className="py-6 md:hidden text-center">{`↓`}</li>
@@ -277,18 +277,17 @@ const RegularClient = () => {
                   </div>
                   <div className="w-7/12">
                     <p>
-                      입회원서 및
-                      <br />
-                      사업자등록증 송부
+                      메일 전송<br/>
+                      kecex@kecex.or.kr
                     </p>
                   </div>
                 </div>
-                <p className="text-[12px] text-center mt-3">
+                {/* <p className="text-[12px] text-center mt-3">
                   협회 주소록을 참조하여 입회원서 및 <br />
                   사업자등록증을 관할 지역본부
                   <br />
                   또는 지회에 팩스 송부 후 연락
-                </p>
+                </p> */}
               </li>
               <li className="pt-12 hidden md:inline-block">{`>>`}</li>
               <li className="py-6 md:hidden text-center">{`↓`}</li>
@@ -304,17 +303,15 @@ const RegularClient = () => {
                   <div className="w-7/12">
                     <p>
                       입회처리
-                      <br />
-                      담당자 배정
                       <br className="md:hidden"/>
                       (회비 청구)
                     </p>
                   </div>
                 </div>
-                <p className="text-[12px] text-center mt-3">
+                {/* <p className="text-[12px] text-center mt-3">
                   입회처리 후 {`'Welcome'`} 문자 전송
                   <br />* 회비 청구시 지로(GIRO) 우편 발송
-                </p>
+                </p> */}
               </li>
             </ul>
             {/* <div className="w-full h-20 bg-gray-100 flex justify-center items-center my-10">
@@ -339,9 +336,9 @@ const RegularClient = () => {
                 회원서비스 안내{" "}
                 <Image src={download_icon} className="w-4 h-4 ml-2" alt="img" />{" "}
               </button> */}
-              <button className="w-1/2 md:w-44 h-14  border border-darkgray text-neutral-800 flex justify-center items-center ml-4">
+              {/* <button className="w-1/2 md:w-44 h-14  border border-darkgray text-neutral-800 flex justify-center items-center ml-4">
                 접수처
-              </button>
+              </button> */}
             </div>
             {/*btn_box*/}
           </div>

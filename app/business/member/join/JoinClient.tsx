@@ -192,7 +192,7 @@ const JoinPage = () => {
           </div>
           <div className="w-full border-b-2 border-gray md:flex pb-[15px] mt-[15px] mb-[40px]">
             <div className="flex">
-              <span className=" text-secondary w-[100px]">특별회원</span>
+              <span className=" text-secondary w-[100px]">명예회원</span>
             </div>  
               <span className="text-[15px]">
                 본회의 취지에 찬동하고, 방폭기술 발전과 본회의 사업에 적극적으로
@@ -506,16 +506,16 @@ const JoinPage = () => {
 
           <ContentSubTitle title="정회원 권한" />
           <span className="text-[15px] md:text-base">· 협회의 운영과 발전에 대한 건의</span>
-          <span className="text-[15px] md:text-base">
+          <span className="text-[15px] md:text-base mt-1">
             · 협회가 시행하는 각종 방폭관련 사업에 참여
           </span>
-          <span className="text-[15px] md:text-base">
+          <span className="text-[15px] md:text-base mt-1">
             · 본회의 인적 및 물적 설비를 이용할 권리
           </span>
-          <span className="text-[15px] md:text-base">
+          <span className="text-[15px] md:text-base mt-1">
             · 협회가 주관하는 각종 세미나 및 교육 등의 우선 참여
           </span>
-          <span className="text-[15px] md:text-base tracking-tight">
+          <span className="text-[15px] md:text-base tracking-tight mt-1">
             · 협회의 임원, 대의원, 위원 기타 이 정관의 규정에 <br className="md:hidden"/> 
             <span className="md:hidden">&nbsp;&nbsp;&nbsp;</span>
             의하여 선임되는 자의 선거권 및 피선거권을 취득

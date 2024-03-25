@@ -139,7 +139,7 @@ const RuleClient = () => {
           <ContentSubTitle title="제 1장 총칙" />
           <div className=" mb-[40px]">
             <div className="w-full md:flex justify-between items-center text-subtitle text-center h-auto md:h-[50px] md-[20px]">
-              <span className="md:pl-[10px] text-secondary w-[180px] text-[15px] md:text-base">
+              <span className="text-secondary w-[120px] text-[15px] md:text-base text-start">
                 제1조(정의)
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base pl-2 md:pl-0">
@@ -148,7 +148,7 @@ const RuleClient = () => {
               </div>
             </div>
             <div className="w-full md:flex justify-between items-center text-subtitle text-center md:h-[50px] md:mb-[20px] mt-[20px] md:mt-0">
-              <span className="md:pl-[10px] text-secondary  w-[180px] text-[15px] md:text-base">
+              <span className=" text-secondary  w-[120px] text-[15px] md:text-base text-start">
                 제2조(목적)
               </span>
               <div className="w-full md:pt-[18px] flex justify-start items-end text-[15px] md:text-base pl-2 md:pl-0 text-start mb-[20px] md:mb-0">
@@ -160,7 +160,7 @@ const RuleClient = () => {
           </div>
 
           <ContentSubTitle title="제 2장 회원의 자격 및 종류" />
-          <div className="w-full md:px-[20px] pb-[15px] mt-[10px] mb-[40px]">
+          <div className="w-full pb-[15px] mt-[10px] mb-[40px]">
             <div className="md:flex pb-[15px]">
               <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start">
                 제1조 
@@ -223,7 +223,7 @@ const RuleClient = () => {
           </div>
 
           <ContentSubTitle title="제 3장 회원의 가입절차 및 승인" />
-          <div className="w-full md:px-[20px] pb-[15px] mt-[10px] mb-[40px] text-[15px] md:text-base">
+          <div className="w-full pb-[15px] mt-[10px] mb-[40px] text-[15px] md:text-base">
             <div className="md:flex pb-[15px]">
               <span className="md:pl-[10px] text-secondary w-[220px]">
                 제5조 (회원의 가입절차)
@@ -259,7 +259,7 @@ const RuleClient = () => {
           </div>
 
           <ContentSubTitle title="제 4장 회원의 권리 및 의무" />
-          <div className="w-full md:px-[20px] pb-[15px] mt-[10px] mb-[40px]">
+          <div className="w-full pb-[15px] mt-[10px] mb-[40px]">
             <div className="md:flex pb-[15px]">
               <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base">
                 제1조 (정회원의 권리)
@@ -316,7 +316,7 @@ const RuleClient = () => {
           </div>
 
           <ContentSubTitle title="제 5장 회원 탈퇴, 제명 및 재가입" />
-          <div className="w-full md:px-[20px] pb-[15px] mt-[10px]">
+          <div className="w-full pb-[15px] mt-[10px]">
             <span className="md:pl-[10px] text-secondary w-[180px] text-[15px] md:text-base">
               제1조 (회원의 탈퇴)
             </span>
@@ -344,7 +344,7 @@ const RuleClient = () => {
           </div>
 
           <ContentSubTitle title="보칙" />
-          <div className="w-full md:px-[20px] pb-[15px] mt-[10px] mb-[40px]">
+          <div className="w-full pb-[15px] mt-[10px] mb-[40px]">
             <div className="md:flex">
               <span className="md:pl-[10px] text-secondary w-[180px] text-[15px] md:text-base">
                 제1조 (포상)
@@ -369,7 +369,7 @@ const RuleClient = () => {
           </div>
 
           <ContentSubTitle title="부칙" />
-          <div className="w-full md:px-[20px] pb-[15px] mt-[10px]">
+          <div className="w-full pb-[15px] mt-[10px]">
             <div className="md:flex">
               <span className="md:pl-[10px] text-secondary w-[180px] text-[15px] md:text-base">
                 제1조 (시행일)

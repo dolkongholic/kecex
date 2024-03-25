@@ -141,7 +141,7 @@ const Index: React.FC<IndexProps> = ({
                   <Image 
                     src={PicOpen} 
                     alt="open_banner" 
-                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto right-0 lg:right-[2%] bottom-0 z-0"
+                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[240px] w-auto right-0 lg:right-[2%] bottom-0 z-0"
                   />
                 </div>
               </div>
@@ -419,13 +419,13 @@ const Index: React.FC<IndexProps> = ({
           </li>
         </ul>
       </div>
-      <div className="w-full h-[600px] md:h-[400px] hidden md:flex flex-col justify-start items-center mt-[150px] py-[7px]">
-        <div className="w-full md:w-[1300px] h-[570px] md:h-[400px] justify-between item-center leading-[30px] md:leading-[60px]"> {/* 관련기관 리스트 */}
+      <div className="w-full h-[600px] md:h-[530px] hidden md:flex flex-col justify-start items-center mt-[150px] py-[7px]">
+        <div className="w-full md:w-[1300px] h-[570px] md:h-[530px] justify-between item-center leading-[30px] md:leading-[60px]"> {/* 관련기관 리스트 */}
           <h3 className="text-center font-bold text-[30px] text-[#3A3A3A] leading-[44px] mb-16">
             한국방폭협회는<br/>
             다음 기관들과 함께 합니다.
           </h3>
-          <div className="w-full flex px-3 md:px-0 mt-2 h-[20px] md:h-auto">
+          <div className="w-full flex px-3 md:px-0 mt-12 h-[20px] md:h-auto">
             <div className="w-1/4">
               <Image 
               src={Picmoel} 
@@ -455,7 +455,7 @@ const Index: React.FC<IndexProps> = ({
               />
             </div>
           </div>
-          <div className="w-full flex md:mt-8">
+          <div className="w-full flex md:mt-16">
             <div className="w-1/4 h-[36px]">
                     <Image 
               src={PicUl} 
@@ -485,7 +485,7 @@ const Index: React.FC<IndexProps> = ({
             />
             </div >
           </div>
-          <div className="w-full flex px-3 md:px-0 mt-2 md:mt-8 h-[20px] md:h-auto">
+          <div className="w-full flex px-3 md:px-0 mt-2 md:mt-16 h-[20px] md:h-auto">
             <div className="w-1/4">
                     <Image 
               src={Pichrdkorea} 
@@ -515,7 +515,7 @@ const Index: React.FC<IndexProps> = ({
               />
             </div>
           </div>
-          <div className="w-full flex px-3 md:px-0 mt-2 md:mt-9 h-[20px] md:h-auto">
+          <div className="w-full flex px-3 md:px-0 mt-2 md:mt-16 h-[20px] md:h-auto">
             <div className="w-1/4 h-[36px]">
               <Image 
               src={Picpolytech} 

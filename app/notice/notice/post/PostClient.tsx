@@ -139,7 +139,10 @@ const PostClient = () => {
               value={currentDate}
               disabled={isLoading}
               className="w-1/2 md:w-2/12 h-[40px] border border-gray px-3 my-2 md:my-0"
-              {...register("date", { required: true })}
+              {...register("date", { required: true, 
+                onChange: (event: any) => {
+                setCurrentDate(event.target.value);
+              }, })}
             />
           </div>
           <div className="md:mx-[20px] w-full md:w-[calc(100%-40px)] border-t border-secondary"></div>

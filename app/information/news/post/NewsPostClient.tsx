@@ -142,7 +142,11 @@ const NewsPostClient = () => {
               type="date"
               value={currentDate}
               disabled={isLoading}
-              {...register("date", { required: true })}
+              {...register("date", { 
+                required: true, 
+                onChange: (event: any) => {
+                setCurrentDate(event.target.value);
+              }, })}
               className="w-1/2 md:w-2/12 h-[40px] border border-gray-100 px-3 my-2 md:my-0"
             />
           </div>
@@ -155,8 +159,8 @@ const NewsPostClient = () => {
               className="border border-gray-100 p-6 box-border"
               disabled={isLoading}
               {...register("post_text", { required: true })}
-            >
-              글 내용을 입력해주세요.
+              placeholder="글 내용을 입력해주세요."
+            >          
             </textarea>
           </div>
           <div className="w-full flex justify-start items-center py-10 border-t-2 border-t-gray-100 border-b-2 border-b-gray-500">

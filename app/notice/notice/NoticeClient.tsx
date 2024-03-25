@@ -164,13 +164,15 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
                   <RiArrowRightSLine className="text-[20px] pt-[3px]" />
                 </div> */}
               </div>
+              <div>
               {currentUser && (
                 <Link passHref href={"notice/post"}>
-                  <button className="cursor-pointer bg-secondary text-white w-24 h-8 text-[14px]">
+                  <button className="cursor-pointer bg-secondary hover:bg-primary transition-all duration-300 text-white w-24 h-10 text-[14px]">
                     글쓰기
                   </button>
                 </Link>
               )}
+              </div>
             </div>
           </div>
         </section>
