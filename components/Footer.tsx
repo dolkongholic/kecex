@@ -88,7 +88,8 @@ export default function Footer() {
             울산광역시 중구 종가로 15, 울산테크노파크 <br className="md:hidden"/>
             기술혁신동 B동 408호<br className=""/>
             사단법인 한국방폭협회<br/>
-            전화 : 052 929 2848 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 팩스 : 052 929 2849
+            전화 : 052 929 2848 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 팩스 : 052 929 2849<br/>
+            E-mail : kecex@kecex.or.kr
           </span>
           {/* <span>한국방폭협회 전화 : 052 929 2848 | 팩스 : 052 929 2849</span> */}
         </div>

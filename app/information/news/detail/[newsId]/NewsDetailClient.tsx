@@ -210,12 +210,17 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
             </div>
           )}
           <div className="flex gap-4 m-auto">
-            <button
-              className="w-32 h-10 bg-gray-500 text-white text-[14px] mt-9 m-auto"
-              onClick={() => router.back()}
+            <Link
+              passHref
+              href={`/information/news/`}
+              className="w-full"
             >
-              목록
-            </button>
+              <button
+                className="w-32 h-10 bg-gray-500 text-white text-[14px] mt-9 m-auto"
+              >
+                목록
+              </button>
+            </Link>
             {currentUser && (
               <button
                 className="w-32 h-10 bg-red-500 text-white text-[14px] mt-9 m-auto"

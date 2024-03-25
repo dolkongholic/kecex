@@ -118,7 +118,7 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
                         {item.type} 협회소식
                       </p>
                     </div>
-                    <div className="text-[15px] leading-[17px] px-[10px] pt-3 h-[56px] overflow-hidden text-ellipsis">
+                    <div className="text-[15px] leading-[17px] px-[10px] my-3 h-[33px] line-clamp-2 text-ellipsis">
                       {item.title}
                     </div>
                   </div>
@@ -129,7 +129,7 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
               </Link>
             ))}
           </div>
-          <div className="w-full flex justify-between items-center h-[50px]">
+          <div className="w-full flex justify-between items-center h-[50px] px-9">
             <div>&nbsp;</div>
             <div className="flex">
               <div className="flex mr-[20px] cursor-pointer">
@@ -148,13 +148,15 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
                 {/* <RiArrowRightSLine className="text-[20px] pt-[3px]" /> */}
               </div>
             </div>
+            <div>
             {currentUser && (
-              <Link passHref href={"information/news/post"}>
-                <button className="cursor-pointer bg-secondary text-white w-24 h-8 text-[14px]">
+              <Link passHref href={"/information/news/post"}>
+                <button className="cursor-pointer bg-secondary hover:bg-primary transition-all duration-300 text-white w-24 h-10 text-[14px]">
                   글쓰기
                 </button>
               </Link>
             )}
+            </div>
           </div>
         </section>
       </main>

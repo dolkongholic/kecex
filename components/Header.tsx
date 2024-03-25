@@ -262,11 +262,11 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   className=" w-[1200px] h-[450.5px] absolute right-0 rotate-180 z-0"
                   alt="Image"
                 />
-            <div className="w-[450px] h-full absolute right-0">
+            {/* <div className="w-[450px] h-full absolute right-0">
               <p className="text-white absolute right-[75px] top-[100px] text-[36px] font-semibold">
                 {menu}
               </p>
-            </div>
+            </div> */}
               
             </div>
           </div>
@@ -475,7 +475,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             >
               <div className="w-[1400px] flex justify-start pl-[250px] pr-[80px]">
                 <div className="w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[2px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[310px] before:right-0 before:top-5 before:bg-[#dcdcdc]
                 ">
                   <Link passHref href={"/information/raw?page=1"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">

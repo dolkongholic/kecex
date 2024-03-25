@@ -221,28 +221,28 @@ const Course02Client = () => {
           <div className="w-full flex flex-col md:flex-row justify-between items-center mb-[40px]">
             <div className="w-full md:w-[49%] flex flex-col">
               <ContentSubTitle title="자격요건" />
-              <div className="flex flex-col justify-center py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start px-[20px] border border-gray w-full">
                 <span>각 IECEx Unit 별 취득 자격 요건 참조</span>
               </div>
             </div>
             <div className="w-full md:w-[49%] flex flex-col">
               <ContentSubTitle title="교육내용 및 시간" />
-              <div className="flex flex-col justify-center py-[20px] items-start h-[90px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center py-[20px] items-start px-[20px] border border-gray w-full">
                 <span>각 IECEx Unit 별 교육 시간 참조</span>
               </div>
             </div>
           </div>
 
-          <div className="w-full flex-col md:flex-row justify-center flex md:justify-between items-center mb-[40px]">
+          <div className="w-full flex-col md:flex-row justify-center flex md:justify-between items-start mb-[40px]">
             <div className="w-full md:w-[49%] flex flex-col">
               <ContentSubTitle title="갱신교육기간" />
-              <div className="flex flex-col justify-start py-[20px] items-start md:h-[180px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-start py-[20px] items-start px-[20px] border border-gray w-full">
                 <span>5년 (IEC 규정)</span>
               </div>
             </div>
             <div className="w-full md:w-[49%] flex flex-col">
               <ContentSubTitle title="CoPC Unit 별 교육과정" />
-              <div className="flex flex-col justify-start py-[20px] items-start md:h-[180px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-start py-[20px] items-start px-[20px] border border-gray w-full">
                 <span>· 방폭시공기술자(IECEx CoPC Unit Ex 001 + 036)</span>
                 <span>· 방폭검사기술자(IECEx CoPC Unit Ex 001 + 478)</span>
                 <span>
