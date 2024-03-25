@@ -98,7 +98,7 @@ const GroupClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px] md:pl-[40px] md:pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <div className="w-full flex flex-col px-[10px] md:px-[30px] mt-[20px] text-[#3A3A3A]">
             {/* <div className="h-[120px] items-center">

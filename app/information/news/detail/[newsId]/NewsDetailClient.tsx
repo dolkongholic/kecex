@@ -122,7 +122,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title="카드뉴스" />
           <div className="w-full  border-b border-gray-100">&nbsp;</div>
           <div className="w-full pl-[20px] flex justify-start items-center h-[70px] bg-gray-100 border-t-2 border-gray-200">
@@ -161,9 +161,9 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
               className="w-full"
             >
               <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
-                <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+                <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                   <p>이전글</p>
-                  <RiArrowUpSLine className="text-[24px] pt-[3px]" />
+                  <RiArrowUpSLine className="text-[24px] text-[#3A3A3A]" />
                 </div>
                 <div className="flex justify-start items-center pl-[20px]">
                   {preNews.title}
@@ -172,9 +172,9 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
             </Link>
           ) : (
             <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
-              <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+              <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                 <p>이전글</p>
-                <RiArrowUpSLine className="text-[24px] pt-[3px]" />
+                <RiArrowUpSLine className="text-[24px] pt-[3px] opacity-0" />
               </div>
               <div className="flex justify-start items-center pl-[20px]">
                 이전글이 없습니다.
@@ -189,9 +189,9 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
               className="w-full"
             >
               <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">
-                <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+                <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                   <p>다음글</p>
-                  <RiArrowDownSLine className="text-[24px] pt-[3px]" />
+                  <RiArrowDownSLine className="text-[24px] pt-[3px] text-[#3A3A3A]" />
                 </div>
                 <div className="flex justify-start items-center pl-[20px]">
                   {nextNews.title}
@@ -200,9 +200,9 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
             </Link>
           ) : (
             <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">
-              <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+              <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                 <p>다음글</p>
-                <RiArrowDownSLine className="text-[24px] pt-[3px]" />
+                <RiArrowDownSLine className="text-[24px] text-[#3A3A3A] opacity-0" />
               </div>
               <div className="flex justify-start items-center pl-[20px]">
                 <p>다음글이 없습니다.</p>

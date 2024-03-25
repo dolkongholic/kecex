@@ -137,7 +137,7 @@ const PostClient = () => {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title="공지사항 작성" center={true} />
           <div className="w-full mt-[20px] leading-[10px]">&nbsp;</div>
 

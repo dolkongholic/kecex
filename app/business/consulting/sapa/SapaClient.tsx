@@ -111,7 +111,7 @@ const SapaClient = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[60px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
             {/*중대재해처벌법 컨설팅 */}
               <ContentSubTitle title="중대재해처벌법 컨설팅 대상" />

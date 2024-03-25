@@ -138,7 +138,7 @@ const RawDetailClient: React.FC<RawClientProps> = ({
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title="관계법령" />
           <div className="w-full border-b border-gray-100">&nbsp;</div>
           <div className="w-full pl-[20px] flex justify-start items-center h-[70px] bg-gray-100 border-t-2 border-darkgray">

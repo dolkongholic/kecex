@@ -89,7 +89,7 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title="카드뉴스" />
           <div className="w-full mt-[20px] leading-[50px] border-b border-gray">
             {page}/{totalPages} 페이지 (총 {newsList.length} 건)

@@ -97,7 +97,7 @@ const CeoClient = () => {
           </div>
         </section>
 
-        <section className="md:py-[20px] md:pl-[40px] md:pr-[20px] w-full flex flex-col justify-start items-start relative ">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start relative ">
           <ContentTitle title={location}/>
           <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
             <li className="w-1/2 cursor-default">
@@ -151,7 +151,7 @@ const CeoClient = () => {
               강구하여 방폭산업 발전을 위해 최선을 다하겠습니다.
             </p>
           </div>
-          <div className="absolute bottom-0 right-5  md:-translate-y-[320px] md:-translate-x-10 ">
+          <div className="absolute bottom-5 right-5  md:-translate-y-[320px] md:-translate-x-10 ">
             <Image src={Picceo} alt="ceo" className="w-[360px] md:w-[550px] mx-auto"/>
           </div>
           <div className="absolute bottom-[220px] right-[40px] md:-translate-y-[160px] md:-translate-x-[555px] text-black">

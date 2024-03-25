@@ -100,7 +100,7 @@ const WorkerClient: React.FC<workerProps> = ({ currentUser }) => {
           </div>
         </section>
 
-        <section className="py-[20px] md:pl-[40px] px-[20px] md:px-0 w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <div className="w-full py-[40px] px-[40px]">
             <ContentTitle title={location} center={true} />
             {/* <div className="flex w-full mt-[50px]">

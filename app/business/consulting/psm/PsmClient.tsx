@@ -111,7 +111,7 @@ const PSMClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px] md:pl-[40px] px-[20px] md:px-0 w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
               <ContentSubTitle title="PSM 컨설팅" />
               <ul className="-translate-y-[20px] text-[15px] mb-5 w-full">

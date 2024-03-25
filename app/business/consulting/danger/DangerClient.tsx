@@ -112,7 +112,7 @@ const DangerClient = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[60px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           {/*위험성 평가 */}
           <ContentTitle title={location} />
               <ContentSubTitle title="위험성평가 실시" />
