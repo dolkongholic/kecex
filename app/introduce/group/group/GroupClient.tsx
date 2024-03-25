@@ -19,7 +19,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "CEO 인사말", url: "/introduce/common/ceo" },
-      { title: "비전/미션", url: "/introduce/common/vistion" },
+      { title: "비전/미션", url: "/introduce/common/vision" },
       { title: "연혁", url: "/introduce/common/history" },
       { title: "CI", url: "/introduce/common/ci" },
     ],
@@ -98,7 +98,7 @@ const GroupClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px] md:pl-[40px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px] md:pl-[40px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <div className="w-full flex flex-col px-[10px] md:px-[30px] mt-[20px] text-[#3A3A3A]">
             {/* <div className="h-[120px] items-center">

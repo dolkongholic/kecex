@@ -18,7 +18,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "CEO 인사말", url: "/introduce/common/ceo" },
-      { title: "비전/미션", url: "/introduce/common/vistion" },
+      { title: "비전/미션", url: "/introduce/common/vision" },
       { title: "연혁", url: "/introduce/common/history" },
       { title: "CI", url: "/introduce/common/ci" },
     ],
@@ -97,7 +97,7 @@ const HistoryClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px] pl-[40px] w-full hidden md:flex flex-col justify-start items-start relative">
+        <section className="py-[20px] pl-[40px] md:pr-[20px] w-full hidden md:flex flex-col justify-start items-start relative">
           <ContentTitle title={location} />
             <div className="w-[420px] absolute top-[510px] left-32">
               <Image 

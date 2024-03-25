@@ -12,6 +12,9 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 
+import Image from "next/image";
+import PicInfo_01 from "@/public/img/page_top/information_01.jpg"
+
 const MainList = [
   {
     title: "관계법령",
@@ -74,6 +77,20 @@ const RawPostClient = () => {
   };
   return (
     <section>
+      <figure className="w-full h-[200px]">
+        <div className="w-full h-full mx-auto relative">
+          <Image
+            src={PicInfo_01}
+            layout="fill"
+            objectFit="cover"
+            alt="item.title"
+            className="object-cover"
+          />
+          <div className="bg-neutral-900/50 absolute w-full h-full left-0 top-0 z-20 text-center text-white font-medium text-[36px] leading-[200px]">
+            {location}
+          </div>
+        </div>
+      </figure>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-gray-200 flex justify-center text-[13px]">
           <div className="md:w-[1400px] flex justify-end pr-[20px]">
@@ -126,7 +143,10 @@ const RawPostClient = () => {
             <input
               type="date"
               value={currentDate}
-              {...register("date", { required: true })}
+              {...register("date", { required: true, 
+                onChange: (event: any) => {
+                setCurrentDate(event.target.value);
+              }, })}
               disabled={isLoading}
               className="w-1/2 md:w-2/12 h-[40px] border border-gray px-3 my-2 md:my-0"
             />
@@ -139,9 +159,9 @@ const RawPostClient = () => {
               rows={15}
               className="border border-gray p-6 box-border"
               disabled={isLoading}
+              placeholder="글 내용을 입력해주세요"
               {...register("post_text", { required: true })}
             >
-              글 내용을 입력해주세요.
             </textarea>
           </div>
           {/* <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray border-b-2 border-b-gray-500">

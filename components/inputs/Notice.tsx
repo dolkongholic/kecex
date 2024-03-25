@@ -55,13 +55,13 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
     <div className="w-full md:flex justify-center item-start mt-[40px]">
       <div className="md:w-[1400px] md:flex justify-start items-start space-x-[30px]">
         <div className="w-full h-[400px] md:h-[320px] md:flex justify-between item-start py-[10px]">      
-          <div className="w-full md:w-1/3 lg:w-1/4 h-[50px] md:h-[280px] flex md:flex-col items-start leading-8 md:leading-[55px] px-[20px] font-bold text-[16px] text-[#CECECE] border-b-2 md:border-0 border-primary mx-auto">
+          <div className="w-full md:w-1/3 lg:w-1/4 h-[50px] md:h-[280px] flex md:flex-col items-start leading-8 md:leading-[65px] px-[20px] font-bold text-[16px] text-[#CECECE] border-b-2 md:border-0 border-primary mx-auto">
             <h2 className="w-1/4 md:w-full text-start text-[16px] md:text-[20px] text-[#3A3A3A] font-bold leading-8 md:leading-7 mb-8">
               KECEx 소식
             </h2>
             <div className="w-3/4 md:w-full flex md:flex-col">
               <div
-                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-semibold text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
+                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-bold text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
                   noticeMenu == "협회공지" &&
                   " text-primary"
                 }`}
@@ -77,7 +77,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                 )}
               </div>
               <div
-                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-semibold text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
+                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-bold text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
                   noticeMenu == "보도자료" &&
                   "text-primary"
                 }`}
@@ -95,7 +95,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
               </div>
 
               <div
-                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-semibold text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
+                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-bold text-[14px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
                   noticeMenu == "교육센터" &&
                   "text-primary"
                 }`}

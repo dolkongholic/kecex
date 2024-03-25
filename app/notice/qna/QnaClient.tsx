@@ -14,7 +14,7 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 import Image from "next/image";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicNotice_03 from "@/public/img/page_top/notice_03.jpg"
 
 const MainList = [
   {
@@ -81,7 +81,7 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
       <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
-            src={PicCeo}
+            src={PicNotice_03}
             layout="fill"
             objectFit="cover"
             alt="item.title"

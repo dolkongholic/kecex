@@ -18,7 +18,7 @@ const MainList = [
     url: "#",
     sub: [
       { title: "CEO 인사말", url: "/introduce/common/ceo" },
-      { title: "비전/미션", url: "/introduce/common/vistion" },
+      { title: "비전/미션", url: "/introduce/common/vision" },
       { title: "연혁", url: "/introduce/common/history" },
       { title: "CI", url: "/introduce/common/ci" },
     ],
@@ -97,7 +97,7 @@ const MapClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px]  md:pl-[40px] w-full flex flex-col justify-start items-start">
+        <section className="py-[20px]  md:pl-[40px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <div className="w-full flex justify-center items-center mt-[20px]">
             <Image src={PicMap} alt="map" />

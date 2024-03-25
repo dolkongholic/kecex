@@ -17,7 +17,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import toast from "react-hot-toast";
 
 import Image from "next/image";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicNotice_04 from "@/public/img/page_top/notice_04.jpg"
 
 const MainList = [
   {
@@ -104,7 +104,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
       <figure className="w-full h-[200px]">
         <div className="w-full h-full mx-auto relative">
           <Image
-            src={PicCeo}
+            src={PicNotice_04}
             layout="fill"
             objectFit="cover"
             alt="item.title"
