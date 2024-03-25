@@ -97,7 +97,7 @@ const HistoryClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px] pl-[40px] md:pr-[20px] w-full hidden md:flex flex-col justify-start items-start relative">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full hidden md:flex flex-col justify-start items-start relative">
           <ContentTitle title={location} />
             <div className="w-[420px] absolute top-[510px] left-32">
               <Image 

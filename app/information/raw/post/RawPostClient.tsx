@@ -126,11 +126,11 @@ const RawPostClient = () => {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title="관계법령 작성" center={true} />
           <div className="w-full mt-[20px] leading-[50px]">&nbsp;</div>
 
-          <div className="w-full md:px-[20px] flex flex-col md:flex-row justify-between items-end md:items-center md:h-[70px]">
+          <div className="w-full flex flex-col md:flex-row justify-between items-end md:items-center md:h-[70px]">
             <div className="flex items-center w-full md:w-9/12">
               <input
                 type="text"
@@ -151,8 +151,8 @@ const RawPostClient = () => {
               className="w-1/2 md:w-2/12 h-[40px] border border-gray px-3 my-2 md:my-0"
             />
           </div>
-          <div className="md:mx-[20px] w-full md:w-[calc(100%-40px)] border-t border-secondary"></div>
-          <div className="w-full my-[30px] flex flex-col md:px-[20px]">
+          <div className="w-full border-t border-secondary"></div>
+          <div className="w-full my-[30px] flex flex-col">
             <textarea
               id="post_text"
               cols={30}
@@ -180,7 +180,7 @@ const RawPostClient = () => {
               </button>
             </div>
           </div> */}
-          <div className="w-full pt-3 flex justify-between md:px-[20px]">
+          <div className="w-full pt-3 flex justify-between">
             <button
               className="w-24 h-8 border border-gray-500 rounded-sm bg-lightgray text-[14px] hover:bg-neutral-800 hover:text-white hover:border-neutral-800"
               onClick={() => router.back()}

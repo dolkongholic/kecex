@@ -103,7 +103,7 @@ const RawClient: React.FC<RawProps> = ({ rawList, currentUser }) => {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title="관계법령" />
           <div className="w-full mt-[20px] leading-[50px] border-b border-gray">
             {page}/{totalPages} 페이지 (총 {rawList.length} 건)

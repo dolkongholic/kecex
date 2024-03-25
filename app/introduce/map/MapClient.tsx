@@ -97,7 +97,7 @@ const MapClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px]  md:pl-[40px] md:pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <div className="w-full flex justify-center items-center mt-[20px]">
             <Image src={PicMap} alt="map" />

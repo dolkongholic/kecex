@@ -100,7 +100,7 @@ const VisionClient = () => {
           </div>
         </section>
 
-        <section className="px-[20px] md:px-0 md:py-[20px] md:pl-[40px] md:pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <ul className="flex md:hidden flex-wrap w-full p-[20px] text-[15px]">
             <li className="w-1/2 cursor-default">

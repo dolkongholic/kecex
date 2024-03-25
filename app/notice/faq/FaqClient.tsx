@@ -102,8 +102,8 @@ const FaQClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px] md:pl-[40px] px-[20px] md:px-0 w-full flex flex-col justify-start items-start">
-          <div className="w-full py-[40px] md:px-[120px]">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+          <div className="w-full py-[40px]">
             <ContentTitle title="자주묻는 질문" center={true} />
 
             <div className="w-full flex flex-col mb-[30px]">
