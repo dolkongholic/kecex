@@ -37,7 +37,8 @@ export default function Footer() {
           <div className="flex md:space-x-[20px] item-center pt-[10px] translate-y-[160px] md:translate-y-0">
             <select
               id="related_site"
-              className="border border-[#777] w-[200px] h-[50px] text-center leading-[50px] flex justify-between items-center bg-[#3A3A3A] text-[#DCDCDC] mx-auto md:mx-0"
+              className="border border-[#777] w-[200px] h-[50px] text-center leading-[50px] flex justify-center 
+              items-center bg-[#3A3A3A] text-[#DCDCDC] mx-auto md:mx-0 rounded-md"
             >
               {/* (event) => copyrtChgUrl(event.target.value) */}
               <option value="">관련 기관</option>
