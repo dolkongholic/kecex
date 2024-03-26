@@ -124,6 +124,7 @@ const Index: React.FC<IndexProps> = ({
             </span> 
           </div>
           <div className="w-full justify-center slider-container">
+            {/* 메인 배너 슬라이드 영역 */}
             <Slider {...settings}>
               <div className="h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#FFC743] h-full mx-auto rounded-xl relative text-[#3A3A3A] overflow-hidden">
@@ -196,7 +197,7 @@ const Index: React.FC<IndexProps> = ({
                     가입비 5만원&nbsp;&nbsp;|&nbsp;&nbsp;연회비 10만원
                   </p>
                   <Link passHref href={"/business/member/join"}>
-                  <button className="absolute border border-[#3A3A3A] w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-[#3A3A3A] hover:text-[#85c7fa] z-20">
+                  <button className="absolute border border-[#3A3A3A] w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-[#3A3A3A] hover:text-[#D9ECFF] z-20">
                     자세히 보기
                   </button>
                   </Link>
@@ -419,9 +420,10 @@ const Index: React.FC<IndexProps> = ({
           </li>
         </ul>
       </div>
-      <div className="w-full h-[600px] md:h-[530px] hidden md:flex flex-col justify-start items-center mt-[150px] py-[7px]">
+      {/* 관련 기관 */}
+      <div className="w-full h-[600px] md:h-[650px] hidden md:flex flex-col justify-start items-center mt-[160px] py-[57px]">
         <div className="w-full md:w-[1300px] h-[570px] md:h-[530px] justify-between item-center leading-[30px] md:leading-[60px]"> {/* 관련기관 리스트 */}
-          <h3 className="text-center font-bold text-[30px] text-[#3A3A3A] leading-[44px] mb-16">
+          <h3 className="text-center font-bold text-[30px] text-[#3A3A3A] leading-[44px] mb-24">
             한국방폭협회는<br/>
             다음 기관들과 함께 합니다.
           </h3>

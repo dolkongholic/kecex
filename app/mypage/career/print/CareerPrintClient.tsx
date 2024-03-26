@@ -112,7 +112,7 @@ const CareerPrintClient = () => {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start ">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start ">
           <ContentTitle title={location} center={true} />
           <div className="w-full border border-secondary  font-medium text-lg text-center p-4 mb-5">
             경력 수첩 준비 중
@@ -170,7 +170,7 @@ const CareerPrintClient = () => {
               경력수첩 발급비용
             </div>
             <div className="flex justify-start items-center pl-[20px] text-black text-[14px] h-[60px] md:h-auto">
-              만원(VAT 포함)
+              ** 만원(VAT 포함)
             </div>
           </div>
 

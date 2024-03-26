@@ -112,7 +112,7 @@ const CareerSheetClient = () => {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
           <div className="flex justify-between w-full h-[50px] leading-[50px]">
             <Link passHref href="print" className="w-1/2">

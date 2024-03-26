@@ -153,7 +153,7 @@ const RegularClient = () => {
             </ul>
 
             <ContentSubTitle title="정회원 혜택" />
-            <ul className="-translate-y-[20px] text-[15px] mb-5 w-full">
+            <ul className="-translate-y-[20px] text-[15px] mb-16 w-full">
                 <li className="w-full md:flex justify-between my-5">
                   <div className="md:w-1/2 h-[150px] border border-[#ccc] flex items-center mr-8">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
@@ -248,10 +248,9 @@ const RegularClient = () => {
                 </li>
               </ul>
             <ContentSubTitle title="정회원 가입절차" />
-            <h3 className="text-subtitle text-center mt-5">가입 방법</h3>
-            <ul className="flex flex-col md:flex-row w-full items-center justify-between mt-8 mb-9 md:mb-0 border border-[#ccc] px-3">
+            <ul className="flex flex-col md:flex-row w-full items-center justify-between mb-9 md:mb-0 border border-[#ccc] px-3">
               <li className="w-3/4 md:w-1/4">
-                <div className="md:h-32 flex justify-between items-center py-4 md:py-0">
+                <div className="md:h-32 flex justify-between items-center py-2 md:py-0">
                   <div className="w-5/12 h-full flex justify-center items-center">
                     <Image
                       src={regular_member_1}
@@ -271,10 +270,10 @@ const RegularClient = () => {
                   입회원서를 다운로드하여 가입정보를 작성
                 </p> */}
               </li>
-              <li className="leading-[178px] hidden md:inline-block text-[24px] font-medium text-[#3A3A3A]">{`>`}</li>
+              <li className="leading-[150px] hidden md:inline-block text-[24px] font-medium text-[#3A3A3A]">{`>`}</li>
               <li className="py-6 md:hidden text-center">{`↓`}</li>
               <li className="w-3/4 md:w-1/4">
-                <div className="md:h-32 flex justify-between items-center py-4 md:py-0">
+                <div className="md:h-32 flex justify-between items-center py-2 md:py-0">
                   <div className="w-5/12 h-full flex justify-center items-center">
                     <Image
                       src={regular_member_2}
@@ -296,10 +295,10 @@ const RegularClient = () => {
                   또는 지회에 팩스 송부 후 연락
                 </p> */}
               </li>
-              <li className="leading-[178px] hidden md:inline-block text-[24px] font-medium text-[#3A3A3A]">{`>`}</li>
+              <li className="leading-[150px] hidden md:inline-block text-[24px] font-medium text-[#3A3A3A]">{`>`}</li>
               <li className="py-6 md:hidden text-center">{`↓`}</li>
               <li className="w-3/4 md:w-1/4">
-                <div className="md:h-32 flex justify-between items-center py-4 md:py-0">
+                <div className="md:h-32 flex justify-between items-center py-2 md:py-0">
                   <div className="w-5/12 h-full flex justify-center items-center">
                     <Image
                       src={regular_member_3}

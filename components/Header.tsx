@@ -110,18 +110,22 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
     <>
       <section className="flex-col hidden md:flex">
         <div
-          className="w-full h-[80px] flex justify-center item-center border-b border-[#dcdcdc] bg-white z-[80]"
+          className="w-full h-[60px] flex justify-center item-center border-b border-[#dcdcdc] bg-white z-[80]"
           onMouseOver={() => setMenu("")}
           onMouseLeave={() => {
             setMenubg("");}}
         >
           <div className="w-[1400px] flex justify-between item-center space-x-[20px]">
-            <div className="w-[250px] hidden xl:flex justify-start items-center">
+            <div className="lg:w-[350px] mr-[20px] hidden lg:block">
+              &nbsp;
+            </div>
+            <div className="w-[250px] flex justify-start items-center">
               <Link passHref href={"/"}>
                 <Image src={PicSlogan4} alt="슬로건" width={250} height={80} />
               </Link>
             </div>
-            <div className="flex justify-center items-center">
+            {/* 최상단 로고 + 검색창 */}
+            {/* <div className="flex justify-center items-center bg-red-200">
               <div className="w-[120px] mr-[40px] ml-[30px] flex item-center">
                 <Link passHref href={"/"}>
                   <Image
@@ -141,27 +145,33 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               <span className="w-[30px] h-[30px] -translate-x-[40px] translate-y-[5px]">
                 <FiSearch style={{ width: "22", height: "22" }} />
               </span>
-            </div>
+            </div> */}
             <div className="w-1/2 lg:w-[350px] flex justify-end items-center">
-              <div className="w-2/3 flex item-center justify-end mr-[30px] text-[13px] font-bold">
-                <ul className="flex items-center space-x-[5px]">
+              <div className="w-2/3 flex item-center justify-end mr-[15px] text-[13px] font-bold">
+                <ul className="flex items-center space-x-[10px]">
                   {currentUser == null ? (
+                    <>
                     <li onClick={() => signIn()} className="cursor-pointer">
                       로그인
                     </li>
+                    <li className="text-[#ccc]">|</li>
+                    <li onClick={() => signIn()} className="cursor-pointer">
+                    회원가입
+                    </li>
+                    </>
                   ) : (
                     <Link passHref href={"/mypage/overall/all01"}>
                       <li className="cursor-pointer">마이페이지</li>
                     </Link>
                   )}
 
-                  <li>|</li>
+                  <li className="text-[#ccc]">|</li>
                   <li onClick={openModal} className="cursor-pointer">
                     사이트맵
                   </li>
                   {currentUser != null && (
                     <>
-                      <li>|</li>
+                      <li className="text-[#ccc]">|</li>
                       <li className="flex items-center space-x-[5px]">
                         <span
                           className="cursor-pointer"
@@ -174,7 +184,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   )}
                 </ul>
               </div>
-              <ul className="w-[100px] flex justify-between">
+              {/* <ul className="w-[100px] flex justify-between">
                 {snsList.map((item, index) => (
                   <li key={index}>
                     <Image
@@ -185,7 +195,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     />
                   </li>
                 ))}
-              </ul>
+              </ul> */}
             </div>
           </div>
         </div>

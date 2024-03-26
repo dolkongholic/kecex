@@ -46,7 +46,7 @@ export default function Footer() {
               <option value="">관련 기관</option>
               <option
                 value="https://www.kosha.or.kr/kosha/index.do"
-                className="bg-green-200 block h-12"
+                className=""
               >
                 안전보건공단
               </option>

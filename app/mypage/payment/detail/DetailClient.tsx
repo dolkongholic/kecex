@@ -112,7 +112,7 @@ const DetailClient = () => {
           </div>
         </section>
 
-        <section className="py-[20px] pl-[40px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
           <div className="text-black w-full flex flex-col justify-center item-center">
             <div className="w-full flex justify-center mx-auto mt-5">

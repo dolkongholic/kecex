@@ -120,7 +120,7 @@ const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
           </div>
         </section>
 
-        <section className="p-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
           <div className="text-black w-full flex flex-col justify-between item-center border-b-secondary border-b-2">
             <div className="h-[40px]">
