@@ -146,7 +146,7 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
               <div className="w-[80%] h-[60px] px-3 md:px-0 md:pl-[40px] flex items-center">
                 <Input
                   id="name"
-                  label="이름을 입력하세요."
+                  label="이름"
                   disabled={isLoading}
                   register={register}
                   errors={errors}
@@ -163,7 +163,7 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
               <div className="w-[80%] h-[60px] px-3 md:px-0 md:pl-[40px] flex items-center">
                 <Input
                   id="tel"
-                  label="연락처를 입력하세요."
+                  label="연락처"
                   disabled={isLoading}
                   register={register}
                   errors={errors}
@@ -179,7 +179,7 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
               <div className="w-[80%] h-[60px] px-3 md:px-0 md:pl-[40px] flex items-center">
                 <Input
                   id="email"
-                  label="이메일을 입력하세요."
+                  label="이메일"
                   disabled={isLoading}
                   register={register}
                   errors={errors}
@@ -195,7 +195,7 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
               <div className="w-[80%] h-[60px] px-3 md:px-0 md:pl-[40px] flex items-center">
                 <Input
                   id="title"
-                  label="제목을 입력하세요."
+                  label="제목"
                   disabled={isLoading}
                   register={register}
                   errors={errors}
@@ -205,15 +205,15 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
               </div>
             </div>
             <div className="w-full border-t border-t-gray border-b border-b-gray flex">
-              <div className="w-[20%] h-[180px] md:pl-[40px] bg-lightgray flex justify-center md:justify-start items-center text-black">
+              <div className="w-[20%] md:pl-[40px] bg-lightgray flex justify-center md:justify-start items-center text-black">
                 문의내용
               </div>
-              <div className="w-[80%] h-[180px] px-3 md:px-0 md:pl-[40px] flex items-center">
+              <div className="w-[80%] px-3 md:px-0 md:pl-[40px] flex items-center">
                 <textarea
                   id="content"
-                  cols={80}
+                  cols={100}
                   rows={5}
-                  className={`border h-[180px] border-neutral-300 p-6 box-border rounded-md ${
+                  className={`border h-[180px] border-neutral-300 p-6 box-border rounded-md my-1 ${
                     isLoading && "cursor-not-allowed"
                   }`}
                   {...register("content", { required: true })}

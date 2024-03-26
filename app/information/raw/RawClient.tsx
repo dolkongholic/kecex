@@ -122,12 +122,12 @@ const RawClient: React.FC<RawProps> = ({ rawList, currentUser }) => {
                 }`}
               >
                 <div className="flex ">
-                  <div className="w-[50px] text-center text-darkgray text-subtitle">
+                  <div className="w-[50px] text-center text-gray-400 text-subtitle">
                     {item.id}
                   </div>
                   <div className="w-[1020px] ml-3 line-clamp-1">{item.title}</div>
                 </div>
-                <div className="w-[50px] text-darkgray ">
+                <div className="w-[50px] text-gray-400 ">
                   <RiArrowRightSLine className="text-[26px]" />
                 </div>
               </div>
