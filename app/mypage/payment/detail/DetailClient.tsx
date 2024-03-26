@@ -121,42 +121,59 @@ const DetailClient = () => {
               </p>
             </div>
             <ul className="w-full mx-auto border-t-2 border-neutral-700 mt-10 text-[14px] md:text-base">
-              <div className="w-full h-11 bg-lightgray flex text-center items-center font-medium border-b border-primary">
-                <div className="w-[50px] h-full border-r border-gray-400 pt-[10px]">
+              <div className="w-full h-11 bg-lightgray flex text-center items-center font-medium border-b border-secondary">
+                <div className="w-[50px] h-full pt-[10px]">
                   No.
                 </div>
-                <div className="w-1/4 h-full border-r border-gray-400 pt-[10px]">
+                <div className="w-[10%] h-full pt-[10px]">
+                  종류
+                </div>
+                <div className="w-[15%] h-full pt-[10px]">
                   금액
                 </div>
-                <div className="w-1/4 h-full border-r border-gray-400 pt-[10px]">
+                <div className="w-[15%] h-full pt-[10px]">
                   납부상태
                 </div>
-                <div className="w-2/4 h-full pt-[10px]">
+                <div className="w-[30%] h-full pt-[10px]">
                   일자
                 </div>
+                <div className="w-[30%] h-full pt-[10px]">
+                  비고
+                </div>
               </div>
-              <li className="w-full h-11 flex text-center items-center border-b border-gray-400">
+              <li className="w-full h-11 flex text-center items-center border-b border-gray-300">
                 <div className="w-[50px] h-full border-r border-gray-200 flex items-center justify-center">
                   <span>
                     1
                   </span>
                 </div>
-                <div className="w-1/4 h-full border-r border-gray-200 flex items-center">
+                <div className="w-[10%] h-full border-r border-gray-200 flex items-center justify-center">
+                  <span>
+                    연회비
+                  </span>
+                </div>
+                <div className="w-[15%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￦&nbsp;
                   <span>
                     30,000
                   </span>
                 </div>
-                <div className="w-1/4 h-full border-r border-gray-200 flex items-center">
+                <div className="w-[15%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span className="text-blue-600">
                     접수 대기
                   </span>
                 </div>
-                <div className="w-2/4 h-full border-r border-gray-200 flex items-center">
+                <div className="w-[30%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>
                     2023.12.15 17:51:01
+                  </span>
+                </div>
+                <div className="w-[30%] h-full border-r border-gray-200 flex items-center">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span>
+                    없음
                   </span>
                 </div>
               </li>
@@ -166,22 +183,33 @@ const DetailClient = () => {
                     2
                   </span>
                 </div>
-                <div className="w-1/4 h-full border-r border-gray-200 flex items-center">
+                <div className="w-[10%] h-full border-r border-gray-200 flex items-center justify-center">
+                  <span>
+                    가입비
+                  </span>
+                </div>
+                <div className="w-[15%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￦&nbsp;
                   <span>
                     500,000
                   </span>
                 </div>
-                <div className="w-1/4 h-full border-r border-gray-200 flex items-center">
+                <div className="w-[15%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span className="text-red-600">
                     승인-입금완료
                   </span>
                 </div>
-                <div className="w-2/4 h-full border-r border-gray-200 flex items-center">
+                <div className="w-[30%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>
                     2024.10.25 07:54:01
+                  </span>
+                </div>
+                <div className="w-[30%] h-full border-r border-gray-200 flex items-center">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span>
+                    없음
                   </span>
                 </div>
               </li>

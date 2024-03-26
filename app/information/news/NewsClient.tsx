@@ -114,7 +114,7 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
                       />
                     </div>
                     <div className="w-full flex justify-start items-end absolute left-[-1px] top-[190.5px]">
-                      <p className="px-[16px] p-[5px] bg-[#3A3A3A] text-white opacity-90 text-[13px]">
+                      <p className="px-[16px] py-[5px] bg-[#3A3A3A] text-white opacity-90 text-[13px]">
                         {item.type} 협회소식
                       </p>
                     </div>
