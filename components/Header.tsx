@@ -84,9 +84,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
       // console.log('scrollY', scrollY);
       if (scrollY >= 70){
         setScrollA('fixed');
-        setScrollB('pt-[20px]');
+        setScrollB('pt-[40px]');
         setScrollC('!mt-0');
-        setScrollD('before:!-top-[20px]')
+        setScrollD('before:!-top-[40px]')
       }else{
         setScrollA('')
         setScrollB('')
@@ -155,9 +155,11 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                       로그인
                     </li>
                     <li className="text-[#ccc]">|</li>
-                    <li onClick={() => signIn()} className="cursor-pointer">
-                    회원가입
-                    </li>
+                    <Link passHref href={"/member/join/"}>
+                      <li className="cursor-pointer">
+                        회원가입
+                      </li>
+                    </Link>
                     </>
                   ) : (
                     <Link passHref href={"/mypage/overall/all01"}>
@@ -254,7 +256,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         </div>
         {/* 서브 메뉴 */}
         <div
-          className={`fixed top-[85px] w-full h-[450px] bg-white opacity-0 z-[70] ${
+          className={`fixed top-[65px] w-full h-[450px] bg-white opacity-0 z-[70] ${
             !menu
               ? "opacity-0 -translate-y-[50px] pointer-events-none"
               : "opacity-100 translate-y-0 pointer-events-auto"
@@ -507,7 +509,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             </div>
           )}
           {menu == "교육센터" && (
-            <div className="w-[1400px] pt-[200px] pl-[130px] mx-auto text-neutral-600 font-semibold text-[24px]">
+            <div className="w-[1400px] pt-[170px] pl-[130px] mx-auto text-neutral-600 font-semibold text-[24px]">
               <div className="w-[1400px] text-center">
                 교육 센터 운영 준비 중
               </div>

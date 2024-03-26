@@ -138,9 +138,9 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
                     <div className="w-[50px] text-center text-gray-400 text-subtitle">
                       {item.id}
                     </div>
-                    <div className="ml-3">{item.title}</div>
+                    <div className="w-[1020px] ml-3 line-clamp-1">{item.title}</div>
                   </div>
-                  <div className="w-[50px] text-gray-400 ">
+                  <div className="w-[50px] text-darkgray ">
                     <RiArrowRightSLine className="text-[26px]" />
                   </div>
                 </div>
