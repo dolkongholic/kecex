@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 
 //image
@@ -39,12 +41,12 @@ export default function Footer() {
               id="related_site"
               className="border border-[#777] w-[200px] h-[50px] text-center leading-[50px] flex justify-center 
               items-center bg-[#3A3A3A] text-[#DCDCDC] mx-auto md:mx-0 rounded-md"
+              onChange={(event:any) => window.open(event.target.value)}
             >
-              {/* (event) => copyrtChgUrl(event.target.value) */}
               <option value="">관련 기관</option>
               <option
                 value="https://www.kosha.or.kr/kosha/index.do"
-                className=""
+                className="bg-green-200 block h-12"
               >
                 안전보건공단
               </option>
@@ -78,9 +80,6 @@ export default function Footer() {
               >
                 한국표준협회
               </option>
-              <div className="pr-[10px]">
-                <IoIosArrowUp />
-              </div>
             </select>
           </div>
         </div>

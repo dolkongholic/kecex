@@ -36,19 +36,19 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
 
   const [index, setIndex] = useState(0);
 
-  useEffect(() => {
-    const timer_main = setInterval(() => {
-      setIndex(prevIndex => (prevIndex + 1) % menulist.length);
-    }, 5000);
+  // useEffect(() => {
+  //   const timer_main = setInterval(() => {
+  //     setIndex(prevIndex => (prevIndex + 1) % menulist.length);
+  //   }, 5000);
 
-    return () => {
-      clearInterval(timer_main);
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(timer_main);
+  //   };
+  // }, []);
 
-  useEffect(() => {
-    setNoticeMenu(menulist[index]);
-  }, [index]);
+  // useEffect(() => {
+  //   setNoticeMenu(menulist[index]);
+  // }, [index]);
   
 
   return (
@@ -132,14 +132,14 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             )
                           : "공지가 없습니다."}
                       </span>
-                      <span className="h-[200px] leading-[24px] font-regular pt-2 text-[14px] md:text-[15px]">
+                      <span className="h-[201px] leading-[24px] font-regular pt-2 text-[14px] md:text-[15px]">
                         {noticeList[noticeList.length - 1]
                           ? String(
                               noticeList[noticeList.length - 1].content
                             ).slice(0, 140)
                           : ""}
                       </span>
-                      <span className="h-[25px] leading-[35px] text-[12px] md:text-[16px] font-light"> {/* 첫번째 공지 날짜 */}
+                      <span className="h-[15px] leading-[25px] text-[12px] md:text-[16px] font-light"> {/* 첫번째 공지 날짜 */}
                         {noticeList[noticeList.length - 1]
                           ? String(noticeList[noticeList.length - 1].date)
                           : ""}
@@ -163,14 +163,14 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             )
                           : "공지가 없습니다."}
                       </span>
-                      <span className="h-[200px] leading-[24px] font-regular pt-2 text-[14px] md:text-[15px]">
+                      <span className="h-[201px] leading-[24px] font-regular pt-2 text-[14px] md:text-[15px]">
                         {noticeList[noticeList.length - 2]
                           ? String(
                               noticeList[noticeList.length - 2].content
                             ).slice(0, 140)
                           : ""}
                       </span>
-                      <span className="h-[25px] leading-[25px] text-[12px] md:text-[16px] font-light"> {/* 두번째 공지 날짜 */}
+                      <span className="h-[15px] leading-[25px] text-[12px] md:text-[16px] font-light"> {/* 두번째 공지 날짜 */}
                         {noticeList[noticeList.length - 2]
                           ? String(noticeList[noticeList.length - 2].date)
                           : ""}
@@ -194,14 +194,14 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             )
                           : "공지가 없습니다."}
                       </span>
-                      <span className="h-[200px] leading-[24px] font-regular pt-2 text-[14px] md:text-[15px]">
+                      <span className="h-[201px] leading-[24px] font-regular pt-2 text-[14px] md:text-[15px]">
                         {noticeList[noticeList.length - 3]
                           ? String(
                               noticeList[noticeList.length - 3].content
                             ).slice(0, 140)
                           : ""}
                       </span>
-                      <span className="h-[25px] leading-[25px]] text-[16px] font-light"> {/* 세번째 공지 날짜 */}
+                      <span className="h-[15px] leading-[25px]] text-[16px] font-light"> {/* 세번째 공지 날짜 */}
                         {noticeList[noticeList.length - 3]
                           ? String(noticeList[noticeList.length - 3].date)
                           : ""}
@@ -222,7 +222,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     className="w-full"
                   >
                     <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pr-[50px] md:pl-0 text-[#3A3A3A]">
-                      <div className="w-full h-[240px] relative">
+                      <div className="w-full h-[200px] relative">
                         {newsList[newsList.length - 1]?.img && (
                             <Image src={newsList[newsList.length - 1].img}
                             alt="news_image" 
@@ -233,7 +233,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             />
                         )}
                       </div>
-                      <span className="h-[55px] leading-[20px] text-[16px] md:text-[18px] font-semibold pt-3 line-clamp-2">
+                      <span className="h-[50px] leading-[20px] text-[16px] md:text-[18px] font-semibold pt-3 line-clamp-2">
                         {newsList[newsList.length - 1]
                           ? String(newsList[newsList.length - 1].title).slice(
                               0,
@@ -241,7 +241,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             )
                           : "뉴스가 없습니다."}
                       </span>
-                      <span className="h-[25px] leading-[35px] text-[16px] font-light">
+                      <span className="h-[25px] leading-[30px] text-[16px] font-light">
                         {newsList[newsList.length - 1]
                           ? String(newsList[newsList.length - 1].date)
                           : ""}
@@ -257,7 +257,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     className="w-full"
                   >
                     <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:px-[25px]">
-                    <div className="w-full h-[240px] relative">
+                    <div className="w-full h-[200px] relative">
                         {newsList[newsList.length - 1]?.img && (
                             <Image src={newsList[newsList.length - 2].img}
                             alt="news_image" 
@@ -268,7 +268,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             />
                         )}
                       </div>
-                      <span className="h-[55px] leading-[20px] text-[16px] md:text-[18px] font-semibold pt-3 line-clamp-2">
+                      <span className="h-[50px] leading-[20px] text-[16px] md:text-[18px] font-semibold pt-3 line-clamp-2">
                         {newsList[newsList.length - 2]
                           ? String(newsList[newsList.length - 2].title).slice(
                               0,
@@ -276,7 +276,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             )
                           : "뉴스가 없습니다."}
                       </span>
-                      <span className="h-[25px] leading-[35px] text-[16px] font-light">
+                      <span className="h-[25px] leading-[30px] text-[16px] font-light">
                         {newsList[newsList.length - 2]
                           ? String(newsList[newsList.length - 2].date)
                           : ""}
@@ -292,7 +292,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     className="w-full"
                   >
                     <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start pl-[20px] md:pl-[50px] text-[#3A3A3A]">
-                    <div className="w-full h-[240px] relative">
+                    <div className="w-full h-[200px] relative">
                       {newsList[newsList.length - 1]?.img && (
                             <Image src={newsList[newsList.length - 3].img}
                             alt="news_image" 
@@ -303,7 +303,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             />
                         )}
                       </div>
-                      <span className="h-[55px] leading-[20px] text-[16px] md:text-[18px] font-semibold pt-3 line-clamp-2">
+                      <span className="h-[50px] leading-[20px] text-[16px] md:text-[18px] font-semibold pt-3 line-clamp-2">
                         {newsList[newsList.length - 3]
                           ? String(newsList[newsList.length - 3].title).slice(
                               0,
@@ -311,7 +311,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             )
                           : "뉴스가 없습니다."}
                       </span>
-                      <span className="h-[25px] leading-[35px] text-[16px] font-light">
+                      <span className="h-[25px] leading-[30px] text-[16px] font-light">
                         {newsList[newsList.length - 3]
                           ? String(newsList[newsList.length - 3].date)
                           : ""}

@@ -187,7 +187,7 @@ const Index: React.FC<IndexProps> = ({
                 </div>
               </div>
               <div className=" h-[380px] max-w-[1200px]">
-                <div className="w-11/12 bg-[#85c7fa] h-full mx-auto rounded-xl relative text-[#3A3A3A] overflow-hidden">
+                <div className="w-11/12 bg-[#D9ECFF] h-full mx-auto rounded-xl relative text-[#3A3A3A] overflow-hidden">
                   <strong className="absolute text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     한국방폭협회 정회원<br/>
                     가입 안내

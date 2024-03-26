@@ -86,6 +86,7 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
             objectFit="cover"
             alt="item.title"
             className="object-cover"
+            objectPosition="top"
           />
           <div className="bg-neutral-900/50 absolute w-full h-full left-0 top-0 z-20 text-center text-white font-medium text-[36px] leading-[200px]">
             {location}
