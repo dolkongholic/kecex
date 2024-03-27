@@ -11,6 +11,7 @@ import Image from "next/image";
 // Image
 import PicMap from "@/public/img/pages/introduce/map.png";
 import PicIntroduce_03 from "@/public/img/page_top/introduce_03.jpg"
+import Map from "@/components/map";
 
 const MainList = [
   {
@@ -100,7 +101,22 @@ const MapClient = () => {
         <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <div className="w-full flex justify-center items-center mt-[20px]">
-            <Image src={PicMap} alt="map" />
+            <Map/>
+          </div>
+          <div className="w-[1150px] h-[170px] flex justify-between mt-8 mx-auto border border-[#ccc]">
+            <div className="w-1/2 h-full border-r border-[#ccc] p-8">
+              <p>주소</p>
+              <p className="text-[15px] pt-5 font-medium">
+              울산광역시 중구 종가로 15, 울산테크노파크 <br/>
+              기술혁신동 B동 408호
+              </p>
+            </div>
+            <div className="w-1/2 h-full p-8">
+              <p>전화</p>
+              <p className="text-[15px] pt-5 font-medium">
+                052-929-2848
+              </p>
+            </div>
           </div>
         </section>
       </main>

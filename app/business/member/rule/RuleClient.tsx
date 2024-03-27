@@ -303,7 +303,7 @@ const RuleClient = () => {
               </div>
             </div>
             <div className="md:flex pb-[20px]">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base">
+              <span className="text-secondary w-[220px] text-[15px] md:text-base">
                 제10조 (회원의 의무)
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
@@ -320,7 +320,7 @@ const RuleClient = () => {
               </div>
             </div>
             <div className="md:flex pb-[20px]">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base">
+              <span className="text-secondary w-[220px] text-[15px] md:text-base">
                 제11조 (회원의 혜택)
               </span>
               <div className="w-full pt-[2px] flex flex-col justify-start items-start text-[15px] md:text-base">
@@ -338,25 +338,25 @@ const RuleClient = () => {
           </div>
           <ContentSubTitle title="제 5장 회원 탈퇴, 제명 및 재가입" />
           <div className="w-full pb-[15px] mt-[10px]">
-            <span className="md:pl-[10px] text-secondary w-[180px] text-[15px] md:text-base">
+            <span className="text-secondary w-[180px] text-[15px] md:text-base">
               제1조 (회원의 탈퇴)
             </span>
-            <div className="w-full pt-[2px] md:pl-[10px] pb-[5px] flex justify-start items-end text-[15px] md:text-base mb-[5px]">
+            <div className="w-full pt-[2px] pb-[5px] flex justify-start items-end text-[15px] md:text-base mb-[5px]">
               ①  회원은 본인의 의사에 따라 {`'회원탈퇴서'(서식2)`}를 제출함으로써 자유롭게
               탈퇴할 수 있다.
             </div>
-            <span className="md:pl-[10px] text-secondary w-[180px] text-[15px] md:text-base">
+            <span className="text-secondary w-[180px] text-[15px] md:text-base">
               제2조 (회원의 제명)
             </span>
-            <div className="w-full pt-[2px] md:pl-[10px] pb-[5px] flex justify-start items-end text-[15px] md:text-base mb-[5px]">
+            <div className="w-full pt-[2px] pb-[5px] flex justify-start items-end text-[15px] md:text-base mb-[5px]">
               회원이 협회의 명예를 손상시키거나 목적 수행에 지장을 초래한 경우
               또는 1년 이상 회원의 의무를 준수하지 않은 경우에는 이사회의 의결을
               거쳐 제명할 수 있다.
             </div>
-            <span className="md:pl-[10px] text-secondary w-[180px] text-[15px] md:text-base">
+            <span className="text-secondary w-[180px] text-[15px] md:text-base">
               제3조 (회원의 재가입)
             </span>
-            <div className="w-full pt-[2px] md:pl-[10px] flex justify-start items-end text-[15px] md:text-base mb-[40px]">
+            <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base mb-[40px]">
               본 규정 제8조에 따라 탈퇴한 자가 회원 재가입을 하는 경우에는
               탈퇴일로부터 1년 경과 후 재가입 할 수 있고, 제9조에 따라 제명된
               자가 재가입을 하는 경우에는 제명일로부터 5년 경과 후 재가입 할 수
