@@ -99,7 +99,7 @@ const HistoryClient = () => {
 
         <section className="py-[40px] md:pl-[50px] pr-[20px] w-full hidden md:flex flex-col justify-start items-start relative">
           <ContentTitle title={location} />
-            <div className="w-[420px] absolute top-[510px] left-32">
+            {/* <div className="w-[420px] absolute top-[510px] left-32">
               <Image 
                 src={PicHistory_02} 
                 alt="history_image" 
@@ -112,256 +112,132 @@ const HistoryClient = () => {
                 alt="history_image" 
                 className="mx-auto w-[420px] h-auto"
               />
-            </div>
-            <div className="w-full px-[20px] h-[30px] flex mt-[40px]">
-              <div className="w-[30%] flex justify-end text-left items-center mr-[10px] text-black">
-                (사)한국방폭협회 정기 총회 개최
-              </div>
-              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
-                2024.02
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
-                2024&apos;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold px-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
-                &nbsp;
-              </div>
-            </div>
-            <div className="w-full px-[20px] h-[20px] flex">
-              <div className="w-[30%] flex justify-end text-left items-center mr-[10px] text-black">
-              - 2023년 지출예산 및 
-              </div>
-              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold px-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
-                &nbsp;
-              </div>
-            </div>
-            <div className="w-full px-[20px] h-[30px] flex">
-              <div className="w-[30%] flex justify-end text-left items-center mr-[10px] text-black">
-                2024년 사업계획 및 예산(안) 승인
-              </div>
-              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold px-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
-                &nbsp;
-              </div>
-            </div>
-            <div className="w-full px-[20px] h-[120px] flex">
-              <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
-                &nbsp;
-              </div>
-            </div>
-            <div className="w-full px-[20px] h-[30px] flex">
-              <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
-                2023&apos;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px]">
-                2023.12
-              </div>
-              <div className="w-[30%] flex justify-start items-start mr-[10px] text-black pt-[1px]">
-                한국방폭협회 현판식,
-              </div>
-            </div>
-            <div className="w-full px-[20px] h-[40px] flex">
-              <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[30%] flex justify-start items-start mr-[10px] text-black">
-                (재)울산테크노파크 업무 협약
-              </div>
-            </div>
-            <div className="w-full px-[20px] h-[50px] flex">
-              <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px]">
-                2023.11
-              </div>
-              <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
-                전남여수공단협의회 업무협약 체결
-              </div>
-            </div>
-            <div className="w-full px-[20px] h-[50px] flex">
-              <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px]">
-                2023.10
-              </div>
-              <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
-                선진 안전문화 확산 극대화 방안 세미나
-              </div>
-            </div>
-            <div className="w-full px-[20px] h-[50px] flex">
-              <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px]">
-                2023.07
-              </div>
-              <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
-                (사)한국방폭협회 국제안전세미나
-              </div>
-            </div>
-            <div className="w-full px-[20px] h-[50px] flex">
-              <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px]">
-                2023.05
-              </div>
-              <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
-                (사)한국방폭협회 설립 인가
-              </div>
-            </div>
-            <div className="w-full px-[20px] h-[50px] flex">
-              <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px]">
-                2023.02
-              </div>
-              <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
-                고용노동부 산하 협회 인가 추진
-              </div>
-            </div>
-            <div className="w-full px-[20px] h-[120px] flex">
-              <div className="w-[30%] flex justify-end text-right items-center mr-[10px] text-black">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-end text-right items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[10%] flex justify-start items-center mr-[10px]">
-                &nbsp;
-              </div>
-              <div className="w-[30%] flex justify-start items-center mr-[10px] text-black">
-                &nbsp;
-              </div>
+            </div> */}
+            <article className="w-1/2 border-r border-[#ccc]">
+              <div className="w-full px-[20px] h-[30px] flex mt-[40px]">
+                <div className="w-[60%] flex justify-end text-left items-center mr-[10px] text-black">
+                  (사)한국방폭협회 정기 총회 개최
+                </div>
+                <div className="w-[80px] flex justify-end text-right items-center mr-[10px]">
+                  2024.02
+                </div>
+                <div className="w-[90px] flex justify-start items-center mr-[10px] text-title text-secondary font-bold px-[10px] ">
+                  2024&apos;
+                </div>
+              </div>
+              <div className="w-full px-[20px] h-[20px] flex">
+                <div className="w-[60%] flex justify-end text-left items-center mr-[10px] text-black">
+                - 2023년 지출예산 및 
+                </div>
+                <div className="w-[80px] flex justify-end text-right items-center mr-[10px]">
+                  &nbsp;
+                </div>
+                <div className="w-[90px] flex justify-start items-center mr-[10px] text-title text-secondary font-bold px-[10px] ">
+                  &nbsp;
+                </div>
+              </div>
+              <div className="w-full px-[20px] h-[30px] flex">
+                <div className="w-[60%] flex justify-end text-left items-center mr-[10px] text-black">
+                  2024년 사업계획 및 예산(안) 승인
+                </div>
+                <div className="w-[80px] flex justify-end text-right items-center mr-[10px]">
+                  &nbsp;
+                </div>
+                <div className="w-[90px] flex justify-start items-center mr-[10px] text-title text-secondary font-bold px-[10px] ">
+                  &nbsp;
+                </div>
+              </div>
+            </article>
+            <div className="w-full flex flex-col items-end">
+              <article className="w-1/2 border-l border-[#ccc] box-content py-8">
+                <div className="w-full px-[20px] h-[30px] flex">
+                  <div className="w-[90px] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
+                    2023&apos;
+                  </div>
+                  <div className="w-[80px] flex justify-start items-center mr-[10px]">
+                    2023.12
+                  </div>
+                  <div className="w-[60%] flex justify-start items-start mr-[10px] text-black pt-[1px]">
+                    한국방폭협회 현판식,
+                  </div>
+                </div>
+                <div className="w-full px-[20px] h-[40px] flex">
+                  <div className="w-[90px] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
+                    &nbsp;
+                  </div>
+                  <div className="w-[80px] flex justify-start items-center mr-[10px]">
+                    &nbsp;
+                  </div>
+                  <div className="w-[60%] flex justify-start items-start mr-[10px] text-black">
+                    (재)울산테크노파크 업무 협약
+                  </div>
+                </div>
+                <div className="w-full px-[20px] h-[50px] flex">
+                  <div className="w-[90px] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
+                    &nbsp;
+                  </div>
+                  <div className="w-[80px] flex justify-start items-center mr-[10px]">
+                    2023.11
+                  </div>
+                  <div className="w-[60%] flex justify-start items-center mr-[10px] text-black">
+                    전남여수공단협의회 업무협약 체결
+                  </div>
+                </div>
+                <div className="w-full px-[20px] h-[50px] flex">
+                  <div className="w-[90px] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
+                    &nbsp;
+                  </div>
+                  <div className="w-[80px] flex justify-start items-center mr-[10px]">
+                    2023.10
+                  </div>
+                  <div className="w-[60%] flex justify-start items-center mr-[10px] text-black">
+                    선진 안전문화 확산 극대화 방안 세미나
+                  </div>
+                </div>
+                <div className="w-full px-[20px] h-[50px] flex">
+                  <div className="w-[90px] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
+                    &nbsp;
+                  </div>
+                  <div className="w-[80px] flex justify-start items-center mr-[10px]">
+                    2023.07
+                  </div>
+                  <div className="w-[60%] flex justify-start items-center mr-[10px] text-black">
+                    (사)한국방폭협회 국제안전세미나
+                  </div>
+                </div>
+                <div className="w-full px-[20px] h-[50px] flex">
+                  <div className="w-[90px] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
+                    &nbsp;
+                  </div>
+                  <div className="w-[80px] flex justify-start items-center mr-[10px]">
+                    2023.05
+                  </div>
+                  <div className="w-[60%] flex justify-start items-center mr-[10px] text-black">
+                    (사)한국방폭협회 설립 인가
+                  </div>
+                </div>
+                <div className="w-full px-[20px] h-[50px] flex">
+                  <div className="w-[90px] flex justify-start items-center mr-[10px] text-title text-secondary font-bold pl-[10px]">
+                    &nbsp;
+                  </div>
+                  <div className="w-[80px] flex justify-start items-center mr-[10px]">
+                    2023.02
+                  </div>
+                  <div className="w-[60%] flex justify-start items-center mr-[10px] text-black">
+                    고용노동부 산하 협회 인가 추진
+                  </div>
+                </div>
+              </article>
             </div>
             <article className="w-1/2 border-r border-[#ccc]">
             <div className="w-full px-[20px] h-[50px] flex">
               <div className="w-[60%] flex justify-end text-right items-center mr-[10px] text-black">
                 울산테크노파크 협약
               </div>
-              <div className="w-[20%] flex justify-end text-right items-center mr-[10px]">
+              <div className="w-[80px] flex justify-end text-right items-center mr-[10px] font-medium">
                 2022.12
               </div>
-              <div className="w-[20%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold">
+              <div className="w-[90px] flex justify-start items-center mr-[10px] text-title text-secondary font-bold">
                 2022&apos;
               </div>
             </div>
@@ -369,10 +245,10 @@ const HistoryClient = () => {
               <div className="w-[60%] flex justify-end text-right items-center mr-[10px] text-black">
                 한국방폭협회 창립총회 및 세미나
               </div>
-              <div className="w-[20%] flex justify-end text-right items-center mr-[10px]">
+              <div className="w-[80px] flex justify-end text-right items-center mr-[10px] font-medium">
                 2022.11
               </div>
-              <div className="w-[20%] flex justify-end text-right items-center mr-[10px]">
+              <div className="w-[90px] flex justify-end text-right items-center mr-[10px]">
                 &nbsp;
               </div>
             </div>
@@ -380,21 +256,21 @@ const HistoryClient = () => {
               <div className="w-[60%] flex justify-end text-right items-center mr-[10px] text-black">
                 한국조선해양기자재연구원 MOU체결
               </div>
-              <div className="w-[20%] flex justify-end text-right items-center mr-[10px]">
+              <div className="w-[80px] flex justify-end text-right items-center mr-[10px] font-medium">
                 2022.10
               </div>
-              <div className="w-[20%] flex justify-end text-right items-center mr-[10px]">
+              <div className="w-[90px] flex justify-end text-right items-center mr-[10px]">
                 &nbsp;
               </div>
             </div>
-            <div className="w-full px-[20px] h-[50px] flex bg-green-300">
-              <div className="w-[60%] flex justify-end text-right items-center mr-[10px] text-black tracking-tighter whitespace-nowrap box-">
+            <div className="w-full px-[20px] h-[50px] flex">
+              <div className="w-[60%] flex justify-end text-right items-center mr-[10px] text-black tracking-tighter whitespace-nowrap">
                 한국방폭산업안전연구회 준비위원 간담회 개최
               </div>
-              <div className="w-[20%] flex justify-end text-right items-center mr-[10px]">
+              <div className="w-[80px] flex justify-end text-right items-center mr-[10px] font-medium">
                 2022.09
               </div>
-              <div className="w-[20%] flex justify-end text-right items-center mr-[10px]">
+              <div className="w-[90px] flex justify-end text-right items-center mr-[10px]">
                 &nbsp;
               </div>
               {/* <div className="w-[10%] flex justify-start items-center mr-[10px] text-title text-secondary font-bold border-r border-gray px-[10px] ">
@@ -415,11 +291,11 @@ const HistoryClient = () => {
                 헥사곤, 화학네트워크포럼 산업안전 및<br />
                 방폭산업 발전 모색 세미나 개최
               </div>
-              <div className="w-[20%] flex justify-end text-right items-center mr-[10px]">
+              <div className="w-[80px] flex justify-end text-right items-center mr-[10px] font-medium">
                 2022.05
                 <br />
               </div>
-              <div className="w-[20%] flex justify-end text-right items-center mr-[10px]">
+              <div className="w-[90px] flex justify-end text-right items-center mr-[10px]">
                 &nbsp;
               </div>
             </div>
@@ -432,14 +308,14 @@ const HistoryClient = () => {
                 <br />
                 공장장협의회 MOU체결&nbsp;
               </div>
-              <div className="w-[20%] flex justify-end text-right items-center mr-[10px]">
+              <div className="w-[80px] flex justify-end text-right items-center mr-[10px] font-medium">
                 2022.04
                 <br />
                 <br />
                 <br />
                 <br />
               </div>
-              <div className="w-[20%] flex justify-end text-right items-center mr-[10px]">
+              <div className="w-[90px] flex justify-end text-right items-center mr-[10px]">
                 &nbsp;
               </div>
             </div>
@@ -447,10 +323,10 @@ const HistoryClient = () => {
               <div className="w-[60%] flex justify-end text-right items-center mr-[10px] text-black">
                 한국방폭산업안전연구회 창립총회
               </div>
-              <div className="w-[20%] flex justify-end text-right items-center mr-[10px]">
+              <div className="w-[80px] flex justify-end text-right items-center mr-[10px] font-medium">
                 2022.02
               </div>
-              <div className="w-[20%] flex justify-end text-right items-center mr-[10px]">
+              <div className="w-[90px] flex justify-end text-right items-center mr-[10px]">
                 &nbsp;
               </div>
             </div>

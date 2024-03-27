@@ -140,7 +140,7 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
                     </div>
                     <div className="w-[1020px] ml-3 line-clamp-1">{item.title}</div>
                   </div>
-                  <div className="w-[50px] text-darkgray ">
+                  <div className="w-[50px] text-gray-400 ">
                     <RiArrowRightSLine className="text-[26px]" />
                   </div>
                 </div>
