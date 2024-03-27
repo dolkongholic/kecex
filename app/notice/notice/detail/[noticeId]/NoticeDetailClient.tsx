@@ -254,6 +254,12 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
               >
                 삭제
               </button>
+              
+            )}
+            {currentUser && (
+            <Link href={`/notice/notice/edit/${currentNotice.id}?page=${page}`}>
+              <button className="w-32 h-10 bg-primary text-white text-[14px] mt-9 m-auto">수정</button>
+            </Link>
             )}
           </div>
         </section>
