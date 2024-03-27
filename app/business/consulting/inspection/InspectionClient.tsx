@@ -199,7 +199,7 @@ const InspectionClient = () => {
             </div>
           </div>
 
-          <div className="w-full md:px-[20px] mb-[40px] flex flex-col">
+          <div className="w-full mb-[40px] flex flex-col">
             <span className="text-subtitle mb-[10px] text-black">
               | 검사 유형별
             </span>

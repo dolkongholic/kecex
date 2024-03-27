@@ -162,8 +162,8 @@ const RuleClient = () => {
           <ContentSubTitle title="제 2장 회원의 자격 및 종류" />
           <div className="w-full pb-[15px] mt-[10px] mb-[40px]">
             <div className="md:flex pb-[15px]">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start">
-                제1조 
+              <span className="text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start">
+                제3조 
                 (회원의 자격)
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
@@ -172,8 +172,8 @@ const RuleClient = () => {
               </div>
             </div>
             <div className="md:flex">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start">
-                제2조
+              <span className="text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start">
+                제4조
                 (회원의 종류)
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
@@ -182,42 +182,35 @@ const RuleClient = () => {
               </div>
             </div>
             <div className="md:flex">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start mt-2 md:mt-1">
-                제2조 1항
-                [일반회원]
+              <span className="text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start mt-2 md:mt-1">
+                ① &nbsp;【일반회원】
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                일반회원은 정회원 이외의 업체·단체 및 개인으로 한다.
+                학생(대학원생 포함) 및 개인이 가입원서와 회비를 납부한 자로 하며 총회에 의결권이 없다.
               </div>
             </div>
             <div className="md:flex">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start mt-2 md:mt-1">
-                제2조 2항 
-                [정회원]
+              <span className="text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start mt-2 md:mt-1">
+                ② &nbsp;【정회원】
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                회원으로서 이사회의 결의에 의해 회장이 추천하는 업체·단체 및
-                개인으로 한다.
+                정회원은 협회 임원 선거권 및 피선거권을 가지며 총회에 참석하여 협회 활동에 의견을 제안하고 의결에 참여할 권리가 있다.
               </div>
             </div>
             <div className="md:flex">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start mt-2 md:mt-1">
-                제2조 3항 
-                [기업회원]
+              <span className=" text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start mt-2 md:mt-1">
+                ③ &nbsp;【기업회원】
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                회원으로서 이사회의 결의에 의해 회장이 추천하는 업체·단체로
-                한다.
+                기업회원은 기업체 등에서 가입하는 것으로 기업회원 가입 제한 규정은 이사회에서 별도로 정하여 시행한다.
               </div>
             </div>
             <div className="md:flex">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start mt-2 md:mt-1">
-                제2조 4항
-                [명예회원]
+              <span className=" text-secondary w-[220px] text-[15px] md:text-base text-center md:text-start mt-2 md:mt-1">
+                ④ &nbsp;【명예회원】
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                명예회원은 이사회의 결의에 의해 회장이 추천하는 업체·단체 및
-                개인으로 한다.
+                이사회 의결을 거쳐 회장이 추천하는 기업체·단체 및 개인으로 하며 기부금조로 일부 회비를 납부할 수 있다.
               </div>
             </div>
           </div>
@@ -225,44 +218,36 @@ const RuleClient = () => {
           <ContentSubTitle title="제 3장 회원의 가입절차 및 승인" />
           <div className="w-full pb-[15px] mt-[10px] mb-[40px] text-[15px] md:text-base">
             <div className="md:flex pb-[15px]">
-              <span className="md:pl-[10px] text-secondary w-[220px]">
+              <span className="text-secondary w-[220px]">
                 제5조 (회원의 가입절차)
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                회원이 되고자하는 자는 정해진 {`'회원가입 신고서'`}를 본 협회에
-                제출하여야 한다.
+                신규 회원이 되고자하는 자는 정해진 {`'회원가입 신고서'`}(서식 1)를 본 협회에
+                제출하면서 가입비와 연회비를 납부하며, 기존회원은 연회비를 납부한다.
               </div>
             </div>
             <div className="md:flex">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base">
+              <span className=" text-secondary w-[195px] text-[15px] md:text-base">
                 제6조 (회원의 승인)
               </span>
-            </div>
-            <div className="md:flex mt-2">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base">
-                제6조 1항
-              </span>
-              <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                일반회원은 정해진 회원가입 신고서 제출 및 회비를 납부한 자로
-                한다.
+              <div className="">
+              <div className="w-full flex justify-start items-end text-[15px] md:text-base">
+                ① 【일반회원】은 정해진 회원가입 신고서 제출 및 회비를 납부한 자로 한다.
               </div>
-            </div>
-            <div className="md:flex">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base">
-                제6조 2항
-              </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                정회원, 기업회원, 명예회원은 정해진 회원가입 신고서를 제출한 자
+                ② 【정회원】, 【기업회원】, 【명예회원】은 정해진 회원가입 신고서를 제출한 자
                 중에서 이사회에서 심의·의결을 거쳐 최종 승인을 받은 자로 한다.
               </div>
             </div>
+            </div>
+
           </div>
 
           <ContentSubTitle title="제 4장 회원의 권리 및 의무" />
-          <div className="w-full pb-[15px] mt-[10px] mb-[40px]">
+          <div className="w-full pb-[20px] mt-[10px] mb-[40px]">
             <div className="md:flex pb-[15px]">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base">
-                제1조 (정회원의 권리)
+              <span className="text-secondary w-[220px] text-[15px] md:text-base">
+                제7조 (정회원 및 <br/> 기업회원의 권리)
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
                 ① 정회원은 협회 임원 선거권 및 피선거권을 가지며 총회에 참석하여
@@ -270,58 +255,94 @@ const RuleClient = () => {
                 <br />② 정회원은 총회의 의결권을 갖는다.
               </div>
             </div>
-            <div className="md:flex pb-[15px]">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base">
-                제2조 (일반회원의 권리)
+            <div className="md:flex pb-[20px]">
+              <span className=" text-secondary w-[220px] text-[15px] md:text-base">
+                제8조 (일반회원 및 <br/> 명예회원의 권리)
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                ① 일반회원, 정회원, 기업회원, 명예회원은 협회의 자료 및 출판물을
-                제공받으며, 협회운영에 관한 자료를 열람할 수있으며, 세미나·강연
-                및 기타협회에서 행하는 행사와 활동에 참여할 수 있다.
+                ① 일반회원, 명예회원은 협회의 자료 및 출판물을
+                제공받으며, 협회운영에 관한 자료를 열람할 수 있으며, 세미나·강연
+                및 기타협회에서 행하는 행사와 활동에 참여할 수 있다. 다만, 총회 개최 시 의결권이 없다.
               </div>
             </div>
-            <div className="md:flex pb-[15px]">
-              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base">
-                제3조 (회비)
+            <div className="md:flex pb-[20px]">
+              <span className=" text-secondary w-[220px] text-[15px] md:text-base">
+                제9조 (회비)
               </span>
-              <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                ① 회원의 회비는 일반회원회비, 정회원회비, 기업회원회비,
-                명예회원회비로 구분하며, 이사회를 통해 회비를 정한다.
+              <div className="w-full pt-[2px] flex flex-col justify-start items-start text-[15px] md:text-base">
+                ① 회원의 회비는 일반회원비, 정회원비, 기업회원비,
+                명예회원비로 구분하며, 이사회를 통해 회비를 정한다.(정관 제5조 회원의 자격, 가입회비 등에 관한 세부사항은 총회에서 별도의 규정으로 정한다.)
                 <br />
+                <table className="w-full block h-auto my-3 text-center border-y-2 border-[#3A3A3A]">
+                  <div className="flex border-b  border-[#3A3A3A]">
+                    <th className="w-1/5 border-r border-[#3A3A3A]">구분</th>
+                    <th className="w-1/5 border-r border-[#3A3A3A]">일반회원</th>
+                    <th className="w-1/5 border-r border-[#3A3A3A]">정회원</th>
+                    <th className="w-1/5 border-r border-[#3A3A3A]">기업회원</th>
+                    <th className="w-1/5">명예회원</th>
+                  </div>
+                  <div className="flex">
+                    <th className="w-1/5 border-r border-[#3A3A3A]">가입비</th>
+                    <td className="w-1/5 border-r border-[#3A3A3A]">20,000원</td>
+                    <td className="w-1/5 border-r border-[#3A3A3A]">100,000원</td>
+                    <td className="w-1/5 border-r border-[#3A3A3A]">1,000,000원</td>
+                    <td className="w-1/5">-</td>
+                  </div>
+                  <div className="flex">
+                    <th className="w-1/5 border-r border-[#3A3A3A]">연회비</th>
+                    <td className="w-1/5 border-r border-[#3A3A3A]">30,000원</td>
+                    <td className="w-1/5 border-r border-[#3A3A3A]">120,000원</td>
+                    <td className="w-1/5 border-r border-[#3A3A3A]">500,000원</td>
+                    <td className="w-1/5">-</td>
+                  </div>
+                </table>
                 ② 회원의 회비는 연회비로 하고 당해연도 3월말까지 납부하여야
                 한다.
                 <br />③ 협회로부터 탈퇴 또는 제명된 자는 이미 납부한 입회금,
                 회비, 기타 협회에 대하여 일체 그 반환을 청구할 수 없다.
               </div>
             </div>
-            <div className="md:flex">
+            <div className="md:flex pb-[20px]">
               <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base">
-                제4조 (회원의 의무)
+                제10조 (회원의 의무)
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                회원은 다음의 의무를 진다.
+                ① 본 협회의 정관 및 모든 규정 준수
                 <br />
-                1. 본 협회의 정관 및 모든 규정 준수
+                ② 총회 및 이사회의 결의사항 이행
                 <br />
-                2. 총회 및 이사회의 결의사항 이행
+                ③ 회비 및 모든 부담금의 납부
                 <br />
-                3. 회비 및 모든 부담금의 납부
+                ④ 회원의 윤리·품위 유지·실천 의무
                 <br />
-                4. 회원의 윤리·품위 유지·실천 의무
-                <br />
-                5. 정관 및 제반규정으로 정하는 각종 자료제출과 보고에 회원으로서
+                ⑤ 정관 및 제반규정으로 정하는 각종 자료제출과 보고에 회원으로서
                 적극적 협조
               </div>
             </div>
+            <div className="md:flex pb-[20px]">
+              <span className="md:pl-[10px] text-secondary w-[220px] text-[15px] md:text-base">
+                제11조 (회원의 혜택)
+              </span>
+              <div className="w-full pt-[2px] flex flex-col justify-start items-start text-[15px] md:text-base">
+                ① 협회가 주관하는 방폭관련 교육에 대한 교육비 할인
+                <span className="text-[14px] leading-[14px] ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 방폭협회에 가입할 경우 엑스텍코리아 교육비 5% 할인(Naver에 엑스텍코리아 검색)</span>
+                ② 회원의 경력관리(경력수첩 발급 등)
+                <br />
+                ③ 협회가 주관하는 세미나 및 각종 행사에 참여 우선권
+                <br />
+                ④ 정부포상에 대한 우수 직원 우선 추천
+                <br />
+                ⑤ 정회원 및 기업회원에서 실시하는 행사 및 관련 자료 제작시 협회 로고를 사용할 수 있으나 협회에 사전 승인을 요청 후 사용
+              </div>
+            </div>
           </div>
-
           <ContentSubTitle title="제 5장 회원 탈퇴, 제명 및 재가입" />
           <div className="w-full pb-[15px] mt-[10px]">
             <span className="md:pl-[10px] text-secondary w-[180px] text-[15px] md:text-base">
               제1조 (회원의 탈퇴)
             </span>
             <div className="w-full pt-[2px] md:pl-[10px] pb-[5px] flex justify-start items-end text-[15px] md:text-base mb-[5px]">
-              회원은 본인의 의사에 따라 {`'회원탈퇴서'`}를 제출함으로써 자유롭게
+              ①  회원은 본인의 의사에 따라 {`'회원탈퇴서'(서식2)`}를 제출함으로써 자유롭게
               탈퇴할 수 있다.
             </div>
             <span className="md:pl-[10px] text-secondary w-[180px] text-[15px] md:text-base">
@@ -343,22 +364,22 @@ const RuleClient = () => {
             </div>
           </div>
 
-          <ContentSubTitle title="보칙" />
+          <ContentSubTitle title="제6장 보칙" />
           <div className="w-full pb-[15px] mt-[10px] mb-[40px]">
             <div className="md:flex">
-              <span className="md:pl-[10px] text-secondary w-[180px] text-[15px] md:text-base">
+              <span className="text-secondary w-[180px] text-[15px] md:text-base">
                 제1조 (포상)
               </span>
               <div className="w-full pt-[2px] md:pl-[10px] pb-[5px] flex justify-start items-end text-[15px] md:text-base mb-[5px]">
-                ①회원이 협회의 명예를 선양하거나 타인에게 모범적이고 귀감이 될
+                ① 회원이 협회의 명예를 선양하거나 타인에게 모범적이고 귀감이 될
                 경우 이사회의 심의, 의결로 포상을 할 수 있다.
                 <br/>
-                ②협회는 회원이 아닌 자·단체·업체가 타의 귀감이 되고 협회와
+                ② 협회는 회원이 아닌 자·단체·업체가 타의 귀감이 되고 협회와
                 방폭산업계에 공헌하였을 경우 이사회의 의결로 포상할 수 있다.
               </div>
             </div>
             <div className="md:flex">
-              <span className="md:pl-[10px] text-secondary w-[180px] text-[15px] md:text-base">
+              <span className="text-secondary w-[180px] text-[15px] md:text-base">
                 제2조 (권리 상실)
               </span>
               <div className="w-full pt-[2px] md:pl-[10px] flex justify-start items-end text-[15px] md:text-base mb-[5px]">
@@ -368,10 +389,10 @@ const RuleClient = () => {
             </div>
           </div>
 
-          <ContentSubTitle title="부칙" />
+          <ContentSubTitle title="제7장 부칙" />
           <div className="w-full pb-[15px] mt-[10px]">
             <div className="md:flex">
-              <span className="md:pl-[10px] text-secondary w-[180px] text-[15px] md:text-base">
+              <span className="text-secondary w-[180px] text-[15px] md:text-base">
                 제1조 (시행일)
               </span>
               <div className="w-full pt-[2px] md:pl-[10px] pb-[5px] flex justify-start items-end text-base mb-[5px]">
@@ -379,7 +400,7 @@ const RuleClient = () => {
               </div>
             </div>
             <div className="md:flex">
-              <span className="md:pl-[10px] text-secondary w-[180px] text-[15px] md:text-base">
+              <span className="text-secondary w-[180px] text-[15px] md:text-base">
                 제2조 (경과조치)
               </span>
               <div className="w-full pt-[2px] md:pl-[10px] flex justify-start items-end text-[15px] md:text-base mb-[5px]">
@@ -388,6 +409,8 @@ const RuleClient = () => {
               </div>
             </div>
           </div>
+
+          <a href="" download>{`<서식 1>`} 회원가입신고서 (양식)</a>
         </section>
       </main>
     </section>
