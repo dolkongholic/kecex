@@ -187,7 +187,7 @@ const RuleClient = () => {
                 [일반회원]
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                일반회원은 제2조 3항의 정회원 이외의 업체·단체 및 개인으로 한다.
+                일반회원은 정회원 이외의 업체·단체 및 개인으로 한다.
               </div>
             </div>
             <div className="md:flex">
@@ -196,7 +196,7 @@ const RuleClient = () => {
                 [정회원]
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                일반회원으로서 이사회의 결의에 의해 회장이 추천하는 업체·단체 및
+                회원으로서 이사회의 결의에 의해 회장이 추천하는 업체·단체 및
                 개인으로 한다.
               </div>
             </div>
@@ -206,7 +206,7 @@ const RuleClient = () => {
                 [기업회원]
               </span>
               <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base">
-                일반회원으로서 이사회의 결의에 의해 회장이 추천하는 업체·단체로
+                회원으로서 이사회의 결의에 의해 회장이 추천하는 업체·단체로
                 한다.
               </div>
             </div>
