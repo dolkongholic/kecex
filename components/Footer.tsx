@@ -10,7 +10,7 @@ import WhiteLogo from "@/public/img/logo/logo_big_white.png";
 export default function Footer() {
   return (
     <section>
-      <div className="w-full h-[520px] md:h-[350px] bg-[#3A3A3A] flex flex-col justify-start items-center mt-[150px]">
+      <div className="w-full h-[550px] md:h-[350px] bg-[#3A3A3A] flex flex-col justify-start items-center mt-[150px]">
         <div className="md:hidden my-6">
           <Link passHref href={"/"}>
             <Image
@@ -36,11 +36,11 @@ export default function Footer() {
             <li className="hidden md:block text-[#777]">|</li>
             <li className="w-3/5 md:w-auto pr-8 md:pr-0">오류 신고 및 확인</li>
           </ul>
-          <div className="flex md:space-x-[20px] item-center pt-[10px] translate-y-[160px] md:translate-y-0">
+          <div className="flex md:space-x-[20px] item-center pt-[10px] translate-y-[220px] md:translate-y-0">
             <select
               id="related_site"
-              className="border border-[#777] w-[200px] h-[50px] text-center leading-[50px] flex justify-center 
-              items-center bg-[#3A3A3A] text-[#DCDCDC] mx-auto md:mx-0 rounded-md"
+              className="border border-[#777] w-[200px] h-[40px] md:h-[50px] text-center leading-[50px] flex justify-center 
+              items-center bg-[#3A3A3A] text-[#DCDCDC] mx-auto md:mx-0"
               onChange={(event:any) => window.open(event.target.value)}
             >
               <option value="">관련 기관</option>

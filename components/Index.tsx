@@ -70,7 +70,7 @@ const Index: React.FC<IndexProps> = ({
       autoplay: true, // 자동 캐러셀
       autoplaySpeed: 4000, // 자동 캐러셀 속도
       centerMode: true, // 현재 컨텐츠 가운데 정렬
-      initialSlide: 1, // 첫 컨텐츠 번호
+      initialSlide: 0, // 첫 컨텐츠 번호
       arrows: true, // 좌,우 버튼
       focusOnSelect: true,
       responsive: [
@@ -111,17 +111,11 @@ const Index: React.FC<IndexProps> = ({
 
   return (
     <section>
-      <div className="w-full h-[700px] md:h-[550px] overflow-x-hidden">
-        <div className="w-full h-[700px] md:h-[550px] z-[50] md:flex justify-center items-center  bg-cover bg-center">
-          <div className="w-full flex justify-center items-center md:hidden relative mt-[50px]">
-            <input
-              type="text"
-              className="w-11/12 h-[40px] ring-2 ring-white px-[20px] rounded-[200px] placeholder:text-sm font-light focus:outline-none focus:ring-2 focus:ring-active transition-all duration-500 mx-auto border-2 border-primary"
-              placeholder="검색어를 입력하세요"
-            />
-            <span className="w-[30px] h-[30px] absolute right-0 top-0 -translate-x-[20px] translate-y-[10px]">
-              <FiSearch style={{ width: "22", height: "22" }} />
-            </span> 
+      <div className="w-full h-[600px] md:h-[480px] overflow-x-hidden">
+        <div className="w-full h-[550px] md:h-[480px] z-[50] md:flex justify-center items-center  bg-cover bg-center">
+          {/* 모바일 최적화 안내 */}
+          <div className="md:hidden w-[80%] h-[40px] border border-[#ccc] mx-auto text-[13px] text-center leading-[40px] my-3">
+            현재 모바일 최적화가 진행되고 있으니 pc로 확인 바랍니다.
           </div>
           <div className="w-full justify-center slider-container">
             {/* 메인 배너 슬라이드 영역 */}
@@ -244,7 +238,7 @@ const Index: React.FC<IndexProps> = ({
                   <Image 
                     src={PicInspection} 
                     alt="open_banner" 
-                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto right-0 bottom-0 z-0"
+                    className="mx-auto absolute h-[180px] lg:h-[220px] w-auto right-0 bottom-0 z-0"
                   />
                 </div>
               </div>
