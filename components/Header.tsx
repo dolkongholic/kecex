@@ -126,16 +126,17 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               </Link>
             </div> */}
             <Link passHref href={"/notice/notice/detail/12?page=1"}>
-              <div className="w-[800px] flex justify-start items-center relative translate-x-[100px]">
-              <Image 
+              <div className="w-[800px] flex justify-start items-center relative 1translate-x-[90px]">
+              {/* <Image 
                     src={PicMainNotice} 
                     alt="header_top_notice" 
-                    className="absolute bottom-0 left-0 z-0 opacity-80"
+                    className="absolute bottom-0 left-0 z-0 opacity-80 w-[800px] h-[60px]"
                     // width={800} height={60}
                     fill={true}
-                  />
-                <div className="w-[80px] h-[32px] bg-primary text-white flex items-center justify-center absolute left-[230px] top-[14px] z-20"> 공지사항</div>
-                <p className="ml-6 absolute h-[30px] left-[310px] top-[15px] text-[20px] font-semibold font-Sans">한국방폭협회 정식 개설 안내</p>
+                  /> */}
+                <div className="w-[80px] h-[32px] bg-secondary text-white flex items-center justify-center absolute left-[140px] top-[14px] z-20"> 공지사항</div>
+                {/* <p className="ml-6 absolute h-[30px] left-[310px] top-[15px] text-[19px] leading-[32px] font-semibold text-[#575757] bg-transparent"> </p> */}
+                <p className="ml-6 absolute h-[30px] left-[220px] top-[15px] text-[19px] leading-[32px] font-semibold text-[#777777] bg-transparent">한국방폭협회 정식 개설 안내</p>
               </div>
             </Link>
             {/* 최상단 로고 + 검색창 */}
