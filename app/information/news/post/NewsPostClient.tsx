@@ -13,6 +13,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 import ImageUpload from "@/components/inputs/ImageUpload";
+import PicInfo_02 from "@/public/img/page_top/information_02.jpg"
 
 const MainList = [
   {

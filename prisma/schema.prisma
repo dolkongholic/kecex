@@ -11,8 +11,8 @@ model User {
   id             String    @id @default(uuid()) @map("_id") @db.Char(36)
   name           String    @unique
   koname         String?
-  tel            String?    @unique
-  email          String?    @unique
+  tel            String?   @unique
+  email          String?   @unique
   hashedPassword String
   createdAt      DateTime  @default(now())
   updatedAt      DateTime  @updatedAt
@@ -57,7 +57,7 @@ model qna {
 model notice {
   id      Int    @id @default(autoincrement())
   title   String
-  content String  @db.Text
+  content String @db.Text
   file    String
   date    String
 }
@@ -65,7 +65,7 @@ model notice {
 model raw {
   id      Int    @id @default(autoincrement())
   title   String
-  content String  @db.Text
+  content String @db.Text
   file    String
   date    String
 }
@@ -73,7 +73,7 @@ model raw {
 model news {
   id      Int    @id @default(autoincrement())
   title   String
-  content String  @db.Text
+  content String @db.Text
   img     String
   date    String
 }

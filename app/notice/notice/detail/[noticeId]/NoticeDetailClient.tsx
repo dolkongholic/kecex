@@ -21,8 +21,8 @@ import PicNotice_04 from "@/public/img/page_top/notice_04.jpg"
 
 const MainList = [
   {
-    title: "인재정보",
-    url: "/notice/worker",
+    title: "공지사항",
+    url: "/notice/notice?page=1",
     sub: null,
   },
   {
@@ -36,8 +36,8 @@ const MainList = [
     sub: null,
   },
   {
-    title: "공지사항",
-    url: "/notice/notice?page=1",
+    title: "인재정보",
+    url: "/notice/worker",
     sub: null,
   },
 ];
@@ -156,7 +156,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
             &nbsp;
           </div>
           <div className="w-full pl-[20px] flex justify-start items-center h-[70px] bg-gray-100 border-t-2 border-gray-500">
-            {currentNotice?.title}
+            <div className="w-[900px] overflow-hidden line-clamp-1">{currentNotice?.title}</div>
           </div>
           <div className="w-full flex justify-between item-center h-[50px] border-t-2 border-b-2 border-gray-100">
             <div className="flex justify-between items-center px-[20px]">
@@ -195,7 +195,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
                   <p>이전글</p>
                   <RiArrowUpSLine className="text-[24px] pt-[3px] text-[#3A3A3A]" />
                 </div>
-                <div className="flex justify-start items-center pl-[20px]">
+                <div className="w-[890px] flex justify-start items-center pl-[20px]">
                   {preNotice.title}
                 </div>
               </div>
@@ -206,7 +206,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
                 <p>이전글</p>
                 <RiArrowUpSLine className="text-[24px] pt-[3px] text-[#3A3A3A] opacity-0" />
               </div>
-              <div className="flex justify-start items-center pl-[20px]">
+              <div className="w-[890px] flex justify-start items-center pl-[20px]">
                 이전글이 없습니다.
               </div>
             </div>
@@ -223,7 +223,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
                   <p>다음글</p>
                   <RiArrowDownSLine className="text-[24px] pt-[3px] text-[#3A3A3A]" />
                 </div>
-                <div className="flex justify-start items-center pl-[20px]">
+                <div className="w-[890px] flex justify-start items-center pl-[20px]">
                   {nextNotice.title}
                 </div>
               </div>
@@ -234,7 +234,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
                 <p>다음글</p>
                 <RiArrowDownSLine className="text-[24px] pt-[3px] text-[#3A3A3A] opacity-0" />
               </div>
-              <div className="flex justify-start items-center pl-[20px]">
+              <div className="w-[890px] flex justify-start items-center pl-[20px]">
                 <p>다음글이 없습니다.</p>
               </div>
             </div>
@@ -247,7 +247,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
                 목록
               </button>
             </Link>
-            {currentUser && (
+            {currentUser.staff && (
               <button
                 className="w-32 h-10 bg-red-500 text-white text-[14px] mt-9 m-auto"
                 onClick={() => del()}
@@ -256,7 +256,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
               </button>
               
             )}
-            {currentUser && (
+            {currentUser.staff && (
             <Link href={`/notice/notice/edit/${currentNotice.id}?page=${page}`}>
               <button className="w-32 h-10 bg-primary text-white text-[14px] mt-9 m-auto">수정</button>
             </Link>

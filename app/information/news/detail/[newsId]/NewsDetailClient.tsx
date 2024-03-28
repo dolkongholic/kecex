@@ -13,7 +13,7 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicInfo_02 from "@/public/img/page_top/information_02.jpg"
 
 const MainList = [
   {
@@ -88,6 +88,20 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
   return (
     <section>
       <div id="headerNav">
+      <figure className="w-full h-[200px]">
+        <div className="w-full h-full mx-auto relative">
+          <Image
+            src={PicInfo_02}
+            layout="fill"
+            objectFit="cover"
+            alt="item.title"
+            className="object-cover"
+          />
+          <div className="bg-neutral-900/50 absolute w-full h-full left-0 top-0 z-20 text-center text-white font-medium text-[36px] leading-[200px]">
+            {location}
+          </div>
+        </div>
+      </figure>
         <div className="h-[40px] w-full bg-gray-100 flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
@@ -126,10 +140,10 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
           <ContentTitle title="카드뉴스" />
           <div className="w-full  border-b border-gray-100">&nbsp;</div>
           <div className="w-full pl-[20px] flex justify-start items-center h-[70px] bg-gray-100 border-t-2 border-gray-200">
-            <div className="px-[10px] p-[5px] bg-gray-500 text-white mr-[20px]">
+            <div className="text-center py-[5px] bg-gray-500 text-white mr-[20px] w-[80px]">
               협회소식
             </div>
-            <div>{currentNews?.title}</div>
+            <div className="w-[900px] overflow-hidden line-clamp-1">{currentNews?.title}</div>
           </div>
           <div className="w-full flex justify-between item-center h-[50px] border-t-2 border-b-2 border-gray">
             <div className="flex justify-between items-center px-[20px]">
@@ -165,7 +179,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
                   <p>이전글</p>
                   <RiArrowUpSLine className="text-[24px] text-[#3A3A3A]" />
                 </div>
-                <div className="flex justify-start items-center pl-[20px]">
+                <div className="w-[890px] flex justify-start items-center pl-[20px]">
                   {preNews.title}
                 </div>
               </div>
@@ -176,7 +190,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
                 <p>이전글</p>
                 <RiArrowUpSLine className="text-[24px] pt-[3px] opacity-0" />
               </div>
-              <div className="flex justify-start items-center pl-[20px]">
+              <div className="w-[890px] flex justify-start items-center pl-[20px]">
                 이전글이 없습니다.
               </div>
             </div>
@@ -193,7 +207,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
                   <p>다음글</p>
                   <RiArrowDownSLine className="text-[24px] pt-[3px] text-[#3A3A3A]" />
                 </div>
-                <div className="flex justify-start items-center pl-[20px]">
+                <div className="w-[890px] flex justify-start items-center pl-[20px]">
                   {nextNews.title}
                 </div>
               </div>
@@ -204,7 +218,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
                 <p>다음글</p>
                 <RiArrowDownSLine className="text-[24px] text-[#3A3A3A] opacity-0" />
               </div>
-              <div className="flex justify-start items-center pl-[20px]">
+              <div className="w-[890px] flex justify-start items-center pl-[20px]">
                 <p>다음글이 없습니다.</p>
               </div>
             </div>
@@ -221,7 +235,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
                 목록
               </button>
             </Link>
-            {currentUser && (
+            {currentUser.staff && (
               <button
                 className="w-32 h-10 bg-red-500 text-white text-[14px] mt-9 m-auto"
                 onClick={() => del()}
