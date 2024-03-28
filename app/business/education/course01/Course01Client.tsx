@@ -144,184 +144,100 @@ const Course01Client = () => {
           </ul>
           <ContentSubTitle title="교육목적" />
           <div className="w-full mb-[40px]">
-            <div className="flex flex-col justify-center items-start h-[80px] md:px-[20px] md:border border-gray w-full">
+            <div className="flex flex-col justify-center items-start p-[20px] md:border border-gray w-full leading-[30px]">
               <span>
-                폭발위험성이 존재하는 각 산업내 종사자들의 방폭안전관리에 관한
-                업무수행능력과 자질을 향상시켜 방폭설비의 안정적 운용으로 국민의
-                생명과 재산을 보호하기 위함
+              폭발위험장소에 출입하는 근로자가 타 현장으로 이동할 때마다 받아야하는 교육을 대체하여 방폭기술업 차원에서 받도록 한 교육으로, 
+              협회에서 근로자에게 꼭 필요한 기본적인 방폭기초 지식을 교육함으로써 화재, 폭발 사고를 예방
               </span>
             </div>
           </div>
 
           <ContentSubTitle title="교육대상" />
-          <div className="w-full">
-            <div className="w-full md:h-[270px] mb-[40px] border border-gray">
-              <div className="hidden md:flex justify-center items-start w-full">
-                <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center border-r border-gray font-medium">
-                  분 류
-                </div>
-                <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center font-medium">
-                  대 상
-                </div>
-              </div>
-              <div className="flex flex-col md:flex-row justify-between items-start w-full">
-                <div className="w-full md:w-1/2 flex flex-col justify-start items-center">
-                  <div className="w-full h-11 bg-darkgray flex md:hidden justify-center items-center">
-                    분류
-                  </div>
-                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center md:border-r border-gray">
-                    &nbsp;
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center md:border-r border-gray">
-                    · 방폭시공기술자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center md:border-r border-gray">
-                    · 방폭검사기술자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center md:border-r border-gray">
-                    · 방폭설계기술자 I (폭발위험장소 구분)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center md:border-r border-gray">
-                    · 방폭설계기술자 II (방폭기기 선정)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center md:border-r border-gray">
-                    · 방폭정비기술자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center md:border-r border-gray">
-                    · 방폭감리기술자(시공/검사/설계 I,II 보유자 응시 가능)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center md:border-r border-gray">
-                    &nbsp;
-                  </span>
-                </div>
-                <div className="w-full md:w-1/2 flex flex-col justify-start items-center">
-                  <div className="w-full h-11 bg-darkgray flex md:hidden justify-center items-center">
-                    대상
-                  </div>
-                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center">
-                    &nbsp;
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 방폭 시공 및 관리 업무를 수행하는 자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 방폭 검사 및 관리 업무를 수행하는 자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 폭발위험장소 구분 및 관리 업무를 수행하는 자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 방폭 기기 선정 및 관리 업무를 수행하는 자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 방폭 기기 수리, 정비 및 관리 업무를 수행하는 자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 방폭 감리 업무를 수행하는 자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    &nbsp;
-                  </span>
-                </div>
-              </div>
+          <div className="w-full mb-[40px]">
+          <div className="flex flex-col justify-center items-start p-[20px] md:border border-gray w-full">
+              <span>
+              폭발위험장소 내 업무 희망자, 안전관리자
+              </span>
             </div>
           </div>
 
           <div className="w-full flex flex-col md:flex-row justify-center md:justify-between items-center mb-[40px]">
             <div className="w-full md:w-[49%] flex flex-col">
               <ContentSubTitle title="자격요건" />
-              <div className="flex flex-col justify-center py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
+              <div className="flex flex-col justify-center items-start p-[20px] border border-gray w-full">
                 <span>없음</span>
               </div>
             </div>
             <div className="w-full md:w-[49%] flex flex-col mt-5 md:mt-0">
-              <ContentSubTitle title="교육내용 및 시간" />
-              <div className="flex flex-col justify-center py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
+              <ContentSubTitle title="교육 비용" />
+              <div className="flex flex-col justify-center items-start p-[20px] border border-gray w-full">
                 <span>
-                  5시간
-                  <br />
+                  1인당 15만원
                 </span>
               </div>
             </div>
           </div>
 
-          <div className="w-full flex justify-between items-center mb-[40px]">
+          <div className="w-full flex flex-col md:flex-row justify-center md:justify-between items-center mb-[40px]">
             <div className="w-full md:w-[49%] flex flex-col">
-              <ContentSubTitle title="갱신교육기간" />
-              <div className="flex flex-col justify-center py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
-                <span>3년(기관 코드 및 가이드 갱신 주기 반영)</span>
+              <ContentSubTitle title="교육 혜택" />
+              <div className="flex flex-col justify-start items-start h-[132px] p-[20px] border border-gray w-full leading-[30px]">
+                <span>
+                  교육 수료증 발급<br/>
+                  (추후 전자경력 카드 발급)
+                </span>
+              </div>
+            </div>
+            <div className="w-full md:w-[49%] flex flex-col mt-5 md:mt-0">
+              <ContentSubTitle title="기대효과" />
+              <div className="flex flex-col justify-start items-start h-[132px] p-[20px] border border-gray w-full leading-[30px]">
+                <span>
+                  인화성 물질의 화재 발생 원리와 폭발 예방 원리에 따른 방폭전기기기의 특성을 이해하고, 
+                  산업안전보건법 및 관련 표준 요구사항과 폭발위험장소에 관련된 안전작업 절차 및 폭발예방에 대한 기본소양을 갖출 수 있음
+                </span>
               </div>
             </div>
           </div>
-
-          <ContentSubTitle title="교육내용 및 시간" />
-          <div className="w-full">
-            <div className="w-full md:h-[220px] mb-[40px] border border-lightgray">
-              <div className="hidden md:flex justify-center items-start w-full">
-                <div className="w-1/5 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
-                  일 정
-                </div>
-                <div className="w-3/5 h-[40px] bg-gray flex justify-center items-center">
-                  교육 내용
-                </div>
-                <div className="w-1/5 h-[40px] bg-gray flex justify-center items-center">
-                  교육시간
-                </div>
+          
+          <ContentSubTitle title="교육 시간별 세부 내용" />
+          <div className="w-full border border-[#ccc] flex">
+            <div className="w-[80px] text-[18px] flex flex-col justify-center items-center font-medium bg-[#e8e8e8]">
+              5H
+            </div>
+            <div className="text-[18px] font-medium border-x border-[#ccc]">
+              <div className="w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
+                1H
               </div>
-              <div className="md:flex justify-between items-start w-full">
-                <div className="md:w-1/5 flex flex-col justify-start items-center md:h-[180px]">
-                  <div className="w-full h-11 bg-darkgray flex md:hidden justify-center items-center">
-                    일정
-                  </div>
-                  <span className="w-full h-full flex justify-center items-center border-r border-gray py-7 md:py-0">
-                    이론 교육
-                  </span>
-                </div>
-                <div className="md:w-3/5 flex flex-col justify-center items-center md:h-[180px] border-r border-gray">
-                  <div className="w-full h-11 bg-darkgray flex md:hidden justify-center items-center mb-5">
-                    교육 내용
-                  </div>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 방폭 관련 국내 산업안전 보건법
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 폭발위험이 있는 환경에서 안전 작업 절차
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 화재 및 폭발 이론
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 방폭 이론(기본) - 정의, 방폭 기술, 방폭 규정 등
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 방폭전기기계, 기구 인증 및 표기
-                  </span>
-                </div>
-                <div className="md:w-1/5 flex flex-col justify-center items-center md:h-[180px] mt-5 md:mt-0">
-                  <div className="w-full h-11 bg-darkgray flex md:hidden justify-center items-center">
-                    교육 시간
-                  </div>
-                  <span className="w-full h-[70px] md:h-[20px] flex justify-center items-center">
-                    5시간
-                  </span>
-                </div>
+              <div className="w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
+                1H
+              </div>
+              <div className="w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
+                1H
+              </div>
+              <div className="w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
+                1H
+              </div>
+              <div className="w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center">
+                1H
               </div>
             </div>
-          </div>
-
-          <div className="w-full md:flex justify-between items-center mb-[40px]">
-            <div className="md:w-[49%] flex flex-col">
-              <ContentSubTitle title="혜택" />
-              <div className="flex flex-col justify-center py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
-                <span>교육 수료증 발급 (추후 전자경력 카드 발급)</span>
-              </div>
-            </div>
-            <div className="md:w-[49%] flex flex-col mt-5 md:mt-0">
-              <ContentSubTitle title="발급비용" />
-              <div className="flex flex-col justify-center py-[20px] items-start h-[80px] px-[20px] border border-gray w-full">
-                <span>-</span>
-              </div>
-            </div>
+            <ul className="w-full">
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+                화재이론 및 방폭기기의 소개
+              </li>
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+                폭발위험장소 내 안전작업
+              </li>
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+                폭발 위험 장소구분도의 이해
+              </li>
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+                방폭기기의 형식 표시 기호에 대한 해석
+              </li>
+              <li className="w-full h-[65px] flex flex-col justify-center items-start pl-6">
+                방폭원리 및 구조
+              </li>
+            </ul>
           </div>
         </section>
       </main>

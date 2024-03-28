@@ -6,6 +6,7 @@ import ContentTitle from "@/components/content/title";
 import ContentSubTitle from "@/components/content/subtitle";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { RiArrowRightSLine } from "react-icons/ri";
 
 // Image
@@ -71,9 +72,15 @@ const MainList = [
 ];
 
 const location = "회비 관리";
-
-const ManagementClient = () => {
+interface ManagementProps {
+  currentUser: any;
+}
+const ManagementClient: React.FC<ManagementProps> = ({ currentUser }) =>{
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
+  const router = useRouter();
+  if (!currentUser?.staff) {
+    router.push("/");
+  }
 
   return (
     <section>

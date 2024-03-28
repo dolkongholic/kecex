@@ -9,7 +9,7 @@ const ManagementPage = async () => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <ManagementClient />
+      <ManagementClient currentUser={currentUser}  />
       <Footer />
     </div>
   );

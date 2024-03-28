@@ -9,7 +9,7 @@ const CareerPage = async () => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <CareerClient />
+      <CareerClient currentUser={currentUser} />
       <Footer />
     </div>
   );

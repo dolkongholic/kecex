@@ -9,7 +9,7 @@ const RegularPage = async () => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <RegularClient />
+      <RegularClient currentUser={currentUser}  />
       <Footer />
     </div>
   );

@@ -9,7 +9,7 @@ const DetailPage = async () => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <DetailClient />
+      <DetailClient  currentUser={currentUser}/>
       <Footer />
     </div>
   );

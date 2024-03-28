@@ -9,7 +9,7 @@ const ResumePage = async () => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <ResumeClient />
+      <ResumeClient currentUser={currentUser} />
       <Footer />
     </div>
   );
