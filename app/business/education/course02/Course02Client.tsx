@@ -205,7 +205,7 @@ const Course02Client = () => {
           
           <ContentSubTitle title="교육 시간별 세부 내용" />
           <div className="w-full border border-[#ccc] flex">
-            <div className="w-[80px] text-[18px] flex flex-col justify-center items-center font-medium bg-[#e8e8e8]">
+            <div className="w-[80px] text-[18px] flex flex-col justify-center items-center font-medium bg-[#eeeeee]">
               8H
             </div>
             <div className="text-[18px] font-medium border-x border-[#ccc]">

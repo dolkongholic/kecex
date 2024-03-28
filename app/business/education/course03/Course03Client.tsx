@@ -205,7 +205,7 @@ const Course03Client = () => {
           
           <ContentSubTitle title="교육 시간별 세부 내용" />
           <div className="w-full border border-[#ccc] flex">
-            <div className="w-[180px] text-[16px] flex flex-col justify-center items-center font-medium bg-[#e8e8e8] text-center">
+            <div className="w-[180px] text-[16px] flex flex-col justify-center items-center font-medium bg-[#eeeeee] text-center">
               교육시간 : <br/>
               협의 후 결정
             </div>
@@ -214,31 +214,31 @@ const Course03Client = () => {
                 Safety procedure<br/>
                 안전작업절차 
               </div>
-              <div className="w-[180px] h-[75px]  flex flex-col justify-center items-center relative text-secondary">
+              <div className="w-[180px] h-[75px]  flex flex-col justify-center items-center relative font-semibold">
                 방폭 기본설계
                 <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] bg-lightgray  border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
                   <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-secondary" />
                 </div>
               </div>
-              <div className="w-[180px] h-[75px]  flex flex-col justify-center items-center relative">
+              <div className="w-[180px] h-[75px]  flex flex-col justify-center items-center relative font-semibold">
                 위험장소 구분
-                <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] border border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
-                  <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-[#60B86F]" />
+                <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] bg-lightgray  border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
+                  <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-secondary" />
                 </div>
               </div>
-              <div className="w-[180px] h-[75px]  flex flex-col justify-center items-center relative">
+              <div className="w-[180px] h-[75px]  flex flex-col justify-center items-center relative font-semibold">
                 장비 선정
-                <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] border border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
-                  <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-[#60B86F]" />
+                <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] bg-lightgray  border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
+                  <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-secondary" />
                 </div>
               </div>
-              <div className="w-[180px] h-[75px] flex flex-col justify-center items-center relative">
+              <div className="w-[180px] h-[75px] flex flex-col justify-center items-center relative font-semibold">
                 시공 및 시험
-                <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] border border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
-                  <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-[#60B86F]" />
+                <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] bg-lightgray  border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
+                  <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-secondary" />
                 </div>
               </div>
-              <div className="w-[180px] h-[75px] flex flex-col justify-center items-center">
+              <div className="w-[180px] h-[75px] flex flex-col justify-center items-center font-semibold">
                 검사 및 유지보수
               </div>
             </div>

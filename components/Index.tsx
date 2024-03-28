@@ -111,8 +111,8 @@ const Index: React.FC<IndexProps> = ({
 
   return (
     <section>
-      <div className="w-full h-[600px] md:h-[480px] overflow-x-hidden">
-        <div className="w-full h-[550px] md:h-[480px] z-[50] md:flex justify-center items-center  bg-cover bg-center">
+      <div className="w-full h-[600px] md:h-[460px] overflow-x-hidden">
+        <div className="w-full h-[550px] md:h-[440px] z-[50] md:flex justify-center items-center  bg-cover bg-center">
           {/* 모바일 최적화 안내 */}
           <div className="md:hidden w-[80%] h-[40px] border border-[#ccc] mx-auto text-[13px] text-center leading-[40px] my-3">
             현재 모바일 최적화가 진행되고 있으니 pc로 확인 바랍니다.
@@ -256,13 +256,15 @@ const Index: React.FC<IndexProps> = ({
             KECEx 한국방폭협회 회원 안내
           </h3>
           <p className="pt-4 font-light">
-            전국에 4개의 지부와 방폭지원·기술본부를 운영하고 있습니다.
+            한국방폭협회의 회원가입 혜택과 절차를 안내드립니다.
           </p>
-          <button 
-            className="border border-[#3A3A3A] rounded-full w-[200px] h-[50px] mt-8 font-semibold hover:bg-[#3A3A3A] hover:text-white"
-          >
-            자세히 보기
-          </button>
+          <Link passHref href={"/business/member/join"}>
+            <button 
+              className="border border-[#3A3A3A] rounded-full w-[200px] h-[50px] mt-8 font-semibold hover:bg-[#3A3A3A] hover:text-white"
+            >
+              자세히 보기
+            </button>
+          </Link>
           <div className="absolute right-[3%] bottom-16">
             <Image 
               src={PicMdbn} 
@@ -322,6 +324,7 @@ const Index: React.FC<IndexProps> = ({
                   협회가입시 어떤<br/>
                   <span className="text-primary">혜택</span>이 있나요?
                 </p>
+                <Link passHref href={"/business/member/rule"}>
                 <button className="
                   mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
                   relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-[#003893] 
@@ -331,6 +334,7 @@ const Index: React.FC<IndexProps> = ({
                 ">
                     혜택안내
                 </button>
+                </Link>
                 <Link passHref href={"/business/member/career"}>
                   <button className="
                     mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
@@ -422,124 +426,157 @@ const Index: React.FC<IndexProps> = ({
             다음 기관들과 함께 합니다.
           </h3>
           <div className="w-full flex px-3 md:px-0 mt-12 h-[20px] md:h-auto">
-            <div className="w-1/4">
-              <Image 
-              src={Picmoel} 
+            <Link passHref href={"https://www.moel.go.kr/index.do"} className="w-1/4" target="_blank">
+              <div className="w-full">
+                <Image 
+                src={Picmoel} 
+                alt="arcr_logo" 
+                className="mx-auto h-[20px] md:h-[40px] w-auto"
+                />
+              </div>
+            </Link>
+            <Link passHref href={"https://www.nts.go.kr/"} className="w-1/4" target="_blank">
+              <div className="w-full">
+                    <Image 
+              src={Picnts} 
               alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[40px] w-auto"
+              className="mx-auto h-[20px] md:h-[34px] w-auto"
               />
-            </div>
-            <div className="w-1/4">
-                  <Image 
-            src={Picnts} 
-            alt="arcr_logo" 
-            className="mx-auto h-[20px] md:h-[34px] w-auto"
-            />
-            </div >
-            <div className="w-1/4">
+              </div>
+            </Link>
+            <Link passHref href={"https://www.acrc.go.kr/"} className="w-1/4" target="_blank">
+            <div className="w-full">
                     <Image 
               src={Picacrc} 
               alt="arcr_logo" 
               className="mx-auto h-[20px] md:h-[40px] w-auto"
             />
             </div>
-            <div className="w-1/4">
+            </Link>
+            <Link passHref href={"https://www.moel.go.kr/local/ulsan/index.do"} className="w-1/4" target="_blank">
+            <div className="w-full">
               <Image 
                 src={PicmoelUl} 
                 alt="arcr_logo" 
                 className="mx-auto h-[20px] md:h-[36px] w-auto"
               />
             </div>
+            </Link>
           </div>
+
           <div className="w-full flex md:mt-16">
-            <div className="w-1/4 h-[36px]">
-                    <Image 
-              src={PicUl} 
+            <Link passHref href={"https://www.ulsan.go.kr/u/rep/main.ulsan"} className="w-1/4" target="_blank">
+              <div className="w-full h-[36px]">
+                      <Image 
+                src={PicUl} 
+                alt="arcr_logo" 
+                className="mx-auto h-[20px] md:h-[30px] w-auto"
+              />
+              </div>
+            </Link>
+            <Link passHref href={"https://www.kgs.or.kr/"} className="w-1/4" target="_blank">
+              <div className="w-full">
+                      <Image 
+                src={Pickogas} 
+                alt="arcr_logo" 
+                className="mx-auto h-[24px] md:h-[34px] w-auto"
+              />
+              </div>
+            </Link>
+            <Link passHref href={"https://www.kosha.or.kr/kosha/index.do"} className="w-1/4" target="_blank">
+              <div className="w-full h-[36px]">
+                      <Image 
+              src={Pickosha} 
               alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[30px] w-auto"
-            />
-            </div>
-            <div className="w-1/4">
+              className="mx-auto h-[20px] md:h-[54px] w-auto -translate-y-4"
+              />
+              </div>
+            </Link>
+            <Link passHref href={"https://www.komeri.re.kr/"} className="w-1/4" target="_blank">
+              <div className="w-full">
                     <Image 
-              src={Pickogas} 
+              src={Pickomeri} 
               alt="arcr_logo" 
-              className="mx-auto h-[24px] md:h-[34px] w-auto"
-            />
-            </div>
-            <div className="w-1/4 h-[36px]">
-                    <Image 
-            src={Pickosha} 
-            alt="arcr_logo" 
-            className="mx-auto h-[20px] md:h-[54px] w-auto -translate-y-4"
-            />
-            </div>
-            <div className="w-1/4">
-                  <Image 
-            src={Pickomeri} 
-            alt="arcr_logo" 
-            className="mx-auto h-[20px] md:h-[36px] w-auto -translate-y-2"
-            />
-            </div >
+              className="mx-auto h-[20px] md:h-[36px] w-auto -translate-y-2"
+              />
+              </div >
+            </Link>
           </div>
           <div className="w-full flex px-3 md:px-0 mt-2 md:mt-16 h-[20px] md:h-auto">
-            <div className="w-1/4">
-                    <Image 
-              src={Pichrdkorea} 
-              alt="arcr_logo" 
-              className="mx-auto h-[24px] md:h-[34px] w-auto"
-            />
-            </div>
-            <div className="w-1/4">
-                    <Image 
-              src={Picutp} 
-              alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[36px] w-auto"
-            />
-            </div>
-            <div className="w-1/4 h-[36px]">
-            <Image 
-              src={Picksa} 
-              alt="arcr_logo" 
-              className="mx-auto h-[24px] md:h-[30px] w-auto translate-y-1"
-            />
-            </div>
-            <div className="w-1/4">
+            <Link passHref href={"https://www.kopo.ac.kr/ulsan/index.do"} className="w-1/4" target="_blank">
+              <div className="w-full h-[40px]">
+                <Image 
+                src={Picpolytech} 
+                alt="arcr_logo" 
+                className="mx-auto h-[20px] md:h-[56px] w-auto -translate-y-[12px]"
+                />
+              </div>
+            </Link>
+            <Link passHref href={"https://www.utp.or.kr/"} className="w-1/4">
+              <div className="w-full">
+                      <Image 
+                src={Picutp} 
+                alt="arcr_logo" 
+                className="mx-auto h-[20px] md:h-[36px] w-auto"
+              />
+              </div>
+            </Link>
+            <Link passHref href={"https://ksa.or.kr/ksa_kr/index.do"} className="w-1/4" target="_blank">
+              <div className="w-full h-[36px]">
               <Image 
-              src={Pickrict} 
+                src={Picksa} 
+                alt="arcr_logo" 
+                className="mx-auto h-[24px] md:h-[30px] w-auto translate-y-1"
+              />
+              </div>
+            </Link>
+            <Link passHref href={"https://www.krict.re.kr/"} className="w-1/4" target="_blank">
+              <div className="w-full">
+                <Image 
+                src={Pickrict} 
+                alt="arcr_logo" 
+                className="mx-auto h-[20px] md:h-[30px] w-auto"
+                />
+              </div>
+            </Link>
+          </div>
+          <div className="w-full flex px-3 md:px-0 mt-2 md:mt-16 h-[20px] md:h-auto">
+            <Link passHref href={"https://www.hrdkorea.or.kr/"} className="w-1/4" target="_blank">
+              <div className="w-full">
+                        <Image 
+                  src={Pichrdkorea} 
+                  alt="arcr_logo" 
+                  className="mx-auto h-[24px] md:h-[34px] w-auto"
+                />
+              </div>
+            </Link>
+            <Link passHref href={"https://www.ulsan.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN248"} className="w-1/4" target="_blank">
+              <div className="w-full">
+                    <Image 
+              src={Picuoufic} 
               alt="arcr_logo" 
               className="mx-auto h-[20px] md:h-[30px] w-auto"
               />
-            </div>
-          </div>
-          <div className="w-full flex px-3 md:px-0 mt-2 md:mt-16 h-[20px] md:h-auto">
-            <div className="w-1/4 h-[36px]">
-              <Image 
-              src={Picpolytech} 
-              alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[52px] w-auto -translate-y-[12px]"
-              />
-            </div>
-            <div className="w-1/4">
-                  <Image 
-            src={Picuoufic} 
-            alt="arcr_logo" 
-            className="mx-auto h-[20px] md:h-[30px] w-auto"
-            />
-            </div >
-            <div className="w-1/4">
-              <Image 
-                src={PicUc} 
-                alt="arcr_logo" 
-                className="mx-auto h-[20px] md:h-[36px] w-auto -translate-y-1"
-              />
-            </div>
-            <div className="w-1/4">
-              <Image 
-                src={Pichankyung} 
-                alt="arcr_logo" 
-                className="mx-auto h-[20px] md:h-[24px] w-auto  translate-y-[4px]"
-              />
-            </div>
+              </div >
+            </Link>
+            <Link passHref href={"https://www.uc.ac.kr/www/Main.do"} className="w-1/4" target="_blank">
+              <div className="w-full">
+                <Image 
+                  src={PicUc} 
+                  alt="arcr_logo" 
+                  className="mx-auto h-[20px] md:h-[36px] w-auto -translate-y-1"
+                />
+              </div>
+            </Link>
+            <Link passHref href={"https://www.hankyung.com/"} className="w-1/4" target="_blank">
+              <div className="w-full">
+                <Image 
+                  src={Pichankyung} 
+                  alt="arcr_logo" 
+                  className="mx-auto h-[20px] md:h-[24px] w-auto  translate-y-[4px]"
+                />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

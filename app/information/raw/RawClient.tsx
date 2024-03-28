@@ -113,7 +113,7 @@ const RawClient: React.FC<RawProps> = ({ rawList, currentUser }) => {
                 className="w-[32%] mr-[2%] "
               >
                 <li className="h-[180px] bg-white border border-[#ccc] rounded-md overflow-hidden">
-                  <p className="w-full h-[50px] bg-primary text-white leading-[50px] text-[18px] pl-5">고용노동부</p>
+                  <p className="w-full h-[50px] bg-[#3A3A3A] text-white leading-[50px] text-[18px] pl-5">고용노동부</p>
                   <div className="w-full flex justify-between p-5 mt-6">
                     <p className="text-[20px] font-semibold mt-2">산업안전보건법</p>
                     <button
@@ -144,7 +144,7 @@ const RawClient: React.FC<RawProps> = ({ rawList, currentUser }) => {
                 className="w-[32%] mr-[2%] "
               >
                 <li className="w-full h-[180px] bg-white border border-[#ccc] rounded-md overflow-hidden">
-                  <p className="w-full h-[50px] bg-primary text-white leading-[50px] text-[18px] pl-5">고용노동부</p>
+                  <p className="w-full h-[50px] bg-[#3A3A3A] text-white leading-[50px] text-[18px] pl-5">고용노동부</p>
                   <div className="w-full flex justify-between p-5 mt-6">
                     <p className="text-[20px] font-semibold mt-2">
                       산업안전보건법에 <br/> 관한 규칙
@@ -176,7 +176,7 @@ const RawClient: React.FC<RawProps> = ({ rawList, currentUser }) => {
                 className="w-[32%]"
               >
                 <li className="w-full h-[180px] bg-white border border-[#ccc] rounded-md overflow-hidden">
-                  <p className="w-full h-[50px] bg-primary text-white leading-[50px] text-[18px] pl-5">고용노동부</p>
+                  <p className="w-full h-[50px] bg-[#3A3A3A] text-white leading-[50px] text-[18px] pl-5">고용노동부</p>
                   <div className="w-full flex justify-between p-5 mt-6">
                     <p className="text-[20px] font-semibold mt-2">
                       중대재해 처벌 등에 <br/> 관한 법률

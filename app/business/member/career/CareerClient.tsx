@@ -145,10 +145,97 @@ const CareerClient = () => {
           </ul>
           <ContentSubTitle title="가입대상" />
           <span className="mb-[40px]">협회회원으로 가입된 사람</span>
+          <ContentSubTitle title="경력신고 및 제출 서류, 비용" />
+          {/* <Image src={PicCareer_3} alt="Picture" className="px-[20px]" /> */}
+          <div className="w-full pb-[15px] mt-[30px] mb-[40px]">
+            <div className="md:flex md:justify-between">
+              <div className="flex flex-col md:items-center md:w-[48%] mt-8">
+                <span className=" text-primary text-base md:text-black md:mb-4">
+                  최초 경력 신고
+                </span>
+                <div className="w-full pt-[2px] flex justify-start items-end text-base mb-[5px] md:border-2 md:border-lightgray md:p-5">
+                  안전관리자 자격 및 경력 사항 등 안전관리 경력에 필요한 사항을 최초로 신고하는 것
+                </div>
+              </div>
+              <div className="flex flex-col md:items-center md:w-[48%] mt-8">
+                <span className="text-primary text-base md:text-black md:mb-4">
+                  경력 변경 신고
+                </span>
+                <div className="w-full pt-[2px] flex justify-start items-end text-base mb-[5px] md:border-2 md:border-lightgray md:p-5">
+                  경력관리에 필요한 사항을 최초로 신고한 이후 근무처·학력·자격 또는 경력 등의 변경 사항을 신고하는 것
+                </div>
+              </div>
+            </div>
+            <div className="md:flex md:justify-between mt-8">
+              <div className="flex flex-col md:items-center md:w-[48%]">
+                <span className=" text-primary text-base md:text-black md:mb-4">
+                  경력 신고시 제출 서류
+                </span>
+                <div className="w-full pt-[2px] text-base mb-[5px] md:border-2 md:border-lightgray md:p-5 space-y-1 h-[236px]">
+                  <li className="list-none">
+                    · 협회양식의 안전관리 경력 신고서(신규, 변경)
+                  </li>
+                  <li className="list-none">
+                    · 재직(경력)증명서 : 안전관리업무내용 표기
+                  </li>
+                  <li className="list-none">
+                    · 국민연금 가입(자격 및 취득 상실) 증명서
+                  </li>
+                  <li className="list-none">
+                    · 국가기술자격증 사본
+                  </li>
+                  <li className="list-none">
+                    · 안전관리자 선임 등 보고서
+                  </li>
+                  <li className="list-none">
+                    · 최종학력(졸업)증명서
+                  </li>
+                  <li className="list-none">
+                    · 교육훈련이수(실시,수료)확인서 사본 : 필요시
+                  </li>
+                </div>
+              </div>
+              <div className="flex flex-col md:items-center md:w-[48%] mt-8 md:mt-0">
+                <span className="text-primary text-base md:text-black md:mb-4">
+                  경력 변경(갱신) 신고시 제출서류
+                </span>
+                <div className="w-full pt-[2px] text-base mb-[5px] md:border-2 md:border-lightgray md:p-5 space-y-1 h-[236px]">
+                  <li className="list-none">
+                    · 경력 변경 신고서
+                  </li>
+                  <li className="list-none">
+                    · 재직(경력)증명서 : 안전관리업무내용 표기
+                  </li>
+                  <li className="list-none">
+                    · 국민연금 가입(자격 및 취득 상실) 증명서
+                  </li>
+                  <li className="list-none">
+                    · 경력 변경사항에 대하여 증명할 수 있는 서류
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div className="md:flex md:justify-between mt-8">
+              <div className="flex flex-col md:items-center md:w-[48%]">
+                <span className=" text-primary text-base md:text-black md:mb-4">
+                  경력증명 발급 비용 및 수령 방법
+                </span>
+                <div className="w-full pt-[2px] text-base mb-[5px] md:border-2 md:border-lightgray md:p-5 space-y-1">
+                  <li className="list-none">
+                    · 최초 및 변경 신고, 경력증명 발급 비용 무료
+                  </li>
+                  <li className="list-none">
+                    · 회원서비스국 발급 요청 시 발급 절차 진행 후 전자우편 발송
+                  </li>
+                </div>
+              </div>
+            
+            </div>
+          </div>
           <ContentSubTitle title="경력신고 절차" />
           {/* <Image src={PicCareer_1} alt="Picture" className="hidden md:block mt-8"/> */}
           {/* <Image src={PicCareer_1_M} alt="Picture" className="md:hidden mx-auto"/> */}
-          <figure className="w-full flex flex-col justify-center items-center text-[15px] text-center font-medium">
+          <figure className="w-full flex flex-col justify-center items-center text-[15px] text-center font-medium mb-12">
             <div className="w-[250px] h-[42px] bg-secondary text-white flex flex-col items-center justify-center pt-1">
               신청인
             </div>
@@ -211,7 +298,7 @@ const CareerClient = () => {
             <div className="w-[800px] flex justify-between">
               <div className="w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[25px] border-r-2 border-gray-300">&nbsp;</div>
+                  <div className="h-[25px] border-r-2 border-gray-300 translate-x-[1px]">&nbsp;</div>
                 </div>
               </div>
               <div className="w-[250px] flex flex-col items-center">
@@ -224,7 +311,7 @@ const CareerClient = () => {
             <div className="w-[800px] flex justify-between">
               <div className="w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[92px] border-r-2 border-gray-300">&nbsp;</div>
+                  <div className="h-[92px] border-r-2 border-gray-300  translate-x-[1px]">&nbsp;</div>
                 </div>
               </div>
               <div className="w-[250px] h-[92px] border border-gray-400 flex flex-col items-center justify-center pt-1 text-center">
@@ -315,93 +402,7 @@ const CareerClient = () => {
           <ContentSubTitle title="경력 증명서 발급절차" />
           <Image src={PicCareer_2} alt="Picture" className="hidden md:block w-full mt-8"/>
           <Image src={PicCareer_2_M} alt="Picture" className="md:hidden mx-auto mb-7 md:mb-0"/>
-          <ContentSubTitle title="경력신고 및 제출 서류, 비용" />
-          {/* <Image src={PicCareer_3} alt="Picture" className="px-[20px]" /> */}
-          <div className="w-full pb-[15px] mt-[30px] mb-[40px]">
-            <div className="md:flex md:justify-between">
-              <div className="flex flex-col md:items-center md:w-[48%] mt-8">
-                <span className=" text-primary text-base md:text-black md:mb-4">
-                  최초 경력 신고
-                </span>
-                <div className="w-full pt-[2px] flex justify-start items-end text-base mb-[5px] md:border-2 md:border-lightgray md:p-5">
-                  안전관리자 자격 및 경력 사항 등 안전관리 경력에 필요한 사항을 최초로 신고하는 것
-                </div>
-              </div>
-              <div className="flex flex-col md:items-center md:w-[48%] mt-8">
-                <span className="text-primary text-base md:text-black md:mb-4">
-                  경력 변경 신고
-                </span>
-                <div className="w-full pt-[2px] flex justify-start items-end text-base mb-[5px] md:border-2 md:border-lightgray md:p-5">
-                  경력관리에 필요한 사항을 최초로 신고한 이후 근무처·학력·자격 또는 경력 등의 변경 사항을 신고하는 것
-                </div>
-              </div>
-            </div>
-            <div className="md:flex md:justify-between mt-8">
-              <div className="flex flex-col md:items-center md:w-[48%]">
-                <span className=" text-primary text-base md:text-black md:mb-4">
-                  경력 신고시 제출서류
-                </span>
-                <div className="w-full pt-[2px] text-base mb-[5px] md:border-2 md:border-lightgray md:p-5 space-y-1">
-                  <li className="list-none">
-                    · 협회양식의 안전관리 경력 신고서(신규, 변경)
-                  </li>
-                  <li className="list-none">
-                    · 재직(경력)증명서 : 안전관리업무내용 표기
-                  </li>
-                  <li className="list-none">
-                    · 국민연금 가입(자격 및 취득 상실) 증명서
-                  </li>
-                  <li className="list-none">
-                    · 국가기술자격증 사본
-                  </li>
-                  <li className="list-none">
-                    · 안전관리자 선임 등 보고서
-                  </li>
-                  <li className="list-none">
-                    · 최종학력(졸업)증명서
-                  </li>
-                  <li className="list-none">
-                    · 교육훈련이수(실시,수료)확인서 사본 : 필요시
-                  </li>
-                </div>
-              </div>
-              <div className="flex flex-col md:items-center md:w-[48%] mt-8 md:mt-0">
-                <span className="text-primary text-base md:text-black md:mb-4">
-                  경력 변경(갱신) 신고시 제출서류
-                </span>
-                <div className="w-full pt-[2px] text-base mb-[5px] md:border-2 md:border-lightgray md:p-5 space-y-1">
-                  <li className="list-none">
-                    · 경력 변경 신고서
-                  </li>
-                  <li className="list-none">
-                    · 재직(경력)증명서 : 안전관리업무내용 표기
-                  </li>
-                  <li className="list-none">
-                    · 국민연금 가입(자격 및 취득 상실) 증명서
-                  </li>
-                  <li className="list-none">
-                    · 경력 변경사항에 대하여 증명할 수 있는 서류
-                  </li>
-                </div>
-              </div>
-            </div>
-            <div className="md:flex md:justify-between mt-8">
-              <div className="flex flex-col md:items-center md:w-[48%]">
-                <span className=" text-primary text-base md:text-black md:mb-4">
-                  경력증명 발급 비용 및 수령 방법
-                </span>
-                <div className="w-full pt-[2px] text-base mb-[5px] md:border-2 md:border-lightgray md:p-5 space-y-1">
-                  <li className="list-none">
-                    · 최초 및 변경 신고, 경력증명 발급 비용 무료
-                  </li>
-                  <li className="list-none">
-                    · 회원서비스국 발급 요청 시 발급 절차 진행 후 전자우편 발송
-                  </li>
-                </div>
-              </div>
-            
-            </div>
-          </div>
+      
         </section>
       </main>
     </section>

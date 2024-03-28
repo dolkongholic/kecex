@@ -13,7 +13,8 @@ import PicSlogan from "@/public/img/slogan/slogan_1.png";
 import PicShotLogo from "@/public/img/logo/logo_big_icon__1.png";
 import PicLogo from "@/public/img/logo/logo_default_2.png";
 import PicHeader from "@/public/img/common/header_menu.png";
-import PicSlogan4 from "@/public/img/slogan/slogan_4.png";
+// import PicSlogan4 from "@/public/img/slogan/slogan_4.png";
+import PicMainNotice from "@/public/img/slogan/main_notice.png";
 import { SafeUser } from "@/types";
 
 // const snsList = ["youtube", "facebook", "twiiter", "kakao", "blog", "instgram"];
@@ -116,14 +117,27 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             setMenubg("");}}
         >
           <div className="w-[1400px] flex justify-between item-center space-x-[20px]">
-            <div className="lg:w-[350px] mr-[20px] hidden lg:block">
+            <div className="lg:w-[150px] mr-[20px] hidden lg:block">
               &nbsp;
             </div>
-            <div className="w-[250px] flex justify-start items-center">
+            {/* <div className="w-[250px] flex justify-start items-center bg-red-200">
               <Link passHref href={"/"}>
                 <Image src={PicSlogan4} alt="슬로건" width={250} height={80} />
               </Link>
-            </div>
+            </div> */}
+            <Link passHref href={"/notice/notice/detail/12?page=1"}>
+              <div className="w-[800px] flex justify-start items-center relative translate-x-[100px]">
+              <Image 
+                    src={PicMainNotice} 
+                    alt="header_top_notice" 
+                    className="absolute bottom-0 left-0 z-0 opacity-80"
+                    // width={800} height={60}
+                    fill={true}
+                  />
+                <div className="w-[80px] h-[32px] bg-primary text-white flex items-center justify-center absolute left-[230px] top-[14px] z-20"> 공지사항</div>
+                <p className="ml-6 absolute h-[30px] left-[310px] top-[15px] text-[20px] font-semibold font-Sans">한국방폭협회 정식 개설 안내</p>
+              </div>
+            </Link>
             {/* 최상단 로고 + 검색창 */}
             {/* <div className="flex justify-center items-center bg-red-200">
               <div className="w-[120px] mr-[40px] ml-[30px] flex item-center">
@@ -146,7 +160,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <FiSearch style={{ width: "22", height: "22" }} />
               </span>
             </div> */}
-            <div className="w-1/2 lg:w-[350px] flex justify-end items-center">
+            <div className="w-1/2 lg:w-[330px] flex justify-end items-center">
               <div className="w-2/3 flex item-center justify-end mr-[15px] text-[13px] font-bold">
                 <ul className="flex items-center space-x-[10px]">
                   {currentUser == null ? (
