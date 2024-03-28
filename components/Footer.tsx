@@ -33,8 +33,8 @@ export default function Footer() {
             <Link passHref href={"/introduce/map/"} className="w-2/5 md:w-auto text-center pl-8 md:pl-0">
               <li className="w-full md:w-auto">오시는길</li>
             </Link>
-            <li className="hidden md:block text-[#777]">|</li>
-            <li className="w-3/5 md:w-auto pr-8 md:pr-0">오류 신고 및 확인</li>
+            {/* <li className="hidden md:block text-[#777]">|</li> */}
+            {/* <li className="w-3/5 md:w-auto pr-8 md:pr-0">오류 신고 및 확인</li> */}
           </ul>
           <div className="flex md:space-x-[20px] item-center pt-[10px] translate-y-[220px] md:translate-y-0">
             <select

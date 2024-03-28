@@ -202,7 +202,7 @@ const JoinPage = () => {
 
           <div className="w-full hidden md:block">
           <ContentSubTitle title="가입절차" />
-          <div className="w-full flex justify-between px-[20px] items-center">
+          <div className="w-full flex justify-between items-center">
             <div className="w-[48%] h-[50px] flex justify-center items-center bg-secondary text-white text-center">
               온라인
             </div>
@@ -211,7 +211,7 @@ const JoinPage = () => {
             </div>
           </div>
 
-          <div className="w-full flex justify-between px-[20px]">
+          <div className="w-full flex justify-between">
             <div className="flex justify-center items-center w-[48%] bg-gray text-center">
               <div className="w-[50%] h-[60px] py-[20px] flex justify-center items-center border-r border-darkgray text-secondary">
                 회원가입 [ 신규 또는 재가입 ]
@@ -230,12 +230,12 @@ const JoinPage = () => {
             </div>
           </div>
 
-          <div className="w-full flex justify-between px-[20px]">
+          <div className="w-full flex justify-between">
             <div className="flex justify-center items-center w-[48%] bg-gray text-center">
               <div className="w-[50%] h-[100px] py-[30px] flex justify-center items-start border-r border-darkgray">
                 홈페이지 방문
                 <br />
-                (회원가입 여부 간편검색)
+                {/* (회원가입 여부 간편검색) */}
               </div>
               <div className="w-[50%] h-[100px] py-[30px] flex justify-center items-start">
                 홈페이지 방문
@@ -245,19 +245,17 @@ const JoinPage = () => {
               <div className="w-[50%] h-[100px] py-[30px] flex justify-center items-start border-r">
                 협회 방문
                 <br />
-                (중앙회, 시·도회)
+                {/* (중앙회, 시·도회) */}
               </div>
               <div className="w-[50%] h-[100px] py-[30px] flex justify-center items-start">
-                방문/지로:
+                방문:
                 <br />
-                협회 중앙회 및 시·도회
-                <br />
-                방문납부 또는 지로납부
+                협회 방문 납부
               </div>
             </div>
           </div>
 
-          <div className="w-full flex justify-between px-[20px]">
+          <div className="w-full flex justify-between">
             <div className="flex justify-center items-center w-[48%] bg-gray text-center text-black">
               <div className="w-[50%] h-[60px] py-[20px] flex justify-center items-center border-r border-darkgray ">
                 <SlArrowDown />
@@ -276,7 +274,7 @@ const JoinPage = () => {
             </div>
           </div>
 
-          <div className="w-full flex justify-between px-[20px]">
+          <div className="w-full flex justify-between">
             <div className="flex justify-center items-center w-[48%] bg-gray text-center">
               <div className="w-[50%] h-[100px] py-[30px] flex justify-center items-start border-r border-darkgray">
                 가입원서 작성
@@ -284,7 +282,10 @@ const JoinPage = () => {
                 (재가입자는 정보수정)
               </div>
               <div className="w-[50%] h-[100px] py-[30px] flex justify-center items-start">
-                회비납부 여부 간편검색
+                {/* 회비납부 여부 간편검색 */}
+                회비 납부
+                <br />
+                (신용카드, 계좌이체, 가상계좌)
               </div>
             </div>
             <div className="flex justify-center items-center w-[48%] bg-gray text-center">
@@ -298,13 +299,13 @@ const JoinPage = () => {
             </div>
           </div>
 
-          <div className="w-full flex justify-between px-[20px]">
+          <div className="w-full flex justify-between">
             <div className="flex justify-center items-center w-[48%] bg-gray text-center text-black">
               <div className="w-[50%] h-[60px] py-[20px] flex justify-center items-center border-r border-darkgray ">
                 <SlArrowDown />
               </div>
               <div className="w-[50%] h-[60px] py-[20px] flex justify-center items-center ">
-                <SlArrowDown />
+                {/* <SlArrowDown /> */}
               </div>
             </div>
             <div className="flex justify-center items-center w-[48%] bg-gray text-center text-black">
@@ -317,15 +318,15 @@ const JoinPage = () => {
             </div>
           </div>
 
-          <div className="w-full flex justify-between px-[20px] mb-[40px]">
+          <div className="w-full flex justify-between mb-[40px]">
             <div className="flex justify-center items-center w-[48%] bg-gray text-center">
               <div className="w-[50%] h-[100px] py-[30px] flex justify-center items-start border-r border-darkgray">
                 회비납부 및 가입완료
               </div>
               <div className="w-[50%] h-[100px] py-[30px] flex justify-center items-start">
-                회비 납부
+                {/* 회비 납부
                 <br />
-                (신용카드, 계좌이체, 가상계좌)
+                (신용카드, 계좌이체, 가상계좌) */}
               </div>
             </div>
             <div className="flex justify-center items-center w-[48%] bg-gray text-center">
@@ -499,26 +500,28 @@ const JoinPage = () => {
 
           <ContentSubTitle title="정회원 혜택" />
           <span className="text-[15px] md:text-base">
-            협회에서 보유하고 있는 자료의 열람과 협회가 발행하는 각종 자료 및
-            간행물 등을 받을 수 있으며, 세미나 강연 및 기타 협회에서 행하는 각종
-            행사와 활동에 참여
+            협회에서 보유하고 있는 혹은 협회가 발행하는 자료의 열람이 가능하며, 세미나 강연 및 기타 협회에서 주관하는 각종 행사에 참여 우선권을 가진다.
+            또한 정회원이 행하는 행사와 자료 제작에 협회 로고를 사용할 수 있으며, 협회가 주관하는 방폭 관련 교육에 대해 교육비를 할인받을 수 있다.
           </span>
 
           <ContentSubTitle title="정회원 권한" />
-          <span className="text-[15px] md:text-base">· 협회의 운영과 발전에 대한 건의</span>
+          <span className="text-[15px] md:text-base">· 협회의 운영과 발전에 대해 총회의 의결권을 가짐</span>
           <span className="text-[15px] md:text-base mt-1">
-            · 협회가 시행하는 각종 방폭관련 사업에 참여
+            · 방폭 관련 교육 할인(협회 주관 교육에 한함)
           </span>
           <span className="text-[15px] md:text-base mt-1">
-            · 본회의 인적 및 물적 설비를 이용할 권리
+            · 회원의 경력관리(경력수첩 발급 등)
           </span>
           <span className="text-[15px] md:text-base mt-1">
-            · 협회가 주관하는 각종 세미나 및 교육 등의 우선 참여
+            · 협회가 주관하는 각종 세미나 및 행사 등의 우선 참여
+          </span>
+          <span className="text-[15px] md:text-base mt-1">
+            · 정부 포상에 대한 우수 직원 우선 추천
           </span>
           <span className="text-[15px] md:text-base tracking-tight mt-1">
             · 협회의 임원, 대의원, 위원 기타 이 정관의 규정에 <br className="md:hidden"/> 
             <span className="md:hidden">&nbsp;&nbsp;&nbsp;</span>
-            의하여 선임되는 자의 선거권 및 피선거권을 취득
+              의하여 선임되는 자의 선거권 및 피선거권을 취득
           </span>
           <span className="text-[15px] md:text-base">
             &nbsp; 다만, 명예회원은 선거권과 피선거권을 제한
