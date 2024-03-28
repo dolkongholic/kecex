@@ -125,17 +125,19 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <Image src={PicSlogan4} alt="슬로건" width={250} height={80} />
               </Link>
             </div> */}
-            <div className="w-[800px] flex justify-start items-center relative">
-            <Image 
-                  src={PicMainNotice} 
-                  alt="header_top_notice" 
-                  className="absolute bottom-0 left-0 z-0 opacity-80"
-                  // width={800} height={60}
-                  fill={true}
-                />
-              <div className="w-[120px] h-[30px] bg- flex items-center justify-center absolute left-[180px] top-[15px] z-20"> 공지사항 &nbsp;&nbsp; - </div>
-              <p className="ml-6 absolute h-[30px] left-[280px] top-[15px] text-[20px] font-semibold">한국방폭협회 정식 개설 안내</p>
-            </div>
+            <Link passHref href={"/notice/notice/detail/12?page=1"}>
+              <div className="w-[800px] flex justify-start items-center relative translate-x-[100px]">
+              <Image 
+                    src={PicMainNotice} 
+                    alt="header_top_notice" 
+                    className="absolute bottom-0 left-0 z-0 opacity-80"
+                    // width={800} height={60}
+                    fill={true}
+                  />
+                <div className="w-[80px] h-[32px] bg-primary text-white flex items-center justify-center absolute left-[230px] top-[14px] z-20"> 공지사항</div>
+                <p className="ml-6 absolute h-[30px] left-[310px] top-[15px] text-[20px] font-semibold font-Sans">한국방폭협회 정식 개설 안내</p>
+              </div>
+            </Link>
             {/* 최상단 로고 + 검색창 */}
             {/* <div className="flex justify-center items-center bg-red-200">
               <div className="w-[120px] mr-[40px] ml-[30px] flex item-center">
@@ -158,7 +160,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <FiSearch style={{ width: "22", height: "22" }} />
               </span>
             </div> */}
-            <div className="w-1/2 lg:w-[350px] flex justify-end items-center">
+            <div className="w-1/2 lg:w-[330px] flex justify-end items-center">
               <div className="w-2/3 flex item-center justify-end mr-[15px] text-[13px] font-bold">
                 <ul className="flex items-center space-x-[10px]">
                   {currentUser == null ? (

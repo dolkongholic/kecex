@@ -324,6 +324,7 @@ const Index: React.FC<IndexProps> = ({
                   협회가입시 어떤<br/>
                   <span className="text-primary">혜택</span>이 있나요?
                 </p>
+                <Link passHref href={"/business/member/rule"}>
                 <button className="
                   mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
                   relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-[#003893] 
@@ -333,6 +334,7 @@ const Index: React.FC<IndexProps> = ({
                 ">
                     혜택안내
                 </button>
+                </Link>
                 <Link passHref href={"/business/member/career"}>
                   <button className="
                     mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
