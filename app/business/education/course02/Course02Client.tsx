@@ -106,19 +106,19 @@ const Course02Client = () => {
         </section>
 
         <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
-          <ContentTitle title={location} />
+        <ContentTitle title={location} />
           <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
             <li className="w-1/2 cursor-default">
-              <Link passHref href={"/business/education/course01/"}>
-                <div className="h-12 border border-gray-200 border-b-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                   <span> 방폭기초교육</span>
                 </div>
-              </Link>
             </li>
             <li className="w-1/2">
-                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
+              <Link passHref href={"/business/education/course02/"}>
+                <div className="h-12 border border-gray-200 border-b-0 border-l-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
                   <span> 방폭인력양성 교육</span>
                 </div>
+              </Link>
             </li>
             <li className="w-1/2">
               <Link passHref href={"/business/education/course03/"}>
@@ -144,135 +144,95 @@ const Course02Client = () => {
           </ul>
           <ContentSubTitle title="교육목적" />
           <div className="w-full mb-[40px]">
-            <div className="flex flex-col justify-center items-start h-[100px] md:px-[20px] md:border border-gray w-full">
+            <div className="flex flex-col justify-center items-start p-[20px] md:border border-gray w-full leading-[30px]">
               <span>
-                국제ㆍ국내 법규 및 관련 표준, 지침에 따라 폭발 위험성이 존재하는
-                산업현장에서는 각 공정별 적격자에 의한 작업 및 관리가 요구된다.
-                <br /> 이에 따라 해당 교육을 통한 국제적 수준의 방폭 전문가 또는
-                적격자를 양성하고 표준과 지침에 맞는 공정별 작업을 유도함으로써
-                산업현장의 폭발 위험 예방 및 안전 시스템을 구축하기 위함
+              폭발 위험 장소에서 전계장 설치 업무를 수행하는 현장기술자들을 위한 과정으로, 
+              고객사 시방서 제공 시 시방서에 따라 현장 맞춤형 교육 제공. 방폭 기본, 설치 이론 및 실습 교육을 통해 
+              방폭에 대한 개념 확립과 올바른 기기 설치를 통해 안전한 사업장을 구축
               </span>
             </div>
           </div>
 
           <ContentSubTitle title="교육대상" />
-          <div className="w-full">
-            <div className="w-full md:h-[270px] mb-[40px] border border-gray">
-              <div className="hidden md:flex justify-center items-start w-full">
-                <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center border-r border-gray">
-                  분 류
-                </div>
-                <div className="w-1/2 h-[40px] bg-gray flex justify-center items-center">
-                  대 상
-                </div>
-              </div>
-              <div className="flex flex-col md:flex-row justify-between items-start w-full">
-                <div className="w-full md:w-1/2 flex flex-col justify-start items-center">
-                  <div className="w-full h-11 bg-darkgray flex md:hidden justify-center items-center">
-                    분류
-                  </div>
-                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    &nbsp;
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    · 방폭시공기술자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    · 방폭검사기술자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    · 방폭설계기술자 I (폭발위험장소 구분)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    · 방폭설계기술자 II (방폭기기 선정)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    · 방폭정비기술자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    · 방폭감리기술자(시공/검사/설계 I,II 보유자 응시 가능)
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center border-r border-gray">
-                    &nbsp;
-                  </span>
-                </div>
-                <div className="w-full md:w-1/2 flex flex-col justify-start items-center">
-                  <div className="w-full h-11 bg-darkgray flex md:hidden justify-center items-center">
-                    대상
-                  </div>
-                  <span className="w-full h-[20px] pl-[20px] flex justify-start items-center">
-                    &nbsp;
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    · 각 업무에 맞는 IECEx CoPC 국제방폭자격증 취득을 원하는 자
-                  </span>
-                  <span className="w-full h-[60px] px-[20px] flex justify-start items-center">
-                    · 산업안전보건공단, 가스안전공사로부터 PSM,SMS 심사를 받는
-                    기업체 설계, 공무 및 안전부서 근로자
-                  </span>
-                  <span className="w-full h-[30px] pl-[20px] flex justify-start items-center">
-                    &nbsp;
-                  </span>
-                </div>
-              </div>
+          <div className="w-full mb-[40px]">
+          <div className="flex flex-col justify-center items-start p-[20px] md:border border-gray w-full">
+              <span>
+              폭발위험장소 내 현장 기술자 (방폭시공 기술자 등) 
+              </span>
             </div>
           </div>
 
-          <div className="w-full flex flex-col md:flex-row justify-between items-center mb-[40px]">
+          <div className="w-full flex flex-col md:flex-row justify-center md:justify-between items-center mb-[40px]">
             <div className="w-full md:w-[49%] flex flex-col">
               <ContentSubTitle title="자격요건" />
-              <div className="flex flex-col justify-center py-[20px] items-start px-[20px] border border-gray w-full">
-                <span>각 IECEx Unit 별 취득 자격 요건 참조</span>
+              <div className="flex flex-col justify-center items-start p-[20px] border border-gray w-full">
+                <span>
+                  방폭 기본 교육 이수 및 방폭 관련 경력 2년 이상
+                  </span>
               </div>
             </div>
-            <div className="w-full md:w-[49%] flex flex-col">
-              <ContentSubTitle title="교육내용 및 시간" />
-              <div className="flex flex-col justify-center py-[20px] items-start px-[20px] border border-gray w-full">
-                <span>각 IECEx Unit 별 교육 시간 참조</span>
+            <div className="w-full md:w-[49%] flex flex-col mt-5 md:mt-0">
+              <ContentSubTitle title="교육 비용" />
+              <div className="flex flex-col justify-center items-start p-[20px] border border-gray w-full">
+                <span>
+                  1인당 20만원 (교육비: 15만원 / 자재비: 5만원)
+                </span>
               </div>
             </div>
           </div>
 
-          <div className="w-full flex-col md:flex-row justify-center flex md:justify-between items-start mb-[40px]">
+          <div className="w-full flex flex-col md:flex-row justify-center md:justify-between items-center mb-[40px]">
             <div className="w-full md:w-[49%] flex flex-col">
-              <ContentSubTitle title="갱신교육기간" />
-              <div className="flex flex-col justify-start py-[20px] items-start px-[20px] border border-gray w-full">
-                <span>5년 (IEC 규정)</span>
+              <ContentSubTitle title="교육 혜택" />
+              <div className="flex flex-col justify-start items-start h-[132px] p-[20px] border border-gray w-full leading-[30px]">
+                <span>
+                  교육 수료증 발급<br/>
+                  (추후 전자경력 카드 발급)
+                </span>
               </div>
             </div>
-            <div className="w-full md:w-[49%] flex flex-col">
-              <ContentSubTitle title="CoPC Unit 별 교육과정" />
-              <div className="flex flex-col justify-start py-[20px] items-start px-[20px] border border-gray w-full">
-                <span>· 방폭시공기술자(IECEx CoPC Unit Ex 001 + 036)</span>
-                <span>· 방폭검사기술자(IECEx CoPC Unit Ex 001 + 478)</span>
+            <div className="w-full md:w-[49%] flex flex-col mt-5 md:mt-0">
+              <ContentSubTitle title="기대효과" />
+              <div className="flex flex-col justify-start items-start h-[132px] p-[20px] border border-gray w-full leading-[30px]">
                 <span>
-                  · 방폭설계기술자 I - 폭발위험장소 구분 <br className="inline md:hidden"/>
-                  &nbsp;&nbsp;&nbsp;(IECEx CoPC Unit Ex 001
-                  + 002)
+                  현장 기술자를 대상으로 폭발위험장소의 케이블 배선/결선, 방폭기기 설치, 
+                  검사에 대한 교육을 통해, 시공 부적합을 최소화하여 재작업을 방지하며, 
+                  시공 비용 절감의 효과를 기대할 수 있음.
                 </span>
-                <span>
-                  · 방폭설계기술자 II - 방폭기기 선정 <br className="inline md:hidden"/>
-                  &nbsp;&nbsp;&nbsp;(IECEx CoPC Unit Ex 001 + 009)
-                </span>
-                <span>· 방폭정비기술자 (IECEx CoPC Unit Ex 001 + 005)</span>
-                <span>· 방폭감리기술자 (IECEx CoPC Unit Ex 001 + 010)</span>
               </div>
             </div>
           </div>
-
-          <div className="w-full flex-col md:flex-row justify-center flex md:justify-between items-center mb-[40px]">
-            <div className="w-full md:w-[49%] flex flex-col">
-              <ContentSubTitle title="혜택" />
-              <div className="flex flex-col justify-center py-[20px] items-start h-[70px] px-[20px] border border-gray w-full">
-                <span>수료증</span>
+          
+          <ContentSubTitle title="교육 시간별 세부 내용" />
+          <div className="w-full border border-[#ccc] flex">
+            <div className="w-[80px] text-[18px] flex flex-col justify-center items-center font-medium bg-[#e8e8e8]">
+              8H
+            </div>
+            <div className="text-[18px] font-medium border-x border-[#ccc]">
+              <div className="w-[80px] h-[195px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
+                4H
+              </div>
+              <div className="w-[80px] h-[130px] bg-lightgray flex flex-col justify-center items-center">
+                4H
               </div>
             </div>
-            <div className="w-full md:w-[49%] flex flex-col">
-              <ContentSubTitle title="발급비용" />
-              <div className="flex flex-col justify-center py-[20px] items-start h-[70px] px-[20px] border border-gray w-full">
-                <span>IECEx Cert 발급 비용 참조</span>
-              </div>
-            </div>
+            <ul className="w-full">
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+                화재이론 및 폭발 위험 장소 구분의 이해
+              </li>
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+                방폭 기기의 형식 표시 기호, 방폭 원리 및 구조 이해
+              </li>
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+                방폭기기 별 설치기준(d, e, i) 및 실제 부적합 사례 확인(PSM, SMS)
+              </li>
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+                Sealing Device 실습 
+              </li>
+              <li className="w-full h-[65px] flex flex-col justify-center items-start pl-6">
+                Double Compression Gland 실습, 설치 후 검사
+              </li>
+            </ul>
           </div>
         </section>
       </main>

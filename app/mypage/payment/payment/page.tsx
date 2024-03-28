@@ -9,7 +9,7 @@ const PaymentPage = async () => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <PaymentClient />
+      <PaymentClient currentUser={currentUser}  />
       <Footer />
     </div>
   );

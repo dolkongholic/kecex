@@ -9,7 +9,7 @@ const OutPage = async () => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <OutClient />
+      <OutClient currentUser={currentUser}/>
       <Footer />
     </div>
   );
