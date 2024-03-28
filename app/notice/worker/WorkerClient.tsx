@@ -15,8 +15,8 @@ import Picworker from "@/public/img/inner/worker/worker_group.png"
 
 const MainList = [
   {
-    title: "인재정보",
-    url: "/notice/worker",
+    title: "공지사항",
+    url: "/notice/notice?page=1",
     sub: null,
   },
   {
@@ -30,8 +30,8 @@ const MainList = [
     sub: null,
   },
   {
-    title: "공지사항",
-    url: "/notice/notice?page=1",
+    title: "인재정보",
+    url: "/notice/worker",
     sub: null,
   },
 ];

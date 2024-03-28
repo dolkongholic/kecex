@@ -449,9 +449,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <div className={`w-1/4 text-[19px] pl-[2%] relative
                   before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
                 `}>
-                  <Link passHref href={"/notice/worker/"}>
+                  <Link passHref href={"/notice/notice?page=1"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
-                      인재정보
+                      공지사항
                     </div>
                   </Link>
                 </div>
@@ -474,9 +474,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </Link>
                 </div>
                 <div className="w-1/4 text-[19px] pl-[2%]">
-                  <Link passHref href={"/notice/notice?page=1"}>
+                  <Link passHref href={"/notice/worker/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
-                      공지사항
+                      인재정보
                     </div>
                   </Link>
                 </div>
@@ -808,9 +808,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 }`}
               >
                 <li>
-                  <Link passHref href={"/notice/worker/"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600  leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
-                      인재정보
+                  <Link passHref href={"/notice/notice?page=1"}>
+                    <div className="w-full md:w-[250px] h-12 md:h-14 md:border-b md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                      공지사항
                     </div>
                   </Link>
                 </li>
@@ -829,9 +829,9 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link passHref href={"/notice/notice?page=1"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  md:border-b md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
-                      공지사항
+                  <Link passHref href={"/notice/worker/"}>
+                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600  leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                      인재정보
                     </div>
                   </Link>
                 </li>

@@ -114,35 +114,35 @@ const DetailClient = () => {
 
         <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
-          <div className="text-black w-full flex flex-col justify-center item-center">
+          <div className="text-[#262626] w-full flex flex-col justify-center item-center">
             <div className="w-full flex justify-center mx-auto mt-5">
               <p>
                 <span>회원</span>님의 납부내역입니다.<br/>
               </p>
             </div>
             <ul className="w-full mx-auto border-t-2 border-neutral-700 mt-10 text-[14px] md:text-base">
-              <div className="w-full h-11 bg-lightgray flex text-center items-center font-medium border-b border-secondary">
-                <div className="w-[50px] h-full pt-[10px]">
+              <div className="w-full h-12 bg-lightgray flex text-center items-center font-semibold border-b border-secondary text-primary leading-[47px]">
+                <div className="w-[50px] h-full">
                   No.
                 </div>
-                <div className="w-[10%] h-full pt-[10px]">
+                <div className="w-[10%] h-full]">
                   종류
                 </div>
-                <div className="w-[15%] h-full pt-[10px]">
-                  금액
+                <div className="w-[15%] h-full text-start">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;금액
                 </div>
-                <div className="w-[15%] h-full pt-[10px]">
-                  납부상태
+                <div className="w-[15%] h-full text-start">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;납부상태
                 </div>
-                <div className="w-[30%] h-full pt-[10px]">
-                  일자
+                <div className="w-[30%] h-full text-start">
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;일자
                 </div>
-                <div className="w-[30%] h-full pt-[10px]">
-                  비고
+                <div className="w-[30%] h-full text-start">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비고
                 </div>
               </div>
-              <li className="w-full h-11 flex text-center items-center border-b border-gray-300">
-                <div className="w-[50px] h-full border-r border-gray-200 flex items-center justify-center">
+              <li className="w-full h-12 flex text-center items-center border-b border-gray-300">
+                <div className="w-[50px] h-full border-r border-gray-200 flex items-center justify-center font-medium">
                   <span>
                     1
                   </span>
@@ -177,8 +177,8 @@ const DetailClient = () => {
                   </span>
                 </div>
               </li>
-              <li className="w-full h-11 flex text-center items-center border-b border-gray-400">
-                <div className="w-[50px] h-full border-r border-gray-200 flex items-center justify-center">
+              <li className="w-full h-12 flex text-center items-center border-b border-gray-400">
+                <div className="w-[50px] h-full border-r border-gray-200 flex items-center justify-center font-medium">
                   <span>
                     2
                   </span>
@@ -218,7 +218,7 @@ const DetailClient = () => {
               </li>
             </ul>
             <div className="mx-auto mt-10">
-              1 2 3 4 5 page
+              1 page
             </div>
             
           </div>

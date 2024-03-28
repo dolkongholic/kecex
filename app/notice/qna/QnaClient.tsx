@@ -18,8 +18,8 @@ import PicNotice_03 from "@/public/img/page_top/notice_03.jpg"
 
 const MainList = [
   {
-    title: "인재정보",
-    url: "/notice/worker",
+    title: "공지사항",
+    url: "/notice/notice?page=1",
     sub: null,
   },
   {
@@ -33,8 +33,8 @@ const MainList = [
     sub: null,
   },
   {
-    title: "공지사항",
-    url: "/notice/notice?page=1",
+    title: "인재정보",
+    url: "/notice/worker",
     sub: null,
   },
 ];

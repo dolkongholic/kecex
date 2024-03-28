@@ -9,7 +9,7 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicInfo_02 from "@/public/img/page_top/information_02.jpg"
 
 const MainList = [
   {
@@ -54,6 +54,20 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
 
   return (
     <section>
+      <figure className="w-full h-[200px]">
+        <div className="w-full h-full mx-auto relative">
+          <Image
+            src={PicInfo_02}
+            layout="fill"
+            objectFit="cover"
+            alt="item.title"
+            className="object-cover"
+          />
+          <div className="bg-neutral-900/50 absolute w-full h-full left-0 top-0 z-20 text-center text-white font-medium text-[36px] leading-[200px]">
+            {location}
+          </div>
+        </div>
+      </figure>
       <div id="headerNav">
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
@@ -149,7 +163,7 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
               </div>
             </div>
             <div>
-            {currentUser && (
+            {currentUser.staff && (
               <Link passHref href={"/information/news/post"}>
                 <button className="cursor-pointer bg-secondary hover:bg-primary transition-all duration-300 text-white w-24 h-10 text-[14px]">
                   글쓰기
