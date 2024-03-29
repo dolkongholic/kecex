@@ -105,10 +105,10 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
         <div className="h-[40px] w-full bg-gray-100 flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+              Home <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              정보공개 <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+              정보공개 <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center underline">
               {location}
@@ -235,7 +235,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
                 목록
               </button>
             </Link>
-            {currentUser.staff && (
+            {currentUser?.staff && (
               <button
                 className="w-32 h-10 bg-red-500 text-white text-[14px] mt-9 m-auto"
                 onClick={() => del()}

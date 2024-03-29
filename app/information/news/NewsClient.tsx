@@ -72,10 +72,10 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+              Home <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              정보공개 <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+              정보공개 <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center underline">
               {location}
@@ -163,7 +163,7 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
               </div>
             </div>
             <div>
-            {currentUser.staff && (
+            {currentUser?.staff && (
               <Link passHref href={"/information/news/post"}>
                 <button className="cursor-pointer bg-secondary hover:bg-primary transition-all duration-300 text-white w-24 h-10 text-[14px]">
                   글쓰기

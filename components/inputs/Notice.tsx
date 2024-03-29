@@ -214,7 +214,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
 
             {noticeMenu == "보도자료" && (
               <>
-                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3 px-4 md:mr-[50px]">
+                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3 px-4 md:mr-[50px] hover:shadow-lg shadow-gray-300 rounded-lg transition-all duration-200">
                   <Link
                     key={newsList[newsList.length - 1].id}
                     passHref
@@ -249,7 +249,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     </div>
                   </Link>
                 </div>
-                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3 px-4 md:mr-[50px]">
+                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3 px-4 md:mr-[50px] hover:shadow-lg shadow-gray-300 rounded-lg transition-all duration-200">
                   <Link
                     key={newsList[newsList.length - 2].id}
                     passHref
@@ -284,7 +284,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     </div>
                   </Link>
                 </div>
-                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3 px-4">
+                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/3 px-4 hover:shadow-lg shadow-gray-300 rounded-lg transition-all duration-200">
                   <Link
                     key={newsList[newsList.length - 3].id}
                     passHref

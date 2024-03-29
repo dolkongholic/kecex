@@ -76,13 +76,13 @@ const CopcClient = () => {
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+              Home <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              사업안내 <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+              사업안내 <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              교육 <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+              교육 <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center underline">
               {location}
@@ -323,13 +323,13 @@ const CopcClient = () => {
             </li>
           </ul>
           <ul className="w-full mt-10">
+            {/*첫번째 li */}
             <li className={`${selectedLiIndex === 0 ? "block" : "hidden"}`}>
-              {/*첫번째 li */}
               <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-neutral-800 font-medium mb-7">
                 IECEx CoPC 000 Ex Awareness
               </div>
               <ContentSubTitle title="교육 개요" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx 60079 시리즈 및 OD 504에 언급되어 있는 기초 방폭 이론
                   교육
@@ -339,7 +339,7 @@ const CopcClient = () => {
                 </p>
               </div>
               <ContentSubTitle title="교육 목적" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0  leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · 전 산업 분야 역량 확보를 위한 방폭 관련 전문가 양성과
                   전문지식 배양을 통한 역량 강화
@@ -350,7 +350,7 @@ const CopcClient = () => {
                 </p>
               </div>
               <ContentSubTitle title="교육 내용" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0  leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0  leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · 국제 방폭 전문가 과정(IECEx CoPC)에 응시하기 전 방폭에 대한
                   이해도를 향상시키기 위한 교육과정
@@ -373,7 +373,7 @@ const CopcClient = () => {
                 <div className="w-1/6 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   1일차
                 </div>
-                <div className="w-5/6 h-full border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 h-full border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-1">
                   <p>· 국제방폭자격시험 IECEx & EEHA 소개</p>
                   <p>· IECEx CoPC Unit 및 Assessment 소개</p>
                   <p>· 방폭의 정의 및 폭발의 요소</p>
@@ -384,13 +384,13 @@ const CopcClient = () => {
                 </div>
               </div>
             </li>
+            {/*두번째 li */}
             <li className={`${selectedLiIndex === 1 ? "block" : "hidden"}`}>
-              {/*두번째 li */}
               <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-neutral-800 font-medium mb-7">
                 IECEx CoPC 001 Ex Foundation
               </div>
               <ContentSubTitle title="교육 개요" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx 60079 시리즈 및 OD 504에 언급되어 있는 기초 방폭 이론
                   교육
@@ -407,12 +407,10 @@ const CopcClient = () => {
                 </p>
               </div>
               <ContentSubTitle title="교육 내용" />
-              <div className="w-full md:h-[150px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[150px] border border-gray flex flex-col justify-center px-5 py-4 md:py-0 leading-8 mb-7 text-[15px] md:text-base space-y-2">
                 <p className="leading-6">
-                  · 방폭분야에서의 개인의 역량을 입증하고 실제 현장 작업에
-                  투입되기 위한 자격을 심사하는 국제 방폭 전문인력 자격인증
-                  과정으로서 폭발 환경 내에서의 가장 기본이 <span className="hidden md:inline">&nbsp;&nbsp;</span> 되는
-                  방폭 이론을 교육
+                  · 방폭분야에서의 개인의 역량을 입증하고 실제 현장 작업에 투입되기 위한 자격을 심사하는 국제 방폭 전문인력 자격인증
+                  과정으로서 폭발 환경 내에서의 가장 기본이 되는 방폭 이론을 교육
                 </p>
                 <p className="leading-5 md:leading-auto">
                   ·{" "}
@@ -421,10 +419,10 @@ const CopcClient = () => {
                   </b>{" "}
                   <br className="md:hidden"/>
                   <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역에서의 방폭 기본 원리
-                </p>
-                <p className="leading-5">
-                  &nbsp;&nbsp;&nbsp;(Apply basic principles of protection in
+                  <p className="leading-5">
+                  (Apply basic principles of protection in
                   explosive atmosphere)
+                </p>
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -444,7 +442,7 @@ const CopcClient = () => {
                 <div className="w-1/6 md:h-56 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   1일차
                 </div>
-                <div className="w-5/6 md:h-56 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-56 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 space-y-1 text-[15px] md:text-base">
                   <p>· 폭발물의 특징 및 방폭 구역 분류</p>
                   <p>· 방폭의 기본 요건</p>
                   <p>· 폭발 위험이 있는 환경에서 작업하기 위한 HSE 필수 조건</p>
@@ -460,13 +458,13 @@ const CopcClient = () => {
                 </div>
               </div>
             </li>
+            {/*세번째 li */}
             <li className={`${selectedLiIndex === 2 ? "block" : "hidden"}`}>
-              {/*세번째 li */}
               <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-neutral-800 font-medium mb-7">
                 IECEx CoPC 002 Ex Classification of Hazardous Area
               </div>
               <ContentSubTitle title="교육 개요" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx 60079 시리즈 및 OD 504에 언급되어 있는 기초 방폭 이론
                   및 실습 교육
@@ -483,7 +481,7 @@ const CopcClient = () => {
                 </p>
               </div>
               <ContentSubTitle title="교육 내용" />
-              <div className="w-full md:h-[120px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[120px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 mb-7 text-[15px] md:text-base space-y-2">
                 <p className="leading-6">
                   · 방폭 구역에서 전기설비의 안전한 작업을 위한 기본적인 지식과
                   방폭 구역 정의, 검사에 대한 교육
@@ -494,13 +492,13 @@ const CopcClient = () => {
                     IECEx CoPC Unit Ex 002
                   </b>{" "}
                   위험지역 구분
+                  <p className="leading-3">
+                  (Perform classification of hazardous areas)
                 </p>
-                <p className="leading-3">
-                  &nbsp;&nbsp;&nbsp;(Perform classification of hazardous areas)
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>· IECEx CoPC 001 자격 소유자</p>
                 <p>
                   · 인화성 물질에 대한 공정, 장비, 안전, 전기, 기계 분야 관련
@@ -508,7 +506,7 @@ const CopcClient = () => {
                 </p>
               </div>
               <ContentSubTitle title="합격 기준" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · 이론 평가는 객관식과 주관식으로 이루어지며 오픈 북 (Open
                   Book) 시험으로 키워드 (Keyword) 미작성 시 감점 요인이 됨
@@ -520,16 +518,17 @@ const CopcClient = () => {
                 <div className="w-1/6 md:h-56 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   1일차
                 </div>
-                <div className="w-5/6 md:h-56 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
-                  <p>· 방폭 이론 (기본/심화)</p>
-                  <p className="leading-5 pl-3">
-                    - 정의, 방폭기술, 방폭규정 등
+                <div className="w-5/6 md:h-56 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-2">
+                  <p>· 방폭 이론 (기본/심화)
+                    <p className="leading-5 pl-3">
+                      - 정의, 방폭기술, 방폭규정 등
+                    </p>
                   </p>
                   <p className="mt-1">· IEC Standards 및 국내 관련 법안</p>
                   <p>
                     · 위험 지역 구분 이론/실습 (Hazardous Area Classification)
+                    <p className="leading-5 pl-3">- Zone Classification</p>
                   </p>
-                  <p className="leading-5 pl-3">- Zone Classification</p>
                   <p className="mt-1">· 위험지역 구분 평가 (IECEx CoPC 유형)</p>
                 </div>
                 <div className="w-1/6 flex md:h-16 justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
@@ -540,13 +539,13 @@ const CopcClient = () => {
                 </div>
               </div>
             </li>
+            {/*네번째 li */}
             <li className={`${selectedLiIndex === 3 ? "block" : "hidden"}`}>
-              {/*네번째 li */}
               <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-neutral-800 font-medium mb-7">
                 IECEx CoPC 009 Ex Design Electrical Installations
               </div>
               <ContentSubTitle title="교육 개요" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx 60079 시리즈 및 OD 504에 언급되어 있는 기초 방폭 이론
                   및 실습 교육
@@ -563,7 +562,7 @@ const CopcClient = () => {
                 </p>
               </div>
               <ContentSubTitle title="교육 내용" />
-              <div className="w-full md:h-[120px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[120px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 mb-7 text-[15px] md:text-base space-y-1">
                 <p className="leading-6">
                   · 방폭구역에서 전기설비의 설계를 하기 위해 필요한 기본적인
                   지식과 실습에 대한 교육
@@ -575,14 +574,14 @@ const CopcClient = () => {
                   </b>{" "}
                   <br className="md:hidden"/>
                   <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 전기설비 설계
-                </p>
-                <p className="leading-5">
-                  &nbsp;&nbsp;&nbsp;(Design electrical installations in or
+                  <p className="leading-5">
+                  (Design electrical installations in or
                   associated with explosive atmospheres)
+                  </p>
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx CoPC 001 자격 소유자, 관련 분야 2년제 대학 학위 이상
                   소지자 또는 동등 자격 보유자
@@ -593,7 +592,7 @@ const CopcClient = () => {
                 </p>
               </div>
               <ContentSubTitle title="합격 기준" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · 이론 평가는 객관식과 주관식으로 이루어지며 오픈 북 (Open
                   Book) 시험으로 키워드 (Keyword) 미작성 시 감점 요인이 됨
@@ -605,7 +604,7 @@ const CopcClient = () => {
                 <div className="w-1/6 md:h-60 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   1일차
                 </div>
-                <div className="w-5/6 md:h-60 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-60 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-1">
                   <p>· 방폭 구역 내 안전 작업 절차</p>
                   <p>· 방폭 구역 요구 조건 에 따른 방폭 장비의 선정</p>
                   <p>· 방폭 설계에 따른 일반적인 주의 사항</p>
@@ -621,14 +620,14 @@ const CopcClient = () => {
                   <p>· 이론 및 실습 평가</p>
                 </div>
               </div>
-            </li>
+            </li>        
+            {/*다섯번째 li */}
             <li className={`${selectedLiIndex === 4 ? "block" : "hidden"}`}>
-              {/*다섯번째 li */}
               <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-neutral-800 font-medium mb-7">
                 IECEx CoPC 003,006 Ex Technician
               </div>
               <ContentSubTitle title="교육 개요" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx 60079 시리즈 및 OD 504에 언급되어 있는 기초 방폭 이론
                   및 실습 교육
@@ -660,7 +659,7 @@ const CopcClient = () => {
                   <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>방폭 장비 및 배선 시스템 설치
                 </p>
                 <p className="leading-5">
-                  &nbsp;&nbsp;&nbsp;(Install explosion-protected equipment and
+                  (Install explosion-protected equipment and
                   wiring systems)
                 </p>
                 <p className="mt-2 leading-5 md:leading-auto">
@@ -672,12 +671,11 @@ const CopcClient = () => {
                   <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 전기 설비 테스트
                 </p>
                 <p className="leading-5">
-                  &nbsp;&nbsp;&nbsp;(Test electrical installations in or
-                  associated with explosive atmospheres)
+                  (Test electrical installations in or associated with explosive atmospheres)
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx CoPC 001 자격 소유자, 관련 분야 2년제 대학 학위 이상
                   소지자 또는 동등 자격 보유자
@@ -685,7 +683,7 @@ const CopcClient = () => {
                 <p>· 전기 설비 또는 방폭 설비 3년 이상 실무경력 보유자</p>
               </div>
               <ContentSubTitle title="합격 기준" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · 이론 평가는 객관식과 주관식으로 이루어지며 오픈 북 (Open
                   Book) 시험으로 키워드 (Keyword) 미작성 시 감점 요인이 됨
@@ -697,7 +695,7 @@ const CopcClient = () => {
                 <div className="w-1/6 md:h-40 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   1일차
                 </div>
-                <div className="w-5/6 md:h-40 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-40 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-1">
                   <p>· 방폭 구역 내 안전 작업 절차</p>
                   <p>· 방폭 구역 요구 조건에 따른 방폭장비의 선정</p>
                   <p>· 방폭 장비 설치에 대한 문서 작성</p>
@@ -706,7 +704,7 @@ const CopcClient = () => {
                 <div className="w-1/6 flex md:h-32 justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   2일차
                 </div>
-                <div className="w-5/6 md:h-32 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-32 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-1">
                   <p>· 방폭 장비의 Cable Entry에 대한 요구사항, 설치 및 선정</p>
                   <p>· 설치 테스트를 위한 측정장비 사용</p>
                   <p>· 테스트 결과 및 작업 종료에 대한 보고</p>
@@ -718,14 +716,14 @@ const CopcClient = () => {
                   <p>· 이론 및 실습 평가</p>
                 </div>
               </div>
-            </li>
+            </li>              
+            {/*여섯번째 li */}
             <li className={`${selectedLiIndex === 5 ? "block" : "hidden"}`}>
-              {/*여섯번째 li */}
               <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-neutral-800 font-medium mb-7">
                 IECEx CoPC 004,007,008 Ex Inspector
               </div>
               <ContentSubTitle title="교육 개요" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx 60079 시리즈 및 OD 504에 언급되어 있는 기초 방폭 이론
                   및 실습 교육
@@ -757,7 +755,7 @@ const CopcClient = () => {
                   <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역에서의 장비 유지 보수
                 </p>
                 <p className="leading-5">
-                  &nbsp;&nbsp;&nbsp;(Maintain equipment in explosive
+                  (Maintain equipment in explosive
                   atmospheres)
                 </p>
                 <p className="mt-2 leading-5 md:leading-auto">
@@ -769,7 +767,7 @@ const CopcClient = () => {
                   <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 육안 검사 및 정밀 검사
                 </p>
                 <p className="leading-5">
-                  &nbsp;&nbsp;&nbsp;(Perform visual and close inspection of
+                  (Perform visual and close inspection of
                   electrical installations in or associated with explosive
                   atmospheres)
                 </p>
@@ -782,12 +780,12 @@ const CopcClient = () => {
                   <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 세부 검사
                 </p>
                 <p className="leading-5">
-                  &nbsp;&nbsp;&nbsp;(Perform detailed inspection of electrical
+                  (Perform detailed inspection of electrical
                   installations in or associated with explosive atmospheres)
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx CoPC 001 자격 소유자, 관련 분야 2년제 대학 학위 이상
                   소지자 또는 동등 자격 보유자
@@ -797,7 +795,7 @@ const CopcClient = () => {
                 </p>
               </div>
               <ContentSubTitle title="합격 기준" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · 이론 평가는 객관식과 주관식으로 이루어지며 오픈 북 (Open
                   Book) 시험으로 키워드 (Keyword) 미작성 시 감점 요인이 됨
@@ -809,7 +807,7 @@ const CopcClient = () => {
                 <div className="w-1/6 md:h-48 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   1일차
                 </div>
-                <div className="w-5/6 md:h-48 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-48 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-1">
                   <p>· 방폭 구역 내 안전 작업 절차</p>
                   <p>
                     · 방폭 구역 요구 조건에 따른 방폭 장비의 선정 적합성 진단
@@ -821,19 +819,19 @@ const CopcClient = () => {
                 <div className="w-1/6 flex md:h-24 justify-center items-center bg-lightgray text-bold text-black border-b border-gray">
                   2일차
                 </div>
-                <div className="w-5/6 md:h-24 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-24 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-1">
                   <p>· 방폭 장비의 Cable Entry에 대한 요구 사항, 설치 확인</p>
                   <p>· 이론 및 실습 평가</p>
                 </div>
               </div>
-            </li>
+            </li>              
+            {/*일곱번째 li */}
             <li className={`${selectedLiIndex === 6 ? "block" : "hidden"}`}>
-              {/*일곱번째 li */}
               <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-neutral-800 font-medium mb-7">
                 IECEx CoPC 005 Ex Overhaul and Repair
               </div>
               <ContentSubTitle title="교육 개요" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx 60079 시리즈 및 OD 504에 언급되어 있는 기초 방폭 이론
                   및 실습 교육
@@ -863,12 +861,12 @@ const CopcClient = () => {
                   방폭 장비 점검 및 수리
                 </p>
                 <p className="leading-5">
-                  &nbsp;&nbsp;&nbsp;(Overhaul and repair of explosion-protected
+                  (Overhaul and repair of explosion-protected
                   equipment)
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
-              <div className="w-full md:h-[120px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[120px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-5 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx CoPC 001 자격 소유자, 관련 분야 2년제 대학 학위 이상
                   소지자 또는 동등 자격 보유자
@@ -877,13 +875,14 @@ const CopcClient = () => {
                   · 방폭 장비 설계, 설비 제조자, 관리자 및 수리업체, 전기 설치와
                   수리, 보수와 관련된 교육 수료 등 최소 3년 이상의 관련 업무
                   실무경력 보유자
-                  <br />
-                  &nbsp;&nbsp;&nbsp;(3년 중 최소 2년의 방폭 업무 관련 경력이
+                  <p className="leading-4">
+                  (3년 중 최소 2년의 방폭 업무 관련 경력이
                   요구됨)
+                  </p>
                 </p>
               </div>
               <ContentSubTitle title="합격 기준" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · 이론 평가는 객관식과 주관식으로 이루어지며 오픈 북 (Open
                   Book) 시험으로 키워드 (Keyword) 미작성 시 감점 요인이 됨
@@ -895,7 +894,7 @@ const CopcClient = () => {
                 <div className="w-1/6 md:h-48 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   1일차
                 </div>
-                <div className="w-5/6 md:h-48 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-48 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-1">
                   <p>· 방폭 장비 수리·보수의 일반사항</p>
                   <p>· 방폭 장비 수리·보수의 용어 정리</p>
                   <p>· Service facility의 기준, 품질보증, 필요조건</p>
@@ -905,7 +904,7 @@ const CopcClient = () => {
                 <div className="w-1/6 flex md:h-48 justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   2일차
                 </div>
-                <div className="w-5/6 md:h-48 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-48 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-1">
                   <p>· 초기검사의 정의 및 세부사항</p>
                   <p>· 방폭 장비 수리·보수의 종류</p>
                   <p>· Ex d 장비의 필요조건 및 수리·보수</p>
@@ -915,7 +914,7 @@ const CopcClient = () => {
                 <div className="w-1/6 md:h-48 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   3일차
                 </div>
-                <div className="w-5/6 md:h-48 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-48 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-1">
                   <p>· Ex n 장비의 필요조건 및 수리·보수</p>
                   <p>· Ex tD 장비의 필요조건 및 수리·보수</p>
                   <p>· Ex pD 장비의 필요조건 및 수리·보수</p>
@@ -929,14 +928,14 @@ const CopcClient = () => {
                   <p>· 이론 및 실습 평가</p>
                 </div>
               </div>
-            </li>
+            </li>              
+            {/*여덟번째 li */}
             <li className={`${selectedLiIndex === 7 ? "block" : "hidden"}`}>
-              {/*여덟번째 li */}
               <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-neutral-800 font-medium mb-7">
                 IECEx CoPC 002,009 Ex Classification of Hazardous Area / Design
               </div>
               <ContentSubTitle title="교육 개요" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx 60079 시리즈 및 OD 504에 언급되어 있는 기초 방폭 이론
                   및 실습 교육
@@ -967,7 +966,7 @@ const CopcClient = () => {
                   위험지역 구분
                 </p>
                 <p className="leading-5">
-                  &nbsp;&nbsp;&nbsp;(Perform classification of hazardous areas)
+                  (Perform classification of hazardous areas)
                 </p>
                 <p className="mt-2 leading-5 md:leading-auto">
                   ·{" "}
@@ -978,12 +977,12 @@ const CopcClient = () => {
                   <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 전기 설비 설계
                 </p>
                 <p className="leading-5">
-                  &nbsp;&nbsp;&nbsp;(Design electrical installation in or
+                  (Design electrical installation in or
                   associated with explosive atmospheres)
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx CoPC 001 자격 소유자, 관련 분야 2년제 대학 학위 이상
                   소지자 또는 동등 자격 보유자
@@ -994,7 +993,7 @@ const CopcClient = () => {
                 </p>
               </div>
               <ContentSubTitle title="합격 기준" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · 이론 평가는 객관식과 주관식으로 이루어지며 오픈 북 (Open
                   Book) 시험으로 키워드 (Keyword) 미작성 시 감점 요인이 됨
@@ -1006,7 +1005,7 @@ const CopcClient = () => {
                 <div className="w-1/6 md:h-64 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   1일차
                 </div>
-                <div className="w-5/6 md:h-64 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-64 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 text-[15px] md:text-base space-y-1">
                   <p>· 폭발위험구역 구분 이론</p>
                   <p>· 방폭 구역 내 안전 작업 절차</p>
                   <p>· 방폭 구역 요구 조건에 따른 방폭 장비의 선정</p>
@@ -1019,7 +1018,7 @@ const CopcClient = () => {
                 <div className="w-1/6 flex md:h-32 justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   2일차
                 </div>
-                <div className="w-5/6 md:h-32 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-32 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-1">
                   <p>· 위험 지역 구분 설계</p>
                   <p>· Ex i의 Loop Calculations 방법</p>
                   <p>· Loop Calculations 연습</p>
@@ -1032,13 +1031,13 @@ const CopcClient = () => {
                 </div>
               </div>
             </li>
+            {/*아홉번째 li */}
             <li className={`${selectedLiIndex === 8 ? "block" : "hidden"}`}>
-              {/*아홉번째 li */}
               <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-neutral-800 font-medium mb-7">
                 IECEx CoPC 002,008,009,010 Ex Supervisor
               </div>
               <ContentSubTitle title="교육 개요" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx 60079 시리즈 및 OD 504에 언급되어 있는 기초 방폭 이론
                   및 실습 교육
@@ -1069,7 +1068,7 @@ const CopcClient = () => {
                   위험지역 구분
                 </p>
                 <p className="leading-5">
-                  &nbsp;&nbsp;&nbsp;(Perform classification of hazardous areas)
+                  (Perform classification of hazardous areas)
                 </p>
                 <p className="mt-2 leading-5 md:leading-auto">
                   ·{" "}
@@ -1080,7 +1079,7 @@ const CopcClient = () => {
                   <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 세부 검사
                 </p>
                 <p className="leading-5">
-                  &nbsp;&nbsp;&nbsp;(Perform detailed inspection of electrical
+                  (Perform detailed inspection of electrical
                   installations in or associated with explosive atmospheres)
                 </p>
                 <p className="mt-2 leading-5 md:leading-auto">
@@ -1092,7 +1091,7 @@ const CopcClient = () => {
                   <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 전기 설비 설계
                 </p>
                 <p className="leading-5">
-                  &nbsp;&nbsp;&nbsp;(Design electrical installation in or
+                  (Design electrical installation in or
                   associated with explosive atmospheres)
                 </p>
                 <p className="mt-2 leading-5 md:leading-auto">
@@ -1104,12 +1103,12 @@ const CopcClient = () => {
                   <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 전기 설비 감사 수행
                 </p>
                 <p className="leading-5cd ">
-                  &nbsp;&nbsp;&nbsp;(Perform audit inspection of electrical
+                  (Perform audit inspection of electrical
                   installations in or associated with explosive atmospheres)
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · IECEx CoPC 001 자격 소유자, 전기설치 또는 검사 실무 최소
                   3년의 경력
@@ -1120,7 +1119,7 @@ const CopcClient = () => {
                 </p>
               </div>
               <ContentSubTitle title="합격 기준" />
-              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base">
+              <div className="w-full md:h-[90px] border border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-7 mb-7 text-[15px] md:text-base space-y-1">
                 <p>
                   · 이론 평가는 객관식과 주관식으로 이루어지며 오픈 북 (Open
                   Book) 시험으로 키워드 (Keyword) 미작성 시 감점 요인이 됨
@@ -1132,7 +1131,7 @@ const CopcClient = () => {
                 <div className="w-1/6 md:h-32 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   1일차
                 </div>
-                <div className="w-5/6 md:h-32 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-32 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-1">
                   <p>· 방폭의 기본 원리</p>
                   <p>· 방폭 구역 내 안전 작업 절차</p>
                   <p>· 방폭 구역 요구 조건 에 따른 방폭 장비의 선정</p>
@@ -1140,7 +1139,7 @@ const CopcClient = () => {
                 <div className="w-1/6 flex md:h-32 justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   2일차
                 </div>
-                <div className="w-5/6 md:h-32 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-32 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-1">
                   <p>· 방폭 장비의 검사 종류 및 등급</p>
                   <p>· 방폭 보호 방법에 따른 주의사항 및 오작 사례</p>
                   <p>· 방폭 장비에 대한 자격증 시스템</p>
@@ -1148,7 +1147,7 @@ const CopcClient = () => {
                 <div className="w-1/6 md:h-40 flex justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   3일차
                 </div>
-                <div className="w-5/6 md:h-40 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-40 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-1">
                   <p>· 폭발 방지를 위한 방법</p>
                   <p>· 방폭 장비 표기</p>
                   <p>· 방폭 장비의 외관 검사</p>
@@ -1157,7 +1156,7 @@ const CopcClient = () => {
                 <div className="w-1/6 flex md:h-32 justify-center items-center bg-lightgray font-medium text-black border-b border-gray">
                   4일차
                 </div>
-                <div className="w-5/6 md:h-32 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base">
+                <div className="w-5/6 md:h-32 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-1">
                   <p>· Cable 및 결선 시스템</p>
                   <p>· Cable Gland 및 액세서리 선정</p>
                   <p>· Loop Calculation 연습</p>

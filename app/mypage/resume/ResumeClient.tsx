@@ -103,7 +103,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
   return (
     <section>
       <div id="headerNav">
-        <div className="h-[40px] w-full bg-gray-200 flex justify-center text-[13px]">
+        <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
               Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />

@@ -11,6 +11,7 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import PicIntroduce_01 from "@/public/img/page_top/introduce_01.jpg"
 import PicHistory_01 from "@/public/img/inner/history/history_01.jpg"
 import PicHistory_02 from "@/public/img/inner/history/history_02.jpg"
+import PicHistory_03 from "@/public/img/inner/history/history_03.jpg"
 
 const MainList = [
   {
@@ -63,13 +64,13 @@ const HistoryClient = () => {
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+              Home <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              협회소개 <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+              협회소개 <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              일반현황 <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+              일반현황 <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center underline">
               {location}
@@ -99,25 +100,45 @@ const HistoryClient = () => {
 
         <section className="py-[40px] md:pl-[50px] pr-[20px] w-full hidden md:flex flex-col justify-start items-start relative">
           <ContentTitle title={location} />
-            {/* <div className="w-[420px] absolute top-[510px] left-32">
-              <Image 
-                src={PicHistory_02} 
-                alt="history_image" 
-                className="mx-auto w-[420px] h-auto"
-              />
-            </div>
-            <div className="w-[420px] absolute top-[150px] right-32">
+            <div className="w-[370px] absolute top-[257px] left-12">
               <Image 
                 src={PicHistory_01} 
                 alt="history_image" 
-                className="mx-auto w-[420px] h-auto"
+                className="mx-auto w-[370px] h-auto"
               />
-            </div> */}
-            <div className="w-full flex justify-between">
-              <figure className="w-1/3 h-[300px]">
-
+            </div>
+            <div className="w-[370px] absolute top-[572px] left-12">
+              <Image 
+                src={PicHistory_02} 
+                alt="history_image" 
+                className="mx-auto w-[370px] h-auto"
+              />
+            </div>
+            <div className="w-[370px] absolute top-[1200px] left-12">
+              <Image 
+                src={PicHistory_03} 
+                alt="history_image" 
+                className="mx-auto w-[370px] h-auto"
+              />
+            </div>
+            <div className="w-full flex justify-between mt-8 relative">
+              <div className="absolute w-3 h-3 rounded-full bg-white border-2 border-secondary -top-[3px] left-[414.5px]">
+                &nbsp;
+              </div>
+              <div className="absolute w-6 h-6 rounded-full bg-white border-2 border-secondary top-[40px] left-[408.5px] flex justify-center items-center">
+                <div className="w-3 h-3 rounded-full bg-secondary border-2 border-secondary">
+                  &nbsp;
+                </div>
+              </div>
+              <div className="absolute w-3 h-3 rounded-full bg-white border-2 border-secondary top-[351px] left-[414.5px]">
+                &nbsp;
+              </div>
+              <div className="absolute w-3 h-3 rounded-full bg-white border-2 border-secondary top-[977px] left-[415px]">
+                &nbsp;
+              </div>
+              <figure className="w-[420px] h-[977px] border-r border-primary box-content">
               </figure>
-              <article className="w-2/3 border-l border-[#ccc] box-content py-8">
+              <article className="w-[670px] border-l border-[#ccc] box-content py-8 mt-1">
                 <strong className="px-10 text-[22px] font-semibold">
                   2024
                 </strong>
@@ -134,7 +155,7 @@ const HistoryClient = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-full h-[100px]"></div>
+                <div className="w-full h-[200px]"></div>
                 <strong className="px-10 text-[22px] font-semibold">
                   2023
                 </strong>
@@ -199,7 +220,7 @@ const HistoryClient = () => {
                     </div>
                   </div>
                 </div>
-                <div className="w-full h-[100px]"></div>
+                <div className="w-full h-[200px]"></div>
                 <strong className="px-10 text-[22px] font-semibold">
                   2022
                 </strong>
