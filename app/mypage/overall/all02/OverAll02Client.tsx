@@ -143,13 +143,13 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
   return (
     <section>
       <div id="headerNav">
-        <div className="h-[40px] w-full bg-gray-200 flex justify-center text-[13px]">
+        <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              Home <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+              Home <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              마이페이지 <RiArrowRightSLine className="text-[24px] pt-[3px]" />
+              마이페이지 <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center underline">
               {location}
