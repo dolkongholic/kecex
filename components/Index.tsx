@@ -188,7 +188,7 @@ const Index: React.FC<IndexProps> = ({
                     가입 안내
                   </strong>
                   <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
-                    가입비 5만원&nbsp;&nbsp;|&nbsp;&nbsp;연회비 10만원
+                    가입비 10만원&nbsp;&nbsp;|&nbsp;&nbsp;연회비 22만원
                   </p>
                   <Link passHref href={"/business/member/join"}>
                   <button className="absolute border border-[#3A3A3A] w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-[#3A3A3A] hover:text-[#D9ECFF] z-20">

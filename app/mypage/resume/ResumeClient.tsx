@@ -411,7 +411,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                         <option value="중퇴">중퇴</option>
                       </select>
                     </div>
-                    <legend className="w-1/4 md:w-1/12 h-12 md:h-14 float-left text-left pt-4 md:border-l border-gray-200 pl-4 md:pl-8">
+                    <legend className="w-1/4 md:w-1/12 h-12 md:h-14 float-left text-left pt-4 md:border-l border-gray-200 pl-4 md:pl-8 whitespace-nowrap">
                       수료학위
                     </legend>
                     <div className="before:border-l before:border-gray-200 w-3/4 md:w-4/12 h-12 md:h-14 float-left p-2 box-border">

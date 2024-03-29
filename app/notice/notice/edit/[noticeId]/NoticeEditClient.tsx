@@ -20,6 +20,7 @@ import toast from "react-hot-toast";
 import Image from "next/image";
 import PicNotice_04 from "@/public/img/page_top/notice_04.jpg"
 import { GrUpload } from "react-icons/gr";
+import { error } from "console";
 
 const MainList = [
   {
@@ -72,19 +73,19 @@ const NoticeEditClient: React.FC<NoticeClientProps> = ({
   const [notice, setNotice] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    if (id) {
-      // API 호출하여 공지사항 데이터 가져오기
-      axios.get(`/api/notice/${id}`)
-        .then(response => {
-          setNotice(response.data);
-        })
-        .catch(error => {
-          console.error("Error fetching notice:", error);
-          // 에러 처리
-        });
-    }
-  }, [id]);
+  // useEffect(() => {
+  //   if (id) {
+  //     // API 호출하여 공지사항 데이터 가져오기
+  //     axios.get(`/api/notice/${id}`)
+  //       .then(response => {
+  //         setNotice(response.data);
+  //       })
+  //       .catch(error => {
+  //         console.error("Error fetching notice:", error);
+  //         // 에러 처리
+  //       });
+  //   }
+  // }, [id]);
 
     const {
     register,
@@ -105,9 +106,11 @@ const NoticeEditClient: React.FC<NoticeClientProps> = ({
     setIsLoading(true);
 
     axios
-      .put(`/api/notice/${id}`, data) // PUT 요청으로 수정된 데이터 전송
-      .then(() => {
-        toast.success("수정되었습니다.");
+      .patch("/api/notice/edit", data)
+      .then((response) => {
+        // PATCH 요청 성공 시 응답 데이터를 사용하여 currentNotice 상태를 업데이트합니다.
+        setNotice(response.data); // response.data에는 업데이트된 공지사항 데이터가 포함될 것으로 가정합니다.
+        toast.success("입력 되었습니다.");
         router.push("/notice/notice");
       })
       .catch(() => {
@@ -176,15 +179,16 @@ const NoticeEditClient: React.FC<NoticeClientProps> = ({
           <div className="flex items-center w-full md:w-9/12">
             <input
               type="text"
-              placeholder={currentNotice?.title}
+              defaultValue={currentNotice?.title}
               className="w-full h-[40px] p-5 border border-gray"
               disabled={isLoading}
               {...register("text", { required: true })}
+              placeholder="제목을 입력해주세요."
             />
           </div>
           <input
             type="date"
-            value={currentDate}
+            defaultValue={currentDate}
             disabled={isLoading}
             className="w-1/2 md:w-2/12 h-[40px] border border-gray px-3 my-2 md:my-0"
             {...register("date", { required: true, 
@@ -201,7 +205,8 @@ const NoticeEditClient: React.FC<NoticeClientProps> = ({
             rows={15}
             className="border border-gray p-6 box-border"
             disabled={isLoading}
-            placeholder={currentNotice.content}
+            defaultValue={currentNotice?.content}
+            placeholder="내용을 입력해주세요."
             {...register("post_text", { required: true })}
           >
           </textarea>

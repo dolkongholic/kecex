@@ -5,11 +5,13 @@ import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import ContentSubTitle from "@/components/content/subtitle";
 import Link from "next/link";
+import React from 'react';
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
 import PicBusiness_01 from "@/public/img/page_top/business_01.jpg"
+import download_icon from "@/public/img/icon/download_icon.png";
 
 const MainList = [
   {
@@ -51,6 +53,29 @@ const location = "회원회칙";
 const RuleClient = () => {
   const [menu, setMenu] = useState<string>("");
   const [pageMenu, setPageMenu] = useState<any>("회원");
+
+  const handleDownload = () => {
+    const url = '/download/admission.hwp';
+    fetch(url)
+      .then(response => {
+        if (!response.ok){
+          throw new Error('네트워크에 문제가 있습니다.')
+        }
+        return response.blob();
+      })
+      .then(blob => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', '입회원서-신규.hwp');
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode?.removeChild(link);
+      })
+      .catch(error => {
+        console.error("에러가 발생:", error);
+      });
+  };
 
   return (
     <section>
@@ -410,7 +435,14 @@ const RuleClient = () => {
             </div>
           </div>
 
-          <a href="" download>{`<서식 1>`} 회원가입신고서 (양식)</a>
+          {/* <a href="" download>{`<서식 1>`} 회원가입신고서 (양식)</a> */}
+          <button
+          className="bg-lightgray w-[280px] h-12"
+          onClick={handleDownload}
+          >
+            {`<서식 1>`} 회원가입신고서 (양식)
+            <Image src={download_icon} className="w-5 h-5 inline ml-1 mb-1" alt="img" />{" "}
+          </button>
         </section>
       </main>
     </section>
