@@ -284,13 +284,15 @@ const Index: React.FC<IndexProps> = ({
       <Notice newsList={newsList} noticeList={noticeList} />
 
       {/* 띠배너 */}
-      <div className="w-full h-[250px] bg-[#D9ECFF] mt-40">
-        <div className="w-full max-w-[1440px] min-w-[600px] h-full mx-auto text-[#3A3A3A] pt-12 relative">
+      <div className="w-full h-[350px] md:h-[250px] bg-[#D9ECFF] mt-40">
+        <div className="w-full max-w-[1440px] min-w-[600px] h-full mx-auto text-[#3A3A3A] pt-12 relative px-7 md:px-0">
           <h3 className="text-[28px] font-semibold">
-            KECEx 한국방폭협회 회원 안내
+            KECEx 한국방폭협회<br className="md:hidden"/>
+            회원 안내
           </h3>
-          <p className="pt-4 font-light">
-            한국방폭협회의 회원가입 혜택과 절차를 안내드립니다.
+          <p className=" pt-8 md:pt-4 font-light">
+            한국방폭협회의 회원가입 혜택과 <br className="md:hidden"/>
+            절차를 안내드립니다.
           </p>
           <Link passHref href={"/business/member/join"}>
             <button 
@@ -299,21 +301,21 @@ const Index: React.FC<IndexProps> = ({
               자세히 보기
             </button>
           </Link>
-          <div className="absolute right-[3%] bottom-16">
+          <div className="absolute right-[25%] md:right-[3%] bottom-16">
             <Image 
               src={PicMdbn} 
               alt="open_banner" 
-              className="mx-auto px-3 md:px-0 h-[120px]  w-auto bottom-0 z-0"
+              className="mx-auto px-3 md:px-0 h-[120px] w-auto bottom-0 z-0"
             />
           </div>
         </div>
       </div>
 
       {/* 안내 아이콘 */}
-      <div className="w-full h-[460px] mt-40">
-        <ul className="w-[1440px] h-full mx-auto text-[#3A3A3A] flex justify-between">
-          <li className="w-1/4 h-full border-t border-[#3A3A3A] pt-16 mr-5">
-            <div className="w-full h-full border-b border-[#ccc]">
+      <div className="w-full md:h-[460px] mt-40">
+        <ul className="w-full md:w-[1440px] h-full mx-auto text-[#3A3A3A] flex justify-between flex-wrap md:flex-nowrap">
+          <li className="w-1/2 md:w-1/4 h-full border-t border-[#3A3A3A] pt-16 md:mr-5">
+            <div className="w-full h-full md:border-b border-[#ccc] pl-3 md:pl-0">
                 <div className="w-[42px] h-[42px] relative">
                   <Image 
                     src={PicBsn_01} 
@@ -325,24 +327,25 @@ const Index: React.FC<IndexProps> = ({
                 <h5 className="mt-8">
                   협회설립안내
                 </h5>
-                <p className="text-[28px] pt-4 font-semibold">
+                <p className="text-[20px] md:text-[28px] pt-4 font-semibold h-[100px] md:h-auto">
                   한국방폭협회는<br/>
                   <span className="text-primary">어떤 일</span>을 하나요?
                 </p>
                 <Link passHref href={"/introduce/common/ceo"}>
                   <button className="
-                    mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
+                    mt-10 md:mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[75px] h-[40px] md:w-[120px] md:h-[50px]
                     relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-[#003893] 
                     after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] 
-                    after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 
+                    after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 text-[14px] md:text-[16px]
                   ">
                       협회소개
                   </button>
                 </Link>
+                <div className="w-full h-[40px] md:hidden">&nbsp;</div>
               </div>
             </li>
-            <li className="w-1/4 h-full border-t border-[#3A3A3A] pt-16 mx-5">
-              <div className="w-full h-full border-b border-[#ccc]">
+            <li className="w-1/2 md:w-1/4 h-full border-t border-[#3A3A3A] pt-16 md:mx-5">
+              <div className="w-full h-full md:border-b border-[#ccc] pl-2 md:pl-0">
                 <div className="w-[42px] h-[42px] relative">
                   <Image 
                     src={PicBsn_02} 
@@ -354,35 +357,36 @@ const Index: React.FC<IndexProps> = ({
                 <h5 className="mt-8">
                   협회가입혜택
                 </h5>
-                <p className="text-[28px] pt-4 font-semibold">
+                <p className="text-[20px] md:text-[28px] pt-4 font-semibold h-[100px] md:h-auto">
                   협회가입시 어떤<br/>
                   <span className="text-primary">혜택</span>이 있나요?
                 </p>
                 <Link passHref href={"/business/member/rule"}>
                 <button className="
-                  mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
+                  mt-10 md:mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[75px] h-[40px] md:w-[120px] md:h-[50px]
                   relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-[#003893] 
                   after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] 
-                  after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700
-                  mr-[20px]
+                  after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 text-[14px] md:text-[16px]
+                  mr-[5px] md:mr-[20px]
                 ">
                     혜택안내
                 </button>
                 </Link>
                 <Link passHref href={"/business/member/career"}>
                   <button className="
-                    mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
+                    mt-10 md:mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[75px] h-[40px] md:w-[120px] md:h-[50px]
                     relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-[#003893] 
                     after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] 
-                    after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 
+                    after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 text-[14px] md:text-[16px]
                   ">
                       경력관리
                   </button>
                 </Link>
+                <div className="w-full h-[40px] md:hidden">&nbsp;</div>
               </div>
           </li>
-          <li className="w-1/4 h-full border-t border-[#3A3A3A] pt-16 mx-5">
-            <div className="w-full h-full border-b border-[#ccc]">
+          <li className="w-1/2 md:w-1/4 h-full border-t border-[#3A3A3A] pt-16 md:mx-5">
+            <div className="w-full h-full border-b border-[#ccc] pl-3 md:pl-0">
               <div className="w-[42px] h-[42px] relative">
                 <Image 
                     src={PicBsn_03} 
@@ -394,35 +398,36 @@ const Index: React.FC<IndexProps> = ({
               <h5 className="mt-8">
                 협회가입안내
               </h5>
-              <p className="text-[28px] pt-4 font-semibold">
+              <p className="text-[20px] md:text-[28px] pt-4 font-semibold h-[100px] md:h-auto">
                 협회<span className="text-primary">가입</span>은<br/>
                 어떻게 하나요?
               </p>
               <Link passHref href={"/business/member/rule"}>
                 <button className="
-                  mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
+                  mt-10 md:mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[75px] h-[40px] md:w-[120px] md:h-[50px]
                   relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-[#003893] 
                   after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] 
-                  after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 
-                  mr-[20px]
+                  after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 text-[14px] md:text-[16px]
+                  mr-[5px] md:mr-[20px]
                 ">
                     회원회칙
                 </button>
               </Link>
               <Link passHref href={"/business/member/join"}>
                 <button className="
-                  mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
+                  mt-10 md:mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[75px] h-[40px] md:w-[120px] md:h-[50px]
                   relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-[#003893] 
                   after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] 
-                  after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 
+                  after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 text-[14px] md:text-[16px]
                 ">
                     가입안내
                 </button>
               </Link>
+              <div className="w-full h-[40px] md:hidden">&nbsp;</div>
             </div>
           </li>
-          <li className="w-1/4 h-full border-t border-[#3A3A3A] pt-16 ml-5">
-            <div className="w-full h-full border-b border-[#ccc]">
+          <li className="w-1/2 md:w-1/4 h-full border-t border-[#3A3A3A] pt-16 md:ml-5">
+            <div className="w-full h-full border-b border-[#ccc] pl-2 md:pl-0">
               <div className="w-[42px] h-[42px] relative">
                 <Image 
                     src={PicBsn_04} 
@@ -434,180 +439,181 @@ const Index: React.FC<IndexProps> = ({
               <h5 className="mt-8">
                 협회운영안내
               </h5>
-              <p className="text-[28px] pt-4 font-semibold">
+              <p className="text-[20px] md:text-[28px] pt-4 font-semibold h-[100px] md:h-auto">
                 협회<span className="text-primary">운영</span>은<br/>
                 어떻게 되나요?
               </p>
               <Link passHref href={"/introduce/group/group"}>
               <button className="
-                  mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[120px] h-[50px]
+                  mt-10 md:mt-20 border border-[#ccc] hover:border-primary hover:bg-primary hover:text-white w-[90px] h-[40px] md:w-[120px] md:h-[50px]
                   relative after:-z-20 after:absolute after:h-1 after:w-1 after:bg-[#003893] 
                   after:left-5 overflow-hidden after:bottom-0 after:translate-y-full after:rounded-md after:hover:scale-[300] 
-                  after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 
+                  after:hover:transition-all after:hover:duration-700 after:transition-all after:duration-700 transition-all duration-700 text-[14px] md:text-[16px]
               ">
                   총회 조직도
               </button>
               </Link>
+              <div className="w-full h-[40px] md:hidden">&nbsp;</div>
             </div>
           </li>
         </ul>
       </div>
       {/* 관련 기관 */}
-      <div className="w-full h-[600px] md:h-[650px] hidden md:flex flex-col justify-start items-center mt-[160px] py-[57px]">
-        <div className="w-full md:w-[1300px] h-[570px] md:h-[530px] justify-between item-center leading-[30px] md:leading-[60px]"> {/* 관련기관 리스트 */}
-          <h3 className="text-center font-bold text-[30px] text-[#3A3A3A] leading-[44px] mb-24">
+      <div className="w-full h-[770px] md:h-[650px] flex flex-col justify-start items-center mt-[160px] md:py-[57px]">
+        <div className="w-full md:w-[1300px] h-[770px] md:h-[530px] justify-between item-center leading-[30px] md:leading-[60px]"> {/* 관련기관 리스트 */}
+          <h3 className="text-center font-bold text-[26px] md:text-[30px] text-[#3A3A3A] leading-[44px] mb-16 md:mb-24">
             한국방폭협회는<br/>
             다음 기관들과 함께 합니다.
           </h3>
-          <div className="w-full flex px-3 md:px-0 mt-12 h-[20px] md:h-auto">
-            <Link passHref href={"https://www.moel.go.kr/index.do"} className="w-1/4" target="_blank">
+          <div className="w-full flex px-3 md:px-0 mt-4 md:mt-12 md:h-auto flex-wrap md:flex-nowrap">
+            <Link passHref href={"https://www.moel.go.kr/index.do"} className="w-1/2 md:w-1/4" target="_blank">
               <div className="w-full">
                 <Image 
                 src={Picmoel} 
-                alt="arcr_logo" 
-                className="mx-auto h-[20px] md:h-[40px] w-auto"
+                alt="고용노동부_로고" 
+                className="ml-2 md:mx-auto h-[40px] w-auto"
                 />
               </div>
             </Link>
-            <Link passHref href={"https://www.nts.go.kr/"} className="w-1/4" target="_blank">
+            <Link passHref href={"https://www.nts.go.kr/"} className="w-1/2 md:w-1/4" target="_blank">
               <div className="w-full">
                     <Image 
               src={Picnts} 
-              alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[34px] w-auto"
+              alt="국세청_로고" 
+              className="ml-2 md:mx-auto h-[34px] w-auto"
               />
               </div>
             </Link>
-            <Link passHref href={"https://www.acrc.go.kr/"} className="w-1/4" target="_blank">
-            <div className="w-full">
+            <Link passHref href={"https://www.acrc.go.kr/"} className="w-1/2 md:w-1/4" target="_blank">
+            <div className="w-full mt-11 md:mt-0">
                     <Image 
               src={Picacrc} 
-              alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[40px] w-auto"
+              alt="국민권익위원회_로고" 
+              className="-ml-1 md:mx-auto h-[40px] w-auto"
             />
             </div>
             </Link>
-            <Link passHref href={"https://www.moel.go.kr/local/ulsan/index.do"} className="w-1/4" target="_blank">
-            <div className="w-full">
+            <Link passHref href={"https://www.moel.go.kr/local/ulsan/index.do"} className="w-1/2 md:w-1/4" target="_blank">
+            <div className="w-full mt-11 md:mt-0">
               <Image 
                 src={PicmoelUl} 
-                alt="arcr_logo" 
-                className="mx-auto h-[20px] md:h-[36px] w-auto"
+                alt="고용노동부울산_로고" 
+                className="ml-1 md:mx-auto h-[36px] w-auto"
               />
             </div>
             </Link>
           </div>
 
-          <div className="w-full flex md:mt-16">
-            <Link passHref href={"https://www.ulsan.go.kr/u/rep/main.ulsan"} className="w-1/4" target="_blank">
+          <div className="w-full flex mt-12 md:mt-16 flex-wrap md:flex-nowrap">
+            <Link passHref href={"https://www.ulsan.go.kr/u/rep/main.ulsan"} className="w-1/2 md:w-1/4" target="_blank">
               <div className="w-full h-[36px]">
                       <Image 
                 src={PicUl} 
-                alt="arcr_logo" 
-                className="mx-auto h-[20px] md:h-[30px] w-auto"
+                alt="울산광역시_로고" 
+                className="ml-6 md:mx-auto h-[30px] w-auto"
               />
               </div>
             </Link>
-            <Link passHref href={"https://www.kgs.or.kr/"} className="w-1/4" target="_blank">
+            <Link passHref href={"https://www.kgs.or.kr/"} className="w-1/2 md:w-1/4" target="_blank">
               <div className="w-full">
                       <Image 
                 src={Pickogas} 
-                alt="arcr_logo" 
-                className="mx-auto h-[24px] md:h-[34px] w-auto"
+                alt="가스안전공사_로고" 
+                className="-ml-[1px] md:mx-auto h-[32px] md:h-[34px] w-auto"
               />
               </div>
             </Link>
-            <Link passHref href={"https://www.kosha.or.kr/kosha/index.do"} className="w-1/4" target="_blank">
-              <div className="w-full h-[36px]">
+            <Link passHref href={"https://www.kosha.or.kr/kosha/index.do"} className="w-1/2 md:w-1/4" target="_blank">
+              <div className="w-full h-[36px] mt-12 md:mt-0">
                       <Image 
               src={Pickosha} 
-              alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[54px] w-auto -translate-y-4"
+              alt="산업안전보건공단_로고" 
+              className="ml-6 md:mx-auto h-[54px] w-auto -translate-y-4"
               />
               </div>
             </Link>
-            <Link passHref href={"https://www.komeri.re.kr/"} className="w-1/4" target="_blank">
-              <div className="w-full">
+            <Link passHref href={"https://www.komeri.re.kr/"} className="w-1/2 md:w-1/4" target="_blank">
+              <div className="w-full mt-12 md:mt-0">
                     <Image 
               src={Pickomeri} 
-              alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[36px] w-auto -translate-y-2"
+              alt="코메리_로고" 
+              className="md:mx-auto h-[36px] w-auto -translate-y-2"
               />
               </div >
             </Link>
           </div>
-          <div className="w-full flex px-3 md:px-0 mt-2 md:mt-16 h-[20px] md:h-auto">
-            <Link passHref href={"https://www.kopo.ac.kr/ulsan/index.do"} className="w-1/4" target="_blank">
+          <div className="w-full flex px-3 md:px-0 mt-12 md:mt-16 h-[20px] md:h-auto flex-wrap md:flex-nowrap">
+            <Link passHref href={"https://www.kopo.ac.kr/ulsan/index.do"} className="w-1/2 md:w-1/4" target="_blank">
               <div className="w-full h-[40px]">
                 <Image 
                 src={Picpolytech} 
-                alt="arcr_logo" 
-                className="mx-auto h-[20px] md:h-[56px] w-auto -translate-y-[12px]"
+                alt="울산폴리텍_로고" 
+                className="ml-3 md:mx-auto h-[48px] md:h-[56px] w-auto -translate-y-[12px]"
                 />
               </div>
             </Link>
-            <Link passHref href={"https://www.utp.or.kr/"} className="w-1/4">
+            <Link passHref href={"https://www.utp.or.kr/"} className="w-1/2 md:w-1/4">
               <div className="w-full">
                       <Image 
                 src={Picutp} 
-                alt="arcr_logo" 
-                className="mx-auto h-[20px] md:h-[36px] w-auto"
+                alt="울산테크노파크_로고" 
+                className="ml-1 md:mx-auto h-[34px] md:h-[36px] w-auto mt-1 md:mt-0"
               />
               </div>
             </Link>
-            <Link passHref href={"https://ksa.or.kr/ksa_kr/index.do"} className="w-1/4" target="_blank">
-              <div className="w-full h-[36px]">
+            <Link passHref href={"https://ksa.or.kr/ksa_kr/index.do"} className="w-1/2 md:w-1/4" target="_blank">
+              <div className="w-full h-[36px] mt-12 md:mt-0">
               <Image 
                 src={Picksa} 
-                alt="arcr_logo" 
-                className="mx-auto h-[24px] md:h-[30px] w-auto translate-y-1"
+                alt="KSA협회_로고" 
+                className="ml-2 md:mx-auto h-[22px] md:h-[30px] w-auto translate-y-1"
               />
               </div>
             </Link>
-            <Link passHref href={"https://www.krict.re.kr/"} className="w-1/4" target="_blank">
-              <div className="w-full">
+            <Link passHref href={"https://www.krict.re.kr/"} className="w-1/2 md:w-1/4" target="_blank">
+              <div className="w-full mt-[51px] md:mt-0">
                 <Image 
                 src={Pickrict} 
-                alt="arcr_logo" 
-                className="mx-auto h-[20px] md:h-[30px] w-auto"
+                alt="화학연구원_로고" 
+                className="ml-1 md:mx-auto h-[20px] md:h-[30px] w-auto"
                 />
               </div>
             </Link>
           </div>
-          <div className="w-full flex px-3 md:px-0 mt-2 md:mt-16 h-[20px] md:h-auto">
-            <Link passHref href={"https://www.hrdkorea.or.kr/"} className="w-1/4" target="_blank">
+          <div className="w-full flex px-3 md:px-0 mt-36 md:mt-16 h-[20px] md:h-auto flex-wrap md:flex-nowrap">
+            <Link passHref href={"https://www.hrdkorea.or.kr/"} className="w-1/2 md:w-1/4" target="_blank">
               <div className="w-full">
                         <Image 
                   src={Pichrdkorea} 
-                  alt="arcr_logo" 
-                  className="mx-auto h-[24px] md:h-[34px] w-auto"
+                  alt="산업인력공단_로고" 
+                  className="ml-2 md:mx-auto h-[24px] md:h-[34px] w-auto"
                 />
               </div>
             </Link>
-            <Link passHref href={"https://www.ulsan.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN248"} className="w-1/4" target="_blank">
+            <Link passHref href={"https://www.ulsan.ac.kr/kor/CMS/Contents/Contents.do?mCode=MN248"} className="w-1/2 md:w-1/4" target="_blank">
               <div className="w-full">
                     <Image 
               src={Picuoufic} 
-              alt="arcr_logo" 
-              className="mx-auto h-[20px] md:h-[30px] w-auto"
+              alt="울산대_산학협력단_로고" 
+              className="ml-6 md:mx-auto h-[25px] md:h-[30px] w-auto"
               />
               </div >
             </Link>
-            <Link passHref href={"https://www.uc.ac.kr/www/Main.do"} className="w-1/4" target="_blank">
-              <div className="w-full">
+            <Link passHref href={"https://www.uc.ac.kr/www/Main.do"} className="w-1/2 md:w-1/4" target="_blank">
+              <div className="w-full mt-12 md:mt-0">
                 <Image 
                   src={PicUc} 
-                  alt="arcr_logo" 
-                  className="mx-auto h-[20px] md:h-[36px] w-auto -translate-y-1"
+                  alt="울산과대_로고" 
+                  className="ml-4 md:mx-auto h-[32px] md:h-[36px] w-auto -translate-y-1"
                 />
               </div>
             </Link>
-            <Link passHref href={"https://www.hankyung.com/"} className="w-1/4" target="_blank">
-              <div className="w-full">
+            <Link passHref href={"https://www.hankyung.com/"} className="w-1/2 md:w-1/4" target="_blank">
+              <div className="w-full mt-12 md:mt-0">
                 <Image 
                   src={Pichankyung} 
-                  alt="arcr_logo" 
-                  className="mx-auto h-[20px] md:h-[24px] w-auto  translate-y-[4px]"
+                  alt="한국경제신문_로고" 
+                  className=" md:mx-auto h-[21px] md:h-[24px] w-auto  translate-y-[4px]"
                 />
               </div>
             </Link>
