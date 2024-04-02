@@ -105,7 +105,7 @@ const CareerCardClient = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
             <li className="w-1/2 cursor-default">
@@ -204,18 +204,18 @@ const CareerCardClient = () => {
               <div className="flex justify-center items-center md:h-auto text-[18px] text-black font-medium">
               · 초급
               </div>
-              <p className=" flex justify-center items-center ">
+              <p className=" flex justify-center items-center text-[13px] md:text-[15px]">
               ※ 등급별 1개 조건에 부합할 시 발급조건에 충족함.
               </p>
             </div>
             <div className="flex w-full border-b">
               <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r">
-                <span>한국방폭협회 방폭 기초교육 이수자</span>
+                <strong>한국방폭협회 방폭 기초교육 이수자</strong>
                 <span className="mt-1">IECEx CoPC Unit Ex 001 취득자</span>
                 <span className="mt-1">그외 자격증 : 양성교육 수료 후 발급</span>
               </div>
               <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
-                <span>방폭관련 자격증 및 전공 학력 소지자</span>
+                <strong>방폭관련 자격증 및 전공 학력 소지자</strong>
                 <span className="mt-1">학사학위 : 양성 교육</span>
                 <span className="mt-1">
                   3년제 전공 : <br className="hidden"/>
@@ -229,11 +229,11 @@ const CareerCardClient = () => {
             </div>
             <div className="flex w-full border-b-2">
               <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r border-gray">
-                <span>전공학력 소지자</span>
+                <strong>전공학력 소지자</strong>
                 <span className="mt-1">경력 5년 이상 및 양성교육</span>
               </div>
               <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
-                <span>비전공 학력 소지자</span>
+                <strong>비전공 학력 소지자</strong>
                 <span className="mt-1">
                   3년제 전공 : <br className="hidden"/>
                   경력 6년 이상 및 양성교육
@@ -254,14 +254,14 @@ const CareerCardClient = () => {
             </div>
             <div className="flex w-full border-b">
               <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r">
-                <span>한국방폭협회 방폭 기초교육 이수자</span>
+                <strong>한국방폭협회 방폭 기초교육 이수자</strong>
                 <span>IECEx CoPC Unit Ex 001,036 취득자</span>
                 <span>IECEx CoPC Unit Ex 001,478 취득자</span>
                 <span>IECEx CoPC Unit Ex 001,002 취득자</span>
                 <span>IECEx CoPC Unit Ex 001,009 취득자</span>
               </div>
               <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
-                <span>방폭관련 자격증 및 전공 학력 소지자</span>
+                <strong>방폭관련 자격증 및 전공 학력 소지자</strong>
                 <span className="mt-1">방폭 실무 경력 : 5년 이상</span>
               </div>
             </div>
@@ -270,7 +270,7 @@ const CareerCardClient = () => {
                 <span>-</span>
               </div>
               <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
-                <span>비전공 학력 소지자</span>
+                <strong>비전공 학력 소지자</strong>
                 <span className="mt-1">방폭 실무 경력 : 8년 이상</span>
               </div>
             </div>
@@ -284,14 +284,14 @@ const CareerCardClient = () => {
             </div>
             <div className="flex w-full border-b">
               <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r">
-                <span>한국방폭협회 방폭 기초교육 이수자</span>
+                <strong>한국방폭협회 방폭 기초교육 이수자</strong>
                 <span>IECEx CoPC Unit Ex 001,036 취득자</span>
                 <span>IECEx CoPC Unit Ex 001,478 취득자</span>
                 <span>IECEx CoPC Unit Ex 001,002 취득자</span>
                 <span>IECEx CoPC Unit Ex 001,009 취득자</span>
               </div>
               <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
-                <span>방폭관련 자격증 및 전공 학력 소지자</span>
+                <strong>방폭관련 자격증 및 전공 학력 소지자</strong>
                 <span className="mt-1">방폭 실무 경력 : 8년 이상</span>
               </div>
             </div>
@@ -300,7 +300,7 @@ const CareerCardClient = () => {
                 <span>-</span>
               </div>
               <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
-                <span>비전공 학력 소지자</span>
+                <strong>비전공 학력 소지자</strong>
                 <span className="mt-1">방폭 실무 경력 : 12년 이상</span>
               </div>
             </div>
@@ -314,11 +314,11 @@ const CareerCardClient = () => {
             </div>
             <div className="flex w-full border-b">
               <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r">
-                <span>한국방폭협회 방폭 기초교육 이수자</span>
+                <strong>한국방폭협회 방폭 기초교육 이수자</strong>
                 <span>IECEx CoPC Unit Ex 010 취득자</span>
               </div>
               <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
-                <span>방폭관련 자격증 및 전공 학력 소지자</span>
+                <strong>방폭관련 자격증 및 전공 학력 소지자</strong>
                 <span className="mt-1">방폭 실무 경력 : 12년 이상</span>
               </div>
             </div>
@@ -327,7 +327,7 @@ const CareerCardClient = () => {
                 <span>-</span>
               </div>
               <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
-                <span>비전공 학력 소지자</span>
+                <strong>비전공 학력 소지자</strong>
                 <span className="mt-1">방폭 실무 경력 : 15년 이상</span>
               </div>
             </div>

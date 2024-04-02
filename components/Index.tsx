@@ -161,7 +161,7 @@ const Index: React.FC<IndexProps> = ({
                   </button>
                   </Link>
                   <button
-                    className="absolute border border-[#3A3A3A] w-[150px] h-[45px] flex justify-center items-center rounded-full group top-[290px] left-[calc(8%+150px)] font-semibold hover:bg-[#3A3A3A] hover:text-[#D9ECFF] z-20"
+                    className="absolute border bg-[#D9ECFF] border-[#3A3A3A] w-[150px] h-[45px] flex justify-center items-center rounded-full group top-[290px] left-[calc(8%+150px)] font-semibold hover:bg-[#3A3A3A] hover:text-[#D9ECFF] z-20"
                     onClick={handleDownload}
                     >
                       입회 원서

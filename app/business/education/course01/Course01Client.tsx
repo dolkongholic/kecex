@@ -105,9 +105,9 @@ const Course01Client = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] text-[15px]">
             <li className="w-1/2 cursor-default">
                 <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                   <span> 방폭기초교육</span>
@@ -128,15 +128,8 @@ const Course01Client = () => {
               </Link>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/business/education/develop/"}>
-                <div className="h-12 border border-l-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
-                    <span> 교육개발</span>
-                </div>
-              </Link>
-            </li>
-            <li className="w-full">
               <Link passHref href={"/business/education/copc/"}>
-                <div className="h-12 border border-t-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                <div className="h-12 border border-l-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
                     <span> CoPC 과정</span>
                 </div>
               </Link>
@@ -144,7 +137,7 @@ const Course01Client = () => {
           </ul>
           <ContentSubTitle title="교육목적" />
           <div className="w-full mb-[40px]">
-            <div className="flex flex-col justify-center items-start p-[20px] md:border border-gray w-full leading-[30px]">
+            <div className="flex flex-col justify-center items-start md:p-[20px] md:border border-gray w-full leading-[30px]">
               <span>
               폭발위험장소에 출입하는 근로자가 타 현장으로 이동할 때마다 받아야하는 교육을 대체하여 방폭기술업 차원에서 받도록 한 교육으로, 
               협회에서 근로자에게 꼭 필요한 기본적인 방폭기초 지식을 교육함으로써 화재, 폭발 사고를 예방
@@ -154,7 +147,7 @@ const Course01Client = () => {
 
           <ContentSubTitle title="교육대상" />
           <div className="w-full mb-[40px]">
-          <div className="flex flex-col justify-center items-start p-[20px] md:border border-gray w-full">
+          <div className="flex flex-col justify-center items-start md:p-[20px] md:border border-gray w-full">
               <span>
               폭발위험장소 내 업무 희망자, 안전관리자
               </span>
@@ -190,7 +183,7 @@ const Course01Client = () => {
             </div>
             <div className="w-full md:w-[49%] flex flex-col mt-5 md:mt-0">
               <ContentSubTitle title="기대효과" />
-              <div className="flex flex-col justify-start items-start h-[132px] p-[20px] border border-gray w-full leading-[30px]">
+              <div className="flex flex-col justify-start items-start p-[20px] border border-gray w-full leading-[30px]">
                 <span>
                   인화성 물질의 화재 발생 원리와 폭발 예방 원리에 따른 방폭전기기기의 특성을 이해하고, 
                   산업안전보건법 및 관련 표준 요구사항과 폭발위험장소에 관련된 안전작업 절차 및 폭발예방에 대한 기본소양을 갖출 수 있음
@@ -205,36 +198,36 @@ const Course01Client = () => {
               5H
             </div>
             <div className="text-[18px] font-medium border-x border-[#ccc]">
-              <div className="w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
+              <div className="w-[60px] md:w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
                 1H
               </div>
-              <div className="w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
+              <div className="w-[60px] md:w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
                 1H
               </div>
-              <div className="w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
+              <div className="w-[60px] md:w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
                 1H
               </div>
-              <div className="w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
+              <div className="w-[60px] md:w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
                 1H
               </div>
-              <div className="w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center">
+              <div className="w-[60px] md:w-[80px] h-[65px] bg-lightgray flex flex-col justify-center items-center">
                 1H
               </div>
             </div>
-            <ul className="w-full">
-              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+            <ul className="w-full text-[14px] md:text-base">
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
                 화재이론 및 방폭기기의 소개
               </li>
-              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
                 폭발위험장소 내 안전작업
               </li>
-              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
                 폭발 위험 장소구분도의 이해
               </li>
-              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
                 방폭기기의 형식 표시 기호에 대한 해석
               </li>
-              <li className="w-full h-[65px] flex flex-col justify-center items-start pl-6">
+              <li className="w-full h-[65px] flex flex-col justify-center items-start pl-2 md:pl-6">
                 방폭원리 및 구조
               </li>
             </ul>

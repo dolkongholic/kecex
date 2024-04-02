@@ -113,7 +113,7 @@ const CareerClient = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
             <li className="w-1/2 cursor-default">
@@ -149,8 +149,8 @@ const CareerClient = () => {
           {/* <Image src={PicCareer_3} alt="Picture" className="px-[20px]" /> */}
           <div className="w-full pb-[15px] mt-[30px] mb-[40px]">
             <div className="md:flex md:justify-between">
-              <div className="flex flex-col md:items-center md:w-[48%] mt-8">
-                <span className=" text-primary text-base md:text-black md:mb-4">
+              <div className="flex flex-col md:items-center md:w-[48%] md:mt-8">
+                <span className=" text-primary text-base md:text-black md:mb-4 font-medium">
                   최초 경력 신고
                 </span>
                 <div className="w-full pt-[2px] flex justify-start items-end text-base mb-[5px] md:border-2 md:border-lightgray md:p-5">
@@ -158,7 +158,7 @@ const CareerClient = () => {
                 </div>
               </div>
               <div className="flex flex-col md:items-center md:w-[48%] mt-8">
-                <span className="text-primary text-base md:text-black md:mb-4">
+                <span className="text-primary text-base md:text-black md:mb-4 font-medium">
                   경력 변경 신고
                 </span>
                 <div className="w-full pt-[2px] flex justify-start items-end text-base mb-[5px] md:border-2 md:border-lightgray md:p-5">
@@ -168,7 +168,7 @@ const CareerClient = () => {
             </div>
             <div className="md:flex md:justify-between mt-8">
               <div className="flex flex-col md:items-center md:w-[48%]">
-                <span className=" text-primary text-base md:text-black md:mb-4">
+                <span className=" text-primary text-base md:text-black md:mb-4 font-medium">
                   경력 신고시 제출 서류
                 </span>
                 <div className="w-full pt-[2px] text-base mb-[5px] md:border-2 md:border-lightgray md:p-5 space-y-1 h-[236px]">
@@ -195,11 +195,11 @@ const CareerClient = () => {
                   </li>
                 </div>
               </div>
-              <div className="flex flex-col md:items-center md:w-[48%] mt-8 md:mt-0">
-                <span className="text-primary text-base md:text-black md:mb-4">
+              <div className="flex flex-col md:items-center md:w-[48%] md:mt-0">
+                <span className="text-primary text-base md:text-black md:mb-4 font-medium">
                   경력 변경(갱신) 신고시 제출서류
                 </span>
-                <div className="w-full pt-[2px] text-base mb-[5px] md:border-2 md:border-lightgray md:p-5 space-y-1 h-[236px]">
+                <div className="w-full pt-[2px] text-base mb-[5px] md:border-2 md:border-lightgray md:p-5 space-y-1 md:;sh-[236px]">
                   <li className="list-none">
                     · 경력 변경 신고서
                   </li>
@@ -215,9 +215,9 @@ const CareerClient = () => {
                 </div>
               </div>
             </div>
-            <div className="md:flex md:justify-between mt-8">
+            <div className="md:flex md:justify-between smt-8">
               <div className="flex flex-col md:items-center md:w-[48%]">
-                <span className=" text-primary text-base md:text-black md:mb-4">
+                <span className=" text-primary text-base md:text-black md:mb-4 font-medium">
                   경력증명 발급 비용 및 수령 방법
                 </span>
                 <div className="w-full pt-[2px] text-base mb-[5px] md:border-2 md:border-lightgray md:p-5 space-y-1">

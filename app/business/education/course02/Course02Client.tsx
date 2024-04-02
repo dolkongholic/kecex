@@ -105,20 +105,20 @@ const Course02Client = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
         <ContentTitle title={location} />
-          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] text-[15px]">
             <li className="w-1/2 cursor-default">
-                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
+              <Link passHref href={"/business/education/course01/"}>
+                <div className="h-12 border border-gray-200 border-b-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
                   <span> 방폭기초교육</span>
                 </div>
+              </Link>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/business/education/course02/"}>
-                <div className="h-12 border border-gray-200 border-b-0 border-l-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                   <span> 방폭인력양성 교육</span>
                 </div>
-              </Link>
             </li>
             <li className="w-1/2">
               <Link passHref href={"/business/education/course03/"}>
@@ -128,15 +128,8 @@ const Course02Client = () => {
               </Link>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/business/education/develop/"}>
-                <div className="h-12 border border-l-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
-                    <span> 교육개발</span>
-                </div>
-              </Link>
-            </li>
-            <li className="w-full">
               <Link passHref href={"/business/education/copc/"}>
-                <div className="h-12 border border-t-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                <div className="h-12 border border-l-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
                     <span> CoPC 과정</span>
                 </div>
               </Link>
@@ -144,7 +137,7 @@ const Course02Client = () => {
           </ul>
           <ContentSubTitle title="교육목적" />
           <div className="w-full mb-[40px]">
-            <div className="flex flex-col justify-center items-start p-[20px] md:border border-gray w-full leading-[30px]">
+            <div className="flex flex-col justify-center items-start md:p-[20px] md:border border-gray w-full leading-[30px]">
               <span>
               폭발 위험 장소에서 전계장 설치 업무를 수행하는 현장기술자들을 위한 과정으로, 
               고객사 시방서 제공 시 시방서에 따라 현장 맞춤형 교육 제공. 방폭 기본, 설치 이론 및 실습 교육을 통해 
@@ -155,7 +148,7 @@ const Course02Client = () => {
 
           <ContentSubTitle title="교육대상" />
           <div className="w-full mb-[40px]">
-          <div className="flex flex-col justify-center items-start p-[20px] md:border border-gray w-full">
+          <div className="flex flex-col justify-center items-start md:p-[20px] md:border border-gray w-full">
               <span>
               폭발위험장소 내 현장 기술자 (방폭시공 기술자 등) 
               </span>
@@ -193,7 +186,7 @@ const Course02Client = () => {
             </div>
             <div className="w-full md:w-[49%] flex flex-col mt-5 md:mt-0">
               <ContentSubTitle title="기대효과" />
-              <div className="flex flex-col justify-start items-start h-[132px] p-[20px] border border-gray w-full leading-[30px]">
+              <div className="flex flex-col justify-start items-start md:h-[132px] p-[20px] border border-gray w-full leading-[30px]">
                 <span>
                   현장 기술자를 대상으로 폭발위험장소의 케이블 배선/결선, 방폭기기 설치, 
                   검사에 대한 교육을 통해, 시공 부적합을 최소화하여 재작업을 방지하며, 
@@ -205,31 +198,31 @@ const Course02Client = () => {
           
           <ContentSubTitle title="교육 시간별 세부 내용" />
           <div className="w-full border border-[#ccc] flex">
-            <div className="w-[80px] text-[18px] flex flex-col justify-center items-center font-medium bg-[#eeeeee]">
+            <div className="w-[60px] md:w-[80px] text-[18px] flex flex-col justify-center items-center font-medium bg-[#eeeeee]">
               8H
             </div>
             <div className="text-[18px] font-medium border-x border-[#ccc]">
-              <div className="w-[80px] h-[195px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
+              <div className="w-[60px] md:w-[80px] h-[195px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc]">
                 4H
               </div>
-              <div className="w-[80px] h-[130px] bg-lightgray flex flex-col justify-center items-center">
+              <div className="w-[60px] md:w-[80px] h-[130px] bg-lightgray flex flex-col justify-center items-center">
                 4H
               </div>
             </div>
-            <ul className="w-full">
-              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+            <ul className="w-full text-[14px] md:text-base">
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
                 화재이론 및 폭발 위험 장소 구분의 이해
               </li>
-              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
                 방폭 기기의 형식 표시 기호, 방폭 원리 및 구조 이해
               </li>
-              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
                 방폭기기 별 설치기준(d, e, i) 및 실제 부적합 사례 확인(PSM, SMS)
               </li>
-              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+              <li className="w-full h-[65px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
                 Sealing Device 실습 
               </li>
-              <li className="w-full h-[65px] flex flex-col justify-center items-start pl-6">
+              <li className="w-full h-[65px] flex flex-col justify-center items-start pl-2 md:pl-6">
                 Double Compression Gland 실습, 설치 후 검사
               </li>
             </ul>

@@ -130,15 +130,8 @@ const Course03Client = () => {
               </Link>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/business/education/develop/"}>
-                <div className="h-12 border border-l-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
-                    <span> 교육개발</span>
-                </div>
-              </Link>
-            </li>
-            <li className="w-full">
               <Link passHref href={"/business/education/copc/"}>
-                <div className="h-12 border border-t-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                <div className="h-12 border border-l-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
                     <span> CoPC 과정</span>
                 </div>
               </Link>

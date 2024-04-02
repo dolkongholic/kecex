@@ -131,7 +131,7 @@ const RuleClient = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] px-[15px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
             <li className="w-1/2 cursor-default">
@@ -167,7 +167,7 @@ const RuleClient = () => {
               <span className="text-secondary w-[120px] text-[15px] md:text-base text-start">
                 제1조(정의)
               </span>
-              <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base pl-2 md:pl-0">
+              <div className="w-full pt-[2px] flex justify-start items-end text-[15px] md:text-base pl-2 md:pl-0 text-start">
                 본 규정은 {`'사단법인 한국방폭협회'(이하 "본 협회"라 한다)`}의
                 회원관리에 대한 규정을 명확히 하기 위해 총회의 의결로 정한다.
               </div>
@@ -298,27 +298,27 @@ const RuleClient = () => {
                 ① 회원의 회비는 일반회원비, 정회원비, 기업회원비,
                 명예회원비로 구분하며, 이사회를 통해 회비를 정한다.(정관 제5조 회원의 자격, 가입회비 등에 관한 세부사항은 총회에서 별도의 규정으로 정한다.)
                 <br />
-                <table className="w-full block h-auto my-3 text-center border-y-2 border-[#3A3A3A]">
-                  <div className="flex border-b  border-[#3A3A3A]">
+                <table className="w-full block h-auto my-3 text-center border-y-2 border-[#3A3A3A] text-[13px] md:text-[15px]">
+                  <div className="flex border-b  border-[#3A3A3A] items-center">
                     <th className="w-1/5 border-r border-[#3A3A3A]">구분</th>
                     <th className="w-1/5 border-r border-[#3A3A3A]">일반회원</th>
                     <th className="w-1/5 border-r border-[#3A3A3A]">정회원</th>
-                    <th className="w-1/5 border-r border-[#3A3A3A]">기업회원</th>
-                    <th className="w-1/5">명예회원</th>
+                    <th className="w-1/4 md:w-1/5 border-r border-[#3A3A3A]">기업회원</th>
+                    <th className="w-[18%] md:w-1/5">명예회원</th>
                   </div>
                   <div className="flex">
                     <th className="w-1/5 border-r border-[#3A3A3A]">가입비</th>
                     <td className="w-1/5 border-r border-[#3A3A3A]">20,000원</td>
                     <td className="w-1/5 border-r border-[#3A3A3A]">100,000원</td>
-                    <td className="w-1/5 border-r border-[#3A3A3A]">1,000,000원</td>
-                    <td className="w-1/5">-</td>
+                    <td className="w-1/4 md:w-1/5 border-r border-[#3A3A3A] whitespace-nowrap">1,000,000원</td>
+                    <td className="w-[18%] md:w-1/5">-</td>
                   </div>
                   <div className="flex">
                     <th className="w-1/5 border-r border-[#3A3A3A]">연회비</th>
                     <td className="w-1/5 border-r border-[#3A3A3A]">30,000원</td>
                     <td className="w-1/5 border-r border-[#3A3A3A]">120,000원</td>
-                    <td className="w-1/5 border-r border-[#3A3A3A]">500,000원</td>
-                    <td className="w-1/5">-</td>
+                    <td className="w-1/4 md:w-1/5 border-r border-[#3A3A3A]">500,000원</td>
+                    <td className="w-[18%] md:w-1/5">-</td>
                   </div>
                 </table>
                 ② 회원의 회비는 연회비로 하고 당해연도 3월말까지 납부하여야
@@ -350,7 +350,10 @@ const RuleClient = () => {
               </span>
               <div className="w-full pt-[2px] flex flex-col justify-start items-start text-[15px] md:text-base">
                 ① 협회가 주관하는 방폭관련 교육에 대한 교육비 할인
-                <span className="text-[14px] leading-[14px] ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 방폭협회에 가입할 경우 엑스텍코리아 교육비 5% 할인(Naver에 엑스텍코리아 검색)</span>
+                <span className="text-[14px] leading-[14px] ">
+                  <span className="hidden md:inline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
+                  방폭협회에 가입할 경우 엑스텍코리아 교육비 5% 할인<br className="md:hidden"/>
+                  (Naver에 엑스텍코리아 검색)</span>
                 ② 회원의 경력관리(경력수첩 발급 등)
                 <br />
                 ③ 협회가 주관하는 세미나 및 각종 행사에 참여 우선권
