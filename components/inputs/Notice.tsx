@@ -36,19 +36,19 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
 
   const [index, setIndex] = useState(0);
 
-  // useEffect(() => {
-  //   const timer_main = setInterval(() => {
-  //     setIndex(prevIndex => (prevIndex + 1) % menulist.length);
-  //   }, 5000);
+  useEffect(() => {
+    const timer_main = setInterval(() => {
+      setIndex(prevIndex => (prevIndex + 1) % menulist.length);
+    }, 5000);
 
-  //   return () => {
-  //     clearInterval(timer_main);
-  //   };
-  // }, []);
+    return () => {
+      clearInterval(timer_main);
+    };
+  }, []);
 
-  // useEffect(() => {
-  //   setNoticeMenu(menulist[index]);
-  // }, [index]);
+  useEffect(() => {
+    setNoticeMenu(menulist[index]);
+  }, [index]);
   
 
   return (
