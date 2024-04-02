@@ -16,6 +16,8 @@ import PicHeader from "@/public/img/common/header_menu.png";
 // import PicSlogan4 from "@/public/img/slogan/slogan_4.png";
 import PicMainNotice from "@/public/img/slogan/main_notice.png";
 import { SafeUser } from "@/types";
+import download_icon from "@/public/img/icon/download_icon.png";
+import download_icon_w from "@/public/img/icon/download_icon_white.png";
 
 // const snsList = ["youtube", "facebook", "twiiter", "kakao", "blog", "instgram"];
 const snsList = ["kakao", "blog", "instgram"];
@@ -74,6 +76,29 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
     setActiveMenu(menuTitle);
   };
 
+  const handleDownload = () => {
+    const url = '/download/admission.hwp';
+    fetch(url)
+      .then(response => {
+        if (!response.ok){
+          throw new Error('네트워크에 문제가 있습니다.')
+        }
+        return response.blob();
+      })
+      .then(blob => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', '입회원서-신규.hwp');
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode?.removeChild(link);
+      })
+      .catch(error => {
+        console.error("에러가 발생:", error);
+      });
+  };   
+
   const [scrollA, setScrollA] = useState('');
   const [scrollB, setScrollB] = useState('');
   const [scrollC, setScrollC] = useState('');
@@ -125,7 +150,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <Image src={PicSlogan4} alt="슬로건" width={250} height={80} />
               </Link>
             </div> */}
-            <Link passHref href={"/notice/notice/detail/12?page=1"}>
+            <Link passHref href={"/notice/notice/detail/17?page=1"}>
               <div className="w-[800px] flex justify-start items-center relative 1translate-x-[90px]">
               {/* <Image 
                     src={PicMainNotice} 
@@ -134,9 +159,21 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     // width={800} height={60}
                     fill={true}
                   /> */}
-                <div className="w-[80px] h-[32px] bg-secondary text-white flex items-center justify-center absolute left-[140px] top-[14px] z-20"> 공지사항</div>
+                <div className="w-[80px] h-[26px] bg-secondary text-white flex items-center justify-center absolute left-[140px] top-[18px] z-20 rounded-md text-[13px]">
+                  모집중
+                </div>
                 {/* <p className="ml-6 absolute h-[30px] left-[310px] top-[15px] text-[19px] leading-[32px] font-semibold text-[#575757] bg-transparent"> </p> */}
-                <p className="ml-6 absolute h-[30px] left-[220px] top-[15px] text-[19px] leading-[32px] font-semibold text-[#777777] bg-transparent">한국방폭협회 정식 개설 안내</p>
+                <p className="ml-6 absolute h-[26px] left-[220px] top-[16px] text-[15px] leading-[32px] font-semibold text-[#777777] bg-transparent">
+                  정회원 모집 안내
+                </p>
+                  <button
+                    className="absolute border border-[#3A3A3A] w-[130px] h-[26px] flex justify-center items-center rounded- left-[420px] top-[18px] group font-semibold text-[14px] z-20 hover:bg-[#3A3A3A] hover:text-white"
+                    onClick={handleDownload}
+                    >
+                      입회 원서
+                      <Image src={download_icon} className="w-4 h-4 ml-1 mb-[1px] group-hover:hidden" alt="img" />{" "}
+                      <Image src={download_icon_w} className="w-4 h-4 ml-1 mb-[1px] hidden group-hover:inline" alt="img" />{" "}
+                  </button>
               </div>
             </Link>
             {/* 최상단 로고 + 검색창 */}

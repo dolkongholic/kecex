@@ -17,16 +17,16 @@ import toast from "react-hot-toast";
 import Link from "next/link";
 
 //image
-import PicMdbn from "@/public/img/banner/md_banner_01.png"
-import PicOpen from "@/public/img/banner/site_open.png"
+import PicMdbn from "@/public/img/banner/md_banner_01.png";
+import PicOpen from "@/public/img/banner/site_open.png";
 import PicCormem from "@/public/img/banner/corporate_member.png";
-import PicRemem from "@/public/img/banner/regular_member.png"
-import PicPromotion from "@/public/img/banner/promotion.png"
-import PicInspection from "@/public/img/banner/inspection.png"
-import PicBsn_01 from "@/public/img/icon/main_bsn_01.png"
-import PicBsn_02 from "@/public/img/icon/main_bsn_02.png"
-import PicBsn_03 from "@/public/img/icon/main_bsn_03.png"
-import PicBsn_04 from "@/public/img/icon/main_bsn_04.png"
+import PicRemem from "@/public/img/banner/regular_member.png";
+import PicPromotion from "@/public/img/banner/promotion.png";
+import PicInspection from "@/public/img/banner/inspection.png";
+import PicBsn_01 from "@/public/img/icon/main_bsn_01.png";
+import PicBsn_02 from "@/public/img/icon/main_bsn_02.png";
+import PicBsn_03 from "@/public/img/icon/main_bsn_03.png";
+import PicBsn_04 from "@/public/img/icon/main_bsn_04.png";
 import Picacrc from "@/public/img/related_site/acrc.png";
 import Pichrdkorea from "@/public/img/related_site/hrdkorea.png";
 import Pickogas from "@/public/img/related_site/kogas.png";
@@ -35,15 +35,17 @@ import Picksa from "@/public/img/related_site/ksa.png";
 import Picmoel from "@/public/img/related_site/moel.png";
 import Picnts from "@/public/img/related_site/nts.png";
 import PicH2 from "@/public/img/banner/h2_education.png";
-import Pickomeri from "@/public/img/related_site/komeri_logo.jpg"
-import PicmoelUl from "@/public/img/related_site/moel_ul.png"
-import PicUl from "@/public/img/related_site/ul_logo.png"
-import PicUc from "@/public/img/related_site/uc_logo.png"
-import Picutp from "@/public/img/related_site/UTP_logo.jpg"
-import Picuoufic from "@/public/img/related_site/UOUFIC.png"
-import Picpolytech from "@/public/img/related_site/uoc_polytech.png"
-import Pickrict from "@/public/img/related_site/krict.png"
-import Pichankyung from "@/public/img/related_site/hankyung.png"
+import Pickomeri from "@/public/img/related_site/komeri_logo.jpg";
+import PicmoelUl from "@/public/img/related_site/moel_ul.png";
+import PicUl from "@/public/img/related_site/ul_logo.png";
+import PicUc from "@/public/img/related_site/uc_logo.png";
+import Picutp from "@/public/img/related_site/UTP_logo.jpg";
+import Picuoufic from "@/public/img/related_site/UOUFIC.png";
+import Picpolytech from "@/public/img/related_site/uoc_polytech.png";
+import Pickrict from "@/public/img/related_site/krict.png";
+import Pichankyung from "@/public/img/related_site/hankyung.png";
+import download_icon from "@/public/img/icon/download_icon.png";
+import download_icon_w from "@/public/img/icon/download_icon_white.png";
 
 
 interface IndexProps {
@@ -109,6 +111,29 @@ const Index: React.FC<IndexProps> = ({
     ],
     };
 
+    const handleDownload = () => {
+      const url = '/download/admission.hwp';
+      fetch(url)
+        .then(response => {
+          if (!response.ok){
+            throw new Error('네트워크에 문제가 있습니다.')
+          }
+          return response.blob();
+        })
+        .then(blob => {
+          const url = window.URL.createObjectURL(new Blob([blob]));
+          const link = document.createElement('a');
+          link.href = url;
+          link.setAttribute('download', '입회원서-신규.hwp');
+          document.body.appendChild(link);
+          link.click();
+          link.parentNode?.removeChild(link);
+        })
+        .catch(error => {
+          console.error("에러가 발생:", error);
+        });
+    };    
+
   return (
     <section>
       <div className="w-full h-[600px] md:h-[460px] overflow-x-hidden">
@@ -120,6 +145,36 @@ const Index: React.FC<IndexProps> = ({
           <div className="w-full justify-center slider-container">
             {/* 메인 배너 슬라이드 영역 */}
             <Slider {...settings}>
+              <div className=" h-[380px] max-w-[1200px]">
+                <div className="w-11/12 bg-[#D9ECFF] h-full mx-auto rounded-xl relative text-[#3A3A3A] overflow-hidden">
+                  <strong className="absolute text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
+                    한국방폭협회 정회원<br/>
+                    가입 안내
+                  </strong>
+                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
+                    가입비 10만원&nbsp;&nbsp;|&nbsp;&nbsp;연회비 12만원<br/>
+                    메일 : kecex@kecex.or.kr
+                  </p>
+                  <Link passHref href={"/business/member/join"}>
+                  <button className="absolute border border-[#3A3A3A] w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-[#3A3A3A] hover:text-[#D9ECFF] z-20">
+                    자세히 보기
+                  </button>
+                  </Link>
+                  <button
+                    className="absolute border border-[#3A3A3A] w-[150px] h-[45px] flex justify-center items-center rounded-full group top-[290px] left-[calc(8%+150px)] font-semibold hover:bg-[#3A3A3A] hover:text-[#D9ECFF] z-20"
+                    onClick={handleDownload}
+                    >
+                      입회 원서
+                      <Image src={download_icon} className="w-5 h-5 ml-1 mb-1  group-hover:hidden" alt="img" />{" "}
+                      {/* <Image src={download_icon_w} className="w-5 h-5 ml-1 mb-1 hidden group-hover:inline" alt="img" />{" "} */}
+                  </button>
+                  <Image 
+                    src={PicRemem} 
+                    alt="open_banner" 
+                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto right-0 lg:right-[1%] bottom-0 z-0"
+                  />
+                </div>
+              </div>
               <div className="h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#FFC743] h-full mx-auto rounded-xl relative text-[#3A3A3A] overflow-hidden">
                   <strong className="absolute text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
@@ -178,27 +233,6 @@ const Index: React.FC<IndexProps> = ({
                     src={PicCormem} 
                     alt="open_banner" 
                     className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto right-0 bottom-0 z-0"
-                  />
-                </div>
-              </div>
-              <div className=" h-[380px] max-w-[1200px]">
-                <div className="w-11/12 bg-[#D9ECFF] h-full mx-auto rounded-xl relative text-[#3A3A3A] overflow-hidden">
-                  <strong className="absolute text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
-                    한국방폭협회 정회원<br/>
-                    가입 안내
-                  </strong>
-                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
-                    가입비 10만원&nbsp;&nbsp;|&nbsp;&nbsp;연회비 12만원
-                  </p>
-                  <Link passHref href={"/business/member/join"}>
-                  <button className="absolute border border-[#3A3A3A] w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-[#3A3A3A] hover:text-[#D9ECFF] z-20">
-                    자세히 보기
-                  </button>
-                  </Link>
-                  <Image 
-                    src={PicRemem} 
-                    alt="open_banner" 
-                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto right-0 lg:right-[1%] bottom-0 z-0"
                   />
                 </div>
               </div>
