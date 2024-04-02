@@ -78,14 +78,14 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
   const [selectedFile, setSelectedFile]: any = useState(null);
   const [imagePreview, setImagePreview]: any = useState(null);
   const [userInfo, setUserInfo] = useState({
-    name: "기본 이름",
-    birthDate: "010203",
-    nationality: "korea",
-    language1: "영어22",
-    languageLevel1: "상",
-    school1: "학교이름",
-    major1: "내 전공",
-    degree1: "석사",
+    name: "",
+    birthDate: "",
+    nationality: "",
+    language1: "",
+    languageLevel1: "",
+    school1: "",
+    major1: "",
+    degree1: "",
   });
 
   //페이지 로드 시 기존 정보 가져오기
@@ -170,7 +170,8 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
               <span className="text-red-500">
                 이력서 미작성 시 교육 신청 진행 불가
               </span>
-              합니다.
+              합니다. 
+              <span className="text-[13px]">(현재 이력서 입력이 지원되지 않는 상태입니다)</span>
             </div>
           </div>
           <div className="w-full">
@@ -220,7 +221,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                         type="text"
                         placeholder="성"
                         className="pl-4 h-10"
-                        defaultValue={userInfo.name}
+                        // defaultValue={}
                       />
                     </div>
                     <div className="before:border-l before:border-gray-200 w-4/6 h-12 md:h-14 float-left pt-1 md:p-2 box-border">
@@ -228,7 +229,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                         type="text"
                         placeholder="이름"
                         className="pl-4 h-10 w-8/12"
-                        defaultValue={userInfo.name}
+                        // defaultValue={}
                       />
                     </div>
                   </fieldset><fieldset className="border border-gray-200 text-center w-full md:w-[49%] text-black float-left mt-2 md:mt-5">
@@ -241,7 +242,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                         placeholder="990101"
                         className="pl-4 h-10"
                         maxLength={6}
-                        defaultValue={userInfo.birthDate}
+                        // defaultValue={}
                       />
                     </div>
                   </fieldset>
@@ -313,7 +314,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                           type="text"
                           id="language1"
                           name="language1"
-                          defaultValue={userInfo.language1}
+                          // defaultValue={userInfo.language1}
                           // onChange={handleInputChange}
                           placeholder="예)일본어1"
                           className="w-3/5 md:w-[150px] h-12 border my-2 border-gray-200 pl-3"
