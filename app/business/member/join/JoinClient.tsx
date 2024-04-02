@@ -109,7 +109,7 @@ const JoinPage = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] md:px-0 py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
             <li className="w-1/2 cursor-default">
@@ -153,17 +153,18 @@ const JoinPage = () => {
               <div className="flex">
                 <span className="text-secondary w-[100px]">일반회원</span>
               </div>
-              <span className="text-[15px]">정회원 이외의 단체 및 개인</span>
+              <span className="text-[15px] w-4/5 md:w-auto">정회원 이외의 단체 및 개인</span>
             </div>
           </div>
           <div className="w-full border-b-2 border-gray md:flex pb-[15px] mt-[15px]">
             <div className="flex">
               <span className="text-secondary w-[100px]">정회원</span>
-            </div>
-              <span className="text-[15px]">
+              <span className="text-[15px] w-4/5 md:w-auto">
                 방폭설비의 생산·유통·엔지니어링·설치·시공·진단·안전관리 교육 및
                 방폭과 관련된 소재, 부품기업과 이와 관련한 산업에 종사하는자
               </span>
+            </div>
+
           </div>
           {/* <div className="w-full border-b-2 border-gray flex px-[20px] pb-[15px] mt-[10px]">
             <div>
@@ -184,20 +185,20 @@ const JoinPage = () => {
           <div className="w-full border-b-2 border-gray md:flex pb-[15px] mt-[15px]">
             <div className="flex">
               <span className="text-secondary w-[100px]">기업회원</span>
-            </div>  
-              <span className="text-[15px]">
+              <span className="text-[15px] w-4/5 md:w-auto">
                 방폭설비의 생산·유통·엔지니어링·설치·시공·진단·안전관리 교육 및
                 방폭과 관련된 소재, 부품기업과 이와 관련한 산업에 종사하는 기업
               </span>
+            </div>  
           </div>
           <div className="w-full border-b-2 border-gray md:flex pb-[15px] mt-[15px] mb-[40px]">
             <div className="flex">
               <span className=" text-secondary w-[100px]">명예회원</span>
-            </div>  
-              <span className="text-[15px]">
+              <span className="text-[15px] w-4/5 md:w-auto">
                 본회의 취지에 찬동하고, 방폭기술 발전과 본회의 사업에 적극적으로
                 협력하는 자
               </span>
+            </div>  
           </div>
 
           <div className="w-full hidden md:block">
@@ -505,19 +506,19 @@ const JoinPage = () => {
 
           <ContentSubTitle title="정회원 권한" />
           <span className="text-[15px] md:text-base">· 협회의 운영과 발전에 대해 총회의 의결권을 가짐</span>
-          <span className="text-[15px] md:text-base mt-1">
+          <span className="text-[15px] md:text-base mt-2">
             · 방폭 관련 교육 할인(협회 주관 교육에 한함)
           </span>
-          <span className="text-[15px] md:text-base mt-1">
+          <span className="text-[15px] md:text-base mt-2">
             · 회원의 경력관리(경력수첩 발급 등)
           </span>
-          <span className="text-[15px] md:text-base mt-1">
+          <span className="text-[15px] md:text-base mt-2">
             · 협회가 주관하는 각종 세미나 및 행사 등의 우선 참여
           </span>
-          <span className="text-[15px] md:text-base mt-1">
+          <span className="text-[15px] md:text-base mt-2">
             · 정부 포상에 대한 우수 직원 우선 추천
           </span>
-          <span className="text-[15px] md:text-base tracking-tight mt-1">
+          <span className="text-[15px] md:text-base tracking-tight mt-2">
             · 협회의 임원, 대의원, 위원 기타 이 정관의 규정에 <br className="md:hidden"/> 
             <span className="md:hidden">&nbsp;&nbsp;&nbsp;</span>
               의하여 선임되는 자의 선거권 및 피선거권을 취득

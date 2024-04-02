@@ -220,8 +220,9 @@ const GroupClient = () => {
                 </div>
                 <div className="h-[25px]">&nbsp;</div>
               </div>
-              <div className="w-[28%] flex flex-col justify-center items-center h-[50px] text-center border border-secondary md:text-[18px]">
-                <p>한국방폭협회 지부</p>
+              <div className="w-[28%] flex flex-col justify-center items-center h-[50px] text-center border border-secondary text-[13px] sm:text-[15px] md:text-[18px]">
+                <p>한국방폭협회<br className="md:hidden"/>
+                  지부</p>
               </div>
             </div>
 
@@ -235,18 +236,18 @@ const GroupClient = () => {
                   <div className="w-[26%] border-r border-gray">&nbsp;</div>
                   <div className="w-[26%] border-r border-gray">&nbsp;</div>
                 </div>
-                <ul className="flex h-[50px]">
-                  <li className="w-[22%] flex justify-center items-center h-[48px] text-center bg-lightgray text-[16px] mr-[4%]">
-                    경기
+                <ul className="flex h-[50px] text-[14px] md:text-[16px]">
+                  <li className="w-[22%] flex justify-center items-center h-[48px] text-center bg-lightgray mr-[4%]">
+                    경<br className="md:hidden"/>기
                   </li>
-                  <li className="w-[22%] flex justify-center items-center h-[48px] text-center bg-lightgray text-[16px] mr-[4%]">
-                    충청
+                  <li className="w-[22%] flex justify-center items-center h-[48px] text-center bg-lightgray mr-[4%]">
+                    충<br className="md:hidden"/>청
                   </li>
-                  <li className="w-[22%] flex justify-center items-center h-[48px] text-center bg-lightgray text-[16px] mr-[4%]">
-                    경상
+                  <li className="w-[22%] flex justify-center items-center h-[48px] text-center bg-lightgray mr-[4%]">
+                    경<br className="md:hidden"/>상
                   </li>
-                  <li className="w-[22%] flex justify-center items-center h-[48px] text-center bg-lightgray text-[16px]">
-                    호남
+                  <li className="w-[22%] flex justify-center items-center h-[48px] text-center bg-lightgray">
+                    호<br className="md:hidden"/>남
                   </li>
                 </ul>
               </div>
@@ -254,10 +255,10 @@ const GroupClient = () => {
 
             <div className="hidden md:flex h-[50px]">
               <div className="w-[14%]">&nbsp;</div>
-              <div className="w-[36%] border border-b-0 border-gray relative">
+              <div className="w-[36%] border border-b-0 border-r-0 border-gray relative">
                 &nbsp;
               </div>
-              <div className="w-[50%] flex-col">
+              <div className="w-[50%] flex-col border-l border-gray">
                 <div className="w-full">&nbsp;</div>
                 <div className="w-full flex">
                   <div className="w-[72%] border-t border-r border-gray border-dashed">
@@ -283,7 +284,10 @@ const GroupClient = () => {
             </div>
 
             <div className="md:flex justify-between ">
-              <div className="w-full md:w-[28%] flex flex-col space-y-[10px] justify-start text-left border border-t-0 border-secondary text-[15px] p-5">
+              <div className="w-full md:w-[28%] flex flex-col space-y-[10px] justify-start text-left border md:border-t-0 border-secondary text-[15px] p-5">
+                <div className="w-full h-[40px] bg-darkgray flex md:hidden flex-col items-center justify-center text-[18px]">
+                  방폭지원본부
+                </div>
                 <span>
                   <b className="text-[18px] leading-[14px]">·</b> 기획, 총무, 회계
                 </span>
