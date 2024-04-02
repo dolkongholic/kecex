@@ -285,7 +285,7 @@ const JoinPage = () => {
                 {/* 회비납부 여부 간편검색 */}
                 회비 납부
                 <br />
-                (신용카드, 계좌이체, 가상계좌)
+                (계좌이체)
               </div>
             </div>
             <div className="flex justify-center items-center w-[48%] bg-gray text-center">
@@ -418,8 +418,7 @@ const JoinPage = () => {
                 <div className="w-[50%] h-[100px] py-[30px] flex justify-center items-start">
                   회비 납부
                   <br />
-                  (신용카드, 계좌이체, <br/>
-                  가상계좌)
+                  (계좌이체)
                 </div>
               </div>
             </div>
