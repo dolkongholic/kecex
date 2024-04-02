@@ -159,15 +159,15 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     // width={800} height={60}
                     fill={true}
                   /> */}
-                <div className="w-[80px] h-[26px] bg-secondary text-white flex items-center justify-center absolute left-[140px] top-[18px] z-20 rounded-md text-[13px]">
+                <div className="w-[80px] h-[26px] bg-secondary text-white flex items-center justify-center absolute left-[140px] top-[16px] z-20 rounded-md text-[13px] pt-[1px]">
                   모집중
                 </div>
                 {/* <p className="ml-6 absolute h-[30px] left-[310px] top-[15px] text-[19px] leading-[32px] font-semibold text-[#575757] bg-transparent"> </p> */}
-                <p className="ml-6 absolute h-[26px] left-[220px] top-[16px] text-[15px] leading-[32px] font-semibold text-[#777777] bg-transparent">
+                <p className="ml-6 absolute h-[26px] left-[220px] top-[15px] text-[15px] leading-[32px] font-semibold text-[#777777] bg-transparent">
                   정회원 모집 안내
                 </p>
                   <button
-                    className="absolute border border-[#3A3A3A] w-[130px] h-[26px] flex justify-center items-center rounded- left-[420px] top-[18px] group font-semibold text-[14px] z-20 hover:bg-[#3A3A3A] hover:text-white"
+                    className="absolute border border-[#3A3A3A] w-[130px] h-[26px] flex justify-center items-center rounded- left-[420px] top-[16px] group font-semibold text-[14px] z-20 hover:bg-[#3A3A3A] hover:text-white"
                     onClick={handleDownload}
                     >
                       입회 원서

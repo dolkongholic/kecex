@@ -5,7 +5,7 @@ import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import Image from "next/image";
 
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 
 // Image
@@ -77,6 +77,33 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
   ];
   const [selectedFile, setSelectedFile]: any = useState(null);
   const [imagePreview, setImagePreview]: any = useState(null);
+  const [userInfo, setUserInfo] = useState({
+    name: "기본 이름",
+    birthDate: "010203",
+    nationality: "korea",
+    language1: "영어22",
+    languageLevel1: "상",
+    school1: "학교이름",
+    major1: "내 전공",
+    degree1: "석사",
+  });
+
+  //페이지 로드 시 기존 정보 가져오기
+  useEffect(() => {
+    if(currentUser) {
+      // 기존 정보가 있다면 해당 정보를 가져와서 상태(state)에 설정
+      setUserInfo({
+        name: currentUser.name,
+        birthDate: currentUser.birthDate,
+        nationality: currentUser.nationality,
+        language1: currentUser.language1,
+        languageLevel1: currentUser.languageLevel1,
+        school1: currentUser.school1,
+        major1: currentUser.major1,
+        degree1: currentUser.degree1,
+      })
+    }
+  }, [currentUser]);
 
   //첨부파일 업로드
   const updateLabel = (event: any) => {
@@ -152,8 +179,8 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                 여권정보
               </h3>
               <div className="md:flex pt-4">
-                <div id="pic_area" className="w-[120px] md:w-[200px] h-[192px] mx-auto md:mx-0 mb-7 md:mb-0">
-                  <div className="w-[120px] h-[160px] md:w-[160px] md:h-[192px] relative border border-gray p-2">
+                <div id="pic_area" className="w-[120px] md:w-[170px] h-[192px] mx-auto md:mx-0 mb-7 md:mb-0">
+                  <div className="w-[120px] h-[160px] md:w-[135px] md:h-[180px] relative border border-gray p-2">
                     {imagePreview ? (
                       <Image
                         src={imagePreview}
@@ -176,7 +203,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                   />
                   <label
                     htmlFor="fileInput"
-                    className="inline-block py-2 mt-1 text-center w-[120px] md:w-[160px] h-10 bg-primary text-white box-border"
+                    className="inline-block py-[6px] mt-1 text-center w-[120px] md:w-[135px] h-9 bg-primary text-white box-border"
                   >
                     첨부파일
                   </label>
@@ -193,6 +220,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                         type="text"
                         placeholder="성"
                         className="pl-4 h-10"
+                        defaultValue={userInfo.name}
                       />
                     </div>
                     <div className="before:border-l before:border-gray-200 w-4/6 h-12 md:h-14 float-left pt-1 md:p-2 box-border">
@@ -200,10 +228,10 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                         type="text"
                         placeholder="이름"
                         className="pl-4 h-10 w-8/12"
+                        defaultValue={userInfo.name}
                       />
                     </div>
-                  </fieldset>
-                  <fieldset className="border border-gray-200 text-center w-full md:w-[49%] text-black float-left mt-2 md:mt-5">
+                  </fieldset><fieldset className="border border-gray-200 text-center w-full md:w-[49%] text-black float-left mt-2 md:mt-5">
                     <legend className="w-1/4 md:w-[155px] h-12 md:h-14 float-left text-left pl-4 md:pl-7 pt-[14px] md:pt-4">
                       생년월일
                     </legend>
@@ -213,9 +241,11 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                         placeholder="990101"
                         className="pl-4 h-10"
                         maxLength={6}
+                        defaultValue={userInfo.birthDate}
                       />
                     </div>
                   </fieldset>
+                  
                   <fieldset className="border border-gray-200 text-center w-full md:w-[49%] text-black float-right my-2 md:my-5">
                     <legend className="w-1/4 md:w-[155px] h-12 md:h-14 float-left text-left pl-4 md:pl-7 pt-[14px] md:pt-4">
                       국적
@@ -274,14 +304,18 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                     </div>
                   </fieldset>
                   <fieldset className="border border-gray-200 text-center w-full text-black">
-                    <legend className="w-1/4 md:w-[155px] h-52 md:h-20 float-left text-left pl-4 md:pl-7 pt-6 border-r border-gray-200 md:border-0">
+                    <legend className="w-1/4 md:w-[120px] h-[64px] float-left text-left ml-7 leading-[64px] border-r border-gray-200 md:border-0 box-border">
                       언어능력
                     </legend>
-                    <div className="md:flex justify-between md:before:border-l before:border-gray-200 mt-2 float-right w-3/4 md:w-5/6">
+                    <div className="md:flex justify-between md:before:border-l before:border-gray-200 float-right w-3/4 md:w-5/6">
                       <div>
                         <input
                           type="text"
-                          placeholder="ex)일본어"
+                          id="language1"
+                          name="language1"
+                          defaultValue={userInfo.language1}
+                          // onChange={handleInputChange}
+                          placeholder="예)일본어1"
                           className="w-3/5 md:w-[150px] h-12 border my-2 border-gray-200 pl-3"
                         />
                         <select
@@ -296,7 +330,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                       <div>
                         <input
                           type="text"
-                          placeholder="ex)일본어"
+                          placeholder="예)일본어"
                           className="w-3/5 md:w-[150px] h-12 border my-2 border-gray-200 pl-3"
                         />
                         <select
@@ -311,7 +345,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                       <div>
                         <input
                           type="text"
-                          placeholder="ex)일본어"
+                          placeholder="예)일본어"
                           className="w-3/5 md:w-[150px] h-12 border my-2 border-gray-200 pl-3"
                         />
                         <select
@@ -385,6 +419,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                         type="text"
                         placeholder="학교명"
                         className="pl-4 h-10"
+                        defaultValue={userInfo.school1}
                       />
                     </div>
                     <legend className="w-1/4 md:w-1/12 h-12 md:h-14 float-left text-left pt-4 md:border-l border-gray-200 pl-4 md:pl-8">
@@ -395,6 +430,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                         type="text"
                         placeholder="전공명"
                         className="pl-4 h-10"
+                        defaultValue={userInfo.major1}
                       />
                     </div>
                   </fieldset>
@@ -419,6 +455,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                         type="text"
                         placeholder="수료학위"
                         className="pl-4 h-10"
+                        defaultValue={userInfo.degree1}
                       />
                     </div>
                   </fieldset>
@@ -471,16 +508,6 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                         className="pl-4 h-10"
                       />
                     </div>
-                    <legend className="w-1/4 md:w-1/12 h-12 md:h-14 float-left text-left pt-4 md:border-l border-gray-200 pl-4 md:pl-8">
-                      전공명
-                    </legend>
-                    <div className="before:border-l before:border-gray-200 w-3/4 md:w-4/12 h-12 md:h-14 float-left p-2 box-border">
-                      <input
-                        type="text"
-                        placeholder="전공명"
-                        className="pl-4 h-10"
-                      />
-                    </div>
                   </fieldset>
                   <div className="md:flex">
                     <fieldset className="border-l border-r md:border-r-0 border-gray-200 text-center w-full md:w-1/2 text-black md:flex">
@@ -503,12 +530,12 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                     </fieldset>
                     <fieldset className="border-x border-t md:border-t-0 border-gray-200 text-center w-full md:w-1/2 text-black flex">
                       <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
-                        수료학위
+                        직위 및 담당업무
                       </legend>
                       <div className="before:border-l before:border-gray-200 w-3/4 md:w-2/3 h-12 md:h-14 float-left pt-1 md:pt-2 md:pr-28 box-border">
                         <input
                           type="text"
-                          placeholder="수료학위"
+                          placeholder="담당업무 기재"
                           className="pl-4 h-10"
                         />
                       </div>
@@ -516,12 +543,11 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                   </div>
                   <div>
                     <fieldset className="border border-gray-200 text-center w-full text-black md:flex">
-                      <legend className="w-full md:w-2/12 h-12 md:h-24 float-left text-left pt-4 md:pt-8 pl-4 md:pl-8 md:border-r md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
+                      <legend className="w-full md:w-2/12 h-12 md:h-[120px] leading-[120px] float-left text-left pl-4 md:pl-8 md:border-r md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         프로젝트
                       </legend>
-                      <input
-                        type="text"
-                        className="w-full md:w-10/12 h-32 md:h-24 pl-4 text-wrap mt-1 md:mt-0"
+                      <textarea
+                        className="w-full md:w-10/12 h-32 md:h-[120px] pl-4 text-wrap mt-1 md:mt-0"
                       />
                     </fieldset>
                   </div>
