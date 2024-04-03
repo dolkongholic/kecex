@@ -111,18 +111,32 @@ const InspectionClient = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] text-[15px]">
             <li className="w-1/2 cursor-default">
                 <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                   <span> 방폭사전진단</span>
                 </div>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/business/consulting/industry/"}>
+              <Link passHref href={"/business/consulting/psm/"}>
                 <div className="h-12 border border-gray-200 border-l-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
-                  <span> 산업진단, 컨설팅</span>
+                  <span> PSM</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/business/consulting/sapa/"}>
+                <div className="h-12 border border-gray-200 border-r-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                  <span> 중대재해처벌법</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/business/consulting/danger/"}>
+                <div className="h-12 border border-gray-200 border-t-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                  <span> 위험성 평가</span>
                 </div>
               </Link>
             </li>

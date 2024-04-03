@@ -677,10 +677,10 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     ) : (
                       <>
                       <div className="w-full h-[75px] pl-2 text-[15px] pt-7">
-                        <p><span>회원</span>님, 환영합니다.</p>
+                        <p><span>{currentUser.koname}</span>님, 환영합니다.</p>
                       </div>
                       <div className="text-[13px] flex list-none px-2 justify-between pt-2">
-                      <p className="text-end pr-5">회원님은 현재 <b>정회원</b>입니다.</p>
+                      <p className="text-start pr-5">회원님은 현재 <b>{currentUser.level}</b>입니다.</p>
                         <ul className="flex">
                           <Link passHref href={"/mypage/overall/all01"}>
                             <li className="cursor-pointer hover:text-primary">마이페이지</li>
@@ -744,7 +744,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 </li>
                 <li>
                   <Link passHref href={"/introduce/map/"}>
-                    <div className="w-[250px] h-12 md:h-14 md:border-b md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                    <div className="w-[250px] h-12 md:h-14 md:border-b md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pl-6 md:pl-0 pr-[5px] md:mb-[20px] md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
                       찾아오시는길
                     </div>
                   </Link>
@@ -804,9 +804,6 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     <Link passHref href={"/business/education/course03/"}>
                       <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 기업형 교육</span>
                     </Link>
-                    <Link passHref href={"/business/education/develop/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 교육개발</span>
-                    </Link>
                     <Link passHref href={"/business/education/copc/"}>
                       <span className="cursor-pointer hover:text-primary hover:font-semibold"> · CoPC 과정</span>
                     </Link>
@@ -861,28 +858,28 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               >
                 <li>
                   <Link passHref href={"/notice/notice?page=1"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14 md:border-b md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                    <div className="md:w-[250px] h-12 md:h-14 border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
                       공지사항
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link passHref href={"/notice/faq/"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                    <div className="md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
                       FAQ
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link passHref href={"/notice/qna/"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                    <div className="md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
                       문의사항
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link passHref href={"/notice/worker/"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600  leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                    <div className="md:w-[250px] h-12 md:h-14 md:border-b md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600  leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
                       인재정보
                     </div>
                   </Link>
@@ -908,14 +905,14 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               >
                 <li>
                   <Link passHref href={"/information/raw?page=1"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14 border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                    <div className="md:w-[250px] h-12 md:h-14 border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
                       관련법령
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link passHref href={"/information/news?page=1"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14 md:border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
+                    <div className="md:w-[250px] h-12 md:h-14 md:border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
                       카드뉴스
                     </div>
                   </Link>
@@ -971,7 +968,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
                     전체 현황
                   </div>
-                  <div className="flex flex-col space-y-[25px] border-b-2 border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
+                  <div className="flex flex-col space-y-[25px] border-b border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/mypage/overall/all01"}>
                       <span className="cursor-pointer hover:text-primary"> · 발급/출력 현황</span>
                     </Link>
@@ -998,38 +995,35 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
                     회비 납부
                   </div>
-                  <div className="flex flex-col space-y-[25px] border-b-2 border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
+                  <div className="flex flex-col space-y-[25px] border-b border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/mypage/payment/payment"}>
                       <span className="cursor-pointer hover:text-primary"> · 회비 납부</span>
                     </Link>
                     <Link passHref href={"/mypage/payment/detail"}>
                       <span className="cursor-pointer hover:text-primary">
                         {" "}
-                        - 회비 납부내역
+                        · 회비 납부내역
                       </span>
-                    </Link>
-                    <Link passHref href={"/mypage/payment/management"}>
-                      <span className="cursor-pointer hover:text-primary"> · 회비 관리</span>
                     </Link>
                   </div>
                 </li>
                 <li>
                   <Link passHref href={"/mypage/print"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                    <div className="md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
                       회원증 출력
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link passHref href={"/mypage/overall/all02"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                    <div className="md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
                       1:1문의 현황
                     </div>
                   </Link>
                 </li>
                 <li>
                   <Link passHref href={"/mypage/resume"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                    <div className="md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
                       경력관리
                     </div>
                   </Link>
@@ -1038,7 +1032,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
                     경력수첩 발급
                   </div>
-                  <div className="flex flex-col space-y-[25px] md:border-b-2 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
+                  <div className="flex flex-col space-y-[25px] border-b border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/mypage/carrear/print"}>
                       <span className="cursor-pointer hover:text-primary"> · 경력수첩 발급</span>
                     </Link>

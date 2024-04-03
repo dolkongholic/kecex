@@ -97,16 +97,16 @@ const CeoClient = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start relative ">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start relative ">
           <ContentTitle title={location}/>
-          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] md:px-[40px] text-[15px]">
             <li className="w-1/2 cursor-default">
                 <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                   <span> CEO 인사말</span>
                 </div>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/introduce/common/vistion/"}>
+              <Link passHref href={"/introduce/common/vision/"}>
                 <div className="h-12 border border-l-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
                   <span> 비전/미션</span>
                 </div>
@@ -127,12 +127,12 @@ const CeoClient = () => {
               </Link>
             </li>
           </ul>
-          <div className="flex flex-col text-title text-black w-full h-[140px] md:h-[400px] p-[40px] bg-lightgray md:text-[20px] md:leading-[35px]">
+          <div className="flex flex-col text-title text-black w-full h-[140px] md:h-[400px] p-[30px] md:p-[40px] bg-lightgray md:text-[20px] md:leading-[35px]">
             <p>안녕하십니까?</p>
             <p>한국방폭협회 홈페이지를</p>
             <p>방문해 주신 여러분 반갑습니다.</p>
           </div>
-          <div className="flex flex-col md:space-y-[20px] md:text-white text-[13px] md:text-[16px] w-full h-[600px] md:h-[300px] px-[40px] md:p-[40px] bg-lightgray md:bg-neutral-700 ">
+          <div className="flex flex-col md:space-y-[20px] md:text-white text-[14px] md:text-[16px] w-full h-[600px] md:h-[300px] px-[30px] md:p-[40px] bg-lightgray md:bg-neutral-700 ">
             <p>
               한국방폭협회는 방폭 교육 및 설계, 시공, 감리 및 인증 서비스 등에
               대한 기술개발 및 관리유지 능력을 향상시켜 방폭산업에 건전한 발전과
@@ -151,10 +151,10 @@ const CeoClient = () => {
               강구하여 방폭산업 발전을 위해 최선을 다하겠습니다.
             </p>
           </div>
-          <div className="absolute bottom-5 right-5  md:-translate-y-[320px] md:-translate-x-10 ">
+          <div className="absolute bottom-10 md:bottom-5 right-5  md:-translate-y-[320px] md:-translate-x-10 ">
             <Image src={Picceo} alt="ceo" className="w-[360px] md:w-[550px] mx-auto"/>
           </div>
-          <div className="absolute bottom-[220px] right-[40px] md:-translate-y-[160px] md:-translate-x-[555px] text-black">
+          <div className="absolute bottom-[250px] md:bottom-[220px] right-[40px] md:-translate-y-[160px] md:-translate-x-[555px] text-black">
             <p>사단법인 한국방폭협회 공동회장</p>
           </div>
         </section>

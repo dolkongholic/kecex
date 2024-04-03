@@ -111,19 +111,47 @@ const SapaClient = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] text-[15px]">
+            <li className="w-1/2 cursor-default">
+              <Link passHref href={"/business/consulting/inspection/"}>
+                <div className="h-12 border border-gray-200 flex flex-col justify-center items-center cursor-default">
+                  <span> 방폭사전진단</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+                <div className="h-12 border border-secondary flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                  <span> PSM</span>
+                </div>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/business/consulting/sapa/"}>
+                <div className="h-12 border border-gray-200 border-r-0 border-t-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                  <span> 중대재해처벌법</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/business/consulting/danger/"}>
+                <div className="h-12 border border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                  <span> 위험성 평가</span>
+                </div>
+              </Link>
+            </li>
+          </ul>
             {/*중대재해처벌법 컨설팅 */}
               <ContentSubTitle title="중대재해처벌법 컨설팅 대상" />
               <ul className="-translate-y-[20px] text-[15px] mb-5 w-full">
                 <li className="w-full md:flex justify-between my-5">
-                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       01
                     </div>
                     <p className="ml-3">중대재해처벌에 관한 법률에 대응하기 위한 사업장</p>
                   </div>
-                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       02
                     </div>
@@ -132,13 +160,13 @@ const SapaClient = () => {
                   </div>
                 </li>
                 <li className="w-full md:flex justify-between my-5">
-                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       03
                     </div>
                     <p className="ml-3">안전한 작업환경을 조성하여 중대재해를 예방하고자 하는 사업장</p>
                   </div>
-                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       04
                     </div>
@@ -151,7 +179,7 @@ const SapaClient = () => {
               <ContentSubTitle title="중대재해처벌법 컨설팅 내용" />
               <div className="md:flex justify-between text-[17px] mb-10 w-full border border-[#ccc]">
                 <div className="md:w-1/3 border-r border-[#ccc] text-center mb-5 md:mb-0 px-3 md:px-0 flex flex-col items-center">
-                  <p className="text-secondary text-[19px] w-full h-[105px] bg-lightgray leading-[105px] font-medium">
+                  <p className="text-secondary text-[19px] w-full h-[105px] bg-lightgray leading-[105px] font-medium mt-3 md:mt-0">
                     안전보건관리체계
                   </p>
                   <span className="mt-6">
@@ -215,14 +243,14 @@ const SapaClient = () => {
                     03
                   </div>
                 </div>
-                <ul className="w-full md:w-[1100px]">
+                <ul className="w-full md:w-[1100px] text-[15px] md:text-[16px]">
                   <li>
-                    <div className="w-full h-14 bg-lightgray font-medium text-[20px] flex items-center pl-8 border-b border-secondary">
+                    <div className="w-full h-14 bg-lightgray font-medium text-[20px] flex items-center pl-3 md:pl-8 border-b border-secondary">
                       서류 평가
                     </div>
                     <div className="w-full px-0 md:px-6 py-6 md:flex">
                       <div className="md:w-1/2">
-                        <strong className="text-[18px] font-medium text-neutral-800">
+                        <strong className="text-[17px] md:text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -239,7 +267,7 @@ const SapaClient = () => {
                         </p>
                       </div>
                       <div className="md:w-1/2">
-                        <strong className="text-[18px] font-medium text-neutral-800">
+                        <strong className="text-[17px] md:text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -260,7 +288,7 @@ const SapaClient = () => {
                     </div>
                     <div className="w-full px-0 md:px-6 py-6 md:flex">
                       <div className="md:w-1/2">
-                        <strong className="text-[18px] font-medium text-neutral-800">
+                        <strong className="text-[17px] md:text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -273,7 +301,7 @@ const SapaClient = () => {
                         </p>
                       </div>
                       <div className="md:w-1/2">
-                        <strong className="text-[18px] font-medium text-neutral-800">
+                        <strong className="text-[17px] md:text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -299,7 +327,7 @@ const SapaClient = () => {
                     </div>
                     <div className="border-b border-[#ccc] w-full px-0 md:px-6 py-6 md:flex">
                       <div className="md:w-1/2">
-                        <strong className="text-[18px] font-medium text-neutral-800">
+                        <strong className="text-[17px] md:text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -315,7 +343,7 @@ const SapaClient = () => {
                         </p>
                       </div>
                       <div className="md:w-1/2 mt-2 md:mt-0">
-                        <strong className="text-[18px] font-medium text-neutral-800">
+                        <strong className="text-[17px] md:text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"

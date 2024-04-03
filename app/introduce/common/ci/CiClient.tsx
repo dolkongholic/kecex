@@ -99,9 +99,9 @@ const CiClient = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] text-[15px]">
             <li className="w-1/2 cursor-default">
               <Link passHref href={"/introduce/common/ceo/"}>
                 <div className="h-12 border border-gray-200 border-b-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
@@ -110,7 +110,7 @@ const CiClient = () => {
               </Link>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/introduce/common/vistion/"}>
+              <Link passHref href={"/introduce/common/vision/"}>
                 <div className="h-12 border border-gray-200 border-l-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
                   <span> 비전/미션</span>
                 </div>
