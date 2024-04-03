@@ -100,9 +100,9 @@ const VisionClient = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <ul className="flex md:hidden flex-wrap w-full p-[20px] text-[15px]">
+          <ul className="flex md:hidden flex-wrap w-full md:p-[20px] text-[15px]">
             <li className="w-1/2 cursor-default">
               <Link passHref href={"/introduce/common/ceo/"}>
                 <div className="h-12 border border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">

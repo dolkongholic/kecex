@@ -111,7 +111,7 @@ const JoinPage = () => {
 
         <section className="px-[15px] md:px-0 py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] text-[15px]">
             <li className="w-1/2 cursor-default">
                 <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                   <span> 회원가입</span>

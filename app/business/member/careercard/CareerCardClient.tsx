@@ -107,7 +107,7 @@ const CareerCardClient = () => {
 
         <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] text-[15px]">
             <li className="w-1/2 cursor-default">
               <Link passHref href={"/business/member/join"}>
                 <div className="h-12 border border-b-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
@@ -184,7 +184,7 @@ const CareerCardClient = () => {
               &nbsp;개발 촉진
             </div>
             <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-[#3A3A3A] flex justify-center items-center my-2 md:my-0">
-              투명성과
+              투명성과&nbsp;
               <br className="hidden md:inline"/>
               공정성 확보
             </div>
@@ -192,7 +192,7 @@ const CareerCardClient = () => {
               산업표준설정
             </div>
             <div className="md:w-[19%] h-[90px] md:h-[130px] text-center border border-[#3A3A3A] flex justify-center items-center my-2 md:my-0">
-              회원간
+              회원간&nbsp;
               <br className="hidden md:inline"/>
               네트워킹 촉진
             </div>
@@ -209,12 +209,12 @@ const CareerCardClient = () => {
               </p>
             </div>
             <div className="flex w-full border-b">
-              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r">
+              <div className="w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r pr-[7px] md:pr-0">
                 <strong>한국방폭협회 방폭 기초교육 이수자</strong>
                 <span className="mt-1">IECEx CoPC Unit Ex 001 취득자</span>
                 <span className="mt-1">그외 자격증 : 양성교육 수료 후 발급</span>
               </div>
-              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+              <div className="w-[50%] my-[15px] py-[10px] pl-[7px] md:pl-[25px] flex flex-col justify-start items-start">
                 <strong>방폭관련 자격증 및 전공 학력 소지자</strong>
                 <span className="mt-1">학사학위 : 양성 교육</span>
                 <span className="mt-1">
@@ -228,11 +228,11 @@ const CareerCardClient = () => {
               </div>
             </div>
             <div className="flex w-full border-b-2">
-              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r border-gray">
+              <div className="w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r border-gray pr-[7px] md:pr-0">
                 <strong>전공학력 소지자</strong>
                 <span className="mt-1">경력 5년 이상 및 양성교육</span>
               </div>
-              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+              <div className="w-[50%] my-[15px] py-[10px] pl-[7px] md:pl-[25px] flex flex-col justify-start items-start">
                 <strong>비전공 학력 소지자</strong>
                 <span className="mt-1">
                   3년제 전공 : <br className="hidden"/>
@@ -253,23 +253,23 @@ const CareerCardClient = () => {
               </div>
             </div>
             <div className="flex w-full border-b">
-              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r">
+              <div className="w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r pr-[7px] md:pr-0">
                 <strong>한국방폭협회 방폭 기초교육 이수자</strong>
-                <span>IECEx CoPC Unit Ex 001,036 취득자</span>
-                <span>IECEx CoPC Unit Ex 001,478 취득자</span>
-                <span>IECEx CoPC Unit Ex 001,002 취득자</span>
-                <span>IECEx CoPC Unit Ex 001,009 취득자</span>
+                <span>IECEx CoPC Unit <br className="md:hidden"/> Ex 001,036 취득자</span>
+                <span>IECEx CoPC Unit <br className="md:hidden"/> Ex 001,478 취득자</span>
+                <span>IECEx CoPC Unit <br className="md:hidden"/> Ex 001,002 취득자</span>
+                <span>IECEx CoPC Unit <br className="md:hidden"/> Ex 001,009 취득자</span>
               </div>
-              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+              <div className="w-[50%] my-[15px] py-[10px] pl-[7px] md:pl-[25px] flex flex-col justify-start items-start">
                 <strong>방폭관련 자격증 및 전공 학력 소지자</strong>
                 <span className="mt-1">방폭 실무 경력 : 5년 이상</span>
               </div>
             </div>
             <div className="flex w-full border-b-2">
-              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r border-gray">
+              <div className="w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r border-gray pr-[7px] md:pr-0">
                 <span>-</span>
               </div>
-              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+              <div className="w-[50%] my-[15px] py-[10px] pl-[7px] md:pl-[25px] flex flex-col justify-start items-start">
                 <strong>비전공 학력 소지자</strong>
                 <span className="mt-1">방폭 실무 경력 : 8년 이상</span>
               </div>
@@ -283,23 +283,23 @@ const CareerCardClient = () => {
               </div>
             </div>
             <div className="flex w-full border-b">
-              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r">
+              <div className="w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r pr-[7px] md:pr-0">
                 <strong>한국방폭협회 방폭 기초교육 이수자</strong>
-                <span>IECEx CoPC Unit Ex 001,036 취득자</span>
-                <span>IECEx CoPC Unit Ex 001,478 취득자</span>
-                <span>IECEx CoPC Unit Ex 001,002 취득자</span>
-                <span>IECEx CoPC Unit Ex 001,009 취득자</span>
+                <span>IECEx CoPC Unit <br className="md:hidden"/> Ex 001,036 취득자</span>
+                <span>IECEx CoPC Unit <br className="md:hidden"/> Ex 001,478 취득자</span>
+                <span>IECEx CoPC Unit <br className="md:hidden"/> Ex 001,002 취득자</span>
+                <span>IECEx CoPC Unit <br className="md:hidden"/> Ex 001,009 취득자</span>
               </div>
-              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+              <div className="w-[50%] my-[15px] py-[10px] pl-[7px] md:pl-[25px] flex flex-col justify-start items-start">
                 <strong>방폭관련 자격증 및 전공 학력 소지자</strong>
                 <span className="mt-1">방폭 실무 경력 : 8년 이상</span>
               </div>
             </div>
             <div className="flex w-full border-b-2">
-              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r border-gray">
+              <div className="w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r border-gray pr-[7px] md:pr-0">
                 <span>-</span>
               </div>
-              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+              <div className="w-[50%] my-[15px] py-[10px] pl-[7px] md:pl-[25px] flex flex-col justify-start items-start">
                 <strong>비전공 학력 소지자</strong>
                 <span className="mt-1">방폭 실무 경력 : 12년 이상</span>
               </div>
@@ -313,20 +313,20 @@ const CareerCardClient = () => {
               </div>
             </div>
             <div className="flex w-full border-b">
-              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r">
+              <div className="w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r pr-[7px] md:pr-0">
                 <strong>한국방폭협회 방폭 기초교육 이수자</strong>
-                <span>IECEx CoPC Unit Ex 010 취득자</span>
+                <span>IECEx CoPC Unit <br className="md:hidden"/> Ex 010 취득자</span>
               </div>
-              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+              <div className="w-[50%] my-[15px] py-[10px] pl-[7px] md:pl-[25px] flex flex-col justify-start items-start">
                 <strong>방폭관련 자격증 및 전공 학력 소지자</strong>
                 <span className="mt-1">방폭 실무 경력 : 12년 이상</span>
               </div>
             </div>
             <div className="flex w-full border-b-2">
-              <div className="md:w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r border-gray">
+              <div className="w-[50%] my-[15px] py-[10px] flex flex-col justify-start items-start border-r border-gray pr-[7px] md:pr-0">
                 <span>-</span>
               </div>
-              <div className="md:w-[50%] my-[15px] py-[10px] pl-[25px] flex flex-col justify-start items-start">
+              <div className="w-[50%] my-[15px] py-[10px] pl-[7px] md:pl-[25px] flex flex-col justify-start items-start">
                 <strong>비전공 학력 소지자</strong>
                 <span className="mt-1">방폭 실무 경력 : 15년 이상</span>
               </div>

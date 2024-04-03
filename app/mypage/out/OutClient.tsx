@@ -202,6 +202,7 @@ const OutClient: React.FC<OutProps> = ({ currentUser }) =>{
                   type="password"
                   id="password"
                   name="password"
+                  autoComplete="new-password"
                   ref={passwordRef}
                   onChange={(e: any) => (passwordRef.current = e.target.value)}
                   placeholder="비밀번호"

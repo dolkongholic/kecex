@@ -115,7 +115,7 @@ const CareerClient = () => {
 
         <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] text-[15px]">
             <li className="w-1/2 cursor-default">
               <Link passHref href={"/business/member/join"}>
                 <div className="h-12 border border-b-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
@@ -195,7 +195,7 @@ const CareerClient = () => {
                   </li>
                 </div>
               </div>
-              <div className="flex flex-col md:items-center md:w-[48%] md:mt-0">
+              <div className="flex flex-col md:items-center md:w-[48%]">
                 <span className="text-primary text-base md:text-black md:mb-4 font-medium">
                   경력 변경(갱신) 신고시 제출서류
                 </span>
@@ -217,7 +217,7 @@ const CareerClient = () => {
             </div>
             <div className="md:flex md:justify-between smt-8">
               <div className="flex flex-col md:items-center md:w-[48%]">
-                <span className=" text-primary text-base md:text-black md:mb-4 font-medium">
+                <span className=" text-primary text-base md:text-black md:mb-4 font-medium mt-8 md:mt-0">
                   경력증명 발급 비용 및 수령 방법
                 </span>
                 <div className="w-full pt-[2px] text-base mb-[5px] md:border-2 md:border-lightgray md:p-5 space-y-1">
@@ -236,166 +236,168 @@ const CareerClient = () => {
           {/* <Image src={PicCareer_1} alt="Picture" className="hidden md:block mt-8"/> */}
           {/* <Image src={PicCareer_1_M} alt="Picture" className="md:hidden mx-auto"/> */}
           <figure className="w-full flex flex-col justify-center items-center text-[15px] text-center font-medium mb-12">
-            <div className="w-[250px] h-[42px] bg-secondary text-white flex flex-col items-center justify-center pt-1">
+            <div className="w-[50%] md:w-[250px] h-[42px] bg-secondary text-white flex flex-col items-center justify-center pt-1">
               신청인
             </div>
             <div>
               <div className="w-1/2 h-[20px] border-r-2 border-gray-300">&nbsp;</div>
             </div>
             <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -ml-[2px]" />
-            <div className="w-[250px] h-[42px] border border-secondary text-secondary flex flex-col items-center justify-center pt-1">
+            <div className="w-[50%] md:w-[250px] h-[42px] border border-secondary text-secondary flex flex-col items-center justify-center pt-1">
               양성(승급) 교육이수
             </div>
             <div>
               <div className="w-1/2 h-[20px] border-r-2 border-gray-300">&nbsp;</div>
             </div>
             <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -ml-[2px]" />
-            <div className="w-[250px] h-[42px] border border-secondary text-secondary flex flex-col items-center justify-center pt-1">
+            <div className="w-[50%] md:w-[250px] h-[42px] border border-secondary text-secondary flex flex-col items-center justify-center pt-1">
               구비서류 작성
             </div>
             <div>
               <div className="w-1/2 h-[20px] border-r-2 border-gray-300">&nbsp;</div>
             </div>
-            <div className="border-2 border-b-0 border-gray-300 w-[550px] h-[20px]">
+            <div className="border-2 border-b-0 border-gray-300 w-[59.5%] md:w-[550px] h-[20px]">
               &nbsp;
             </div>
-            <div className="w-[800px] flex justify-between">
-              <div className="w-[250px] h-[42px] border border-secondary text-secondary flex flex-col items-center justify-center pt-1">
+            <div className="w-full md:w-[800px] flex justify-between">
+              <div className="w-[40%] md:w-[250px] h-[42px] border border-secondary text-secondary flex flex-col items-center justify-center pt-1">
                 방문 신청
               </div>
-              <div className="w-[250px] h-[42px] border border-secondary text-secondary flex flex-col items-center justify-center pt-1">
+              <div className="w-[40%] md:w-[250px] h-[42px] border border-secondary text-secondary flex flex-col items-center justify-center pt-1">
                 온라인 신청
               </div>
             </div>
-            <div className="w-[800px] flex justify-between">
-              <div className="w-[250px] flex flex-col items-center">
+            <div className="w-full md:w-[800px] flex justify-between">
+              <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
                   <div className="h-[20px] border-r-2 border-gray-300">&nbsp;</div>
                 </div>
                 <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -mr-[3px]" />
               </div>
-              <div className="w-[250px] flex flex-col items-center">
+              <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
                   <div className="h-[20px] border-l-2 border-gray-300">&nbsp;</div>
                 </div>
                 <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -ml-[4px]" />
               </div>
             </div>
-            <div className="w-[800px] flex justify-between">
-              <div>
-                <div className="w-[250px] h-[42px] border border-gray-400 flex flex-col items-center justify-center pt-1">
+            <div className="w-full md:w-[800px] flex justify-between">
+              <div className="w-[40%]">
+                <div className="md:w-[250px] h-[42px] border border-gray-400 flex flex-col items-center justify-center pt-1">
                   전국 시/도회 접수
                 </div>
+                <div className="w-full md:w-[252px] flex flex-col items-center">
                 <div>
-                  <div className="w-[128px] h-[30px] border-r-2 border-gray-300">&nbsp;</div>
+                  <div className="translate-x-[1px] md:translate-x-0 h-[30px] border-r-2 border-gray-300">&nbsp;</div>
                 </div>
               </div>
-              <div className="w-[250px] h-[72px] border border-gray-400 flex flex-col items-center justify-center pt-1">
-                로그인 후 신청사항 입력,<br/>
+              </div>
+              <div className="w-[40%] md:w-[250px] h-[72px] border border-gray-400 flex flex-col items-center justify-center pt-1">
+                로그인 후<br className="md:hidden"/> 신청사항 입력,<br/>
                 온라인 수수료 결제
               </div>
             </div>
-            <div className="w-[800px] flex justify-between">
-              <div className="w-[250px] flex flex-col items-center">
+            <div className="w-full md:w-[800px] flex justify-between">
+              <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
                   <div className="h-[25px] border-r-2 border-gray-300 translate-x-[1px]">&nbsp;</div>
                 </div>
               </div>
-              <div className="w-[250px] flex flex-col items-center">
+              <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
                   <div className="h-[20px] border-l-2 border-gray-300">&nbsp;</div>
                 </div>
                 <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -ml-[4px]" />
               </div>
             </div>
-            <div className="w-[800px] flex justify-between">
-              <div className="w-[250px] flex flex-col items-center">
+            <div className="w-full md:w-[800px] flex justify-between">
+              <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[92px] border-r-2 border-gray-300  translate-x-[1px]">&nbsp;</div>
+                  <div className="h-[110px] md:h-[92px] border-r-2 border-gray-300  translate-x-[1px]">&nbsp;</div>
                 </div>
               </div>
-              <div className="w-[250px] h-[92px] border border-gray-400 flex flex-col items-center justify-center pt-1 text-center">
-                온라인 신청시 선택한 접수처로<br/>
+              <div className="w-[40%] md:w-[250px] h-[110px] md:h-[92px] border border-gray-400 flex flex-col items-center justify-center pt-1 text-center">
+                온라인 신청시<br className="md:hidden"/> 선택한 접수처로<br/>
                 구비서류(원본) 택배 및<br/>
                 등기우편 발송
               </div>
             </div>
-            <div className="border-2 border-t-0 border-gray-300 w-[548px] h-[20px]">
+            <div className="border-2 border-t-0 border-gray-300 w-[59%] md:w-[548px] h-[20px]">
               &nbsp;
             </div>
             <div>
               <div className="w-1/2 h-[25px] border-r-2 border-gray-300">&nbsp;</div>
             </div>
-            <div className="w-[250px] h-[42px] border border-secondary bg-secondary text-white flex flex-col items-center justify-center pt-1">
+            <div className="w-[50%] md:w-[250px] h-[42px] border border-secondary bg-secondary text-white flex flex-col items-center justify-center pt-1">
               서류심사
             </div>
             <div>
               <div className="w-1/2 h-[20px] border-r-2 border-gray-300">&nbsp;</div>
             </div>
-            <div className="border-2 border-b-0 border-gray-300 w-[550px] h-[20px]">
+            <div className="border-2 border-b-0 border-gray-300 w-[60%] md:w-[550px] h-[20px]">
               &nbsp;
             </div>
-            <div className="w-[800px] flex justify-between">
-              <div className="w-[250px] h-[42px] border border-secondary text-secondary flex flex-col items-center justify-center pt-1">
+            <div className="w-full md:w-[800px] flex justify-between">
+              <div className="w-[40%] md:w-[250px] h-[42px] border border-secondary text-secondary flex flex-col items-center justify-center pt-1">
                 적격
               </div>
-              <div className="w-[250px] h-[42px] border border-secondary text-secondary flex flex-col items-center justify-center pt-1">
+              <div className="w-[40%] md:w-[250px] h-[42px] border border-secondary text-secondary flex flex-col items-center justify-center pt-1">
                 부적격
               </div>
             </div>
-            <div className="w-[800px] flex justify-between">
-              <div className="w-[250px] flex flex-col items-center">
+            <div className="w-full md:w-[800px] flex justify-between">
+              <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
                   <div className="h-[20px] border-r-2 border-gray-300">&nbsp;</div>
                 </div>
                 <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -mr-[3px]" />
               </div>
-              <div className="w-[250px] flex flex-col items-center">
+              <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
                   <div className="h-[20px] border-l-2 border-gray-300">&nbsp;</div>
                 </div>
                 <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -ml-[4px]" />
               </div>
             </div>
-            <div className="w-[800px] flex justify-between">
-              <div className="w-[250px] h-[42px] border border-gray-400 flex flex-col items-center justify-center pt-1">
+            <div className="w-full md:w-[800px] flex justify-between">
+              <div className="w-[40%] md:w-[250px] h-[42px] border border-gray-400 flex flex-col items-center justify-center pt-1">
                 등급부여
               </div>
-              <div className="w-[250px] h-[42px] border border-gray-400 flex flex-col items-center justify-center pt-1">
+              <div className="w-[40%] md:w-[250px] h-[42px] border border-gray-400 flex flex-col items-center justify-center pt-1">
                 무급처리
               </div>
             </div>
-            <div className="w-[800px] flex justify-between">
-              <div className="w-[250px] flex flex-col items-center">
+            <div className="w-full md:w-[800px] flex justify-between">
+              <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
                   <div className="h-[20px] border-r-2 border-gray-300">&nbsp;</div>
                 </div>
                 <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -mr-[3px]" />
               </div>
-              <div className="w-[250px] flex flex-col items-center">
+              <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[25px] border-l-2 border-gray-300">&nbsp;</div>
+                  <div className="h-[25px] border-l-2 border-gray-300 -translate-x-[1px] md:translate-x-0">&nbsp;</div>
                 </div>
               </div>
             </div>
-            <div className="w-[800px] flex justify-between">
-              <div className="w-[250px] h-[72px] border border-gray-400 flex flex-col items-center justify-center pt-1 text-center">
+            <div className="w-full md:w-[800px] flex justify-between">
+              <div className="w-[40%] md:w-[250px] h-[72px] border border-gray-400 flex flex-col items-center justify-center pt-1 text-center">
                 전자경력카드 발급<br/>
                 (모바일앱)
               </div>
-              <div className="w-[250px] flex flex-col items-center">
+              <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[72px] border-l-2 border-gray-300">&nbsp;</div>
+                  <div className="h-[72px] border-l-2 border-gray-300 -translate-x-[1px] md:translate-x-0">&nbsp;</div>
                 </div>
               </div>
             </div>
-            <div className="border-2 border-t-0 border-gray-300 w-[548px] h-[20px]">
+            <div className="border-2 border-t-0 border-gray-300 w-[59.5%] md:w-[548px] h-[20px]">
               &nbsp;
             </div>
             <div>
               <div className="w-1/2 h-[25px] border-r-2 border-gray-300">&nbsp;</div>
             </div>
-            <div className="w-[250px] h-[42px] border border-primary bg-primary text-white flex flex-col items-center justify-center pt-1">
+            <div className="w-[50%] md:w-[250px] h-[42px] border border-primary bg-primary text-white flex flex-col items-center justify-center pt-1">
               신청인 문자메세지 통지
             </div>
           </figure>

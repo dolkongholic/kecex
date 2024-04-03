@@ -186,7 +186,7 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
                   className="border border-gray-200 h-[40px] outline-none focus:border-secondary px-[20px] text-base mb-2 w-full"
                 />
                 <input
-                  type="password_1"
+                  type="password"
                   placeholder="새비밀번호 확인"
                   className="border border-gray-200 h-[40px] outline-none focus:border-secondary px-[20px] text-base w-full"
                 />

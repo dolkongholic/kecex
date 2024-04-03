@@ -144,6 +144,29 @@ const RegularClient: React.FC<RegularClientProps> = ({ currentUser }) => {
     },
   ];
 
+  const handleDownload = () => {
+    const url = '/download/admission.hwp';
+    fetch(url)
+      .then(response => {
+        if (!response.ok){
+          throw new Error('네트워크에 문제가 있습니다.')
+        }
+        return response.blob();
+      })
+      .then(blob => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', '입회원서-신규.hwp');
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode?.removeChild(link);
+      })
+      .catch(error => {
+        console.error("에러가 발생:", error);
+      });
+  };    
+
   return (
     <section>
       <div id="headerNav">
@@ -181,7 +204,7 @@ const RegularClient: React.FC<RegularClientProps> = ({ currentUser }) => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
           <ContentSubTitle title="가입 의의" />
           <div className="text-black w-full flex flex-col justify-center item-center">
@@ -195,7 +218,7 @@ const RegularClient: React.FC<RegularClientProps> = ({ currentUser }) => {
 
             <ContentSubTitle title="가입대상" />
             <ul className="w-full mb-9 text-start text-[18px]">
-              <div className="w-full md:flex justify-between mb-5">
+              <div className="w-full flex justify-between mb-5">
                 <li className="flex items-center justify-center w-1/2 h-24 border border-[#ccc] mr-8">
                   안전보건<br className="md:hidden"/>
                   관리책임자
@@ -204,7 +227,7 @@ const RegularClient: React.FC<RegularClientProps> = ({ currentUser }) => {
                   관리감독자
                 </li>
               </div>
-              <div className="w-full md:flex justify-between my-5">
+              <div className="w-full flex justify-between my-5">
                 <li className="flex items-center justify-center w-1/2 h-24 border border-[#ccc] mr-8">
                   안전관리자
                 </li>
@@ -218,21 +241,21 @@ const RegularClient: React.FC<RegularClientProps> = ({ currentUser }) => {
             <ContentSubTitle title="정회원 혜택" />
             <ul className="-translate-y-[20px] text-[15px] mb-16 w-full">
                 <li className="w-full md:flex justify-between my-5">
-                  <div className="md:w-1/2 h-[150px] border border-[#ccc] flex items-center mr-8">
-                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                  <div className="w-full md:w-1/2 md:h-[150px] p-4 md:p-0 border border-[#ccc] flex items-center mr-8">
+                    <div className="w-16 h-16 flex justify-start md:justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       01
                     </div>
-                    <p className="ml-3">
+                    <p className="ml-6 md:ml-3 w-7/8">
                       회원의 안전관리업무를 지원하기 위해 고용노동부<br/>
                       정책방향 등 최신정보 전달을 위한 안전세미나 실시<br/>
                       (전국 지역본부 또는 지회에서 개별 실기)
                     </p>
                   </div>
-                  <div className="md:w-1/2 h-[150px] border border-[#ccc] flex items-center">
-                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                  <div className="w-full md:w-1/2 md:h-[150px] p-4 md:p-0 border border-[#ccc] flex items-center mt-5 md:mt-0">
+                    <div className="w-16 h-16 flex justify-start md:justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       02
                     </div>
-                    <p className="ml-3">
+                    <p className="ml-6 md:ml-3 w-7/8">
                       각종 안전기술 정보 및 자료제공<br/>
                       - 안전기술, 안전교육교안(sheet), 안전가이드 등<br/>
                         정기간행물 지급<br/>
@@ -242,78 +265,78 @@ const RegularClient: React.FC<RegularClientProps> = ({ currentUser }) => {
                   </div>
                 </li>
                 <li className="w-full md:flex justify-between my-5">
-                  <div className="md:w-1/2 h-28 border border-[#ccc] flex items-center mr-8">
-                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                  <div className="w-full md:w-1/2 md:h-28 p-4 md:p-0 border border-[#ccc] flex items-center mr-8">
+                    <div className="w-16 h-16 flex justify-start md:justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       03
                     </div>
-                    <p className="ml-3">안전관리 활동의 지원 및 상담</p>
+                    <p className="ml-6 md:ml-3 w-7/8">안전관리 활동의 지원 및 상담</p>
                   </div>
-                  <div className="md:w-1/2 h-28 border border-[#ccc] flex items-center">
-                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                  <div className="w-full md:w-1/2 md:h-28 p-4 md:p-0 border border-[#ccc] flex items-center mt-5 md:mt-0">
+                    <div className="w-16 h-16 flex justify-start md:justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       04
                     </div>
-                    <p className="ml-3">
+                    <p className="ml-6 md:ml-3 w-7/8">
                       국내 산업안전관리 우수업체 시찰
                     </p>
                   </div>
                 </li>
                 <li className="w-full md:flex justify-between my-5">
-                  <div className="md:w-1/2 h-28 border border-[#ccc] flex items-center mr-8">
-                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                  <div className="w-full md:w-1/2 md:h-28 p-4 md:p-0 border border-[#ccc] flex items-center mr-8">
+                    <div className="w-16 h-16 flex justify-start md:justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       05
                     </div>
-                    <p className="ml-3">
-                      회원 상호간의 기술, 정보교류 및 친목 도모 행사 개최<br/>
-                      산업안전보건강조주간에 개최되는 행사, 신년회,<br/>
+                    <p className="ml-6 md:ml-3 w-7/8">
+                      회원 상호간의 기술, 정보교류 및 친목 도모 행사 개최 <br className="hidden md:inline"/>
+                      산업안전보건강조주간에 개최되는 행사, 신년회, <br className="hidden md:inline"/>
                       산재예방결의대회, 안전세미나 및 워크숍, 산업시찰, 체육대회 등
                     </p>
                   </div>
-                  <div className="md:w-1/2 h-28 border border-[#ccc] flex items-center">
-                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                  <div className="w-full md:w-1/2 h-28 p-4 md:p-0 border border-[#ccc] flex items-center mt-5 md:mt-0">
+                    <div className="w-16 h-16 flex justify-start md:justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       06
                     </div>
-                    <p className="ml-3">
+                    <p className="ml-6 md:ml-3 w-7/8">
                       각종 산업안전관련 행사 우선 초청
                     </p>
                   </div>
                 </li>
                 <li className="w-full md:flex justify-between my-5">
-                  <div className="md:w-1/2 h-28 border border-[#ccc] flex items-center mr-8">
-                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                  <div className="w-full md:w-1/2 h-28 p-4 md:p-0 border border-[#ccc] flex items-center mr-8">
+                    <div className="w-16 h-16 flex justify-start md:justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       07
                     </div>
-                    <p className="ml-3">
+                    <p className="ml-6 md:ml-3 w-7/8">
                       산업재해예방에 기여한 우수회원 표창
                     </p>
                   </div>
-                  <div className="md:w-1/2 h-28 border border-[#ccc] flex items-center">
-                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                  <div className="w-full md:w-1/2 h-28 p-4 md:p-0 border border-[#ccc] flex items-center mt-5 md:mt-0">
+                    <div className="w-16 h-16 flex justify-start md:justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       08
                     </div>
-                    <p className="ml-3">
+                    <p className="ml-6 md:ml-3 w-[80%]">
                       안전관리 경력관리 (경력관리 신청시)
                     </p>
                   </div>
                 </li>
                 <li className="w-full md:flex justify-between my-5">
-                  <div className="md:w-1/2 h-28 border border-[#ccc] flex items-center mr-8">
-                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                  <div className="w-full md:w-1/2 h-28 p-4 md:p-0 border border-[#ccc] flex items-center md:mr-8">
+                    <div className="w-16 h-16 flex justify-start md:justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       09
                     </div>
-                    <p className="ml-3">
+                    <p className="ml-6 md:ml-3 w-7/8">
                       SNS 운영 (네이버 밴드)<br/>
                       최신 안전보건 정보 제공 및 회원 상호간 정보교류의 장 마련
                     </p>
                   </div>
-                  <div className="md:w-1/2 h-24 flex items-center">
-                        &nbsp;
+                  <div className="hidden md:w-1/2 h-24 md:flex items-center">
+                    &nbsp;
                   </div>
                 </li>
               </ul>
             <ContentSubTitle title="정회원 가입절차" />
-            <ul className="flex flex-col md:flex-row w-full items-center justify-between mb-9 md:mb-0 border border-[#ccc] px-3">
+            <ul className="flex flex-col md:flex-row w-full items-center justify-between mb-9 md:mb-0 border border-[#ccc] px-3 py-5 md:py-0">
               <li className="w-3/4 md:w-1/4">
-                <div className="md:h-32 flex justify-between items-center py-2 md:py-0">
+                <div className="md:h-32 flex justify-between items-center py-6 md:py-0">
                   <div className="w-5/12 h-full flex justify-center items-center">
                     <Image
                       src={regular_member_1}
@@ -336,7 +359,7 @@ const RegularClient: React.FC<RegularClientProps> = ({ currentUser }) => {
               <li className="leading-[150px] hidden md:inline-block text-[24px] font-medium text-[#3A3A3A]">{`>`}</li>
               <li className="py-6 md:hidden text-center">{`↓`}</li>
               <li className="w-3/4 md:w-1/4">
-                <div className="md:h-32 flex justify-between items-center py-2 md:py-0">
+                <div className="md:h-32 flex justify-between items-center py-6 md:py-0">
                   <div className="w-5/12 h-full flex justify-center items-center">
                     <Image
                       src={regular_member_2}
@@ -361,7 +384,7 @@ const RegularClient: React.FC<RegularClientProps> = ({ currentUser }) => {
               <li className="leading-[150px] hidden md:inline-block text-[24px] font-medium text-[#3A3A3A]">{`>`}</li>
               <li className="py-6 md:hidden text-center">{`↓`}</li>
               <li className="w-3/4 md:w-1/4">
-                <div className="md:h-32 flex justify-between items-center py-2 md:py-0">
+                <div className="md:h-32 flex justify-between items-center py-6 md:py-0">
                   <div className="w-5/12 h-full flex justify-center items-center">
                     <Image
                       src={regular_member_3}
@@ -393,7 +416,9 @@ const RegularClient: React.FC<RegularClientProps> = ({ currentUser }) => {
             </p>
 
             <div className="btn_box flex m-auto mt-20 w-full">
-              <button className="w-1/2 md:w-44 h-14 bg-secondary text-white flex justify-center items-center">
+              <button className="w-1/2 md:w-44 h-14 bg-secondary text-white flex justify-center items-center"
+              onClick={handleDownload}
+              >
                 입회원서 다운로드{" "}
                 <Image
                   src={download_icon_white}
@@ -401,13 +426,6 @@ const RegularClient: React.FC<RegularClientProps> = ({ currentUser }) => {
                   alt="img"
                 />{" "}
               </button>
-              {/* <button className="w-44 h-14 border border-gray-200 text-gray-800 flex justify-center items-center ml-4">
-                회원서비스 안내{" "}
-                <Image src={download_icon} className="w-4 h-4 ml-2" alt="img" />{" "}
-              </button> */}
-              {/* <button className="w-1/2 md:w-44 h-14  border border-darkgray text-neutral-800 flex justify-center items-center ml-4">
-                접수처
-              </button> */}
             </div>
             {/*btn_box*/}
           </div>

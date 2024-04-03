@@ -111,18 +111,46 @@ const PSMClient = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] text-[15px]">
+            <li className="w-1/2 cursor-default">
+              <Link passHref href={"/business/consulting/inspection/"}>
+                <div className="h-12 border border-gray-200 flex flex-col justify-center items-center cursor-default">
+                  <span> 방폭사전진단</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+                <div className="h-12 border border-secondary flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                  <span> PSM</span>
+                </div>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/business/consulting/sapa/"}>
+                <div className="h-12 border border-gray-200 border-r-0 border-t-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                  <span> 중대재해처벌법</span>
+                </div>
+              </Link>
+            </li>
+            <li className="w-1/2">
+              <Link passHref href={"/business/consulting/danger/"}>
+                <div className="h-12 border border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                  <span> 위험성 평가</span>
+                </div>
+              </Link>
+            </li>
+          </ul>
               <ContentSubTitle title="PSM 컨설팅" />
               <ul className="-translate-y-[20px] text-[15px] mb-5 w-full">
                 <li className="w-full md:flex justify-between my-5">
-                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       01
                     </div>
                     <p className="ml-3">공정안전보고서(PSM) 작성</p>
                   </div>
-                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mt-5 md:mt-0">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       02
                     </div>
@@ -130,13 +158,13 @@ const PSMClient = () => {
                   </div>
                 </li>
                 <li className="w-full md:flex justify-between my-5">
-                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       03
                     </div>
                     <p className="ml-3">PSM 변경관리 컨설팅</p>
                   </div>
-                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mt-5 md:mt-0">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       04
                     </div>
@@ -147,7 +175,7 @@ const PSMClient = () => {
                   </div>
                 </li>
                 <li className="w-full md:flex justify-between my-5">
-                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       05
                     </div>
@@ -158,7 +186,7 @@ const PSMClient = () => {
                       FMEA, PHAST, ALOHA, E-CA)
                     </p>
                   </div>
-                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mt-5 md:mt-0">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       06
                     </div>
@@ -169,7 +197,7 @@ const PSMClient = () => {
                   </div>
                 </li>
                 <li className="w-full md:flex justify-between my-5">
-                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       07
                     </div>
@@ -178,7 +206,7 @@ const PSMClient = () => {
                       컨설팅
                     </p>
                   </div>
-                  <div className="md:w-1/2 h-24 flex items-center">
+                  <div className="w-full md:w-1/2 h-24 hidden md:flex items-center">
                         &nbsp;
                   </div>
                 </li>
