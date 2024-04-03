@@ -107,13 +107,15 @@ const Course03Client = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
         <ContentTitle title={location} />
-          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] md:px-[40px] text-[15px]">
             <li className="w-1/2 cursor-default">
-                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
+              <Link passHref href={"/business/education/course01/"}>
+                <div className="h-12 border border-gray-200 flex flex-col justify-center items-center">
                   <span> 방폭기초교육</span>
                 </div>
+              </Link>
             </li>
             <li className="w-1/2">
               <Link passHref href={"/business/education/course02/"}>
@@ -123,11 +125,9 @@ const Course03Client = () => {
               </Link>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/business/education/course03/"}>
-                <div className="h-12 border border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                     <span> 기업형 교육</span>
                 </div>
-              </Link>
             </li>
             <li className="w-1/2">
               <Link passHref href={"/business/education/copc/"}>
@@ -139,7 +139,7 @@ const Course03Client = () => {
           </ul>
           <ContentSubTitle title="교육목적" />
           <div className="w-full mb-[40px]">
-            <div className="flex flex-col justify-center items-start p-[20px] md:border border-gray w-full leading-[30px]">
+            <div className="flex flex-col justify-center items-start md:p-[20px] md:border border-gray w-full leading-[30px]">
               <span>
                 발주처의 현황, 요구, 이슈, 문제점을 진단, 분석하여 가장 효과적인 방폭 교육 개발 및 교육을 통해 
                 해당 현장에서 즉시 투입 가능한 현장 기술 인력 양성
@@ -149,7 +149,7 @@ const Course03Client = () => {
 
           <ContentSubTitle title="교육대상" />
           <div className="w-full mb-[40px]">
-          <div className="flex flex-col justify-center items-start p-[20px] md:border border-gray w-full">
+          <div className="flex flex-col justify-center items-start md:p-[20px] md:border border-gray w-full">
               <span>
                 육/해양 플랜트 관련 방폭 설계 및 시운전, 유지관리 업무 담당자
               </span>
@@ -187,7 +187,7 @@ const Course03Client = () => {
             </div>
             <div className="w-full md:w-[49%] flex flex-col mt-5 md:mt-0">
               <ContentSubTitle title="기대효과" />
-              <div className="flex flex-col justify-start items-start h-[102px] p-[20px] border border-gray w-full leading-[30px]">
+              <div className="flex flex-col justify-start items-start md:h-[102px] p-[20px] border border-gray w-full leading-[30px]">
                 <span>
                   안전한 작업환경 유지를 위해 정확한 안전 지식과 숙련된 방폭기술습득을 통해 
                   산업현장에서 발생하는 재해사고를 미연에 방지
@@ -198,60 +198,62 @@ const Course03Client = () => {
           
           <ContentSubTitle title="교육 시간별 세부 내용" />
           <div className="w-full border border-[#ccc] flex">
-            <div className="w-[180px] text-[16px] flex flex-col justify-center items-center font-medium bg-[#eeeeee] text-center">
+            <div className="w-[180px] text-[14px] md:text-[16px] flex flex-col justify-center items-center font-medium bg-[#eeeeee] text-center">
               교육시간 : <br/>
-              협의 후 결정
+              협의 후 <br className="md:hidden"/>
+              결정
             </div>
-            <div className="text-[16px] font-medium border-x border-[#ccc]">
-              <div className="w-[180px] h-[75px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc] text-center font-bold relative">
+            <div className="text-[14px] md:text-[16px] font-medium border-x border-[#ccc]">
+              <div className="w-[130px] md:w-[180px] h-[75px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc] text-center font-bold relative">
                 Safety procedure<br/>
                 안전작업절차 
               </div>
-              <div className="w-[180px] h-[75px]  flex flex-col justify-center items-center relative font-semibold">
+              <div className="w-[130px] md:-[180px] h-[75px]  flex flex-col justify-center items-center relative font-semibold">
                 방폭 기본설계
                 <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] bg-lightgray  border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
                   <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-secondary" />
                 </div>
               </div>
-              <div className="w-[180px] h-[75px]  flex flex-col justify-center items-center relative font-semibold">
+              <div className="w-[130px] md:w-[180px] h-[75px]  flex flex-col justify-center items-center relative font-semibold">
                 위험장소 구분
                 <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] bg-lightgray  border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
                   <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-secondary" />
                 </div>
               </div>
-              <div className="w-[180px] h-[75px]  flex flex-col justify-center items-center relative font-semibold">
+              <div className="w-[130px] md:w-[180px] h-[75px]  flex flex-col justify-center items-center relative font-semibold">
                 장비 선정
                 <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] bg-lightgray  border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
                   <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-secondary" />
                 </div>
               </div>
-              <div className="w-[180px] h-[75px] flex flex-col justify-center items-center relative font-semibold">
+              <div className="w-[130px] md:w-[180px] h-[75px] flex flex-col justify-center items-center relative font-semibold">
                 시공 및 시험
                 <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] bg-lightgray  border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
                   <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-secondary" />
                 </div>
               </div>
-              <div className="w-[180px] h-[75px] flex flex-col justify-center items-center font-semibold">
+              <div className="w-[130px] md:w-[180px] h-[75px] flex flex-col justify-center items-center font-semibold">
                 검사 및 유지보수
               </div>
             </div>
-            <ul className="w-full">
-              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6 font-bold bg-lightgray">
-                설비 주기에 따른 교육 과정
+            <ul className="w-full text-[14px] md:text-base">
+              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6 font-bold bg-lightgray">
+                설비 주기에 따른<br className="md:hidden"/>
+                교육 과정
               </li>
-              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
                 위험 지역에서의 방폭 기본 원리 과정
               </li>
-              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
                 위험 지역 구분 과정
               </li>
-              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
                 위험 지역 내 전기 설비 설계 과정
               </li>
-              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-6">
+              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
                 방폭 장비, 배선 설치 및 전기 설비 테스트
               </li>
-              <li className="w-full h-[75px] flex flex-col justify-center items-start pl-6">
+              <li className="w-full h-[75px] flex flex-col justify-center items-start pl-2 md:pl-6">
                 위험 지역에서의 장비 유지보수 및 정밀 검사
               </li>
             </ul>
