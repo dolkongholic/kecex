@@ -139,24 +139,24 @@ const Index: React.FC<IndexProps> = ({
       <div className="w-full h-[600px] md:h-[460px] overflow-x-hidden">
         <div className="w-full h-[550px] md:h-[440px] z-[50] md:flex justify-center items-center  bg-cover bg-center">
           {/* 모바일 최적화 안내 */}
-          <div className="md:hidden w-[80%] h-[40px] border border-[#ccc] mx-auto text-[13px] text-center leading-[40px] my-3">
-            현재 모바일 최적화가 진행되고 있으니 pc로 확인 바랍니다.
+          <div className="md:hidden w-[90%] h-auto border border-[#ccc] mx-auto text-[13px] text-center p-3 my-3">
+            현재 모바일 최적화 진행 중이니 pc로 확인 바랍니다.
           </div>
           <div className="w-full justify-center slider-container">
             {/* 메인 배너 슬라이드 영역 */}
             <Slider {...settings}>
               <div className=" h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#D9ECFF] h-full mx-auto rounded-xl relative text-[#3A3A3A] overflow-hidden">
-                  <strong className="absolute text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
+                  <strong className="absolute  text-[26px] sm:text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     한국방폭협회 정회원<br/>
                     가입 안내
                   </strong>
-                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
+                  <p className="absolute text-[14px] sm:text-[16px] lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
                     가입비 10만원&nbsp;&nbsp;|&nbsp;&nbsp;연회비 12만원<br/>
                     메일 : kecex@kecex.or.kr
                   </p>
                   <Link passHref href={"/business/member/join"}>
-                  <button className="absolute border border-[#3A3A3A] w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-[#3A3A3A] hover:text-[#D9ECFF] z-20">
+                  <button className="absolute border bg-[#D9ECFF] border-[#3A3A3A] w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-[#3A3A3A] hover:text-[#D9ECFF] z-20">
                     자세히 보기
                   </button>
                   </Link>
@@ -171,101 +171,101 @@ const Index: React.FC<IndexProps> = ({
                   <Image 
                     src={PicRemem} 
                     alt="open_banner" 
-                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto right-0 lg:right-[1%] bottom-0 z-0"
+                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto -right-12 lg:right-[1%] bottom-0 z-0"
                   />
                 </div>
               </div>
               <div className="h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#FFC743] h-full mx-auto rounded-xl relative text-[#3A3A3A] overflow-hidden">
-                  <strong className="absolute text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
+                  <strong className="absolute text-[26px] sm:text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     한국방폭협회 공식사이트<br/>
                     정식오픈 안내
                   </strong>
-                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
+                  <p className="absolute text-[15px] sm:text-[16px] lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
                     사단법인 한국방폭협회는 방폭산업의 건전한 발전을<br/>
                     위해 설립되었습니다.
                   </p>
-                  <button className="absolute border border-[#3A3A3A] w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-[#3A3A3A] hover:text-[#FFC743] z-20">
+                  <button className="absolute bg-[#FFC743] border border-[#3A3A3A] w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-[#3A3A3A] hover:text-[#FFC743] z-20">
                     자세히 보기
                   </button>
                   <Image 
                     src={PicOpen} 
                     alt="open_banner" 
-                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[240px] w-auto right-0 lg:right-[2%] bottom-0 z-0"
+                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[240px] w-auto -right-16 sm:right-0 lg:right-[2%] bottom-0 z-0"
                   />
                 </div>
               </div>
               <div className=" h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#36609F] h-full mx-auto rounded-xl relative text-white overflow-hidden">
-                  <strong className="absolute text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
+                  <strong className="absolute  text-[26px] sm:text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     수소시스템 안전 기본원리<br/>
                     과정 개설
                   </strong>
-                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
+                  <p className="absolute text-[15px] sm:text-[16px] lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
                     신규 개설된 IECEx CoPC Unit 011<br/>
                     과정에 대해 알아보세요.
                   </p>
-                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#36609F] z-20">
+                  <button className="absolute bg-[#36609F] border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#36609F] z-20">
                     자세히 보기
                   </button>
                   <Image 
                     src={PicH2} 
                     alt="open_banner" 
-                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto right-0 lg:right-[2%] bottom-0 z-0"
+                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto -right-12 lg:right-[2%] bottom-0 z-0"
                   />
                 </div>
               </div>
               <div className=" h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#424C5B] h-full mx-auto rounded-xl relative text-white overflow-hidden">
-                  <strong className="absolute text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
+                  <strong className="absolute  text-[26px] sm:text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     한국방폭협회 기업회원<br/>
                     가입 안내
                   </strong>
-                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
+                  <p className="absolute text-[15px] sm:text-[16px] lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
                     가입비 100만원&nbsp;&nbsp;|&nbsp;&nbsp;연회비 50만원
                   </p>
                   <Link passHref href={"/business/member/join"}>
-                    <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#424C5B] z-20">
+                    <button className="absolute bg-[#424C5B] border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#424C5B] z-20">
                       자세히 보기
                     </button>
                   </Link>
                   <Image 
                     src={PicCormem} 
                     alt="open_banner" 
-                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto right-0 bottom-0 z-0"
+                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto -right-5 lg:right-0 bottom-0 z-0"
                   />
                 </div>
               </div>
               <div className=" h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#FFA448] h-full mx-auto rounded-xl relative text-white overflow-hidden">
-                <strong className="absolute text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
+                <strong className="absolute  text-[26px] sm:text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     방폭교육 전과정<br/>
                     교육비할인 이벤트
                   </strong>
-                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
+                  <p className="absolute text-[15px] sm:text-[16px] lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
                     초급교육 | 중급교육 | 고급교육
                   </p>
-                  <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#FFA448] z-20">
+                  <button className="absolute bg-[#FFA448] border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#FFA448] z-20">
                     자세히 보기
                   </button>
                   <Image 
                     src={PicPromotion} 
                     alt="open_banner" 
-                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto right-0 bottom-0 z-0"
+                    className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto -right-5 lg:right-0 bottom-0 z-0"
                   />
                 </div>
               </div>
               <div className=" h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#60B86F] h-full mx-auto rounded-xl relative text-white overflow-hidden">
-                <strong className="absolute text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
+                <strong className="absolute  text-[26px] sm:text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     2024<br/>
                     산업안전 대진단
                   </strong>
-                  <p className="absolute lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
+                  <p className="absolute text-[15px] sm:text-[16px] lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
                     중대재해 예방, 대진단으로 시작하세요
                   </p>
                   <Link passHref href={"/business/consulting/inspection/"}>
-                    <button className="absolute border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#60B86F] z-20">
+                    <button className="absolute bg-[#60B86F] border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#60B86F] z-20">
                       자세히 보기
                     </button>
                   </Link>

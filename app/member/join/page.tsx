@@ -306,7 +306,7 @@ function Join() {
                 </pre>
               </div>
             )}
-            <li
+            {/* <li
               className="flex justify-between h-14 items-center px-[20px] md:px-0s md:pl-52 md:pr-24"
               onClick={() => handleLiClick(2)}
             >
@@ -322,11 +322,11 @@ function Join() {
               <div>
                 <IoIosArrowDown size="1.5em" color={iconColors2[2]}/>
               </div>
-            </li>
+            </li> */}
             {/*3번째 li*/}
-            {isShown3 && (
+            {/* {isShown3 && (
               <div className="h-52 flex items-center pl-52">텍스트 상자</div>
-            )}
+            )} */}
             <li
               className="flex justify-between h-14 items-center px-[20px] md:px-0s md:pl-52 md:pr-24"
               onClick={() => handleLiClick(3)}

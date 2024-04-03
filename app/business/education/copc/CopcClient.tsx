@@ -110,9 +110,9 @@ const CopcClient = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
-          <ul className="flex md:hidden flex-wrap w-full py-[20px] px-[40px] text-[15px]">
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] md:px-[40px] text-[15px]">
             <li className="w-1/2 cursor-default">
               <Link passHref href={"/business/education/course01/"}>
                 <div className="h-12 border border-b-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
@@ -135,13 +135,6 @@ const CopcClient = () => {
               </Link>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/business/education/develope/"}>
-                <div className="h-12 border border-l-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
-                    <span> 교육개발</span>
-                </div>
-              </Link>
-            </li>
-            <li className="w-full">
                 <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                     <span> CoPC 과정</span>
                 </div>
@@ -573,7 +566,7 @@ const CopcClient = () => {
                     IECEx CoPC Unit Ex 009
                   </b>{" "}
                   <br className="md:hidden"/>
-                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 전기설비 설계
+                  <span className="inline md:hidden">&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 전기설비 설계
                   <p className="leading-5">
                   (Design electrical installations in or
                   associated with explosive atmospheres)
