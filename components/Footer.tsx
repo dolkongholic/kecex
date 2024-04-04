@@ -10,7 +10,7 @@ import WhiteLogo from "@/public/img/logo/logo_big_white.png";
 export default function Footer() {
   return (
     <section>
-      <div className="w-full h-[550px] md:h-[350px] bg-[#3A3A3A] flex flex-col justify-start items-center mt-[150px]">
+      <div className="w-full h-[550px] md:h-[350px] bg-[#3A3A3A] flex flex-col justify-start items-center mt-[75px] md:mt-[150px]">
         <div className="md:hidden my-6">
           <Link passHref href={"/"}>
             <Image
@@ -22,7 +22,7 @@ export default function Footer() {
             />
           </Link>
         </div>
-        <div className="w-full md:w-[1400px] md:h-[70px] md:flex justify-between item-center leading-[30px] md:leading-[70px] md:border-b border-[#777]">
+        <div className="w-full xl:w-[1400px] px-5 xl:px-0 md:h-[70px] md:flex justify-between item-center leading-[30px] md:leading-[70px] md:border-b border-[#777]">
           <ul className="flex flex-wrap md:flex-nowrap justify-between md:justify-start text-white md:space-x-[20px] text-[13px] sm:text-[15px] md:text-[16px] px-[8%] sm:px-[15%] md:px-0 text-center">
             <li className="md:w-auto">이용안내</li>
             <li className="hidden md:block text-[#777]">|</li>
@@ -83,7 +83,7 @@ export default function Footer() {
             </select>
           </div>
         </div>
-        <div className="w-full md:w-[1400px] -mt-8 md:mt-[40px] text-[#9c9c9c] md:text-[#ececec] text-[13px] md:text-[15px] md:text-auto flex flex-col space-y-[5px] text-center md:text-start leading-7">
+        <div className="w-full xl:w-[1400px] px-5 xl:px-0 -mt-8 md:mt-[40px] text-[#9c9c9c] md:text-[#ececec] text-[13px] md:text-[15px] md:text-auto flex flex-col space-y-[5px] text-center md:text-start leading-7">
           <span>
             울산광역시 중구 종가로 15, 울산테크노파크 <br className="md:hidden"/>
             기술혁신동 B동 408호<br className=""/>
@@ -93,7 +93,7 @@ export default function Footer() {
           </span>
           {/* <span>한국방폭협회 전화 : 052 929 2848 | 팩스 : 052 929 2849</span> */}
         </div>
-        <div className="md:w-[1400px] mt-[20px] text-[#9c9c9c] flex flex-col text-[12px] md:text-[14px]">
+        <div className="md:w-full xl:w-[1400px] px-5 xl:px-0 mt-[20px] text-[#9c9c9c] flex flex-col text-[12px] md:text-[14px]">
           <span>copyright (c) Kecex. All Rights reserved.</span>
         </div>
       </div>

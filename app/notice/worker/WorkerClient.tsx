@@ -100,7 +100,7 @@ const WorkerClient: React.FC<workerProps> = ({ currentUser }) => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <div className="w-full py-[40px] px-[40px]">
             <ContentTitle title={location} center={true} />
             {/* <div className="flex w-full mt-[50px]">
@@ -171,7 +171,7 @@ const WorkerClient: React.FC<workerProps> = ({ currentUser }) => {
                 </button>
               </div>
             </div> */}
-            <div className="w-[1200px] h-[472px] relative flex justify-center">
+            <div className="w-full lg:w-[1200px] h-[472px] relative flex justify-center">
               <Image
                 src={Picworker}
                 // fill={true}

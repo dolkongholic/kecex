@@ -150,7 +150,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title="공지사항" center={true} />
           <div className="w-full mt-[20px] leading-[50px] border-b border-gray-100">
             &nbsp;
@@ -193,7 +193,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
               <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
                 <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                   <p>이전글</p>
-                  <RiArrowUpSLine className="text-[24px] pt-[3px] text-[#3A3A3A]" />
+                  <RiArrowUpSLine className="text-[24px] md:pt-[3px] text-[#3A3A3A]" />
                 </div>
                 <div className="w-[890px] flex justify-start items-center pl-[20px]">
                   {preNotice.title}
@@ -204,7 +204,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
             <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
               <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                 <p>이전글</p>
-                <RiArrowUpSLine className="text-[24px] pt-[3px] text-[#3A3A3A] opacity-0" />
+                <RiArrowUpSLine className="text-[24px] md:pt-[3px] text-[#3A3A3A] opacity-0" />
               </div>
               <div className="w-[890px] flex justify-start items-center pl-[20px]">
                 이전글이 없습니다.
@@ -221,7 +221,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
               <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">
                 <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                   <p>다음글</p>
-                  <RiArrowDownSLine className="text-[24px] pt-[3px] text-[#3A3A3A]" />
+                  <RiArrowDownSLine className="text-[24px] md:pt-[3px] text-[#3A3A3A]" />
                 </div>
                 <div className="w-[890px] flex justify-start items-center pl-[20px]">
                   {nextNotice.title}
@@ -232,7 +232,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
             <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">
               <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                 <p>다음글</p>
-                <RiArrowDownSLine className="text-[24px] pt-[3px] text-[#3A3A3A] opacity-0" />
+                <RiArrowDownSLine className="text-[24px] md:pt-[3px] text-[#3A3A3A] opacity-0" />
               </div>
               <div className="w-[890px] flex justify-start items-center pl-[20px]">
                 <p>다음글이 없습니다.</p>
