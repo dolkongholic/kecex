@@ -141,7 +141,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           onMouseLeave={() => {
             setMenubg("");}}
         >
-          <div className="w-[1400px] flex justify-between item-center space-x-[20px]">
+          <div className="w-full xl:w-[1400px] flex justify-between item-center space-x-[20px]">
             <div className="lg:w-[150px] mr-[20px] hidden lg:block">
               &nbsp;
             </div>
@@ -151,7 +151,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               </Link>
             </div> */}
             <Link passHref href={"/notice/notice/detail/17?page=1"}>
-              <div className="w-[800px] flex justify-start items-center relative 1translate-x-[90px]">
+              <div className="w-[500px] xl:w-[800px] h-auto flex justify-start items-center relative 1translate-x-[90px]">
               {/* <Image 
                     src={PicMainNotice} 
                     alt="header_top_notice" 
@@ -267,15 +267,15 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <Image src={PicLogo} alt="Logo" width={250} height={85} />
               </Link>
             </div>
-            <div className="w-[900px]">
-              <ul className="flex justify-between font-bold text-[21px] text-[#4e4e4e] ">
+            <div className="w-full px-5 xl:px-0 xl:w-[900px]">
+              <ul className="flex justify-between font-bold text-[18px] xl:text-[21px] text-[#4e4e4e] ">
                 {menuList.map(({ title, url }, index) => (
                   <li
                     key={index}
-                    className={`w-[110px] h-[85px] flex items-center justify-center transition-all duration-300 cursor-pointer relative 
+                    className={`w-1/5 xl:w-[110px] h-[85px] flex items-center justify-center transition-all duration-300 cursor-pointer relative 
                       before:content-[''] before:transition-all before:duration-300 before:block  before:absolute before:left-0 before:bottom-0 
                       before:h-[5px] before:bg-primary ${
-                      title == menu ? "text-primary before:w-[110px]" : "before:w-[0px] "
+                      title == menu ? "text-primary before:w-full xl:before:w-[110px]" : "before:w-[0px] "
                     }`}
                     onMouseOver={() => {
                       setMenu(title);
@@ -321,7 +321,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         >
           {/* 서브메뉴 배경 */}
           <div 
-            className={`absolute top-[0px] w-[1200px] bg-[#003893] h-[450px] left-1/2 -translate-x-[1650px]`}
+            className={`absolute top-[0px] w-[1200px] h-[450px] left-1/2 hidden lg:block -translate-x-[1650px]`}
           >
             <div className="w-full h-full relative">
               <Image
@@ -340,14 +340,14 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           {/* 서브메뉴 배경끝 */}
           {menu == "협회소개" && (
             <div
-              className={`w-[1400px] mt-[95px] ${scrollC}`}
+              className={`w-full lg:w-[1400px] mt-[95px] ${scrollC}`}
               onMouseOver={
                 () => {
                 setMenu(menu);
                 }
               }
             >
-              <div className="w-[1400px] flex pl-[250px] pr-[80px]">
+              <div className="w-full lg:w-[1400px] flex lg:pl-[250px] lg:pr-[80px]">
                 <div className={`w-1/4 text-[19px] pl-[2%] relative
                   before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
                 `}>
@@ -400,10 +400,10 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           )}
           {menu == "사업안내" && (
             <div
-              className={`w-[1400px] mt-[95px] ${scrollC}`}
+              className={`w-full lg:w-[1400px] mt-[95px] ${scrollC}`}
               onMouseOver={() => setMenu(menu)}
             >
-              <div className="w-[1400px] flex justify-start pl-[250px] pr-[80px]">
+              <div className="w-full lg:w-[1400px] flex justify-start lg:pl-[250px] lg:pr-[80px]">
                 <div className={`w-1/4 text-[19px] pl-[2%] relative
                   before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
                 `}>
@@ -494,10 +494,10 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           )}
           {menu == "알림센터" && (
             <div
-              className={`w-[1400px] mt-[95px] ${scrollC}`}
+              className={`w-full lg:w-[1400px] mt-[95px] ${scrollC}`}
               onMouseOver={() => setMenu(menu)}
             >
-              <div className="w-[1400px] flex justify-start pl-[250px] pr-[80px] h-[350px]">
+              <div className="w-full lg:w-[1400px] flex justify-start lg:pl-[250px] lg:pr-[80px] h-[350px]">
                 <div className={`w-1/4 text-[19px] pl-[2%] relative
                   before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
                 `}>
@@ -537,10 +537,10 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           )}
           {menu == "정보공개" && (
             <div
-              className={`w-[1400px] mt-[95px] ${scrollC}`}
+              className={`w-full lg:w-[1400px] mt-[95px] ${scrollC}`}
               onMouseOver={() => setMenu(menu)}
             >
-              <div className="w-[1400px] flex justify-start pl-[250px] pr-[80px]">
+              <div className="w-full lg:w-[1400px] flex justify-start lg:pl-[250px] lg:pr-[80px]">
                 <div className={`w-1/4 text-[19px] pl-[2%] relative
                   before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
                 `}>
@@ -557,12 +557,14 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     </div>
                   </Link>
                 </div>
+                <div className="w-1/4 pl-[2%]">&nbsp;</div>
+                <div className="w-1/4">&nbsp;</div>
               </div>
             </div>
           )}
           {menu == "교육센터" && (
-            <div className="w-[1400px] pt-[170px] pl-[130px] mx-auto text-neutral-600 font-semibold text-[24px]">
-              <div className="w-[1400px] text-center">
+            <div className="w-full lg:w-[1400px] pt-[170px] pl-[130px] mx-auto text-neutral-600 font-semibold text-[24px]">
+              <div className="w-full lg:w-[1400px] text-center">
                 교육 센터 운영 준비 중
               </div>
             </div>

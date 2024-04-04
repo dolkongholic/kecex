@@ -114,7 +114,7 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <div className="w-full py-[40px]">
             <ContentTitle title={location} center={true} />
             <div className="w-full mt-[20px] leading-[50px] border-b border-secondary">

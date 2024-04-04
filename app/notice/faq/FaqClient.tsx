@@ -102,7 +102,7 @@ const FaQClient = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <div className="w-full py-[40px]">
             <ContentTitle title="자주묻는 질문" center={true} />
 
@@ -122,7 +122,7 @@ const FaQClient = () => {
                   } `}
                   onClick={() => setSelect("사이트이용")}
                 >
-                  사이트이용문의
+                  사이트 이용
                 </div>
                 <div
                   className={`w-1/4 border border-gray-200 text-center leading-[50px] cursor-pointer ${
@@ -153,11 +153,11 @@ const FaQClient = () => {
                   }`}
                   onClick={() => QselectFn(1)}
                 >
-                  <div className="flex py-3 md:py-0">
-                    <div className="mr-[20px] text-[30px] md:leading-[70px]">
+                  <div className="flex">
+                    <div className="mr-[20px] text-[30px] leading-[70px]">
                       Q.
                     </div>
-                    <div className="md:leading-[70px]">
+                    <div className="leading-[70px]">
                       회원가입 시 본인인증을 해야하나요?
                     </div>
                   </div>
@@ -189,11 +189,11 @@ const FaQClient = () => {
                   }`}
                   onClick={() => QselectFn(2)}
                 >
-                  <div className="flex py-3 md:py-0">
-                    <div className="mr-[20px] text-[30px] md:leading-[70px]">
+                  <div className="flex">
+                    <div className="mr-[20px] text-[30px] leading-[70px]">
                       Q.
                     </div>
-                    <div className="md:leading-[70px]">
+                    <div className="leading-[70px]">
                       홈페이지에 공개된 자료들은 사용해도 되나요?
                     </div>
                   </div>
@@ -221,18 +221,18 @@ const FaQClient = () => {
             {(select == "전체" || select == "교육신청") && (
               <>
                 <div
-                  className={`w-full md:h-[70px]  flex justify-between px-[20px]  cursor-pointer ${
+                  className={`w-full h-[70px] flex justify-between px-[20px]  cursor-pointer ${
                     Qselect == 3
                       ? "text-secondary border-b border-secondary"
                       : "text-black border-b border-gray-200"
                   }`}
                   onClick={() => QselectFn(3)}
                 >
-                  <div className="flex py-3 md:py-0">
-                    <div className="mr-[20px] text-[30px] md:leading-[70px]">
+                  <div className="flex md:py-0">
+                    <div className="mr-[20px] text-[30px] leading-[70px]">
                       Q.
                     </div>
-                    <div className="md:leading-[70px]">
+                    <div className="leading-[70px]">
                       교육 신청은 어떻게 하나요?
                     </div>
                   </div>
@@ -259,11 +259,11 @@ const FaQClient = () => {
                   }`}
                   onClick={() => QselectFn(4)}
                 >
-                  <div className="flex py-3 md:py-0">
-                    <div className="mr-[20px] text-[30px] md:leading-[70px]">
+                  <div className="flex">
+                    <div className="mr-[20px] text-[30px] leading-[70px]">
                       Q.
                     </div>
-                    <div className="md:leading-[70px]">
+                    <div className="leading-[70px]">
                       교육 취소는 어떻게 하나요?
                     </div>
                   </div>
@@ -286,18 +286,18 @@ const FaQClient = () => {
                   ""
                 )}
                 <div
-                  className={`w-full h-[70px]  flex justify-between px-[20px]  cursor-pointer  ${
+                  className={`w-full h-[70px] flex justify-between px-[20px] cursor-pointer  ${
                     Qselect == 5
                       ? "text-secondary border-b border-secondary"
                       : "text-black border-b border-gray-200"
                   }`}
                   onClick={() => QselectFn(5)}
                 >
-                  <div className="flex py-3 md:py-0">
-                    <div className="mr-[20px] text-[30px] md:leading-[70px]">
+                  <div className="flex">
+                    <div className="mr-[20px] text-[30px] leading-[70px]">
                       Q.
                     </div>
-                    <div className="md:leading-[70px]">
+                    <div className="leading-[70px]">
                       교육 일정 변경을 하고 싶어요.
                     </div>
                   </div>
@@ -325,18 +325,18 @@ const FaQClient = () => {
             {(select == "전체" || select == "기타") && (
               <>
                 <div
-                  className={`w-full md:h-[70px]  flex justify-between px-[20px]  cursor-pointer ${
+                  className={`w-full md:h-[70px]  flex justify-between px-[20px] cursor-pointer ${
                     Qselect == 6
                       ? "text-secondary border-b border-secondary"
                       : "text-black border-b border-gray-200"
                   }`}
                   onClick={() => QselectFn(6)}
                 >
-                  <div className="flex py-3 md:py-0">
-                    <div className="mr-[20px] text-[30px] md:leading-[70px]">
+                  <div className="flex">
+                    <div className="mr-[20px] text-[30px] leading-[70px]">
                       Q.
                     </div>
-                    <div className="md:leading-[70px]">
+                    <div className="leading-[70px]">
                       정회원 신청은 어떻게 하나요?
                     </div>
                   </div>
@@ -359,18 +359,18 @@ const FaQClient = () => {
                   ""
                 )}
                 <div
-                  className={`w-full h-[70px]  flex justify-between px-[20px]  cursor-pointer ${
+                  className={`w-full h-[70px] flex justify-between px-[20px] cursor-pointer ${
                     Qselect == 7
                       ? "text-secondary border-b border-secondary"
                       : "text-black border-b border-gray-200"
                   }`}
                   onClick={() => QselectFn(7)}
                 >
-                  <div className="flex py-3 md:py-0">
-                    <div className="mr-[20px] text-[30px] md:leading-[70px]">
+                  <div className="flex">
+                    <div className="mr-[20px] text-[30px] leading-[70px]">
                       Q.
                     </div>
-                    <div className="md:leading-[70px]">
+                    <div className="leading-[70px]">
                       회비 납부는 어떻게 하나요?
                     </div>
                   </div>
@@ -401,11 +401,11 @@ const FaQClient = () => {
                   }`}
                   onClick={() => QselectFn(8)}
                 >
-                  <div className="flex py-3 md:py-0">
-                    <div className="mr-[20px] text-[30px] md:leading-[70px]">
+                  <div className="flex">
+                    <div className="mr-[20px] text-[30px] leading-[70px]">
                       Q.
                     </div>
-                    <div className="md:leading-[70px]">
+                    <div className="leading-[70px]">
                       교육비 환불은 어떻게 받나요?
                     </div>
                   </div>

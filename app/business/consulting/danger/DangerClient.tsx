@@ -112,13 +112,41 @@ const DangerClient = () => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           {/*위험성 평가 */}
           <ContentTitle title={location} />
+            <ul className="flex md:hidden flex-wrap w-full py-[20px] text-[15px]">
+              <li className="w-1/2 cursor-default">
+                <Link passHref href={"/business/consulting/inspection/"}>
+                  <div className="h-12 border border-gray-200 border-r-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                    <span> 방폭사전진단</span>
+                  </div>
+                </Link>
+              </li>
+              <li className="w-1/2">
+                <Link passHref href={"/business/consulting/psm/"}>
+                  <div className="h-12 border border-gray-200 border-b-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium ">
+                    <span> PSM</span>
+                  </div>
+                </Link>
+              </li>
+              <li className="w-1/2">
+                <Link passHref href={"/business/consulting/sapa/"}>
+                  <div className="h-12 border border-t-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                    <span> 중대재해처벌법</span>
+                  </div>
+                </Link>
+              </li>
+              <li className="w-1/2">
+                  <div className="h-12 border border-secondary  flex flex-col justify-center items-center cursor-default">
+                    <span> 위험성 평가</span>
+                  </div>
+              </li>
+            </ul>
               <ContentSubTitle title="위험성평가 실시" />
               <div className="flex justify-between mb-10">
-                <div className="w-full border border-[#ccc] text-center p-8">
-                  <p className="text-left leading-7">
+                <div className="w-full border border-[#ccc] text-center p-4 md:p-8">
+                  <p className="text-left leading-7 text-[15px] md:text-base">
                     산업안전보건법 제36조에 의거 사업주는 건설물,
                     기계·기구·설비, 원재료, 가스, 증기, 분진, 근로자의 작업행동
                     또는 그 밖의 업무로 인한 유해·위험 요인을 찾아내어 부상 및
@@ -134,7 +162,7 @@ const DangerClient = () => {
               <ContentSubTitle title="위험성평가 절차" />
               <div className="w-full flex justify-center mb-10">
                 <Image src={PicIndustry} alt="위험성평가 절차 이미지" className="hidden md:block w-full"/>
-                <Image src={PicIndustry_M} alt="위험성평가 절차 이미지" className="md:hidden"/>
+                <Image src={PicIndustry_M} alt="위험성평가 절차 이미지" className="md:hidden w-full"/>
               </div>
               <ContentSubTitle title="위험성평가 실시 시기" />
               <div className="w-full mb-10">
@@ -202,14 +230,14 @@ const DangerClient = () => {
                     04
                   </div>
                 </div>
-                <ul className="w-full md:w-[1100px]">
+                <ul className="w-full md:w-[1100px] text-[15px] md:text-base">
                   <li>
-                    <div className="w-full h-14 bg-lightgray font-medium text-[20px] flex items-center pl-8 border-b border-secondary">
+                    <div className="w-full h-14 bg-lightgray font-medium text-[20px] flex items-center pl-3 md:pl-8 border-b border-secondary">
                       사전준비
                     </div>
                     <div className="w-full px-0 md:px-6 py-6 md:flex">
                       <div className="md:w-1/2">
-                        <strong className="text-[18px] font-medium text-neutral-800">
+                        <strong className="text-[17px] md:text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -219,7 +247,7 @@ const DangerClient = () => {
                         </strong>
                       </div>
                       <div className="md:w-1/2">
-                        <strong className="text-[18px] font-medium text-neutral-800">
+                        <strong className="text-[17px] md:text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -231,12 +259,12 @@ const DangerClient = () => {
                     </div>
                   </li>
                   <li>
-                    <div className="w-full h-14 bg-lightgray font-medium text-[20px] flex items-center pl-8 border-b border-secondary">
+                    <div className="w-full h-14 bg-lightgray font-medium text-[20px] flex items-center pl-3 md:pl-8 border-b border-secondary">
                       서류검토
                     </div>
                     <div className="w-full px-0 md:px-6 py-6 md:flex">
                       <div className="md:w-1/2">
-                        <strong className="text-[18px] font-medium text-neutral-800">
+                        <strong className="text-[17px] md:text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -246,7 +274,7 @@ const DangerClient = () => {
                         </strong>
                       </div>
                       <div className="md:w-1/2">
-                        <strong className="text-[18px] font-medium text-neutral-800">
+                        <strong className="text-[17px] md:text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -261,7 +289,7 @@ const DangerClient = () => {
                     </div>
                   </li>
                   <li>
-                    <div className="w-full h-14 bg-lightgray font-medium text-[20px] flex items-center pl-8 border-b border-secondary">
+                    <div className="w-full h-14 bg-lightgray font-medium text-[20px] flex items-center pl-3 md:pl-8 border-b border-secondary">
                       현장안전점검
                     </div>
                     <div className=" w-full px-0 md:px-6 py-6 md:flex">
@@ -284,12 +312,12 @@ const DangerClient = () => {
                     </div>
                   </li>
                   <li>
-                    <div className="w-full h-14 bg-lightgray font-medium text-[20px] flex items-center pl-8 border-b border-secondary">
+                    <div className="w-full h-14 bg-lightgray font-medium text-[20px] flex items-center pl-3 md:pl-8 border-b border-secondary">
                       보고서 작성·제출
                     </div>
                     <div className="border-b border-[#ccc] w-full px-0 md:px-6 py-6 md:flex">
                       <div className="md:w-1/2">
-                        <strong className="text-[18px] font-medium text-neutral-800">
+                        <strong className="text-[17px] md:text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -299,7 +327,7 @@ const DangerClient = () => {
                         </strong>
                       </div>
                       <div className="md:w-1/2 mt-2 md:mt-0 pb-6">
-                        <strong className="text-[18px] font-medium text-neutral-800">
+                        <strong className="text-[17px] md:text-[18px] font-medium text-neutral-800">
                           <Image
                             src={content_icon}
                             className="w-5 inline-block"
@@ -315,13 +343,13 @@ const DangerClient = () => {
               <ContentSubTitle title="위험성평가 컨설팅 수행 업무" />
               <ul className="-translate-y-[20px] text-[15px] mb-5 w-full">
                 <li className="w-full md:flex justify-between my-5">
-                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       01
                     </div>
                     <p className="ml-3">위험성평가의 실시방법·절차 지원</p>
                   </div>
-                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mt-5 md:mt-0">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       02
                     </div>
@@ -329,13 +357,13 @@ const DangerClient = () => {
                   </div>
                 </li>
                 <li className="w-full md:flex justify-between my-5">
-                  <div className="md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mr-8">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       03
                     </div>
                     <p className="ml-3">교육·컨설팅 지원</p>
                   </div>
-                  <div className="md:w-1/2 h-24">
+                  <div className="md:w-1/2 h-24 hidden md:block">
                     &nbsp;        
                   </div>
                 </li>

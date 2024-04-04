@@ -103,14 +103,14 @@ const RawClient: React.FC<RawProps> = ({ rawList, currentUser }) => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title="관계법령" />
           <div className="w-full">
-            <ul className="w-full flex justify-between flex-wrap">
+            <ul className="w-full md:flex justify-between flex-wrap">
               <Link passHref 
                 href={"https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%82%B0%EC%97%85%EC%95%88%EC%A0%84%EB%B3%B4%EA%B1%B4%EB%B2%95"} 
                 target="_blank" 
-                className="w-[32%] mr-[2%] "
+                className="w-full md:w-[32%] mr-[2%]"
               >
                 <li className="h-[180px] bg-white border border-[#ccc] rounded-md overflow-hidden">
                   <p className="w-full h-[50px] bg-[#3A3A3A] text-white leading-[50px] text-[18px] pl-5">고용노동부</p>
@@ -141,7 +141,7 @@ const RawClient: React.FC<RawProps> = ({ rawList, currentUser }) => {
               <Link passHref 
                 href={"https://www.law.go.kr/%EB%B2%95%EB%A0%B9/%EC%82%B0%EC%97%85%EC%95%88%EC%A0%84%EB%B3%B4%EA%B1%B4%EA%B8%B0%EC%A4%80%EC%97%90%EA%B4%80%ED%95%9C%EA%B7%9C%EC%B9%99"} 
                 target="_blank" 
-                className="w-[32%] mr-[2%] "
+                className="w-full md:w-[32%] mr-[2%] "
               >
                 <li className="w-full h-[180px] bg-white border border-[#ccc] rounded-md overflow-hidden">
                   <p className="w-full h-[50px] bg-[#3A3A3A] text-white leading-[50px] text-[18px] pl-5">고용노동부</p>
@@ -173,7 +173,7 @@ const RawClient: React.FC<RawProps> = ({ rawList, currentUser }) => {
               <Link passHref 
                 href={"https://www.law.go.kr/LSW/lsInfoP.do?efYd=20220127&lsiSeq=228817#0000"} 
                 target="_blank" 
-                className="w-[32%]"
+                className="w-full md:w-[32%]"
               >
                 <li className="w-full h-[180px] bg-white border border-[#ccc] rounded-md overflow-hidden">
                   <p className="w-full h-[50px] bg-[#3A3A3A] text-white leading-[50px] text-[18px] pl-5">고용노동부</p>

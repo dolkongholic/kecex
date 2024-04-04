@@ -116,22 +116,22 @@ const SapaClient = () => {
           <ul className="flex md:hidden flex-wrap w-full py-[20px] text-[15px]">
             <li className="w-1/2 cursor-default">
               <Link passHref href={"/business/consulting/inspection/"}>
-                <div className="h-12 border border-gray-200 flex flex-col justify-center items-center cursor-default">
+                <div className="h-12 border border-gray-200 border-r-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
                   <span> 방폭사전진단</span>
                 </div>
               </Link>
             </li>
             <li className="w-1/2">
-                <div className="h-12 border border-secondary flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+              <Link passHref href={"/business/consulting/psm/"}>
+                <div className="h-12 border border-gray-200 border-b-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium ">
                   <span> PSM</span>
                 </div>
+              </Link>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/business/consulting/sapa/"}>
-                <div className="h-12 border border-gray-200 border-r-0 border-t-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
                   <span> 중대재해처벌법</span>
                 </div>
-              </Link>
             </li>
             <li className="w-1/2">
               <Link passHref href={"/business/consulting/danger/"}>
@@ -149,13 +149,13 @@ const SapaClient = () => {
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       01
                     </div>
-                    <p className="ml-3">중대재해처벌에 관한 법률에 대응하기 위한 사업장</p>
+                    <p className="ml-3 pr-3">중대재해처벌에 관한 법률에 대응하기 위한 사업장</p>
                   </div>
-                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center">
-                    <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mt-5 md:mt-0">
+                    <div className="w-16 h-16 p-2 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       02
                     </div>
-                    <p className="ml-3">중대재해처벌법 및 산업안전보건법을 적절하게 이행하고 있는지<br/>
+                    <p className="ml-3 pr-3">중대재해처벌법 및 산업안전보건법을 적절하게 이행하고 있는지 <br className="hidden md:inline"/>
                       확인하고자 하는 사업장</p>
                   </div>
                 </li>
@@ -164,13 +164,13 @@ const SapaClient = () => {
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       03
                     </div>
-                    <p className="ml-3">안전한 작업환경을 조성하여 중대재해를 예방하고자 하는 사업장</p>
+                    <p className="ml-3 pr-3">안전한 작업환경을 조성하여 중대재해를 예방하고자 하는 사업장</p>
                   </div>
-                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center">
+                  <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mt-5 md:mt-0">
                     <div className="w-16 h-16 flex justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       04
                     </div>
-                    <p className="ml-3">
+                    <p className="ml-3 pr-3">
                       자체적으로 안전관리 및 법이행실태를 점검하고자 하는 사업장
                     </p>
                   </div>
@@ -283,7 +283,7 @@ const SapaClient = () => {
                     </div>
                   </li>
                   <li>
-                    <div className="w-full h-14 bg-lightgray font-medium text-[20px] flex items-center pl-8 border-b border-secondary">
+                    <div className="w-full h-14 bg-lightgray font-medium text-[20px] flex items-center pl-3 md:pl-8 border-b border-secondary">
                       현장 평가
                     </div>
                     <div className="w-full px-0 md:px-6 py-6 md:flex">
@@ -322,7 +322,7 @@ const SapaClient = () => {
                     </div>
                   </li>
                   <li>
-                    <div className="w-full h-14 bg-lightgray font-medium text-[20px] flex items-center pl-8 border-b border-secondary">
+                    <div className="w-full h-14 bg-lightgray font-medium text-[20px] flex items-center pl-3 md:pl-8 border-b border-secondary">
                       개선안 도출 및 보고서 작성
                     </div>
                     <div className="border-b border-[#ccc] w-full px-0 md:px-6 py-6 md:flex">

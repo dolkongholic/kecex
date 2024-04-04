@@ -128,7 +128,7 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <div className="w-full py-[40px] md:px-[50px]">
             <ContentTitle title={location} center={true} />
             <div className="text-subtitle text-black text-center w-full mt-[40px]">
