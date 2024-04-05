@@ -285,7 +285,7 @@ const Index: React.FC<IndexProps> = ({
 
       {/* 띠배너 */}
       <div className="w-full h-[350px] md:h-[250px] bg-[#D9ECFF] mt-40">
-        <div className="w-full max-w-[1440px] min-w-[600px] h-full mx-auto text-[#3A3A3A] pt-12 relative px-7 md:px-0">
+        <div className="w-full max-w-[1440px] min-w-[600px] h-full mx-auto text-[#3A3A3A] pt-12 relative px-7">
           <h3 className="text-[28px] font-semibold">
             KECEx 한국방폭협회<br className="md:hidden"/>
             회원 안내

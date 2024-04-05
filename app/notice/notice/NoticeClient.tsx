@@ -136,7 +136,7 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
                 >
                   <div className="flex ">
                     <div className="w-[50px] text-center text-gray-400 text-subtitle">
-                      {item.id}
+                      {index + 1}
                     </div>
                     <div className="w-[1020px] ml-3 line-clamp-1">{item.title}</div>
                   </div>
