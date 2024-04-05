@@ -84,7 +84,7 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
         </div>
       </div>
 
-      <main className="w-full md:w-[1400px] flex justify-between items-start m-auto">
+      <main className="w-full lg:w-[1400px] flex justify-between items-start m-auto">
         <section className="hidden md:flex flex-col justify-start items-center">
           <div className=" bg-white flex justify-center item-start">
             <div className="w-full flex items-start">
@@ -103,13 +103,13 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title="카드뉴스" />
           <div className="w-full mt-[20px] leading-[50px] border-b border-gray">
             {page}/{totalPages} 페이지 (총 {newsList.length} 건)
           </div>
 
-          <div className="grid grid-cols-3 gap-4 pt-[30px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 pt-[30px]">
             {newsList.map((item: any, index: any) => (
               <Link
                 key={index}

@@ -61,7 +61,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
             </h2>
             <div className="w-3/4 md:w-full flex md:flex-col">
               <div
-                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-bold text-[15px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
+                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-bold text-[15px] md:text-[30px] xl:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
                   noticeMenu == "협회공지" &&
                   " text-primary"
                 }`}
@@ -71,13 +71,13 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
               >
                 협회공지
                 {noticeMenu == "협회공지" && (
-                  <div className="w-[15px] h-[20px] flex justify-center items-center -mt-1 md:-mt-2">
+                  <div className="w-[15px] md:w-[20px] h-[20px] flex justify-center items-center -mt-1 md:-mt-2">
                     <FaPlus />
                   </div>
                 )}
               </div>
               <div
-                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-bold text-[15px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
+                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-bold text-[15px] md:text-[30px] xl:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
                   noticeMenu == "보도자료" &&
                   "text-primary"
                 }`}
@@ -88,14 +88,14 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
               >
                 보도자료
                 {noticeMenu == "보도자료" && (
-                  <div className="w-[15px] h-[20px] flex justify-center items-center -mt-1 md:-mt-2">
+                  <div className="w-[15px] md:w-[20px] h-[20px] flex justify-center items-center -mt-1 md:-mt-2">
                     <FaPlus />
                   </div>
                 )}
               </div>
 
               <div
-                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center pr-1 md:pr-0 text-center md:text-start font-bold text-[15px] md:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
+                className={`w-full md:w-2/3 flex md:justify-between justify-center items-center pr-1 md:pr-0 text-center md:text-start font-bold text-[15px] md:text-[30px] xl:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
                   noticeMenu == "교육센터" &&
                   "text-primary"
                 }`}
@@ -106,7 +106,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
               >
                 교육센터
                 {noticeMenu == "교육센터" && (
-                  <div className="w-[15px] h-[20px] flex justify-center items-center -mt-1 md:-mt-2">
+                  <div className="w-[15px] md:w-[20px] h-[20px] flex justify-center items-center -mt-1 md:-mt-2">
                     <FaPlus />
                   </div>
                 )}
@@ -116,7 +116,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
           <div className="flex w-full md:w-2/3 lg:w-3/4">
             {noticeMenu == "협회공지" && (
               <>
-                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 lg:w-1/3 hover:shadow-lg md:mr-[50px] shadow-gray-300 rounded-lg px-4 transition-all duration-200">
+                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 lg:w-1/3 hover:shadow-lg lg:mr-[50px] shadow-gray-300 rounded-lg px-4 transition-all duration-200">
                   <Link
                     key={noticeList[noticeList.length - 1].id}
                     passHref
@@ -147,7 +147,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     </div>
                   </Link>
                 </div>
-                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 lg:w-1/3 hover:shadow-lg md:mr-[50px] shadow-gray-300 rounded-lg px-4 transition-all duration-200">
+                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 lg:w-1/3 hover:shadow-lg lg:mr-[50px] shadow-gray-300 rounded-lg px-4 transition-all duration-200">
                   <Link
                     key={noticeList[noticeList.length - 2].id}
                     passHref
@@ -186,7 +186,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     className="w-full"
                   >
                     <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start">
-                      <span className="h-[50px] leading-[22px] text-[16px] md:text-[18px] font-semibold">
+                      <span className="h-[50px] leading-[22px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold">
                         {noticeList[noticeList.length - 3]
                           ? String(noticeList[noticeList.length - 3].title).slice(
                               0,
@@ -214,7 +214,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
 
             {noticeMenu == "보도자료" && (
               <>
-                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 md:w-1/3 px-4 md:mr-[50px] hover:shadow-lg shadow-gray-300 rounded-lg transition-all duration-200">
+                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 md:w-1/3 px-4 lg:mr-[50px] hover:shadow-lg shadow-gray-300 rounded-lg transition-all duration-200">
                   <Link
                     key={newsList[newsList.length - 1].id}
                     passHref
@@ -249,7 +249,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     </div>
                   </Link>
                 </div>
-                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 md:w-1/3 px-4 md:mr-[50px] hover:shadow-lg shadow-gray-300 rounded-lg transition-all duration-200">
+                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 md:w-1/3 px-4 lg:mr-[50px] hover:shadow-lg shadow-gray-300 rounded-lg transition-all duration-200">
                   <Link
                     key={newsList[newsList.length - 2].id}
                     passHref
@@ -303,7 +303,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             />
                         )}
                       </div>
-                      <span className="h-[48px] leading-[20px] text-[16px] md:text-[18px] font-semibold pt-2 line-clamp-2">
+                      <span className="h-[48px] leading-[20px] text-[16px] md:text-[18px]  font-semibold pt-2 line-clamp-2">
                         {newsList[newsList.length - 3]
                           ? String(newsList[newsList.length - 3].title).slice(
                               0,
@@ -326,7 +326,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
               <>
                 <div className="w-full h-[280px] flex justify-between items-center cursor-pointer">
                   <ul className="w-full flex flex-wrap mt-3">
-                    <li className="w-full md:w-[48%] h-[85px] border border-[#f5f5f5] mx-[2%] md:ml-0 md:mr-[2%] rounded-xl flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
+                    <li className="w-full lg:w-[48%] h-[85px] border border-[#f5f5f5] mx-[2%] lg:ml-0 lg:mr-[2%] rounded-xl flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
                       <div className="h-full">
                         <strong className="text-[18px] font-medium">
                           방폭기초 교육
@@ -337,7 +337,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         교육예정
                       </button>
                     </li>
-                    <li className="w-full md:w-[48%] h-[85px] border border-[#f5f5f5] mx-[2%] md:mx-0 mt-2 md:mt-0 rounded-xl flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
+                    <li className="w-full lg:w-[48%] h-[85px] border border-[#f5f5f5] mx-[2%] lg:mx-0 mt-2 lg:mt-0 rounded-xl flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
                       <div className="h-full">
                         <strong className="text-[18px] font-medium">
                           방폭인력양성 교육
@@ -348,7 +348,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         교육예정
                       </button>
                     </li>
-                    <li className="w-full md:w-[48%] h-[85px] border border-[#f5f5f5] mx-[2%] md:ml-0 md:mr-[2%] mt-2 rounded-xl flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
+                    <li className="w-full lg:w-[48%] h-[85px] border border-[#f5f5f5] mx-[2%] lg:ml-0 lg:mr-[2%] mt-2 rounded-xl flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
                       <div className="h-full">
                         <strong className="text-[18px] font-medium">
                         방폭인력양성 교육
@@ -359,7 +359,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         교육예정
                       </button>
                     </li>
-                    <li className="w-[48%] h-[85px] border border-[#f5f5f5] mt-2 rounded-xl hidden md:flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
+                    <li className="w-[48%] h-[85px] border border-[#f5f5f5] mt-2 rounded-xl hidden lg:flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
                       <div className="h-full">
                         <strong className="text-[18px] font-medium">
                           기업형 교육
@@ -370,7 +370,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         교육예정
                       </button>
                     </li>
-                    <li className="w-[48%] h-[85px] border border-[#f5f5f5] mr-[2%] mt-2 rounded-xl hidden md:flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
+                    <li className="w-[48%] h-[85px] border border-[#f5f5f5] mr-[2%] mt-2 rounded-xl hidden lg:flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
                       <div className="h-full">
                         <strong className="text-[18px] font-medium">
                           기업형 교육
@@ -381,7 +381,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         교육예정
                       </button>
                     </li>
-                    <li className="w-[48%] h-[85px] border border-[#f5f5f5] mt-2 rounded-xl hidden md:flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
+                    <li className="w-[48%] h-[85px] border border-[#f5f5f5] mt-2 rounded-xl hidden lg:flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
                       <div className="h-full">
                         <strong className="text-[18px] font-medium">
                           방폭인력양성 교육
