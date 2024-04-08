@@ -243,6 +243,11 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
                 삭제
               </button>
             )}
+            {currentUser?.staff && (
+            <Link href={`/information/news/edit/${currentNews.id}?page=${page}`}>
+              <button className="w-32 h-10 bg-primary text-white text-[14px] mt-9 m-auto">수정</button>
+            </Link>
+            )}
           </div>
         </section>
       </main>
