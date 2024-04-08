@@ -72,22 +72,8 @@ const NoticeEditClient: React.FC<NoticeClientProps> = ({
 
   const [notice, setNotice] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-
-  // useEffect(() => {
-  //   if (id) {
-  //     // API 호출하여 공지사항 데이터 가져오기
-  //     axios.get(`/api/notice/${id}`)
-  //       .then(response => {
-  //         setNotice(response.data);
-  //       })
-  //       .catch(error => {
-  //         console.error("Error fetching notice:", error);
-  //         // 에러 처리
-  //       });
-  //   }
-  // }, [id]);
-
-    const {
+  
+  const {
     register,
     handleSubmit,
     formState: { errors },
@@ -104,22 +90,33 @@ const NoticeEditClient: React.FC<NoticeClientProps> = ({
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
-
+    
     axios
-      .patch("/api/notice/edit", data)
-      .then((response) => {
-        // PATCH 요청 성공 시 응답 데이터를 사용하여 currentNotice 상태를 업데이트합니다.
-        setNotice(response.data); // response.data에는 업데이트된 공지사항 데이터가 포함될 것으로 가정합니다.
-        toast.success("입력 되었습니다.");
-        router.push("/notice/notice");
+      .patch("/api/notice/edit", {
+        id: id.id,
+        text: data.title,
+        post_text: data.post_text,
+        date: data.date
       })
-      .catch(() => {
-        toast.error("오류가 발생했습니다.");
+      .then((response) => {
+        if (response.status === 200) {
+          // PATCH 요청 성공 시 응답 데이터를 사용하여 currentNotice 상태를 업데이트함
+          setNotice(response.data); // response.data에는 업데이트된 공지사항 데이터가 포함될 것으로 가정함
+          toast.success("입력 되었습니다.");
+          router.push("/notice/notice");
+        } else {
+          toast.error("서버에서 오류가 발생했습니다.");
+        }
+      })
+      .catch((error) => {
+        toast.error("클라이언트에서 오류가 발생했습니다.");
+        console.error(error)
       })
       .finally(() => {
         setIsLoading(false);
       });
   };
+
   return (
     <section>
     <figure className="w-full h-[200px]">
