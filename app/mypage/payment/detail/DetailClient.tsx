@@ -121,26 +121,27 @@ const DetailClient: React.FC<DetailProps> = ({ currentUser }) =>{
             <div className="w-full flex justify-center mx-auto mt-5">
               <p>
                 <span>회원</span>님의 납부내역입니다.<br/>
+                <span className="md:hidden">pc화면으로 확인바랍니다.</span>
               </p>
             </div>
             <ul className="w-full mx-auto border-t-2 border-neutral-700 mt-10 text-[14px] md:text-base">
               <div className="w-full h-12 bg-lightgray flex text-center items-center font-semibold border-b border-secondary text-primary leading-[47px]">
-                <div className="w-[50px] h-full">
+                <div className="w-[50px] h-full whitespace-nowrap">
                   No.
                 </div>
-                <div className="w-[10%] h-full]">
+                <div className="w-[10%] h-full whitespace-nowrap">
                   종류
                 </div>
-                <div className="w-[15%] h-full text-start">
+                <div className="w-[15%] h-full text-start whitespace-nowrap">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;금액
                 </div>
-                <div className="w-[15%] h-full text-start">
+                <div className="w-[15%] h-full text-start whitespace-nowrap">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;납부상태
                 </div>
-                <div className="w-[30%] h-full text-start">
+                <div className="w-[30%] h-full text-start whitespace-nowrap">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;일자
                 </div>
-                <div className="w-[30%] h-full text-start">
+                <div className="w-[30%] h-full text-start whitespace-nowrap">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비고
                 </div>
               </div>
@@ -152,31 +153,31 @@ const DetailClient: React.FC<DetailProps> = ({ currentUser }) =>{
                 </div>
                 <div className="w-[10%] h-full border-r border-gray-200 flex items-center justify-center">
                   <span>
-                    연회비
+                    &nbsp;
                   </span>
                 </div>
                 <div className="w-[15%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￦&nbsp;
                   <span>
-                    30,000
+                    &nbsp;
                   </span>
                 </div>
                 <div className="w-[15%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span className="text-blue-600">
-                    접수 대기
+                    &nbsp;
                   </span>
                 </div>
                 <div className="w-[30%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>
-                    2023.12.15 17:51:01
+                    &nbsp;
                   </span>
                 </div>
                 <div className="w-[30%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>
-                    없음
+                    &nbsp;
                   </span>
                 </div>
               </li>
@@ -188,31 +189,31 @@ const DetailClient: React.FC<DetailProps> = ({ currentUser }) =>{
                 </div>
                 <div className="w-[10%] h-full border-r border-gray-200 flex items-center justify-center">
                   <span>
-                    가입비
+                    &nbsp;
                   </span>
                 </div>
                 <div className="w-[15%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￦&nbsp;
                   <span>
-                    500,000
+                    &nbsp;
                   </span>
                 </div>
                 <div className="w-[15%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span className="text-red-600">
-                    승인-입금완료
+                    &nbsp;
                   </span>
                 </div>
                 <div className="w-[30%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>
-                    2024.10.25 07:54:01
+                    &nbsp;
                   </span>
                 </div>
                 <div className="w-[30%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>
-                    없음
+                    &nbsp;
                   </span>
                 </div>
               </li>

@@ -79,6 +79,17 @@ const PaymentClient: React.FC<PaymentProps> = ({ currentUser }) =>{
     },
   ];
 
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleModal = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleRequest = () => {
+    setIsOpen(!isOpen);
+    //입금 요청 보내는 코드 이쪽에 작성?
+  }
+
   return (
     <section>
       <div id="headerNav">
@@ -140,31 +151,11 @@ const PaymentClient: React.FC<PaymentProps> = ({ currentUser }) =>{
               <ul>
                 <li className="w-full flex justify-between border-b border-[#ccc]">
                   <div className="w-1/6 bg-lightgray p-5 text-primary font-semibold border-r border-[#ccc]">
-                    신용카드
-                  </div>
-                  <div className="w-5/6 p-5">
-                  ??<br/>
-                  경남은행 207-0156-8973-02<br/>
-                  예금주 : 박종훈(한국방폭협회 공동회장 박종훈)
-                  </div>
-                </li>
-                <li className="w-full flex justify-between border-b border-[#ccc]">
-                  <div className="w-1/6 bg-lightgray p-5 text-primary font-semibold border-r border-[#ccc]">
                     계좌이체
                   </div>
                   <div className="w-5/6 p-5">
                   경남은행 207-0156-8973-02<br/>
                   예금주 : 박종훈(한국방폭협회 공동회장 박종훈)
-                  </div>
-                </li>
-                <li className="w-full flex justify-between border-b border-[#ccc]">
-                  <div className="w-1/6 bg-lightgray p-5 text-primary font-semibold border-r border-[#ccc]">
-                    가상계좌
-                  </div>
-                  <div className="w-5/6 p-5">
-                  경남은행 207-0156-8973-02<br/>
-                  예금주 : 박종훈(한국방폭협회 공동회장 박종훈)<br/>
-                  ※ 본인 확인을 위해 입금자명은 {`'`}성명+주민번호 앞6자리{`'`}로 하시거나, 이메일이나 전화로 입금사실을 말씀해주세요.
                   </div>
                 </li>
               </ul>
@@ -251,11 +242,40 @@ const PaymentClient: React.FC<PaymentProps> = ({ currentUser }) =>{
               </tr>
             </table>
             <div className="mx-auto flex">
-              <button className="mt-16 w-32 h-12 border border-primary bg-primary text-white hover:bg-white hover:text-primary transition-all duration-200">
+              {/* <button className="mt-16 w-32 h-12 border border-primary bg-primary text-white hover:bg-white hover:text-primary transition-all duration-200">
                 납부하기
-              </button>
-              <button className="mt-16 w-44 h-12 border border-primary ml-12 hover:bg-primary hover:text-white transition-all duration-200">
+              </button> */}
+              <button 
+                className="mt-16 w-44 h-12 border border-primary hover:bg-primary hover:text-white transition-all duration-200"
+                onClick={handleModal}
+              >
                 입금확인 요청하기
+              </button>
+            </div>
+          </div>
+          <div className={`w-[550px] h-[340px] fixed z-40 left-1/2 -translate-x-[150px] bg-white font-medium shadow-lg shadow-[#868686] rounded-md overflow-hidden ${
+            isOpen ? "" : "hidden" 
+          }`}>
+            <div className="w-full h-[250px] mx-auto border-t-8 border-primary">
+              <div className="w-[500px] h-full mx-auto px-5 py-12 border-b border-[#ccc]">
+                <p className="text-[22px] font-semibold mb-1">
+                  입금 확인 요청
+                </p>
+                <i className="text-[14px] text-secondary">※반드시 계좌이체를 끝내신 후 확인 버튼을 눌러주세요.</i><br/><br/><br/>
+                입금 요청이 접수된 이후 관리자가 입금 내역을 확인할 경우<br/>
+                마이페이지 - 회비 납부 - 회비 납부내역에 표시됩니다.
+              </div>
+            </div>
+            <div className="w-full flex items-center justify-end mt-5">
+              <button className="w-28 h-10 border hover:bg-[#eee] border-[#3A3A3A] rounded-md"
+              onClick={handleModal}
+              >
+                취소
+              </button>
+              <button className="w-28 h-10 bg-primary text-white ml-8 hover:bg-[#002a6d] rounded-md mr-[25px]"
+              onClick={handleRequest}
+              >
+                확인
               </button>
             </div>
           </div>
