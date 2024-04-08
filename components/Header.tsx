@@ -227,12 +227,14 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     <>
                       <li className="text-[#ccc]">|</li>
                       <li className="flex items-center space-x-[5px]">
-                        <span
-                          className="cursor-pointer"
-                          onClick={() => signOut()}
-                        >
-                          로그아웃
-                        </span>
+                        <Link passHref href={"/"}>
+                          <span
+                            className="cursor-pointer"
+                            onClick={() => signOut()}
+                          >
+                            로그아웃
+                          </span>
+                        </Link>
                       </li>
                     </>
                   )}

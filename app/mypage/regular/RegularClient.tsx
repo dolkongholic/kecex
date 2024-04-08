@@ -197,6 +197,7 @@ const RegularClient: React.FC<RegularClientProps> = ({ currentUser }) => {
                     pageMenu={pageMenu}
                     setPageMenu={setPageMenu}
                     location={location}
+                    currentUser={currentUser}
                   />
                 </div>
               </div>

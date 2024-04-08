@@ -25,8 +25,6 @@ export default function SubNav({
       setPageMenu(title);
     }
   };
-
-  console.log(currentUser);
   return (
     <>
       {MainList.map((item: any, index: any) => (
@@ -85,7 +83,7 @@ export default function SubNav({
           {item.sub && item.title == pageMenu && (
             <div className="flex flex-col w-full bg-lightgray py-[10px] pl-[20px] text-sm border-b border-gray">
               <ul className="space-y-[10px]">
-                {item.sub.map((sub_item: any, sub_index: any) => !sub_item.staff? currentUser?.staff? ( 
+                {item.sub.map((sub_item: any, sub_index: any) => sub_item.staff? currentUser?.staff? ( 
                   <li key={sub_index}>
                     <Link
                       passHref
@@ -107,28 +105,28 @@ export default function SubNav({
                     </Link>
                   </li>
                 ): 
-                <li key={sub_index}>
-                    <Link
-                      passHref
-                      href={sub_item.url}
-                      className="h-[60px] w-full"
-                    >
-                      <div
-                        className={`hover:text-slate-700 hover:underline flex justify-start item-center leading-[20px] ${
-                          location == sub_item.title ? " underline " : " "
-                        }"`}
-                      >
-                        <span className="flex justify-start item-center leading-[20px] pt-[5px]">
-                          <PiDotBold />
-                        </span>
-                        <span className="flex justify-start item-center leading-[20px]">
-                          {sub_item.title}
-                        </span>
-                      </div>
-                    </Link>
-                  </li>
+                  ""
                 : 
-                ""
+                <li key={sub_index}>
+                <Link
+                  passHref
+                  href={sub_item.url}
+                  className="h-[60px] w-full"
+                >
+                  <div
+                    className={`hover:text-slate-700 hover:underline flex justify-start item-center leading-[20px] ${
+                      location == sub_item.title ? " underline " : " "
+                    }"`}
+                  >
+                    <span className="flex justify-start item-center leading-[20px] pt-[5px]">
+                      <PiDotBold />
+                    </span>
+                    <span className="flex justify-start item-center leading-[20px]">
+                      {sub_item.title}
+                    </span>
+                  </div>
+                </Link>
+              </li>
                   )}
               </ul>
             </div>

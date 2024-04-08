@@ -137,6 +137,7 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
                     pageMenu={pageMenu}
                     setPageMenu={setPageMenu}
                     location={location}
+                    currentUser={currentUser}
                   />
                 </div>
               </div>

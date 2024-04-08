@@ -170,6 +170,7 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
                     pageMenu={pageMenu}
                     setPageMenu={setPageMenu}
                     location={location}
+                    currentUser={currentUser}
                   />
                 </div>
               </div>

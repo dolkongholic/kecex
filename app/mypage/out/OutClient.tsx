@@ -177,6 +177,7 @@ const OutClient: React.FC<OutProps> = ({ currentUser }) =>{
                     pageMenu={pageMenu}
                     setPageMenu={setPageMenu}
                     location={location}
+                    currentUser={currentUser}
                   />
                 </div>
               </div>
