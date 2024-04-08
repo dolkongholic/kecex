@@ -167,6 +167,7 @@ const CareerPrintClient: React.FC<CareerPrintProps> = ({ currentUser }) =>{
                     pageMenu={pageMenu}
                     setPageMenu={setPageMenu}
                     location={location}
+                    currentUser={currentUser}
                   />
                 </div>
               </div>

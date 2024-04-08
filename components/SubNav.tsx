@@ -25,8 +25,6 @@ export default function SubNav({
       setPageMenu(title);
     }
   };
-
-  console.log(currentUser)
   return (
     <>
       {MainList.map((item: any, index: any) => (

@@ -157,6 +157,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                     pageMenu={pageMenu}
                     setPageMenu={setPageMenu}
                     location={location}
+                    currentUser={currentUser}
                   />
                 </div>
               </div>

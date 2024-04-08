@@ -108,6 +108,7 @@ const DetailClient: React.FC<DetailProps> = ({ currentUser }) =>{
                     pageMenu={pageMenu}
                     setPageMenu={setPageMenu}
                     location={location}
+                    currentUser={currentUser}
                   />
                 </div>
               </div>

@@ -113,6 +113,7 @@ const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
                     pageMenu={pageMenu}
                     setPageMenu={setPageMenu}
                     location={location}
+                    currentUser={currentUser}
                   />
                 </div>
               </div>
