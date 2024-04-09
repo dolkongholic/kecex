@@ -256,7 +256,7 @@ const RegularClient: React.FC<RegularClientProps> = ({ currentUser }) => {
                     <div className="w-16 h-16 flex justify-start md:justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       02
                     </div>
-                    <p className="ml-6 md:ml-3 w-7/8">
+                    <p className="ml-12 md:ml-3 w-7/8">
                       각종 안전기술 정보 및 자료제공<br/>
                       - 안전기술, 안전교육교안(sheet), 안전가이드 등<br/>
                         정기간행물 지급<br/>
@@ -286,7 +286,7 @@ const RegularClient: React.FC<RegularClientProps> = ({ currentUser }) => {
                     <div className="w-16 h-16 flex justify-start md:justify-center items-center text-[30px] text-[#ccc] font-bold ml-4">
                       05
                     </div>
-                    <p className="ml-6 md:ml-3 w-7/8">
+                    <p className="ml-12 md:ml-3 w-7/8">
                       회원 상호간의 기술, 정보교류 및 친목 도모 행사 개최 <br className="hidden md:inline"/>
                       산업안전보건강조주간에 개최되는 행사, 신년회, <br className="hidden md:inline"/>
                       산재예방결의대회, 안전세미나 및 워크숍, 산업시찰, 체육대회 등

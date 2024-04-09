@@ -58,8 +58,18 @@ function Login() {
       }
     });
   };
+
+  const onCheckEnter = (event:any) => {
+    if(event.key === 'Enter') {
+      // alert('Enter키를 눌렀습니다.');
+      handleSubmit(onSubmit)();
+    };
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center space-y-10 p-[20px] md:p-24">
+    <main className="flex min-h-screen flex-col items-center space-y-10 p-[20px] md:p-24"
+      onKeyDown={onCheckEnter}
+    >
       <Link passHref href={"/"}>
         <Image
           src="/img/logo/logo_big_icon__1.png"

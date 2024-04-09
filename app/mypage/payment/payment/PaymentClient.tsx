@@ -128,7 +128,7 @@ const PaymentClient: React.FC<PaymentProps> = ({ currentUser }) =>{
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
           <article className="w-full">
             <ContentSubTitle title="회비 납부 목적" />
@@ -253,16 +253,16 @@ const PaymentClient: React.FC<PaymentProps> = ({ currentUser }) =>{
               </button>
             </div>
           </div>
-          <div className={`w-[550px] h-[340px] fixed z-40 left-1/2 -translate-x-[150px] bg-white font-medium shadow-lg shadow-[#868686] rounded-md overflow-hidden ${
+          <div className={`w-[360px] md:w-[550px] h-[340px] fixed z-40 left-1/2 -translate-x-[180px]  md:-translate-x-[150px] bg-white font-medium shadow-lg shadow-[#868686] rounded-md overflow-hidden ${
             isOpen ? "" : "hidden" 
           }`}>
             <div className="w-full h-[250px] mx-auto border-t-8 border-primary">
-              <div className="w-[500px] h-full mx-auto px-5 py-12 border-b border-[#ccc]">
-                <p className="text-[22px] font-semibold mb-1">
+              <div className="w-full md:w-[500px] h-full mx-auto px-5 py-12 border-b border-[#ccc] text-[14px] md:text-base">
+                <p className="text-[22px] font-semibold md:mb-1">
                   입금 확인 요청
                 </p>
-                <i className="text-[14px] text-secondary">※반드시 계좌이체를 끝내신 후 확인 버튼을 눌러주세요.</i><br/><br/><br/>
-                입금 요청이 접수된 이후 관리자가 입금 내역을 확인할 경우<br/>
+                <i className="text-[14px] text-secondary">※반드시 계좌이체를 끝내신 후<br className="md:hidden"/> 확인 버튼을 눌러주세요.</i><br/><br/><br className="hidden md:inline"/>
+                입금 요청이 접수된 이후 관리자가 입금 내역을 확인할 경우 <br className="hidden md:inline"/>
                 마이페이지 - 회비 납부 - 회비 납부내역에 표시됩니다.
               </div>
             </div>

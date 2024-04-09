@@ -145,7 +145,7 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <div className="text-black w-full flex flex-col justify-between item-center">
             <div className="h-[40px]">* 표시는 필수 입력 사항입니다.</div>
@@ -229,7 +229,7 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
               </div>
             </div>
           </div>
-          <div className="flex justify-center items-center w-full mt-[20px] space-x-[20px]">
+          <div className="flex justify-between md:justify-center items-center w-full mt-[20px] md:space-x-[20px]">
             <div
               className="cursor-pointer w-[170px] h-[50px] flex justify-center items-center bg-secondary text-white"
               onClick={handleSubmit(onSubmit)}

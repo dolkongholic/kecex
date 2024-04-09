@@ -23,7 +23,7 @@ export default function Footer() {
           </Link>
         </div>
         <div className="w-full xl:w-[1400px] px-5 xl:px-0 md:h-[70px] md:flex justify-between item-center leading-[30px] md:leading-[70px] md:border-b border-[#777]">
-          <ul className="flex flex-wrap md:flex-nowrap justify-between md:justify-start text-white md:space-x-[20px] text-[13px] sm:text-[15px] md:text-[16px] px-[8%] sm:px-[15%] md:px-0 text-center">
+          <ul className="flex flex-wrap md:flex-nowrap justify-between md:justify-start text-white md:space-x-[20px] text-[15px] md:text-[16px] px-[8%] sm:px-[15%] md:px-0 text-center">
             <Link passHref href={"/policy/serviceinfo/"} className="md:w-auto text-center">
               <li className="md:w-auto">이용안내</li>
             </Link>
