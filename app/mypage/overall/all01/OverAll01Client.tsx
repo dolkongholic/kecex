@@ -115,7 +115,7 @@ const OverAll01Client: React.FC<OverAll01ClientProps> = ({ currentUser }) => {
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} />
           <div className="text-neutral-800 w-full flex flex-col justify-between item-center -translate-y-[19px]">
             <div className="w-full md:h-[200px] bg-lightgray py-[30px] md:p-[30px] flex flex-col md:flex-row justify-center md:justify-between">

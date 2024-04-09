@@ -1037,7 +1037,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     경력수첩 발급
                   </div>
                   <div className="flex flex-col space-y-[25px] border-b border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
-                    <Link passHref href={"/mypage/carrear/print"}>
+                    <Link passHref href={"/mypage/career/print"}>
                       <span className="cursor-pointer hover:text-primary"> · 경력수첩 발급</span>
                     </Link>
                   </div>

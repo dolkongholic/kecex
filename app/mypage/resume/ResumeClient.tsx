@@ -164,10 +164,10 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
             </div>
           </div>
         </section>
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
           <div className="text-black w-full flex flex-col justify-between item-center border-b-secondary border-b-2">
-            <div className="h-[40px]">
+            <div className="h-[60px] md:h-[40px]">
               <span className="text-red-500">
                 이력서 미작성 시 교육 신청 진행 불가
               </span>
@@ -363,7 +363,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                   </fieldset>
                 </div>
               </div>
-              <div className="w-full h-[320px] md:h-auto p-7 border border-primary mt-1 leading-6 md:leading-8 text-[14px] md:text-base -translate-y-96 md:-translate-y-0">
+              <div className="w-full h-[320px] md:h-auto p-7 border border-primary mt-1 leading-6 md:leading-8 text-[14px] md:text-base -translate-y-[435px] md:-translate-y-0">
                 <strong className="text-gray-800">
                   잠깐! 사진을 다시 확인해주세요!
                 </strong>
