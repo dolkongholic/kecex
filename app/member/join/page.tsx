@@ -15,11 +15,10 @@ import Image from "next/image";
 function Join() {
   const router = useRouter();
 
-  const [iconColors, setIconColors] = useState(['gray', 'gray', 'gray', 'gray']);
-  const [iconColors2, setIconColors2] = useState(['gray', 'gray', 'gray', 'gray']);
+  const [iconColors, setIconColors] = useState(['gray', 'gray', 'gray']);
+  const [iconColors2, setIconColors2] = useState(['gray', 'gray', 'gray']);
   const [isShown2, setIsShown2] = useState(false);
   const [isShown3, setIsShown3] = useState(false);
-  const [isShown4, setIsShown4] = useState(false);
 
   const toggleAllIcons = () => {
     // Check if all icons are blue
@@ -27,10 +26,10 @@ function Join() {
 
     if (allBlue) {
       // 전부 회색으로
-      setIconColors(['gray', 'gray', 'gray', 'gray']);
+      setIconColors(['gray', 'gray', 'gray']);
     } else {
       // 전부 파란색으로
-      setIconColors(['#008EE5', '#008EE5', '#008EE5', '#008EE5']);
+      setIconColors(['#008EE5', '#008EE5', '#008EE5']);
     }
   };
   //li 클릭 이벤트가 일어났을 때
@@ -47,11 +46,6 @@ function Join() {
         break;
       case 2:
         setIsShown3(!isShown3);
-        newIconColors2[index] = iconColors2[index] === '#008EE5' ? 'gray' : '#008EE5';
-        setIconColors2(newIconColors2);
-        break;
-      case 3:
-        setIsShown4(!isShown4);
         newIconColors2[index] = iconColors2[index] === '#008EE5' ? 'gray' : '#008EE5';
         setIconColors2(newIconColors2);
         break;
@@ -82,30 +76,17 @@ function Join() {
     formState: { errors },
   } = useForm<FieldValues>();
 
-  const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    if (data.password != data.password_1) {
-      alert("비밀번호가 틀립니다.");
-      return;
-    }
+  const handleJoin = () => {
 
-    setIsLoading(true);
+    
+    const allIconsAgree = iconColors[1] === '#008EE5' && iconColors[2] ==='#008EE5';
 
-    try {
-      const request = await axios.post("/api/register", {
-        data,
-      });
-      if (request) {
-        toast.success("입력 성공");
-        setIsLoading(false);
-        router.push("/");
-      }
-    } catch (error: any) {
-      setIsLoading(false);
-      if (error.response.status == 409) {
-        toast.error(`이미 존재하는 아이디 혹은 연락처 입니다.`);
-      }
+    if(allIconsAgree){
+      router.push('/member/join2');
+    }else{
+      alert('약관에 동의해주세요.')
     }
-  };
+  }
 
   return (
     <main className="flex min-h-screen flex-col items-center space-y-10 w-full md:w-[1200px] p-[20px] md:p-24 m-auto text-center text-black">
@@ -306,46 +287,25 @@ function Join() {
                 </pre>
               </div>
             )}
-            {/* <li
+            <li
               className="flex justify-between h-14 items-center px-[20px] md:px-0s md:pl-52 md:pr-24"
               onClick={() => handleLiClick(2)}
             >
-              <div className="flex items-center cursor-pointer "
+              <div className="flex items-center cursor-pointer"
               onClick={() => checkIcon(2)}
               >
                 <FaCheckCircle size="1.3em" color={iconColors[2]} />{" "}
-                <p className="ml-6 text-[14px]">
-                  한국방폭협회 이용약관 동의{" "}
-                  <span className="text-red-500">(필수)</span>
-                </p>
-              </div>
-              <div>
-                <IoIosArrowDown size="1.5em" color={iconColors2[2]}/>
-              </div>
-            </li> */}
-            {/*3번째 li*/}
-            {/* {isShown3 && (
-              <div className="h-52 flex items-center pl-52">텍스트 상자</div>
-            )} */}
-            <li
-              className="flex justify-between h-14 items-center px-[20px] md:px-0s md:pl-52 md:pr-24"
-              onClick={() => handleLiClick(3)}
-            >
-              <div className="flex items-center cursor-pointer"
-              onClick={() => checkIcon(3)}
-              >
-                <FaCheckCircle size="1.3em" color={iconColors[3]} />{" "}
                 <p className="ml-6 text-[14px]">
                   개인정보 수집 및 이용 동의{" "}
                   <span className="text-red-500">(필수)</span>
                 </p>
               </div>
               <div>
-                <IoIosArrowDown size="1.5em" color={iconColors2[3]} />
+                <IoIosArrowDown size="1.5em" color={iconColors2[2]} />
               </div>
             </li>
-            {/*4번째 li*/}
-            {isShown4 && (
+            {/*3번째 li*/}
+            {isShown3 && (
               <div className="h-52 flex items-center pl-52">
                 <pre id="first_article" className="text-[14px] w-[700px] h-48 overflow-scroll whitespace-pre-wrap overflow-x-hidden text-start">
                 개인정보 수집 및 이용에 대한 안내<br/><br/>
@@ -369,146 +329,24 @@ function Join() {
                 4. 동의거부 권리 및 거부에 따른 불이익<br/>
                 - 개인정보 수집ㆍ이용 동의에 대하여 거부할 수 있으며, 동의를 거부하는 경우에는 본 교육의 신청제한 등의 불이익이 있을 수 있습니다.<br/><br/>
 
-
                 </pre>
-
               </div>
             )}
           </ul>
         </article>
-        {/* <div className="first_btn_box flex justify-center mt-10">
-          <button className="w-52 h-14 bg-blue-500 text-white mr-4">
-            동의
-          </button>
-          <button className="w-52 h-14 bg-lightgray">취소</button>
-        </div> */}
       </section>{" "}
       {/*약관동의 섹션 끝*/}
-      {/* 기존 회원정보 입력 세션 */}
-      <div>
-      {/* <section className="w-full">
-        <h3 className="text-[24px] font-semibold mt-12 mb-8">회원정보 입력</h3>
-        <ul className="w-full flex px-5 md:px-52 h-12 bg-lightgray items-center justify-between mt-1 text-neutral-400 text-[14px] md:text-base">
-          <li className="text-secondary">약관동의</li>
-          <li className="text-secondary">
-            <IoIosArrowForward />
-          </li>
-          <li className="text-secondary">회원정보 입력</li>
-          <li className="text-secondary">
-            <IoIosArrowForward />
-          </li>
-          <li>가입완료</li>
-        </ul>
-        <div className="border border-gray px-[30px] py-[50px] w-full">
-          <div>
-            <div className="mt-1">
-              <Input
-                id="username"
-                label="아이디"
-                type="text"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                required
-              />
-            </div>
-          </div>
-
-          <div className="mt-4">
-            <div className="mt-1">
-              <Input
-                id="password"
-                label="비밀번호"
-                type="password"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                required
-              />
-            </div>
-          </div>
-
-          <div className="mt-4">
-            <div className="mt-1">
-              <Input
-                id="password_1"
-                label="비밀번호 확인"
-                type="password"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                required
-              />
-            </div>
-          </div>
-
-          <div className="mt-4">
-            <div className="mt-1">
-              <Input
-                id="email"
-                label="Email"
-                type="email"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                required
-              />
-            </div>
-          </div>
-
-          <div className="mt-4">
-            <div className="mt-1">
-              <Input
-                id="koname"
-                label="이름"
-                type="text"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                required
-              />
-            </div>
-          </div>
-
-          <div className="mt-4">
-            <div className="mt-1">
-              <Input
-                id="tel"
-                label="연락처"
-                type="text"
-                disabled={isLoading}
-                register={register}
-                errors={errors}
-                required
-              />
-            </div>
-          </div>
-          <div className="mt-6 flex gap-[10px]">
-            <Button
-              disabled={isLoading}
-              label="가입완료"
-              onClick={handleSubmit(onSubmit)}
-            />
-          </div>
-        </div>
-      </section> */}
-      </div>
-      {/*회원정보 섹션 */}
       <div className="flex justify-between w-full">
         <button className="w-28 h-10 bg-lightgray border border-[#ccc] text-secondary hover:bg-[#3A3A3A] hover:border-[#3A3A3A] hover:text-white ml-52 font-semibold"
         onClick={() => router.back()}
         >
           돌아가기
         </button>
-        <Link
-          passHref
-          href={`/member/join2`}
-          className=""
-        >
-          <button className="w-28 h-10 bg-secondary text-white mr-24 hover:bg-primary font-semibold">
+          <button className="w-28 h-10 bg-secondary text-white mr-24 hover:bg-primary font-semibold"
+          onClick={handleJoin}
+          >
             다음
           </button>
-      </Link>
       </div>
     </main>
   );

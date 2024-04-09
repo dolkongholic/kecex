@@ -4,25 +4,19 @@ import { signIn } from "next-auth/react";
 import Image from "next/image";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 function Login() {
   const [findType, setFindType] = useState<string>("id");
-  const idRef = useRef(null);
-  const nameRef = useRef(null);
-  const emailRef = useRef(null);
+  const router = useRouter();
+  const [id, setId] = useState<string>('')
+  const [name, setName] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const handleSubmit = () => {
+      localStorage.setItem('userId', id);
+    router.push('/member/findPassword/')
+  }
 
-  const handleSubmit = async () => {
-    // console.log(nameRef.current)
-    // console.log(emailRef.current)
-
-    const result = await signIn("credentials", {
-      id: idRef.current,
-      username: nameRef.current,
-      email: emailRef.current,
-      redirect: true,
-      callbackUrl: "/",
-    });
-  };
 
   return (
     <main className="flex min-h-screen flex-col items-center p-[20px] md:p-24">
@@ -63,13 +57,10 @@ function Login() {
           <div>
             <div className="mt-4">
               <input
-                ref={idRef}
-                onChange={(e: any) => {
-                  idRef.current = e.target.value;
-                }}
+                onChange={(e) => setId(e.target.value)}
                 id="id"
                 name="id"
-                type="id"
+                type="text"
                 required
                 autoFocus={true}
                 placeholder="아이디"
@@ -81,10 +72,7 @@ function Login() {
         <div>
           <div className="mt-4">
             <input
-              ref={nameRef}
-              onChange={(e: any) => {
-                nameRef.current = e.target.value;
-              }}
+              onChange={(e) => setName(e.target.value)}
               id="name"
               name="name"
               type="name"
@@ -102,19 +90,18 @@ function Login() {
               type="email"
               id="email"
               name="email"
-              ref={emailRef}
-              onChange={(e: any) => (emailRef.current = e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="이메일"
               className="border border-gray py-[10px] px-[20px] w-full focus:border-secondary outline-none"
             />
           </div>
         </div>
         <div className="mt-6 flex gap-[10px]">
-          <Link passHref href="/member/signin" className="w-full">
-            <button className="w-full bg-primary text-white cursor-pointer py-[10px]">
+            <button className="w-full bg-primary text-white cursor-pointer py-[10px]"
+              onClick={handleSubmit}
+            >
               다음
             </button>
-          </Link>
           <Link passHref href="/member/signin" className="w-full">
             <button className="w-full bg-lightgray border border-gray text-black cursor-pointer py-[10px]">
               취소

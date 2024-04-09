@@ -31,6 +31,20 @@ function Join2() {
       return;
     }
 
+    const emailRegex = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+    if (!emailRegex.test(data.email)){
+      alert("올바른 이메일 형식이 아닙니다.");
+      return;
+    }
+
+    const phoneRegex = /^\d{11}$/;
+
+    if (!phoneRegex.test(data.tel)){
+      alert("올바른 연락처 형식이 아닙니다.");
+      return;
+    }
+
     setIsLoading(true);
 
     try {
@@ -52,7 +66,6 @@ function Join2() {
 
   return (
     <main className="flex min-h-screen flex-col items-center space-y-10 w-full md:w-[1200px] p-[20px] md:p-24 m-auto text-center text-black">
-      
       {/*약관동의 섹션 끝*/}
       <section className="w-full">
         <div className="w-full flex justify-center">
@@ -161,13 +174,13 @@ function Join2() {
               />
             </div>
           </div>
-          <div className="mt-6 flex flex-col gap-[10px]">
+          <div className="mt-6 flex flex-col">
             <Button
               disabled={isLoading}
               label="가입완료"
               onClick={handleSubmit(onSubmit)}
             />
-            <button className="w-full font-semibold h-[52px] rounded-lg bg-lightgray border border-[#ccc] text-secondary hover:bg-[#3A3A3A] hover:border-[#3A3A3A] hover:text-white mt-6"
+            <button className="w-full font-semibold h-[52px] rounded-lg bg-lightgray border border-[#ccc] text-secondary hover:bg-[#3A3A3A] hover:border-[#3A3A3A] hover:text-white mt-3"
               onClick={() => router.back()}
               >
                 돌아가기

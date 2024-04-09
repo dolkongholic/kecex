@@ -105,10 +105,10 @@ function Login() {
             />
           </div>
         </div>
-        <div className="flex w-full justify-end items-center gap-[10px] leading-[40px] text-[14px]">
+        {/* <div className="flex w-full justify-end items-center gap-[10px] leading-[40px] text-[14px]">
           <input id="remember_id" type="checkbox" className="border-gray" />
           <label htmlFor="remember_id">아이디 저장</label>
-        </div>
+        </div> */}
         <div className="mt-6 flex gap-[10px]">
           <button
             onClick={handleSubmit(onSubmit)}
