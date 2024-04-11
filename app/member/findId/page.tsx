@@ -5,24 +5,8 @@ import Image from "next/image";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Link from "next/link";
 
-function Login() {
-  const [findType, setFindType] = useState<string>("id");
-  const idRef = useRef(null);
-  const nameRef = useRef(null);
-  const emailRef = useRef(null);
-
-  const handleSubmit = async () => {
-    // console.log(nameRef.current)
-    // console.log(emailRef.current)
-
-    const result = await signIn("credentials", {
-      id: idRef.current,
-      username: nameRef.current,
-      email: emailRef.current,
-      redirect: true,
-      callbackUrl: "/",
-    });
-  };
+function FindId() {
+  const userId = localStorage.getItem('userId');
 
   return (
     <main className="flex min-h-screen flex-col items-center p-[20px] md:p-24">
@@ -39,39 +23,16 @@ function Login() {
       "
       >
         <div
-          className={`w-full text-center h-full leading-[60px] text-black ${
-            findType == "id" ? "bg-gray" : "bg-lightgray"
-          }`}
-          onClick={() => setFindType("id")}
+          className={`w-full text-center h-full leading-[60px] text-black`}
         >
           아이디 찾기 결과
         </div>
       </div>
       <div className="border border-t-0 border-gray px-[30px] py-[30px] w-full md:w-[450px]">
         <div className="text-subtitle text-black">
-          {/* {findType == "id" ? <p>아이디 찾기</p> : <p>비밀번호 찾기</p>} */}
         </div>
-        {findType != "id" && (
-          <div>
-            <div className="mt-4">
-              <input
-                ref={idRef}
-                onChange={(e: any) => {
-                  idRef.current = e.target.value;
-                }}
-                id="id"
-                name="id"
-                type="id"
-                required
-                autoFocus={true}
-                placeholder="아이디"
-                className="border border-gray py-[10px] px-[20px] w-full focus:border-secondary outline-none"
-              />
-            </div>
-          </div>
-        )}
           <p className="py-6 text-[18px]">
-            회원님의 아이디는 38414 입니다.
+            회원님의 아이디는 {userId} 입니다.
           </p>
         <div className="mt-6 flex gap-[10px]">
           <Link passHref href="/member/signin" className="w-full">
@@ -79,7 +40,7 @@ function Login() {
               로그인
             </button>
           </Link>
-          <Link passHref href="/member/signin" className="w-full">
+          <Link passHref href="/member/find" className="w-full">
             <button className="w-full bg-lightgray border border-gray text-black cursor-pointer py-[10px]">
               비밀번호 찾기
             </button>
@@ -90,4 +51,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default FindId;
