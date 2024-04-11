@@ -55,27 +55,26 @@ function FindPassword() {
       "
       >
         <div
-          className={`w-full text-center h-full leading-[60px] text-black ${
-            findType == "id" ? "bg-gray" : "bg-lightgray"
-          }`}
-          onClick={() => setFindType("id")}
+          className={`w-full text-center h-full leading-[80px] text-black text-[20px]`}
         >
           비밀번호 찾기 결과
         </div>
       </div>
       <div className="border border-t-0 border-gray px-[30px] py-[30px] w-full md:w-[450px]">
-        <div className="text-subtitle text-black">
-          {/* {findType == "id" ? <p>아이디 찾기</p> : <p>비밀번호 찾기</p>} */}
-        </div>
+          <p className="text-[15px]">
+            다음 임시 비밀번호로 로그인한 후 반드시 
+            <span className="font-bold"> 마이페이지 - 회원정보 수정</span>에서 비밀번호를 변경해주세요.
+          </p>
+
           <p className="py-6 text-[18px]">
-            회원님의 비밀번호는
-            <p>: {generatedPassword}</p>
+            임시 비밀번호 :
+            <p>{generatedPassword}</p>
           </p>
         <div className="mt-6 flex gap-[10px]">
           <Link passHref href="/member/signin" className="w-full">
             <button className="w-full bg-primary text-white cursor-pointer py-[10px]"
             >
-              확인
+              로그인
             </button>
           </Link>
         </div>
