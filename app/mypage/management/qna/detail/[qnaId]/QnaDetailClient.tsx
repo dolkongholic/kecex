@@ -36,6 +36,7 @@ const QnaDetailClient: React.FC<QnaDetailClientProps> = ({
   const params = useSearchParams();
   const page = params?.get("page");
 
+  const router = useRouter();
 
   const MainList = [
     {
@@ -62,7 +63,6 @@ const QnaDetailClient: React.FC<QnaDetailClientProps> = ({
       sub: [
         { title: "회비 납부", url: "/mypage/payment/payment" },
         { title: "회비 납부내역", url: "/mypage/payment/detail" },
-        { title: "회비 관리", url: "/mypage/payment/management" },
       ],
     },
     {
@@ -103,8 +103,6 @@ const QnaDetailClient: React.FC<QnaDetailClientProps> = ({
       staff:true
     },
   ];
-
-  console.log(currentQna)
 
   return (
     <section>
@@ -187,17 +185,15 @@ const QnaDetailClient: React.FC<QnaDetailClientProps> = ({
             </div>
           </div>
           <div className="flex gap-4 m-auto">
-            <Link passHref href={"/mypage/management/qna"}>
               <button
                 className="w-32 h-10 bg-gray-500 text-white text-[14px] mt-9 m-auto"
+                onClick={() => router.back()}
               >
-                목록
+                돌아가기
               </button>
-            </Link>
             {currentUser?.staff && (
               <button
                 className="w-32 h-10 bg-red-500 text-white text-[14px] mt-9 m-auto"
-                // onClick={() => del()}
               >
                 삭제
               </button> 

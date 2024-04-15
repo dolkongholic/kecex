@@ -3,6 +3,8 @@
 import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 
@@ -89,6 +91,12 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
     },
   ];
 
+  const router = useRouter();
+  if (!currentUser) {
+    router.push("/member/signin/");
+    return null;
+  }
+
   return (
     <section>
       <div id="headerNav">
@@ -163,26 +171,6 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
                     </p>
                   </li>
                 </a>
-                {/* <a href="/mypage/overall/all03">
-                  <li className="w-[130px] h-[130px] border border-gray-200 flex flex-col justify-center items-center">
-                    <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center m-2">
-                      <p className="text-[20px] font-bold text-darkgray">0</p>
-                    </div>
-                    <p className="text-[13px] h-[40px] text-center">
-                      세미나/컨설팅
-                      <br />
-                      신청 현황
-                    </p>
-                  </li>
-                </a> */}
-                {/* <a href="/mypage/overall/all04">
-                  <li className="w-[130px] h-[130px] border border-gray-200 flex flex-col justify-center items-center">
-                    <div className="w-12 h-12 bg-white rounded-full flex justify-center items-center m-2">
-                      <p className="text-[20px] font-bold text-darkgray">0</p>
-                    </div>
-                    <p className="text-[13px] h-[40px]">경력관리 현황</p>
-                  </li>
-                </a> */}
               </ul>
             </div>
             {/*조회 메뉴 선택*/}
@@ -204,9 +192,14 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
                 </div>
               </div>
             )}
-            {qnaList?.map((item: any, index: any) => (
+            {qnaList?.map((item: any) => (
+              <Link
+                    key={item.id}
+                    passHref
+                    href={`/mypage/management/qna/detail/${item.id}?/`}
+                    className="w-full"
+                    >
               <div
-                key={index}
                 className="border-b border-gray-200 px-[40px] py-[25px] flex justify-between items-center hover:shadow-md"
               >
                 <div className="flex-col">
@@ -215,16 +208,21 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
                       {item.title}
                     </span>
                   </div>
-                  <div className="text-superdarkgray flex justify-start items-center mt-1">
+                  <div className="text-[#3A3A3A] flex justify-start items-center mt-1">
                     <p>{String(item.content).slice(0, 30)}</p>
                   </div>
                 </div>
                 <div className="flex justify-center  items-center">
-                  <button className="flex justify-center items-center bg-gray-200  w-[150px] h-[50px] ml-6">
-                    <span>답변 대기</span>
+                  <button className={`flex justify-center items-center  w-[150px] h-[50px] ml-6
+                    ${item.status === 0 ? "bg-gray-200" : "bg-gray-300"}
+                  `}>
+                    <span>
+                      {item.status === 0 ? "답변 대기" : "답변 완료"}
+                    </span>
                   </button>
                 </div>
               </div>
+              </Link>
             ))}
           </div>
         </section>

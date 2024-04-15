@@ -67,7 +67,6 @@ const PayManagementClient: React.FC<PayManagementProps> = ({ currentUser, paymen
       sub: [
         { title: "회비 납부", url: "/mypage/payment/payment" },
         { title: "회비 납부내역", url: "/mypage/payment/detail" },
-        { title: "회비 관리", url: "/mypage/payment/management" },
       ],
     },
     {
@@ -90,7 +89,6 @@ const PayManagementClient: React.FC<PayManagementProps> = ({ currentUser, paymen
       url: "#",
       sub: [
         { title: "경력수첩 발급", url: "/mypage/career/print" },
-        // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
       ],
     },
     {

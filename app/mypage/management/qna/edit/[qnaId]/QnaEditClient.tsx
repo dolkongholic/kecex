@@ -62,7 +62,6 @@ const QnaEditClient: React.FC<QnaEditClientProps> = ({
       sub: [
         { title: "회비 납부", url: "/mypage/payment/payment" },
         { title: "회비 납부내역", url: "/mypage/payment/detail" },
-        { title: "회비 관리", url: "/mypage/payment/management" },
       ],
     },
     {
@@ -105,8 +104,8 @@ const QnaEditClient: React.FC<QnaEditClientProps> = ({
   ];
 
   const router = useRouter();
-  if (!currentUser) {
-    router.push("/member/signin/");
+  if (!currentUser?.staff) {
+    router.push("/");
   }
   const {
     register,

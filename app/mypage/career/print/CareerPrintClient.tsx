@@ -10,66 +10,6 @@ import { RiArrowRightSLine } from "react-icons/ri";
 
 // Image
 
-const MainList = [
-  {
-    title: "전체 현황",
-    url: "#",
-    sub: [
-      { title: "발급/출력 현황", url: "/mypage/overall/all01" },
-      { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-      // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-      // { title: "경력관리 현황", url: "/mypage/overall/all04" },
-    ],
-  },
-  {
-    title: "회원정보 수정",
-    url: "/mypage/profile",
-    sub: null,
-  },
-  {
-    title: "정회원 가입",
-    url: "/mypage/regular",
-    sub: null,
-  },
-  {
-    title: "회비 납부",
-    url: "#",
-    sub: [
-      { title: "회비 납부", url: "/mypage/payment/payment" },
-      { title: "회비 납부내역", url: "/mypage/payment/detail" },
-      { title: "회비 관리", url: "/mypage/payment/management" },
-    ],
-  },
-  {
-    title: "회원증 출력",
-    url: "/mypage/print",
-    sub: null,
-  },
-  {
-    title: "1:1문의 현황",
-    url: "/mypage/overall/all02",
-    sub: null,
-  },
-  {
-    title: "경력관리",
-    url: "/mypage/resume",
-    sub: null,
-  },
-  {
-    title: "경력수첩 발급",
-    url: "#",
-    sub: [
-      { title: "경력수첩 발급", url: "/mypage/career/print" },
-      // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
-    ],
-  },
-  {
-    title: "회원탈퇴",
-    url: "/mypage/out",
-    sub: null,
-  },
-];
-
 const location = "경력수첩 발급";
 
 interface CareerPrintProps {
@@ -186,7 +126,7 @@ const CareerPrintClient: React.FC<CareerPrintProps> = ({ currentUser }) =>{
 
         <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start ">
           <ContentTitle title={location} center={true} />
-          <div className="w-full border border-secondary  font-medium text-lg text-center p-4 mb-5">
+          <div className="w-full border border-secondary bg-secondary text-white underline underline-offset-4 font-medium text-[24px] text-center p-6 mb-10">
             경력 수첩 준비 중
           </div>
           <div className="flex justify-between w-full h-[50px] leading-[50px]">
@@ -252,7 +192,7 @@ const CareerPrintClient: React.FC<CareerPrintProps> = ({ currentUser }) =>{
             </div>
             <div className="flex justify-start items-center pl-[20px] text-black text-[14px] h-[60px] md:h-auto">
               경남은행 207-0156-8973-02 박종훈{" "}
-              <span className="text-[13px] ml-2">
+              <span className="text-[13px] ml-4">
                 한국방폭협회 공동회장 박종훈
               </span>
             </div>

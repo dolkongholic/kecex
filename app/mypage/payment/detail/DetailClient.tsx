@@ -14,9 +14,10 @@ import { RiArrowRightSLine } from "react-icons/ri";
 const location = "회비 납부내역";
 interface DetailProps {
   currentUser: any;
+  paymentList:any;
 }
 
-const DetailClient: React.FC<DetailProps> = ({ currentUser }) =>{
+const DetailClient: React.FC<DetailProps> = ({ currentUser, paymentList }) =>{
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
   const MainList = [
     {
@@ -65,7 +66,6 @@ const DetailClient: React.FC<DetailProps> = ({ currentUser }) =>{
       url: "#",
       sub: [
         { title: "경력수첩 발급", url: "/mypage/career/print" },
-        // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
       ],
     },
     {
@@ -138,7 +138,7 @@ const DetailClient: React.FC<DetailProps> = ({ currentUser }) =>{
                   No.
                 </div>
                 <div className="w-[10%] h-full whitespace-nowrap">
-                  종류
+                  회원구분
                 </div>
                 <div className="w-[15%] h-full text-start whitespace-nowrap">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;금액
@@ -147,39 +147,52 @@ const DetailClient: React.FC<DetailProps> = ({ currentUser }) =>{
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;납부상태
                 </div>
                 <div className="w-[30%] h-full text-start whitespace-nowrap">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;일자
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;확인 요청 일자
                 </div>
                 <div className="w-[30%] h-full text-start whitespace-nowrap">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비고
                 </div>
               </div>
-              <li className="w-full h-12 flex text-center items-center border-b border-gray-300">
+              {paymentList?.map((item: any, index: any) => (
+              <li className="w-full h-12 flex text-center items-center border-b border-gray-300"
+                key={item.id}
+              >
                 <div className="w-[50px] h-full border-r border-gray-200 flex items-center justify-center font-medium">
                   <span>
-                    1
+                    {index+1}
                   </span>
                 </div>
                 <div className="w-[10%] h-full border-r border-gray-200 flex items-center justify-center">
                   <span>
-                    &nbsp;
+                    {item.user.level}
                   </span>
                 </div>
                 <div className="w-[15%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￦&nbsp;
                   <span>
-                    &nbsp;
-                  </span>
+                      {item.user.level === "일반회원" ? "30,000" : ""}
+                      {item.user.level === "정회원" ? "120,000" : ""}
+                      {item.user.level === "운영위원" ? "200,000" : ""}
+                      {item.user.level === "임원" ? "300,000" : ""}
+                      {item.user.level === "기업회원" ? "500,000" : ""}
+                    </span>
                 </div>
                 <div className="w-[15%] h-full border-r border-gray-200 flex items-center">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span className="text-blue-600">
-                    &nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <span className={`${item.status === 0 ? "text-blue-600" : "text-red-500"}`}>
+                    &nbsp; {item.status === 0 ? "승인 대기" : "승인-입금완료"}
                   </span>
                 </div>
                 <div className="w-[30%] h-full border-r border-gray-200 flex items-center">
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   <span>
-                    &nbsp;
+                  {new Date(item.requested_at).toLocaleString('en-US', {
+                              year: 'numeric',
+                              month: '2-digit',
+                              day: '2-digit',
+                              hour: '2-digit',
+                              minute: '2-digit',
+                      })}
                   </span>
                 </div>
                 <div className="w-[30%] h-full border-r border-gray-200 flex items-center">
@@ -189,42 +202,7 @@ const DetailClient: React.FC<DetailProps> = ({ currentUser }) =>{
                   </span>
                 </div>
               </li>
-              <li className="w-full h-12 flex text-center items-center border-b border-gray-400">
-                <div className="w-[50px] h-full border-r border-gray-200 flex items-center justify-center font-medium">
-                  <span>
-                    2
-                  </span>
-                </div>
-                <div className="w-[10%] h-full border-r border-gray-200 flex items-center justify-center">
-                  <span>
-                    &nbsp;
-                  </span>
-                </div>
-                <div className="w-[15%] h-full border-r border-gray-200 flex items-center">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￦&nbsp;
-                  <span>
-                    &nbsp;
-                  </span>
-                </div>
-                <div className="w-[15%] h-full border-r border-gray-200 flex items-center">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span className="text-red-600">
-                    &nbsp;
-                  </span>
-                </div>
-                <div className="w-[30%] h-full border-r border-gray-200 flex items-center">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span>
-                    &nbsp;
-                  </span>
-                </div>
-                <div className="w-[30%] h-full border-r border-gray-200 flex items-center">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span>
-                    &nbsp;
-                  </span>
-                </div>
-              </li>
+              ))}
               <li className="w-full h-2 flex text-center items-center border-b-2 border-gray-700">
                 &nbsp;
               </li>

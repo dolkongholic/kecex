@@ -7,6 +7,7 @@ import ContentSubTitle from "@/components/content/subtitle";
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
+import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 
@@ -95,7 +96,8 @@ const PaymentClient: React.FC<PaymentProps> = ({ currentUser }) =>{
   const handleModal = () => {
     setIsOpen(!isOpen);
   };
-
+  const router = useRouter();
+  
   const handleRequest = () => {
     const today = new Date();
     axios
@@ -105,6 +107,7 @@ const PaymentClient: React.FC<PaymentProps> = ({ currentUser }) =>{
     })
     .then(() => {
       toast.success("입금 확인 요청을 완료했습니다.");
+      router.refresh();
     })
     .catch(() => {
       toast.error("오류가 발생했습니다.");
