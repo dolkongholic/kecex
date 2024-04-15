@@ -25,8 +25,6 @@ const DetailClient: React.FC<DetailProps> = ({ currentUser }) =>{
       sub: [
         { title: "발급/출력 현황", url: "/mypage/overall/all01" },
         { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-        // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-        // { title: "경력관리 현황", url: "/mypage/overall/all04" },
       ],
     },
     {
@@ -45,7 +43,6 @@ const DetailClient: React.FC<DetailProps> = ({ currentUser }) =>{
       sub: [
         { title: "회비 납부", url: "/mypage/payment/payment" },
         { title: "회비 납부내역", url: "/mypage/payment/detail" },
-        { title: "회비 관리", url: "/mypage/payment/management" , staff:true },
       ],
     },
     {
@@ -75,6 +72,16 @@ const DetailClient: React.FC<DetailProps> = ({ currentUser }) =>{
       title: "회원탈퇴",
       url: "/mypage/out",
       sub: null,
+    },
+    {
+      title: "관리자 메뉴",
+      url: "#",
+      sub: [
+        { title: "회비 납부 관리", url: "/mypage/management/payment/"  },
+        { title: "회원 관리", url: "/mypage/management/user/" },
+        { title: "문의 관리", url: "/mypage/management/qna/" },
+      ],
+      staff:true
     },
   ];
 

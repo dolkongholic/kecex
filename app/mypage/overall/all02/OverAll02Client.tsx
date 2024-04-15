@@ -8,66 +8,6 @@ import { RiArrowRightSLine } from "react-icons/ri";
 
 // Image
 
-const MainList = [
-  {
-    title: "전체 현황",
-    url: "#",
-    sub: [
-      { title: "발급/출력 현황", url: "/mypage/overall/all01" },
-      { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-      // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-      // { title: "경력관리 현황", url: "/mypage/overall/all04" },
-    ],
-  },
-  {
-    title: "회원정보 수정",
-    url: "/mypage/profile",
-    sub: null,
-  },
-  {
-    title: "정회원 가입",
-    url: "/mypage/regular",
-    sub: null,
-  },
-  {
-    title: "회비 납부",
-    url: "#",
-    sub: [
-      { title: "회비 납부", url: "/mypage/payment/payment" },
-      { title: "회비 납부내역", url: "/mypage/payment/detail" },
-      { title: "회비 관리", url: "/mypage/payment/management" },
-    ],
-  },
-  {
-    title: "회원증 출력",
-    url: "/mypage/print",
-    sub: null,
-  },
-  {
-    title: "1:1문의 현황",
-    url: "/mypage/overall/all02",
-    sub: null,
-  },
-  {
-    title: "경력관리",
-    url: "/mypage/resume",
-    sub: null,
-  },
-  {
-    title: "경력수첩 발급",
-    url: "#",
-    sub: [
-      { title: "경력수첩 발급", url: "/mypage/career/print" },
-      // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
-    ],
-  },
-  {
-    title: "회원탈퇴",
-    url: "/mypage/out",
-    sub: null,
-  },
-];
-
 const location = "전체 현황";
 
 interface OverAll02ClientProps {
@@ -107,7 +47,6 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
       sub: [
         { title: "회비 납부", url: "/mypage/payment/payment" },
         { title: "회비 납부내역", url: "/mypage/payment/detail" },
-        { title: "회비 관리", url: "/mypage/payment/management" , staff:true },
       ],
     },
     {
@@ -137,6 +76,16 @@ const OverAll02Client: React.FC<OverAll02ClientProps> = ({
       title: "회원탈퇴",
       url: "/mypage/out",
       sub: null,
+    },
+    {
+      title: "관리자 메뉴",
+      url: "#",
+      sub: [
+        { title: "회비 납부 관리", url: "/mypage/management/payment/"  },
+        { title: "회원 관리", url: "/mypage/management/user/" },
+        { title: "문의 관리", url: "/mypage/management/qna/" },
+      ],
+      staff:true
     },
   ];
 

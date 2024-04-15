@@ -23,7 +23,7 @@ function FindId() {
       "
       >
         <div
-          className={`w-full text-center h-full leading-[60px] text-black`}
+          className={`w-full text-center h-full leading-[60px] text-black text-[20px]`}
         >
           아이디 찾기 결과
         </div>

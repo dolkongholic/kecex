@@ -104,7 +104,6 @@ const CareerPrintClient: React.FC<CareerPrintProps> = ({ currentUser }) =>{
       sub: [
         { title: "회비 납부", url: "/mypage/payment/payment" },
         { title: "회비 납부내역", url: "/mypage/payment/detail" },
-        { title: "회비 관리", url: "/mypage/payment/management" , staff:true },
       ],
     },
     {
@@ -134,6 +133,16 @@ const CareerPrintClient: React.FC<CareerPrintProps> = ({ currentUser }) =>{
       title: "회원탈퇴",
       url: "/mypage/out",
       sub: null,
+    },
+    {
+      title: "관리자 메뉴",
+      url: "#",
+      sub: [
+        { title: "회비 납부 관리", url: "/mypage/management/payment/"  },
+        { title: "회원 관리", url: "/mypage/management/user/" },
+        { title: "문의 관리", url: "/mypage/management/qna/" },
+      ],
+      staff:true
     },
   ];
 

@@ -7,6 +7,8 @@ import ContentSubTitle from "@/components/content/subtitle";
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 
 // Image
@@ -46,7 +48,6 @@ const PaymentClient: React.FC<PaymentProps> = ({ currentUser }) =>{
       sub: [
         { title: "회비 납부", url: "/mypage/payment/payment" },
         { title: "회비 납부내역", url: "/mypage/payment/detail" },
-        { title: "회비 관리", url: "/mypage/payment/management" , staff:true },
       ],
     },
     {
@@ -77,6 +78,16 @@ const PaymentClient: React.FC<PaymentProps> = ({ currentUser }) =>{
       url: "/mypage/out",
       sub: null,
     },
+    {
+      title: "관리자 메뉴",
+      url: "#",
+      sub: [
+        { title: "회비 납부 관리", url: "/mypage/management/payment/"  },
+        { title: "회원 관리", url: "/mypage/management/user/" },
+        { title: "문의 관리", url: "/mypage/management/qna/" },
+      ],
+      staff:true
+    },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -86,8 +97,21 @@ const PaymentClient: React.FC<PaymentProps> = ({ currentUser }) =>{
   };
 
   const handleRequest = () => {
-    setIsOpen(!isOpen);
-    //입금 요청 보내는 코드 이쪽에 작성?
+    const today = new Date();
+    axios
+    .post("/api/insert/payment", {
+      id : currentUser.id,
+      requested_at : today
+    })
+    .then(() => {
+      toast.success("입금 확인 요청을 완료했습니다.");
+    })
+    .catch(() => {
+      toast.error("오류가 발생했습니다.");
+    })
+    .finally(() => {
+      setIsOpen(!isOpen);
+    });
   }
 
   return (
