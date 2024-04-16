@@ -16,10 +16,25 @@ import { useRouter } from "next/navigation";
 const location = "회원정보 수정";
 
 interface ProfileProps {
-  currentUser: any;
+  currentUser?: any;
 }
 const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
+  const router = useRouter();
+  
+  const [isLoading, setIsLoading] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FieldValues>({
+    defaultValues: {},
+  });
+  if (!currentUser) {
+    router.push("/member/signin/");
+    return null;
+  }
   const MainList = [
     {
       title: "전체 현황",
@@ -69,7 +84,6 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
       url: "#",
       sub: [
         { title: "경력수첩 발급", url: "/mypage/career/print" },
-        // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
       ],
     },
     {
@@ -89,16 +103,6 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
     },
   ];
 
-  const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<FieldValues>({
-    defaultValues: {},
-  });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);

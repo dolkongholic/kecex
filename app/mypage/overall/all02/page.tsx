@@ -7,10 +7,13 @@ import getQna from "@/app/action/getQna";
 const OverAll02Page = async () => {
   // const [menu, setMenu] = useState<string | null>(null);
   const currentUser = await getCurrentUser();
-  if (!currentUser) {
-    return;
+  
+  let qnaList:any = null
+
+  if (currentUser) {
+    qnaList = await getQna(currentUser);
   }
-  const qnaList = await getQna(currentUser);
+
 
   return (
     <div>

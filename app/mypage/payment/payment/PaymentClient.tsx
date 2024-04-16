@@ -18,7 +18,7 @@ import toast from "react-hot-toast";
 
 const location = "회비 납부";
 interface PaymentProps {
-  currentUser: any;
+  currentUser?: any;
 }
 const PaymentClient: React.FC<PaymentProps> = ({ currentUser }) =>{
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
@@ -97,7 +97,10 @@ const PaymentClient: React.FC<PaymentProps> = ({ currentUser }) =>{
     setIsOpen(!isOpen);
   };
   const router = useRouter();
-  
+  if (!currentUser) {
+    router.push("/member/signin/");
+    return null;
+  }
   const handleRequest = () => {
     const today = new Date();
     axios

@@ -3,6 +3,7 @@
 import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
+import { useRouter } from "next/navigation";
 
 import React, { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
@@ -15,10 +16,15 @@ import certificate_bg from "@/public/img/pages/print/certificate_background.jpg"
 const location = "회원증 출력";
 
 interface MyCertProps {
-  currentUser: any;
+  currentUser?: any;
 }
 const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
+  const router = useRouter();
+  if (!currentUser) {
+    router.push("/member/signin/");
+    return null;
+  }
   const MainList = [
     {
       title: "전체 현황",

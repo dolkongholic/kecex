@@ -4,6 +4,7 @@ import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import ContentSubTitle from "@/components/content/subtitle";
+import { useRouter } from "next/navigation";
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
@@ -13,12 +14,17 @@ import { RiArrowRightSLine } from "react-icons/ri";
 
 const location = "회비 납부내역";
 interface DetailProps {
-  currentUser: any;
+  currentUser?: any;
   paymentList:any;
 }
 
 const DetailClient: React.FC<DetailProps> = ({ currentUser, paymentList }) =>{
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
+  const router = useRouter();
+  if (!currentUser) {
+    router.push("/member/signin/");
+    return null;
+  }
   const MainList = [
     {
       title: "전체 현황",

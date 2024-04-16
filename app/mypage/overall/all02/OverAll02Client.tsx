@@ -14,7 +14,7 @@ const location = "전체 현황";
 
 interface OverAll02ClientProps {
   qnaList: any;
-  currentUser: any;
+  currentUser?: any;
 }
 
 const OverAll02Client: React.FC<OverAll02ClientProps> = ({

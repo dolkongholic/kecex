@@ -47,31 +47,44 @@ const location = "공지사항";
 interface NoticeClientProps {
   currentNotice: any;
   currentUser?: any;
+  noticeList?:any;
 }
 
 const NoticeDetailClient: React.FC<NoticeClientProps> = ({
   currentNotice,
   currentUser,
+  noticeList,
 }) => {
   const [pageMenu, setPageMenu] = useState<any>("공지사항");
   const [preNotice, setPreNotice] = useState<any>(null);
   const [nextNotice, setNextNotice] = useState<any>(null);
 
   const router = useRouter();
-  const preId = {
-    id: currentNotice.id - 1,
-  };
 
-  const nextId = {
-    id: currentNotice.id + 1,
-  };
+  let preId:any = null;
+  for(let i = 0; i < noticeList.length; i++){
+    const notice = noticeList[i];
+    if(notice.id < currentNotice.id && (preId === null || notice.id > preId)){
+      preId = notice.id
+    }
+  }
+
+  let nextId:any = null;
+  for(let i = 0; i < noticeList.length; i++){
+    const notice = noticeList[i];
+    if(notice.id > currentNotice.id && (nextId === null || notice.id < nextId)){
+      nextId = notice.id
+    }
+  }
+
+
 
   useEffect(() => {
     const fetchPreNotice = async () => {
       try {
-        const preNoticeResponse = await axios.post("/api/notice", preId);
+        const preNoticeResponse = await axios.post("/api/notice", {id:preId});
         setPreNotice(preNoticeResponse.data);
-        const nextNoticeResponse = await axios.post("/api/notice", nextId);
+        const nextNoticeResponse = await axios.post("/api/notice", {id:nextId});
         setNextNotice(nextNoticeResponse.data);
       } catch (error) {
         console.error("Error fetching pre notice:", error);
@@ -173,21 +186,10 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
               </React.Fragment>
             ))}
           </div>
-          {/* <div className="w-full flex justify-start items-center h-[70px] border-t-2 border-t-gray-100 border-b-2 border-b-gray-500">
-            <div className="w-[200px] pl-[20px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
-              첨부파일
-            </div>
-            <div className="flex justify-start items-center pl-[20px]">
-              <p className="cursor-pointer">방폭전기기기의 설계.hwp</p>
-              <button className="cursor-pointer flex justify-center items-center gap-[20px] ml-[40px] bg-gray-500 text-white w-[120px] h-[35px]">
-                다운로드 <GrDownload className="grIcon" />
-              </button>
-            </div>
-          </div> */}
           {preNotice ? (
             <Link
               passHref
-              href={`/notice/notice/detail/${preId.id}?page=${page}`}
+              href={`/notice/notice/detail/${preId}?page=${page}`}
               className="w-full"
             >
               <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
@@ -215,7 +217,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
           {nextNotice ? (
             <Link
               passHref
-              href={`/notice/notice/detail/${nextId.id}?page=${page}`}
+              href={`/notice/notice/detail/${nextId}?page=${page}`}
               className="w-full"
             >
               <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">

@@ -5,88 +5,30 @@ import SubNavHeader from "@/components/SubNavHeader";
 
 import ContentTitle from "@/components/content/title";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 import { useState, useRef } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 
 // Image
 
-const MainList = [
-  {
-    title: "전체 현황",
-    url: "#",
-    sub: [
-      { title: "발급/출력 현황", url: "/mypage/overall/all01" },
-      { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-      // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-      // { title: "경력관리 현황", url: "/mypage/overall/all04" },
-    ],
-  },
-  {
-    title: "회원정보 수정",
-    url: "/mypage/profile",
-    sub: null,
-  },
-  {
-    title: "정회원 가입",
-    url: "/mypage/regular",
-    sub: null,
-  },
-  {
-    title: "회비 납부",
-    url: "#",
-    sub: [
-      { title: "회비 납부", url: "/mypage/payment/payment" },
-      { title: "회비 납부내역", url: "/mypage/payment/detail" },
-    ],
-  },
-  {
-    title: "회원증 출력",
-    url: "/mypage/print",
-    sub: null,
-  },
-  {
-    title: "1:1문의 현황",
-    url: "/mypage/overall/all02",
-    sub: null,
-  },
-  {
-    title: "경력관리",
-    url: "/mypage/resume",
-    sub: null,
-  },
-  {
-    title: "경력수첩 발급",
-    url: "#",
-    sub: [
-      { title: "경력수첩 발급", url: "/mypage/career/print" },
-      // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
-    ],
-  },
-  {
-    title: "회원탈퇴",
-    url: "/mypage/out",
-    sub: null,
-  },
-  {
-    title: "관리자 메뉴",
-    url: "#",
-    sub: [
-      { title: "회비 납부 관리", url: "/mypage/management/payment/"  },
-      { title: "회원 관리", url: "/mypage/management/user/" },
-      { title: "문의 관리", url: "/mypage/management/qna/" },
-    ],
-    staff:true
-  },
-];
-
 const location = "회원탈퇴";
 
 interface OutProps {
-  currentUser: any;
+  currentUser?: any;
 }
 const OutClient: React.FC<OutProps> = ({ currentUser }) =>{
+  const router = useRouter();
+  const passwordRef = useRef(null);
+
+  const [pageMenu, setPageMenu] = useState<any>("마이페이지");
   const { data: session } = useSession();
+  if (!currentUser) {
+    router.push("/member/signin/");
+    return null;
+  }
+
+
   const MainList = [
     {
       title: "전체 현황",
@@ -94,8 +36,6 @@ const OutClient: React.FC<OutProps> = ({ currentUser }) =>{
       sub: [
         { title: "발급/출력 현황", url: "/mypage/overall/all01" },
         { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-        // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-        // { title: "경력관리 현황", url: "/mypage/overall/all04" },
       ],
     },
     {
@@ -114,7 +54,6 @@ const OutClient: React.FC<OutProps> = ({ currentUser }) =>{
       sub: [
         { title: "회비 납부", url: "/mypage/payment/payment" },
         { title: "회비 납부내역", url: "/mypage/payment/detail" },
-        { title: "회비 관리", url: "/mypage/payment/management" , staff:true },
       ],
     },
     {
@@ -137,7 +76,6 @@ const OutClient: React.FC<OutProps> = ({ currentUser }) =>{
       url: "#",
       sub: [
         { title: "경력수첩 발급", url: "/mypage/career/print" },
-        // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
       ],
     },
     {
@@ -156,9 +94,7 @@ const OutClient: React.FC<OutProps> = ({ currentUser }) =>{
       ],
     },
   ];
-  const passwordRef = useRef(null);
 
-  const [pageMenu, setPageMenu] = useState<any>("마이페이지");
 
   const out = () => {
     if (confirm("탈퇴 하시겠습니까?")) {
