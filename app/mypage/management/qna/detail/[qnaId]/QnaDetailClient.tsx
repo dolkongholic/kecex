@@ -37,7 +37,10 @@ const QnaDetailClient: React.FC<QnaDetailClientProps> = ({
   const page = params?.get("page");
 
   const router = useRouter();
-
+  if (!currentUser) {
+    router.push("/member/signin/");
+    return null;
+  }
   const MainList = [
     {
       title: "전체 현황",
