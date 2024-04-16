@@ -150,7 +150,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <Image src={PicSlogan4} alt="슬로건" width={250} height={80} />
               </Link>
             </div> */}
-            <Link passHref href={"/notice/notice/detail/17?page=1"}>
+            <Link passHref href={"/notice/notice/detail/14?page=1"}>
               <div className="w-[500px] xl:w-[800px] h-auto flex justify-start items-center relative 1translate-x-[90px]">
               {/* <Image 
                     src={PicMainNotice} 
@@ -176,28 +176,6 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </button>
               </div>
             </Link>
-            {/* 최상단 로고 + 검색창 */}
-            {/* <div className="flex justify-center items-center bg-red-200">
-              <div className="w-[120px] mr-[40px] ml-[30px] flex item-center">
-                <Link passHref href={"/"}>
-                  <Image
-                    src={PicShotLogo}
-                    alt="Logo"
-                    width={120}
-                    height={80}
-                    z-index={999}
-                  />
-                </Link>
-              </div>
-              <input
-                type="text"
-                className="w-[260px] lg:w-[350px] h-[40px] ring-2 ring-white px-[20px] ml-[80px] rounded-3xl placeholder:text-sm font-light focus:outline-none focus:ring-2 focus:ring-active transition-all duration-500"
-                placeholder="검색어를 입력하세요"
-              />
-              <span className="w-[30px] h-[30px] -translate-x-[40px] translate-y-[5px]">
-                <FiSearch style={{ width: "22", height: "22" }} />
-              </span>
-            </div> */}
             <div className="w-1/2 lg:w-[330px] flex justify-end items-center">
               <div className="w-2/3 flex item-center justify-end mr-[15px] text-[13px] font-bold">
                 <ul className="flex items-center space-x-[10px]">
@@ -240,18 +218,6 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   )}
                 </ul>
               </div>
-              {/* <ul className="w-[100px] flex justify-between">
-                {snsList.map((item, index) => (
-                  <li key={index}>
-                    <Image
-                      src={`/img/icon/sns_${item}.png`}
-                      width={28}
-                      height={28}
-                      alt={item}
-                    />
-                  </li>
-                ))}
-              </ul> */}
             </div>
           </div>
         </div>
