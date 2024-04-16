@@ -1,27 +1,20 @@
 import Header from "@/components/Header";
-import OverAll02Client from "./OverAll02Client";
+import UserManagementClient from "./UserManagementClient";
 import Footer from "@/components/Footer";
 import getCurrentUser from "@/app/action/getCurrentUser";
-import getQna from "@/app/action/getQna";
+import getUser from "@/app/action/getUser";
 
-const OverAll02Page = async () => {
+const UserManagementPage = async () => {
   // const [menu, setMenu] = useState<string | null>(null);
   const currentUser = await getCurrentUser();
-  
-  let qnaList:any = null
-
-  if (currentUser) {
-    qnaList = await getQna(currentUser);
-  }
-
-
+  const userList = await getUser();
   return (
     <div>
       <Header currentUser={currentUser} />
-      <OverAll02Client qnaList={qnaList} currentUser={currentUser} />
+      <UserManagementClient currentUser={currentUser} userList={userList} />
       <Footer />
     </div>
   );
 };
 
-export default OverAll02Page;
+export default UserManagementPage;

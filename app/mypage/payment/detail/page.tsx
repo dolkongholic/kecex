@@ -2,14 +2,24 @@ import Header from "@/components/Header";
 import DetailClient from "./DetailClient";
 import Footer from "@/components/Footer";
 import getCurrentUser from "@/app/action/getCurrentUser";
+import getPayment from "@/app/action/getPayment";
 
 const DetailPage = async () => {
   // const [menu, setMenu] = useState<string | null>(null);
   const currentUser = await getCurrentUser();
+
+  let paymentList:any = null;
+  if (currentUser) {
+    paymentList = await getPayment(currentUser);
+  }
+
   return (
     <div>
       <Header currentUser={currentUser} />
-      <DetailClient  currentUser={currentUser}/>
+      <DetailClient  
+      currentUser={currentUser}
+      paymentList={paymentList}
+      />
       <Footer />
     </div>
   );

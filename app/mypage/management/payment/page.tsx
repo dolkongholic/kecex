@@ -1,18 +1,23 @@
 import Header from "@/components/Header";
-import ManagementClient from "./ManagementClient";
+import PayManagementClient from "./PayManagementClient";
 import Footer from "@/components/Footer";
 import getCurrentUser from "@/app/action/getCurrentUser";
+import getAllPayment from "@/app/action/getAllPayment"
 
-const ManagementPage = async () => {
+const PayManagementPage = async () => {
   // const [menu, setMenu] = useState<string | null>(null);
   const currentUser = await getCurrentUser();
+  const paymentList = await getAllPayment();
   return (
     <div>
       <Header currentUser={currentUser} />
-      <ManagementClient currentUser={currentUser}  />
+      <PayManagementClient 
+      currentUser={currentUser} 
+      paymentList={paymentList}
+      />
       <Footer />
     </div>
   );
 };
 
-export default ManagementPage;
+export default PayManagementPage;

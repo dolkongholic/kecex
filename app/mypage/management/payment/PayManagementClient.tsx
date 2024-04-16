@@ -4,27 +4,44 @@ import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import ContentSubTitle from "@/components/content/subtitle";
-import { useRouter } from "next/navigation";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { RiArrowRightSLine } from "react-icons/ri";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 // Image
 
 
-const location = "회비 납부내역";
-interface DetailProps {
-  currentUser?: any;
+const location = "회비 관리";
+interface PayManagementProps {
+  currentUser: any;
   paymentList:any;
 }
-
-const DetailClient: React.FC<DetailProps> = ({ currentUser, paymentList }) =>{
+const PayManagementClient: React.FC<PayManagementProps> = ({ currentUser, paymentList }) =>{
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
+  
+  const handlePayBtn = (PayId:string) => {
+    axios
+    .patch("/api/payment/confirm", {id:PayId})
+    .then(() => {
+      toast.success("회비 납부를 승인하였습니다");
+      router.refresh();
+    })
+    .catch(() => {
+      toast.error("오류가 발생했습니다.");
+    })
+    .finally(() => {
+    });
+  }
+
   const router = useRouter();
-  if (!currentUser) {
-    router.push("/member/signin/");
+  if (!currentUser?.staff) {
+    router.push("/");
     return null;
   }
+
   const MainList = [
     {
       title: "전체 현황",
@@ -129,94 +146,93 @@ const DetailClient: React.FC<DetailProps> = ({ currentUser, paymentList }) =>{
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="p-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
-          <div className="text-[#262626] w-full flex flex-col justify-center item-center">
-            <div className="w-full flex justify-center mx-auto mt-5">
-              <p>
-                <span>회원</span>님의 납부내역입니다.<br/>
-                <span className="md:hidden">pc화면으로 확인바랍니다.</span>
-              </p>
-            </div>
-            <ul className="w-full mx-auto border-t-2 border-neutral-700 mt-10 text-[14px] md:text-base">
-              <div className="w-full h-12 bg-lightgray flex text-center items-center font-semibold border-b border-secondary text-primary leading-[47px]">
-                <div className="w-[50px] h-full whitespace-nowrap">
-                  No.
+          <div className="text-black w-full flex flex-col justify-center item-center">
+          <div className="text-black w-full flex flex-col justify-center item-center">
+            <ContentSubTitle title="회비 관리 현황" />
+            <ul className="w-full mx-auto border-t-2 border-gray-700 mt-10 hidden md:block">
+              <div className="w-full h-11 bg-gray-100 flex text-center items-center font-medium border-b border-primary">
+                <div className="w-2/12 border-r border-gray-200 ">
+                  성명
                 </div>
-                <div className="w-[10%] h-full whitespace-nowrap">
-                  회원구분
+                <div className="w-1/12 border-r border-gray-200 ">
+                  회원 구분
                 </div>
-                <div className="w-[15%] h-full text-start whitespace-nowrap">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;금액
+                <div className="w-2/12 border-r border-gray-200 ">
+                  금액
                 </div>
-                <div className="w-[15%] h-full text-start whitespace-nowrap">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;납부상태
+                <div className="w-2/12 border-r border-gray-200 ">
+                  납부상태
                 </div>
-                <div className="w-[30%] h-full text-start whitespace-nowrap">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;확인 요청 일자
+                <div className="w-4/12 border-r border-gray-200 ">
+                  일자
                 </div>
-                <div className="w-[30%] h-full text-start whitespace-nowrap">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;비고
+                <div className="w-1/12">
+                  납부확인
                 </div>
               </div>
-              {paymentList?.map((item: any, index: any) => (
-              <li className="w-full h-12 flex text-center items-center border-b border-gray-300"
+              {paymentList
+              .sort((a:any) => ( a.status === 0 ? -1 : 1 ))
+              .map((item: any) => (
+                <li className="w-full h-11 flex text-center items-center border-b border-gray-400"
                 key={item.id}
-              >
-                <div className="w-[50px] h-full border-r border-gray-200 flex items-center justify-center font-medium">
-                  <span>
-                    {index+1}
-                  </span>
-                </div>
-                <div className="w-[10%] h-full border-r border-gray-200 flex items-center justify-center">
-                  <span>
+                >
+                  <div className="w-2/12 border-r border-gray-200 ">
+                    {item.user.koname}
+                  </div>
+                  <div className="w-1/12 border-r border-gray-200 ">
                     {item.user.level}
-                  </span>
-                </div>
-                <div className="w-[15%] h-full border-r border-gray-200 flex items-center">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;￦&nbsp;
-                  <span>
+                  </div>
+                  <div className="w-2/12 h-full border-r border-gray-200 flex pl-10 items-center">
+                    ￦&nbsp;
+                    <span>
                       {item.user.level === "일반회원" ? "30,000" : ""}
                       {item.user.level === "정회원" ? "120,000" : ""}
                       {item.user.level === "운영위원" ? "200,000" : ""}
                       {item.user.level === "임원" ? "300,000" : ""}
                       {item.user.level === "기업회원" ? "500,000" : ""}
                     </span>
-                </div>
-                <div className="w-[15%] h-full border-r border-gray-200 flex items-center">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span className={`${item.status === 0 ? "text-blue-600" : "text-red-500"}`}>
-                    &nbsp; {item.status === 0 ? "승인 대기" : "승인-입금완료"}
-                  </span>
-                </div>
-                <div className="w-[30%] h-full border-r border-gray-200 flex items-center">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span>
-                  {new Date(item.requested_at).toLocaleString('en-US', {
+                  </div>
+                  <div className="w-2/12 h-full border-r border-gray-200 flex pl-10 items-center">
+                    <span className={`${item.status === 0 ? "text-blue-600" : "text-red-500"}`}>
+                      {item.status === 0 ? "승인 대기" : "승인-입금완료"}
+                    </span>
+                  </div>
+                  <div className="w-4/12 h-full border-r border-gray-200 flex pl-10 items-center">
+                    <span>
+                      {new Date(item.requested_at).toLocaleString('en-US', {
                               year: 'numeric',
                               month: '2-digit',
                               day: '2-digit',
                               hour: '2-digit',
                               minute: '2-digit',
                       })}
-                  </span>
-                </div>
-                <div className="w-[30%] h-full border-r border-gray-200 flex items-center">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span>
-                    &nbsp;
-                  </span>
-                </div>
-              </li>
-              ))}
+                    </span>
+                  </div>
+                  <div className="w-1/12 h-full border-r border-gray-200 flex items-center">
+                    <button className={`w-20 h-8 text-white mx-auto
+                      ${item.status === 0 ? " bg-gray-500" : "bg-red-400"}
+                    `}
+                      onClick={() => handlePayBtn(item.id)}
+                      disabled={item.status !== 0}
+                    >
+                      {item.status === 0 ? "승인하기" : "입금됨"}
+                    </button>
+                  </div>
+                </li>
+                ))}
               <li className="w-full h-2 flex text-center items-center border-b-2 border-gray-700">
                 &nbsp;
               </li>
             </ul>
-            <div className="mx-auto mt-10">
-              1 page
+            <div className="mx-auto mt-10 hidden md:block">
+              {/* 페이지 표시? */}
             </div>
-            
+            <div className="w-full mx-auto flex md:hidden justify-center items-center h-32">
+              큰 화면으로 확인해주세요.
+            </div>
+          </div>
           </div>
         </section>
       </main>
@@ -224,4 +240,4 @@ const DetailClient: React.FC<DetailProps> = ({ currentUser, paymentList }) =>{
   );
 };
 
-export default DetailClient;
+export default PayManagementClient;

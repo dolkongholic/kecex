@@ -351,7 +351,7 @@ const FaQClient = () => {
                 {Qselect == 6 ? (
                   <div className="bg-gray-100 text-base text-black px-[40px] py-[20px]">
                     <p>
-                      웹 로그인 후 상단 마이페지이에서 정회원 신청 메뉴를
+                      웹 로그인 후 상단 마이페이지에서 정회원 신청 메뉴를
                       이용하여, <br /> 입회원서를 다운받아 신청할수 있습니다.
                     </p>
                   </div>

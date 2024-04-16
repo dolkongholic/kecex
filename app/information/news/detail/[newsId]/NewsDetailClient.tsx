@@ -33,11 +33,13 @@ const location = "카드뉴스";
 interface NewsClientProps {
   currentNews: any;
   currentUser?: any;
+  newsList?:any;
 }
 
 const NewsDetailClient: React.FC<NewsClientProps> = ({
   currentNews,
   currentUser,
+  newsList,
 }) => {
   const [pageMenu, setPageMenu] = useState<any>("카드뉴스");
 
@@ -52,6 +54,22 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
   const nextId = {
     id: currentNews.id + 1,
   };
+  // console.log(newsList[0])
+  // let preId:any = null;
+  // for(let i = 0; i < currentNews.id; i++){
+  //   const news = newsList[i];
+  //   if(news.id < currentNews.id && (preId === null || news.id > preId)){
+  //     preId = news.id
+  //   }
+  // }
+
+  // let nextId:any = null;
+  // for(let i = 0; i < currentNews.id; i++){
+  //   const news = newsList[i];
+  //   if(news.id > currentNews.id && (nextId === null || news.id < nextId)){
+  //     nextId = news.id
+  //   }
+  // }
 
   const params = useSearchParams();
   const page = params?.get("page");
@@ -59,9 +77,9 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
   useEffect(() => {
     const fetchPreNews = async () => {
       try {
-        const preNewsResponse = await axios.post("/api/news", preId);
+        const preNewsResponse = await axios.post("/api/news", {id:preId});
         setPreNews(preNewsResponse.data);
-        const nextNewsResponse = await axios.post("/api/news", nextId);
+        const nextNewsResponse = await axios.post("/api/news", {id:nextId});
         setNextNews(nextNewsResponse.data);
       } catch (error) {
         console.error("Error fetching News:", error);
@@ -171,7 +189,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
           {preNews ? (
             <Link
               passHref
-              href={`/information/news/detail/${preId.id}?page=${page}`}
+              href={`/information/news/detail/${preId}?page=${page}`}
               className="w-full"
             >
               <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
@@ -199,7 +217,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
           {nextNews ? (
             <Link
               passHref
-              href={`/information/news/detail/${nextId.id}?page=${page}`}
+              href={`/information/news/detail/${nextId}?page=${page}`}
               className="w-full"
             >
               <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">

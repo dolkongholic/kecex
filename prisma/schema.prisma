@@ -19,6 +19,15 @@ model User {
   level          String    @default("일반회원")
   staff          Boolean   @default(false)
   accounts       Account[]
+  payment        Payment[]
+}
+
+model Payment {
+  id            String    @id @default(uuid()) @map("_id") @db.Char(36)
+  userId        String    @db.Char(36)
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  status        Int       @default(0)
+  requested_at  DateTime
 }
 
 model Account {
@@ -52,6 +61,18 @@ model qna {
   email   String
   title   String
   content String @db.Text
+  status  Int    @default(0)
+  answer  qnaAnswer?
+}
+
+model qnaAnswer {
+  id          String @id @default(uuid()) @map("_id") @db.Char(36)
+  qnaId       String @unique @db.Char(36)
+  qna         qna    @relation(fields: [qnaId], references: [id], onDelete: Cascade)
+  title       String @db.Text
+  content     String @db.Text
+
+  @@index([qnaId], name: "qnaIdIndex")
 }
 
 model notice {

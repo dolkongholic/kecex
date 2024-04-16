@@ -350,10 +350,7 @@ const RuleClient = () => {
               </span>
               <div className="w-full pt-[2px] flex flex-col justify-start items-start text-[15px] md:text-base">
                 ① 협회가 주관하는 방폭관련 교육에 대한 교육비 할인
-                <span className="text-[14px] leading-[14px] ">
-                  <span className="hidden md:inline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> 
-                  방폭협회에 가입할 경우 엑스텍코리아 교육비 5% 할인<br className="md:hidden"/>
-                  (Naver에 엑스텍코리아 검색)</span>
+                <br />
                 ② 회원의 경력관리(경력수첩 발급 등)
                 <br />
                 ③ 협회가 주관하는 세미나 및 각종 행사에 참여 우선권

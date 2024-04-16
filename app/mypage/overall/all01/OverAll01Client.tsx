@@ -3,6 +3,7 @@ import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 import { useState, useRef } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
@@ -12,11 +13,18 @@ import { RiArrowRightSLine } from "react-icons/ri";
 const location = "전체 현황";
 
 interface OverAll01ClientProps {
-  currentUser: any;
+  currentUser?: any;
 }
+
+
 
 const OverAll01Client: React.FC<OverAll01ClientProps> = ({ currentUser }) => {
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
+  const router = useRouter();
+  if (!currentUser) {
+    router.push("/member/signin/");
+    return null;
+  }
   const MainList = [
     {
       title: "전체 현황",
@@ -44,7 +52,6 @@ const OverAll01Client: React.FC<OverAll01ClientProps> = ({ currentUser }) => {
       sub: [
         { title: "회비 납부", url: "/mypage/payment/payment" },
         { title: "회비 납부내역", url: "/mypage/payment/detail" },
-        { title: "회비 관리", url: "/mypage/payment/management" , staff:true },
       ],
     },
     {
@@ -74,6 +81,16 @@ const OverAll01Client: React.FC<OverAll01ClientProps> = ({ currentUser }) => {
       title: "회원탈퇴",
       url: "/mypage/out",
       sub: null,
+    },
+    {
+      title: "관리자 메뉴",
+      url: "#",
+      sub: [
+        { title: "회비 납부 관리", url: "/mypage/management/payment/"  },
+        { title: "회원 관리", url: "/mypage/management/user/" },
+        { title: "문의 관리", url: "/mypage/management/qna/" },
+      ],
+      staff:true
     },
   ];
 
