@@ -16,10 +16,25 @@ import { useRouter } from "next/navigation";
 const location = "회원정보 수정";
 
 interface ProfileProps {
-  currentUser: any;
+  currentUser?: any;
 }
 const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
+  const router = useRouter();
+  
+  const [isLoading, setIsLoading] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<FieldValues>({
+    defaultValues: {},
+  });
+  if (!currentUser) {
+    router.push("/member/signin/");
+    return null;
+  }
   const MainList = [
     {
       title: "전체 현황",
@@ -47,7 +62,6 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
       sub: [
         { title: "회비 납부", url: "/mypage/payment/payment" },
         { title: "회비 납부내역", url: "/mypage/payment/detail" },
-        { title: "회비 관리", url: "/mypage/payment/management" , staff:true },
       ],
     },
     {
@@ -70,7 +84,6 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
       url: "#",
       sub: [
         { title: "경력수첩 발급", url: "/mypage/career/print" },
-        // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
       ],
     },
     {
@@ -78,18 +91,18 @@ const ProfileClient: React.FC<ProfileProps> = ({ currentUser }) => {
       url: "/mypage/out",
       sub: null,
     },
+    {
+      title: "관리자 메뉴",
+      url: "#",
+      sub: [
+        { title: "회비 납부 관리", url: "/mypage/management/payment/"  },
+        { title: "회원 관리", url: "/mypage/management/user/" },
+        { title: "문의 관리", url: "/mypage/management/qna/" },
+      ],
+      staff:true
+    },
   ];
 
-  const [isLoading, setIsLoading] = useState(false);
-  const router = useRouter();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<FieldValues>({
-    defaultValues: {},
-  });
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);

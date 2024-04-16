@@ -3,28 +3,40 @@
 import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
-import { useRouter } from "next/navigation";
+import ContentSubTitle from "@/components/content/subtitle";
 
-import React, { useState } from "react";
+import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { RiArrowRightSLine } from "react-icons/ri";
-import Image from "next/image";
-import download_icon from "@/public/img/icon/download_icon.png";
-import certificate_bg from "@/public/img/pages/print/certificate_background.jpg";
+import Link from "next/link";
+import Pages from "@/components/pages";
 
 // Image
 
-const location = "회원증 출력";
 
-interface MyCertProps {
-  currentUser?: any;
+const location = "문의 관리";
+interface ManagementProps {
+  currentUser: any;
+  qnaList?:any
 }
-const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
+const ManagementClient: React.FC<ManagementProps> = ({ currentUser, qnaList}) =>{
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
-  const router = useRouter();
-  if (!currentUser) {
-    router.push("/member/signin/");
-    return null;
+  const params = useSearchParams();
+  const page = params?.get("page");
+  const totalItems = qnaList.length;
+  const totalPages = Math.ceil(totalItems / 10); // list의 길이를 10으로 나눈 후 올림하여 페이지 수 계산
+
+  // totalPages만큼 페이지를 생성
+  const pages = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pages.push(i);
   }
+
+  const router = useRouter();
+  if (!currentUser?.staff) {
+    router.push("/");
+  }
+
   const MainList = [
     {
       title: "전체 현황",
@@ -32,8 +44,6 @@ const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
       sub: [
         { title: "발급/출력 현황", url: "/mypage/overall/all01" },
         { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-        // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-        // { title: "경력관리 현황", url: "/mypage/overall/all04" },
       ],
     },
     {
@@ -74,7 +84,6 @@ const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
       url: "#",
       sub: [
         { title: "경력수첩 발급", url: "/mypage/career/print" },
-        // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
       ],
     },
     {
@@ -94,10 +103,6 @@ const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
     },
   ];
 
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = (today.getMonth() + 1).toString().padStart(2, "0");
-  const day = today.getDate().toString().padStart(2, "0");
   return (
     <section>
       <div id="headerNav">
@@ -138,57 +143,65 @@ const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
 
         <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title={location} center={true} />
-          <div className="text-black w-full flex flex-col justify-between item-center border-b-secondary border-b-2">
-            <div className="h-[40px]">
-              본 협회에서 발급된 증서를 출력하실 수 있습니다.
+          <div className="text-black w-full flex flex-col justify-center item-center">
+          <div className="text-black w-full flex flex-col justify-center item-center">
+            <ContentSubTitle title="1:1문의 현황" />
+            <ul className="w-full mx-auto border-t-2 border-gray-700 mt-10 hidden md:block">
+              <div className={`flex justify-between items-center w-full h-[80px] border-b leading-[80px] text-neutral-800 text-base font-semibold`}>
+                  <div className="flex items-center">
+                    <div className="w-[450px] ml-3 line-clamp-1">제목</div>
+                    <div className="w-[150px] ml-3 line-clamp-1">이름</div>
+                    <div className="w-[150px] ml-3 line-clamp-1">연락처</div>
+                    <div className="w-[280px] ml-3 line-clamp-1">이메일</div>
+                    <div className="w-[90px] ml-3 line-clamp-1">답변 상태</div>
+                    <div className="w-[90px] ml-3 line-clamp-1 text-center">관리</div>
+                  </div>
+                </div>
+            {qnaList.map((item: any,) => (
+                <div
+                  key={item.id}
+                  className={`flex justify-between items-center w-full h-[60px] border-b leading-[60px] text-neutral-800 text-base`}
+                >
+                  <div className="flex items-center" >
+                    <Link
+                    passHref
+                    href={`qna/detail/${item.id}?/`}
+                    className="w-[450px] ml-3 "
+                    >
+                      <div className="line-clamp-1 hover:text-secondary cursor-pointer">{item.title}</div>
+                    </Link>
+                    <div className="w-[150px] ml-3 line-clamp-1">{item.name}</div>
+                    <div className="w-[150px] ml-3 line-clamp-1">{item.tel}</div>
+                    <div className="w-[280px] ml-3 line-clamp-1">{item.email}</div>
+                    <div className="w-[90px] ml-3 line-clamp-1">
+                      {item.status === 0 ? "대기중" : "응답 완료"}
+                    </div>
+                    <div className="w-[90px] ml-3">
+                      <Link
+                      passHref
+                      href={`qna/answer/${item.id}?/`}
+                      className="w-full hover:text-secondary"
+                      >
+                        <button className={`w-[80px] mx-[5px] h-[40px] bg-lightgray leading-[40px] 
+                            ${item.status === 0 ? "" : "hidden"}
+                        `}>
+                        답변 작성
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+            ))}
+            </ul>
+            <div className="w-full mx-auto flex md:hidden justify-center items-center h-32">
+              큰 화면으로 확인해주세요.
             </div>
           </div>
-          <figure className="w-full flex justify-center my-10">
-            <div className="w-[315px] h-[439px] md:w-[620px] md:h-[877px] border border-gray relative">
-              <Image
-                src={certificate_bg}
-                className="absolute left-0 top-0"
-                alt="img"
-              />{" "}
-              <ul className="absolute left-[90px] top-[134px] md:left-[172px] md:top-[265px] z-40 font-[KoPubWorldBatang] text-black">
-                <li className="text-[10px] md:text-[19px] font-bold">
-                  <p className=" tracking-widest">{currentUser.koname}</p>
-                </li>
-                <li className="text-[10px] md:text-[19px] font-bold leading-4 md:leading-7 mt-[3px] md:mt-[9px]">
-                  <p className="">부산광역시 해운대구 센텀동로35 센텀SH밸리</p>
-                </li>
-                <li className="text-[10px] md:text-[19px] font-bold mt-[3px] md:mt-[9px]">
-                  <p className="tracking-relaxed">{currentUser.id}</p>
-                </li>
-              </ul>
-              <p className="absolute left-[88px] md:left-[173px] top-[273px] md:top-[539px] z-40 text-[6px] md:text-[12px] font-[KoPubWorldBatang] text-[#898989]">
-                {year}.{month}.{day}
-              </p>
-              <p className="absolute left-[176px] md:left-[348px] top-[273px] md:top-[539px] z-40 text-[6px] md:text-[12px] font-[KoPubWorldBatang] text-[#898989]">
-                2024.03.06
-              </p>
-              <div className="absolute left-[108px] md:left-[220px] top-[304px] md:top-[600px] z-40 text-[12px] md:text-[22px] font-[KoPubWorldBatang] text-black flex font-bold">
-                <p>{year}</p>
-                <p className="ml-[15px] md:ml-[30px]">{month}</p>
-                <p className="ml-[14px] md:ml-[29px]">{day}</p>
-              </div>
-            </div>
-          </figure>
-
-          <div className="btn_box flex m-auto mt-20">
-            <button className="w-40 h-14 border border-darkgray text-superdarkgray flex justify-center items-center">
-              다운로드{" "}
-              <Image src={download_icon} className="w-4 h-4 ml-2" alt="img" />{" "}
-            </button>
-            <button className="w-40 h-14 border border-secondary bg-secondary text-white flex justify-center items-center ml-7">
-              출력
-            </button>
           </div>
-          {/*btn_box*/}
         </section>
       </main>
     </section>
   );
 };
 
-export default PrintClient;
+export default ManagementClient;

@@ -7,15 +7,23 @@ import Image from "next/image";
 
 import React, { useEffect, useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
+import { useRouter } from "next/navigation";
 
 // Image
 const location = "경력관리";
 
 interface ResumeProps {
-  currentUser: any;
+  currentUser?: any;
 }
 const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
+  const router = useRouter();
+  const [selectedFile, setSelectedFile]: any = useState(null);
+  const [imagePreview, setImagePreview]: any = useState(null);
+  if (!currentUser) {
+    router.push("/member/signin/");
+    return null;
+  }
   const MainList = [
     {
       title: "전체 현황",
@@ -23,8 +31,6 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
       sub: [
         { title: "발급/출력 현황", url: "/mypage/overall/all01" },
         { title: "1:1 문의 현황", url: "/mypage/overall/all02" },
-        // { title: "세미나/컨설팅 신청 현황", url: "/mypage/overall/all03" },
-        // { title: "경력관리 현황", url: "/mypage/overall/all04" },
       ],
     },
     {
@@ -43,7 +49,6 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
       sub: [
         { title: "회비 납부", url: "/mypage/payment/payment" },
         { title: "회비 납부내역", url: "/mypage/payment/detail" },
-        { title: "회비 관리", url: "/mypage/payment/management" , staff:true },
       ],
     },
     {
@@ -66,7 +71,6 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
       url: "#",
       sub: [
         { title: "경력수첩 발급", url: "/mypage/career/print" },
-        // { title: "경력수첩 발급현황", url: "/mypage/carrear/sheet" },
       ],
     },
     {
@@ -74,36 +78,17 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
       url: "/mypage/out",
       sub: null,
     },
+    {
+      title: "관리자 메뉴",
+      url: "#",
+      sub: [
+        { title: "회비 납부 관리", url: "/mypage/management/payment/"  },
+        { title: "회원 관리", url: "/mypage/management/user/" },
+        { title: "문의 관리", url: "/mypage/management/qna/" },
+      ],
+      staff:true
+    },
   ];
-  const [selectedFile, setSelectedFile]: any = useState(null);
-  const [imagePreview, setImagePreview]: any = useState(null);
-  const [userInfo, setUserInfo] = useState({
-    name: "",
-    birthDate: "",
-    nationality: "",
-    language1: "",
-    languageLevel1: "",
-    school1: "",
-    major1: "",
-    degree1: "",
-  });
-
-  //페이지 로드 시 기존 정보 가져오기
-  useEffect(() => {
-    if(currentUser) {
-      // 기존 정보가 있다면 해당 정보를 가져와서 상태(state)에 설정
-      setUserInfo({
-        name: currentUser.name,
-        birthDate: currentUser.birthDate,
-        nationality: currentUser.nationality,
-        language1: currentUser.language1,
-        languageLevel1: currentUser.languageLevel1,
-        school1: currentUser.school1,
-        major1: currentUser.major1,
-        degree1: currentUser.degree1,
-      })
-    }
-  }, [currentUser]);
 
   //첨부파일 업로드
   const updateLabel = (event: any) => {
@@ -315,8 +300,6 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                           type="text"
                           id="language1"
                           name="language1"
-                          // defaultValue={userInfo.language1}
-                          // onChange={handleInputChange}
                           placeholder="예)일본어1"
                           className="w-3/5 md:w-[150px] h-12 border my-2 border-gray-200 pl-3"
                         />
@@ -421,7 +404,6 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                         type="text"
                         placeholder="학교명"
                         className="pl-4 h-10"
-                        defaultValue={userInfo.school1}
                       />
                     </div>
                     <legend className="w-1/4 md:w-1/12 h-12 md:h-14 float-left text-left pt-4 md:border-l border-gray-200 pl-4 md:pl-8">
@@ -432,7 +414,6 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                         type="text"
                         placeholder="전공명"
                         className="pl-4 h-10"
-                        defaultValue={userInfo.major1}
                       />
                     </div>
                   </fieldset>
@@ -457,7 +438,6 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser }) =>{
                         type="text"
                         placeholder="수료학위"
                         className="pl-4 h-10"
-                        defaultValue={userInfo.degree1}
                       />
                     </div>
                   </fieldset>
