@@ -264,10 +264,12 @@ const Index: React.FC<IndexProps> = ({
                   <p className="absolute text-[15px] sm:text-[16px] lg:text-[17px] top-[155px] lg:top-[190px] left-[5%] leading-6 z-20">
                     중대재해 예방, 대진단으로 시작하세요
                   </p>
-                  <Link passHref href={"/business/consulting/inspection/"}>
+                  <Link passHref href={"https://www.kosha.or.kr/survey/index.do"} legacyBehavior>
+                    <a target="_blank" rel="noopener noreferrer">
                     <button className="absolute bg-[#60B86F] border border-white w-[150px] h-[45px] rounded-full top-[290px] left-[5%] font-semibold hover:bg-white hover:text-[#60B86F] z-20">
-                      자세히 보기
+                      새창에서 열기
                     </button>
+                    </a>
                   </Link>
                   <Image 
                     src={PicInspection} 
