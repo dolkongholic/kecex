@@ -47,29 +47,23 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
   const [nextNews, setNextNews] = useState<any>(null);
 
   const router = useRouter();
-  const preId = {
-    id: currentNews.id - 1,
-  };
+  let preDate:any = null;
+  for(let i = 0; i < newsList.length; i++){
+    const news:any = newsList[i];
+    // console.log(news)
+    if(news.id && news.date < currentNews.date && (preDate === null || news.date >= preDate)){
+      preDate = news
+    }
+  }
 
-  const nextId = {
-    id: currentNews.id + 1,
-  };
-  // console.log(newsList[0])
-  // let preId:any = null;
-  // for(let i = 0; i < currentNews.id; i++){
-  //   const news = newsList[i];
-  //   if(news.id < currentNews.id && (preId === null || news.id > preId)){
-  //     preId = news.id
-  //   }
-  // }
+  let nextDate:any = null;
+  for(let i = 0; i < newsList.length; i++){
+    const news:any = newsList[i];
+    if(news.id && news.date > currentNews.date && (nextDate === null || news.date <= nextDate)){
+      nextDate = news
+    }
+  }
 
-  // let nextId:any = null;
-  // for(let i = 0; i < currentNews.id; i++){
-  //   const news = newsList[i];
-  //   if(news.id > currentNews.id && (nextId === null || news.id < nextId)){
-  //     nextId = news.id
-  //   }
-  // }
 
   const params = useSearchParams();
   const page = params?.get("page");
@@ -77,9 +71,9 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
   useEffect(() => {
     const fetchPreNews = async () => {
       try {
-        const preNewsResponse = await axios.post("/api/news", {id:preId});
+        const preNewsResponse = await axios.post("/api/news", {date:preDate.date});
         setPreNews(preNewsResponse.data);
-        const nextNewsResponse = await axios.post("/api/news", {id:nextId});
+        const nextNewsResponse = await axios.post("/api/news", {date:nextDate.date});
         setNextNews(nextNewsResponse.data);
       } catch (error) {
         console.error("Error fetching News:", error);
@@ -189,7 +183,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
           {preNews ? (
             <Link
               passHref
-              href={`/information/news/detail/${preId}?page=${page}`}
+              href={`/information/news/detail/${preDate.id}?page=${page}`}
               className="w-full"
             >
               <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
@@ -217,7 +211,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
           {nextNews ? (
             <Link
               passHref
-              href={`/information/news/detail/${nextId}?page=${page}`}
+              href={`/information/news/detail/${nextDate.id}?page=${page}`}
               className="w-full"
             >
               <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">

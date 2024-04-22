@@ -6,6 +6,7 @@ import ContentTitle from "@/components/content/title";
 import Link from "next/link";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { RiArrowRightSLine } from "react-icons/ri";
 
 // Image
@@ -13,10 +14,15 @@ import { RiArrowRightSLine } from "react-icons/ri";
 const location = "경력수첩 발급";
 
 interface CareerPrintProps {
-  currentUser: any;
+  currentUser?: any;
 }
 const CareerPrintClient: React.FC<CareerPrintProps> = ({ currentUser }) =>{
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
+  const router = useRouter();
+  if (!currentUser) {
+    router.push("/member/signin/");
+    return null;
+  }
   const MainList = [
     {
       title: "전체 현황",

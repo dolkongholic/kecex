@@ -77,6 +77,29 @@ const RuleClient = () => {
       });
   };
 
+  const handleDownload2 = () => {
+    const url = '/download/unregister.docx';
+    fetch(url)
+      .then(response => {
+        if (!response.ok){
+          throw new Error('네트워크에 문제가 있습니다.')
+        }
+        return response.blob();
+      })
+      .then(blob => {
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', '(양식)회원탈퇴서.docx');
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode?.removeChild(link);
+      })
+      .catch(error => {
+        console.error("에러가 발생:", error);
+      });
+  };
+
   return (
     <section>
       <figure className="w-full h-[200px]">
@@ -436,13 +459,22 @@ const RuleClient = () => {
           </div>
 
           {/* <a href="" download>{`<서식 1>`} 회원가입신고서 (양식)</a> */}
-          <button
-          className="bg-lightgray w-[280px] h-12"
-          onClick={handleDownload}
-          >
-            {`<서식 1>`} 회원가입신고서 (양식)
-            <Image src={download_icon} className="w-5 h-5 inline ml-1 mb-1" alt="img" />{" "}
-          </button>
+          <div className="flex">
+            <button
+            className="bg-lightgray w-[280px] h-12"
+            onClick={handleDownload}
+            >
+              {`<서식 1>`} 회원가입신고서 (양식)
+              <Image src={download_icon} className="w-5 h-5 inline ml-1 mb-1" alt="img" />{" "}
+            </button>
+            <button
+            className="bg-lightgray w-[280px] h-12 ml-8"
+            onClick={handleDownload2}
+            >
+              {`<서식 2>`} 회원탈퇴서 (양식)
+              <Image src={download_icon} className="w-5 h-5 inline ml-1 mb-1" alt="img" />{" "}
+            </button>
+          </div>
         </section>
       </main>
     </section>

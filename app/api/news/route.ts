@@ -3,13 +3,13 @@ import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   const body = await request.json();
-  console.log(body)
+  // console.log(body)
 
   const news = await prisma.news.findFirst({
     where: {
-      id: Number(body.id),
+      date: body.date,
     },
   });
-
+  // console.log("뉴스:" ,news)
   return NextResponse.json(news);
 }

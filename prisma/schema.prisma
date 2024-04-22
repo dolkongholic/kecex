@@ -20,14 +20,7 @@ model User {
   staff          Boolean   @default(false)
   accounts       Account[]
   payment        Payment[]
-}
-
-model Payment {
-  id            String    @id @default(uuid()) @map("_id") @db.Char(36)
-  userId        String    @db.Char(36)
-  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  status        Int       @default(0)
-  requested_at  DateTime
+  resume         resume?
 }
 
 model Account {
@@ -49,30 +42,96 @@ model Account {
   @@index([userId], map: "Account_userId_fkey")
 }
 
+model resume {
+  id         String   @id @default(uuid()) @map("_id") @db.Char(36)
+  userId     String   @unique @db.Char(36)
+  firstName  String   @default("")
+  lastName   String   @default("")
+  birthDate  String   @default("")
+  profileImg String   @default("")
+  status     Int      @default(0)
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  schools    school[]
+  careers    career[]
+  trainings  training[]
+  license   license[]
+}
+
+model school {
+  id         String @id @default(uuid()) @map("_id") @db.Char(36)
+  resumeId   String @db.Char(36)
+  schoolType String @default("")
+  schoolName String @default("")
+  majorName  String @default("")
+  graduation String @default("")
+  degree     String @default("")
+  resume     resume @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+
+  @@index([resumeId], map: "school_resumeId_key")
+}
+
+model career {
+  id                String @id @default(uuid()) @map("_id") @db.Char(36)
+  resumeId          String @db.Char(36)
+  careerType        String @default("")
+  companyName       String @default("")
+  job_start         String @default("")
+  job_end           String @default("")
+  position          String @default("") 
+  career_content    String @default("") @db.Text
+  resume            resume @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+
+  @@index([resumeId], map: "career_resumeId_key")
+}
+
+model training {
+  id                String @id @default(uuid()) @map("_id") @db.Char(36)
+  resumeId          String @db.Char(36)
+  training_start    String @default("")
+  training_end      String @default("")
+  trnInstitution    String @default("")
+  trnName           String @default("") 
+  trn_content       String @default("") @db.Text
+  resume            resume @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+
+  @@index([resumeId], map: "training_resumeId_key")
+}
+
+model license {
+  id                String @id @default(uuid()) @map("_id") @db.Char(36)
+  resumeId          String @db.Char(36)
+  licenseName       String @default("")
+  licenseDept       String @default("")
+  licenseDate       String @default("")
+  resume            resume @relation(fields: [resumeId], references: [id], onDelete: Cascade)
+
+  @@index([resumeId], map: "license_resumeId_key")
+}
+
 model mainBanner {
   id      Int    @id @default(autoincrement())
   fileUrl String
 }
 
 model qna {
-  id      String @id @default(uuid()) @map("_id") @db.Char(36)
+  id      String     @id @default(uuid()) @map("_id") @db.Char(36)
   name    String
   tel     String
   email   String
   title   String
-  content String @db.Text
-  status  Int    @default(0)
+  content String     @db.Text
+  status  Int        @default(0)
   answer  qnaAnswer?
 }
 
 model qnaAnswer {
-  id          String @id @default(uuid()) @map("_id") @db.Char(36)
-  qnaId       String @unique @db.Char(36)
-  qna         qna    @relation(fields: [qnaId], references: [id], onDelete: Cascade)
-  title       String @db.Text
-  content     String @db.Text
+  id      String @id @default(uuid()) @map("_id") @db.Char(36)
+  qnaId   String @unique @db.Char(36)
+  title   String @db.Text
+  content String @db.Text
+  qna     qna    @relation(fields: [qnaId], references: [id], onDelete: Cascade)
 
-  @@index([qnaId], name: "qnaIdIndex")
+  @@index([qnaId], map: "qnaIdIndex")
 }
 
 model notice {
@@ -97,4 +156,14 @@ model news {
   content String @db.Text
   img     String
   date    String
+}
+
+model Payment {
+  id           String   @id @default(uuid()) @map("_id") @db.Char(36)
+  userId       String   @db.Char(36)
+  status       Int      @default(0)
+  requested_at DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId], map: "Payment_userId_fkey")
 }

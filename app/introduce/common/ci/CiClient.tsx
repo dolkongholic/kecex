@@ -9,10 +9,10 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
 
 // Image
-import PicCi_1 from "@/public/img/pages/introduce/ci_1.png";
-import PicCi_2 from "@/public/img/pages/introduce/ci_2.png";
-import PicCi_3 from "@/public/img/pages/introduce/ci_3.png";
+import PicCi_1 from "@/public/img/pages/introduce/ci_1.svg";
+import PicCi_2 from "@/public/img/pages/introduce/ci_2.svg";
 import PicIntroduce_01 from "@/public/img/page_top/introduce_01.jpg"
+import download_icon from "@/public/img/icon/download_icon.png";
 
 const MainList = [
   {
@@ -41,6 +41,52 @@ const MainList = [
 ];
 
 const location = "CI";
+
+const handleDownload = () => {
+  const url = '/img/pages/introduce/CI.ai';
+  fetch(url)
+    .then(response => {
+      if (!response.ok){
+        throw new Error('네트워크에 문제가 있습니다.')
+      }
+      return response.blob();
+    })
+    .then(blob => {
+      const url = window.URL.createObjectURL(new Blob([blob]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', '한국방폭협회 CI.ai');
+      document.body.appendChild(link);
+      link.click();
+      link.parentNode?.removeChild(link);
+    })
+    .catch(error => {
+      console.error("에러가 발생:", error);
+    });
+};
+
+const handleDownload2 = () => {
+  const url = '/img/pages/introduce/CI_PNG.zip';
+  fetch(url)
+    .then(response => {
+      if (!response.ok){
+        throw new Error('네트워크에 문제가 있습니다.')
+      }
+      return response.blob();
+    })
+    .then(blob => {
+      const url = window.URL.createObjectURL(new Blob([blob]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', '한국방폭협회 CI_PNG.zip');
+      document.body.appendChild(link);
+      link.click();
+      link.parentNode?.removeChild(link);
+    })
+    .catch(error => {
+      console.error("에러가 발생:", error);
+    });
+};
 
 const CiClient = () => {
   const [pageMenu, setPageMenu] = useState<any>("일반현황");
@@ -130,8 +176,24 @@ const CiClient = () => {
             </li>
           </ul>
           <Image src={PicCi_1} alt="Ci" className="my-[40px] w-full" />
-          <Image src={PicCi_2} alt="Ci" className="mb-[40px]" />
-          <Image src={PicCi_3} alt="Ci" />
+          <Image src={PicCi_2} alt="Ci" className="mb-[40px] w-full" />
+          {/* <Image src={PicCi_3} alt="Ci" /> */}
+          <div className="flex justify-center w-full">
+            <button
+            className="border border-[#3A3A3A] w-[240px] h-14 font-medium"
+            onClick={handleDownload}
+            >
+              협회 로고 Ai
+              <Image src={download_icon} className="w-5 h-5 inline ml-1 mb-1" alt="img" />{" "}
+            </button>
+            <button
+            className="border border-[#3A3A3A] w-[240px] h-14 font-medium ml-16"
+            onClick={handleDownload2}
+            >
+              협회 로고 PNG
+              <Image src={download_icon} className="w-5 h-5 inline ml-1 mb-1" alt="img" />{" "}
+            </button>
+          </div>
         </section>
       </main>
     </section>
