@@ -43,17 +43,16 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value, wide }) => {
               hover:opacity-70
               transition
               m-auto
-              border-dashed 
-              border-2 
-              p-20 
+              border 
               border-neutral-300
               flex
               flex-col
               justify-center
               items-center
               gap-4
-              text-neutral-600
-              ${wide ? "w-full h-[50px]" : "w-[300px] h-[300px]"}
+              text-[#3A3A3A]
+              box-border
+              ${wide ? "w-full h-[50px] p-20" : "w-[150px] h-[200px] p-2"}
             `}
           >
             <TbPhotoPlus size={50} />

@@ -18,7 +18,11 @@ const NewsDetailPage = async ({ params }: { params: IParams }) => {
   return (
     <div>
       <Header currentUser={currentUser} />
-      <NewsDetailClient newsList={newsList} currentNews={currentNews} currentUser={currentUser} />
+      <NewsDetailClient 
+        newsList={newsList} 
+        currentNews={currentNews} 
+        currentUser={currentUser} 
+      />
       <Footer />
     </div>
   );
