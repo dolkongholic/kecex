@@ -59,7 +59,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
   });
   
   const resumeId = currentResume?.id
-  
+
   useEffect(() => {
     if (!currentUser) {
       router.push("/member/signin/");
@@ -86,8 +86,6 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
   } = useForm<FieldValues>({
     defaultValues: {},
   });
-
-  const imageSrc = watch("imageSrc");
 
   const MainList = [
     {
@@ -155,9 +153,11 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
     },
   ];
 
+  const imageSrc = watch("imageSrc");
+
   //첨부파일 업로드
-  const setCustomValue = (id: string, value: any) => {
-    setValue(id, value, {
+  const setCustomValue = (profileImg: string, value: any) => {
+    setValue(profileImg, value, {
       shouldDirty: true,
       shouldTouch: true,
       shouldValidate: true,
@@ -165,7 +165,6 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
   };
 
   const userId = currentUser.id;
-  // console.log(currentResume)
 
   //프로필 입력
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
@@ -174,12 +173,12 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
         lastName: data.lastName,
         firstName: data.firstName,
         birthDate: data.birthDate,
-        profileImg: data.ImageSrc,
+        profileImg: data.imageSrc,
         userId: userId,
       })
       .then(() => {
         toast.success("프로필을 작성했습니다.");
-        window.location.reload();
+        // window.location.reload();
       })
       .catch(() => {
         toast.error("오류가 발생했습니다.");
@@ -187,6 +186,8 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
       .finally(() => {
         reset();
       });
+    // axios
+    //   .post()
   };
 
 
@@ -427,12 +428,23 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                 여권정보
               </h3>
               <div className="md:flex pt-4">
-                <div id="pic_area" className="w-[120px] md:w-[170px] h-[192px] mx-auto md:mx-0 mb-7 md:mb-0">
-                  <div className="w-[120px] h-[160px] md:w-[150px] md:h-[200px] relative border border-gray">
-                  <ImageUpload
-                    onChange={(value) => setCustomValue("imageSrc", value)}
-                    value={imageSrc}
-                  />
+                <div id="pic_area" className="w-[120px] md:w-[170px] h-[192px] mx-auto md:mx-0 mb-7 md:mb-0 relative">
+                  <div className="absolute left-0 top-0">
+                    <div className={`w-[120px] h-[160px] md:w-[150px] md:h-[200px] relative border border-gray z-10
+                      ${currentResume.profileImg? "opacity-0 " : ""}
+                    `}>
+                      <ImageUpload
+                        onChange={(value) => setCustomValue("imageSrc", value)}
+                        value={imageSrc}
+                      />
+                    </div>
+                  </div>
+                  <div className="absolute left-0 top-0">
+                    <div className={`w-[120px] h-[160px] md:w-[150px] md:h-[200px] relative border border-gray z-0
+                      ${currentResume.profileImg? "" : "opacity-0"}
+                    `}>
+                      <img src={currentResume.profileImg}/>
+                    </div>
                   </div>
                 </div>
                 <div id="form_area" className="w-full text-[13px] md:text-base translate-y-[340px] md:translate-y-0 ml-5">
