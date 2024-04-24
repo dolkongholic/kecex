@@ -224,6 +224,8 @@ const UserManagementClient: React.FC<UserManagementProps> = ({ currentUser, user
                       <option value="정회원">정회원</option>
                       <option value="기업회원">기업회원</option>
                       <option value="명예회원">명예회원</option>
+                      <option value="운영위원">운영위원</option>
+                      <option value="임원">임원</option>
                     </select>
                     <button
                     id={`btn-${item.id}`}

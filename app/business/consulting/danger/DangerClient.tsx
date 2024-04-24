@@ -160,9 +160,49 @@ const DangerClient = () => {
                 </div>
               </div>
               <ContentSubTitle title="위험성평가 절차" />
-              <div className="w-full flex justify-center mb-10">
-                <Image src={PicIndustry} alt="위험성평가 절차 이미지" className="hidden md:block w-full"/>
-                <Image src={PicIndustry_M} alt="위험성평가 절차 이미지" className="md:hidden w-full"/>
+              <div className="w-full justify-center mb-10 font-medium text-center">
+                {/* <Image src={PicIndustry} alt="위험성평가 절차 이미지" className="md:block w-full"/> */}
+                {/* <Image src={PicIndustry_M} alt="위험성평가 절차 이미지" className="md:hidden w-full"/> */}
+                <ul className="w-full flex items-center justify-between px-5 pt-5">
+                  <li className="w-[120px] h-[120px] bg-secondary rounded-full text-white flex justify-center items-center">
+                    시작
+                    </li>
+                  <li><RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[3px] text-[#aaa]" /></li>
+                  <li className="w-[120px] h-[120px] bg-secondary rounded-full text-white flex justify-center items-center">
+                    대상 선정<br/>사전 준비
+                    </li>
+                  <li><RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[3px] text-[#aaa]" /></li>
+                  <li className="w-[120px] h-[120px] border-2 border-secondary rounded-full flex justify-center items-center font-semibold">
+                    유해·위험<br/>요인 파악
+                  </li>
+                  <li><RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[3px] text-[#aaa]" /></li>
+                  <li className="w-[120px] h-[120px] border-2 border-secondary rounded-full flex justify-center items-center font-semibold">
+                    위험성 결정
+                    </li>
+                  <li>
+                    <RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[3px] text-[#aaa]" />
+                  </li>
+                  <li className="w-[120px] h-[120px] bg-[#073E66] rounded-full text-white flex justify-center items-center pt-2">
+                    허용가능<br/> 여부
+                  </li>
+                  <li className="relative before:content-['YES'] before:text-secondary font-semibold text-[20px] before:absolute before:-top-8 before:left-0">
+                    <RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[3px] text-[#aaa]" />
+                    </li>
+                  <li className="w-[120px] h-[120px] bg-[#073E66] rounded-full text-white flex justify-center items-center">
+                    종료
+                  </li>
+                </ul>
+                <div>
+                  <div className="w-[240px] flex flex-col items-center ml-[755px]">
+                    <p className="text-[20px] font-semibold text-[#aaa] mt-3">
+                      NO
+                    </p>
+                    <p><RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[4px] translate-x-[1px] text-[#aaa] rotate-90" /></p>
+                    <p className="w-full h-16 border-2 border-secondary flex justify-center items-center font-semibold">
+                      위험성 감소대책 수립·실행
+                      </p>
+                  </div>
+                </div>
               </div>
               <ContentSubTitle title="위험성평가 실시 시기" />
               <div className="w-full mb-10">
@@ -173,11 +213,21 @@ const DangerClient = () => {
                   </tr>
                   <tr className="h-16 border-b border-gray">
                     <td className="w-1/6 md:w-1/5 border-r border-gray">
+                      최초<br className="md:hidden"/>
+                      평가
+                    </td>
+                    <td className="text-left pl-6 text-[15px] md:text-base">
+                      사업이 성립된 날로 부터 1개월이 되는 날 까지 착수(1개월 미만 공사는 공사 개시 후 실시)
+                    </td>
+                  </tr>
+                  <tr className="h-16 border-b border-gray">
+                    <td className="w-1/6 md:w-1/5 border-r border-gray">
                       정기<br className="md:hidden"/>
                       평가
                     </td>
                     <td className="text-left pl-6 text-[15px] md:text-base">
-                      최초평가 후 매년 정기적으로 실시
+                      위험성평가의 결과에 대한 적정성을 1년마다 정기적으로 재검토<br/>
+                      재검토 결과 허용 가능한 위험성 수준이 아니라고 검토된 유해·위험요인에 대해서는 위험성 감소대책을 수립하여 실행
                     </td>
                   </tr>
                   <tr className="border-b-2 border-gray">
