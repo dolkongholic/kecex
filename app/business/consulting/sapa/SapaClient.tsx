@@ -256,7 +256,7 @@ const SapaClient = () => {
                             className="w-5 inline-block"
                             alt="텍스트 강조"
                           />
-                          사업장 안전보건관리시스템 문서 점검
+                          사업장 안전보건관리 체계 점검
                         </strong>
                         <p className="text pl-2 mt-2">
                           · 안전관리책임자 선임 등 문서관리 상태 파악
