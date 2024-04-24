@@ -181,9 +181,9 @@ const PSMClient = () => {
                     </div>
                     <p className="ml-3">
                       공정위험성평가 컨설팅<br className="md:hidden"/>
-                      (HAZOP, K-PSR, LOPA, What-If,
+                      (HAZOP, K-PSR, CHECKLIST,
                       <br />
-                      FMEA, PHAST, ALOHA, E-CA)
+                      JSA, 빈도, 강도범)
                     </p>
                   </div>
                   <div className="w-full md:w-1/2 h-24 border border-[#ccc] flex items-center mt-5 md:mt-0">
