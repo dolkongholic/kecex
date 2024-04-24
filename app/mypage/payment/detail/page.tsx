@@ -7,7 +7,6 @@ import getPayment from "@/app/action/getPayment";
 const DetailPage = async () => {
   // const [menu, setMenu] = useState<string | null>(null);
   const currentUser = await getCurrentUser();
-
   let paymentList:any = null;
   if (currentUser) {
     paymentList = await getPayment(currentUser);
