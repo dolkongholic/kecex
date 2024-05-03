@@ -447,7 +447,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                     </div>
                   </div>
                 </div>
-                <div id="form_area" className="w-full text-[13px] md:text-base translate-y-[340px] md:translate-y-0 ml-5">
+                <div id="form_area" className="w-full text-[13px] md:text-base translate-y-[310px] md:translate-y-0 md:ml-5">
                   <fieldset className="border border-gray-200 text-center w-full text-black flex">
                     <legend className="w-1/6 md:w-[155px] h-12 md:h-14 float-left md:pl-7 pt-1 md:pt-4 text-center md:text-left">
                       성명<br className="md:hidden"/>
@@ -496,7 +496,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                   </div>
                 </div>
               </div>
-              <div className="w-full h-[320px] md:h-auto p-7 border border-primary mt-6 leading-6 md:leading-8 text-[14px] md:text-base -translate-y-[435px] md:-translate-y-0">
+              <div className="w-full h-[320px] md:h-auto p-7 border border-primary mt-6 leading-6 md:leading-8 text-[14px] md:text-base -translate-y-[235px] md:-translate-y-0">
                 <strong className="text-gray-800">
                   잠깐! 사진을 다시 확인해주세요!
                 </strong>
@@ -686,8 +686,8 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                       </div>
                     </fieldset>
                     <fieldset className="border-x border-t md:border-t-0 border-gray-400 text-center w-full md:w-1/2 text-black flex">
-                      <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
-                        직위 및 담당업무
+                      <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-1 md:pt-4 pl-4 md:pl-8">
+                        직위 및<br className="md:hidden"/> 담당업무
                       </legend>
                       <div className="before:border-l before:border-gray-400 border-gray-400 w-3/4 md:w-2/3 h-12 md:h-14 float-left pt-1 md:pt-2 md:pr-28 box-border">
                         <input
@@ -702,7 +702,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                   </div>
                   <div>
                     <fieldset className="border border-gray-400 text-center w-full text-black md:flex">
-                      <legend className="w-full md:w-2/12 h-12 md:h-[120px] leading-[120px] float-left text-left pl-4 md:pl-8 md:border-r md:border-gray-400 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
+                      <legend className="w-full md:w-2/12 h-12 md:h-[120px] md:leading-[120px] pt-[14px] md:pt-0 float-left text-left pl-4 md:pl-8 md:border-r md:border-gray-400 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         프로젝트
                       </legend>
                       <textarea
@@ -736,11 +736,11 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
               <div className="flex">
                 <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
                   <div className="md:flex border border-gray-400">
-                    <fieldset className="border-r border-gray-400 text-center w-full md:w-1/2 text-black md:flex">
+                    <fieldset className="md:border-r border-gray-400 text-center w-full md:w-1/2 text-black md:flex">
                       <legend className="w-full md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         교육기간
                       </legend>
-                      <div className="before:border-l before:border-gray-400 before:mt-2 before:h-6 w-full md:w-2/3 h-10 float-left pt-1 md:pt-2 mb-2 md:mb-0 md:pr-28 flex box-border">
+                      <div className="md:before:border-l before:border-gray-400 before:mt-2 before:h-6 w-full md:w-2/3 h-10 float-left pt-1 md:pt-2 mb-2 md:mb-0 md:pr-28 flex box-border">
                         <input
                           name="training_start"
                           type="text"
@@ -862,12 +862,12 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                       <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
                         취득일
                       </legend>
-                      <div className="before:border-l before:border-gray-400 before:mt-2 before:h-6 w-full md:w-3/4 h-12 md:h-10 float-left md:pt-2 md:pr-28 flex box-border">
+                      <div className="before:border-l before:border-gray-400 before:mt-2 before:h-6 w-full md:w-3/4 h-10 float-left pt-1 md:pt-2 md:pr-28 flex box-border">
                         <input
                           name="licenseDate"
                           type="text"
                           placeholder="YYYY.MM"
-                          className="pl-4 md:pl-6 h-12 md:h-10 box-border w-full md:w-64"
+                          className="pl-4 md:pl-6 h-10 box-border w-full md:w-64"
                           onChange={handleInputChange}
                         />
                       </div>
@@ -977,7 +977,7 @@ function NewSchoolElement(
       
     </div>
     <div className="w-1/12 md:w-[70px] flex justify-end items-center">
-      <button className="w-7 h-7 md:w-10 md:h-10 bg-gray-200 rounded-full"
+      <button className="w-7 h-7 md:w-10 md:h-10 bg-gray-200 rounded-full text-[11px]"
       onClick={handleDelete}      
       >
         X
@@ -1007,13 +1007,13 @@ function NewCareerElement(
     }
   };
 return (
-        <div className="flex">
+        <div className="flex text-[13px] md:text-base">
                 <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
-                  <fieldset className="border border-gray-200 text-center md:text-left w-full text-black md:flex">
+                  <fieldset className="border border-gray-200 md:text-left w-full text-black md:flex">
                     <div className="w-full md:w-2/12">
                       <div
                         id="lang_01"
-                        className="w-full md:border-r md:border-gray-200 h-12 md:h-14 pl-4 md:pl-8 md:pt-4 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary"  
+                        className="w-full md:border-r md:border-gray-200 h-12 md:h-14 pl-4 md:pl-8 pt-[14px] md:pt-4 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary"  
                       >
                         {careerType}
                       </div>
@@ -1028,50 +1028,45 @@ return (
                     </div>
                   </fieldset>
                   <div className="md:flex">
-                    <fieldset className="border-l border-r md:border-r-0 border-gray-200 text-center md:text-left w-full md:w-1/2 text-black md:flex">
+                    <fieldset className="border-l border-r md:border-r-0 border-gray-200 text-left w-full md:w-1/2 text-black md:flex">
                       <legend className="w-full md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         근무기간
                       </legend>
                       <div className="md:before:border-l border-gray-200 before:mt-2 before:h-6 w-full md:w-2/3 h-10 float-left pt-1 md:pt-2 mb-2 md:mb-0 md:pr-28 flex box-border">
-                        <div
-                          className="pl-4 md:pl-6 md:pt-2 box-border w-1/2 md:w-[100px]"
-                        >
+                        <div className="pl-4 md:pl-6 pt-3 md:pt-2 box-border w-1/2 md:w-[100px]">
                           {job_start}
                         </div>
-                        <p className="pt-2">~</p>
-                        <div
-                          className="pl-4 md:pl-4 md:pt-2 box-border w-1/2 md:w-[100px]"
-                        >
+                        <p className="pt-3 md:pt-2">~</p>
+                        <div className="pl-6 md:pl-4 pt-3 md:pt-2 box-border w-1/2 md:w-[100px]">
                           {job_end}
                         </div>
                       </div>
                     </fieldset>
                     <fieldset className="border-x border-t md:border-t-0 border-gray-200 text-center md:text-left w-full md:w-1/2 text-black flex">
-                      <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
-                        직위 및 담당업무
+                      <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-1 md:pt-4 pl-4 md:pl-8">
+                        직위 및<br className="md:hidden"/> 담당업무
                       </legend>
-                      <div className="before:border-l before:border-gray-200 w-3/4 md:w-2/3 h-12 md:h-10 float-left pt-1 md:pt-4 md:pr-28 box-border flex">
-                        <div className="pl-4">
+                      <div className="before:border-l before:border-gray-200 w-3/4 md:w-2/3 h-12 md:h-10 float-left pt-1 md:pt-4 md:pr-28 box-border flex ">
+                        <div className=" p-3 md:p-0">
                           {position}
                         </div>
                       </div>
                     </fieldset>
                   </div>
                   <div>
-                    <fieldset className="border border-gray-200 text-center w-full text-black md:flex">
-                      <div className="w-full md:w-2/12 h-12 md:h-[120px] leading-[120px] float-left text-left pl-4 md:pl-8 md:border-r md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
+                    <fieldset className="border border-gray-200 w-full h-auto text-black md:flex">
+                      <div className="w-full md:w-2/12 h-12 md:h-[120px] md:leading-[120px] pt-[14px] md:pt-0 float-left pl-4 md:pl-8 md:border-r md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         프로젝트
                       </div>
-                      <div
-                        className="w-full md:w-10/12 h-auto pl-4 md:pl-6 text-wrap mt-1 text-left"
-                      >
+                      <div className="w-full md:w-10/12 h-auto px-4 pt-14 mb-2 md:pl-6 text-wrap mt-1">
                         {career_content}
                       </div>
                     </fieldset>
                   </div>
                 </div>
-                <div className="w-1/12 md:w-[70px] flex justify-end items-center">
-                  <button className="w-7 h-7 md:w-10 md:h-10 bg-gray-200 rounded-full"
+                <div className="w-1/12 md:w-[70px] flex justify-end items-center text-[11px]">
+                  <button
+                  className="w-7 h-7 md:w-10 md:h-10 bg-gray-200 rounded-full"
                   onClick={handleDelete}                  
                   >
                     X
@@ -1101,22 +1096,22 @@ function NewTrainingElement(
     }
   };
 return (
-  <div className="flex">
+  <div className="flex text-[13px] md:text-base">
                 <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
                   <div className="md:flex border border-gray-200">
-                    <fieldset className="border-r border-gray-200 w-full md:w-1/2 text-black md:flex">
+                    <fieldset className="md:border-r border-gray-200 w-full md:w-1/2 text-black md:flex">
                       <legend className="w-full md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         교육기간
                       </legend>
-                      <div className="before:border-l before:border-gray-200 before:mt-2 before:h-6 w-full md:w-2/3 h-10 float-left pt-1 md:pt-2 mb-2 md:pr-28 flex box-border">
+                      <div className="md:before:border-l before:border-gray-200 before:mt-2 before:h-6 w-full md:w-2/3 h-10 float-left pt-1 md:pt-2 mb-2 md:pr-28 flex box-border">
                         <div
-                          className="pl-4 h-10 box-border w-1/2 md:w-36 leading-[40px]"
+                          className="pl-4 h-10 box-border w-1/2 md:w-36 leading-[44px] md:leading-[40px]"
                         >
                           {training_start}
                         </div>
                         <p className="p-3 md:p-2 md:ml-3">~</p>
                         <div
-                          className="pl-4 md:pl-3 h-10 box-border w-1/2 md:w-36 leading-[40px]"
+                          className="pl-4 md:pl-3 h-10 box-border w-1/2 md:w-36 leading-[44px] md:leading-[40px]"
                         >
                           {training_end}
                         </div>
@@ -1139,19 +1134,19 @@ return (
                         교육명
                       </legend>
                       <div className="w-3/4 md:w-10/12 before:border-l before:border-gray-200 before:h-6 float-left flex justify-start items-center">
-                        <div className="h-12 pl-4 md:pt-3 text-wrap">
+                        <div className="pl-4 md:pt-3 text-wrap">
                           {trnName}
                         </div>
                       </div>
                     </fieldset>
                   </div>
                   <div>
-                    <fieldset className="border border-gray-200 text-center md:text-left w-full text-black flex">
+                    <fieldset className="border border-gray-200 w-full text-black flex">
                       <legend className="w-1/4 md:w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
                         교육내용
                       </legend>
                       <div className="w-3/4 md:w-10/12 before:border-l before:border-gray-200 before:h-6 float-left flex justify-start items-center">
-                        <div className="h-12 pl-4 md:pt-3 text-wrap w-full">
+                        <div className="pl-4 md:pt-3 text-wrap w-full">
                           {trn_content}
                         </div>
                       </div>
@@ -1159,7 +1154,7 @@ return (
                   </div>
                 </div>
                 <div className="w-1/12 md:w-[70px] flex justify-end items-center">
-                  <button className="w-7 h-7 md:w-10 md:h-10 bg-gray-200 rounded-full"
+                  <button className="w-7 h-7 md:w-10 md:h-10 bg-gray-200 rounded-full text-[11px]"
                   onClick={handleDelete}                  
                   >
                     X
@@ -1190,35 +1185,37 @@ function NewLicenseElement(
   };
 
 return (
-<div className="flex">
+<div className="flex text-[13px] md:text-base">
                 <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
                   <div>
-                    <fieldset className="border border-gray-200 text-center md:text-left w-full text-black md:flex">
-                      <legend className="w-full md:w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8 md:border-r md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
+                    <fieldset className="border border-gray-200 w-full text-black md:flex">
+                      <legend className="w-full md:w-2/12 h-12 md:h-14 float-left pt-4 pl-4 md:pl-8 md:border-r md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         자격증명
                       </legend>
-                      <div className="w-full md:w-10/12 h-12 md:h-14 pl-4 text-wrap md:pt-4">
+                      <div className="w-3/4 md:w-10/12 md:before:border-l before:border-gray-200 before:h-6 float-left flex justify-start items-center">
+                        <div className="pl-4 md:pt-3 text-wrap w-full py-4 md:py-0">
                         {licenseName}
+                        </div>
                       </div>
                     </fieldset>
                   </div>
                   <div className="md:flex border-b border-gray-200">
-                    <fieldset className="border-l border-r md:border-r-0 border-gray-200 text-center md:text-left w-full md:w-1/2 text-black md:flex pb-2 md:pb-0">
+                    <fieldset className="border-l border-r md:border-r-0 border-gray-200 w-full md:w-1/2 text-black md:flex">
                       <legend className="w-full md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8 md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         발행처
                       </legend>
-                      <div className="md:before:border-l border-gray-200 before:mt-2 before:h-6 w-full md:w-2/3 h-10 float-left md:pt-2 md:pr-28 flex box-border">
-                        <div className="pl-4 h-12 md:h-10 md:pt-2 box-border w-full md:w-64">
+                      <div className="w-3/4 md:w-10/12 md:before:border-l before:border-gray-200 before:h-6 float-left flex justify-start items-center">
+                        <div className="pl-4 md:pt-3 text-wrap w-full py-4 md:py-0">
                           {licenseDept}
                         </div>
                       </div>
                     </fieldset>
-                    <fieldset className="border-x border-gray-200 text-center md:text-left w-full md:w-1/2 text-black flex border-t md:border-t-0">
+                    <fieldset className="border-x border-gray-200 w-full md:w-1/2 text-black flex border-t md:border-t-0">
                       <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
                         취득일
                       </legend>
-                      <div className="before:border-l before:border-gray-200 before:mt-2 before:h-6 w-full md:w-3/4 h-12 md:h-10 float-left md:pt-2 md:pr-28 flex box-border">
-                        <div className="pl-4 md:pl-6 h-12 md:h-10 box-border w-full md:w-64 md:pt-2">
+                      <div className="before:border-l before:border-gray-200 before:mt-2 before:h-6 w-full md:w-3/4 h-12 md:h-10 float-left pt-1 md:pt-2 md:pr-28 flex box-border">
+                        <div className="pl-4 md:pl-6 h-12 md:h-10 box-border w-full md:w-64 pt-3 md:pt-2">
                           {licenseDate}
                         </div>
                       </div>
@@ -1227,7 +1224,8 @@ return (
                   <div></div>
                 </div>
                 <div className="w-1/12 md:w-[70px] flex justify-end items-center">
-                  <button className="w-7 h-7 md:w-10 md:h-10 bg-gray-200 rounded-full"
+                  <button
+                  className="w-7 h-7 md:w-10 md:h-10 bg-gray-200 rounded-full text-[11px]"
                   onClick={handleDelete}
                   >
                     X

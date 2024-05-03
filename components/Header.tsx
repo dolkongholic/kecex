@@ -70,7 +70,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
     // document.body.classList.remove("overflow-y-hidden");
   };
 
-  const [activeMenu, setActiveMenu] = useState('협회소개');
+  const [activeMenu, setActiveMenu] = useState('마이페이지');
 
   const handleMenuToggle = (menuTitle : any) => {
     setActiveMenu(menuTitle);
@@ -652,10 +652,6 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                       <div className="text-[13px] flex list-none px-2 justify-between pt-2">
                       <p className="text-start pr-5">회원님은 현재 <b>{currentUser.level}</b>입니다.</p>
                         <ul className="flex">
-                          <Link passHref href={"/mypage/overall/all01"}>
-                            <li className="cursor-pointer hover:text-primary">마이페이지</li>
-                          </Link>
-                          <li>&nbsp;|&nbsp;</li>
                           <li
                           className="cursor-pointer hover:text-primary"
                           onClick={() => signOut()}
@@ -668,6 +664,113 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             )}
           </div>
           <ul className="block md:flex justify-between w-full h-[808px] md:w-[1400px] m-auto md:pt-16 bg-lightgray">
+          <li className="w-full md:w-1/5 mr-6 flex md:hidden">
+              {/* 마이페이지 */}
+            {currentUser == null ? (
+                    <>
+                    </>
+                    ) : (
+                      <>
+              <div
+                className={` w-full md:w-full h-12 pl-5 md:pl-0 pt-3 md:pt-0 cursor-pointer md:text-primary md:border-b-2 border-primary ${
+                  activeMenu === '마이페이지' ? 'text-primary border-b-2 bg-white md:bg-lightgray' : 'text-gray-700 bg-lightgray'
+                  }`}
+                onClick={() => handleMenuToggle('마이페이지')}
+              >
+                <span className="text-[15px] md:text-[24px] font-semibold">
+                  {" "}
+                  마이페이지
+                </span>
+              </div>
+              <ul className={`w-3/4 md:w-full absolute md:static right-0 top-[215px] h-full bg-white md:bg-lightgray z-[501] text-[15px] md:text-auto ${
+                              activeMenu === '마이페이지' ? 'block' : 'hidden md:block'
+                            }`}
+              >
+                <li>
+                  <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
+                    전체 현황
+                  </div>
+                  <div className="flex flex-col space-y-[25px] border-b border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
+                    <Link passHref href={"/mypage/overall/all01"}>
+                      <span className="cursor-pointer hover:text-primary"> · 발급/출력 현황</span>
+                    </Link>
+                    <Link passHref href={"/mypage/overall/all02"}>
+                      <span className="cursor-pointer hover:text-primary"> · 1:1 문의 현황</span>
+                    </Link>
+                  </div>
+                </li>
+                <li>
+                  <Link passHref href={"/mypage/profile"}>
+                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                      회원정보 수정
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link passHref href={"/mypage/regular"}>
+                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                      정회원 가입
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
+                    회비 납부
+                  </div>
+                  <div className="flex flex-col space-y-[25px] border-b border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
+                    <Link passHref href={"/mypage/payment/payment"}>
+                      <span className="cursor-pointer hover:text-primary"> · 회비 납부</span>
+                    </Link>
+                    <Link passHref href={"/mypage/payment/detail"}>
+                      <span className="cursor-pointer hover:text-primary">
+                        {" "}
+                        · 회비 납부내역
+                      </span>
+                    </Link>
+                  </div>
+                </li>
+                <li>
+                  <Link passHref href={"/mypage/print"}>
+                    <div className="md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                      회원증 출력
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link passHref href={"/mypage/overall/all02"}>
+                    <div className="md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                      1:1문의 현황
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <Link passHref href={"/mypage/resume"}>
+                    <div className="md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                      경력관리
+                    </div>
+                  </Link>
+                </li>
+                <li>
+                  <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
+                    경력수첩 발급
+                  </div>
+                  <div className="flex flex-col space-y-[25px] border-b border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
+                    <Link passHref href={"/mypage/career/print"}>
+                      <span className="cursor-pointer hover:text-primary"> · 경력수첩 발급</span>
+                    </Link>
+                  </div>
+                </li>
+                <li>
+                  <Link passHref href={"/mypage/out"}>
+                    <div className="w-full md:w-[250px] h-12 md:h-14  md:border-b md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
+                      회원탈퇴
+                    </div>
+                  </Link>
+                </li>
+              </ul>
+                    </>
+            )}
+            </li>
             <li className="w-full md:w-1/5 mr-6 flex md:block">
               {/* 협회소개 */}
               <div
@@ -912,113 +1015,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 </div>
               </div>
             </li>
-            <li className="w-full md:w-1/5 mr-6 flex md:hidden">
-              {/* 마이페이지 */}
-            {currentUser == null ? (
-                    <>
-                    </>
-                    ) : (
-                      <>
-              <div
-                className={` w-full md:w-full h-12 pl-5 md:pl-0 pt-3 md:pt-0 cursor-pointer md:text-primary md:border-b-2 border-primary ${
-                  activeMenu === '마이페이지' ? 'text-primary border-b-2 bg-white md:bg-lightgray' : 'text-gray-700 bg-lightgray'
-                  }`}
-                onClick={() => handleMenuToggle('마이페이지')}
-              >
-                <span className="text-[15px] md:text-[24px] font-semibold">
-                  {" "}
-                  마이페이지
-                </span>
-              </div>
-              <ul className={`w-3/4 md:w-full absolute md:static right-0 top-[215px] h-full bg-white md:bg-lightgray z-[501] text-[15px] md:text-auto ${
-                              activeMenu === '마이페이지' ? 'block' : 'hidden md:block'
-                            }`}
-              >
-                <li>
-                  <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
-                    전체 현황
-                  </div>
-                  <div className="flex flex-col space-y-[25px] border-b border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
-                    <Link passHref href={"/mypage/overall/all01"}>
-                      <span className="cursor-pointer hover:text-primary"> · 발급/출력 현황</span>
-                    </Link>
-                    <Link passHref href={"/mypage/overall/all02"}>
-                      <span className="cursor-pointer hover:text-primary"> · 1:1 문의 현황</span>
-                    </Link>
-                  </div>
-                </li>
-                <li>
-                  <Link passHref href={"/mypage/profile"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
-                      회원정보 수정
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link passHref href={"/mypage/regular"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
-                      정회원 가입
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
-                    회비 납부
-                  </div>
-                  <div className="flex flex-col space-y-[25px] border-b border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
-                    <Link passHref href={"/mypage/payment/payment"}>
-                      <span className="cursor-pointer hover:text-primary"> · 회비 납부</span>
-                    </Link>
-                    <Link passHref href={"/mypage/payment/detail"}>
-                      <span className="cursor-pointer hover:text-primary">
-                        {" "}
-                        · 회비 납부내역
-                      </span>
-                    </Link>
-                  </div>
-                </li>
-                <li>
-                  <Link passHref href={"/mypage/print"}>
-                    <div className="md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
-                      회원증 출력
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link passHref href={"/mypage/overall/all02"}>
-                    <div className="md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
-                      1:1문의 현황
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <Link passHref href={"/mypage/resume"}>
-                    <div className="md:w-[250px] h-12 md:h-14  border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
-                      경력관리
-                    </div>
-                  </Link>
-                </li>
-                <li>
-                  <div className="w-full md:w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
-                    경력수첩 발급
-                  </div>
-                  <div className="flex flex-col space-y-[25px] border-b border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
-                    <Link passHref href={"/mypage/career/print"}>
-                      <span className="cursor-pointer hover:text-primary"> · 경력수첩 발급</span>
-                    </Link>
-                  </div>
-                </li>
-                <li>
-                  <Link passHref href={"/mypage/out"}>
-                    <div className="w-full md:w-[250px] h-12 md:h-14  md:border-b md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[55px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary">
-                      회원탈퇴
-                    </div>
-                  </Link>
-                </li>
-              </ul>
-                    </>
-            )}
-            </li>
+
           </ul>
         </div>
       </div>
