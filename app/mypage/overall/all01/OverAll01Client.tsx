@@ -143,7 +143,8 @@ const OverAll01Client: React.FC<OverAll01ClientProps> = ({ currentUser }) => {
                     <b className="font-normal">{currentUser.name}</b>님
                   </span>{" "}
                 </strong>
-                <p className="mt-5 text-[14px]">
+                <p className="mt-5 text-[14px]">회원님은 현재 <b>{currentUser.level}</b>입니다.</p>
+                <p className="text-[14px]">
                   신청, 발급현황 및 한국방폭협회 관련 서비스를 확인하세요.
                 </p>
               </div>

@@ -287,7 +287,7 @@ const Index: React.FC<IndexProps> = ({
 
       {/* 띠배너 */}
       <div className="w-full h-[350px] md:h-[250px] bg-[#D9ECFF] mt-40">
-        <div className="w-full max-w-[1440px] min-w-[600px] h-full mx-auto text-[#3A3A3A] pt-12 relative px-7">
+        <div className="w-full md:max-w-[1440px] md:min-w-[600px] h-full mx-auto text-[#3A3A3A] pt-12 relative px-7 overflow-x-hidden">
           <h3 className="text-[28px] font-semibold">
             KECEx 한국방폭협회<br className="md:hidden"/>
             회원 안내
@@ -303,21 +303,21 @@ const Index: React.FC<IndexProps> = ({
               자세히 보기
             </button>
           </Link>
-          <div className="absolute right-[25%] md:right-[3%] bottom-16">
+          <div className="absolute right-[-5%] sm:right-[15%] md:right-[3%] bottom-16 z-0">
             <Image 
               src={PicMdbn} 
               alt="open_banner" 
-              className="mx-auto px-3 md:px-0 h-[120px] w-auto bottom-0 z-0"
+              className="mx-auto px-3 md:px-0 h-[120px] w-auto bottom-0"
             />
           </div>
         </div>
       </div>
 
       {/* 안내 아이콘 */}
-      <div className="w-full md:h-[460px] mt-40">
-        <ul className="w-full md:w-[1440px] h-full mx-auto text-[#3A3A3A] flex justify-between flex-wrap md:flex-nowrap">
-          <li className="w-1/2 md:w-1/4 h-full border-t border-[#3A3A3A] pt-16 md:mr-5">
-            <div className="w-full h-full md:border-b border-[#ccc] pl-3 md:pl-0">
+      <div className="w-full lg:h-[460px] mt-40 px-2">
+        <ul className="w-full xl:w-[1440px] h-full mx-auto text-[#3A3A3A] flex justify-between flex-wrap lg:flex-nowrap">
+          <li className="w-1/2 lg:w-1/4 h-full border-t border-[#3A3A3A] pt-16 lg:mr-5">
+            <div className="w-full h-full lg:border-b border-[#ccc] pl-3 lg:pl-0">
                 <div className="w-[42px] h-[42px] relative">
                   <Image 
                     src={PicBsn_01} 
@@ -329,7 +329,7 @@ const Index: React.FC<IndexProps> = ({
                 <h5 className="mt-8">
                   협회설립안내
                 </h5>
-                <p className="text-[20px] md:text-[28px] pt-4 font-semibold h-[100px] md:h-auto">
+                <p className="text-[20px] md:text-[28px] pt-4 font-semibold h-[100px] lg:h-auto">
                   한국방폭협회는<br/>
                   <span className="text-primary">어떤 일</span>을 하나요?
                 </p>
@@ -343,10 +343,10 @@ const Index: React.FC<IndexProps> = ({
                       협회소개
                   </button>
                 </Link>
-                <div className="w-full h-[40px] md:hidden">&nbsp;</div>
+                <div className="w-full h-[40px] lg:hidden">&nbsp;</div>
               </div>
             </li>
-            <li className="w-1/2 md:w-1/4 h-full border-t border-[#3A3A3A] pt-16 md:mx-5">
+            <li className="w-1/2 lg:w-1/4 h-full border-t border-[#3A3A3A] pt-16 lg:mx-5">
               <div className="w-full h-full md:border-b border-[#ccc] pl-2 md:pl-0">
                 <div className="w-[42px] h-[42px] relative">
                   <Image 
@@ -359,7 +359,7 @@ const Index: React.FC<IndexProps> = ({
                 <h5 className="mt-8">
                   협회가입혜택
                 </h5>
-                <p className="text-[20px] md:text-[28px] pt-4 font-semibold h-[100px] md:h-auto">
+                <p className="text-[20px] md:text-[28px] pt-4 font-semibold h-[100px] lg:h-auto">
                   협회가입시 어떤<br/>
                   <span className="text-primary">혜택</span>이 있나요?
                 </p>
@@ -384,10 +384,10 @@ const Index: React.FC<IndexProps> = ({
                       경력관리
                   </button>
                 </Link>
-                <div className="w-full h-[40px] md:hidden">&nbsp;</div>
+                <div className="w-full h-[40px] lg:hidden">&nbsp;</div>
               </div>
           </li>
-          <li className="w-1/2 md:w-1/4 h-full border-t border-[#3A3A3A] pt-16 md:mx-5">
+          <li className="w-1/2 lg:w-1/4 h-full border-t border-[#3A3A3A] pt-16 lg:mx-5">
             <div className="w-full h-full border-b border-[#ccc] pl-3 md:pl-0">
               <div className="w-[42px] h-[42px] relative">
                 <Image 
@@ -400,7 +400,7 @@ const Index: React.FC<IndexProps> = ({
               <h5 className="mt-8">
                 협회가입안내
               </h5>
-              <p className="text-[20px] md:text-[28px] pt-4 font-semibold h-[100px] md:h-auto">
+              <p className="text-[20px] md:text-[28px] pt-4 font-semibold h-[100px] lg:h-auto">
                 협회<span className="text-primary">가입</span>은<br/>
                 어떻게 하나요?
               </p>
@@ -425,10 +425,10 @@ const Index: React.FC<IndexProps> = ({
                     가입안내
                 </button>
               </Link>
-              <div className="w-full h-[40px] md:hidden">&nbsp;</div>
+              <div className="w-full h-[40px] lg:hidden">&nbsp;</div>
             </div>
           </li>
-          <li className="w-1/2 md:w-1/4 h-full border-t border-[#3A3A3A] pt-16 md:ml-5">
+          <li className="w-1/2 lg:w-1/4 h-full border-t border-[#3A3A3A] pt-16 lg:ml-5">
             <div className="w-full h-full border-b border-[#ccc] pl-2 md:pl-0">
               <div className="w-[42px] h-[42px] relative">
                 <Image 
@@ -455,20 +455,20 @@ const Index: React.FC<IndexProps> = ({
                   총회 조직도
               </button>
               </Link>
-              <div className="w-full h-[40px] md:hidden">&nbsp;</div>
+              <div className="w-full h-[40px] lg:hidden">&nbsp;</div>
             </div>
           </li>
         </ul>
       </div>
       {/* 관련 기관 */}
       <div className="w-full h-[770px] md:h-[650px] flex flex-col justify-start items-center mt-[160px] md:py-[57px]">
-        <div className="w-full md:w-[1300px] h-[770px] md:h-[530px] justify-between item-center leading-[30px] md:leading-[60px]"> {/* 관련기관 리스트 */}
+        <div className="w-full xl:w-[1300px] h-[770px] lg:h-[530px] justify-between item-center leading-[30px] md:leading-[60px]"> {/* 관련기관 리스트 */}
           <h3 className="text-center font-bold text-[26px] md:text-[30px] text-[#3A3A3A] leading-[44px] mb-16 md:mb-24">
             한국방폭협회는<br/>
             다음 기관들과 함께 합니다.
           </h3>
           <div className="w-full flex px-3 md:px-0 mt-4 md:mt-12 md:h-auto flex-wrap md:flex-nowrap">
-            <Link passHref href={"https://www.moel.go.kr/index.do"} className="w-1/2 md:w-1/4" target="_blank">
+            <Link passHref href={"https://www.moel.go.kr/index.do"} className="w-1/2 lg:w-1/4" target="_blank">
               <div className="w-full">
                 <Image 
                 src={Picmoel} 
@@ -477,7 +477,7 @@ const Index: React.FC<IndexProps> = ({
                 />
               </div>
             </Link>
-            <Link passHref href={"https://www.nts.go.kr/"} className="w-1/2 md:w-1/4" target="_blank">
+            <Link passHref href={"https://www.nts.go.kr/"} className="w-1/2 lg:w-1/4" target="_blank">
               <div className="w-full">
                     <Image 
               src={Picnts} 
@@ -486,7 +486,7 @@ const Index: React.FC<IndexProps> = ({
               />
               </div>
             </Link>
-            <Link passHref href={"https://www.acrc.go.kr/"} className="w-1/2 md:w-1/4" target="_blank">
+            <Link passHref href={"https://www.acrc.go.kr/"} className="w-1/2 lg:w-1/4" target="_blank">
             <div className="w-full mt-11 md:mt-0">
                     <Image 
               src={Picacrc} 
@@ -495,7 +495,7 @@ const Index: React.FC<IndexProps> = ({
             />
             </div>
             </Link>
-            <Link passHref href={"https://www.moel.go.kr/local/ulsan/index.do"} className="w-1/2 md:w-1/4" target="_blank">
+            <Link passHref href={"https://www.moel.go.kr/local/ulsan/index.do"} className="w-1/2 lg:w-1/4" target="_blank">
             <div className="w-full mt-11 md:mt-0">
               <Image 
                 src={PicmoelUl} 
@@ -506,7 +506,7 @@ const Index: React.FC<IndexProps> = ({
             </Link>
           </div>
 
-          <div className="w-full flex mt-12 md:mt-16 flex-wrap md:flex-nowrap">
+          <div className="w-full flex mt-12 md:mt-16 flex-wrap md:flex-nowrap box-border overflow-x-hidden">
             <Link passHref href={"https://www.ulsan.go.kr/u/rep/main.ulsan"} className="w-1/2 md:w-1/4" target="_blank">
               <div className="w-full h-[36px]">
                       <Image 

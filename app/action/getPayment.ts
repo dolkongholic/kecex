@@ -20,4 +20,4 @@ export default async function getPayment(params: IParams) {
     });
 
     return paymentList;
-}
+};
