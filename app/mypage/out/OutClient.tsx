@@ -170,7 +170,7 @@ const OutClient: React.FC<OutProps> = ({ currentUser }) =>{
           </div>
         </section>
 
-        <section className="py-[40px] px-[15px] md:pl-[50px] md:pr-[20px]  w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] px-[15px] md:pl-[50px] md:pr-[20px]  w-full flex flex-col justify-start items-start text-[15px] md:text-base">
           <ContentTitle title={location} center={true} />
           <ContentSubTitle title="회원 탈퇴 절차" />
           <p className="border border-[#ccc] p-8 mb-10 w-full">
@@ -185,7 +185,7 @@ const OutClient: React.FC<OutProps> = ({ currentUser }) =>{
                       src={regular_member_1}
                       alt="원서작성_아이콘"
                       className="w-16"
-                    ></Image>
+                    />
                   </div>
                   <div className="w-7/12">
                     <p>
@@ -205,7 +205,7 @@ const OutClient: React.FC<OutProps> = ({ currentUser }) =>{
                       src={regular_member_2}
                       alt="원서송부_아이콘"
                       className="w-16"
-                    ></Image>
+                    />
                   </div>
                   <div className="w-7/12">
                     <p>
@@ -222,9 +222,9 @@ const OutClient: React.FC<OutProps> = ({ currentUser }) =>{
                   <div className="w-5/12 h-full flex justify-center items-center">
                     <Image
                       src={regular_member_3}
-                      alt="입회처리_아이콘"
+                      alt="탈퇴처리_아이콘"
                       className="w-16"
-                    ></Image>
+                    />
                   </div>
                   <div className="w-7/12">
                     <p>

@@ -107,7 +107,7 @@ const FaQClient = () => {
             <ContentTitle title="자주묻는 질문" center={true} />
 
             <div className="w-full flex flex-col mb-[30px]">
-              <div className="w-full h-[50px] flex text-[15px] md:text-base">
+              <div className="w-full h-[50px] flex text-[14px] md:text-base">
                 <div
                   className={`w-1/4 border border-gray-200 text-center leading-[50px] cursor-pointer ${
                     select == "전체" ? "bg-secondary text-white" : ""
@@ -146,7 +146,7 @@ const FaQClient = () => {
             {(select == "전체" || select == "사이트이용") && (
               <>
                 <div
-                  className={`w-full md:h-[70px]  flex justify-between px-[20px]  cursor-pointer ${
+                  className={`w-full md:h-[70px] text-[15px] md:text-base flex justify-between px-[20px] cursor-pointer ${
                     Qselect == 1
                       ? "text-secondary border-b border-secondary"
                       : "text-black border-b border-gray-200"
@@ -157,7 +157,7 @@ const FaQClient = () => {
                     <div className="mr-[20px] text-[30px] leading-[70px]">
                       Q.
                     </div>
-                    <div className="leading-[70px]">
+                    <div className="md:leading-[70px] pt-3 md:pt-0">
                       회원가입 시 본인인증을 해야하나요?
                     </div>
                   </div>
@@ -170,7 +170,7 @@ const FaQClient = () => {
                   </div>
                 </div>
                 {Qselect == 1 ? (
-                  <div className="bg-gray-100 text-base text-black px-[40px] py-[20px]">
+                  <div className="bg-gray-100 text-[15px] md:text-base text-black px-[40px] py-[20px]">
                     <p>
                       회원가입 시 본인인증은 하지 않습니다. <br /> 다만,
                       회원가입시 입력되는 정보는 본인이여야하며, 정회원 전환시
@@ -182,7 +182,7 @@ const FaQClient = () => {
                 )}
 
                 <div
-                  className={`w-full h-[70px]  flex justify-between px-[20px]  cursor-pointer ${
+                  className={`w-full h-[70px] text-[15px] md:text-base flex justify-between px-[20px]  cursor-pointer ${
                     Qselect == 2
                       ? "text-secondary border-b border-secondary"
                       : "text-black border-b border-gray-200"
@@ -193,7 +193,7 @@ const FaQClient = () => {
                     <div className="mr-[20px] text-[30px] leading-[70px]">
                       Q.
                     </div>
-                    <div className="leading-[70px]">
+                    <div className="md:leading-[70px] pt-3 md:pt-0">
                       홈페이지에 공개된 자료들은 사용해도 되나요?
                     </div>
                   </div>
@@ -206,7 +206,7 @@ const FaQClient = () => {
                   </div>
                 </div>
                 {Qselect == 2 ? (
-                  <div className="bg-gray-100 text-base text-black px-[40px] py-[20px]">
+                  <div className="bg-gray-100 text-[15px] md:text-base text-black px-[40px] py-[20px]">
                     <p>
                       자료를 받아 사용하시는것은 가능하나 자료의 가공 및 재활용
                       등은 금지됩니다.
@@ -221,7 +221,7 @@ const FaQClient = () => {
             {(select == "전체" || select == "교육신청") && (
               <>
                 <div
-                  className={`w-full h-[70px] flex justify-between px-[20px]  cursor-pointer ${
+                  className={`w-full h-[70px] text-[15px] md:text-base flex justify-between px-[20px]  cursor-pointer ${
                     Qselect == 3
                       ? "text-secondary border-b border-secondary"
                       : "text-black border-b border-gray-200"
@@ -245,14 +245,14 @@ const FaQClient = () => {
                   </div>
                 </div>
                 {Qselect == 3 ? (
-                  <div className="bg-gray-100 text-base text-black px-[40px] py-[20px]">
+                  <div className="bg-gray-100 text-[15px] md:text-base text-black px-[40px] py-[20px]">
                     <p>웹 사이트 상단 메뉴 교육 센터에서 신청할 수 있습니다.</p>
                   </div>
                 ) : (
                   ""
                 )}
                 <div
-                  className={`w-full h-[70px]  flex justify-between px-[20px]  cursor-pointer ${
+                  className={`w-full h-[70px] text-[15px] md:text-base flex justify-between px-[20px]  cursor-pointer ${
                     Qselect == 4
                       ? "text-secondary border-b border-secondary"
                       : "text-black border-b border-gray-200"
@@ -276,7 +276,7 @@ const FaQClient = () => {
                   </div>
                 </div>
                 {Qselect == 4 ? (
-                  <div className="bg-gray-100 text-base text-black px-[40px] py-[20px]">
+                  <div className="bg-gray-100 text-[15px] md:text-base text-black px-[40px] py-[20px]">
                     <p>
                       교육취소는 로그인 후 마이페이지에서 교육 관리 페이지를
                       확인하시면 취소 가능합니다.
@@ -286,7 +286,7 @@ const FaQClient = () => {
                   ""
                 )}
                 <div
-                  className={`w-full h-[70px] flex justify-between px-[20px] cursor-pointer  ${
+                  className={`w-full h-[70px] text-[15px] md:text-base flex justify-between px-[20px] cursor-pointer  ${
                     Qselect == 5
                       ? "text-secondary border-b border-secondary"
                       : "text-black border-b border-gray-200"
@@ -310,7 +310,7 @@ const FaQClient = () => {
                   </div>
                 </div>
                 {Qselect == 5 ? (
-                  <div className="bg-gray-100 text-base text-black px-[40px] py-[20px]">
+                  <div className="bg-gray-100 text-[15px] md:text-base text-black px-[40px] py-[20px]">
                     <p>
                       교육일정 변경은 교육을 먼저 취소하신 후 다시 신청하셔야
                       합니다.
@@ -325,7 +325,7 @@ const FaQClient = () => {
             {(select == "전체" || select == "기타") && (
               <>
                 <div
-                  className={`w-full md:h-[70px]  flex justify-between px-[20px] cursor-pointer ${
+                  className={`w-full md:h-[70px] text-[15px] md:text-base flex justify-between px-[20px] cursor-pointer ${
                     Qselect == 6
                       ? "text-secondary border-b border-secondary"
                       : "text-black border-b border-gray-200"
@@ -349,17 +349,17 @@ const FaQClient = () => {
                   </div>
                 </div>
                 {Qselect == 6 ? (
-                  <div className="bg-gray-100 text-base text-black px-[40px] py-[20px]">
+                  <div className="bg-gray-100 text-[15px] md:text-base text-black px-[40px] py-[20px]">
                     <p>
-                      웹 로그인 후 상단 마이페이지에서 정회원 신청 메뉴를
-                      이용하여, <br /> 입회원서를 다운받아 신청할수 있습니다.
+                      웹 로그인 후 상단 마이페이지에서 정회원 가입 메뉴를
+                      이용하여, <br className="hidden md:inline" /> 입회원서를 다운받아 신청할수 있습니다.
                     </p>
                   </div>
                 ) : (
                   ""
                 )}
                 <div
-                  className={`w-full h-[70px] flex justify-between px-[20px] cursor-pointer ${
+                  className={`w-full h-[70px] text-[15px] md:text-base flex justify-between px-[20px] cursor-pointer ${
                     Qselect == 7
                       ? "text-secondary border-b border-secondary"
                       : "text-black border-b border-gray-200"
@@ -383,10 +383,10 @@ const FaQClient = () => {
                   </div>
                 </div>
                 {Qselect == 7 ? (
-                  <div className="bg-gray-100 text-base text-black px-[40px] py-[20px]">
+                  <div className="bg-gray-100 text-[15px] md:text-base text-black px-[40px] py-[20px]">
                     <p>
                       웹 로그인 후 상단 마이페이지에서 회비 납부 메뉴를
-                      확인하여, <br /> 계좌이체 후 납부 확인 신청 을 통해서
+                      확인하여, <br className="hidden md:inline" /> 계좌이체 후 납부 확인 신청 을 통해서
                       가능합니다.
                     </p>
                   </div>
@@ -394,7 +394,7 @@ const FaQClient = () => {
                   ""
                 )}
                 <div
-                  className={`w-full h-[70px]  flex justify-between px-[20px]  cursor-pointer  ${
+                  className={`w-full h-[70px] text-[15px] md:text-base flex justify-between px-[20px]  cursor-pointer  ${
                     Qselect == 8
                       ? "text-secondary border-b border-secondary"
                       : "text-black border-b border-gray-200"
@@ -418,9 +418,9 @@ const FaQClient = () => {
                   </div>
                 </div>
                 {Qselect == 8 ? (
-                  <div className="bg-gray-100 text-base text-black px-[40px] py-[20px]">
+                  <div className="bg-gray-100 text-[15px] md:text-base text-black px-[40px] py-[20px]">
                     <p>
-                      교육 일정을 취소 하실때 작성하신 <br />
+                      교육 일정을 취소 하실때 작성하신 <br className="hidden md:inline" />
                       환불 요청 계좌를 통해 1~2일 후 입금 됩니다.
                     </p>
                   </div>
