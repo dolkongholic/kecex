@@ -6,6 +6,7 @@ import { Gothic_A1 } from "next/font/google";
 import ToasterProvieder from "./providers/ToasterProvider";
 import ClientOnly from "@/components/ClientOnly";
 import InsertMainBanner from "../components/modal/InsertMainBanner";
+
 const inter = Gothic_A1({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],

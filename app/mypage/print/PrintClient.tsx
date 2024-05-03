@@ -5,26 +5,43 @@ import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import { useRouter } from "next/navigation";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
 import download_icon from "@/public/img/icon/download_icon.png";
 import certificate_bg from "@/public/img/pages/print/certificate_background.jpg";
-
+import certificate_expired from "@/public/img/pages/print/certificate_expired.jpg";
+import html2canvas from 'html2canvas';
+import jsPDF from "jspdf";
+import { Gowun_Batang } from "next/font/google";
+import { format } from "path";
 // Image
 
 const location = "회원증 출력";
 
 interface MyCertProps {
   currentUser?: any;
+  paymentList?: any;
 }
-const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
+const Batang = Gowun_Batang({
+  weight: ["400","700"],
+  subsets: ["latin"],
+});
+
+const PrintClient: React.FC<MyCertProps> = ({ currentUser, paymentList }) => {
   const [pageMenu, setPageMenu] = useState<any>("마이페이지");
   const router = useRouter();
+  const [currentDate, setCurrentDate] = useState<string>('');
+  const [formattedDate, setFormattedDate] = useState<string>('');
+  useEffect(() => {
+    main();
+  })
+
   if (!currentUser) {
     router.push("/member/signin/");
     return null;
   }
+
   const MainList = [
     {
       title: "전체 현황",
@@ -94,10 +111,92 @@ const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
     },
   ];
 
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = (today.getMonth() + 1).toString().padStart(2, "0");
-  const day = today.getDate().toString().padStart(2, "0");
+
+
+  const formatDate = (date:any) => {
+    if(!date) return "기간없음";
+
+    const year = date.getFullYear();
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
+    const day = date.getDate().toString().padStart(2, "0");
+    return `${year}.${month}.${day}`;
+  };
+
+  const getCurrentDate = () => {
+    const today = new Date();
+    return formatDate(today);
+  };
+
+  const getRecentPaymentDate = async () => {
+  // 결제 목록에서 최신 결제일을 찾습니다.
+  const recentPayment = paymentList.reduce((recent: any, payment: any) => {
+    if (!recent || new Date(payment.requested_at) > new Date(recent.requested_at)) {
+      return payment;
+    } else {
+      return recent;
+    }
+  }, null);
+
+  if (recentPayment) {
+    const paymentDate = new Date(recentPayment.requested_at);
+    paymentDate.setMonth(paymentDate.getMonth() + 1);
+    return paymentDate;
+  }else{
+    return null;
+  }
+  }
+
+  const main = async () => {
+    setCurrentDate(getCurrentDate());
+    const recentPaymentDate = await getRecentPaymentDate();
+    setFormattedDate(formatDate(recentPaymentDate));
+  };
+
+  const handleDownloadPDF = () => {
+    const content = document.getElementById('content-to-download');
+    if (!content) {
+      console.error('Content element not found.');
+      return;
+    }
+
+    html2canvas(content, { scale: 3 })
+      .then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF();
+        const imgWidth = 210;
+        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+        pdf.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
+        pdf.save('한국방폭협회_회원증서.pdf');
+    })
+    .catch((error) => {
+      console.error('PDF 다운로드 에러: ', error);
+    });
+  }; 
+
+  const handleDownloadJPG = () => {
+    const content = document.getElementById('content-to-download');
+
+    if (!content) {
+      console.error('다운로드할 파일이 없습니다');
+      return;
+    }
+
+    html2canvas(content, { scale: 3 })
+      .then((canvas) => {
+        const imgData = canvas.toDataURL('image/jpeg');
+        const a = document.createElement('a');
+        a.href = imgData;
+        a.download = '한국방폭협회_회원증서.jpg'
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    })
+    .catch((error) => {
+      console.error('JPG 다운로드 에러: ', error);
+    });
+  }; 
+
   return (
     <section>
       <div id="headerNav">
@@ -143,45 +242,54 @@ const PrintClient: React.FC<MyCertProps> = ({ currentUser }) => {
               본 협회에서 발급된 증서를 출력하실 수 있습니다.
             </div>
           </div>
-          <figure className="w-full flex justify-center my-10">
-            <div className="w-[315px] h-[439px] md:w-[620px] md:h-[877px] border border-gray relative">
+          <figure className="w-full flex justify-center my-10  font-[batang]">
+            <div className="w-[315px] h-[439px] md:w-[620px] md:h-[877px] border border-gray relative" id="content-to-download">
               <Image
                 src={certificate_bg}
-                className="absolute left-0 top-0"
+                className={`absolute left-0 top-0 w-full h-full
+                ${currentUser.level === "일반회원" ? 'hidden' : 'block'}
+                `}
                 alt="img"
-              />{" "}
-              <ul className="absolute left-[90px] top-[134px] md:left-[172px] md:top-[265px] z-40 font-[KoPubWorldBatang] text-black">
+              />
+              <Image
+                src={certificate_expired}
+                className={`absolute left-0 top-0 w-full h-full
+                ${currentUser.level === "일반회원" ? 'block' : 'hidden'}
+                `}
+                alt="img"
+              />
+              <ul className="absolute left-[86px] top-[118px] md:left-[172px] md:top-[240px] z-40 text-black">
                 <li className="text-[10px] md:text-[19px] font-bold">
                   <p className=" tracking-widest">{currentUser.koname}</p>
                 </li>
-                <li className="text-[10px] md:text-[19px] font-bold leading-4 md:leading-7 mt-[3px] md:mt-[9px]">
-                  <p className="">부산광역시 해운대구 센텀동로35 센텀SH밸리</p>
+                <li className="text-[10px] md:text-[19px] font-bold leading-4 md:leading-7 mt-[2px] md:mt-[9px]">
+                  <p className="">울산광역시 중구 종가로 15,<br/> 울산테크노파크 기술혁신동 B동 408호</p>
                 </li>
-                <li className="text-[10px] md:text-[19px] font-bold mt-[3px] md:mt-[9px]">
+                <li className="text-[10px] md:text-[19px] font-bold mt-[1px] md:mt-[6px]">
                   <p className="tracking-relaxed">{currentUser.id}</p>
                 </li>
               </ul>
-              <p className="absolute left-[88px] md:left-[173px] top-[273px] md:top-[539px] z-40 text-[6px] md:text-[12px] font-[KoPubWorldBatang] text-[#898989]">
-                {year}.{month}.{day}
+              <p className="absolute left-[88px] md:left-[173px] top-[265px] md:top-[532px] z-40 text-[6px] md:text-[12px] text-[#898989]">
+                {currentUser.level === "일반회원" ? '' : `${currentDate}`}
               </p>
-              <p className="absolute left-[176px] md:left-[348px] top-[273px] md:top-[539px] z-40 text-[6px] md:text-[12px] font-[KoPubWorldBatang] text-[#898989]">
-                2024.03.06
+              <p className="absolute left-[176px] md:left-[348px] top-[265px] md:top-[532px] z-40 text-[6px] md:text-[12px] text-[#898989]">
+                {currentUser.level === "일반회원" ? '' : `${formattedDate}`}
               </p>
-              <div className="absolute left-[108px] md:left-[220px] top-[304px] md:top-[600px] z-40 text-[12px] md:text-[22px] font-[KoPubWorldBatang] text-black flex font-bold">
-                <p>{year}</p>
-                <p className="ml-[15px] md:ml-[30px]">{month}</p>
-                <p className="ml-[14px] md:ml-[29px]">{day}</p>
+              <div className="absolute left-[108px] md:left-[225px] top-[292px] md:top-[590px] z-40 text-[12px] md:text-[22px] text-black flex font-bold">
+                <p>{currentDate.substring(0,4)}</p>
+                <p className="ml-[15px] md:ml-[32px]">{currentDate.substring(5,7)}</p>
+                <p className="ml-[14px] md:ml-[34px]">{currentDate.substring(8,10)}</p>
               </div>
             </div>
           </figure>
 
           <div className="btn_box flex m-auto mt-20">
-            <button className="w-40 h-14 border border-darkgray text-superdarkgray flex justify-center items-center">
-              다운로드{" "}
+            <button className="w-40 h-14 border border-darkgray text-[#3A3A3A] flex justify-center items-center" onClick={handleDownloadJPG}>
+              이미지 다운로드{" "}
               <Image src={download_icon} className="w-4 h-4 ml-2" alt="img" />{" "}
             </button>
-            <button className="w-40 h-14 border border-secondary bg-secondary text-white flex justify-center items-center ml-7">
-              출력
+            <button className="w-40 h-14 border border-secondary bg-secondary text-white flex justify-center items-center ml-7" onClick={handleDownloadPDF}>
+              PDF 출력
             </button>
           </div>
           {/*btn_box*/}

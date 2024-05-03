@@ -80,7 +80,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
       }
     };
     fetchPreNews();
-  }, []);
+  }, [preDate.date, nextDate.date]);
 
   const del = () => {
     if (confirm("삭제하시겠습니까?")) {
