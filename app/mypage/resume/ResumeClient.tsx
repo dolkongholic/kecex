@@ -447,32 +447,34 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                     </div>
                   </div>
                 </div>
-                <div id="form_area" className="w-full text-[13px] md:text-base translate-y-[310px] md:translate-y-0 md:ml-5">
-                  <fieldset className="border border-gray-200 text-center w-full text-black flex">
-                    <legend className="w-1/6 md:w-[155px] h-12 md:h-14 float-left md:pl-7 pt-1 md:pt-4 text-center md:text-left">
-                      성명<br className="md:hidden"/>
-                      (한글)
-                    </legend>
-                    <div className="before:border-l before:border-gray-200 w-2/6 h-12 md:h-14 float-left pt-1 md:pt-2 box-border flex">
-                      <input
-                        type="text"
-                        placeholder="성"
-                        className="pl-4 h-10 w-full"
-                        defaultValue={currentResume? currentResume.lastName : ""}
-                        {...register("lastName", { required: true })}
-                      />
-                    </div>
-                    <div className="before:border-l before:border-gray-200 w-3/6 h-12 md:h-14 float-left pt-1 md:p-2 box-border flex">
-                      <input
-                        type="text"
-                        placeholder="이름"
-                        className="pl-4 h-10 w-full"
-                        defaultValue={currentResume? currentResume.firstName : ""}
-                        {...register("firstName", { required: true })}
-                      />
+                <div className="w-full text-[13px] md:text-base translate-y-[310px] md:translate-y-0 md:ml-5">
+                  <fieldset className="border border-gray-200 text-center w-full text-black block">
+                    <div className="w-full flex">
+                      <legend className="w-1/6 md:w-[155px] h-12 md:h-14 float-left md:pl-7 pt-1 md:pt-4 text-center md:text-left">
+                        성명<br className="md:hidden"/>
+                        (한글)
+                      </legend>
+                      <div className="before:border-l before:border-gray-200 w-2/6 h-12 md:h-14 float-left pt-1 md:pt-2 box-border flex">
+                        <input
+                          type="text"
+                          placeholder="성"
+                          className="pl-4 h-10 w-full"
+                          defaultValue={currentResume? currentResume.lastName : ""}
+                          {...register("lastName", { required: true })}
+                        />
+                      </div>
+                      <div className="before:border-l before:border-gray-200 w-3/6 h-12 md:h-14 float-left pt-1 md:p-2 box-border flex">
+                        <input
+                          type="text"
+                          placeholder="이름"
+                          className="pl-4 h-10 w-full"
+                          defaultValue={currentResume? currentResume.firstName : ""}
+                          {...register("firstName", { required: true })}
+                        />
+                      </div>
                     </div>
                   </fieldset>
-                  <fieldset className="border border-gray-200 text-center w-full text-black float-left mt-2 md:mt-5">
+                  <fieldset className="border border-gray-200 text-center w-full text-black float-left mt-2 md:mt-5 block">
                     <legend className="w-1/4 md:w-[155px] h-12 md:h-14 float-left text-left pl-4 md:pl-7 pt-[14px] md:pt-4">
                       생년월일
                     </legend>
@@ -536,11 +538,10 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                 학력
               </h3>
               <div className="flex">
-                <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
+                <div className="w-11/12 md:w-[1050px] pt-4">
                   <fieldset className="border border-gray-400 text-center w-full text-black md:flex">
                     <div className="w-full md:w-2/12">
                       <select
-                        id="lang_01"
                         className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary"
                         onChange={handleSelectChange}
                         name="schoolType"
@@ -580,7 +581,6 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                   <fieldset className="border-x border-b border-gray-400 text-center w-full text-black md:flex">
                     <div className="w-full md:w-2/12">
                       <select
-                        id="lang_01"
                         className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary"
                         onChange={handleSelectChange}
                         name="graduation"
@@ -628,11 +628,10 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                 경력
               </h3>
               <div className="flex">
-                <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
+                <div className="w-11/12 md:w-[1050px] pt-4">
                   <fieldset className="border border-gray-400 text-center w-full text-black md:flex">
                     <div className="w-full md:w-2/12">
                       <select
-                        id="lang_01"
                         className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary"
                         onChange={handleSelectChange}
                         name="careerType"
@@ -734,7 +733,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                 관련훈련 이수 내역
               </h3>
               <div className="flex">
-                <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
+                <div className="w-11/12 md:w-[1050px] pt-4">
                   <div className="md:flex border border-gray-400">
                     <fieldset className="md:border-r border-gray-400 text-center w-full md:w-1/2 text-black md:flex">
                       <legend className="w-full md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
@@ -759,15 +758,15 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                       </div>
                     </fieldset>
                     <fieldset className="text-center w-full md:w-1/2 text-black flex border-t md:border-t-0 border-gray-200 ">
-                      <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
+                      <legend className="w-1/4 md:w-w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
                         교육기관
                       </legend>
-                      <div className="before:border-l before:border-gray-400 w-3/4 md:w-2/3 h-12 md:h-14 float-left pt-1 md:pt-2 md:pr-28 box-border">
+                      <div className="w-3/4 md:w-10/12 before:border-l before:border-gray-400 before:h-6 float-left flex justify-start items-center">
                         <input
                           name="trnInstitution"
                           type="text"
                           placeholder=""
-                          className="pl-4 h-10"
+                          className="h-12 md:h-14 pl-4 text-wrap w-full"
                           onChange={handleInputChange}
                         />
                       </div>
@@ -782,7 +781,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                         <input
                           name="trnName"
                           type="text"
-                          className="h-12 md:h-14 pl-4 text-wrap"
+                          className="h-12 md:h-14 pl-4 text-wrap w-full"
                           placeholder="해당 교육명"
                           onChange={handleInputChange}
                         />
@@ -828,7 +827,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                 관련 자격증
               </h3>
               <div className="flex">
-                <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
+                <div className="w-11/12 md:w-[1050px] pt-4">
                   <div>
                     <fieldset className="border border-gray-400 text-center w-full text-black md:flex">
                       <legend className="w-full md:w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8 md:border-r md:border-gray-400 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
@@ -923,11 +922,10 @@ function NewSchoolElement(
     };
   return (
     <div className="flex  text-[13px] md:text-base">
-    <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
+    <div className="w-11/12 md:w-[1050px] pt-4">
       <fieldset className="border border-gray-200 md:text-center w-full text-black md:flex">
         <div className="w-full md:w-2/12 float-left">
           <legend
-            id="lang_01"
             className="w-full md:border-r md:border-gray-200 h-12 md:h-14 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary p-4"
           >
             {schoolType}
@@ -956,10 +954,7 @@ function NewSchoolElement(
       </fieldset>
       <fieldset className="border-x border-b border-gray-200 md:text-center w-full text-black md:flex">
         <div className="w-full md:w-2/12 float-left">
-          <div
-            id="lang_01"
-            className="w-full md:border-r md:border-gray-200 h-12 md:h-14 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary p-4"
-          >
+          <div className="w-full md:border-r md:border-gray-200 h-12 md:h-14 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary p-4">
             {graduation}
           </div>
         </div>
@@ -1008,11 +1003,10 @@ function NewCareerElement(
   };
 return (
         <div className="flex text-[13px] md:text-base">
-                <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
-                  <fieldset className="border border-gray-200 md:text-left w-full text-black md:flex">
+                <div className="w-11/12 md:w-[1050px] pt-4">
+                  <div className="border border-gray-200 md:text-left w-full text-black md:flex">
                     <div className="w-full md:w-2/12">
                       <div
-                        id="lang_01"
                         className="w-full md:border-r md:border-gray-200 h-12 md:h-14 pl-4 md:pl-8 pt-[14px] md:pt-4 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary"  
                       >
                         {careerType}
@@ -1026,9 +1020,9 @@ return (
                         {companyName}
                       </div>
                     </div>
-                  </fieldset>
+                  </div>
                   <div className="md:flex">
-                    <fieldset className="border-l border-r md:border-r-0 border-gray-200 text-left w-full md:w-1/2 text-black md:flex">
+                    <div className="border-l border-r md:border-r-0 border-gray-200 text-left w-full md:w-1/2 text-black md:flex">
                       <legend className="w-full md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         근무기간
                       </legend>
@@ -1041,8 +1035,8 @@ return (
                           {job_end}
                         </div>
                       </div>
-                    </fieldset>
-                    <fieldset className="border-x border-t md:border-t-0 border-gray-200 text-center md:text-left w-full md:w-1/2 text-black flex">
+                    </div>
+                    <div className="border-x border-t md:border-t-0 border-gray-200 text-center md:text-left w-full md:w-1/2 text-black flex">
                       <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-1 md:pt-4 pl-4 md:pl-8">
                         직위 및<br className="md:hidden"/> 담당업무
                       </legend>
@@ -1051,17 +1045,17 @@ return (
                           {position}
                         </div>
                       </div>
-                    </fieldset>
+                    </div>
                   </div>
                   <div>
-                    <fieldset className="border border-gray-200 w-full h-auto text-black md:flex">
+                    <div className="border border-gray-200 w-full h-auto text-black md:flex">
                       <div className="w-full md:w-2/12 h-12 md:h-[120px] md:leading-[120px] pt-[14px] md:pt-0 float-left pl-4 md:pl-8 md:border-r md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         프로젝트
                       </div>
                       <div className="w-full md:w-10/12 h-auto px-4 pt-14 mb-2 md:pl-6 text-wrap mt-1">
                         {career_content}
                       </div>
-                    </fieldset>
+                    </div>
                   </div>
                 </div>
                 <div className="w-1/12 md:w-[70px] flex justify-end items-center text-[11px]">
@@ -1097,9 +1091,9 @@ function NewTrainingElement(
   };
 return (
   <div className="flex text-[13px] md:text-base">
-                <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
+                <div className="w-11/12 md:w-[1050px] pt-4">
                   <div className="md:flex border border-gray-200">
-                    <fieldset className="md:border-r border-gray-200 w-full md:w-1/2 text-black md:flex">
+                    <div className="md:border-r border-gray-200 w-full md:w-1/2 text-black md:flex">
                       <legend className="w-full md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         교육기간
                       </legend>
@@ -1116,8 +1110,8 @@ return (
                           {training_end}
                         </div>
                       </div>
-                    </fieldset>
-                    <fieldset className="text-center w-full md:w-1/2 text-black flex border-t md:border-t-0 border-gray-200 ">
+                    </div>
+                    <div className="text-center w-full md:w-1/2 text-black flex border-t md:border-t-0 border-gray-200 ">
                       <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
                         교육기관
                       </legend>
@@ -1126,10 +1120,10 @@ return (
                           {trnInstitution}
                         </div>
                       </div>
-                    </fieldset>
+                    </div>
                   </div>
                   <div>
-                    <fieldset className="border-x border-gray-200 text-center w-full text-black flex">
+                    <div className="border-x border-gray-200 text-center w-full text-black flex">
                       <legend className="w-1/4 md:w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
                         교육명
                       </legend>
@@ -1138,10 +1132,10 @@ return (
                           {trnName}
                         </div>
                       </div>
-                    </fieldset>
+                    </div>
                   </div>
                   <div>
-                    <fieldset className="border border-gray-200 w-full text-black flex">
+                    <div className="border border-gray-200 w-full text-black flex">
                       <legend className="w-1/4 md:w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
                         교육내용
                       </legend>
@@ -1150,7 +1144,7 @@ return (
                           {trn_content}
                         </div>
                       </div>
-                    </fieldset>
+                    </div>
                   </div>
                 </div>
                 <div className="w-1/12 md:w-[70px] flex justify-end items-center">
@@ -1186,7 +1180,7 @@ function NewLicenseElement(
 
 return (
 <div className="flex text-[13px] md:text-base">
-                <div id="form_area" className="w-11/12 md:w-[1050px] pt-4">
+                <div className="w-11/12 md:w-[1050px] pt-4">
                   <div>
                     <fieldset className="border border-gray-200 w-full text-black md:flex">
                       <legend className="w-full md:w-2/12 h-12 md:h-14 float-left pt-4 pl-4 md:pl-8 md:border-r md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
