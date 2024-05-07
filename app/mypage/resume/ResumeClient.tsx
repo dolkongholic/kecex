@@ -542,7 +542,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                   <fieldset className="border border-gray-400 text-center w-full text-black md:flex">
                     <div className="w-full md:w-2/12">
                       <select
-                        className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary"
+                        className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary rounded-none"
                         onChange={handleSelectChange}
                         name="schoolType"
                         value={formData.schoolType}
@@ -581,7 +581,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                   <fieldset className="border-x border-b border-gray-400 text-center w-full text-black md:flex">
                     <div className="w-full md:w-2/12">
                       <select
-                        className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary"
+                        className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary rounded-none"
                         onChange={handleSelectChange}
                         name="graduation"
                         value={formData.graduation}
@@ -632,7 +632,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                   <fieldset className="border border-gray-400 text-center w-full text-black md:flex">
                     <div className="w-full md:w-2/12">
                       <select
-                        className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary"
+                        className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary rounded-none"
                         onChange={handleSelectChange}
                         name="careerType"
                         value={formData.careerType}
@@ -684,18 +684,20 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                         />
                       </div>
                     </fieldset>
-                    <fieldset className="border-x border-t md:border-t-0 border-gray-400 text-center w-full md:w-1/2 text-black flex">
-                      <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-1 md:pt-4 pl-4 md:pl-8">
-                        직위 및<br className="md:hidden"/> 담당업무
-                      </legend>
-                      <div className="before:border-l before:border-gray-400 border-gray-400 w-3/4 md:w-2/3 h-12 md:h-14 float-left pt-1 md:pt-2 md:pr-28 box-border">
-                        <input
-                          name="position"
-                          type="text"
-                          placeholder="담당업무 기재"
-                          className="pl-4 h-10"
-                          onChange={handleInputChange}
-                        />
+                    <fieldset className="border-x border-t md:border-t-0 border-gray-400 text-center w-full md:w-1/2 text-black block">
+                      <div className="w-full flex">
+                        <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-1 md:pt-4 pl-4 md:pl-8">
+                          직위 및<br className="md:hidden"/> 담당업무
+                        </legend>
+                        <div className="before:border-l before:border-gray-400 border-gray-400 w-3/4 md:w-2/3 h-12 md:h-14 float-left pt-1 md:pt-2 md:pr-28 box-border">
+                          <input
+                            name="position"
+                            type="text"
+                            placeholder="담당업무 기재"
+                            className="pl-4 h-10"
+                            onChange={handleInputChange}
+                          />
+                        </div>
                       </div>
                     </fieldset>
                   </div>
@@ -757,50 +759,56 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                         />
                       </div>
                     </fieldset>
-                    <fieldset className="text-center w-full md:w-1/2 text-black flex border-t md:border-t-0 border-gray-200 ">
-                      <legend className="w-1/4 md:w-w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
-                        교육기관
-                      </legend>
-                      <div className="w-3/4 md:w-10/12 before:border-l before:border-gray-400 before:h-6 float-left flex justify-start items-center">
-                        <input
-                          name="trnInstitution"
-                          type="text"
-                          placeholder=""
-                          className="h-12 md:h-14 pl-4 text-wrap w-full"
-                          onChange={handleInputChange}
-                        />
+                    <fieldset className="text-center w-full md:w-1/2 text-black block border-t md:border-t-0 border-gray-200">
+                      <div className="w-full flex">
+                        <legend className="w-1/4 md:w-w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
+                          교육기관
+                        </legend>
+                        <div className="w-3/4 md:w-10/12 before:border-l before:border-gray-400 before:h-6 float-left flex justify-start items-center">
+                          <input
+                            name="trnInstitution"
+                            type="text"
+                            placeholder=""
+                            className="h-12 md:h-14 pl-4 text-wrap w-full"
+                            onChange={handleInputChange}
+                          />
+                        </div>
                       </div>
                     </fieldset>
                   </div>
                   <div>
-                    <fieldset className="border-x border-gray-400 text-center w-full text-black flex">
-                      <legend className="w-1/4 md:w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
-                        교육명
-                      </legend>
-                      <div className="w-3/4 md:w-10/12 before:border-l before:border-gray-400 before:h-6 float-left flex justify-start items-center">
-                        <input
-                          name="trnName"
-                          type="text"
-                          className="h-12 md:h-14 pl-4 text-wrap w-full"
-                          placeholder="해당 교육명"
-                          onChange={handleInputChange}
-                        />
+                    <fieldset className="border-x border-gray-400 text-center w-full text-black block">
+                      <div className="w-full flex">
+                        <legend className="w-1/4 md:w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
+                          교육명
+                        </legend>
+                        <div className="w-3/4 md:w-10/12 before:border-l before:border-gray-400 before:h-6 float-left flex justify-start items-center">
+                          <input
+                            name="trnName"
+                            type="text"
+                            className="h-12 md:h-14 pl-4 text-wrap w-full"
+                            placeholder="해당 교육명"
+                            onChange={handleInputChange}
+                          />
+                        </div>
                       </div>
                     </fieldset>
                   </div>
                   <div>
-                    <fieldset className="border border-gray-400 text-center w-full text-black flex">
-                      <legend className="w-1/4 md:w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
-                        교육내용
-                      </legend>
-                      <div className="w-3/4 md:w-10/12 before:border-l before:border-gray-400 before:h-6 float-left flex justify-start items-center">
-                        <input
-                          name="trn_content"
-                          type="text"
-                          className="h-12 md:h-14 pl-4 text-wrap w-full"
-                          placeholder="간략한 교육내용"
-                          onChange={handleInputChange}
-                        />
+                    <fieldset className="border border-gray-400 text-center w-full text-black block">
+                      <div className="w-full flex">
+                        <legend className="w-1/4 md:w-2/12 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
+                          교육내용
+                        </legend>
+                        <div className="w-3/4 md:w-10/12 before:border-l before:border-gray-400 before:h-6 float-left flex justify-start items-center">
+                          <input
+                            name="trn_content"
+                            type="text"
+                            className="h-12 md:h-14 pl-4 text-wrap w-full"
+                            placeholder="간략한 교육내용"
+                            onChange={handleInputChange}
+                          />
+                        </div>
                       </div>
                     </fieldset>
                   </div>
@@ -857,18 +865,20 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                         />
                       </div>
                     </fieldset>
-                    <fieldset className="border-x border-gray-400 text-center w-full md:w-1/2 text-black flex border-t md:border-t-0">
-                      <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
-                        취득일
-                      </legend>
-                      <div className="before:border-l before:border-gray-400 before:mt-2 before:h-6 w-full md:w-3/4 h-10 float-left pt-1 md:pt-2 md:pr-28 flex box-border">
-                        <input
-                          name="licenseDate"
-                          type="text"
-                          placeholder="YYYY.MM"
-                          className="pl-4 md:pl-6 h-10 box-border w-full md:w-64"
-                          onChange={handleInputChange}
-                        />
+                    <fieldset className="border-x border-gray-400 text-center w-full md:w-1/2 text-black block border-t md:border-t-0">
+                      <div className="w-full flex">
+                        <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
+                          취득일
+                        </legend>
+                        <div className="before:border-l before:border-gray-400 before:mt-2 before:h-6 w-full md:w-3/4 h-10 float-left pt-1 md:pt-2 md:pr-28 flex box-border">
+                          <input
+                            name="licenseDate"
+                            type="text"
+                            placeholder="YYYY.MM"
+                            className="pl-4 md:pl-6 h-10 box-border w-full md:w-64"
+                            onChange={handleInputChange}
+                          />
+                        </div>
                       </div>
                     </fieldset>
                   </div>
