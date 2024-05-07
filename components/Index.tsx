@@ -139,9 +139,9 @@ const Index: React.FC<IndexProps> = ({
       <div className="w-full h-[600px] md:h-[460px] overflow-x-hidden">
         <div className="w-full h-[550px] md:h-[440px] z-[50] md:flex justify-center items-center  bg-cover bg-center">
           {/* 모바일 최적화 안내 */}
-          <div className="md:hidden w-[90%] h-auto border border-[#ccc] mx-auto text-[13px] text-center p-3 my-3">
+          {/* <div className="md:hidden w-[90%] h-auto border border-[#ccc] mx-auto text-[13px] text-center p-3 my-3">
             현재 모바일 최적화 진행 중이니 pc로 확인 바랍니다.
-          </div>
+          </div> */}
           <div className="w-full justify-center slider-container">
             {/* 메인 배너 슬라이드 영역 */}
             <Slider {...settings}>
@@ -191,11 +191,12 @@ const Index: React.FC<IndexProps> = ({
                   <Image 
                     src={PicOpen} 
                     alt="open_banner" 
+                    priority
                     className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[240px] w-auto -right-16 sm:right-0 lg:right-[2%] bottom-0 z-0"
                   />
                 </div>
               </div>
-              <div className=" h-[380px] max-w-[1200px]">
+              {/* <div className=" h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#36609F] h-full mx-auto rounded-xl relative text-white overflow-hidden">
                   <strong className="absolute  text-[26px] sm:text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     수소시스템 안전 기본원리<br/>
@@ -214,7 +215,7 @@ const Index: React.FC<IndexProps> = ({
                     className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto -right-12 lg:right-[2%] bottom-0 z-0"
                   />
                 </div>
-              </div>
+              </div> */}
               <div className=" h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#424C5B] h-full mx-auto rounded-xl relative text-white overflow-hidden">
                   <strong className="absolute  text-[26px] sm:text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
@@ -236,7 +237,7 @@ const Index: React.FC<IndexProps> = ({
                   />
                 </div>
               </div>
-              <div className=" h-[380px] max-w-[1200px]">
+              {/* <div className=" h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#FFA448] h-full mx-auto rounded-xl relative text-white overflow-hidden">
                 <strong className="absolute  text-[26px] sm:text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
                     방폭교육 전과정<br/>
@@ -254,7 +255,7 @@ const Index: React.FC<IndexProps> = ({
                     className="mx-auto px-3 md:px-0 absolute h-[180px] lg:h-[220px] w-auto -right-5 lg:right-0 bottom-0 z-0"
                   />
                 </div>
-              </div>
+              </div> */}
               <div className=" h-[380px] max-w-[1200px]">
                 <div className="w-11/12 bg-[#60B86F] h-full mx-auto rounded-xl relative text-white overflow-hidden">
                 <strong className="absolute  text-[26px] sm:text-[30px] lg:text-[42px] font-semibold top-[40px] leading-[40px] lg:leading-[52px] left-[5%]">
@@ -320,7 +321,8 @@ const Index: React.FC<IndexProps> = ({
                   <Image 
                     src={PicBsn_01} 
                     alt="main_business_icon"
-                    fill={true}
+                    sizes="width-auto height-auto"
+                    fill
                     className=""
                   />
                 </div>
@@ -351,6 +353,7 @@ const Index: React.FC<IndexProps> = ({
                     src={PicBsn_02} 
                     alt="main_business_icon"
                     fill={true}
+                    sizes="width-auto height-auto"
                     className=""
                   />
                 </div>
@@ -392,6 +395,7 @@ const Index: React.FC<IndexProps> = ({
                     src={PicBsn_03} 
                     alt="main_business_icon"
                     fill={true}
+                    sizes="width-auto height-auto"
                     className=""
                   />
               </div>
@@ -433,6 +437,7 @@ const Index: React.FC<IndexProps> = ({
                     src={PicBsn_04} 
                     alt="main_business_icon"
                     fill={true}
+                    sizes="width-auto height-auto"
                     className=""
                   />
               </div>

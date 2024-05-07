@@ -92,7 +92,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
     };
 
     fetchPreNotice();
-  }, []);
+  }, [preId, nextId]);
 
   const params = useSearchParams();
   const page = params?.get("page");

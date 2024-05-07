@@ -5,7 +5,7 @@ import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
 import Image from "next/image";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { useRouter } from "next/navigation";
@@ -64,16 +64,8 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
     if (!currentUser) {
       router.push("/member/signin/");
     }
-  },[currentUser])
+  },[currentUser, router])
 
-  useEffect(() => {
-    if (resumeId) {
-    // 페이지 로드 시 정보를 불러와서 화면에 표시
-    fetchSchoolData();
-    fetchCareerData();
-    fetchTrainingData();
-    fetchLicenseData();
-}}, []);
 
   
   const {
@@ -217,9 +209,8 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
   };
 
   //추가 학력 표시
-  const fetchSchoolData = async () => {
+  const fetchSchoolData = useCallback(async () => {
     try {    
-      // const response = await axios.get(`/api/resume/get/school?resumeId=${resumeId}`);
       const elements = schoolList.map((school:any) => (
         <NewSchoolElement
           key={school.id}
@@ -231,14 +222,14 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
           degree={school.degree}
         />
       ));
-      setSchoolElements(elements);
+      return elements;
     } catch (error) {
       console.error("학력 정보 불러오기 실패.", error);
     }
-  };
+  }, [schoolList]);
 
   //추가 경력 표시
-  const fetchCareerData = async () => {
+  const fetchCareerData = useCallback( async () => {
     try {    
       // const response = await axios.get(`/api/resume/get/school?resumeId=${resumeId}`);
       const elements = careerList.map((career:any) => (
@@ -253,14 +244,14 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
           career_content={career.career_content}
         />
       ));
-      setCareerElements(elements);
+      return elements;
     } catch (error) {
       console.error("경력 정보 불러오기 실패.", error);
     }
-  };
+  }, [careerList]);
 
   //추가 교육이력 표시
-  const fetchTrainingData = async () => {
+  const fetchTrainingData = useCallback(async () => {
     try {    
       // const response = await axios.get(`/api/resume/get/school?resumeId=${resumeId}`);
       const elements = trainingList.map((training:any) => (
@@ -274,14 +265,14 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
           trn_content={training.trn_content}
         />
       ));
-      setTrainingElements(elements);
+      return elements;
     } catch (error) {
       console.error("교육이력 정보 불러오기 실패.", error);
     }
-  };
+  },[trainingList]);
 
   //추가 자격증 표시
-  const fetchLicenseData = async () => {
+  const fetchLicenseData = useCallback(async () => {
     try {    
       // const response = await axios.get(`/api/resume/get/school?resumeId=${resumeId}`);
       const elements = licenseList.map((license:any) => (
@@ -293,11 +284,39 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
           licenseDate={license.licenseDate}
         />
       ));
-      setLicenseElements(elements);
+      return elements;
     } catch (error) {
       console.error("자격증 정보 불러오기 실패.", error);
     }
-  };  
+  }, [licenseList])
+
+  useEffect(() => {
+    const fetchData = async () => {
+
+
+    if (resumeId) {
+      // 페이지 로드 시 정보를 불러와서 화면에 표시
+      const schoolElements = await fetchSchoolData();
+      if(schoolElements){
+        setSchoolElements(schoolElements);
+      };
+      const careerElements = await fetchCareerData();
+      if(careerElements){
+        setCareerElements(careerElements);
+      };
+      const trainingElements = await fetchTrainingData();
+      if(trainingElements){
+        setTrainingElements(trainingElements);
+      };
+      const licenseElements = await fetchLicenseData();
+      if(licenseElements){
+        setLicenseElements(licenseElements);
+      };
+    };
+  };
+  fetchData();
+}, [resumeId, fetchSchoolData, fetchCareerData, fetchTrainingData, fetchLicenseData]);
+
 
   // 학력 단락추가 버튼
   const handleSchoolBtn = async () => {
@@ -311,8 +330,12 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
         degree: formData.degree,
         resumeId: resumeId,
       })
+
+        fetchSchoolData();
         toast.success("학력 정보 추가 성공 .");
-        window.location.reload();
+        // window.location.reload();
+        router.push('/mypage/resume/')
+        router.refresh()
     }catch(error){
       console.error("학력 정보 추가 실패", error);
     }
@@ -332,7 +355,8 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
         resumeId: resumeId,
       })
         toast.success("경력 정보 추가 성공 .");
-        window.location.reload();
+        router.push('/mypage/resume/')
+        router.refresh()
     }catch(error){
       console.error("경력 정보 추가 실패", error);
     }
@@ -351,7 +375,8 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
         resumeId: resumeId,
       })
         toast.success("교육이력 정보 추가 성공 .");
-        window.location.reload();
+        router.push('/mypage/resume/')
+        router.refresh()
     }catch(error){
       console.error("교육이력 정보 추가 실패", error);
     }
@@ -368,7 +393,8 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
           resumeId: resumeId,
         })
           toast.success("자격증 정보 추가 성공 .");
-          window.location.reload();
+          router.push('/mypage/resume/')
+          router.refresh()
       }catch(error){
         console.error("자격증 정보 추가 실패", error);
       }
@@ -419,7 +445,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                 이력서 미작성 시 교육 신청 진행 불가
               </span>
               합니다. 
-              <span className="text-[13px]">(현재 이력서 입력이 지원되지 않는 상태입니다)</span>
+              {/* <span className="text-[13px]">(현재 이력서 입력이 지원되지 않는 상태입니다)</span> */}
             </div>
           </div>
           <div className="w-full">
@@ -443,7 +469,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                     <div className={`w-[120px] h-[160px] md:w-[150px] md:h-[200px] relative border border-gray z-0
                       ${currentResume.profileImg? "" : "opacity-0"}
                     `}>
-                      <img src={currentResume.profileImg}/>
+                      <Image src={currentResume.profileImg} fill alt="프로필 이미지"/>
                     </div>
                   </div>
                 </div>
@@ -542,7 +568,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                   <fieldset className="border border-gray-400 text-center w-full text-black md:flex">
                     <div className="w-full md:w-2/12">
                       <select
-                        className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary rounded-none"
+                        className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary rounded-none"
                         onChange={handleSelectChange}
                         name="schoolType"
                         value={formData.schoolType}
@@ -581,7 +607,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                   <fieldset className="border-x border-b border-gray-400 text-center w-full text-black md:flex">
                     <div className="w-full md:w-2/12">
                       <select
-                        className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary rounded-none"
+                        className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary rounded-none"
                         onChange={handleSelectChange}
                         name="graduation"
                         value={formData.graduation}
@@ -632,7 +658,7 @@ const ResumeClient: React.FC<ResumeProps> = ({ currentUser, currentResume, schoo
                   <fieldset className="border border-gray-400 text-center w-full text-black md:flex">
                     <div className="w-full md:w-2/12">
                       <select
-                        className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-4 md:pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary rounded-none"
+                        className="w-full md:border-r md:border-gray-400 h-12 md:h-14 pl-8 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary rounded-none"
                         onChange={handleSelectChange}
                         name="careerType"
                         value={formData.careerType}
@@ -1051,7 +1077,7 @@ return (
                         직위 및<br className="md:hidden"/> 담당업무
                       </legend>
                       <div className="before:border-l before:border-gray-200 w-3/4 md:w-2/3 h-12 md:h-10 float-left pt-1 md:pt-4 md:pr-28 box-border flex ">
-                        <div className=" p-3 md:p-0">
+                        <div className=" p-3 md:p-0 md:pl-4">
                           {position}
                         </div>
                       </div>
@@ -1138,7 +1164,7 @@ return (
                         교육명
                       </legend>
                       <div className="w-3/4 md:w-10/12 before:border-l before:border-gray-200 before:h-6 float-left flex justify-start items-center">
-                        <div className="pl-4 md:pt-3 text-wrap">
+                        <div className="pl-4 md:pt-1 text-wrap">
                           {trnName}
                         </div>
                       </div>
@@ -1150,7 +1176,7 @@ return (
                         교육내용
                       </legend>
                       <div className="w-3/4 md:w-10/12 before:border-l before:border-gray-200 before:h-6 float-left flex justify-start items-center">
-                        <div className="pl-4 md:pt-3 text-wrap w-full">
+                        <div className="pl-4 md:pt-1 text-wrap w-full">
                           {trn_content}
                         </div>
                       </div>
@@ -1193,11 +1219,11 @@ return (
                 <div className="w-11/12 md:w-[1050px] pt-4">
                   <div>
                     <fieldset className="border border-gray-200 w-full text-black md:flex">
-                      <legend className="w-full md:w-2/12 h-12 md:h-14 float-left pt-4 pl-4 md:pl-8 md:border-r md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
+                      <legend className="w-full md:w-2/12 h-12 md:h-14 float-left pt-4 pl-4 md:pl-8  md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         자격증명
                       </legend>
                       <div className="w-3/4 md:w-10/12 md:before:border-l before:border-gray-200 before:h-6 float-left flex justify-start items-center">
-                        <div className="pl-4 md:pt-3 text-wrap w-full py-4 md:py-0">
+                        <div className="pl-4 md:pt-1 text-wrap w-full py-4 md:py-0">
                         {licenseName}
                         </div>
                       </div>
@@ -1208,19 +1234,21 @@ return (
                       <legend className="w-full md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8 md:border-gray-200 bg-lightgray md:bg-transparent border-b md:border-b-0 border-secondary">
                         발행처
                       </legend>
-                      <div className="w-3/4 md:w-10/12 md:before:border-l before:border-gray-200 before:h-6 float-left flex justify-start items-center">
-                        <div className="pl-4 md:pt-3 text-wrap w-full py-4 md:py-0">
+                      <div className="w-3/4 md:w-2/3 md:before:border-l before:border-gray-200 before:h-6 float-left flex justify-start items-center">
+                        <div className="pl-4 md:pt-1 text-wrap w-full py-4 md:py-0">
                           {licenseDept}
                         </div>
                       </div>
                     </fieldset>
-                    <fieldset className="border-x border-gray-200 w-full md:w-1/2 text-black flex border-t md:border-t-0">
-                      <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
-                        취득일
-                      </legend>
-                      <div className="before:border-l before:border-gray-200 before:mt-2 before:h-6 w-full md:w-3/4 h-12 md:h-10 float-left pt-1 md:pt-2 md:pr-28 flex box-border">
-                        <div className="pl-4 md:pl-6 h-12 md:h-10 box-border w-full md:w-64 pt-3 md:pt-2">
-                          {licenseDate}
+                    <fieldset className="border-x border-gray-200 w-full md:w-1/2 text-black block border-t md:border-t-0">
+                      <div className="w-full flex">
+                        <legend className="w-1/4 md:w-1/3 h-12 md:h-14 float-left text-left pt-4 pl-4 md:pl-8">
+                          취득일
+                        </legend>
+                        <div className="before:border-l before:border-gray-200 before:mt-2 before:h-6 w-full md:w-3/4 h-12 md:h-10 float-left pt-1 md:pt-2 md:pr-28 flex box-border">
+                          <div className="pl-4 md:pl-6 h-12 md:h-10 box-border w-full md:w-2/3 pt-3 md:pt-2">
+                            {licenseDate}
+                          </div>
                         </div>
                       </div>
                     </fieldset>
