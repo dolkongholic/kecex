@@ -41,6 +41,7 @@ const QnaDetailClient: React.FC<QnaDetailClientProps> = ({
     router.push("/member/signin/");
     return null;
   }
+  
   const MainList = [
     {
       title: "전체 현황",
@@ -95,15 +96,15 @@ const QnaDetailClient: React.FC<QnaDetailClientProps> = ({
       url: "/mypage/out",
       sub: null,
     },
-    {
+    { 
+      staff:true,
       title: "관리자 메뉴",
       url: "#",
       sub: [
-        { title: "회비 납부 관리", url: "/mypage/management/payment/"  },
+        { title: "회비 납부 관리", url: "/mypage/management/payment/", staff:true },
         { title: "회원 관리", url: "/mypage/management/user/" },
         { title: "문의 관리", url: "/mypage/management/qna/" },
       ],
-      staff:true
     },
   ];
 
@@ -137,6 +138,7 @@ const QnaDetailClient: React.FC<QnaDetailClientProps> = ({
                     pageMenu={pageMenu}
                     setPageMenu={setPageMenu}
                     location={location}
+                    currentUser={currentUser}
                   />
                 </div>
               </div>
@@ -144,7 +146,7 @@ const QnaDetailClient: React.FC<QnaDetailClientProps> = ({
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] px-2 md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title="1:1문의 답변" center={true} />
           <div className="w-full mt-[20px] leading-[50px] border-b border-gray-100">
             &nbsp;
@@ -165,27 +167,27 @@ const QnaDetailClient: React.FC<QnaDetailClientProps> = ({
               </div>
               <div className="pr-[40px] flex justify-center items-center"></div>
             </div>
-            <div className="w-full mt-[30px] flex flex-col p-[20px] pb-10 border-b border-[#ccc]">
+            <div className="w-full mt-[30px] flex flex-col p-[30px] md:p-[20px] pb-10 border-b border-[#ccc]">
               {currentQna.content}
             </div>
           </div>
-          <div className={`mt-5 box-border w-full
+          <div className={`mt-5 box-border w-full overflow-x-hidden
             ${currentQna.status === 0 ? "hidden" : "flex"}
           `}>
 
-            <div className="w-full">
+            <div className="w-full box-border">
               <div className="w-full flex">
                 <div className="w-[50px] pl-4">
                   <MdSubdirectoryArrowRight className="w-8 h-8"/>
                 </div>
-                <div className="w-auto pl-[20px] flex justify-start items-center h-[60px] bg-gray-100 border-t-2 border-gray-500">
-                  <div className="md:w-[850px] overflow-hidden line-clamp-1 px-[10px]">
+                <div className="w-full pl-[20px] flex justify-start items-center h-[60px] bg-gray-100 border-t-2 border-gray-500 ">
+                  <div className="md:w-[850px] overflow-hidden line-clamp-1 px-[10px] ">
                     <span className="font-semibold">제목 : </span>
                     {currentQnaDetail?.title}
                     </div>
                 </div>
               </div>
-              <div className="w-full mt-[30px] flex flex-col p-[20px] pb-10 border-b border-[#ccc] pl-[50px]">
+              <div className="w-full mt-[30px] flex flex-col p-[30px] md:p-[20px] pb-10 ml-[50px] border-b border-[#ccc]">
                 {currentQnaDetail?.content}
               </div>
             </div>
