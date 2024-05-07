@@ -160,46 +160,50 @@ const DangerClient = () => {
                 </div>
               </div>
               <ContentSubTitle title="위험성평가 절차" />
-              <div className="w-full justify-center mb-10 font-medium text-center">
+              <div className="w-full justify-center mb-10 font-medium text-center text-[14px] md:text-base">
                 {/* <Image src={PicIndustry} alt="위험성평가 절차 이미지" className="md:block w-full"/> */}
                 {/* <Image src={PicIndustry_M} alt="위험성평가 절차 이미지" className="md:hidden w-full"/> */}
-                <ul className="w-full flex items-center justify-between px-5 pt-5">
-                  <li className="w-[120px] h-[120px] bg-secondary rounded-full text-white flex justify-center items-center">
-                    시작
+                <ul className="w-full md:flex items-center justify-between md:px-5 pt-5">
+                  <div className="w-full flex justify-between items-center">
+                    <li className="w-[90px] h-[90px] md:w-[120px] md:h-[120px] bg-secondary rounded-full text-white flex justify-center items-center">
+                      시작
                     </li>
-                  <li><RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[3px] text-[#aaa]" /></li>
-                  <li className="w-[120px] h-[120px] bg-secondary rounded-full text-white flex justify-center items-center">
-                    대상 선정<br/>사전 준비
+                    <li><RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[3px] text-[#aaa]" /></li>
+                    <li className="w-[90px] h-[90px] md:w-[120px] md:h-[120px] bg-secondary rounded-full text-white flex justify-center items-center">
+                      대상 선정<br/>사전 준비
+                      </li>
+                    <li><RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[3px] text-[#aaa]" /></li>
+                    <li className="w-[90px] h-[90px] md:w-[120px] md:h-[120px] border-2 border-secondary rounded-full flex justify-center items-center font-semibold">
+                      유해·위험<br/>요인 파악
                     </li>
-                  <li><RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[3px] text-[#aaa]" /></li>
-                  <li className="w-[120px] h-[120px] border-2 border-secondary rounded-full flex justify-center items-center font-semibold">
-                    유해·위험<br/>요인 파악
-                  </li>
-                  <li><RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[3px] text-[#aaa]" /></li>
-                  <li className="w-[120px] h-[120px] border-2 border-secondary rounded-full flex justify-center items-center font-semibold">
-                    위험성 결정
+                  </div>
+                  <li><RiArrowRightSLine className="text-[40px] pt-[3px] md:-translate-y-[3px] text-[#aaa] float-right md:float-none rotate-90 md:rotate-0 -translate-x-3 md:translate-x-0 mx-3" /></li>
+                  <div className="w-full flex-row-reverse flex md:flex-row justify-between items-center">
+                    <li className="w-[90px] h-[90px] md:w-[120px] md:h-[120px] border-2 border-secondary rounded-full flex justify-center items-center font-semibold">
+                      위험성 결정
                     </li>
-                  <li>
-                    <RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[3px] text-[#aaa]" />
-                  </li>
-                  <li className="w-[120px] h-[120px] bg-[#073E66] rounded-full text-white flex justify-center items-center pt-2">
-                    허용가능<br/> 여부
-                  </li>
-                  <li className="relative before:content-['YES'] before:text-secondary font-semibold text-[20px] before:absolute before:-top-8 before:left-0">
-                    <RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[3px] text-[#aaa]" />
+                    <li className="">
+                      <RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[3px] text-[#aaa] rotate-180 md:rotate-0" />
                     </li>
-                  <li className="w-[120px] h-[120px] bg-[#073E66] rounded-full text-white flex justify-center items-center">
-                    종료
-                  </li>
+                    <li className="w-[90px] h-[90px] md:w-[120px] md:h-[120px] bg-[#073E66] rounded-full text-white flex justify-center items-center pt-2">
+                      허용가능<br/> 여부
+                    </li>
+                    <li className="relative before:content-['YES'] before:text-secondary font-semibold md:text-[20px] before:absolute before:-top-8 before:left-2 md:before:left-0">
+                      <RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[3px] text-[#aaa] rotate-180 md:rotate-0" />
+                      </li>
+                    <li className="w-[90px] h-[90px] md:w-[120px] md:h-[120px] bg-[#073E66] rounded-full text-white flex justify-center items-center">
+                      종료
+                    </li>
+                  </div>
                 </ul>
-                <div>
-                  <div className="w-[240px] flex flex-col items-center ml-[755px]">
-                    <p className="text-[20px] font-semibold text-[#aaa] mt-3">
+                <div className="w-full flex md:block items-center justify-center">
+                  <div className="w-[150px] md:w-[240px] flex flex-col items-center md:ml-[755px]">
+                    <p className="md:text-[20px] font-semibold text-[#aaa] mt-3">
                       NO
                     </p>
                     <p><RiArrowRightSLine className="text-[40px] pt-[3px] -translate-y-[4px] translate-x-[1px] text-[#aaa] rotate-90" /></p>
                     <p className="w-full h-16 border-2 border-secondary flex justify-center items-center font-semibold">
-                      위험성 감소대책 수립·실행
+                      위험성 감소대책 <br className="md:hidden"/> 수립·실행
                       </p>
                   </div>
                 </div>

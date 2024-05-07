@@ -172,17 +172,20 @@ const QnaDetailClient: React.FC<QnaDetailClientProps> = ({
           <div className={`mt-5 box-border w-full
             ${currentQna.status === 0 ? "hidden" : "flex"}
           `}>
-            <div className="w-[50px] pl-4">
-              <MdSubdirectoryArrowRight className="w-8 h-8"/>
-            </div>
+
             <div className="w-full">
-              <div className="w-full pl-[20px] flex justify-start items-center h-[60px] bg-gray-100 border-t-2 border-gray-500">
-                <div className="w-[850px] overflow-hidden line-clamp-1 px-[10px]">
-                  <span className="font-semibold">제목 : </span>
-                  {currentQnaDetail?.title}
-                  </div>
+              <div className="w-full flex">
+                <div className="w-[50px] pl-4">
+                  <MdSubdirectoryArrowRight className="w-8 h-8"/>
+                </div>
+                <div className="w-auto pl-[20px] flex justify-start items-center h-[60px] bg-gray-100 border-t-2 border-gray-500">
+                  <div className="md:w-[850px] overflow-hidden line-clamp-1 px-[10px]">
+                    <span className="font-semibold">제목 : </span>
+                    {currentQnaDetail?.title}
+                    </div>
+                </div>
               </div>
-              <div className="w-full mt-[30px] flex flex-col p-[20px] pb-10 border-b border-[#ccc]">
+              <div className="w-full mt-[30px] flex flex-col p-[20px] pb-10 border-b border-[#ccc] pl-[50px]">
                 {currentQnaDetail?.content}
               </div>
             </div>
