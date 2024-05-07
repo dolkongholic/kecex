@@ -163,9 +163,9 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="md:py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start text-[14px] md:text-base">
           <ContentTitle title="공지사항" center={true} />
-          <div className="w-full mt-[20px] leading-[50px] border-b border-gray-100">
+          <div className="w-full md:mt-[20px] md:leading-[50px] border-b border-gray-100">
             &nbsp;
           </div>
           <div className="w-full pl-[20px] flex justify-start items-center h-[70px] bg-gray-100 border-t-2 border-gray-500">
@@ -193,22 +193,22 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
               className="w-full"
             >
               <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
-                <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+                <div className="w-1/4 md:w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                   <p>이전글</p>
                   <RiArrowUpSLine className="text-[24px] md:pt-[3px] text-[#3A3A3A]" />
                 </div>
-                <div className="w-[890px] flex justify-start items-center pl-[20px]">
+                <div className="w-3/4 md:w-[890px] flex justify-start items-center pl-3 md:pl-[20px] line-clamp-2 md:line-clamp-1">
                   {preNotice.title}
                 </div>
               </div>
             </Link>
           ) : (
             <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
-              <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+              <div className="w-1/4 md:w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                 <p>이전글</p>
                 <RiArrowUpSLine className="text-[24px] md:pt-[3px] text-[#3A3A3A] opacity-0" />
               </div>
-              <div className="w-[890px] flex justify-start items-center pl-[20px]">
+              <div className="w-3/4 md:w-[890px] flex justify-start items-center pl-3 md:pl-[20px] line-clamp-2 md:line-clamp-1">
                 이전글이 없습니다.
               </div>
             </div>
@@ -221,22 +221,22 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
               className="w-full"
             >
               <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">
-                <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+                <div className="w-1/4 md:w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                   <p>다음글</p>
                   <RiArrowDownSLine className="text-[24px] md:pt-[3px] text-[#3A3A3A]" />
                 </div>
-                <div className="w-[890px] flex justify-start items-center pl-[20px]">
+                <div className="w-3/4 md:w-[890px] flex justify-start items-center pl-3 md:pl-[20px] line-clamp-2 md:line-clamp-1">
                   {nextNotice.title}
                 </div>
               </div>
             </Link>
           ) : (
             <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">
-              <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+              <div className="w-1/4 md:w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                 <p>다음글</p>
                 <RiArrowDownSLine className="text-[24px] md:pt-[3px] text-[#3A3A3A] opacity-0" />
               </div>
-              <div className="w-[890px] flex justify-start items-center pl-[20px]">
+              <div className="w-3/4 md:w-[890px] flex justify-start items-center pl-3 md:pl-[20px] line-clamp-2 md:line-clamp-1">
                 <p>다음글이 없습니다.</p>
               </div>
             </div>

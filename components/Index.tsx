@@ -136,12 +136,13 @@ const Index: React.FC<IndexProps> = ({
 
   return (
     <section>
-      <div className="w-full h-[600px] md:h-[460px] overflow-x-hidden">
-        <div className="w-full h-[550px] md:h-[440px] z-[50] md:flex justify-center items-center  bg-cover bg-center">
+      <div className="w-full h-[550px] md:h-[460px] overflow-x-hidden">
+        <div className="w-full h-[50px] md:h-[440px] z-[50] md:flex justify-center items-center  bg-cover bg-center">
           {/* 모바일 최적화 안내 */}
           {/* <div className="md:hidden w-[90%] h-auto border border-[#ccc] mx-auto text-[13px] text-center p-3 my-3">
             현재 모바일 최적화 진행 중이니 pc로 확인 바랍니다.
           </div> */}
+          <div className="md:hidden w-full h-[70px]">&nbsp;</div>
           <div className="w-full justify-center slider-container">
             {/* 메인 배너 슬라이드 영역 */}
             <Slider {...settings}>

@@ -80,7 +80,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
       }
     };
     fetchPreNews();
-  }, [preDate.date, nextDate.date]);
+  }, [preDate?.date, nextDate?.date]);
 
   const del = () => {
     if (confirm("삭제하시겠습니까?")) {
@@ -148,14 +148,14 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start text-[14px] md:text-base">
           <ContentTitle title="카드뉴스" />
           <div className="w-full  border-b border-gray-100">&nbsp;</div>
           <div className="w-full pl-[20px] flex justify-start items-center h-[70px] bg-gray-100 border-t-2 border-gray-200">
-            <div className="text-center py-[5px] bg-gray-500 text-white mr-[20px] w-[80px]">
-              협회소식
+            <div className="text-center py-1 md:py-[5px] bg-gray-500 text-white md:mr-[20px] w-12 md:w-[80px] text-[12px] md:text-base">
+              협회<br className="md:hidden"/>소식
             </div>
-            <div className="w-[900px] overflow-hidden line-clamp-1">{currentNews?.title}</div>
+            <div className="md:w-[900px] w-full pl-3 md:pl-0 overflow-hidden line-clamp-1">{currentNews?.title}</div>
           </div>
           <div className="w-full flex justify-between item-center h-[50px] border-t-2 border-b-2 border-gray">
             <div className="flex justify-between items-center px-[20px]">
@@ -164,7 +164,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
             </div>
             <div className="pr-[40px] flex justify-center items-center"></div>
           </div>
-          <div className="w-full mt-[30px] flex flex-col px-[20px] text-[13px] text-base">
+          <div className="w-full mt-[30px] flex flex-col px-[20px] text-[14px] md:text-base">
             <Image
               src={currentNews.img}
               width={700}
@@ -183,26 +183,26 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
           {preNews ? (
             <Link
               passHref
-              href={`/information/news/detail/${preDate.id}?page=${page}`}
+              href={`/information/news/detail/${preDate?.id}?page=${page}`}
               className="w-full"
             >
               <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
-                <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+                <div className="w-1/4 md:w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                   <p>이전글</p>
                   <RiArrowUpSLine className="text-[24px] text-[#3A3A3A]" />
                 </div>
-                <div className="w-[890px] flex justify-start items-center pl-[20px]">
+                <div className="w-3/4 md:w-[890px] flex justify-start items-center pl-3 md:pl-[20px] line-clamp-2 md:line-clamp-1">
                   {preNews.title}
                 </div>
               </div>
             </Link>
           ) : (
             <div className="cursor-pointer w-full mt-[30px] flex justify-start items-center h-[70px] border-t-2 border-gray-100 border-b">
-              <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+              <div className="w-1/4 md:w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                 <p>이전글</p>
                 <RiArrowUpSLine className="text-[24px] pt-[3px] opacity-0" />
               </div>
-              <div className="w-[890px] flex justify-start items-center pl-[20px]">
+              <div className="w-3/4 md:w-[890px] flex justify-start items-center pl-3 md:pl-[20px] line-clamp-2 md:line-clamp-1">
                 이전글이 없습니다.
               </div>
             </div>
@@ -211,26 +211,26 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
           {nextNews ? (
             <Link
               passHref
-              href={`/information/news/detail/${nextDate.id}?page=${page}`}
+              href={`/information/news/detail/${nextDate?.id}?page=${page}`}
               className="w-full"
             >
               <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">
-                <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+                <div className="w-1/4 md:w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                   <p>다음글</p>
                   <RiArrowDownSLine className="text-[24px] pt-[3px] text-[#3A3A3A]" />
                 </div>
-                <div className="w-[890px] flex justify-start items-center pl-[20px]">
+                <div className="w-3/4 md:w-[890px] flex justify-start items-center pl-3 md:pl-[20px] line-clamp-2 md:line-clamp-1">
                   {nextNews.title}
                 </div>
               </div>
             </Link>
           ) : (
             <div className="cursor-pointer w-full flex justify-start items-center h-[70px] border-b-2 border-b-gray-100">
-              <div className="w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
+              <div className="w-1/4 md:w-[200px] flex justify-center items-center bg-gray-100 h-[66px] text-black">
                 <p>다음글</p>
                 <RiArrowDownSLine className="text-[24px] text-[#3A3A3A] opacity-0" />
               </div>
-              <div className="w-[890px] flex justify-start items-center pl-[20px]">
+              <div className="w-3/4 md:w-[890px] flex justify-start items-center pl-3 md:pl-[20px] line-clamp-2 md:line-clamp-1">
                 <p>다음글이 없습니다.</p>
               </div>
             </div>
