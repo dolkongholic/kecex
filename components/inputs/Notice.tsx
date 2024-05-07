@@ -44,11 +44,11 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
     return () => {
       clearInterval(timer_main);
     };
-  }, [menulist.length]);
+  }, []);
 
   useEffect(() => {
     setNoticeMenu(menulist[index]);
-  }, [index, menulist]);
+  }, []);
   
 
   return (
@@ -229,7 +229,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             fill
                             sizes="width-auto height-auto"
                             // objectFit="cover"
-                            className="rounded-lg"
+                            className="rounded-lg object-cover"
                             key={newsList[newsList.length - 1].id}
                             />
                         )}
@@ -265,7 +265,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             fill
                             sizes="width-auto height-auto"
                             // objectFit="cover"
-                            className="rounded-lg"
+                            className="rounded-lg object-cover"
                             key={newsList[newsList.length - 2].id}
                             />
                         )}
@@ -301,7 +301,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             fill
                             sizes="width-auto height-auto"
                             // objectFit="cover"
-                            className="rounded-lg"
+                            className="rounded-lg object-cover"
                             key={newsList[newsList.length - 3].id}
                             />
                         )}
