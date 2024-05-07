@@ -12,19 +12,22 @@ function FindPassword() {
   const [isLoading, setIsLoading] = useState(false);
   // const userId = localStorage.getItem('userId');
   const [generatedPassword, setGeneratedPassword] = useState<string>();
-
-  useEffect(() => {
-    generatedRandomPassword();
-  },[]);
-
-  const userId = localStorage.getItem('userId');
-
+  
   const generatedRandomPassword = () => {
     const tempPassword = Math.random().toString(36).slice(2,8);
     setGeneratedPassword(tempPassword); 
 
     sendPassword({ userId: userId, password: tempPassword });
   };
+
+  useEffect(() => {
+    generatedRandomPassword();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]);
+
+  const userId = localStorage.getItem('userId');
+
+
 
   const sendPassword = (data:any) => {
     // setIsLoading(true);
