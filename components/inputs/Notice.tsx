@@ -44,11 +44,11 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
     return () => {
       clearInterval(timer_main);
     };
-  }, []);
+  }, [menulist.length]);
 
   useEffect(() => {
     setNoticeMenu(menulist[index]);
-  }, [index]);
+  }, [index, menulist]);
   
 
   return (
@@ -226,8 +226,9 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         {newsList[newsList.length - 1]?.img && (
                             <Image src={newsList[newsList.length - 1].img}
                             alt="news_image" 
-                            layout="fill"
-                            objectFit="cover"
+                            fill
+                            sizes="width-auto height-auto"
+                            // objectFit="cover"
                             className="rounded-lg"
                             key={newsList[newsList.length - 1].id}
                             />
@@ -261,8 +262,9 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         {newsList[newsList.length - 1]?.img && (
                             <Image src={newsList[newsList.length - 2].img}
                             alt="news_image" 
-                            layout="fill"
-                            objectFit="cover"
+                            fill
+                            sizes="width-auto height-auto"
+                            // objectFit="cover"
                             className="rounded-lg"
                             key={newsList[newsList.length - 2].id}
                             />
@@ -295,9 +297,10 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     <div className="w-full h-[180px] relative">
                       {newsList[newsList.length - 1]?.img && (
                             <Image src={newsList[newsList.length - 3].img}
-                            alt="news_image" 
-                            layout="fill"
-                            objectFit="cover"
+                            alt="news_image"
+                            fill
+                            sizes="width-auto height-auto"
+                            // objectFit="cover"
                             className="rounded-lg"
                             key={newsList[newsList.length - 3].id}
                             />

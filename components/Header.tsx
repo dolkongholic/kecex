@@ -145,20 +145,8 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             <div className="lg:w-[150px] mr-[20px] hidden lg:block">
               &nbsp;
             </div>
-            {/* <div className="w-[250px] flex justify-start items-center bg-red-200">
-              <Link passHref href={"/"}>
-                <Image src={PicSlogan4} alt="슬로건" width={250} height={80} />
-              </Link>
-            </div> */}
             <Link passHref href={"/notice/notice/detail/14?page=1"}>
               <div className="w-[500px] xl:w-[800px] h-auto flex justify-start items-center relative 1translate-x-[90px]">
-              {/* <Image 
-                    src={PicMainNotice} 
-                    alt="header_top_notice" 
-                    className="absolute bottom-0 left-0 z-0 opacity-80 w-[800px] h-[60px]"
-                    // width={800} height={60}
-                    fill={true}
-                  /> */}
                 <div className="w-[80px] h-[26px] bg-secondary text-white flex items-center justify-center absolute left-[140px] top-[16px] z-20 rounded-md text-[13px] pt-[1px]">
                   모집중
                 </div>
@@ -232,7 +220,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               <Link passHref href={"/"} onMouseLeave={() => {
                 setMenubg("");
               }}>
-                <Image src={PicLogo} alt="Logo" width={250} height={85} />
+                <Image src={PicLogo} alt="Logo" width={250} />
               </Link>
             </div>
             <div className="w-full px-5 xl:px-0 xl:w-[900px]">
@@ -590,10 +578,10 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             >
               <Link passHref href={"/"} className="hidden md:block"
               >
-                <Image src={PicLogo} alt="Logo" width={250} height={85}               />
+                <Image src={PicLogo} alt="Logo" width={250} />
               </Link>
               <Link passHref href={"/"} className="md:hidden">
-                <Image src={PicLogo} alt="Logo" width={200} height={85} />
+                <Image src={PicLogo} alt="Logo" width={200} />
               </Link>
             </div>
             <div className="w-1/3 flex justify-end items-center">
@@ -621,12 +609,12 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           <div className="w-screen md:w-[1400px] flex justify-between items-center m-auto pl-1 md:pl-0 pr-5 box-border">
             <div className="w-[250px] justify-between items-center hidden md:block">
               <Link passHref href={"/"}>
-                <Image src={PicLogo} alt="Logo" width={250} height={85} />
+                <Image src={PicLogo} alt="Logo" width={250} />
               </Link>
             </div>
             <div className="w-[200px] justify-between items-center md:hidden">
               <Link passHref href={"/"}>
-                <Image src={PicLogo} alt="Logo" width={200} height={68} />
+                <Image src={PicLogo} alt="Logo" width={200} />
               </Link>
             </div>
             <button className="w-12 h-12 text-primary" onClick={closePopup}>
