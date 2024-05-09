@@ -150,12 +150,12 @@ const NewsEditClient: React.FC<NewsClientProps> = ({
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+        <section className="py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
           <ContentTitle title="카드뉴스 수정" center={true} />
           <div className="w-full mt-[20px] leading-[50px]">&nbsp;</div>
 
           <div className="w-full flex flex-col md:flex-row justify-between items-end md:items-center md:h-[70px]">
-            <div className="flex items-center w-full md:w-9/12">
+            <div className="flex items-center w-full md:w-9/12 px-2 md:px-0">
               <input
                 type="text"
                 placeholder="제목을 입력해주세요"
@@ -174,7 +174,7 @@ const NewsEditClient: React.FC<NewsClientProps> = ({
                 onChange: (event: any) => {
                 setCurrentDate(event.target.value);
               }, })}
-              className="w-1/2 md:w-2/12 h-[40px] border border-gray-100 px-3 my-2 md:my-0"
+              className="w-1/2 md:w-2/12 h-[40px] border border-gray-100 px-3 my-2 md:my-0 mr-2 md:mr-0"
             />
           </div>
           <div className="w-full border-t border-secondary"></div>

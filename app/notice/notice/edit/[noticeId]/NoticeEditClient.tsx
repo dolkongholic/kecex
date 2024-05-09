@@ -168,11 +168,11 @@ const NoticeEditClient: React.FC<NoticeClientProps> = ({
         </div>
       </section>
 
-      <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start">
+      <section className="py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
         <ContentTitle title="공지사항 수정" center={true} />
         <div className="w-full mt-[20px] leading-[10px]">&nbsp;</div>
 
-        <div className="w-full md:px-[20px] flex flex-col md:flex-row justify-between items-end md:items-center md:h-[70px]">
+        <div className="w-full px-2 md:px-[20px] flex flex-col md:flex-row justify-between items-end md:items-center md:h-[70px]">
           <div className="flex items-center w-full md:w-9/12">
             <input
               type="text"
@@ -195,7 +195,7 @@ const NoticeEditClient: React.FC<NoticeClientProps> = ({
           />
         </div>
         <div className="md:mx-[20px] w-full md:w-[calc(100%-40px)] border-t border-secondary"></div>
-        <div className="w-full my-[30px] flex flex-col md:px-[20px]">
+        <div className="w-full my-[30px] flex flex-col px-2 md:px-[20px]">
           <textarea
             id="post_text"
             cols={30}
@@ -218,14 +218,14 @@ const NoticeEditClient: React.FC<NoticeClientProps> = ({
               <input type="file" onChange={handleFileChange} className="w-"/>
             </p>
             <button
-              className="cursor-pointer flex justify-center items-center gap-2 md:gap-[20px] md:ml-[40px] bg-neutral-800 text-white w-5/12 md:w-[120px] h-[35px]"
+              className="cursor-pointer flex justify-center items-center gap-2 md:gap-[20px] md:ml-[40px] mr-2 md:mr-0 bg-neutral-800 text-white w-5/12 md:w-[120px] h-[35px]"
               disabled={isLoading}
             >
               업로드 <GrUpload className="grIcon"/>
             </button>
           </div>
         </div>
-        <div className="w-full pt-3 flex justify-between md:px-[20px]">
+        <div className="w-full pt-3 flex justify-between px-2 md:px-[20px]">
           <button
             className="w-24 h-8 border border-gray-500 rounded-sm bg-lightgray text-[14px] hover:bg-neutral-800 hover:text-white hover:border-neutral-800"
             onClick={() => router.back()}
