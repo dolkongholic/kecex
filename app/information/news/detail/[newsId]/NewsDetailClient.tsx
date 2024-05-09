@@ -148,10 +148,10 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
           </div>
         </section>
 
-        <section className="py-[40px] md:pl-[50px] pr-[20px] w-full flex flex-col justify-start items-start text-[14px] md:text-base">
+        <section className="py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start text-[14px] md:text-base">
           <ContentTitle title="카드뉴스" />
           <div className="w-full  border-b border-gray-100">&nbsp;</div>
-          <div className="w-full pl-[20px] flex justify-start items-center h-[70px] bg-gray-100 border-t-2 border-gray-200">
+          <div className="w-full px-[20px] flex justify-start items-center h-[70px] bg-gray-100 border-t-2 border-gray-200">
             <div className="text-center py-1 md:py-[5px] bg-gray-500 text-white md:mr-[20px] w-12 md:w-[80px] text-[12px] md:text-base">
               협회<br className="md:hidden"/>소식
             </div>
@@ -239,17 +239,16 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
             <Link
               passHref
               href={`/information/news/`}
-              className="w-full"
             >
               <button
-                className="w-32 h-10 bg-gray-500 text-white text-[14px] mt-9 m-auto"
+                className="w-20 md:w-32 h-10 bg-gray-500 text-white text-[14px] mt-9 m-auto"
               >
                 목록
               </button>
             </Link>
             {currentUser?.staff && (
               <button
-                className="w-32 h-10 bg-red-500 text-white text-[14px] mt-9 m-auto"
+                className="w-20 md:w-32 h-10 bg-red-500 text-white text-[14px] mt-9 m-auto"
                 onClick={() => del()}
               >
                 삭제
@@ -257,7 +256,7 @@ const NewsDetailClient: React.FC<NewsClientProps> = ({
             )}
             {currentUser?.staff && (
             <Link href={`/information/news/edit/${currentNews.id}?page=${page}`}>
-              <button className="w-32 h-10 bg-primary text-white text-[14px] mt-9 m-auto">수정</button>
+              <button className="w-20 md:w-32 h-10 bg-primary text-white text-[14px] mt-9 m-auto">수정</button>
             </Link>
             )}
           </div>

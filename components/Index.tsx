@@ -286,7 +286,7 @@ const Index: React.FC<IndexProps> = ({
       <Notice newsList={newsList} noticeList={noticeList} />
 
       {/* 띠배너 */}
-      <div className="w-full h-[350px] md:h-[250px] bg-[#D9ECFF] mt-40">
+      <div className="w-full h-[500px] md:h-[250px] bg-[#D9ECFF] mt-40">
         <div className="w-full md:max-w-[1440px] md:min-w-[600px] h-full mx-auto text-[#3A3A3A] pt-12 relative px-7 overflow-x-hidden">
           <h3 className="text-[28px] font-semibold">
             KECEx 한국방폭협회<br className="md:hidden"/>
@@ -298,12 +298,12 @@ const Index: React.FC<IndexProps> = ({
           </p>
           <Link passHref href={"/business/member/join"}>
             <button 
-              className="border border-[#3A3A3A] rounded-full w-[200px] h-[50px] mt-8 font-semibold hover:bg-[#3A3A3A] hover:text-white"
+              className="border border-[#3A3A3A] rounded-full w-[200px] h-[50px] mt-44 md:mt-8 font-semibold hover:bg-[#3A3A3A] hover:text-white"
             >
               자세히 보기
             </button>
           </Link>
-          <div className="absolute right-[-5%] sm:right-[15%] md:right-[3%] bottom-16 z-0">
+          <div className="absolute right-[2%] sm:right-[15%] md:right-[3%] bottom-36 md:bottom-16 z-0">
             <Image 
               src={PicMdbn} 
               alt="open_banner" 
@@ -510,7 +510,7 @@ const Index: React.FC<IndexProps> = ({
             </Link>
           </div>
 
-          <div className="w-full flex mt-12 md:mt-16 flex-wrap md:flex-nowrap box-border overflow-x-hidden">
+          <div className="w-full flex mt-12 md:mt-16 flex-wrap md:flex-nowrap">
             <Link passHref href={"https://www.ulsan.go.kr/u/rep/main.ulsan"} className="w-1/2 md:w-1/4" target="_blank">
               <div className="w-full h-[36px]">
                       <Image 
@@ -530,45 +530,45 @@ const Index: React.FC<IndexProps> = ({
               </div>
             </Link>
             <Link passHref href={"https://www.kosha.or.kr/kosha/index.do"} className="w-1/2 md:w-1/4" target="_blank">
-              <div className="w-full h-[36px] mt-12 md:mt-0">
-                      <Image 
-              src={Pickosha} 
-              alt="산업안전보건공단_로고" 
-              className="ml-6 md:mx-auto h-[54px] w-auto -translate-y-4"
-              />
+              <div className="w-full h-[54px] mt-12 md:mt-0 -translate-y-4">
+                <Image 
+                src={Pickosha} 
+                alt="산업안전보건공단_로고" 
+                className="ml-6 md:mx-auto h-[54px] w-auto"
+                />
               </div>
             </Link>
             <Link passHref href={"https://www.komeri.re.kr/"} className="w-1/2 md:w-1/4" target="_blank">
-              <div className="w-full mt-12 md:mt-0">
-                    <Image 
-              src={Pickomeri} 
-              alt="코메리_로고" 
-              className="md:mx-auto h-[36px] w-auto -translate-y-2"
-              />
+              <div className="w-full mt-12 md:mt-0 -translate-y-2">
+                <Image 
+                src={Pickomeri} 
+                alt="코메리_로고" 
+                className="md:mx-auto h-[36px] w-auto"
+                />
               </div >
             </Link>
           </div>
-          <div className="w-full flex px-3 md:px-0 mt-12 md:mt-16 h-[20px] md:h-auto flex-wrap md:flex-nowrap">
+          <div className="w-full flex px-3 md:px-0 mt-8 md:mt-16 h-[20px] md:h-auto flex-wrap md:flex-nowrap">
             <Link passHref href={"https://www.kopo.ac.kr/ulsan/index.do"} className="w-1/2 md:w-1/4" target="_blank">
-              <div className="w-full h-[40px]">
+              <div className="w-full md:h-[56px]">
                 <Image 
                 src={Picpolytech} 
                 alt="울산폴리텍_로고" 
-                className="ml-3 md:mx-auto h-[48px] md:h-[56px] w-auto -translate-y-[12px]"
+                className="ml-3 md:mx-auto h-[48px] md:h-[56px] w-auto -translate-y-[10px] md:-translate-y-[16px]"
                 />
               </div>
             </Link>
             <Link passHref href={"https://www.utp.or.kr/"} className="w-1/2 md:w-1/4">
               <div className="w-full">
-                      <Image 
+                <Image 
                 src={Picutp} 
                 alt="울산테크노파크_로고" 
                 className="ml-1 md:mx-auto h-[34px] md:h-[36px] w-auto mt-1 md:mt-0"
-              />
+                />
               </div>
             </Link>
             <Link passHref href={"https://ksa.or.kr/ksa_kr/index.do"} className="w-1/2 md:w-1/4" target="_blank">
-              <div className="w-full h-[36px] mt-12 md:mt-0">
+              <div className="w-full h-[36px] mt-[40px] md:mt-0">
               <Image 
                 src={Picksa} 
                 alt="KSA협회_로고" 
@@ -577,7 +577,7 @@ const Index: React.FC<IndexProps> = ({
               </div>
             </Link>
             <Link passHref href={"https://www.krict.re.kr/"} className="w-1/2 md:w-1/4" target="_blank">
-              <div className="w-full mt-[51px] md:mt-0">
+              <div className="w-full mt-[40px] md:mt-0">
                 <Image 
                 src={Pickrict} 
                 alt="화학연구원_로고" 

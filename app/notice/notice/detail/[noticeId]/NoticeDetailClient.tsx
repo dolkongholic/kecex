@@ -244,14 +244,14 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
           <div className="flex gap-4 m-auto">
             <Link passHref href={"/notice/notice?page=1"}>
               <button
-                className="w-32 h-10 bg-gray-500 text-white text-[14px] mt-9 m-auto"
+                className="w-20 md:w-32 h-10 bg-gray-500 text-white text-[14px] mt-9 m-auto"
               >
                 목록
               </button>
             </Link>
             {currentUser?.staff && (
               <button
-                className="w-32 h-10 bg-red-500 text-white text-[14px] mt-9 m-auto"
+                className="w-20 md:w-32 h-10 bg-red-500 text-white text-[14px] mt-9 m-auto"
                 onClick={() => del()}
               >
                 삭제
@@ -260,7 +260,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({
             )}
             {currentUser?.staff && (
             <Link href={`/notice/notice/edit/${currentNotice.id}?page=${page}`}>
-              <button className="w-32 h-10 bg-primary text-white text-[14px] mt-9 m-auto">수정</button>
+              <button className="w-20 md:w-32 h-10 bg-primary text-white text-[14px] mt-9 m-auto">수정</button>
             </Link>
             )}
           </div>

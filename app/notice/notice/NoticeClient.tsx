@@ -138,7 +138,7 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
                     <div className="w-[50px] text-center text-gray-400 text-subtitle">
                       {index + 1}
                     </div>
-                    <div className="md:w-[1020px] ml-3 line-clamp-1">{item.title}</div>
+                    <div className="w-[245px] md:w-[1020px] ml-3 line-clamp-1">{item.title}</div>
                   </div>
                   <div className="w-[50px] text-gray-400 ">
                     <RiArrowRightSLine className="text-[26px]" />
@@ -149,9 +149,11 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
             <div className="w-full flex justify-between items-center h-[50px]">
               <div>&nbsp;</div>
               <div className="flex">
-                {/* <div className="flex mr-[20px] cursor-pointer">
-                  <RiArrowLeftSLine className="text-[20px] pt-[3px]" />
-                </div> */}
+                <div>
+                {currentUser?.staff && (
+                  <div className=" w-24 h-10">&nbsp;</div>
+                )}
+                </div>
                 <div className="flex space-x-[10px]">
                   {pages.map((item) => (
                     <Pages
