@@ -21,24 +21,11 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
 /* 메인화면 KECEx소식 자동으로 넘어가기 */
   const menulist = ["협회공지", "보도자료", "교육센터"]
 
-  // var i = -1
-  // useEffect(()=>{
-  //   i = i + 1
-  //   if(i == 3){
-  //     i = -1
-  //   }
-  //   const timer_main = setInterval(()=>{
-  //     setNoticeMenu(menulist[i]);
-  //     console.log(i);
-  //     // clearInterval(timer_main);
-  //   }, 2000);
-  // },[noticeMenu])
-
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const timer_main = setInterval(() => {
-      setIndex(prevIndex => (prevIndex + 1) % menulist.length);
+      setIndex(prevIndex => (prevIndex + 1) % 3);
     }, 5000);
 
     return () => {
@@ -48,18 +35,18 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
 
   useEffect(() => {
     setNoticeMenu(menulist[index]);
-  }, []);
+  }, [index]);
   
 
   return (
     <div className="w-full md:flex justify-center item-start mt-[20px]">
       <div className="md:w-[1400px] md:flex justify-start items-start space-x-[30px]">
-        <div className="w-full h-[400px] md:h-[320px] md:flex justify-between item-start py-[10px]">      
-          <div className="w-full md:w-1/3 lg:w-1/4 h-[50px] md:h-[280px] flex md:flex-col items-start leading-8 md:leading-[65px] pl-3 md:px-[20px] font-bold text-[16px] text-[#CECECE] border-b-2 md:border-0 border-primary mx-auto">
-            <h2 className="w-1/4 md:w-full text-start text-[15px] md:text-[20px] text-[#3A3A3A] font-bold leading-8 md:leading-7 mb-8 whitespace-nowrap">
+        <div className="w-full h-[430px] md:h-[320px] md:flex justify-between item-start py-[10px]">      
+          <div className="w-full md:w-1/3 lg:w-1/4 h-[100px] md:h-[280px] md:flex flex-col items-start leading-8 md:leading-[65px] md:px-[20px] font-bold text-[16px] text-[#CECECE] border-b-2 md:border-0 border-primary mx-auto">
+            <h2 className="w-full text-start text-[15px] md:text-[20px] text-[#3A3A3A] font-bold leading-8 md:leading-7 mb-8 whitespace-nowrap pl-4 md:pl-0">
               KECEx 소식
             </h2>
-            <div className="w-3/4 md:w-full flex md:flex-col">
+            <div className="w-full flex md:flex-col">
               <div
                 className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-bold text-[15px] md:text-[30px] xl:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
                   noticeMenu == "협회공지" &&
@@ -113,18 +100,18 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
               </div>
             </div>
           </div>
-          <div className="flex w-full md:w-2/3 lg:w-3/4">
+          <div className="md:flex w-full md:w-2/3 lg:w-3/4">
             {noticeMenu == "협회공지" && (
               <>
-                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 lg:w-1/3 hover:shadow-lg lg:mr-[50px] shadow-gray-300 rounded-lg px-4 transition-all duration-200">
+                <div className="h-[215px] md:h-[280px] flex flex-col justify-between items-start cursor-pointer w-full lg:w-1/3 hover:shadow-lg lg:mr-[50px] shadow-gray-300 rounded-lg px-4 transition-all duration-200">
                   <Link
                     key={noticeList[noticeList.length - 1].id}
                     passHref
                     href={`notice/notice/detail/${noticeList[noticeList.length - 1].id}?page=1`}
                     className="w-full"
                   >
-                    <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start">
-                      <span className="h-[50px] leading-[22px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold">
+                    <div className="w-full h-[215px] md:h-[280px] flex flex-col flex-grow justify-center items-start">
+                      <span className="md:h-[45px] leading-[22px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold line-clamp-2">
                         {noticeList[noticeList.length - 1]
                           ? String(noticeList[noticeList.length - 1].title).slice(
                               0,
@@ -132,14 +119,14 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             )
                           : "공지가 없습니다."}
                       </span>
-                      <span className="h-[151px] leading-[24px] font-regular pt-[3px] mb-[4px] text-[14px] md:text-[15px] overflow-hidden">
+                      <span className="h-[130px] md:h-[151px] leading-[24px] font-regular pt-[3px] mb-[4px] text-[14px] md:text-[15px] overflow-hidden">
                         {noticeList[noticeList.length - 1]
                           ? String(
                               noticeList[noticeList.length - 1].content
                             ).slice(0, 250)
                           : ""}
                       </span>
-                      <span className="h-[15px] leading-[45px] text-[12px] md:text-[16px] font-light"> {/* 첫번째 공지 날짜 */}
+                      <span className="h-[15px] md:leading-[45px] text-[12px] md:text-[16px] font-light"> {/* 첫번째 공지 날짜 */}
                         {noticeList[noticeList.length - 1]
                           ? String(noticeList[noticeList.length - 1].date)
                           : ""}
@@ -147,15 +134,15 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     </div>
                   </Link>
                 </div>
-                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 lg:w-1/3 hover:shadow-lg lg:mr-[50px] shadow-gray-300 rounded-lg px-4 transition-all duration-200">
+                <div className="h-[215px] md:h-[280px] flex flex-col justify-between items-start cursor-pointer w-full lg:w-1/3 hover:shadow-lg lg:mr-[50px] shadow-gray-300 rounded-lg px-4 transition-all duration-200">
                   <Link
                     key={noticeList[noticeList.length - 2].id}
                     passHref
                     href={`notice/notice/detail/${noticeList[noticeList.length - 2].id}?page=1`}
                     className="w-full"
                   >
-                    <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start">
-                      <span className="h-[50px] leading-[22px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold">
+                    <div className="w-full h-[215px] md:h-[280px] flex flex-col flex-grow justify-center items-start">
+                      <span className="md:h-[45px] leading-[22px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold line-clamp-2">
                         {noticeList[noticeList.length - 2]
                           ? String(noticeList[noticeList.length - 2].title).slice(
                               0,
@@ -163,14 +150,14 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             )
                           : "공지가 없습니다."}
                       </span>
-                      <span className="h-[151px] leading-[24px] font-regular pt-[3px] mb-[4px] text-[14px] md:text-[15px] overflow-hidden">
+                      <span className="h-[130px] md:h-[151px] leading-[24px] font-regular pt-[3px] mb-[4px] text-[14px] md:text-[15px] overflow-hidden">
                         {noticeList[noticeList.length - 2]
                           ? String(
                               noticeList[noticeList.length - 2].content
                             ).slice(0, 250)
                           : ""}
                       </span>
-                      <span className="h-[15px] leading-[45px] text-[12px] md:text-[16px] font-light"> {/* 두번째 공지 날짜 */}
+                      <span className="h-[15px] md:leading-[45px] text-[12px] md:text-[16px] font-light"> {/* 두번째 공지 날짜 */}
                         {noticeList[noticeList.length - 2]
                           ? String(noticeList[noticeList.length - 2].date)
                           : ""}
@@ -178,7 +165,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     </div>
                   </Link>
                 </div>
-                <div className="h-[280px] hidden md:flex flex-col justify-between items-start cursor-pointer w-1/2 lg:w-1/3 hover:shadow-lg shadow-gray-300 rounded-lg px-4 transition-all duration-200">
+                <div className="h-[280px] hidden md:flex flex-col justify-between items-start cursor-pointer w-full lg:w-1/3 hover:shadow-lg shadow-gray-300 rounded-lg px-4 transition-all duration-200">
                   <Link
                     key={noticeList[noticeList.length - 3].id}
                     passHref
@@ -186,7 +173,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     className="w-full"
                   >
                     <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start">
-                      <span className="h-[50px] leading-[22px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold">
+                      <span className="h-[45px] leading-[22px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold line-clamp-2">
                         {noticeList[noticeList.length - 3]
                           ? String(noticeList[noticeList.length - 3].title).slice(
                               0,
@@ -214,15 +201,15 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
 
             {noticeMenu == "보도자료" && (
               <>
-                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 md:w-1/3 px-4 lg:mr-[50px] hover:shadow-lg shadow-gray-300 rounded-lg transition-all duration-200">
+                <div className="h-[215px] md:h-[280px] flex flex-col justify-between items-start cursor-pointer w-full md:w-1/3 px-4 py-2 md:py-0 lg:mr-[50px] hover:shadow-lg shadow-gray-300 rounded-lg transition-all duration-200">
                   <Link
                     key={newsList[newsList.length - 1].id}
                     passHref
                     href={`information/news/detail/${newsList[newsList.length - 1].id}?page=1`}
                     className="w-full"
                   >
-                    <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start md:pl-0">
-                      <div className="w-full h-[180px] relative">
+                    <div className="w-full h-[215px] md:h-[280px] flex flex-col flex-grow justify-center items-start md:pl-0">
+                      <div className="w-full h-[160px] md:h-[180px] relative">
                         {newsList[newsList.length - 1]?.img && (
                             <Image src={newsList[newsList.length - 1].img}
                             alt="news_image" 
@@ -234,7 +221,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             />
                         )}
                       </div>
-                      <span className="h-[48px] leading-[20px] text-[16px] md:text-[18px] font-semibold pt-2 line-clamp-2">
+                      <span className="h-[30px] md:h-[48px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold pt-2 line-clamp-1 md:line-clamp-2">
                         {newsList[newsList.length - 1]
                           ? String(newsList[newsList.length - 1].title).slice(
                               0,
@@ -242,7 +229,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             )
                           : "뉴스가 없습니다."}
                       </span>
-                      <span className="h-[25px] leading-[31px] text-[16px] font-light">
+                      <span className="h-[25px] md:leading-[31px] text-[12px] md:text-[16px] font-light">
                         {newsList[newsList.length - 1]
                           ? String(newsList[newsList.length - 1].date)
                           : ""}
@@ -250,15 +237,15 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     </div>
                   </Link>
                 </div>
-                <div className="h-[280px] flex flex-col justify-between items-start cursor-pointer w-1/2 md:w-1/3 px-4 lg:mr-[50px] hover:shadow-lg shadow-gray-300 rounded-lg transition-all duration-200">
+                <div className="h-[215px] md:h-[280px] flex flex-col justify-between items-start cursor-pointer w-full md:w-1/3 px-4 py-2 md:py-0 lg:mr-[50px] hover:shadow-lg shadow-gray-300 rounded-lg transition-all duration-200">
                   <Link
                     key={newsList[newsList.length - 2].id}
                     passHref
                     href={`information/news/detail/${newsList[newsList.length - 2].id}?page=1`}
                     className="w-full"
                   >
-                    <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start">
-                    <div className="w-full h-[180px] relative">
+                    <div className="w-full h-[215px] md:h-[280px] flex flex-col flex-grow justify-center items-start">
+                    <div className="w-full h-[160px] md:h-[180px] relative">
                         {newsList[newsList.length - 1]?.img && (
                             <Image src={newsList[newsList.length - 2].img}
                             alt="news_image" 
@@ -270,7 +257,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             />
                         )}
                       </div>
-                      <span className="h-[48px] leading-[20px] text-[16px] md:text-[18px] font-semibold pt-2 line-clamp-2">
+                      <span className="h-[30px] md:h-[48px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold pt-2 line-clamp-2">
                         {newsList[newsList.length - 2]
                           ? String(newsList[newsList.length - 2].title).slice(
                               0,
@@ -278,7 +265,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             )
                           : "뉴스가 없습니다."}
                       </span>
-                      <span className="h-[25px] leading-[31px] text-[16px] font-light">
+                      <span className="h-[25px] md:leading-[31px] text-[12px] md:text-[16px] font-light">
                         {newsList[newsList.length - 2]
                           ? String(newsList[newsList.length - 2].date)
                           : ""}
@@ -300,13 +287,12 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             alt="news_image"
                             fill
                             sizes="width-auto height-auto"
-                            // objectFit="cover"
                             className="rounded-lg object-cover"
                             key={newsList[newsList.length - 3].id}
                             />
                         )}
                       </div>
-                      <span className="h-[48px] leading-[20px] text-[16px] md:text-[18px]  font-semibold pt-2 line-clamp-2">
+                      <span className="h-[48px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px]  font-semibold pt-2 line-clamp-2">
                         {newsList[newsList.length - 3]
                           ? String(newsList[newsList.length - 3].title).slice(
                               0,
@@ -314,7 +300,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             )
                           : "뉴스가 없습니다."}
                       </span>
-                      <span className="h-[25px] leading-[31px] text-[16px] font-light">
+                      <span className="h-[25px] leading-[31px] text-[12px] md:text-[16px] font-light">
                         {newsList[newsList.length - 3]
                           ? String(newsList[newsList.length - 3].date)
                           : ""}
@@ -327,9 +313,9 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
 
             {noticeMenu == "교육센터" && (
               <>
-                <div className="w-full h-[280px] flex justify-between items-center cursor-pointer">
+                <div className="w-full h-[430px] md:h-[280px] flex justify-between items-center cursor-pointer">
                   <ul className="w-full flex flex-wrap mt-3">
-                    <li className="w-full lg:w-[48%] h-[85px] border border-[#f5f5f5] mx-[2%] lg:ml-0 lg:mr-[2%] rounded-xl flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
+                    <li className="w-full lg:w-[48%] h-[85px] border border-[#f5f5f5] mx-[2%] lg:ml-0 lg:mr-[2%] rounded-xl flex py-4 px-7 justify-between items-center hover:border-[#3A3A3A] group transition duration-200" >
                       <div className="h-full">
                         <strong className="text-[18px] font-medium">
                           방폭기초 교육
@@ -340,7 +326,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         교육예정
                       </button>
                     </li>
-                    <li className="w-full lg:w-[48%] h-[85px] border border-[#f5f5f5] mx-[2%] lg:mx-0 mt-2 lg:mt-0 rounded-xl flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
+                    <li className="w-full lg:w-[48%] h-[85px] border border-[#f5f5f5] mx-[2%] lg:mx-0 mt-2 lg:mt-0 rounded-xl flex py-4 px-7 justify-between items-center hover:border-[#3A3A3A] group transition duration-200" >
                       <div className="h-full">
                         <strong className="text-[18px] font-medium">
                           방폭인력양성 교육
@@ -351,7 +337,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         교육예정
                       </button>
                     </li>
-                    <li className="w-full lg:w-[48%] h-[85px] border border-[#f5f5f5] mx-[2%] lg:ml-0 lg:mr-[2%] mt-2 rounded-xl flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
+                    <li className="w-full lg:w-[48%] h-[85px] border border-[#f5f5f5] mx-[2%] lg:ml-0 lg:mr-[2%] mt-2 rounded-xl flex py-4 px-7 justify-between items-center hover:border-[#3A3A3A] group transition duration-200" >
                       <div className="h-full">
                         <strong className="text-[18px] font-medium">
                         방폭인력양성 교육
@@ -362,7 +348,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         교육예정
                       </button>
                     </li>
-                    <li className="w-[48%] h-[85px] border border-[#f5f5f5] mt-2 rounded-xl hidden lg:flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
+                    <li className="w-full lg:w-[48%] h-[85px] border border-[#f5f5f5] mx-[2%] lg:mx-0 mt-2 rounded-xl flex py-4 px-7 justify-between items-center hover:border-[#3A3A3A] group transition duration-200" >
                       <div className="h-full">
                         <strong className="text-[18px] font-medium">
                           기업형 교육
@@ -373,7 +359,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         교육예정
                       </button>
                     </li>
-                    <li className="w-[48%] h-[85px] border border-[#f5f5f5] mr-[2%] mt-2 rounded-xl hidden lg:flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
+                    <li className="w-[48%] h-[85px] border border-[#f5f5f5] mr-[2%] mt-2 rounded-xl hidden lg:flex py-4 px-7 justify-between items-center hover:border-[#3A3A3A] group transition duration-200" >
                       <div className="h-full">
                         <strong className="text-[18px] font-medium">
                           기업형 교육
@@ -384,7 +370,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         교육예정
                       </button>
                     </li>
-                    <li className="w-[48%] h-[85px] border border-[#f5f5f5] mt-2 rounded-xl hidden lg:flex py-4 px-7 justify-between items-center hover:shadow-md group transition duration-200" >
+                    <li className="w-[48%] h-[85px] border border-[#f5f5f5] mt-2 rounded-xl hidden lg:flex py-4 px-7 justify-between items-center hover:border-[#3A3A3A] group transition duration-200" >
                       <div className="h-full">
                         <strong className="text-[18px] font-medium">
                           방폭인력양성 교육

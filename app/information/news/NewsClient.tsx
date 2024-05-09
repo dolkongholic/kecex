@@ -116,13 +116,12 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
                 passHref
                 href={`/information/news/detail/${item.id}?page=${page}`}
               >
-                <div className="border border-gray text-[#3A3A3A] ease-linear transition-colors duration-300 hover:bg-secondary hover:text-white w-[350px] h-[310px]">
+                <div className="border border-gray text-[#3A3A3A] ease-linear transition-colors duration-300 hover:bg-secondary hover:text-white w-full md:w-[350px] h-[310px]">
                   <div className="flex flex-col relative">
-                    <div className="w-[350px] h-[220px] m-auto object-cover  overflow-hidden relative box-border -ml-[1px]"> {/* 350*220 사이즈 */}
+                    <div className="w-full md:w-[350px] h-[220px] m-auto object-cover overflow-hidden relative box-border -ml-[1px]"> {/* 350*220 사이즈 */}
                       <Image
                         src={item.img}
                         layout="fill"
-                        objectFit="cover"
                         alt="item.title"
                         className="object-cover"
                       />
@@ -143,10 +142,15 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
               </Link>
             ))}
           </div>
-          <div className="w-full flex justify-between items-center h-[50px] px-9">
+          <div className="w-full flex justify-between items-center h-[50px] md:px-9">
             <div>&nbsp;</div>
             <div className="flex">
-              <div className="flex mr-[20px] cursor-pointer">
+              <div>
+              {currentUser?.staff && (
+                <div className=" w-24 h-10">&nbsp;</div>
+              )}
+              </div>
+              <div className="flex md:mr-[20px] cursor-pointer">
                 {/* <RiArrowLeftSLine className="text-[20px] pt-[3px]" /> */}
               </div>
               <div className="flex space-x-[10px]">
