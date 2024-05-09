@@ -286,7 +286,7 @@ const Index: React.FC<IndexProps> = ({
       <Notice newsList={newsList} noticeList={noticeList} />
 
       {/* 띠배너 */}
-      <div className="w-full h-[500px] md:h-[250px] bg-[#D9ECFF] mt-40">
+      <div className="w-full h-[520px] md:h-[250px] bg-[#D9ECFF] mt-60 md:mt-40">
         <div className="w-full md:max-w-[1440px] md:min-w-[600px] h-full mx-auto text-[#3A3A3A] pt-12 relative px-7 overflow-x-hidden">
           <h3 className="text-[28px] font-semibold">
             KECEx 한국방폭협회<br className="md:hidden"/>
@@ -298,7 +298,7 @@ const Index: React.FC<IndexProps> = ({
           </p>
           <Link passHref href={"/business/member/join"}>
             <button 
-              className="border border-[#3A3A3A] rounded-full w-[200px] h-[50px] mt-44 md:mt-8 font-semibold hover:bg-[#3A3A3A] hover:text-white"
+              className="border border-[#3A3A3A] rounded-full w-[200px] h-[50px] mt-48 md:mt-8 font-semibold hover:bg-[#3A3A3A] hover:text-white"
             >
               자세히 보기
             </button>
