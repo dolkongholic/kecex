@@ -401,7 +401,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                       <span className="cursor-pointer hover:underline underline-offset-4"> 위험성 평가 교육</span>
                     </Link>
                     <Link passHref href={"/business/education/course04/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> 정량적위험성평가 과정</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> 정량적위험성평가 교육</span>
                     </Link>
                   </div>
                 </div>
@@ -856,7 +856,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                       <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 위험성 평가 교육</span>
                     </Link>
                     <Link passHref href={"/business/education/course04/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 정량적위험성평가 과정</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 정량적위험성평가 교육</span>
                     </Link>
                   </div>
                 </li>
