@@ -8,10 +8,9 @@ import Link from "next/link";
 
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
-import { RiArrowDownSLine } from "react-icons/ri";
 import Image from "next/image";
 import PicBusiness_02 from "@/public/img/page_top/business_02.jpg"
-
+import content_icon from "@/public/img/icon/content_icon_circle.png";
 
 const MainList = [
   {
@@ -28,11 +27,10 @@ const MainList = [
     title: "교육",
     url: "#",
     sub: [
-      { title: "방폭기초교육", url: "/business/education/course01" },
-      { title: "방폭인력양성 교육", url: "/business/education/course02" },
-      { title: "기업형 교육", url: "/business/education/course03" },
-      // { title: "교육개발", url: "/business/education/develop" },
-      { title: "CoPC 과정", url: "/business/education/copc" },
+      { title: "방폭교육 과정", url: "/business/education/course01" },
+      { title: "산업안전 교육", url: "/business/education/course02" },
+      { title: "위험성 평가 교육", url: "/business/education/course03" },
+      { title: "정량적위험성평가 교육", url: "/business/education/course04" },
     ],
   },
   {
@@ -48,10 +46,14 @@ const MainList = [
   },
 ];
 
-const location = "기업형 교육";
+const location = "위험성 평가 교육";
 
-const Course03Client = () => {
+const Course02Client = () => {
   const [pageMenu, setPageMenu] = useState<any>("교육");
+  const [selectedLiIndex, setSelectedLiIndex] = useState(0);
+  const handleLiClick = (index: any) => {
+    setSelectedLiIndex(index);
+  };
 
   return (
     <section>
@@ -109,159 +111,182 @@ const Course03Client = () => {
 
         <section className="px-[15px] py-[40px] md:pl-[50px] md:pr-[20px] w-full flex flex-col justify-start items-start">
         <ContentTitle title={location} />
-          <ul className="flex md:hidden flex-wrap w-full py-[20px] md:px-[40px] text-[15px]">
+          <ul className="flex md:hidden flex-wrap w-full py-[20px] text-[15px]">
             <li className="w-1/2 cursor-default">
               <Link passHref href={"/business/education/course01/"}>
-                <div className="h-12 border border-gray-200 flex flex-col justify-center items-center">
+                <div className="h-12 border border-gray-200 border-b-0 border-r-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
                   <span> 방폭기초교육</span>
                 </div>
               </Link>
             </li>
             <li className="w-1/2">
               <Link passHref href={"/business/education/course02/"}>
-                <div className="h-12 border border-gray-200 border-b-0 border-l-0 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
-                  <span> 방폭인력양성 교육</span>
+                <div className="h-12 border flex flex-col border-gray-200 border-b-0 justify-center items-center cursor-default">
+                  <span> 산업안전 교육</span>
                 </div>
               </Link>
             </li>
             <li className="w-1/2">
-                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
-                    <span> 기업형 교육</span>
+                <div className="h-12 border border-secondary flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
+                    <span> 위험성 평가 교육</span>
                 </div>
             </li>
             <li className="w-1/2">
-              <Link passHref href={"/business/education/copc/"}>
+              <Link passHref href={"/business/education/course04/"}>
                 <div className="h-12 border border-l-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
-                    <span> CoPC 과정</span>
+                    <span> 정량적위험성평가 교육</span>
                 </div>
               </Link>
             </li>
           </ul>
-          <ContentSubTitle title="교육목적" />
-          <div className="w-full mb-[40px]">
-            <div className="flex flex-col justify-center items-start md:p-[20px] md:border border-gray w-full leading-[30px]">
-              <span>
-                발주처의 현황, 요구, 이슈, 문제점을 진단, 분석하여 가장 효과적인 방폭 교육 개발 및 교육을 통해 
-                해당 현장에서 즉시 투입 가능한 현장 기술 인력 양성
-              </span>
-            </div>
-          </div>
 
-          <ContentSubTitle title="교육대상" />
-          <div className="w-full mb-[40px]">
-          <div className="flex flex-col justify-center items-start md:p-[20px] md:border border-gray w-full">
-              <span>
-                육/해양 플랜트 관련 방폭 설계 및 시운전, 유지관리 업무 담당자
-              </span>
-            </div>
-          </div>
 
-          <div className="w-full flex flex-col md:flex-row justify-center md:justify-between items-center mb-[40px]">
-            <div className="w-full md:w-[49%] flex flex-col">
-              <ContentSubTitle title="자격요건" />
-              <div className="flex flex-col justify-center items-start p-[20px] border border-gray w-full">
-                <span>
-                  없음
-                </span>
-              </div>
-            </div>
-            <div className="w-full md:w-[49%] flex flex-col mt-5 md:mt-0">
-              <ContentSubTitle title="교육 비용" />
-              <div className="flex flex-col justify-center items-start p-[20px] border border-gray w-full">
-                <span>
-                  별도 협의
-                </span>
-              </div>
-            </div>
-          </div>
+          <ul className="w-full flex flex-wrap text-[13px] md:text-base mt-10 md:mt-0">
+            <li
+              className={`w-1/2 h-20 md:h-14 flex justify-between items-center pl-5 
+              ${selectedLiIndex === 0
+                  ? "border border-secondary text-black font-medium bg-lightgray bg-opacity-50"
+                  : "border border-gray border-r-0"
+              } cursor-pointer`}
+              onClick={() => handleLiClick(0)}
+            >
+              위험성 평가 및<br/> HAZOP 과정<br/> (정성적 평가 1)
+              <Image
+                src={content_icon}
+                className={`w-4 md:w-6 mr-5 ${selectedLiIndex === 0 ? "inline-block" : "hidden"}`}
+                alt="선택 아이콘"
+              />
+              {""}
+            </li>
+            <li
+              className={`w-1/2 h-20 md:h-14 flex justify-between items-center pl-5 
+              ${selectedLiIndex === 1
+                  ? "border border-secondary text-black font-medium bg-lightgray bg-opacity-50"
+                  : "border border-gray"
+              } cursor-pointer`}
+              onClick={() => handleLiClick(1)}
+            >
+              위험성 평가 및<br/> JSA 과정<br/> (정성적 평가 2)
+              <Image
+                src={content_icon}
+                className={`w-4 md:w-6 mr-5 ${selectedLiIndex === 1 ? "inline-block" : "hidden"}`}
+                alt="선택 아이콘"
+              />
+              {""}
+            </li>
+          </ul>
 
-          <div className="w-full flex flex-col md:flex-row justify-center md:justify-between items-center mb-[40px]">
-            <div className="w-full md:w-[49%] flex flex-col">
-              <ContentSubTitle title="교육 혜택" />
-              <div className="flex flex-col justify-start items-start h-[102px] p-[20px] border border-gray w-full leading-[30px]">
+          {/* <h3 className="w-40 h-14 bg-lightgray border border-darkgray mx-auto flex items-center justify-center">
+            <p className="text-xl font-semibold">초급 과정</p>
+          </h3> */}
+
+        {/* 위험성 평가 및 HAZOP 과정 (정성적 평가 1) */}
+        <div className={`${selectedLiIndex === 0 ? "block" : "hidden"} w-full md:p-[20px]`}>
+          <div>
+            <h4 className="text-[18px] md:text-xl font-semibold underline underline-offset-4 mt-10">위험성 평가 및 HAZOP 과정 (정성적 평가 1)</h4>
+            <ContentSubTitle title="교육목적" />
+            <div className="w-full mb-[20px]">
+              <div className="flex flex-col justify-center items-start md:p-[20px] md:border border-gray w-full leading-[30px]">
                 <span>
-                  교육 수료증 발급<br/>
-                  (추후 전자경력 카드 발급)
+                산업 현장에서의 위험성을 평가하고, HAZOP(위험성 및 운전성 연구) 기법을 이해하여 적용하는 방법을 학습한다.
                 </span>
               </div>
             </div>
-            <div className="w-full md:w-[49%] flex flex-col mt-5 md:mt-0">
-              <ContentSubTitle title="기대효과" />
-              <div className="flex flex-col justify-start items-start md:h-[102px] p-[20px] border border-gray w-full leading-[30px]">
+
+            <ContentSubTitle title="교육대상" />
+            <div className="w-full mb-[20px]">
+            <div className="flex flex-col justify-center items-start md:p-[20px] md:border border-gray w-full">
                 <span>
-                  안전한 작업환경 유지를 위해 정확한 안전 지식과 숙련된 방폭기술습득을 통해 
-                  산업현장에서 발생하는 재해사고를 미연에 방지
+                안전관리자, 위험성 평가 담당자, HAZOP 기법 적용자
                 </span>
               </div>
             </div>
-          </div>
-          
-          <ContentSubTitle title="교육 시간별 세부 내용" />
-          <div className="w-full border border-[#ccc] flex">
-            <div className="w-[180px] text-[14px] md:text-[16px] flex flex-col justify-center items-center font-medium bg-[#eeeeee] text-center">
-              교육시간 : <br/>
-              협의 후 <br className="md:hidden"/>
-              결정
+
+            <ContentSubTitle title="교육내용" />
+            <div className="w-full mb-[20px]">
+              <ul className="flex flex-col space-y-1 md:p-[20px] md:border border-gray w-full">
+                <li>1.	위험성 평가의 기본 개념</li>
+                <li>2.	정성적 위험성 평가 방법론</li>
+                <li>3.	HAZOP의 정의와 절차</li>
+                <li>4.	HAZOP 기법 적용 사례 연구</li>
+                <li>5.	사고 사례 분석 및 예방 대책</li>
+              </ul>
             </div>
-            <div className="text-[14px] md:text-[16px] font-medium border-x border-[#ccc]">
-              <div className="w-[130px] md:w-[180px] h-[75px] bg-lightgray flex flex-col justify-center items-center border-b border-[#ccc] text-center font-bold relative">
-                Safety procedure<br/>
-                안전작업절차 
-              </div>
-              <div className="w-[130px] md:-[180px] h-[75px]  flex flex-col justify-center items-center relative font-semibold">
-                방폭 기본설계
-                <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] bg-lightgray  border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
-                  <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-secondary" />
+
+            <div className="w-full flex flex-col md:flex-row justify-center md:justify-between items-center mb-[20px]">
+              <div className="w-full md:w-[49%] flex flex-col">
+                <ContentSubTitle title="교육시간" />
+                <div className="flex flex-col justify-center items-start p-[20px] border border-gray w-full">
+                  <span>8시간 (1일)</span>
                 </div>
               </div>
-              <div className="w-[130px] md:w-[180px] h-[75px]  flex flex-col justify-center items-center relative font-semibold">
-                위험장소 구분
-                <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] bg-lightgray  border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
-                  <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-secondary" />
+              <div className="w-full md:w-[49%] flex flex-col mt-5 md:mt-0">
+                <ContentSubTitle title="교육 비용" />
+                <div className="flex flex-col justify-center items-start p-[20px] border border-gray w-full">
+                  <span>
+                    200,000원 (25,000원/시간)
+                  </span>
                 </div>
-              </div>
-              <div className="w-[130px] md:w-[180px] h-[75px]  flex flex-col justify-center items-center relative font-semibold">
-                장비 선정
-                <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] bg-lightgray  border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
-                  <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-secondary" />
-                </div>
-              </div>
-              <div className="w-[130px] md:w-[180px] h-[75px] flex flex-col justify-center items-center relative font-semibold">
-                시공 및 시험
-                <div className="absolute -bottom-[11px] left-[calc(50% - 11px)] bg-lightgray  border-[#ccc] rounded-full w-[22px] h-[22px] flex flex-col justify-center items-center">
-                  <RiArrowDownSLine className="w-[20px] h-[20px] absolute text-secondary" />
-                </div>
-              </div>
-              <div className="w-[130px] md:w-[180px] h-[75px] flex flex-col justify-center items-center font-semibold">
-                검사 및 유지보수
               </div>
             </div>
-            <ul className="w-full text-[14px] md:text-base">
-              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6 font-bold bg-lightgray">
-                설비 주기에 따른<br className="md:hidden"/>
-                교육 과정
-              </li>
-              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
-                위험 지역에서의 방폭 기본 원리 과정
-              </li>
-              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
-                위험 지역 구분 과정
-              </li>
-              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
-                위험 지역 내 전기 설비 설계 과정
-              </li>
-              <li className="w-full h-[75px] flex flex-col justify-center items-start border-b border-[#ccc] pl-2 md:pl-6">
-                방폭 장비, 배선 설치 및 전기 설비 테스트
-              </li>
-              <li className="w-full h-[75px] flex flex-col justify-center items-start pl-2 md:pl-6">
-                위험 지역에서의 장비 유지보수 및 정밀 검사
-              </li>
-            </ul>
           </div>
+        </div>
+
+        {/* 위험성 평가 및 JSA 과정 (정성적 평가 2) */}
+        <div className={`${selectedLiIndex === 1 ? "block" : "hidden"} w-full md:p-[20px]`}>
+          <div>
+            <h4 className="text-[18px] md:text-xl font-semibold underline underline-offset-4 mt-10">위험성 평가 및 JSA 과정 (정성적 평가 2)</h4>
+            <ContentSubTitle title="교육목적" />
+            <div className="w-full mb-[20px]">
+              <div className="flex flex-col justify-center items-start md:p-[20px] md:border border-gray w-full leading-[30px]">
+                <span>
+                Job Safety Analysis(JSA) 기법을 이해하고 적용하여 작업장에서의 위험성을 평가하고 관리한다.
+                </span>
+              </div>
+            </div>
+
+            <ContentSubTitle title="교육대상" />
+            <div className="w-full mb-[20px]">
+            <div className="flex flex-col justify-center items-start md:p-[20px] md:border border-gray w-full">
+                <span>
+                안전관리자, 위험성 평가 담당자, JSA 기법 적용자
+                </span>
+              </div>
+            </div>
+
+            <ContentSubTitle title="교육내용" />
+            <div className="w-full mb-[20px]">
+              <ul className="flex flex-col space-y-1 md:p-[20px] md:border border-gray w-full">
+                <li>1.	JSA의 정의와 필요성</li>
+                <li>2.	JSA 수행 절차와 방법</li>
+                <li>3.	작업별 위험성 평가와 관리 방안</li>
+                <li>4.	JSA 기법 적용 사례 연구</li>
+                <li>5.	사고 사례 분석 및 예방 대책</li>
+              </ul>
+            </div>
+
+            <div className="w-full flex flex-col md:flex-row justify-center md:justify-between items-center mb-[20px]">
+              <div className="w-full md:w-[49%] flex flex-col">
+                <ContentSubTitle title="교육시간" />
+                <div className="flex flex-col justify-center items-start p-[20px] border border-gray w-full">
+                  <span>8시간 (1일)</span>
+                </div>
+              </div>
+              <div className="w-full md:w-[49%] flex flex-col mt-5 md:mt-0">
+                <ContentSubTitle title="교육 비용" />
+                <div className="flex flex-col justify-center items-start p-[20px] border border-gray w-full">
+                  <span>
+                    200,000원 (25,000원/시간)
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         </section>
       </main>
     </section>
   );
 };
 
-export default Course03Client;
+export default Course02Client;

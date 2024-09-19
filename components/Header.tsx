@@ -99,25 +99,25 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
       });
   };   
 
-  const [scrollA, setScrollA] = useState('');
-  const [scrollB, setScrollB] = useState('');
-  const [scrollC, setScrollC] = useState('');
-  const [scrollD, setScrollD] = useState('');
+  const [scrollAll, setScrollAll] = useState('');
+  const [scrollSubNav, setScrollSubNav] = useState('');
+  const [scrollRowMenu, setScrollRowMenu] = useState('');
+  const [scrollLine, setScrollLine] = useState('');
 
   useEffect(() => {
     const onScroll = () => {
       const {scrollY} = window;
       // console.log('scrollY', scrollY);
       if (scrollY >= 70){
-        setScrollA('fixed');
-        setScrollB('pt-[40px]');
-        setScrollC('!mt-0');
-        setScrollD('before:!-top-[40px]')
+        setScrollAll('fixed');
+        setScrollSubNav('pt-[40px]');
+        setScrollRowMenu('!mt-0');
+        setScrollLine('before:!-top-[40px]')
       }else{
-        setScrollA('')
-        setScrollB('')
-        setScrollC('')
-        setScrollD('')
+        setScrollAll('')
+        setScrollSubNav('')
+        setScrollRowMenu('')
+        setScrollLine('')
       };
     };
 
@@ -127,7 +127,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
     return () => {
       window.removeEventListener('scroll', onScroll);
     };
-  }, [scrollB, scrollC]);
+  }, [scrollSubNav, scrollRowMenu]);
 
 
 
@@ -211,7 +211,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
         </div>
 
         {/* nav start */}
-        <div className={`w-full h-[85px] flex justify-center border-b border-[#dcdcdc] z-[80] bg-white ${scrollA}`}>
+        <div className={`w-full h-[85px] flex justify-center border-b border-[#dcdcdc] z-[80] bg-white ${scrollAll}`}>
           <div className="w-[1400px] flex justify-between items-center">
             <div
               className="w-[250px] justify-between items-center"
@@ -268,7 +268,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
             !menu
               ? "opacity-0 -translate-y-[50px] pointer-events-none"
               : "opacity-100 translate-y-0 pointer-events-auto"
-          } transition-all duration-300 flex justify-center items-start ${scrollB}`}
+          } transition-all duration-300 flex justify-center items-start ${scrollSubNav}`}
           onMouseLeave={() => {
             setMenu("");
             setMenubg("");
@@ -296,16 +296,12 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           {/* 서브메뉴 배경끝 */}
           {menu == "협회소개" && (
             <div
-              className={`w-full lg:w-[1400px] mt-[95px] ${scrollC}`}
-              onMouseOver={
-                () => {
-                setMenu(menu);
-                }
-              }
+              className={`w-full lg:w-[1400px] mt-[95px] ${scrollRowMenu}`}
+              onMouseOver={() => {setMenu(menu);}}
             >
               <div className="w-full lg:w-[1400px] flex lg:pl-[250px] lg:pr-[80px]">
                 <div className={`w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollLine}
                 `}>
                   <Link passHref href={"/introduce/common/ceo/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
@@ -328,7 +324,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                 </div>
                 <div className={`w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollLine}
                 `}>
                   <Link passHref href={"/introduce/group/group"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
@@ -356,12 +352,12 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           )}
           {menu == "사업안내" && (
             <div
-              className={`w-full lg:w-[1400px] mt-[95px] ${scrollC}`}
+              className={`w-full lg:w-[1400px] mt-[95px] ${scrollRowMenu}`}
               onMouseOver={() => setMenu(menu)}
             >
               <div className="w-full lg:w-[1400px] flex justify-start lg:pl-[250px] lg:pr-[80px]">
                 <div className={`w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollLine}
                 `}>
                   <Link passHref href={"/business/member/join/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
@@ -384,7 +380,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                 </div>
                 <div className={`w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollLine}
                 `}>
                   <Link passHref href={"/business/education/course01/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
@@ -393,22 +389,19 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </Link>
                   <div className="flex flex-col space-y-[20px] text-neutral-600 text-[17px] pl-3">
                     <Link passHref href={"/business/education/course01/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> 방폭기초교육</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> 방폭교육 과정</span>
                     </Link>
                     <Link passHref href={"/business/education/course02/"}>
                       <span className="cursor-pointer hover:underline underline-offset-4">
                         {" "}
-                        방폭인력양성 교육
+                        산업안전 교육
                       </span>
                     </Link>
                     <Link passHref href={"/business/education/course03/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> 기업형 교육</span>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> 위험성 평가 교육</span>
                     </Link>
-                    {/* <Link passHref href={"/business/education/develop/"}>
-                      <span className="cursor-pointer"> · 교육개발</span>
-                    </Link> */}
-                    <Link passHref href={"/business/education/copc/"}>
-                      <span className="cursor-pointer hover:underline underline-offset-4"> CoPC 과정</span>
+                    <Link passHref href={"/business/education/course04/"}>
+                      <span className="cursor-pointer hover:underline underline-offset-4"> 정량적위험성평가 과정</span>
                     </Link>
                   </div>
                 </div>
@@ -422,9 +415,6 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     <Link passHref href={"/business/consulting/inspection/"}>
                       <span className="cursor-pointer hover:underline underline-offset-4"> 방폭사전진단</span>
                     </Link>
-                    {/* <Link passHref href={"/business/consulting/equipment/"}>
-                    <span className="cursor-pointer"> - 방폭기기선정</span>
-                  </Link> */}
                     <Link passHref href={"/business/consulting/psm/"}>
                       <span className="cursor-pointer hover:underline underline-offset-4">
                         {" "}
@@ -450,12 +440,12 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           )}
           {menu == "알림센터" && (
             <div
-              className={`w-full lg:w-[1400px] mt-[95px] ${scrollC}`}
+              className={`w-full lg:w-[1400px] mt-[95px] ${scrollRowMenu}`}
               onMouseOver={() => setMenu(menu)}
             >
               <div className="w-full lg:w-[1400px] flex justify-start lg:pl-[250px] lg:pr-[80px] h-[350px]">
                 <div className={`w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollLine}
                 `}>
                   <Link passHref href={"/notice/notice?page=1"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
@@ -464,7 +454,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </Link>
                 </div>
                 <div className={`w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollLine}
                 `}>
                   <Link passHref href={"/notice/faq/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
@@ -473,7 +463,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </Link>
                 </div>
                 <div className={`w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollLine}
                 `}>
                   <Link passHref href={"/notice/qna/"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
@@ -493,12 +483,12 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           )}
           {menu == "정보공개" && (
             <div
-              className={`w-full lg:w-[1400px] mt-[95px] ${scrollC}`}
+              className={`w-full lg:w-[1400px] mt-[95px] ${scrollRowMenu}`}
               onMouseOver={() => setMenu(menu)}
             >
               <div className="w-full lg:w-[1400px] flex justify-start lg:pl-[250px] lg:pr-[80px]">
                 <div className={`w-1/4 text-[19px] pl-[2%] relative
-                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollD}
+                  before:content[''] before:block before:absolute before:w-[1px] before:h-[450px] before:right-0 before:-top-[95px] before:bg-[#dcdcdc] ${scrollLine}
                 `}>
                   <Link passHref href={"/information/raw?page=1"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
@@ -598,7 +588,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
       </section>
       {/* -----------전체화면 시작----------------------- */}
       <div
-        className={`w-screen h-full fixed z-[800] bg-lightgray top-0 left-0 overflow-y-auto scrollbar-hide transition-opacity duration-100 ease-in-out overflow-x-hidden ${
+        className={`w-screen h-full fixed z-[800] bg-lightGray top-0 left-0 overflow-y-auto scrollbar-hide transition-opacity duration-100 ease-in-out overflow-x-hidden ${
           isPopupOpen && activePopup === "all_menu_open"
             ? "opacity-100 visible"
             : "opacity-0 invisible"
@@ -623,8 +613,8 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
           </div>
         </div>
 
-        <div className="w-screen h-screen bg-white md:bg-lightgray">
-          <div className="w-full h-[135px] border-y border-lightgray md:hidden item-center md:mr-[30px] text-[13px] text-gray-700 font-semibold px-[20px] box-border">
+        <div className="w-screen h-screen bg-white md:bg-lightGray">
+          <div className="w-full h-[135px] border-y border-lightGray md:hidden item-center md:mr-[30px] text-[13px] text-gray-700 font-semibold px-[20px] box-border">
             {currentUser == null ? (
                     <>
                       <p className="text-[15px] pt-7">로그인 해주세요.</p>
@@ -651,7 +641,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                     </>
             )}
           </div>
-          <ul className="block md:flex justify-between w-full h-[808px] md:w-[1400px] m-auto md:pt-16 bg-lightgray">
+          <ul className="block md:flex justify-between w-full h-[808px] md:w-[1400px] m-auto md:pt-16 bg-lightGray">
           <li className="w-full md:w-1/5 mr-6 flex md:hidden">
               {/* 마이페이지 */}
             {currentUser == null ? (
@@ -661,7 +651,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                       <>
               <div
                 className={` w-full md:w-full h-12 pl-5 md:pl-0 pt-3 md:pt-0 cursor-pointer md:text-primary md:border-b-2 border-primary ${
-                  activeMenu === '마이페이지' ? 'text-primary border-b-2 bg-white md:bg-lightgray' : 'text-gray-700 bg-lightgray'
+                  activeMenu === '마이페이지' ? 'text-primary border-b-2 bg-white md:bg-lightGray' : 'text-gray-700 bg-lightGray'
                   }`}
                 onClick={() => handleMenuToggle('마이페이지')}
               >
@@ -670,7 +660,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   마이페이지
                 </span>
               </div>
-              <ul className={`w-3/4 md:w-full absolute md:static right-0 top-[215px] h-full bg-white md:bg-lightgray z-[501] text-[15px] md:text-auto ${
+              <ul className={`w-3/4 md:w-full absolute md:static right-0 top-[215px] h-full bg-white md:bg-lightGray z-[501] text-[15px] md:text-auto ${
                               activeMenu === '마이페이지' ? 'block' : 'hidden md:block'
                             }`}
               >
@@ -763,7 +753,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               {/* 협회소개 */}
               <div
                 className={`w-full md:w-full h-12 pl-5 md:pl-0 pt-3 md:pt-0 cursor-pointer md:text-primary md:border-b-2 border-primary ${
-                  activeMenu === '협회소개' ? 'text-primary border-b-2 border-primary bg-white md:bg-lightgray' : 'text-gray-700 bg-lightgray'
+                  activeMenu === '협회소개' ? 'text-primary border-b-2 border-primary bg-white md:bg-lightGray' : 'text-gray-700 bg-lightGray'
                   }`}
                 onClick={() => handleMenuToggle('협회소개')}
               >
@@ -772,7 +762,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   협회소개
                 </span>
               </div>
-              <ul className="w-3/4 md:w-full absolute md:static right-0 top-[215px] h-[808px] bg-white md:bg-lightgray z-[500] text-[15px] md:text-auto"
+              <ul className="w-3/4 md:w-full absolute md:static right-0 top-[215px] h-[808px] bg-white md:bg-lightGray z-[500] text-[15px] md:text-auto"
               >
                 <li>
                   <div className="w-[250px] h-12 md:h-10 md:text-[18px] font-semibold text-start leading-[45px] md:leading-[55px] pl-6 md:pl-[10px] pr-[5px] md:mb-[20px] text-gray-600">
@@ -816,7 +806,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               {/* 사업안내 */}
               <div
                 className={`w-full md:w-full h-12 pl-5 md:pl-0 pt-3 md:pt-0 cursor-pointer md:text-primary md:border-b-2 border-primary ${
-                  activeMenu === '사업안내' ? 'text-primary border-b-2 bg-white md:bg-lightgray' : 'text-gray-700 bg-lightgray'
+                  activeMenu === '사업안내' ? 'text-primary border-b-2 bg-white md:bg-lightGray' : 'text-gray-700 bg-lightGray'
                   }`}
                 onClick={() => handleMenuToggle('사업안내')}
               >
@@ -825,7 +815,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   사업안내
                 </span>
               </div>
-              <ul className={`w-3/4 md:w-full absolute md:static right-0 top-[215px] h-full bg-white md:bg-lightgray z-[501] text-[15px] md:text-auto ${
+              <ul className={`w-3/4 md:w-full absolute md:static right-0 top-[215px] h-full bg-white md:bg-lightGray z-[501] text-[15px] md:text-auto ${
                               activeMenu === '사업안내' ? 'block' : 'hidden md:block'
                             }`}
               >
@@ -854,19 +844,19 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                   <div className="flex flex-col space-y-[25px] border-b border-gray-200 md:border-gray-300 pb-5 pt-3 md:pt-0 ml-6 md:ml-3 mr-3">
                     <Link passHref href={"/business/education/course01/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 방폭기초교육</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 방폭교육 과정</span>
                     </Link>
                     <Link passHref href={"/business/education/course02/"}>
                       <span className="cursor-pointer hover:text-primary hover:font-semibold">
                         {" "}
-                        · 방폭인력양성 교육
+                        · 산업안전 교육
                       </span>
                     </Link>
                     <Link passHref href={"/business/education/course03/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 기업형 교육</span>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 위험성 평가 교육</span>
                     </Link>
-                    <Link passHref href={"/business/education/copc/"}>
-                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · CoPC 과정</span>
+                    <Link passHref href={"/business/education/course04/"}>
+                      <span className="cursor-pointer hover:text-primary hover:font-semibold"> · 정량적위험성평가 과정</span>
                     </Link>
                   </div>
                 </li>
@@ -904,7 +894,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               {/* 알림센터 */}
               <div
                 className={`w-full md:w-full h-12 pl-5 md:pl-0 pt-3 md:pt-0 cursor-pointer md:text-primary md:border-b-2 border-primary ${
-                  activeMenu === '알림센터' ? 'text-primary border-b-2 border-primary bg-white md:bg-lightgray' : 'text-gray-700 bg-lightgray'
+                  activeMenu === '알림센터' ? 'text-primary border-b-2 border-primary bg-white md:bg-lightGray' : 'text-gray-700 bg-lightGray'
                   }`}
                 onClick={() => handleMenuToggle('알림센터')}
               >
@@ -913,7 +903,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   알림센터
                 </span>
               </div>
-              <ul className={`w-3/4 md:w-full absolute md:static right-0 top-[215px] h-full bg-white md:bg-lightgray z-[501] text-[15px] md:text-auto ${
+              <ul className={`w-3/4 md:w-full absolute md:static right-0 top-[215px] h-full bg-white md:bg-lightGray z-[501] text-[15px] md:text-auto ${
                 activeMenu === '알림센터' ? 'block' : 'hidden md:block'
                 }`}
               >
@@ -951,7 +941,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               {/* 정보공개 */}
               <div
                 className={`w-full md:w-full h-12 pl-5 md:pl-0 pt-3 md:pt-0 cursor-pointer md:text-primary md:border-b-2 border-primary ${
-                  activeMenu === '정보공개' ? 'text-primary border-b-2 border-primary bg-white md:bg-lightgray' : 'text-gray-700 bg-lightgray'
+                  activeMenu === '정보공개' ? 'text-primary border-b-2 border-primary bg-white md:bg-lightGray' : 'text-gray-700 bg-lightGray'
                   }`}
                 onClick={() => handleMenuToggle('정보공개')}
               >
@@ -960,7 +950,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   정보공개
                 </span>
               </div>
-              <ul className={`w-3/4 md:w-full absolute md:static right-0 top-[215px] h-full bg-white md:bg-lightgray z-[501] text-[15px] md:text-auto ${
+              <ul className={`w-3/4 md:w-full absolute md:static right-0 top-[215px] h-full bg-white md:bg-lightGray z-[501] text-[15px] md:text-auto ${
                               activeMenu === '정보공개' ? 'block' : 'hidden md:block'
                             }`}
               >
@@ -984,7 +974,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
               {/* 교육센터 */}
               <div
                 className={`w-full md:w-full h-12 pl-5 md:pl-0 pt-3 md:pt-0 cursor-pointer md:text-primary md:border-b-2 border-primary ${
-                  activeMenu === '교육센터' ? 'text-primary border-b-2 border-primary bg-white md:bg-lightgray' : 'text-gray-700 bg-lightgray'
+                  activeMenu === '교육센터' ? 'text-primary border-b-2 border-primary bg-white md:bg-lightGray' : 'text-gray-700 bg-lightGray'
                   }`}
                 onClick={() => handleMenuToggle('교육센터')}
               >
@@ -993,7 +983,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   교육센터
                 </span>
               </div>
-              <div className={`w-3/4 md:w-full absolute md:static right-0 top-[215px] h-full bg-white md:bg-lightgray z-[501] text-[15px] md:text-auto text-gray-600 ${
+              <div className={`w-3/4 md:w-full absolute md:static right-0 top-[215px] h-full bg-white md:bg-lightGray z-[501] text-[15px] md:text-auto text-gray-600 ${
                               activeMenu === '교육센터' ? 'block' : 'hidden md:block'
                             }`}
               >
