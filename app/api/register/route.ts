@@ -37,11 +37,11 @@ export async function POST(request: Request) {
     data: {
       name: username,
       email: email,
-      koname: koname,
-      tel: tel,
+      // koname: koname,
+      // tel: tel,
       hashedPassword: hashedPassword,
-      level: "일반회원",
-      staff: false,
+      // level: "일반회원",
+      // staff: false,
     },
   });
 

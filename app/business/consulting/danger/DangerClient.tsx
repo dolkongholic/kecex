@@ -33,11 +33,10 @@ const MainList = [
     title: "교육",
     url: "#",
     sub: [
-      { title: "방폭기초교육", url: "/business/education/course01" },
-      { title: "방폭인력양성 교육", url: "/business/education/course02" },
-      { title: "기업형 교육", url: "/business/education/course03" },
-      // { title: "교육개발", url: "/business/education/develop" },
-      { title: "CoPC 과정", url: "/business/education/copc" },
+      { title: "방폭교육 과정", url: "/business/education/course01" },
+      { title: "산업안전 교육", url: "/business/education/course02" },
+      { title: "위험성 평가 교육", url: "/business/education/course03" },
+      { title: "정량적위험성평가 교육", url: "/business/education/course04" },
     ],
   },
   {
@@ -45,7 +44,6 @@ const MainList = [
     url: "#",
     sub: [
       { title: "방폭사전진단", url: "/business/consulting/inspection" },
-      // { title: "방폭기기선정", url: "/business/consulting/equipment" },
       { title: "PSM", url: "/business/consulting/psm" },
       { title: "중대재해처벌법", url: "/business/consulting/sapa" },
       { title: "위험성 평가", url: "/business/consulting/danger" },
