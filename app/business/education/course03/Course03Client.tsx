@@ -150,7 +150,7 @@ const Course02Client = () => {
               } cursor-pointer`}
               onClick={() => handleLiClick(0)}
             >
-              위험성 평가 및<br/> HAZOP 과정<br/> (정성적 평가 1)
+              위험성 평가 및<br className="md:hidden"/> HAZOP 과정<br className="md:hidden"/> (정성적 평가 1)
               <Image
                 src={content_icon}
                 className={`w-4 md:w-6 mr-5 ${selectedLiIndex === 0 ? "inline-block" : "hidden"}`}
@@ -166,7 +166,7 @@ const Course02Client = () => {
               } cursor-pointer`}
               onClick={() => handleLiClick(1)}
             >
-              위험성 평가 및<br/> JSA 과정<br/> (정성적 평가 2)
+              위험성 평가 및<br className="md:hidden"/> JSA 과정<br className="md:hidden"/> (정성적 평가 2)
               <Image
                 src={content_icon}
                 className={`w-4 md:w-6 mr-5 ${selectedLiIndex === 1 ? "inline-block" : "hidden"}`}
