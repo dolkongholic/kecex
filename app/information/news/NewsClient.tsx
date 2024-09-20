@@ -3,7 +3,7 @@
 import SubNav from "@/components/SubNav";
 import SubNavHeader from "@/components/SubNavHeader";
 import ContentTitle from "@/components/content/title";
-import Pages from "@/components/pages";
+import { NewsPages } from "@/components/pages";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -35,7 +35,7 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
   const [pageMenu, setPageMenu] = useState<any>("카드뉴스");
 
   const params = useSearchParams();
-  const page = params?.get("page");
+  const page = Number(params?.get("page")) || 1;
   const pathname = usePathname();
   const isMainPage = pathname === "/information/news";
 
@@ -44,7 +44,13 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
   }
 
   const totalItems = newsList.length;
-  const totalPages = Math.ceil(totalItems / 22); // list의 길이를 22으로 나눈 후 올림하여 페이지 수 계산. 현재 다음 페이지로 넘어가는 기능이 구현안됨
+  const totalPages = Math.ceil(totalItems / 12); // list의 길이를 10으로 나눈 후 올림하여 페이지 수 계산.
+
+  const reversedNeswList = [...newsList].reverse();
+
+  const currentItems = reversedNeswList.slice(
+    (page - 1) * 12, page * 12
+  );
 
   // totalPages만큼 페이지를 생성
   const pages = [];
@@ -110,7 +116,7 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 pt-[30px]">
-            {[...newsList].reverse().map((item: any, index: any) => (
+            {currentItems.map((item: any, index: any) => (
               <Link
                 key={index}
                 passHref
@@ -155,10 +161,10 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
               </div>
               <div className="flex space-x-[10px]">
                 {pages.map((item) => (
-                  <Pages
+                  <NewsPages
                     key={item}
                     label={item.toString()}
-                    selected={page === item.toString()}
+                    selected={page === item}
                   />
                 ))}
               </div>

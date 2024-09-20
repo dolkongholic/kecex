@@ -12,7 +12,6 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
 import toast from "react-hot-toast";
 import Link from "next/link";
-import Pages from "@/components/pages";
 
 // Image
 

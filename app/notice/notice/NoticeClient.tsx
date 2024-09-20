@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
 
-import Pages from "@/components/pages";
+import {Pages} from "@/components/pages";
 import Image from "next/image";
 import PicNotice_04 from "@/public/img/page_top/notice_04.jpg"
 
