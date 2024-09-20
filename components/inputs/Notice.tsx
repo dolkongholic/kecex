@@ -49,12 +49,8 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
             <div className="w-full flex md:flex-col">
               <div
                 className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-bold text-[15px] md:text-[30px] xl:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
-                  noticeMenu == "협회공지" &&
-                  " text-primary"
-                }`}
-                onClick={() => {
-                  setNoticeMenu("협회공지");
-                }}
+                  noticeMenu == "협회공지" &&"text-primary"}`}
+                onClick={() => {setNoticeMenu("협회공지");}}
               >
                 협회공지
                 {noticeMenu == "협회공지" && (
@@ -65,9 +61,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
               </div>
               <div
                 className={`w-full md:w-2/3 flex md:justify-between justify-center items-center text-center md:text-start font-bold text-[15px] md:text-[30px] xl:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
-                  noticeMenu == "보도자료" &&
-                  "text-primary"
-                }`}
+                  noticeMenu == "보도자료" && "text-primary"}`}
                 onClick={() => {
                   setNoticeMenu("보도자료");
                   setNoticeSubMenu("보도자료");
@@ -83,8 +77,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
 
               <div
                 className={`w-full md:w-2/3 flex md:justify-between justify-center items-center pr-1 md:pr-0 text-center md:text-start font-bold text-[15px] md:text-[30px] xl:text-[36px] hover:text-primary transition-all duration-300 ease-in-out cursor-pointer ${
-                  noticeMenu == "교육센터" &&
-                  "text-primary"
+                  noticeMenu == "교육센터" && "text-primary"
                 }`}
                 onClick={() => {
                   setNoticeMenu("교육센터");
@@ -230,7 +223,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                           : "뉴스가 없습니다."}
                       </span>
                       <span className="h-[25px] md:leading-[31px] text-[12px] md:text-[16px] font-light">
-                        {newsList[newsList.length - 1]
+                        {newsList[newsList.length - 1 ]
                           ? String(newsList[newsList.length - 1].date)
                           : ""}
                       </span>
@@ -259,10 +252,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                       </div>
                       <span className="h-[30px] md:h-[48px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold pt-2 line-clamp-2">
                         {newsList[newsList.length - 2]
-                          ? String(newsList[newsList.length - 2].title).slice(
-                              0,
-                              45
-                            )
+                          ? String(newsList[newsList.length - 2].title).slice(0,45)
                           : "뉴스가 없습니다."}
                       </span>
                       <span className="h-[25px] md:leading-[31px] text-[12px] md:text-[16px] font-light">
@@ -320,7 +310,12 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         <strong className="text-[18px] font-medium">
                           방폭기초 교육
                         </strong>
-                        <p className="text-[15px] leading-[15px] pt-2">2024.03.30 <span className="text-primary">(토)</span></p>
+                        <p className="text-[15px] leading-[15px] pt-2">
+                          2024.03.30 
+                          <span className="text-primary">
+                            (토)
+                          </span>
+                        </p>
                       </div>
                       <button className="w-[100px] h-[35px] group-hover:bg-[#ccc] group-hover:text-white border border-[#ccc] text-[#ccc] rounded-full text-[15px] leading-[35px] transition duration-200">
                         교육예정
@@ -342,7 +337,12 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         <strong className="text-[18px] font-medium">
                         방폭인력양성 교육
                         </strong>
-                        <p className="text-[15px] leading-[15px] pt-2">2024.03.28 <span className="">(목)</span></p>
+                        <p className="text-[15px] leading-[15px] pt-2">
+                          2024.03.28
+                          <span className="">
+                            (목)
+                          </span>
+                        </p>
                       </div>
                       <button className="w-[100px] h-[35px] group-hover:bg-[#ccc] group-hover:text-white border border-[#ccc] text-[#ccc] rounded-full text-[15px] leading-[35px] transition duration-200">
                         교육예정
@@ -353,7 +353,12 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         <strong className="text-[18px] font-medium">
                           기업형 교육
                         </strong>
-                        <p className="text-[15px] leading-[15px] pt-2">2024.04.03 <span className="">(수)</span></p>
+                        <p className="text-[15px] leading-[15px] pt-2">
+                          2024.04.03 
+                          <span className="">
+                            (수)
+                          </span>
+                        </p>
                       </div>
                       <button className="w-[100px] h-[35px] group-hover:bg-[#ccc] group-hover:text-white border border-[#ccc] text-[#ccc] rounded-full text-[15px] leading-[35px] transition duration-200">
                         교육예정
@@ -364,7 +369,12 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         <strong className="text-[18px] font-medium">
                           기업형 교육
                         </strong>
-                        <p className="text-[15px] leading-[15px] pt-2">2024.04.07 <span className="text-red-500">(일)</span></p>
+                        <p className="text-[15px] leading-[15px] pt-2">
+                          2024.04.07 
+                          <span className="text-red-500">
+                            (일)
+                          </span>
+                        </p>
                       </div>
                       <button className="w-[100px] h-[35px] group-hover:bg-[#ccc] group-hover:text-white border border-[#ccc] text-[#ccc] rounded-full text-[15px] leading-[35px] transition duration-200">
                         교육예정
@@ -375,7 +385,12 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         <strong className="text-[18px] font-medium">
                           방폭인력양성 교육
                         </strong>
-                        <p className="text-[15px] leading-[15px] pt-2">2024.03.31 <span className="text-red-500">(일)</span></p>
+                        <p className="text-[15px] leading-[15px] pt-2">
+                          2024.03.31 
+                          <span className="text-red-500">
+                            (일)
+                          </span>
+                        </p>
                       </div>
                       <button className="w-[100px] h-[35px] group-hover:bg-[#ccc] group-hover:text-white border border-[#ccc] text-[#ccc] rounded-full text-[15px] leading-[35px] transition duration-200">
                         교육예정
