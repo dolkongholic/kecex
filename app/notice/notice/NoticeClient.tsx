@@ -120,7 +120,7 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
             <div className="w-full mt-[20px] leading-[50px] border-b border-secondary">
               {page}/{totalPages} 페이지 (총 {noticeList.length} 건)
             </div>
-            {noticeList.map((item: any, index: any) => (
+            {[...noticeList].reverse().map((item: any, index: any) => (
               <Link
                 key={index}
                 passHref

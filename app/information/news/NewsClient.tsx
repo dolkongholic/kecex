@@ -44,7 +44,7 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
   }
 
   const totalItems = newsList.length;
-  const totalPages = Math.ceil(totalItems / 10); // list의 길이를 10으로 나눈 후 올림하여 페이지 수 계산
+  const totalPages = Math.ceil(totalItems / 22); // list의 길이를 22으로 나눈 후 올림하여 페이지 수 계산. 현재 다음 페이지로 넘어가는 기능이 구현안됨
 
   // totalPages만큼 페이지를 생성
   const pages = [];
@@ -110,7 +110,7 @@ const NewsClient: React.FC<NewsProps> = ({ newsList, currentUser }) => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 pt-[30px]">
-            {newsList.map((item: any, index: any) => (
+            {[...newsList].reverse().map((item: any, index: any) => (
               <Link
                 key={index}
                 passHref
