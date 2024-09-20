@@ -106,10 +106,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     <div className="w-full h-[215px] md:h-[280px] flex flex-col flex-grow justify-center items-start">
                       <span className="md:h-[45px] leading-[22px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold line-clamp-2">
                         {noticeList[noticeList.length - 1]
-                          ? String(noticeList[noticeList.length - 1].title).slice(
-                              0,
-                              30
-                            )
+                          ? String(noticeList[noticeList.length - 1].title).slice(0, 30)
                           : "공지가 없습니다."}
                       </span>
                       <span className="h-[130px] md:h-[151px] leading-[24px] font-regular pt-[3px] mb-[4px] text-[14px] md:text-[15px] overflow-hidden">
@@ -137,10 +134,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     <div className="w-full h-[215px] md:h-[280px] flex flex-col flex-grow justify-center items-start">
                       <span className="md:h-[45px] leading-[22px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold line-clamp-2">
                         {noticeList[noticeList.length - 2]
-                          ? String(noticeList[noticeList.length - 2].title).slice(
-                              0,
-                              30
-                            )
+                          ? String(noticeList[noticeList.length - 2].title).slice(0, 30)
                           : "공지가 없습니다."}
                       </span>
                       <span className="h-[130px] md:h-[151px] leading-[24px] font-regular pt-[3px] mb-[4px] text-[14px] md:text-[15px] overflow-hidden">
@@ -168,10 +162,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                     <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start">
                       <span className="h-[45px] leading-[22px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold line-clamp-2">
                         {noticeList[noticeList.length - 3]
-                          ? String(noticeList[noticeList.length - 3].title).slice(
-                              0,
-                              30
-                            )
+                          ? String(noticeList[noticeList.length - 3].title).slice(0, 30)
                           : "공지가 없습니다."}
                       </span>
                       <span className="h-[151px] leading-[24px] font-regular pt-[3px] mb-[4px] text-[14px] md:text-[15px] overflow-hidden">
@@ -216,10 +207,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                       </div>
                       <span className="h-[30px] md:h-[48px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold pt-2 line-clamp-1 md:line-clamp-2">
                         {newsList[newsList.length - 1]
-                          ? String(newsList[newsList.length - 1].title).slice(
-                              0,
-                              45
-                            )
+                          ? String(newsList[newsList.length - 1].title).slice(0, 45)
                           : "뉴스가 없습니다."}
                       </span>
                       <span className="h-[25px] md:leading-[31px] text-[12px] md:text-[16px] font-light">
@@ -244,7 +232,6 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                             alt="news_image" 
                             fill
                             sizes="width-auto height-auto"
-                            // objectFit="cover"
                             className="rounded-lg object-cover"
                             key={newsList[newsList.length - 2].id}
                             />
@@ -252,7 +239,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                       </div>
                       <span className="h-[30px] md:h-[48px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold pt-2 line-clamp-2">
                         {newsList[newsList.length - 2]
-                          ? String(newsList[newsList.length - 2].title).slice(0,45)
+                          ? String(newsList[newsList.length - 2].title).slice(0, 45)
                           : "뉴스가 없습니다."}
                       </span>
                       <span className="h-[25px] md:leading-[31px] text-[12px] md:text-[16px] font-light">
@@ -284,10 +271,7 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                       </div>
                       <span className="h-[48px] leading-[20px] text-[14px] md:text-[16px] lg:text-[18px]  font-semibold pt-2 line-clamp-2">
                         {newsList[newsList.length - 3]
-                          ? String(newsList[newsList.length - 3].title).slice(
-                              0,
-                              45
-                            )
+                          ? String(newsList[newsList.length - 3].title).slice(0, 45)
                           : "뉴스가 없습니다."}
                       </span>
                       <span className="h-[25px] leading-[31px] text-[12px] md:text-[16px] font-light">
@@ -326,7 +310,12 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                         <strong className="text-[18px] font-medium">
                           방폭인력양성 교육
                         </strong>
-                        <p className="text-[15px] leading-[15px] pt-2">2024.03.31 <span className="text-red-500">(일)</span></p>
+                        <p className="text-[15px] leading-[15px] pt-2">
+                          2024.03.31 
+                          <span className="text-red-500">
+                            (일)
+                          </span>
+                        </p>
                       </div>
                       <button className="w-[100px] h-[35px] group-hover:bg-[#ccc] group-hover:text-white border border-[#ccc] text-[#ccc] rounded-full text-[15px] leading-[35px] transition duration-200">
                         교육예정
