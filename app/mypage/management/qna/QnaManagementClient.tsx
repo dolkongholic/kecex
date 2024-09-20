@@ -9,7 +9,6 @@ import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Link from "next/link";
-import Pages from "@/components/pages";
 
 // Image
 

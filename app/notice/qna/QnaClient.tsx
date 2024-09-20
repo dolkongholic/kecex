@@ -50,9 +50,7 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
   const [pageMenu, setPageMenu] = useState<any>("문의사항");
 
   const router = useRouter();
-  if (!currentUser) {
-    router.push("/member/signin/");
-  }
+
   const {
     register,
     handleSubmit,
@@ -61,6 +59,11 @@ const QnaClient: React.FC<QnAProps> = ({ currentUser }) => {
   } = useForm<FieldValues>({
     defaultValues: {},
   });
+
+  if (!currentUser) {
+    router.push("/member/signin/");
+    return null;
+  }
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     axios
