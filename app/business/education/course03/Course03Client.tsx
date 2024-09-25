@@ -48,7 +48,7 @@ const MainList = [
 
 const location = "위험성 평가 교육";
 
-const Course02Client = () => {
+const Course03Client = () => {
   const [pageMenu, setPageMenu] = useState<any>("교육");
   const [selectedLiIndex, setSelectedLiIndex] = useState(0);
   const handleLiClick = (index: any) => {
@@ -217,14 +217,14 @@ const Course02Client = () => {
               <div className="w-full md:w-[49%] flex flex-col">
                 <ContentSubTitle title="교육시간" />
                 <div className="flex flex-col justify-center items-start p-[20px] border border-gray w-full">
-                  <span>8시간 (1일)</span>
+                  <span>16시간 (2일)</span>
                 </div>
               </div>
               <div className="w-full md:w-[49%] flex flex-col mt-5 md:mt-0">
                 <ContentSubTitle title="교육 비용" />
                 <div className="flex flex-col justify-center items-start p-[20px] border border-gray w-full">
                   <span>
-                    200,000원 (25,000원/시간)
+                    400,000원
                   </span>
                 </div>
               </div>
@@ -269,14 +269,14 @@ const Course02Client = () => {
               <div className="w-full md:w-[49%] flex flex-col">
                 <ContentSubTitle title="교육시간" />
                 <div className="flex flex-col justify-center items-start p-[20px] border border-gray w-full">
-                  <span>8시간 (1일)</span>
+                  <span>16시간 (2일)</span>
                 </div>
               </div>
               <div className="w-full md:w-[49%] flex flex-col mt-5 md:mt-0">
                 <ContentSubTitle title="교육 비용" />
                 <div className="flex flex-col justify-center items-start p-[20px] border border-gray w-full">
                   <span>
-                    200,000원 (25,000원/시간)
+                    400,000원
                   </span>
                 </div>
               </div>
@@ -289,4 +289,4 @@ const Course02Client = () => {
   );
 };
 
-export default Course02Client;
+export default Course03Client;
