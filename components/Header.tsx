@@ -492,7 +492,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 `}>
                   <Link passHref href={"/information/raw?page=1"}>
                     <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px] cursor-pointer">
-                      관련법령
+                      관계법령
                     </div>
                   </Link>
                 </div>
@@ -957,7 +957,7 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                 <li>
                   <Link passHref href={"/information/raw?page=1"}>
                     <div className="md:w-[250px] h-12 md:h-14 border-b border-gray-200 md:border-gray-300 md:text-[18px] font-semibold text-start text-gray-600 leading-[45px] md:leading-[58px] pb-5 ml-6 md:ml-3 mr-3 cursor-pointer hover:text-primary hover:font-semibold">
-                      관련법령
+                      관계법령
                     </div>
                   </Link>
                 </li>

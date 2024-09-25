@@ -48,7 +48,7 @@ const MainList = [
 
 const location = "정량적위험성평가 교육";
 
-const Course03Client = () => {
+const Course04Client = () => {
   const [pageMenu, setPageMenu] = useState<any>("교육");
 
   return (
@@ -369,4 +369,4 @@ const Course03Client = () => {
   );
 };
 
-export default Course03Client;
+export default Course04Client;
