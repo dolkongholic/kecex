@@ -455,11 +455,11 @@ const Header: React.FC<HeaderProps> = ({ currentUser }) => {
                   </div>
                 </div>
                 <div className="w-1/4 pl-[2%]">
-                  <Link passHref href={"/business/consulting/inspection/"}>
-                    <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
-                      컨설팅
-                    </div>
-                  </Link>
+                  {/* <Link passHref href={"/business/consulting/inspection/"}> */}
+                  <div className="w-[225px] h-[55px] text-[#003893] hover:underline underline-offset-4 font-semibold text-[19px] text-start leading-[55px] pl-[10px] mb-[20px]">
+                    컨설팅
+                  </div>
+                  {/* </Link> */}
                   {/* <div className="flex flex-col space-y-[20px] text-neutral-600 text-[17px] pl-3">
                     <Link passHref href={"/business/consulting/inspection/"}>
                       <span className="cursor-pointer hover:underline underline-offset-4">
