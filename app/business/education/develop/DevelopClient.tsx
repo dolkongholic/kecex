@@ -9,14 +9,14 @@ import Link from "next/link";
 import { useState } from "react";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
-import PicCeo from "@/public/img/page_top/ceo_top.jpg"
+import PicCeo from "@/public/img/page_top/ceo_top.jpg";
 
 const MainList = [
   {
     title: "회원",
     url: "#",
     sub: [
-      { title: "회원가입", url: "/business/member/join" },
+      // { title: "회원가입", url: "/business/member/join" },
       { title: "회원회칙", url: "/business/member/rule" },
       { title: "경력관리", url: "/business/member/career" },
       { title: "경력수첩", url: "/business/member/careercard" },
@@ -36,11 +36,12 @@ const MainList = [
   {
     title: "컨설팅",
     url: "#",
-    sub: [
-      { title: "방폭사전진단", url: "/business/consulting/inspection" },
-      // { title: "방폭기기선정", url: "/business/consulting/equipment" },
-      { title: "산업진단, 컨설팅", url: "/business/consulting/industry" },
-    ],
+    // sub: [
+    //   { title: "방폭사전진단", url: "/business/consulting/inspection" },
+    //   { title: "PSM", url: "/business/consulting/psm" },
+    //   { title: "중대재해처벌법", url: "/business/consulting/sapa" },
+    //   { title: "위험성 평가", url: "/business/consulting/danger" },
+    // ],
   },
 ];
 
@@ -69,13 +70,16 @@ const DevelopClient = () => {
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              Home <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
+              Home{" "}
+              <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              사업안내 <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
+              사업안내{" "}
+              <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              교육 <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
+              교육{" "}
+              <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center underline">
               {location}
@@ -123,19 +127,19 @@ const DevelopClient = () => {
             <li className="w-1/2">
               <Link passHref href={"/business/education/course03/"}>
                 <div className="h-12 border border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
-                    <span> 기업형 교육</span>
+                  <span> 기업형 교육</span>
                 </div>
               </Link>
             </li>
             <li className="w-1/2">
-                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
-                    <span> 교육개발</span>
-                </div>
+              <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
+                <span> 교육개발</span>
+              </div>
             </li>
             <li className="w-full">
               <Link passHref href={"/business/education/copc/"}>
                 <div className="h-12 border border-t-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
-                    <span> CoPC 과정</span>
+                  <span> CoPC 과정</span>
                 </div>
               </Link>
             </li>

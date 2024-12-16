@@ -15,10 +15,11 @@ import PicNotice_02 from "@/public/img/page_top/notice_02.jpg";
 
 const MainList = [
   {
-    title: "인재정보",
-    url: "/notice/worker",
+    title: "공지사항",
+    url: "/notice/notice?page=1",
     sub: null,
   },
+
   {
     title: "FAQ",
     url: "/notice/faq",
@@ -30,8 +31,8 @@ const MainList = [
     sub: null,
   },
   {
-    title: "공지사항",
-    url: "/notice/notice?page=1",
+    title: "인재정보",
+    url: "/notice/worker",
     sub: null,
   },
 ];
@@ -71,10 +72,12 @@ const FaQClient = () => {
         <div className="h-[40px] w-full bg-gray-100 flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              Home <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
+              Home{" "}
+              <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              알림센터 <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
+              알림센터{" "}
+              <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center underline">
               {location}
@@ -352,7 +355,8 @@ const FaQClient = () => {
                   <div className="bg-gray-100 text-[15px] md:text-base text-black px-[40px] py-[20px]">
                     <p>
                       웹 로그인 후 상단 마이페이지에서 정회원 가입 메뉴를
-                      이용하여, <br className="hidden md:inline" /> 입회원서를 다운받아 신청할수 있습니다.
+                      이용하여, <br className="hidden md:inline" /> 입회원서를
+                      다운받아 신청할수 있습니다.
                     </p>
                   </div>
                 ) : (
@@ -386,8 +390,8 @@ const FaQClient = () => {
                   <div className="bg-gray-100 text-[15px] md:text-base text-black px-[40px] py-[20px]">
                     <p>
                       웹 로그인 후 상단 마이페이지에서 회비 납부 메뉴를
-                      확인하여, <br className="hidden md:inline" /> 계좌이체 후 납부 확인 신청 을 통해서
-                      가능합니다.
+                      확인하여, <br className="hidden md:inline" /> 계좌이체 후
+                      납부 확인 신청 을 통해서 가능합니다.
                     </p>
                   </div>
                 ) : (
@@ -420,7 +424,8 @@ const FaQClient = () => {
                 {Qselect == 8 ? (
                   <div className="bg-gray-100 text-[15px] md:text-base text-black px-[40px] py-[20px]">
                     <p>
-                      교육 일정을 취소 하실때 작성하신 <br className="hidden md:inline" />
+                      교육 일정을 취소 하실때 작성하신{" "}
+                      <br className="hidden md:inline" />
                       환불 요청 계좌를 통해 1~2일 후 입금 됩니다.
                     </p>
                   </div>

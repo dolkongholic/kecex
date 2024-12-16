@@ -17,14 +17,14 @@ import PicCareer_2 from "@/public/img/pages/business/careear_2.png";
 import PicCareer_3 from "@/public/img/pages/business/careear_3.png";
 import PicCareer_1_M from "@/public/img/pages/business/career_1_m.png";
 import PicCareer_2_M from "@/public/img/pages/business/career_2_m.png";
-import PicBusiness_01 from "@/public/img/page_top/business_01.jpg"
+import PicBusiness_01 from "@/public/img/page_top/business_01.jpg";
 
 const MainList = [
   {
     title: "회원",
     url: "#",
     sub: [
-      { title: "회원가입", url: "/business/member/join" },
+      // { title: "회원가입", url: "/business/member/join" },
       { title: "회원회칙", url: "/business/member/rule" },
       { title: "경력관리", url: "/business/member/career" },
       { title: "경력수첩", url: "/business/member/careercard" },
@@ -43,12 +43,12 @@ const MainList = [
   {
     title: "컨설팅",
     url: "#",
-    sub: [
-      { title: "방폭사전진단", url: "/business/consulting/inspection" },
-      { title: "PSM", url: "/business/consulting/psm" },
-      { title: "중대재해처벌법", url: "/business/consulting/sapa" },
-      { title: "위험성 평가", url: "/business/consulting/danger" },
-    ],
+    // sub: [
+    //   { title: "방폭사전진단", url: "/business/consulting/inspection" },
+    //   { title: "PSM", url: "/business/consulting/psm" },
+    //   { title: "중대재해처벌법", url: "/business/consulting/sapa" },
+    //   { title: "위험성 평가", url: "/business/consulting/danger" },
+    // ],
   },
 ];
 
@@ -77,13 +77,16 @@ const CareerClient = () => {
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              Home <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
+              Home{" "}
+              <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              사업안내 <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
+              사업안내{" "}
+              <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              회원 <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
+              회원{" "}
+              <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center underline">
               {location}
@@ -129,14 +132,14 @@ const CareerClient = () => {
               </Link>
             </li>
             <li className="w-1/2">
-                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
-                    <span> 경력관리</span>
-                </div>
+              <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
+                <span> 경력관리</span>
+              </div>
             </li>
             <li className="w-1/2">
               <Link passHref href={"/business/member/careercard/"}>
                 <div className="h-12 border border-l-0 border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
-                    <span> 경력수첩</span>
+                  <span> 경력수첩</span>
                 </div>
               </Link>
             </li>
@@ -152,7 +155,8 @@ const CareerClient = () => {
                   최초 경력 신고
                 </span>
                 <div className="w-full pt-[2px] flex justify-start items-end text-base mb-[5px] md:border-2 md:border-lightgray md:p-5">
-                  안전관리자 자격 및 경력 사항 등 안전관리 경력에 필요한 사항을 최초로 신고하는 것
+                  안전관리자 자격 및 경력 사항 등 안전관리 경력에 필요한 사항을
+                  최초로 신고하는 것
                 </div>
               </div>
               <div className="flex flex-col md:items-center md:w-[48%] mt-8">
@@ -160,7 +164,8 @@ const CareerClient = () => {
                   경력 변경 신고
                 </span>
                 <div className="w-full pt-[2px] flex justify-start items-end text-base mb-[5px] md:border-2 md:border-lightgray md:p-5">
-                  경력관리에 필요한 사항을 최초로 신고한 이후 근무처·학력·자격 또는 경력 등의 변경 사항을 신고하는 것
+                  경력관리에 필요한 사항을 최초로 신고한 이후 근무처·학력·자격
+                  또는 경력 등의 변경 사항을 신고하는 것
                 </div>
               </div>
             </div>
@@ -179,15 +184,9 @@ const CareerClient = () => {
                   <li className="list-none">
                     · 국민연금 가입(자격 및 취득 상실) 증명서
                   </li>
-                  <li className="list-none">
-                    · 국가기술자격증 사본
-                  </li>
-                  <li className="list-none">
-                    · 안전관리자 선임 등 보고서
-                  </li>
-                  <li className="list-none">
-                    · 최종학력(졸업)증명서
-                  </li>
+                  <li className="list-none">· 국가기술자격증 사본</li>
+                  <li className="list-none">· 안전관리자 선임 등 보고서</li>
+                  <li className="list-none">· 최종학력(졸업)증명서</li>
                   <li className="list-none">
                     · 교육훈련이수(실시,수료)확인서 사본 : 필요시
                   </li>
@@ -198,9 +197,7 @@ const CareerClient = () => {
                   경력 변경(갱신) 신고시 제출서류
                 </span>
                 <div className="w-full pt-[2px] text-base mb-[5px] md:border-2 md:border-lightgray md:p-5 space-y-1 md:;sh-[236px]">
-                  <li className="list-none">
-                    · 경력 변경 신고서
-                  </li>
+                  <li className="list-none">· 경력 변경 신고서</li>
                   <li className="list-none">
                     · 재직(경력)증명서 : 안전관리업무내용 표기
                   </li>
@@ -227,7 +224,6 @@ const CareerClient = () => {
                   </li>
                 </div>
               </div>
-            
             </div>
           </div>
           <ContentSubTitle title="경력신고 절차" />
@@ -238,21 +234,27 @@ const CareerClient = () => {
               신청인
             </div>
             <div>
-              <div className="w-1/2 h-[20px] border-r-2 border-gray-300">&nbsp;</div>
+              <div className="w-1/2 h-[20px] border-r-2 border-gray-300">
+                &nbsp;
+              </div>
             </div>
             <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -ml-[2px]" />
             <div className="w-[50%] md:w-[250px] h-[42px] border border-secondary text-secondary flex flex-col items-center justify-center pt-1">
               양성(승급) 교육이수
             </div>
             <div>
-              <div className="w-1/2 h-[20px] border-r-2 border-gray-300">&nbsp;</div>
+              <div className="w-1/2 h-[20px] border-r-2 border-gray-300">
+                &nbsp;
+              </div>
             </div>
             <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -ml-[2px]" />
             <div className="w-[50%] md:w-[250px] h-[42px] border border-secondary text-secondary flex flex-col items-center justify-center pt-1">
               구비서류 작성
             </div>
             <div>
-              <div className="w-1/2 h-[20px] border-r-2 border-gray-300">&nbsp;</div>
+              <div className="w-1/2 h-[20px] border-r-2 border-gray-300">
+                &nbsp;
+              </div>
             </div>
             <div className="border-2 border-b-0 border-gray-300 w-[59.5%] md:w-[550px] h-[20px]">
               &nbsp;
@@ -268,13 +270,17 @@ const CareerClient = () => {
             <div className="w-full md:w-[800px] flex justify-between">
               <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[20px] border-r-2 border-gray-300">&nbsp;</div>
+                  <div className="h-[20px] border-r-2 border-gray-300">
+                    &nbsp;
+                  </div>
                 </div>
                 <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -mr-[3px]" />
               </div>
               <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[20px] border-l-2 border-gray-300">&nbsp;</div>
+                  <div className="h-[20px] border-l-2 border-gray-300">
+                    &nbsp;
+                  </div>
                 </div>
                 <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -ml-[4px]" />
               </div>
@@ -285,25 +291,32 @@ const CareerClient = () => {
                   전국 시/도회 접수
                 </div>
                 <div className="w-full md:w-[252px] flex flex-col items-center">
-                <div>
-                  <div className="translate-x-[1px] md:translate-x-0 h-[30px] border-r-2 border-gray-300">&nbsp;</div>
+                  <div>
+                    <div className="translate-x-[1px] md:translate-x-0 h-[30px] border-r-2 border-gray-300">
+                      &nbsp;
+                    </div>
+                  </div>
                 </div>
               </div>
-              </div>
               <div className="w-[40%] md:w-[250px] h-[72px] border border-gray-400 flex flex-col items-center justify-center pt-1">
-                로그인 후<br className="md:hidden"/> 신청사항 입력,<br/>
+                로그인 후<br className="md:hidden" /> 신청사항 입력,
+                <br />
                 온라인 수수료 결제
               </div>
             </div>
             <div className="w-full md:w-[800px] flex justify-between">
               <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[25px] border-r-2 border-gray-300 translate-x-[1px]">&nbsp;</div>
+                  <div className="h-[25px] border-r-2 border-gray-300 translate-x-[1px]">
+                    &nbsp;
+                  </div>
                 </div>
               </div>
               <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[20px] border-l-2 border-gray-300">&nbsp;</div>
+                  <div className="h-[20px] border-l-2 border-gray-300">
+                    &nbsp;
+                  </div>
                 </div>
                 <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -ml-[4px]" />
               </div>
@@ -311,12 +324,16 @@ const CareerClient = () => {
             <div className="w-full md:w-[800px] flex justify-between">
               <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[110px] md:h-[92px] border-r-2 border-gray-300  translate-x-[1px]">&nbsp;</div>
+                  <div className="h-[110px] md:h-[92px] border-r-2 border-gray-300  translate-x-[1px]">
+                    &nbsp;
+                  </div>
                 </div>
               </div>
               <div className="w-[40%] md:w-[250px] h-[110px] md:h-[92px] border border-gray-400 flex flex-col items-center justify-center pt-1 text-center">
-                온라인 신청시<br className="md:hidden"/> 선택한 접수처로<br/>
-                구비서류(원본) 택배 및<br/>
+                온라인 신청시
+                <br className="md:hidden" /> 선택한 접수처로
+                <br />
+                구비서류(원본) 택배 및<br />
                 등기우편 발송
               </div>
             </div>
@@ -324,13 +341,17 @@ const CareerClient = () => {
               &nbsp;
             </div>
             <div>
-              <div className="w-1/2 h-[25px] border-r-2 border-gray-300">&nbsp;</div>
+              <div className="w-1/2 h-[25px] border-r-2 border-gray-300">
+                &nbsp;
+              </div>
             </div>
             <div className="w-[50%] md:w-[250px] h-[42px] border border-secondary bg-secondary text-white flex flex-col items-center justify-center pt-1">
               서류심사
             </div>
             <div>
-              <div className="w-1/2 h-[20px] border-r-2 border-gray-300">&nbsp;</div>
+              <div className="w-1/2 h-[20px] border-r-2 border-gray-300">
+                &nbsp;
+              </div>
             </div>
             <div className="border-2 border-b-0 border-gray-300 w-[60%] md:w-[550px] h-[20px]">
               &nbsp;
@@ -346,13 +367,17 @@ const CareerClient = () => {
             <div className="w-full md:w-[800px] flex justify-between">
               <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[20px] border-r-2 border-gray-300">&nbsp;</div>
+                  <div className="h-[20px] border-r-2 border-gray-300">
+                    &nbsp;
+                  </div>
                 </div>
                 <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -mr-[3px]" />
               </div>
               <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[20px] border-l-2 border-gray-300">&nbsp;</div>
+                  <div className="h-[20px] border-l-2 border-gray-300">
+                    &nbsp;
+                  </div>
                 </div>
                 <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -ml-[4px]" />
               </div>
@@ -368,24 +393,31 @@ const CareerClient = () => {
             <div className="w-full md:w-[800px] flex justify-between">
               <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[20px] border-r-2 border-gray-300">&nbsp;</div>
+                  <div className="h-[20px] border-r-2 border-gray-300">
+                    &nbsp;
+                  </div>
                 </div>
                 <IoMdArrowDropdown className="w-[50px] h-7 block text-gray-300 -my-3 -mr-[3px]" />
               </div>
               <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[25px] border-l-2 border-gray-300 -translate-x-[1px] md:translate-x-0">&nbsp;</div>
+                  <div className="h-[25px] border-l-2 border-gray-300 -translate-x-[1px] md:translate-x-0">
+                    &nbsp;
+                  </div>
                 </div>
               </div>
             </div>
             <div className="w-full md:w-[800px] flex justify-between">
               <div className="w-[40%] md:w-[250px] h-[72px] border border-gray-400 flex flex-col items-center justify-center pt-1 text-center">
-                전자경력카드 발급<br/>
+                전자경력카드 발급
+                <br />
                 (모바일앱)
               </div>
               <div className="w-[40%] md:w-[250px] flex flex-col items-center">
                 <div>
-                  <div className="h-[72px] border-l-2 border-gray-300 -translate-x-[1px] md:translate-x-0">&nbsp;</div>
+                  <div className="h-[72px] border-l-2 border-gray-300 -translate-x-[1px] md:translate-x-0">
+                    &nbsp;
+                  </div>
                 </div>
               </div>
             </div>
@@ -393,16 +425,25 @@ const CareerClient = () => {
               &nbsp;
             </div>
             <div>
-              <div className="w-1/2 h-[25px] border-r-2 border-gray-300">&nbsp;</div>
+              <div className="w-1/2 h-[25px] border-r-2 border-gray-300">
+                &nbsp;
+              </div>
             </div>
             <div className="w-[50%] md:w-[250px] h-[42px] border border-primary bg-primary text-white flex flex-col items-center justify-center pt-1">
               신청인 문자메세지 통지
             </div>
           </figure>
           <ContentSubTitle title="경력 증명서 발급절차" />
-          <Image src={PicCareer_2} alt="Picture" className="hidden md:block w-full mt-8"/>
-          <Image src={PicCareer_2_M} alt="Picture" className="md:hidden mx-auto mb-7 md:mb-0"/>
-      
+          <Image
+            src={PicCareer_2}
+            alt="Picture"
+            className="hidden md:block w-full mt-8"
+          />
+          <Image
+            src={PicCareer_2_M}
+            alt="Picture"
+            className="md:hidden mx-auto mb-7 md:mb-0"
+          />
         </section>
       </main>
     </section>

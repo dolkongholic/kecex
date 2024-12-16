@@ -10,14 +10,14 @@ import Link from "next/link";
 import { RiArrowRightSLine } from "react-icons/ri";
 import Image from "next/image";
 import content_icon from "@/public/img/icon/content_icon_circle.png";
-import PicBusiness_02 from "@/public/img/page_top/business_02.jpg"
+import PicBusiness_02 from "@/public/img/page_top/business_02.jpg";
 
 const MainList = [
   {
     title: "회원",
     url: "#",
     sub: [
-      { title: "회원가입", url: "/business/member/join" },
+      // { title: "회원가입", url: "/business/member/join" },
       { title: "회원회칙", url: "/business/member/rule" },
       { title: "경력관리", url: "/business/member/career" },
       { title: "경력수첩", url: "/business/member/careercard" },
@@ -37,13 +37,12 @@ const MainList = [
   {
     title: "컨설팅",
     url: "#",
-    sub: [
-      { title: "방폭사전진단", url: "/business/consulting/inspection" },
-      // { title: "방폭기기선정", url: "/business/consulting/equipment" },
-      { title: "PSM", url: "/business/consulting/psm" },
-      { title: "중대재해처벌법", url: "/business/consulting/sapa" },
-      { title: "위험성 평가", url: "/business/consulting/danger" },
-    ],
+    // sub: [
+    //   { title: "방폭사전진단", url: "/business/consulting/inspection" },
+    //   { title: "PSM", url: "/business/consulting/psm" },
+    //   { title: "중대재해처벌법", url: "/business/consulting/sapa" },
+    //   { title: "위험성 평가", url: "/business/consulting/danger" },
+    // ],
   },
 ];
 
@@ -76,13 +75,16 @@ const CopcClient = () => {
         <div className="h-[40px] w-full bg-lightgray flex justify-center text-[13px]">
           <div className="w-full md:w-[1400px] flex justify-end pr-[20px]">
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              Home <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
+              Home{" "}
+              <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              사업안내 <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
+              사업안내{" "}
+              <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center">
-              교육 <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
+              교육{" "}
+              <RiArrowRightSLine className="text-[24px] pt-[3px] -translate-y-[3px] text-[#777]" />
             </div>
             <div className="leading-[50px] flex space-x-[5px] justify-between items-center underline">
               {location}
@@ -130,14 +132,14 @@ const CopcClient = () => {
             <li className="w-1/2">
               <Link passHref href={"/business/education/course03/"}>
                 <div className="h-12 border border-gray-200 flex flex-col justify-center items-center hover:text-secondary hover:font-medium">
-                    <span> 기업형 교육</span>
+                  <span> 기업형 교육</span>
                 </div>
               </Link>
             </li>
             <li className="w-1/2">
-                <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
-                    <span> CoPC 과정</span>
-                </div>
+              <div className="h-12 border border-secondary flex flex-col justify-center items-center cursor-default">
+                <span> CoPC 과정</span>
+              </div>
             </li>
           </ul>
           <ul className="w-full flex flex-wrap text-[13px] md:text-base mt-10 md:mt-0">
@@ -402,20 +404,23 @@ const CopcClient = () => {
               <ContentSubTitle title="교육 내용" />
               <div className="w-full md:h-[150px] border border-gray flex flex-col justify-center px-5 py-4 md:py-0 leading-8 mb-7 text-[15px] md:text-base space-y-2">
                 <p className="leading-6">
-                  · 방폭분야에서의 개인의 역량을 입증하고 실제 현장 작업에 투입되기 위한 자격을 심사하는 국제 방폭 전문인력 자격인증
-                  과정으로서 폭발 환경 내에서의 가장 기본이 되는 방폭 이론을 교육
+                  · 방폭분야에서의 개인의 역량을 입증하고 실제 현장 작업에
+                  투입되기 위한 자격을 심사하는 국제 방폭 전문인력 자격인증
+                  과정으로서 폭발 환경 내에서의 가장 기본이 되는 방폭 이론을
+                  교육
                 </p>
                 <p className="leading-5 md:leading-auto">
                   ·{" "}
                   <b className="font-medium text-neutral-800">
                     IECEx CoPC Unit Ex 001
                   </b>{" "}
-                  <br className="md:hidden"/>
-                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역에서의 방폭 기본 원리
+                  <br className="md:hidden" />
+                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>
+                  위험 지역에서의 방폭 기본 원리
                   <p className="leading-5">
-                  (Apply basic principles of protection in
-                  explosive atmosphere)
-                </p>
+                    (Apply basic principles of protection in explosive
+                    atmosphere)
+                  </p>
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -486,8 +491,8 @@ const CopcClient = () => {
                   </b>{" "}
                   위험지역 구분
                   <p className="leading-3">
-                  (Perform classification of hazardous areas)
-                </p>
+                    (Perform classification of hazardous areas)
+                  </p>
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -512,7 +517,8 @@ const CopcClient = () => {
                   1일차
                 </div>
                 <div className="w-5/6 md:h-56 border-b border-l border-gray flex flex-col justify-center pr-5 md:pr-0 pl-5 py-4 md:py-0 leading-8 text-[15px] md:text-base space-y-2">
-                  <p>· 방폭 이론 (기본/심화)
+                  <p>
+                    · 방폭 이론 (기본/심화)
                     <p className="leading-5 pl-3">
                       - 정의, 방폭기술, 방폭규정 등
                     </p>
@@ -565,11 +571,12 @@ const CopcClient = () => {
                   <b className="font-medium text-neutral-800">
                     IECEx CoPC Unit Ex 009
                   </b>{" "}
-                  <br className="md:hidden"/>
-                  <span className="inline md:hidden">&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 전기설비 설계
+                  <br className="md:hidden" />
+                  <span className="inline md:hidden">&nbsp;&nbsp;</span>위험
+                  지역 내 혹은 연관 구역에서의 전기설비 설계
                   <p className="leading-5">
-                  (Design electrical installations in or
-                  associated with explosive atmospheres)
+                    (Design electrical installations in or associated with
+                    explosive atmospheres)
                   </p>
                 </p>
               </div>
@@ -613,7 +620,7 @@ const CopcClient = () => {
                   <p>· 이론 및 실습 평가</p>
                 </div>
               </div>
-            </li>        
+            </li>
             {/*다섯번째 li */}
             <li className={`${selectedLiIndex === 4 ? "block" : "hidden"}`}>
               <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-neutral-800 font-medium mb-7">
@@ -648,23 +655,25 @@ const CopcClient = () => {
                   <b className="font-medium text-neutral-800">
                     IECEx CoPC Unit Ex 003
                   </b>{" "}
-                  <br className="md:hidden"/>
-                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>방폭 장비 및 배선 시스템 설치
+                  <br className="md:hidden" />
+                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>
+                  방폭 장비 및 배선 시스템 설치
                 </p>
                 <p className="leading-5">
-                  (Install explosion-protected equipment and
-                  wiring systems)
+                  (Install explosion-protected equipment and wiring systems)
                 </p>
                 <p className="mt-2 leading-5 md:leading-auto">
                   ·{" "}
                   <b className="font-medium text-neutral-800">
                     IECEx CoPC Unit Ex 006
                   </b>{" "}
-                  <br className="md:hidden"/>
-                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 전기 설비 테스트
+                  <br className="md:hidden" />
+                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>
+                  위험 지역 내 혹은 연관 구역에서의 전기 설비 테스트
                 </p>
                 <p className="leading-5">
-                  (Test electrical installations in or associated with explosive atmospheres)
+                  (Test electrical installations in or associated with explosive
+                  atmospheres)
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -709,7 +718,7 @@ const CopcClient = () => {
                   <p>· 이론 및 실습 평가</p>
                 </div>
               </div>
-            </li>              
+            </li>
             {/*여섯번째 li */}
             <li className={`${selectedLiIndex === 5 ? "block" : "hidden"}`}>
               <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-neutral-800 font-medium mb-7">
@@ -744,37 +753,38 @@ const CopcClient = () => {
                   <b className="font-medium text-neutral-800">
                     IECEx CoPC Unit Ex 004
                   </b>{" "}
-                  <br className="md:hidden"/>
-                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역에서의 장비 유지 보수
+                  <br className="md:hidden" />
+                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>
+                  위험 지역에서의 장비 유지 보수
                 </p>
                 <p className="leading-5">
-                  (Maintain equipment in explosive
-                  atmospheres)
+                  (Maintain equipment in explosive atmospheres)
                 </p>
                 <p className="mt-2 leading-5 md:leading-auto">
                   ·{" "}
                   <b className="font-medium text-neutral-800">
                     IECEx CoPC Unit Ex 007
                   </b>{" "}
-                  <br className="md:hidden"/>
-                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 육안 검사 및 정밀 검사
+                  <br className="md:hidden" />
+                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>
+                  위험 지역 내 혹은 연관 구역에서의 육안 검사 및 정밀 검사
                 </p>
                 <p className="leading-5">
-                  (Perform visual and close inspection of
-                  electrical installations in or associated with explosive
-                  atmospheres)
+                  (Perform visual and close inspection of electrical
+                  installations in or associated with explosive atmospheres)
                 </p>
                 <p className="mt-2 leading-5 md:leading-auto">
                   ·{" "}
                   <b className="font-medium text-neutral-800">
                     IECEx CoPC Unit Ex 008
                   </b>{" "}
-                  <br className="md:hidden"/>
-                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 세부 검사
+                  <br className="md:hidden" />
+                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>
+                  위험 지역 내 혹은 연관 구역에서의 세부 검사
                 </p>
                 <p className="leading-5">
-                  (Perform detailed inspection of electrical
-                  installations in or associated with explosive atmospheres)
+                  (Perform detailed inspection of electrical installations in or
+                  associated with explosive atmospheres)
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -817,7 +827,7 @@ const CopcClient = () => {
                   <p>· 이론 및 실습 평가</p>
                 </div>
               </div>
-            </li>              
+            </li>
             {/*일곱번째 li */}
             <li className={`${selectedLiIndex === 6 ? "block" : "hidden"}`}>
               <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-neutral-800 font-medium mb-7">
@@ -854,8 +864,7 @@ const CopcClient = () => {
                   방폭 장비 점검 및 수리
                 </p>
                 <p className="leading-5">
-                  (Overhaul and repair of explosion-protected
-                  equipment)
+                  (Overhaul and repair of explosion-protected equipment)
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -869,8 +878,7 @@ const CopcClient = () => {
                   수리, 보수와 관련된 교육 수료 등 최소 3년 이상의 관련 업무
                   실무경력 보유자
                   <p className="leading-4">
-                  (3년 중 최소 2년의 방폭 업무 관련 경력이
-                  요구됨)
+                    (3년 중 최소 2년의 방폭 업무 관련 경력이 요구됨)
                   </p>
                 </p>
               </div>
@@ -921,7 +929,7 @@ const CopcClient = () => {
                   <p>· 이론 및 실습 평가</p>
                 </div>
               </div>
-            </li>              
+            </li>
             {/*여덟번째 li */}
             <li className={`${selectedLiIndex === 7 ? "block" : "hidden"}`}>
               <div className="w-full h-16 border border-secondary flex justify-start items-center pl-10 text-neutral-800 font-medium mb-7">
@@ -966,12 +974,13 @@ const CopcClient = () => {
                   <b className="font-medium text-neutral-800">
                     IECEx CoPC Unit Ex 009
                   </b>{" "}
-                  <br className="md:hidden"/>
-                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 전기 설비 설계
+                  <br className="md:hidden" />
+                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>
+                  위험 지역 내 혹은 연관 구역에서의 전기 설비 설계
                 </p>
                 <p className="leading-5">
-                  (Design electrical installation in or
-                  associated with explosive atmospheres)
+                  (Design electrical installation in or associated with
+                  explosive atmospheres)
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
@@ -1068,36 +1077,39 @@ const CopcClient = () => {
                   <b className="font-medium text-neutral-800">
                     IECEx CoPC Unit Ex 008
                   </b>{" "}
-                  <br className="md:hidden"/>
-                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 세부 검사
+                  <br className="md:hidden" />
+                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>
+                  위험 지역 내 혹은 연관 구역에서의 세부 검사
                 </p>
                 <p className="leading-5">
-                  (Perform detailed inspection of electrical
-                  installations in or associated with explosive atmospheres)
+                  (Perform detailed inspection of electrical installations in or
+                  associated with explosive atmospheres)
                 </p>
                 <p className="mt-2 leading-5 md:leading-auto">
                   ·{" "}
                   <b className="font-medium text-neutral-800">
                     IECEx CoPC Unit Ex 009
                   </b>{" "}
-                  <br className="md:hidden"/>
-                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 전기 설비 설계
+                  <br className="md:hidden" />
+                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>
+                  위험 지역 내 혹은 연관 구역에서의 전기 설비 설계
                 </p>
                 <p className="leading-5">
-                  (Design electrical installation in or
-                  associated with explosive atmospheres)
+                  (Design electrical installation in or associated with
+                  explosive atmospheres)
                 </p>
                 <p className="mt-2 leading-5 md:leading-auto">
                   ·{" "}
                   <b className="font-medium text-neutral-800">
                     IECEx CoPC Unit Ex 010
                   </b>{" "}
-                  <br className="md:hidden"/>
-                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>위험 지역 내 혹은 연관 구역에서의 전기 설비 감사 수행
+                  <br className="md:hidden" />
+                  <span className="inline md:hidden">&nbsp;&nbsp;&nbsp;</span>
+                  위험 지역 내 혹은 연관 구역에서의 전기 설비 감사 수행
                 </p>
                 <p className="leading-5cd ">
-                  (Perform audit inspection of electrical
-                  installations in or associated with explosive atmospheres)
+                  (Perform audit inspection of electrical installations in or
+                  associated with explosive atmospheres)
                 </p>
               </div>
               <ContentSubTitle title="교육 대상" />
