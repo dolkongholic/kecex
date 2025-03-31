@@ -3,12 +3,6 @@ import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 import prisma from "@/app/libs/prisma";
 
-export const config = {
-  api: {
-    bodyParser: false,
-  },
-};
-
 export async function POST(req: Request) {
   try {
     // FormData 파싱
