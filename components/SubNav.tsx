@@ -6,7 +6,7 @@ import { PiDotBold } from "react-icons/pi";
 type Props = {
   MainList: any;
   pageMenu: any;
-  setPageMenu: React.Dispatch<React.SetStateAction<String>>;
+  setPageMenu: React.Dispatch<React.SetStateAction<string>>;
   location: string;
   currentUser?: User;
 };
