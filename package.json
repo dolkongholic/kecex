@@ -19,6 +19,7 @@
     "date-fns": "^2.29.3",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
+    "formidable": "^3.5.2",
     "fs-extra": "^11.2.0",
     "html-to-image": "^1.11.11",
     "jsonwebtoken": "^9.0.2",
