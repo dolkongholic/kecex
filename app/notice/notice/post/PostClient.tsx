@@ -40,9 +40,41 @@ const PostClient = () => {
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files) {
-      const filesArray = Array.from(event.target.files).slice(0, 10);
-      setSelectedFiles(filesArray);
+      const filesArray = Array.from(event.target.files);
+      
+      // 파일 크기 및 타입 검증
+      const validFiles = filesArray.filter(file => {
+        const isValidType = [
+          'image/jpeg',
+          'image/png',
+          'image/gif',
+          'application/pdf',
+          'application/msword',
+          'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+          'application/vnd.ms-excel',
+          'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        ].includes(file.type);
+        
+        const isValidSize = file.size <= 10 * 1024 * 1024; // 10MB
+        
+        if (!isValidType) {
+          toast.error(`${file.name}: 지원하지 않는 파일 형식입니다.`);
+          return false;
+        }
+        if (!isValidSize) {
+          toast.error(`${file.name}: 파일 크기가 너무 큽니다 (최대 10MB)`);
+          return false;
+        }
+        
+        return true;
+      });
+
+      setSelectedFiles(prev => [...prev, ...validFiles].slice(0, 10));
     }
+  };
+
+  const removeFile = (index: number) => {
+    setSelectedFiles(prev => prev.filter((_, i) => i !== index));
   };
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
@@ -51,6 +83,7 @@ const PostClient = () => {
     formData.append("text", data.text);
     formData.append("date", data.date);
     formData.append("post_text", data.post_text);
+    
     // 모든 파일 첨부
     selectedFiles.forEach((file) => {
       formData.append("files", file);
@@ -60,12 +93,35 @@ const PostClient = () => {
       .post("/api/insert/notice/", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       })
-      .then(() => {
-        toast.success("입력 되었습니다.");
-        router.push("/notice/notice");
+      .then((response) => {
+        if (response.status === 200) {
+          if (response.data.warning) {
+            toast.error(response.data.warning);
+            if (response.data.errors) {
+              response.data.errors.forEach((error: string) => {
+                toast.error(error);
+              });
+            }
+          } else {
+            toast.success("입력 되었습니다.");
+          }
+          router.push("/notice/notice");
+        } else {
+          toast.error("서버에서 오류가 발생했습니다.");
+        }
       })
-      .catch(() => {
-        toast.error("오류가 발생했습니다.");
+      .catch((error) => {
+        console.error("파일 업로드 오류:", error);
+        if (error.response?.data?.message) {
+          toast.error(error.response.data.message);
+          if (error.response.data.errors) {
+            error.response.data.errors.forEach((err: string) => {
+              toast.error(err);
+            });
+          }
+        } else {
+          toast.error("파일 업로드 중 오류가 발생했습니다.");
+        }
       })
       .finally(() => {
         setIsLoading(false);
@@ -149,13 +205,63 @@ const PostClient = () => {
           {/* 파일 선택 입력 (다중 선택, 최대 10개) */}
           <div className="w-full flex flex-col md:px-[20px] mb-6">
             <label className="block mb-2 font-semibold">첨부파일 (최대 10개)</label>
-            <input
-              type="file"
-              multiple
-              onChange={handleFileChange}
-              disabled={isLoading}
-              className="border border-gray p-2"
-            />
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-4">
+                <div className="flex-1">
+                  <label className="block w-full">
+                    <div className="w-full h-[40px] border border-gray-300 rounded-md px-4 py-2 flex items-center justify-between cursor-pointer hover:bg-gray-50">
+                      <span className="text-gray-500">
+                        {selectedFiles.length === 0 ? "파일을 선택하세요 (최대 10개)" : `${selectedFiles.length}개의 파일이 선택됨`}
+                      </span>
+                      <span className="text-sm text-primary hover:text-primary-dark">파일 선택</span>
+                    </div>
+                    <input 
+                      type="file" 
+                      multiple
+                      accept=".jpg,.jpeg,.png,.gif,.pdf,.doc,.docx,.xls,.xlsx"
+                      onChange={handleFileChange} 
+                      className="hidden"
+                      disabled={selectedFiles.length >= 10}
+                    />
+                  </label>
+                </div>
+              </div>
+
+              {selectedFiles.length > 0 && (
+                <div className="mt-2">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-sm font-medium text-gray-700">선택된 파일 목록</span>
+                    <span className="text-sm text-gray-500">({selectedFiles.length}개)</span>
+                  </div>
+                  <div className="grid gap-2">
+                    {selectedFiles.map((file, idx) => (
+                      <div 
+                        key={idx} 
+                        className="flex items-center justify-between p-3 bg-white rounded-md border border-gray-200"
+                      >
+                        <div className="flex items-center gap-2 overflow-hidden">
+                          <span className="text-sm text-gray-600 truncate max-w-[calc(100%-2rem)]">
+                            {file.name}
+                          </span>
+                          <span className="text-xs text-gray-400">
+                            ({(file.size / 1024 / 1024).toFixed(2)}MB)
+                          </span>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => removeFile(idx)}
+                          className="text-sm px-2 py-1 text-red-500 hover:text-red-600 flex-shrink-0 ml-2"
+                        >
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
+                          </svg>
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
           <div className="flex gap-4 m-auto">
             <Link passHref href={"/notice/notice?page=1"}>
