@@ -175,39 +175,60 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice, curren
           {/* 첨부파일 및 이미지 미리보기, 다운로드 영역 */}
           {attachments.map((fileUrl, idx) => {
             const fileName = fileUrl.split("/").pop() || "";
-            const originalName = fileName.replace(/^\d+_/, ""); // 앞쪽 숫자 + 언더스코어 제거
+            // 타임스탬프만 제거하고 원본 파일명 유지 (한글 포함)
+            const originalName = fileName.replace(/^\d+_/, "");
 
-            const handleDownload = async () => {
-              try {
-                console.log('파일 다운로드 시도:', fileUrl, '→', originalName);
-                
-                // API를 통한 다운로드
-                const response = await axios.get(fileUrl, { responseType: 'blob' });
-                
-                // Blob을 생성하고 다운로드
-                const blob = new Blob([response.data]);
-                const url = window.URL.createObjectURL(blob);
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = originalName; // setAttribute 대신 속성 직접 설정
-                
-                // 클릭 이벤트 발생
-                document.body.appendChild(link);
-                link.click();
-                
-                // 정리 작업
-                setTimeout(() => {
-                  document.body.removeChild(link);
-                  window.URL.revokeObjectURL(url);
-                }, 100);
-                
-                toast.success(`${originalName} 다운로드가 시작되었습니다.`);
-                
-              } catch (error) {
-                console.error("다운로드 실패:", error);
-                toast.error(`파일 다운로드에 실패했습니다: ${originalName}`);
-              }
-            };
+                          const handleDownload = async () => {
+                try {
+                  // API를 통한 다운로드
+                  const response = await axios.get(fileUrl, { responseType: 'blob' });
+                  
+                  // Content-Disposition 헤더에서 파일명 추출 시도
+                  let downloadFilename = originalName;
+                  const contentDisposition = response.headers['content-disposition'];
+                  
+                  if (contentDisposition) {
+                    // RFC 6266 인코딩된 파일명 우선 사용 (filename*=UTF-8'')
+                    const encodedMatch = contentDisposition.match(/filename\*=UTF-8''([^;]+)/);
+                    if (encodedMatch && encodedMatch[1]) {
+                      try {
+                        downloadFilename = decodeURIComponent(encodedMatch[1]);
+                      } catch (e) {
+                        console.warn('파일명 디코딩 실패:', e);
+                      }
+                    } else {
+                      // fallback: 일반 filename 사용
+                      const filenameMatch = contentDisposition.match(/filename="([^"]+)"/);
+                      if (filenameMatch && filenameMatch[1]) {
+                        downloadFilename = filenameMatch[1];
+                      }
+                    }
+                  }
+                  
+                  // Blob을 생성하고 다운로드
+                  const blob = new Blob([response.data]);
+                  const url = window.URL.createObjectURL(blob);
+                  const link = document.createElement('a');
+                  link.href = url;
+                  link.download = downloadFilename;
+                  
+                  // 클릭 이벤트 발생
+                  document.body.appendChild(link);
+                  link.click();
+                  
+                  // 정리 작업
+                  setTimeout(() => {
+                    document.body.removeChild(link);
+                    window.URL.revokeObjectURL(url);
+                  }, 100);
+                  
+                  toast.success(`파일 다운로드가 시작되었습니다.`);
+                  
+                } catch (error) {
+                  console.error("다운로드 실패:", error);
+                  toast.error(`파일 다운로드에 실패했습니다.`);
+                }
+              };
 
             return (
               <div key={idx} className="flex items-center gap-2">

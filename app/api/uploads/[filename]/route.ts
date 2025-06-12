@@ -16,10 +16,20 @@ export async function GET(
     const file = await readFile(filePath);
     const contentType = getContentType(filename);
 
+    // 원본 파일명 추출 (타임스탬프 제거)
+    const originalFilename = filename.replace(/^\d+_/, '');
+    
+    // 안전한 ASCII 파일명 생성 (fallback용)
+    const asciiFilename = originalFilename.replace(/[^\x00-\x7F]/g, "_");
+    
+    // RFC 6266에 따른 한글 파일명 인코딩
+    const encodedFilename = encodeURIComponent(originalFilename);
+    
     return new NextResponse(file, {
       headers: {
         'Content-Type': contentType,
-        'Content-Disposition': `inline; filename="${filename}"`,
+        'Content-Disposition': `attachment; filename="${asciiFilename}"; filename*=UTF-8''${encodedFilename}`,
+        'Content-Length': file.length.toString(),
       },
     });
   } catch (error) {
