@@ -88,10 +88,8 @@ export async function POST(req: Request) {
         
         await writeFile(filePath, buffer);
         
-        // 파일 URL 생성 (배포 환경에 따라 다르게 처리)
-        const fileUrl = process.env.NODE_ENV === 'production'
-          ? `/api/uploads/${fileName}` // 배포 환경에서는 API 라우트를 통해 파일 제공
-          : `/uploads/${fileName}`;    // 개발 환경에서는 public 디렉토리에서 직접 제공
+        // 파일 URL 생성 (모든 환경에서 API 라우트 사용)
+        const fileUrl = `/api/uploads/${fileName}`;
         
         savedFiles.push(fileUrl);
       } catch (error) {

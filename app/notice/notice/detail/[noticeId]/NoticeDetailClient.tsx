@@ -177,33 +177,36 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice, curren
             const fileName = fileUrl.split("/").pop() || "";
             const originalName = fileName.replace(/^\d+_/, ""); // 앞쪽 숫자 + 언더스코어 제거
 
-            const handleDownload = () => {
-              axios.post('/api/download', { filePath: fileUrl }, { responseType: 'blob' })
-                .then(response => {
-                  const url = window.URL.createObjectURL(new Blob([response.data]));
-                  const link = document.createElement('a');
-                  link.href = url;
-                  
-                  // Content-Disposition 헤더에서 파일명 추출 시도
-                  const contentDisposition = response.headers['content-disposition'];
-                  let downloadFileName = originalName;
-                  if (contentDisposition) {
-                    const matches = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/.exec(contentDisposition);
-                    if (matches != null && matches[1]) {
-                      downloadFileName = decodeURIComponent(matches[1].replace(/['"]/g, ''));
-                    }
-                  }
-                  
-                  link.setAttribute('download', downloadFileName);
-                  document.body.appendChild(link);
-                  link.click();
-                  link.parentNode?.removeChild(link);
+            const handleDownload = async () => {
+              try {
+                console.log('파일 다운로드 시도:', fileUrl, '→', originalName);
+                
+                // API를 통한 다운로드
+                const response = await axios.get(fileUrl, { responseType: 'blob' });
+                
+                // Blob을 생성하고 다운로드
+                const blob = new Blob([response.data]);
+                const url = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = originalName; // setAttribute 대신 속성 직접 설정
+                
+                // 클릭 이벤트 발생
+                document.body.appendChild(link);
+                link.click();
+                
+                // 정리 작업
+                setTimeout(() => {
+                  document.body.removeChild(link);
                   window.URL.revokeObjectURL(url);
-                })
-                .catch(error => {
-                  console.error("다운로드 에러:", error);
-                  toast.error("파일 다운로드 중 오류가 발생했습니다.");
-                });
+                }, 100);
+                
+                toast.success(`${originalName} 다운로드가 시작되었습니다.`);
+                
+              } catch (error) {
+                console.error("다운로드 실패:", error);
+                toast.error(`파일 다운로드에 실패했습니다: ${originalName}`);
+              }
             };
 
             return (

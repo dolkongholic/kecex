@@ -62,7 +62,7 @@ export async function PATCH(request: Request) {
             const fileName = `${Date.now()}_${file.name}`;
             const filePath = path.join(uploadDir, fileName);
             await writeFile(filePath, buffer);
-            newFiles.push(`/uploads/${fileName}`);
+            newFiles.push(`/api/uploads/${fileName}`);
         }
 
         // 최종 파일 목록 구성 (기존 파일 + 새 파일)

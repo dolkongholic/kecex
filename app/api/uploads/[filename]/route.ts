@@ -7,7 +7,9 @@ export async function GET(
   { params }: { params: { filename: string } }
 ) {
   try {
-    const filename = params.filename;
+    // URL 디코딩 처리 (한글 파일명 지원)
+    const filename = decodeURIComponent(params.filename);
+    
     const uploadDir = process.env.NODE_ENV === 'production' ? '/tmp/uploads' : path.join(process.cwd(), "public/uploads");
     const filePath = path.join(uploadDir, filename);
 

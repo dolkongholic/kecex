@@ -23,7 +23,6 @@ export async function POST(req: Request) {
     
     // 파일이 존재하는지 확인
     if (!fs.existsSync(fullPath)) {
-      console.error("File not found:", fullPath);
       return NextResponse.json(
         { error: "File not found" },
         { status: 404 }
