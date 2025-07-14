@@ -35,14 +35,9 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice, curren
   const params = useSearchParams();
   const page = params?.get("page");
 
-  // currentNotice가 null인 경우 에러 처리
-  if (!currentNotice) {
-    return <div>공지사항을 찾을 수 없습니다.</div>;
-  }
-
   let preId: any = null;
   let nextId: any = null;
-  if (noticeList && Array.isArray(noticeList)) {
+  if (noticeList && Array.isArray(noticeList) && currentNotice) {
     noticeList.forEach((notice: any) => {
       if (notice.id < currentNotice.id && (preId === null || notice.id > preId)) {
         preId = notice.id;
@@ -144,6 +139,10 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice, curren
   // 파일 URL 정규화
   attachments = attachments.map(normalizeFileUrl).filter(Boolean);
 
+  // currentNotice가 null인 경우 에러 처리
+  if (!currentNotice) {
+    return <div>공지사항을 찾을 수 없습니다.</div>;
+  }
 
   return (
     <section>
