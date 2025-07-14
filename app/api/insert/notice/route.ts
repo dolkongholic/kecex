@@ -62,19 +62,44 @@ export async function POST(req: Request) {
       }
     }
 
-    // 업로드 폴더 준비 - 간단하게
-    const uploadDir = path.join(process.cwd(), "public/uploads");
+    // 업로드 폴더 준비 - 배포 환경 대응
+    const uploadDir = process.env.NODE_ENV === 'production' 
+      ? '/tmp/uploads' 
+      : path.join(process.cwd(), "public/uploads");
+    
     console.log("[UPLOAD] 업로드 디렉토리:", uploadDir);
+    console.log("[UPLOAD] 환경:", process.env.NODE_ENV);
+    console.log("[UPLOAD] 현재 작업 디렉토리:", process.cwd());
     
     try {
       if (!existsSync(uploadDir)) {
         await mkdir(uploadDir, { recursive: true });
         console.log("[UPLOAD] 디렉토리 생성 완료:", uploadDir);
       }
+      
+      // 쓰기 권한 테스트
+      const testFile = path.join(uploadDir, 'test-write.tmp');
+      await writeFile(testFile, 'test');
+      await import('fs/promises').then(fs => fs.unlink(testFile));
+      console.log("[UPLOAD] 쓰기 권한 확인 완료");
+      
     } catch (error) {
-      console.error("[UPLOAD] 디렉토리 생성 오류:", error);
+      console.error("[UPLOAD] 디렉토리 준비 실패:", error);
+      console.error("[UPLOAD] 에러 상세:", {
+        message: error instanceof Error ? error.message : String(error),
+        code: error instanceof Error && 'code' in error ? error.code : undefined,
+        errno: error instanceof Error && 'errno' in error ? error.errno : undefined,
+        path: error instanceof Error && 'path' in error ? error.path : undefined
+      });
+      
       return NextResponse.json(
-        { message: "업로드 디렉토리 생성 실패", error: String(error) },
+        { 
+          message: "업로드 디렉토리 준비 실패", 
+          error: String(error),
+          uploadDir: uploadDir,
+          cwd: process.cwd(),
+          nodeEnv: process.env.NODE_ENV
+        },
         { status: 500 }
       );
     }
@@ -185,24 +210,28 @@ export async function POST(req: Request) {
         successCount: savedFiles.length
       });
       
-    } catch (dbError) {
-      console.error("[UPLOAD] DB 저장 실패:", dbError);
-      
-      // DB 저장 실패 시 저장된 파일들 삭제 (롤백)
-      for (const fileUrl of savedFiles) {
-        try {
-          const fileName = fileUrl.split('/').pop();
-          if (fileName) {
-            const filePath = path.join(uploadDir, fileName);
-            if (existsSync(filePath)) {
-              await import('fs/promises').then(fs => fs.unlink(filePath));
-              console.log(`[UPLOAD] 롤백: 파일 삭제 완료 ${filePath}`);
+          } catch (dbError) {
+        console.error("[UPLOAD] DB 저장 실패:", dbError);
+        
+        // DB 저장 실패 시 저장된 파일들 삭제 (롤백)
+        console.log(`[UPLOAD] 롤백 시작: ${savedFiles.length}개 파일 삭제`);
+        for (const fileUrl of savedFiles) {
+          try {
+            const fileName = fileUrl.split('/').pop();
+            if (fileName) {
+              // 동일한 uploadDir 사용
+              const filePath = path.join(uploadDir, fileName);
+              if (existsSync(filePath)) {
+                await import('fs/promises').then(fs => fs.unlink(filePath));
+                console.log(`[UPLOAD] 롤백: 파일 삭제 완료 ${fileName}`);
+              } else {
+                console.log(`[UPLOAD] 롤백: 파일 없음 ${fileName}`);
+              }
             }
+          } catch (cleanupError) {
+            console.error(`[UPLOAD] 롤백 실패:`, cleanupError);
           }
-        } catch (cleanupError) {
-          console.error(`[UPLOAD] 롤백 실패:`, cleanupError);
         }
-      }
       
       return NextResponse.json(
         { 

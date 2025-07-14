@@ -35,6 +35,11 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice, curren
   const params = useSearchParams();
   const page = params?.get("page");
 
+  // currentNotice가 null인 경우 에러 처리
+  if (!currentNotice) {
+    return <div>공지사항을 찾을 수 없습니다.</div>;
+  }
+
   let preId: any = null;
   let nextId: any = null;
   if (noticeList && Array.isArray(noticeList)) {
@@ -98,7 +103,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice, curren
     console.error("첨부파일 파싱 오류:", error);
 
     // fallback: 쉼표로 구분된 단일 문자열일 경우
-    if (typeof currentNotice.file === "string") {
+    if (currentNotice && typeof currentNotice.file === "string") {
       attachments = currentNotice.file.split(",");
     }
   }
