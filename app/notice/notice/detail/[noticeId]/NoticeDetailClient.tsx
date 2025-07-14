@@ -103,6 +103,42 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice, curren
     }
   }
 
+  // 기존 파일 경로를 새로운 API 경로로 변환하는 함수
+  const normalizeFileUrl = (fileUrl: string): string => {
+    if (!fileUrl) return '';
+    
+    // 이미 새로운 API 형식인 경우
+    if (fileUrl.startsWith('/api/uploads/')) {
+      return fileUrl;
+    }
+    
+    // 다양한 기존 형식을 처리
+    let fileName = '';
+    
+    if (fileUrl.startsWith('/uploads/')) {
+      // /uploads/filename.ext -> filename.ext
+      fileName = fileUrl.replace('/uploads/', '');
+    } else if (fileUrl.startsWith('/public/uploads/')) {
+      // /public/uploads/filename.ext -> filename.ext  
+      fileName = fileUrl.replace('/public/uploads/', '');
+    } else if (fileUrl.startsWith('uploads/')) {
+      // uploads/filename.ext -> filename.ext
+      fileName = fileUrl.replace('uploads/', '');
+    } else if (fileUrl.includes('/')) {
+      // 다른 경로가 포함된 경우 마지막 부분만 추출
+      fileName = fileUrl.split('/').pop() || '';
+    } else {
+      // filename.ext (파일명만 있는 경우)
+      fileName = fileUrl;
+    }
+    
+    // 새로운 API 경로로 변환
+    return fileName ? `/api/uploads/${fileName}` : '';
+  };
+
+  // 파일 URL 정규화
+  attachments = attachments.map(normalizeFileUrl).filter(Boolean);
+
 
   return (
     <section>
@@ -173,79 +209,117 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice, curren
           </div>
 
           {/* 첨부파일 및 이미지 미리보기, 다운로드 영역 */}
-          {attachments.map((fileUrl, idx) => {
+          {attachments.filter(Boolean).map((fileUrl, idx) => {
             const fileName = fileUrl.split("/").pop() || "";
             // 타임스탬프만 제거하고 원본 파일명 유지 (한글 포함)
             const originalName = fileName.replace(/^\d+_/, "");
 
-                          const handleDownload = async () => {
-                try {
-                  // API를 통한 다운로드
-                  const response = await axios.get(fileUrl, { responseType: 'blob' });
-                  
-                  // Content-Disposition 헤더에서 파일명 추출 시도
-                  let downloadFilename = originalName;
-                  const contentDisposition = response.headers['content-disposition'];
-                  
-                  if (contentDisposition) {
-                    // RFC 6266 인코딩된 파일명 우선 사용 (filename*=UTF-8'')
-                    const encodedMatch = contentDisposition.match(/filename\*=UTF-8''([^;]+)/);
-                    if (encodedMatch && encodedMatch[1]) {
-                      try {
-                        downloadFilename = decodeURIComponent(encodedMatch[1]);
-                      } catch (e) {
-                        console.warn('파일명 디코딩 실패:', e);
-                      }
-                    } else {
-                      // fallback: 일반 filename 사용
-                      const filenameMatch = contentDisposition.match(/filename="([^"]+)"/);
-                      if (filenameMatch && filenameMatch[1]) {
-                        downloadFilename = filenameMatch[1];
-                      }
+            const handleDownload = async () => {
+              try {
+                // 파일 존재 여부 먼저 확인
+                const checkResponse = await fetch(fileUrl, { method: 'HEAD' });
+                if (!checkResponse.ok) {
+                  if (checkResponse.status === 404) {
+                    toast.error(`파일을 찾을 수 없습니다: ${originalName}`);
+                    return;
+                  }
+                  throw new Error(`HTTP ${checkResponse.status}`);
+                }
+
+                // API를 통한 다운로드
+                const response = await axios.get(fileUrl, { responseType: 'blob' });
+                
+                // Content-Disposition 헤더에서 파일명 추출 시도
+                let downloadFilename = originalName;
+                const contentDisposition = response.headers['content-disposition'];
+                
+                if (contentDisposition) {
+                  // RFC 6266 인코딩된 파일명 우선 사용 (filename*=UTF-8'')
+                  const encodedMatch = contentDisposition.match(/filename\*=UTF-8''([^;]+)/);
+                  if (encodedMatch && encodedMatch[1]) {
+                    try {
+                      downloadFilename = decodeURIComponent(encodedMatch[1]);
+                    } catch (e) {
+                      console.warn('파일명 디코딩 실패:', e);
+                    }
+                  } else {
+                    // fallback: 일반 filename 사용
+                    const filenameMatch = contentDisposition.match(/filename="([^"]+)"/);
+                    if (filenameMatch && filenameMatch[1]) {
+                      downloadFilename = filenameMatch[1];
                     }
                   }
-                  
-                  // Blob을 생성하고 다운로드
-                  const blob = new Blob([response.data]);
-                  const url = window.URL.createObjectURL(blob);
-                  const link = document.createElement('a');
-                  link.href = url;
-                  link.download = downloadFilename;
-                  
-                  // 클릭 이벤트 발생
-                  document.body.appendChild(link);
-                  link.click();
-                  
-                  // 정리 작업
-                  setTimeout(() => {
-                    document.body.removeChild(link);
-                    window.URL.revokeObjectURL(url);
-                  }, 100);
-                  
-                  toast.success(`파일 다운로드가 시작되었습니다.`);
-                  
-                } catch (error) {
-                  console.error("다운로드 실패:", error);
-                  toast.error(`파일 다운로드에 실패했습니다.`);
                 }
-              };
+                
+                // Blob을 생성하고 다운로드
+                const blob = new Blob([response.data]);
+                const url = window.URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = downloadFilename;
+                
+                // 클릭 이벤트 발생
+                document.body.appendChild(link);
+                link.click();
+                
+                // 정리 작업
+                setTimeout(() => {
+                  document.body.removeChild(link);
+                  window.URL.revokeObjectURL(url);
+                }, 100);
+                
+                toast.success(`파일 다운로드가 시작되었습니다: ${downloadFilename}`);
+                
+              } catch (error: any) {
+                console.error("다운로드 실패:", error);
+                
+                if (error.response?.status === 404) {
+                  toast.error(`파일을 찾을 수 없습니다: ${originalName}`);
+                } else if (error.code === 'NETWORK_ERROR') {
+                  toast.error(`네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.`);
+                } else {
+                  toast.error(`파일 다운로드에 실패했습니다: ${originalName}`);
+                }
+              }
+            };
 
+            // 파일 확장자 확인 (이미지 파일 지원 확장)
+            const isImage = /\.(jpg|jpeg|png|gif|webp|bmp)$/i.test(fileName);
+            
             return (
-              <div key={idx} className="flex items-center gap-2">
-                {/.(jpg|jpeg|png|gif|webp)$/i.test(fileName) ? (
-                  <img
-                    src={fileUrl}
-                    alt={`첨부 이미지 ${idx + 1}`}
-                    className="max-w-[100px] h-auto border rounded"
-                  />
+              <div key={idx} className="flex items-center gap-2 mb-2 p-2 border rounded">
+                {isImage ? (
+                  <div className="flex items-center gap-2">
+                    <img
+                      src={fileUrl}
+                      alt={originalName}
+                      className="max-w-[100px] max-h-[100px] object-cover border rounded"
+                      onError={(e) => {
+                        // 이미지 로드 실패 시 placeholder 표시
+                        e.currentTarget.style.display = 'none';
+                        const placeholder = document.createElement('div');
+                        placeholder.className = 'w-[100px] h-[60px] bg-gray-200 border rounded flex items-center justify-center text-xs text-gray-500';
+                        placeholder.textContent = '이미지 없음';
+                        e.currentTarget.parentNode?.insertBefore(placeholder, e.currentTarget);
+                      }}
+                    />
+                    <span className="text-gray-600 text-sm flex-1">
+                      {originalName}
+                    </span>
+                  </div>
                 ) : (
-                  <span className="text-gray-600 text-sm">
-                    {originalName}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <svg className="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-gray-600 text-sm flex-1">
+                      {originalName}
+                    </span>
+                  </div>
                 )}
                 <button
                   onClick={handleDownload}
-                  className="px-2 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-xs"
+                  className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 text-xs transition-colors"
                 >
                   다운로드
                 </button>

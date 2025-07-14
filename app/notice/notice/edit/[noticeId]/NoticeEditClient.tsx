@@ -89,11 +89,70 @@ const NoticeEditClient: React.FC<NoticeClientProps> = ({
     if (currentNotice?.file) {
       try {
         const parsed = JSON.parse(currentNotice.file);
-        setExistingFiles(Array.isArray(parsed) ? parsed : []);
+        
+        // 기존 파일 경로를 새로운 API 경로로 변환하는 함수
+        const normalizeFileUrl = (fileUrl: string): string => {
+          if (!fileUrl) return '';
+          
+          // 이미 새로운 API 형식인 경우
+          if (fileUrl.startsWith('/api/uploads/')) {
+            return fileUrl;
+          }
+          
+          // 다양한 기존 형식을 처리
+          let fileName = '';
+          
+          if (fileUrl.startsWith('/uploads/')) {
+            // /uploads/filename.ext -> filename.ext
+            fileName = fileUrl.replace('/uploads/', '');
+          } else if (fileUrl.startsWith('/public/uploads/')) {
+            // /public/uploads/filename.ext -> filename.ext  
+            fileName = fileUrl.replace('/public/uploads/', '');
+          } else if (fileUrl.startsWith('uploads/')) {
+            // uploads/filename.ext -> filename.ext
+            fileName = fileUrl.replace('uploads/', '');
+          } else if (fileUrl.includes('/')) {
+            // 다른 경로가 포함된 경우 마지막 부분만 추출
+            fileName = fileUrl.split('/').pop() || '';
+          } else {
+            // filename.ext (파일명만 있는 경우)
+            fileName = fileUrl;
+          }
+          
+          // 새로운 API 경로로 변환
+          return fileName ? `/api/uploads/${fileName}` : '';
+        };
+
+        const normalizedFiles = Array.isArray(parsed) 
+          ? parsed.map(normalizeFileUrl).filter(Boolean)
+          : [];
+          
+        setExistingFiles(normalizedFiles);
       } catch (error) {
         console.error("첨부파일 파싱 오류:", error);
         if (typeof currentNotice.file === "string") {
-          setExistingFiles(currentNotice.file.split(","));
+          // 단일 문자열인 경우도 정규화
+          const normalizeFileUrl = (fileUrl: string): string => {
+            if (!fileUrl) return '';
+            if (fileUrl.startsWith('/api/uploads/')) return fileUrl;
+            
+            let fileName = '';
+            if (fileUrl.startsWith('/uploads/')) {
+              fileName = fileUrl.replace('/uploads/', '');
+            } else if (fileUrl.startsWith('/public/uploads/')) {
+              fileName = fileUrl.replace('/public/uploads/', '');
+            } else if (fileUrl.startsWith('uploads/')) {
+              fileName = fileUrl.replace('uploads/', '');
+            } else if (fileUrl.includes('/')) {
+              fileName = fileUrl.split('/').pop() || '';
+            } else {
+              fileName = fileUrl;
+            }
+            return fileName ? `/api/uploads/${fileName}` : '';
+          };
+          
+          const fileUrls = currentNotice.file.split(",").map(normalizeFileUrl).filter(Boolean);
+          setExistingFiles(fileUrls);
         }
       }
     }
@@ -315,16 +374,84 @@ const NoticeEditClient: React.FC<NoticeClientProps> = ({
                           className="flex items-center justify-between p-2 bg-gray-50 rounded-md hover:bg-gray-100 transition-colors"
                         >
                           <div className="flex items-center gap-2">
-                            <span className="text-sm text-gray-600">{originalName}</span>
+                            <span className="text-gray-600 text-sm flex-1">
+                              {originalName}
+                            </span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <a
-                              href={fileUrl}
-                              download={originalName}
+                            <button
+                              onClick={async () => {
+                                try {
+                                  // 파일 존재 여부 먼저 확인
+                                  const checkResponse = await fetch(fileUrl, { method: 'HEAD' });
+                                  if (!checkResponse.ok) {
+                                    if (checkResponse.status === 404) {
+                                      toast.error(`파일을 찾을 수 없습니다: ${originalName}`);
+                                      return;
+                                    }
+                                    throw new Error(`HTTP ${checkResponse.status}`);
+                                  }
+
+                                  // API를 통한 다운로드
+                                  const response = await axios.get(fileUrl, { responseType: 'blob' });
+                                  
+                                  // Content-Disposition 헤더에서 파일명 추출 시도
+                                  let downloadFilename = originalName;
+                                  const contentDisposition = response.headers['content-disposition'];
+                                  
+                                  if (contentDisposition) {
+                                    // RFC 6266 인코딩된 파일명 우선 사용 (filename*=UTF-8'')
+                                    const encodedMatch = contentDisposition.match(/filename\*=UTF-8''([^;]+)/);
+                                    if (encodedMatch && encodedMatch[1]) {
+                                      try {
+                                        downloadFilename = decodeURIComponent(encodedMatch[1]);
+                                      } catch (e) {
+                                        console.warn('파일명 디코딩 실패:', e);
+                                      }
+                                    } else {
+                                      // fallback: 일반 filename 사용
+                                      const filenameMatch = contentDisposition.match(/filename="([^"]+)"/);
+                                      if (filenameMatch && filenameMatch[1]) {
+                                        downloadFilename = filenameMatch[1];
+                                      }
+                                    }
+                                  }
+                                  
+                                  // Blob을 생성하고 다운로드
+                                  const blob = new Blob([response.data]);
+                                  const url = window.URL.createObjectURL(blob);
+                                  const link = document.createElement('a');
+                                  link.href = url;
+                                  link.download = downloadFilename;
+                                  
+                                  // 클릭 이벤트 발생
+                                  document.body.appendChild(link);
+                                  link.click();
+                                  
+                                  // 정리 작업
+                                  setTimeout(() => {
+                                    document.body.removeChild(link);
+                                    window.URL.revokeObjectURL(url);
+                                  }, 100);
+                                  
+                                  toast.success(`파일 다운로드가 시작되었습니다: ${downloadFilename}`);
+                                  
+                                } catch (error: any) {
+                                  console.error("다운로드 실패:", error);
+                                  
+                                  if (error.response?.status === 404) {
+                                    toast.error(`파일을 찾을 수 없습니다: ${originalName}`);
+                                  } else if (error.code === 'NETWORK_ERROR') {
+                                    toast.error(`네트워크 오류가 발생했습니다. 잠시 후 다시 시도해주세요.`);
+                                  } else {
+                                    toast.error(`파일 다운로드에 실패했습니다: ${originalName}`);
+                                  }
+                                }
+                              }}
                               className="text-sm px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
                             >
                               다운로드
-                            </a>
+                            </button>
                             <button
                               onClick={() => handleRemoveExistingFile(idx)}
                               className="text-sm px-2 py-1 text-red-500 hover:text-red-600"
