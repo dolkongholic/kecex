@@ -31,7 +31,7 @@ export const Pages: React.FC<PagesProps> = ({ label, selected }) => {
 
     const url = qs.stringifyUrl(
       {
-        url: "/notice/",
+        url: "/notice/notice",
         query: updatedQuery,
       },
       { skipNull: true }

@@ -38,11 +38,18 @@ const MainList = [
 const location = "공지사항";
 
 interface NoticeProps {
-  noticeList?: any;
+  noticeData?: {
+    notices: any[];
+    totalCount: number;
+    totalPages: number;
+    currentPage: number;
+    hasNext: boolean;
+    hasPrev: boolean;
+  };
   currentUser?: any;
 }
 
-const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
+const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeData }) => {
   const [pageMenu, setPageMenu] = useState<any>("공지사항");
   const params = useSearchParams();
   const page = params?.get("page");
@@ -53,10 +60,15 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
     return null;
   }
 
-  const totalItems = noticeList.length;
-  const totalPages = Math.ceil(totalItems / 10); // list의 길이를 10으로 나눈 후 올림하여 페이지 수 계산
+  // 기본값 설정
+  const {
+    notices = [],
+    totalCount = 0,
+    totalPages = 0,
+    currentPage = 1
+  } = noticeData || {};
 
-  // totalPages만큼 페이지를 생성
+  // 페이지 번호 배열 생성
   const pages = [];
   for (let i = 1; i <= totalPages; i++) {
     pages.push(i);
@@ -118,25 +130,25 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
           <div className="w-full py-[40px]">
             <ContentTitle title={location} center={true} />
             <div className="w-full mt-[20px] leading-[50px] border-b border-secondary">
-              {page}/{totalPages} 페이지 (총 {noticeList.length} 건)
+              {currentPage}/{totalPages} 페이지 (총 {totalCount} 건)
             </div>
-            {[...noticeList].reverse().map((item: any, index: any) => (
+            {notices.map((item: any, index: any) => (
               <Link
                 key={index}
                 passHref
-                href={`notice/detail/${item.id}?page=${page}`}
+                href={`notice/detail/${item.id}?page=${currentPage}`}
                 className="w-full"
               >
                 <div
                   className={`cursor-pointer flex justify-between items-center w-full h-[80px] border-b leading-[80px] text-neutral-800 text-base hover:text-secondary ${
-                    index % 7 == 0 && index != 0
+                    (index + 1) % 10 == 0
                       ? "border-black"
                       : "border-gray-100"
                   }`}
                 >
                   <div className="flex ">
                     <div className="w-[50px] text-center text-gray-400 text-subtitle">
-                      {index + 1}
+                      {totalCount - (currentPage - 1) * 10 - index}
                     </div>
                     <div className="w-[245px] md:w-[1020px] ml-3 line-clamp-1">{item.title}</div>
                   </div>
@@ -159,7 +171,7 @@ const NoticeClient: React.FC<NoticeProps> = ({ currentUser, noticeList }) => {
                     <Pages
                       key={item}
                       label={item.toString()}
-                      selected={page === item.toString()}
+                      selected={currentPage === item}
                     />
                   ))}
                 </div>
