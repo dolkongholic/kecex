@@ -25,17 +25,6 @@ const ALLOWED_FILE_TYPES = [
 // 최대 파일 크기 (10MB)
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
-// 파일 저장 경로 설정 (개선된 버전)
-const getUploadDir = () => {
-  // 배포 환경에서는 지속적인 스토리지 사용 (임시 폴더 대신)
-  if (process.env.NODE_ENV === 'production') {
-    // /tmp 대신 지속적인 경로 사용 (환경변수로 설정 가능)
-    return process.env.UPLOAD_DIR || path.join(process.cwd(), "public/uploads");
-  }
-  // 개발 환경에서는 public/uploads 사용
-  return path.join(process.cwd(), "public/uploads");
-};
-
 // 로깅 강화 함수
 const logUploadStep = (step: string, data: any) => {
   const timestamp = new Date().toISOString();
@@ -91,20 +80,65 @@ export async function POST(req: Request) {
       }
     }
 
-    // 업로드 폴더 준비
-    const uploadDir = getUploadDir();
-    logUploadStep('UPLOAD_DIR_CHECK', { requestId, uploadDir, exists: existsSync(uploadDir) });
-    
-    try {
-      if (!existsSync(uploadDir)) {
-        await mkdir(uploadDir, { recursive: true });
-        logUploadStep('UPLOAD_DIR_CREATED', { requestId, uploadDir });
+    // 업로드 폴더 준비 (배포 환경 안정성 강화)
+    const possibleDirs: string[] = [
+      process.env.UPLOAD_DIR,
+      path.join(process.cwd(), "public/uploads"), 
+      path.join(process.cwd(), "uploads"),
+    ].filter((dir): dir is string => Boolean(dir));
+
+    let uploadDir = '';
+    let dirCreated = false;
+
+    // 사용 가능한 디렉토리 찾기
+    for (const testDir of possibleDirs) {
+      try {
+        logUploadStep('TRYING_UPLOAD_DIR', { requestId, testDir, exists: existsSync(testDir) });
+        
+        // 디렉토리가 없으면 생성 시도
+        if (!existsSync(testDir)) {
+          await mkdir(testDir, { recursive: true, mode: 0o755 });
+          logUploadStep('DIR_CREATED', { requestId, testDir });
+        }
+        
+        // 쓰기 권한 테스트
+        const testFilePath = path.join(testDir, '.write-test-' + Date.now());
+        await writeFile(testFilePath, 'test');
+        await import('fs/promises').then(fs => fs.unlink(testFilePath));
+        
+        // 성공하면 이 디렉토리 사용
+        uploadDir = testDir;
+        dirCreated = true;
+        logUploadStep('UPLOAD_DIR_READY', { requestId, uploadDir });
+        break;
+        
+      } catch (testError) {
+        logUploadStep('DIR_TEST_FAILED', { 
+          requestId, 
+          testDir, 
+          error: testError instanceof Error ? testError.message : String(testError) 
+        });
+        continue; // 다음 디렉토리 시도
       }
-    } catch (error) {
-      logUploadStep('UPLOAD_DIR_ERROR', { requestId, error: error instanceof Error ? error.message : String(error) });
-      console.error("업로드 디렉토리 생성 오류:", error);
+    }
+
+    if (!dirCreated || !uploadDir) {
+      const errorMessage = "모든 업로드 디렉토리 생성/접근 시도 실패";
+      logUploadStep('ALL_UPLOAD_DIRS_FAILED', { 
+        requestId, 
+        testedDirs: possibleDirs,
+        cwd: process.cwd(),
+        nodeEnv: process.env.NODE_ENV
+      });
+      
+      console.error("업로드 디렉토리 준비 실패:", errorMessage);
       return NextResponse.json(
-        { message: "업로드 디렉토리 생성 실패", error: error instanceof Error ? error.message : String(error) },
+        { 
+          message: "업로드 디렉토리 준비 실패", 
+          error: errorMessage,
+          testedDirs: possibleDirs,
+          cwd: process.cwd()
+        },
         { status: 500 }
       );
     }
