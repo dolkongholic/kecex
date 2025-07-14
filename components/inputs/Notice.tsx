@@ -98,27 +98,27 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
               <>
                 <div className="h-[215px] md:h-[280px] flex flex-col justify-between items-start cursor-pointer w-full lg:w-1/3 hover:shadow-lg lg:mr-[50px] shadow-gray-300 rounded-lg px-4 transition-all duration-200">
                   <Link
-                    key={noticeList[noticeList.length - 1].id}
+                    key={noticeList[0]?.id}
                     passHref
-                    href={`notice/notice/detail/${noticeList[noticeList.length - 1].id}?page=1`}
+                    href={`notice/notice/detail/${noticeList[0]?.id}?page=1`}
                     className="w-full"
                   >
                     <div className="w-full h-[215px] md:h-[280px] flex flex-col flex-grow justify-center items-start">
                       <span className="md:h-[45px] leading-[22px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold line-clamp-2">
-                        {noticeList[noticeList.length - 1]
-                          ? String(noticeList[noticeList.length - 1].title).slice(0, 30)
+                        {noticeList?.[0]
+                          ? String(noticeList[0].title).slice(0, 30)
                           : "공지가 없습니다."}
                       </span>
                       <span className="h-[130px] md:h-[151px] leading-[24px] font-regular pt-[3px] mb-[4px] text-[14px] md:text-[15px] overflow-hidden">
-                        {noticeList[noticeList.length - 1]
+                        {noticeList?.[0]
                           ? String(
-                              noticeList[noticeList.length - 1].content
+                              noticeList[0].content
                             ).slice(0, 250)
                           : ""}
                       </span>
                       <span className="h-[15px] md:leading-[45px] text-[12px] md:text-[16px] font-light"> {/* 첫번째 공지 날짜 */}
-                        {noticeList[noticeList.length - 1]
-                          ? String(noticeList[noticeList.length - 1].date)
+                        {noticeList?.[0]
+                          ? String(noticeList[0].date)
                           : ""}
                       </span>
                     </div>
@@ -126,27 +126,27 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                 </div>
                 <div className="h-[215px] md:h-[280px] flex flex-col justify-between items-start cursor-pointer w-full lg:w-1/3 hover:shadow-lg lg:mr-[50px] shadow-gray-300 rounded-lg px-4 transition-all duration-200">
                   <Link
-                    key={noticeList[noticeList.length - 2].id}
+                    key={noticeList?.[1]?.id}
                     passHref
-                    href={`notice/notice/detail/${noticeList[noticeList.length - 2].id}?page=1`}
+                    href={`notice/notice/detail/${noticeList?.[1]?.id}?page=1`}
                     className="w-full"
                   >
                     <div className="w-full h-[215px] md:h-[280px] flex flex-col flex-grow justify-center items-start">
                       <span className="md:h-[45px] leading-[22px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold line-clamp-2">
-                        {noticeList[noticeList.length - 2]
-                          ? String(noticeList[noticeList.length - 2].title).slice(0, 30)
+                        {noticeList?.[1]
+                          ? String(noticeList[1].title).slice(0, 30)
                           : "공지가 없습니다."}
                       </span>
                       <span className="h-[130px] md:h-[151px] leading-[24px] font-regular pt-[3px] mb-[4px] text-[14px] md:text-[15px] overflow-hidden">
-                        {noticeList[noticeList.length - 2]
+                        {noticeList?.[1]
                           ? String(
-                              noticeList[noticeList.length - 2].content
+                              noticeList[1].content
                             ).slice(0, 250)
                           : ""}
                       </span>
                       <span className="h-[15px] md:leading-[45px] text-[12px] md:text-[16px] font-light"> {/* 두번째 공지 날짜 */}
-                        {noticeList[noticeList.length - 2]
-                          ? String(noticeList[noticeList.length - 2].date)
+                        {noticeList?.[1]
+                          ? String(noticeList[1].date)
                           : ""}
                       </span>
                     </div>
@@ -154,27 +154,27 @@ const Notice: React.FC<MainNoticeProps> = ({ newsList, noticeList }) => {
                 </div>
                 <div className="h-[280px] hidden md:flex flex-col justify-between items-start cursor-pointer w-full lg:w-1/3 hover:shadow-lg shadow-gray-300 rounded-lg px-4 transition-all duration-200">
                   <Link
-                    key={noticeList[noticeList.length - 3].id}
+                    key={noticeList?.[2]?.id}
                     passHref
-                    href={`notice/notice/detail/${noticeList[noticeList.length - 3].id}?page=1`}
+                    href={`notice/notice/detail/${noticeList?.[2]?.id}?page=1`}
                     className="w-full"
                   >
                     <div className="w-full h-[280px] flex flex-col flex-grow justify-center items-start">
                       <span className="h-[45px] leading-[22px] text-[14px] md:text-[16px] lg:text-[18px] font-semibold line-clamp-2">
-                        {noticeList[noticeList.length - 3]
-                          ? String(noticeList[noticeList.length - 3].title).slice(0, 30)
+                        {noticeList?.[2]
+                          ? String(noticeList[2].title).slice(0, 30)
                           : "공지가 없습니다."}
                       </span>
                       <span className="h-[151px] leading-[24px] font-regular pt-[3px] mb-[4px] text-[14px] md:text-[15px] overflow-hidden">
-                        {noticeList[noticeList.length - 3]
+                        {noticeList?.[2]
                           ? String(
-                              noticeList[noticeList.length - 3].content
+                              noticeList[2].content
                             ).slice(0, 250)
                           : ""}
                       </span>
                       <span className="h-[15px] leading-[45px] text-[12px] md:text-[16px] font-light"> {/* 세번째 공지 날짜 */}
-                        {noticeList[noticeList.length - 3]
-                          ? String(noticeList[noticeList.length - 3].date)
+                        {noticeList?.[2]
+                          ? String(noticeList[2].date)
                           : ""}
                       </span>
                     </div>

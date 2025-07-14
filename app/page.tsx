@@ -11,7 +11,11 @@ const Home = async () => {
   const currentUser = await getCurrentUser();
   const mainBanner = await getMainBanner();
   const newsList = await getNews();
-  const noticeList = await getNotice();
+  
+  // 메인 페이지에서는 최신 공지사항만 필요하므로 notices 배열만 추출
+  const noticeData = await getNotice({ page: 1, limit: 10 });
+  const noticeList = noticeData.notices;
+  
   return (
     <div>
       <Header currentUser={currentUser} />
