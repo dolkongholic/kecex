@@ -220,18 +220,25 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice, curren
 
             const handleDownload = async () => {
               try {
+                console.log(`[DOWNLOAD] 다운로드 시작: ${fileUrl}`);
+                
                 // 파일 존재 여부 먼저 확인
                 const checkResponse = await fetch(fileUrl, { method: 'HEAD' });
                 if (!checkResponse.ok) {
                   if (checkResponse.status === 404) {
+                    console.error(`[DOWNLOAD] 파일 404 에러: ${fileUrl}`);
                     toast.error(`파일을 찾을 수 없습니다: ${originalName}`);
                     return;
                   }
                   throw new Error(`HTTP ${checkResponse.status}`);
                 }
 
+                console.log(`[DOWNLOAD] 파일 존재 확인 완료: ${fileUrl}`);
+
                 // API를 통한 다운로드
                 const response = await axios.get(fileUrl, { responseType: 'blob' });
+                
+                console.log(`[DOWNLOAD] 파일 다운로드 완료: ${fileUrl} (${response.data.size} bytes)`);
                 
                 // Content-Disposition 헤더에서 파일명 추출 시도
                 let downloadFilename = originalName;
@@ -244,7 +251,7 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice, curren
                     try {
                       downloadFilename = decodeURIComponent(encodedMatch[1]);
                     } catch (e) {
-                      console.warn('파일명 디코딩 실패:', e);
+                      console.warn('[DOWNLOAD] 파일명 디코딩 실패:', e);
                     }
                   } else {
                     // fallback: 일반 filename 사용
@@ -275,7 +282,14 @@ const NoticeDetailClient: React.FC<NoticeClientProps> = ({ currentNotice, curren
                 toast.success(`파일 다운로드가 시작되었습니다: ${downloadFilename}`);
                 
               } catch (error: any) {
-                console.error("다운로드 실패:", error);
+                console.error("[DOWNLOAD] 다운로드 실패:", error);
+                console.error("[DOWNLOAD] 에러 상세:", {
+                  message: error.message,
+                  status: error.response?.status,
+                  statusText: error.response?.statusText,
+                  url: fileUrl,
+                  originalName: originalName
+                });
                 
                 if (error.response?.status === 404) {
                   toast.error(`파일을 찾을 수 없습니다: ${originalName}`);

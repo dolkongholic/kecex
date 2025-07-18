@@ -25,9 +25,21 @@ const ALLOWED_FILE_TYPES = [
 // 최대 파일 크기 (10MB)
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
+// 업로드 디렉토리 설정 함수
+const getUploadDir = () => {
+  if (process.env.NODE_ENV === 'production') {
+    // 프로덕션에서는 /tmp/uploads 사용 (임시 디렉토리)
+    return '/tmp/uploads';
+  }
+  // 개발 환경에서는 public/uploads 사용
+  return path.join(process.cwd(), "public/uploads");
+};
+
 export async function POST(req: Request) {
   try {
     console.log("[UPLOAD] 업로드 요청 시작");
+    console.log("[UPLOAD] 환경:", process.env.NODE_ENV);
+    console.log("[UPLOAD] 현재 작업 디렉토리:", process.cwd());
     
     // FormData 파싱
     const formData = await req.formData();
@@ -62,14 +74,10 @@ export async function POST(req: Request) {
       }
     }
 
-    // 업로드 폴더 준비 - 배포 환경 대응
-    const uploadDir = process.env.NODE_ENV === 'production' 
-      ? '/tmp/uploads' 
-      : path.join(process.cwd(), "public/uploads");
+    // 업로드 폴더 준비
+    const uploadDir = getUploadDir();
     
     console.log("[UPLOAD] 업로드 디렉토리:", uploadDir);
-    console.log("[UPLOAD] 환경:", process.env.NODE_ENV);
-    console.log("[UPLOAD] 현재 작업 디렉토리:", process.cwd());
     
     try {
       if (!existsSync(uploadDir)) {
@@ -141,6 +149,8 @@ export async function POST(req: Request) {
         const filePath = path.join(uploadDir, fileName);
         
         console.log(`[UPLOAD] 파일 저장 경로:`, filePath);
+        console.log(`[UPLOAD] 원본 파일명:`, originalName);
+        console.log(`[UPLOAD] 변환된 파일명:`, fileName);
         
         // 파일 저장
         await writeFile(filePath, buffer);
@@ -161,6 +171,20 @@ export async function POST(req: Request) {
         // 파일 URL 생성 (모든 환경에서 API 라우트 사용)
         const fileUrl = `/api/uploads/${fileName}`;
         savedFiles.push(fileUrl);
+        
+        // 파일 접근 가능성 테스트 (선택적)
+        try {
+          const testResponse = await fetch(`${process.env.NEXTAUTH_URL || 'http://localhost:3000'}${fileUrl}`, { 
+            method: 'HEAD'
+          });
+          if (testResponse.ok) {
+            console.log(`[UPLOAD] 파일 접근 테스트 성공: ${fileUrl}`);
+          } else {
+            console.warn(`[UPLOAD] 파일 접근 테스트 실패: ${fileUrl} (${testResponse.status})`);
+          }
+        } catch (testError) {
+          console.warn(`[UPLOAD] 파일 접근 테스트 실패:`, testError);
+        }
         
       } catch (error) {
         console.error(`[UPLOAD] 파일 ${file.name} 업로드 실패:`, error);
@@ -210,28 +234,28 @@ export async function POST(req: Request) {
         successCount: savedFiles.length
       });
       
-          } catch (dbError) {
-        console.error("[UPLOAD] DB 저장 실패:", dbError);
-        
-        // DB 저장 실패 시 저장된 파일들 삭제 (롤백)
-        console.log(`[UPLOAD] 롤백 시작: ${savedFiles.length}개 파일 삭제`);
-        for (const fileUrl of savedFiles) {
-          try {
-            const fileName = fileUrl.split('/').pop();
-            if (fileName) {
-              // 동일한 uploadDir 사용
-              const filePath = path.join(uploadDir, fileName);
-              if (existsSync(filePath)) {
-                await import('fs/promises').then(fs => fs.unlink(filePath));
-                console.log(`[UPLOAD] 롤백: 파일 삭제 완료 ${fileName}`);
-              } else {
-                console.log(`[UPLOAD] 롤백: 파일 없음 ${fileName}`);
-              }
+    } catch (dbError) {
+      console.error("[UPLOAD] DB 저장 실패:", dbError);
+      
+      // DB 저장 실패 시 저장된 파일들 삭제 (롤백)
+      console.log(`[UPLOAD] 롤백 시작: ${savedFiles.length}개 파일 삭제`);
+      for (const fileUrl of savedFiles) {
+        try {
+          const fileName = fileUrl.split('/').pop();
+          if (fileName) {
+            // 동일한 uploadDir 사용
+            const filePath = path.join(uploadDir, fileName);
+            if (existsSync(filePath)) {
+              await import('fs/promises').then(fs => fs.unlink(filePath));
+              console.log(`[UPLOAD] 롤백: 파일 삭제 완료 ${fileName}`);
+            } else {
+              console.log(`[UPLOAD] 롤백: 파일 없음 ${fileName}`);
             }
-          } catch (cleanupError) {
-            console.error(`[UPLOAD] 롤백 실패:`, cleanupError);
           }
+        } catch (cleanupError) {
+          console.error(`[UPLOAD] 롤백 실패:`, cleanupError);
         }
+      }
       
       return NextResponse.json(
         { 

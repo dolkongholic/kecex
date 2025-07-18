@@ -22,6 +22,10 @@ export async function POST(req: Request) {
       );
     }
 
+    console.log(`[CLEANUP] ${action} 작업 시작`);
+    console.log(`[CLEANUP] 환경: ${process.env.NODE_ENV}`);
+    console.log(`[CLEANUP] 업로드 디렉토리: ${getUploadDir()}`);
+
     const uploadDir = getUploadDir();
     const notices = await prisma.notice.findMany();
     
@@ -39,122 +43,140 @@ export async function POST(req: Request) {
     const cleanupPromises: Promise<any>[] = [];
 
     for (const notice of notices) {
+      if (!notice.file) {
+        results.invalidData++;
+        continue;
+      }
+
+      let files: string[] = [];
+      
       try {
-        if (!notice.file) continue;
-
-        let files: string[] = [];
-        
-        // 파일 데이터 파싱
-        try {
-          const parsed = JSON.parse(notice.file);
-          if (Array.isArray(parsed)) {
-            files = parsed;
-          } else if (typeof parsed === 'string') {
-            files = parsed.split(',');
-          } else {
-            results.invalidData++;
-            continue;
-          }
-        } catch (error) {
-          // JSON 파싱 실패 시 문자열로 처리
-          if (typeof notice.file === 'string') {
-            files = notice.file.split(',');
-          } else {
-            results.invalidData++;
-            continue;
-          }
+        const parsed = JSON.parse(notice.file);
+        if (Array.isArray(parsed)) {
+          files = parsed;
+        } else if (typeof parsed === 'string') {
+          files = parsed.split(',').map(f => f.trim()).filter(Boolean);
+        } else {
+          results.invalidData++;
+          continue;
         }
-
-        const missingFiles: string[] = [];
-        const validFiles: string[] = [];
-
-        for (const fileUrl of files) {
-          if (!fileUrl) continue;
-          
-          results.totalFiles++;
-          
-          // 파일명 추출
-          let fileName = '';
-          if (fileUrl.startsWith('/api/uploads/')) {
-            fileName = fileUrl.replace('/api/uploads/', '');
-          } else if (fileUrl.startsWith('/uploads/')) {
-            fileName = fileUrl.replace('/uploads/', '');
-          } else if (fileUrl.includes('/')) {
-            fileName = fileUrl.split('/').pop() || '';
-          } else {
-            fileName = fileUrl;
-          }
-
-          if (!fileName) continue;
-
-          // 다양한 경로에서 파일 찾기
-          const possiblePaths = [
-            path.join(uploadDir, fileName),
-            path.join(uploadDir, fileName.replace(/^\d+_/, '')),
-            path.join(process.cwd(), "public/uploads", fileName),
-            path.join(process.cwd(), "uploads", fileName),
-            path.join(process.cwd(), "public", fileName)
-          ];
-
-          let fileExists = false;
-          for (const filePath of possiblePaths) {
-            if (existsSync(filePath)) {
-              fileExists = true;
-              results.existingFiles++;
-              validFiles.push(fileUrl);
-              break;
-            }
-          }
-
-          if (!fileExists) {
-            results.missingFiles++;
-            missingFiles.push(fileUrl);
-          }
-        }
-
-        // 누락된 파일이 있는 경우
-        if (missingFiles.length > 0) {
-          missingFilesList.push({
-            noticeId: notice.id,
-            title: notice.title,
-            missingFiles
-          });
-
-          // cleanup 모드일 때 유효한 파일만 남기고 업데이트
-          if (action === 'cleanup') {
-            cleanupPromises.push(
-              prisma.notice.update({
-                where: { id: notice.id },
-                data: { file: JSON.stringify(validFiles) }
-              })
-            );
-            results.cleanedNotices++;
-          }
-        }
-
       } catch (error) {
-        results.errors.push(`Notice ID ${notice.id}: ${error instanceof Error ? error.message : String(error)}`);
+        console.error(`[CLEANUP] JSON 파싱 실패 (Notice ID: ${notice.id}):`, error);
+        results.invalidData++;
+        continue;
+      }
+
+      const validFiles: string[] = [];
+      const missingFiles: string[] = [];
+
+      for (const fileUrl of files) {
+        if (!fileUrl) continue;
+        
+        results.totalFiles++;
+        
+        // 파일명 추출
+        let fileName = '';
+        if (fileUrl.startsWith('/api/uploads/')) {
+          fileName = fileUrl.replace('/api/uploads/', '');
+        } else if (fileUrl.startsWith('/uploads/')) {
+          fileName = fileUrl.replace('/uploads/', '');
+        } else if (fileUrl.includes('/')) {
+          fileName = fileUrl.split('/').pop() || '';
+        } else {
+          fileName = fileUrl;
+        }
+
+        if (!fileName) continue;
+
+        // 다양한 경로에서 파일 찾기
+        const possiblePaths = [
+          path.join(uploadDir, fileName),
+          path.join(uploadDir, fileName.replace(/^\d+_/, '')),
+          path.join(process.cwd(), "public/uploads", fileName),
+          path.join(process.cwd(), "uploads", fileName),
+          path.join(process.cwd(), "public", fileName)
+        ];
+
+        let fileExists = false;
+        for (const filePath of possiblePaths) {
+          if (existsSync(filePath)) {
+            fileExists = true;
+            results.existingFiles++;
+            validFiles.push(fileUrl);
+            console.log(`[CLEANUP] 파일 발견: ${filePath}`);
+            break;
+          }
+        }
+
+        if (!fileExists) {
+          results.missingFiles++;
+          missingFiles.push(fileUrl);
+          console.log(`[CLEANUP] 파일 누락: ${fileName}`);
+        }
+      }
+
+      if (missingFiles.length > 0) {
+        missingFilesList.push({
+          noticeId: notice.id,
+          title: notice.title,
+          missingFiles: missingFiles
+        });
+      }
+
+      // cleanup 액션인 경우 유효한 파일만 남기고 DB 업데이트
+      if (action === 'cleanup' && missingFiles.length > 0) {
+        const updatePromise = prisma.notice.update({
+          where: { id: notice.id },
+          data: { file: JSON.stringify(validFiles) }
+        });
+        cleanupPromises.push(updatePromise);
+        results.cleanedNotices++;
       }
     }
 
-    // cleanup 실행
+    // cleanup 액션인 경우 DB 업데이트 실행
     if (action === 'cleanup' && cleanupPromises.length > 0) {
-      await Promise.all(cleanupPromises);
+      try {
+        await Promise.all(cleanupPromises);
+        console.log(`[CLEANUP] ${results.cleanedNotices}개 공지사항 정리 완료`);
+      } catch (error) {
+        console.error('[CLEANUP] DB 업데이트 실패:', error);
+        results.errors.push(`DB 업데이트 실패: ${error instanceof Error ? error.message : String(error)}`);
+      }
     }
+
+    // 업로드 디렉토리 내용 확인
+    let uploadDirContents: string[] = [];
+    try {
+      if (existsSync(uploadDir)) {
+        const { readdir } = await import('fs/promises');
+        uploadDirContents = await readdir(uploadDir);
+        console.log(`[CLEANUP] 업로드 디렉토리 파일 수: ${uploadDirContents.length}`);
+      } else {
+        console.log(`[CLEANUP] 업로드 디렉토리가 존재하지 않음: ${uploadDir}`);
+      }
+    } catch (error) {
+      console.error('[CLEANUP] 디렉토리 읽기 실패:', error);
+    }
+
+    console.log(`[CLEANUP] ${action} 작업 완료:`, results);
 
     return NextResponse.json({
       action,
       results,
-      missingFilesList: action === 'verify' ? missingFilesList : undefined,
-      message: action === 'verify' 
-        ? `검증 완료: ${results.missingFiles}개의 누락된 파일 발견`
-        : `정리 완료: ${results.cleanedNotices}개의 공지사항에서 누락된 파일 제거`
+      missingFilesList,
+      uploadDirContents: uploadDirContents.slice(0, 20), // 처음 20개만 반환
+      uploadDir,
+      environment: process.env.NODE_ENV
     });
 
   } catch (error) {
-    console.error("파일 정리 오류:", error);
+    console.error('[CLEANUP] 전체 작업 실패:', error);
     return NextResponse.json(
-      { message: "파일 정리 실패", error: error instanceof Error ? error.message : String(error) },
+      { 
+        message: "파일 정리 작업 실패", 
+        error: error instanceof Error ? error.message : String(error) 
+      },
       { status: 500 }
     );
   }
